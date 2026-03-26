@@ -449,8 +449,12 @@ function renderProps(propData, matchLabel, sportLabel) {
     .map(p => {
       const c = propConf(p.bestOver, p.bestUnder);
       if (!c) return null;
-      const vig = calcVig(p.bestOver, p.bestUnder);
-      return { ...p, c, vig, score: propScore(parseFloat(c.pct), p.bookCount, vig, c.pick, calib) };
+      const vig   = calcVig(p.bestOver, p.bestUnder);
+      const score = propScore(parseFloat(c.pct), p.bookCount, vig, c.pick, calib);
+      // Derive confidence from composite score (not raw pct) so OVER picks aren't
+      // permanently penalised just because books shade lines toward UNDER.
+      const conf  = score >= 0.35 ? 'HIGH' : score >= 0.18 ? 'MED' : 'LOW';
+      return { ...p, c: {...c, conf}, vig, score };
     })
     .filter(p => p !== null)
     .filter(p => !(p.c.pick === 'UNDER' && p.line <= 0.5))  // trivial near-certainty lines
