@@ -402,8 +402,22 @@ function renderProps(propData, matchLabel, sportLabel) {
     .filter(p => p.vig <= MAX_VIG)                           // drop heavily juiced lines
     .sort((a, b) => b.score - a.score);
 
-  // Take up to 5 — do NOT force 5 if fewer qualify
-  const props = scored.slice(0, 5);
+  // Take up to 5, max 3 per direction so OVER and UNDER both appear when both exist.
+  // If only one direction qualifies (e.g. truly lopsided market), fill remaining slots anyway.
+  const dirCount = {};
+  const props = [];
+  for (const p of scored) {
+    if (props.length >= 5) break;
+    const cnt = dirCount[p.c.pick] || 0;
+    if (cnt < 3) { props.push(p); dirCount[p.c.pick] = cnt + 1; }
+  }
+  // Second pass: fill any gaps if one direction was absent entirely
+  if (props.length < 5) {
+    for (const p of scored) {
+      if (props.length >= 5) break;
+      if (!props.includes(p)) props.push(p);
+    }
+  }
 
   if (!props.length) return `<div class="no-games">No qualifying player props.</div>`;
 
