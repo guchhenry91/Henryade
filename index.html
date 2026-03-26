@@ -97,6 +97,7 @@
   <div class="tab" onclick="showTab('nfl',event)">🏈 NFL</div>
   <div class="tab" onclick="showTab('nhl',event)">🏒 NHL</div>
   <div class="tab" onclick="showTab('mlb',event)">⚾ MLB</div>
+  <div class="tab" onclick="showTab('history',event)">📊 History</div>
 </div>
 
 <div id="tab-all"    class="tab-content active"><div class="loading" id="all-loading">Loading...</div></div>
@@ -104,7 +105,8 @@
 <div id="tab-nba"    class="tab-content"><div class="loading">Click NBA tab to load</div></div>
 <div id="tab-nfl"    class="tab-content"><div class="loading">Click NFL tab to load</div></div>
 <div id="tab-nhl"    class="tab-content"><div class="loading">Click NHL tab to load</div></div>
-<div id="tab-mlb"    class="tab-content"><div class="loading">Click MLB tab to load</div></div>
+<div id="tab-mlb"     class="tab-content"><div class="loading">Click MLB tab to load</div></div>
+<div id="tab-history" class="tab-content"><div class="loading">Click History tab to load</div></div>
 
 <script>
 const API_KEY = '17b4d42651ab4e81ef298300544f5a21';
@@ -156,12 +158,63 @@ function calcVig(overOdds, underOdds) {
 //   consensus  0.30 — how many distinct bookmakers offer both sides of this line
 //   fair_price 0.20 — how close to a fair (low-vig) line
 //   vig_penalty 0.10 — subtracted when vig exceeds FAIR_VIG
-function propScore(pct, bookCount, vig) {
-  const edgeFactor      = (pct - 50) / 50;                              // 0 at 50%, ~0.5 at a 75% pick
-  const consensusFactor = Math.min(bookCount / 6, 1);                   // 6+ books = full credit
-  const fairFactor      = Math.max(0, 1 - vig / MAX_VIG);              // 1.0 at vig=0, 0 at vig=MAX_VIG
-  const vigPenalty      = Math.max(0, (vig - FAIR_VIG) / (MAX_VIG - FAIR_VIG)); // 0 below FAIR_VIG
-  return edgeFactor * 0.40 + consensusFactor * 0.30 + fairFactor * 0.20 - vigPenalty * 0.10;
+// calib: object from getCalibration() — applies directional win-rate multiplier
+function propScore(pct, bookCount, vig, direction, calib) {
+  const dirCalib        = (calib && calib[direction]) || 1.0;
+  const edgeFactor      = (pct - 50) / 50;
+  const consensusFactor = Math.min(bookCount / 6, 1);
+  const fairFactor      = Math.max(0, 1 - vig / MAX_VIG);
+  const vigPenalty      = Math.max(0, (vig - FAIR_VIG) / (MAX_VIG - FAIR_VIG));
+  return (edgeFactor * 0.40 + consensusFactor * 0.30 + fairFactor * 0.20 - vigPenalty * 0.10) * dirCalib;
+}
+
+// ── Self-improvement: pick history & calibration ─────────────────────────────
+const HISTORY_KEY   = 'bm_picks_v1';
+const MIN_CALIBRATE = 10;  // picks with results needed before calibration kicks in
+
+function getHistory() {
+  try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; } catch { return []; }
+}
+
+// Save top pick per game — deduped by same-day player+market key
+function savePickToHistory(pick) {
+  const h = getHistory();
+  if (h.find(x => x.id === pick.id)) return;  // already saved today
+  h.unshift(pick);
+  try { localStorage.setItem(HISTORY_KEY, JSON.stringify(h.slice(0, 300))); } catch {}
+}
+
+// Mark a pick as Won, Lost, or Void then rebuild the History tab
+function markResult(id, result) {
+  const h = getHistory();
+  const p = h.find(x => x.id === id);
+  if (p) { p.result = result; try { localStorage.setItem(HISTORY_KEY, JSON.stringify(h)); } catch {} }
+  buildHistoryTab();
+}
+
+// Returns calibration multipliers for OVER and UNDER based on historical win rates.
+// At 50% win rate (random) → 1.0×, range capped at [0.80, 1.20].
+// Only active once MIN_CALIBRATE picks have settled.
+function getCalibration() {
+  const settled = getHistory().filter(p => p.result === 'W' || p.result === 'L');
+  const base = { OVER: 1.0, UNDER: 1.0, settled: settled.length, ready: false };
+  if (settled.length < MIN_CALIBRATE) return base;
+
+  const wr = arr => arr.length ? arr.filter(x => x.result === 'W').length / arr.length : 0.5;
+  const factor = w => Math.max(0.80, Math.min(1.20, 1.0 + (w - 0.5) * 0.5));
+
+  const overPicks  = settled.filter(p => p.pick === 'OVER');
+  const underPicks = settled.filter(p => p.pick === 'UNDER');
+  return {
+    OVER:       factor(wr(overPicks)),
+    UNDER:      factor(wr(underPicks)),
+    overWR:     (wr(overPicks)  * 100).toFixed(0),
+    underWR:    (wr(underPicks) * 100).toFixed(0),
+    overCount:  overPicks.length,
+    underCount: underPicks.length,
+    settled:    settled.length,
+    ready:      true,
+  };
 }
 
 // Short reason string — only references real signals
@@ -186,6 +239,7 @@ function showTab(name, e) {
   if (!loadedTabs.has(name)) {
     loadedTabs.add(name);
     if (name === 'soccer') buildSoccer(false);
+    else if (name === 'history') buildHistoryTab();
     else if (SPORT_TABS[name]) buildSportTab(name, false);
   }
 }
@@ -357,6 +411,7 @@ function gameDate(iso) {
 // ── Player props table renderer ───────────────────────────────────────────────
 // sportLabel: passed in so top picks can be collected for the slate-wide All tab
 function renderProps(propData, matchLabel, sportLabel) {
+  const calib = getCalibration();  // computed once — applied to every pick's score
   const lines = {};
 
   // Aggregate across bookmakers — track bestOver, bestUnder, and how many books
@@ -395,7 +450,7 @@ function renderProps(propData, matchLabel, sportLabel) {
       const c = propConf(p.bestOver, p.bestUnder);
       if (!c) return null;
       const vig = calcVig(p.bestOver, p.bestUnder);
-      return { ...p, c, vig, score: propScore(parseFloat(c.pct), p.bookCount, vig) };
+      return { ...p, c, vig, score: propScore(parseFloat(c.pct), p.bookCount, vig, c.pick, calib) };
     })
     .filter(p => p !== null)
     .filter(p => !(p.c.pick === 'UNDER' && p.line <= 0.5))  // trivial near-certainty lines
@@ -421,15 +476,21 @@ function renderProps(propData, matchLabel, sportLabel) {
 
   if (!props.length) return `<div class="no-games">No qualifying player props.</div>`;
 
-  // Push the top pick for this game to the slate-wide collection
+  // Push top pick to slate-wide collection + persist to history for self-improvement
   if (sportLabel && props[0]) {
-    allPropBets.push({
-      sport: sportLabel, match: matchLabel,
-      player: props[0].player, market: props[0].market,
-      line: props[0].line, pick: props[0].c.pick,
-      pct: props[0].c.pct, conf: props[0].c.conf,
-      score: props[0].score, bookCount: props[0].bookCount, vig: props[0].vig,
-    });
+    const topPick = {
+      // Dedup key: same player+market on same calendar day = same pick, don't double-save
+      id:         `${new Date().toDateString()}_${props[0].player}_${props[0].market}`,
+      date:       new Date().toISOString(),
+      sport:      sportLabel, match: matchLabel,
+      player:     props[0].player, market: props[0].market,
+      line:       props[0].line,   pick:  props[0].c.pick,
+      pct:        props[0].c.pct,  conf:  props[0].c.conf,
+      score:      props[0].score,  bookCount: props[0].bookCount, vig: props[0].vig,
+      result:     null,  // user marks W / L / V in the History tab
+    };
+    allPropBets.push(topPick);
+    savePickToHistory(topPick);
   }
 
   let html = `<div class="section-hdr">🎯 TOP PICKS — ${matchLabel}</div>
@@ -646,6 +707,98 @@ async function buildSportTab(name, force) {
   }
 }
 
+// ── HISTORY & CALIBRATION TAB ─────────────────────────────────────────────────
+function buildHistoryTab() {
+  const container = document.getElementById('tab-history');
+  const history   = getHistory();
+  const calib     = getCalibration();
+  let html = '';
+
+  // ── Calibration panel ──────────────────────────────────────────────────────
+  html += `<div class="value-box"><h3>🧠 MODEL CALIBRATION`;
+  if (calib.ready) {
+    html += ` — ${calib.settled} settled picks</h3>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;margin-top:8px;font-size:0.85em">
+      <div>OVER win rate: <strong style="color:${calib.overWR>=50?'#00ff88':'#ff4444'}">${calib.overWR}%</strong>
+        &nbsp;(${calib.overCount} picks) &nbsp;·&nbsp; multiplier: <strong>${calib.OVER.toFixed(2)}×</strong></div>
+      <div>UNDER win rate: <strong style="color:${calib.underWR>=50?'#00ff88':'#ff4444'}">${calib.underWR}%</strong>
+        &nbsp;(${calib.underCount} picks) &nbsp;·&nbsp; multiplier: <strong>${calib.UNDER.toFixed(2)}×</strong></div>
+    </div>
+    <p style="color:#555;font-size:0.75em;margin-top:8px">
+      Multiplier applied to composite score. Range 0.80×–1.20×. Formula: 1.0 + (win_rate − 0.50) × 0.5</p>`;
+  } else {
+    html += `</h3>
+    <p style="color:#888;font-size:0.85em">Calibration activates after ${MIN_CALIBRATE} settled picks.
+      &nbsp;Currently: <strong>${calib.settled} / ${MIN_CALIBRATE}</strong></p>
+    <p style="color:#555;font-size:0.75em">Mark results below — the model will adjust OVER/UNDER weights automatically.</p>`;
+  }
+  html += '</div>';
+
+  // ── Pending picks ──────────────────────────────────────────────────────────
+  const pending = history.filter(p => !p.result);
+  const settled = history.filter(p => p.result);
+
+  if (pending.length) {
+    html += `<div style="margin-top:16px">
+      <div class="section-hdr">⏳ PENDING — mark results to train the model (${pending.length})</div>
+      <table class="ptable">
+        <tr><th>Date</th><th>Sport</th><th>Player · Stat</th><th>Pick</th><th>Conf</th><th>Mark</th></tr>`;
+    pending.slice(0, 40).forEach(p => {
+      const stat = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+      const d    = new Date(p.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+      html += `<tr>
+        <td style="color:#555;font-size:0.8em">${d}</td>
+        <td style="color:#888;font-size:0.8em">${p.sport.replace(/[🏀🏈🏒⚾⚽]/u,'').trim()}</td>
+        <td style="color:#ddd">${p.player} <span style="color:#555;font-size:0.8em">${stat} ${p.line}</span></td>
+        <td>${pickHtml(p.pick)}</td>
+        <td>${badge(p.conf)}</td>
+        <td style="white-space:nowrap">
+          <button onclick="markResult('${p.id}','W')" style="background:#00ff8820;color:#00ff88;border:1px solid #00ff8844;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:0.75em;margin-right:3px">✓ W</button>
+          <button onclick="markResult('${p.id}','L')" style="background:#ff444420;color:#ff4444;border:1px solid #ff444444;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:0.75em;margin-right:3px">✗ L</button>
+          <button onclick="markResult('${p.id}','V')" style="background:#33333320;color:#666;border:1px solid #44444444;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:0.75em">— V</button>
+        </td>
+      </tr>`;
+    });
+    html += '</table></div>';
+  }
+
+  // ── Settled picks ──────────────────────────────────────────────────────────
+  if (settled.length) {
+    const wins   = settled.filter(p => p.result === 'W').length;
+    const losses = settled.filter(p => p.result === 'L').length;
+    const voids  = settled.filter(p => p.result === 'V').length;
+    const wl     = wins + losses;
+    const wr     = wl ? ((wins / wl) * 100).toFixed(1) : '—';
+    html += `<div style="margin-top:16px">
+      <div class="section-hdr">📋 SETTLED — ${wins}W / ${losses}L / ${voids}V &nbsp;·&nbsp; Win rate: ${wr}%</div>
+      <table class="ptable">
+        <tr><th>Date</th><th>Sport</th><th>Player · Stat</th><th>Pick</th><th>Result</th></tr>`;
+    settled.slice(0, 60).forEach(p => {
+      const stat   = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+      const d      = new Date(p.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+      const resHtml = p.result==='W'
+        ? '<span style="color:#00ff88;font-weight:bold">WIN</span>'
+        : p.result==='L'
+        ? '<span style="color:#ff4444;font-weight:bold">LOSS</span>'
+        : '<span style="color:#666">VOID</span>';
+      html += `<tr>
+        <td style="color:#555;font-size:0.8em">${d}</td>
+        <td style="color:#888;font-size:0.8em">${p.sport.replace(/[🏀🏈🏒⚾⚽]/u,'').trim()}</td>
+        <td style="color:#ddd">${p.player} <span style="color:#555;font-size:0.8em">${stat} ${p.line}</span></td>
+        <td>${pickHtml(p.pick)}</td>
+        <td>${resHtml}</td>
+      </tr>`;
+    });
+    html += '</table></div>';
+  }
+
+  if (!pending.length && !settled.length) {
+    html += `<div class="no-games" style="margin-top:16px">No picks saved yet — load a sport tab to generate picks.</div>`;
+  }
+
+  container.innerHTML = html;
+}
+
 // ── ALL VALUE BETS ────────────────────────────────────────────────────────────
 function buildAllTab() {
   const container = document.getElementById('tab-all');
@@ -705,6 +858,7 @@ async function refreshAll(force=false) {
   }
   allValueBets.length = 0;
   allPropBets.length  = 0;
+  loadedTabs.delete('history');  // force History to re-render with fresh calibration on next visit
   document.getElementById('all-loading') && (document.getElementById('all-loading').style.display='block');
 
   loadedTabs.add('soccer');
