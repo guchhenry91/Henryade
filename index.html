@@ -111,6 +111,7 @@ const API_KEY = '17b4d42651ab4e81ef298300544f5a21';
 const BASE    = 'https://api.the-odds-api.com/v4';
 const CACHE_TTL = 6 * 60 * 60 * 1000;
 const allValueBets = [];
+const allPropBets  = [];   // slate-wide best prop pick per game, all sports
 const loadedTabs = new Set();
 
 const SPORT_TABS = {
@@ -131,6 +132,49 @@ const SPORT_TABS = {
     props: 'batter_home_runs,batter_hits,batter_rbis,batter_runs_scored,batter_total_bases'
   },
 };
+
+// ── Prop scoring constants ────────────────────────────────────────────────────
+// Market keys to exclude — these are specialty/novelty bets with no real edge signal
+const SPECIALTY_MARKETS = new Set([
+  'player_first_basket','player_last_basket',
+  'player_double_double','player_triple_double',
+  'player_first_goalscorer','player_last_goalscorer',
+  'player_anytime_goalscorer',
+  'player_to_score_2_or_more_goals',
+  'player_grand_slam','player_cycle',
+]);
+const MAX_VIG   = 0.15;  // lines with vig above this are too juiced to trust
+const FAIR_VIG  = 0.08;  // "fair" line benchmark — vig at or below this gets no penalty
+
+// Vig = total over-round — 0.10 means 10% baked into the line
+function calcVig(overOdds, underOdds) {
+  return (1 / overOdds + 1 / underOdds) - 1;
+}
+
+// Composite score — only uses signals derivable from Odds API market data:
+//   edge       0.40 — vig-removed pick probability above 50%
+//   consensus  0.30 — how many distinct bookmakers offer both sides of this line
+//   fair_price 0.20 — how close to a fair (low-vig) line
+//   vig_penalty 0.10 — subtracted when vig exceeds FAIR_VIG
+function propScore(pct, bookCount, vig) {
+  const edgeFactor      = (pct - 50) / 50;                              // 0 at 50%, ~0.5 at a 75% pick
+  const consensusFactor = Math.min(bookCount / 6, 1);                   // 6+ books = full credit
+  const fairFactor      = Math.max(0, 1 - vig / MAX_VIG);              // 1.0 at vig=0, 0 at vig=MAX_VIG
+  const vigPenalty      = Math.max(0, (vig - FAIR_VIG) / (MAX_VIG - FAIR_VIG)); // 0 below FAIR_VIG
+  return edgeFactor * 0.40 + consensusFactor * 0.30 + fairFactor * 0.20 - vigPenalty * 0.10;
+}
+
+// Short reason string — only references real signals
+function propReason(pct, bookCount, vig) {
+  const parts = [];
+  if      (pct >= 68) parts.push(`${pct}% market edge`);
+  else if (pct >= 60) parts.push(`${pct}% implied`);
+  if      (bookCount >= 5) parts.push(`${bookCount} books aligned`);
+  else if (bookCount >= 3) parts.push(`${bookCount} books`);
+  if      (vig <= FAIR_VIG) parts.push('fair line');
+  else if (vig >= 0.12)     parts.push('juiced');
+  return parts.join(' · ') || 'model pick';
+}
 
 // ── Tab navigation ────────────────────────────────────────────────────────────
 function showTab(name, e) {
@@ -311,52 +355,90 @@ function gameDate(iso) {
 }
 
 // ── Player props table renderer ───────────────────────────────────────────────
-function renderProps(propData, title) {
+// sportLabel: passed in so top picks can be collected for the slate-wide All tab
+function renderProps(propData, matchLabel, sportLabel) {
   const lines = {};
+
+  // Aggregate across bookmakers — track bestOver, bestUnder, and how many books
+  // offer BOTH sides (bookCount = consensus signal)
   (propData.bookmakers||[]).forEach(bk=>{
     (bk.markets||[]).forEach(mkt=>{
+      if (SPECIALTY_MARKETS.has(mkt.key)) return;   // skip specialty/novelty markets
+
+      // Collect this bookmaker's prices for this market first
+      const bkSide = {};
       (mkt.outcomes||[]).forEach(o=>{
-        const key=`${o.description||o.name}__${mkt.key}`;
-        if(!lines[key]) lines[key]={player:o.description||o.name, market:mkt.key, line:o.point, bestOver:0, bestUnder:0};
-        if(o.name==='Over'   && o.price>lines[key].bestOver)  lines[key].bestOver=o.price;
-        if(o.name==='Under'  && o.price>lines[key].bestUnder) lines[key].bestUnder=o.price;
+        const key = `${o.description||o.name}__${mkt.key}`;
+        if (!bkSide[key]) bkSide[key] = { over:0, under:0, point: o.point };
+        if (o.name==='Over'  && o.price > bkSide[key].over)  bkSide[key].over  = o.price;
+        if (o.name==='Under' && o.price > bkSide[key].under) bkSide[key].under = o.price;
+      });
+
+      // Merge into global lines
+      Object.entries(bkSide).forEach(([key, d])=>{
+        const player = key.split('__')[0];
+        if (!lines[key]) lines[key] = {
+          player, market: mkt.key, line: d.point,
+          bestOver: 0, bestUnder: 0, bookCount: 0
+        };
+        if (d.over  > lines[key].bestOver)  lines[key].bestOver  = d.over;
+        if (d.under > lines[key].bestUnder) lines[key].bestUnder = d.under;
+        if (d.over && d.under) lines[key].bookCount++;  // both sides = this book agrees
       });
     });
   });
 
-  const allProps = Object.values(lines)
-    .filter(p=>p.bestOver>0 && p.bestUnder>0 && p.line!=null)
-    .map(p=>({...p, c:propConf(p.bestOver,p.bestUnder)}))
-    .filter(p=>p.c)
-    // Filter trivial: UNDER on a 0.5 line is nearly always ~99% and has no betting value
-    .filter(p => !(p.c.pick==='UNDER' && p.line<=0.5))
-    .sort((a,b)=>parseFloat(b.c.pct)-parseFloat(a.c.pct));
+  // Score every candidate using composite formula
+  const scored = Object.values(lines)
+    .filter(p => p.bestOver > 0 && p.bestUnder > 0 && p.line != null)
+    .map(p => {
+      const c = propConf(p.bestOver, p.bestUnder);
+      if (!c) return null;
+      const vig = calcVig(p.bestOver, p.bestUnder);
+      return { ...p, c, vig, score: propScore(parseFloat(c.pct), p.bookCount, vig) };
+    })
+    .filter(p => p !== null)
+    .filter(p => !(p.c.pick === 'UNDER' && p.line <= 0.5))  // trivial near-certainty lines
+    .filter(p => p.vig <= MAX_VIG)                           // drop heavily juiced lines
+    .sort((a, b) => b.score - a.score);
 
-  // Cap at 3 per market type so stats are diverse (hits, RBIs, total bases, etc.)
-  const mktCount = {};
-  const props = [];
-  for (const p of allProps) {
-    mktCount[p.market] = (mktCount[p.market]||0);
-    if (mktCount[p.market] < 3) { props.push(p); mktCount[p.market]++; }
-    if (props.length >= 10) break;
+  // Take up to 5 — do NOT force 5 if fewer qualify
+  const props = scored.slice(0, 5);
+
+  if (!props.length) return `<div class="no-games">No qualifying player props.</div>`;
+
+  // Push the top pick for this game to the slate-wide collection
+  if (sportLabel && props[0]) {
+    allPropBets.push({
+      sport: sportLabel, match: matchLabel,
+      player: props[0].player, market: props[0].market,
+      line: props[0].line, pick: props[0].c.pick,
+      pct: props[0].c.pct, conf: props[0].c.conf,
+      score: props[0].score, bookCount: props[0].bookCount, vig: props[0].vig,
+    });
   }
 
-  if (!props.length) return `<div class="no-games">No player props available.</div>`;
-
-  let html = `<div class="section-hdr">🎯 ${title} — TOP 10 PLAYER PREDICTIONS</div>
+  let html = `<div class="section-hdr">🎯 TOP PICKS — ${matchLabel}</div>
     <table class="ptable">
-      <tr><th>#</th><th>Player</th><th>Stat</th><th>Line</th><th>Pick</th><th>Confidence</th><th>Prob%</th></tr>`;
+      <tr><th>Tier</th><th>Player</th><th>Stat</th><th>Line</th><th>Pick</th><th>Conf</th><th>Reason</th></tr>`;
 
-  props.forEach((p,i)=>{
-    const stat = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
-    html += `<tr>
-      <td style="color:#555">${i+1}</td>
-      <td style="color:#fff;font-weight:bold">${p.player}</td>
+  props.forEach((p, i) => {
+    // Rank 1 = best bet (A★), rank 2 = Tier A, ranks 3-5 = Tier B
+    const tierHtml = i === 0
+      ? '<span class="tier-a" title="Best Bet">A★</span>'
+      : i === 1
+      ? '<span class="tier-a">A</span>'
+      : '<span class="tier-b">B</span>';
+    const stat   = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+    const reason = propReason(parseFloat(p.c.pct), p.bookCount, p.vig);
+    html += `<tr${i === 0 ? ' style="background:#0a1a0a"' : ''}>
+      <td>${tierHtml}</td>
+      <td style="color:${i===0?'#fff':'#ddd'};font-weight:${i===0?'bold':'normal'}">${p.player}</td>
       <td style="color:#aaa;font-size:0.9em">${stat}</td>
       <td style="color:#ffcc00">${p.line}</td>
       <td>${pickHtml(p.c.pick)}</td>
       <td>${badge(p.c.conf)}</td>
-      <td style="color:#888">${p.c.pct}%</td>
+      <td style="color:#666;font-size:0.78em">${reason}</td>
     </tr>`;
   });
   html += '</table>';
@@ -535,7 +617,7 @@ async function buildSportTab(name, force) {
       // Player props
       try {
         const propData = await fetchEventProps(s.key, ev.id, s.props, s.region, force);
-        html += renderProps(propData, `${home} vs ${away}`);
+        html += renderProps(propData, `${home} vs ${away}`, s.label);
       } catch(propErr) {
         html += `<div class="error">⚠ Props: ${propErr.message}</div>`;
       }
@@ -553,18 +635,48 @@ async function buildSportTab(name, force) {
 // ── ALL VALUE BETS ────────────────────────────────────────────────────────────
 function buildAllTab() {
   const container = document.getElementById('tab-all');
-  if (!allValueBets.length) {
-    container.innerHTML='<div class="no-games">No soccer value bets detected. Check individual sport tabs for predictions.</div>';
-    return;
+  let html = '';
+
+  // ── Soccer value bets (edge-based, Poisson model) ──────────────────────────
+  if (allValueBets.length) {
+    allValueBets.sort((a,b)=>b.e-a.e);
+    const tier = v => v.e >= 8
+      ? '<span class="tier-a">A</span>'
+      : '<span class="tier-b">B</span>';
+    html += `<div class="value-box"><h3>✅ SOCCER VALUE BETS — Edge > +3% (${allValueBets.length} found)</h3>`;
+    allValueBets.forEach(v=>{
+      html += `<div class="value-item">${tier(v)} +${v.e}% &nbsp;|&nbsp; <strong>${v.bet}</strong> &nbsp;|&nbsp; <span class="match-ref">${v.match} (${v.sport})</span></div>`;
+    });
+    html += `<p style="color:#555;font-size:0.75em;margin-top:8px">Edge = Poisson model probability minus bookmaker implied probability. Load individual sport tabs to populate player prop picks below.</p></div>`;
   }
-  allValueBets.sort((a,b)=>b.e-a.e);
-  const tier=b=>b.e>=8?'<span class="tier-a">A</span>':'<span class="tier-b">B</span>';
-  let html=`<div class="value-box"><h3>✅ SOCCER VALUE BETS — Edge > +3% (${allValueBets.length} found)</h3>`;
-  allValueBets.forEach(v=>{
-    html+=`<div class="value-item">${tier(v)} +${v.e}% &nbsp;|&nbsp; <strong>${v.bet}</strong> &nbsp;|&nbsp; <span class="match-ref">${v.match} (${v.sport})</span></div>`;
-  });
-  html+='</div>';
-  container.innerHTML=html;
+
+  // ── Slate-wide top 10 player props (best bet per game, all sports) ─────────
+  if (allPropBets.length) {
+    allPropBets.sort((a, b) => b.score - a.score);
+    const top10 = allPropBets.slice(0, 10);
+    html += `<div class="value-box" style="margin-top:16px">
+      <h3>🎯 SLATE-WIDE TOP PICKS — Best Bet Per Game (${top10.length} games loaded)</h3>`;
+    top10.forEach((v, i) => {
+      const tierHtml = i < 2
+        ? '<span class="tier-a">A★</span>'
+        : '<span class="tier-b">B</span>';
+      const stat = v.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+      const reason = propReason(parseFloat(v.pct), v.bookCount, v.vig);
+      html += `<div class="value-item" style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
+        ${tierHtml}
+        &nbsp;<strong>${v.player}</strong>
+        &nbsp;${pickHtml(v.pick)} ${v.line} ${stat}
+        &nbsp;${badge(v.conf)} ${v.pct}%
+        &nbsp;<span class="match-ref" style="margin-left:4px">${v.match} · ${v.sport} · ${v.bookCount} books · ${reason}</span>
+      </div>`;
+    });
+    html += `<p style="color:#555;font-size:0.75em;margin-top:8px">Score = edge×0.40 + consensus×0.30 + fair_price×0.20 − vig_penalty×0.10 | Only real API signals used — no projected minutes, usage, or matchup data.</p></div>`;
+  }
+
+  if (!html) {
+    html = `<div class="no-games">No data yet. Soccer loads automatically — click NBA, NFL, NHL, or MLB tabs to populate player prop picks here.</div>`;
+  }
+  container.innerHTML = html;
 }
 
 // ── Master refresh ────────────────────────────────────────────────────────────
@@ -577,7 +689,8 @@ async function refreshAll(force=false) {
     });
     document.getElementById('tab-soccer').innerHTML='<div class="loading">Click Soccer tab to reload</div>';
   }
-  allValueBets.length=0;
+  allValueBets.length = 0;
+  allPropBets.length  = 0;
   document.getElementById('all-loading') && (document.getElementById('all-loading').style.display='block');
 
   loadedTabs.add('soccer');
