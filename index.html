@@ -6,75 +6,151 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'Segoe UI',monospace;background:#0a0a0a;color:#ddd;min-height:100vh}
-  header{background:#111;border-bottom:1px solid #222;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
-  header h1{color:#00ff88;font-size:1.1em;letter-spacing:1px}
-  .token-bar{display:flex;gap:16px;align-items:center;font-size:0.8em;flex-wrap:wrap}
-  .token-info{background:#1a1a1a;padding:5px 12px;border-radius:4px;border:1px solid #333}
-  .token-info span{color:#ffcc00;font-weight:bold}
-  .cache-info{color:#555;font-size:0.75em}
-  .btn{background:#1a2a1a;color:#00ff88;border:1px solid #00ff88;padding:6px 14px;border-radius:4px;cursor:pointer;font-size:0.8em;transition:all .2s}
-  .btn:hover{background:#00ff88;color:#000}
-  .btn-danger{border-color:#ff4444;color:#ff4444}
-  .btn-danger:hover{background:#ff4444;color:#000}
-  .tabs{display:flex;gap:4px;padding:12px 20px;background:#111;border-bottom:1px solid #222;overflow-x:auto;white-space:nowrap}
-  .tab{padding:6px 14px;border-radius:4px;cursor:pointer;font-size:0.85em;color:#888;border:1px solid transparent;transition:all .2s}
-  .tab:hover{color:#ddd}
-  .tab.active{background:#1a2a1a;color:#00ff88;border-color:#00ff88}
-  .tab-content{display:none;padding:20px}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#080808;color:#bbb;min-height:100vh}
+
+  /* ── Header ── */
+  header{background:#0d0d0d;border-bottom:1px solid #161616;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  header h1{color:#00ff88;font-size:0.95em;letter-spacing:2px;font-weight:700}
+  .token-bar{display:flex;gap:8px;align-items:center;font-size:0.75em;flex-wrap:wrap}
+  .token-info{background:#111;padding:4px 10px;border-radius:20px;border:1px solid #1e1e1e;color:#444}
+  .token-info span{color:#ffcc00;font-weight:700}
+  .cache-info{color:#333;font-size:0.73em}
+  .btn{background:transparent;color:#00ff88;border:1px solid #00ff8840;padding:5px 14px;border-radius:20px;cursor:pointer;font-size:0.75em;transition:all .2s;font-weight:600}
+  .btn:hover{background:#00ff8812;border-color:#00ff88}
+  .btn-danger{border-color:#ff444440;color:#ff4444}
+  .btn-danger:hover{background:#ff444412;border-color:#ff4444}
+
+  /* ── Tabs ── */
+  .tabs{display:flex;padding:0 16px;background:#0d0d0d;border-bottom:1px solid #161616;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{padding:12px 16px;cursor:pointer;font-size:0.82em;color:#444;border-bottom:2px solid transparent;transition:all .2s;font-weight:500;user-select:none;flex-shrink:0}
+  .tab:hover{color:#888}
+  .tab.active{color:#00ff88;border-bottom-color:#00ff88}
+
+  /* ── Layout ── */
+  .tab-content{display:none;padding:20px;max-width:1100px;margin:0 auto}
   .tab-content.active{display:block}
-  .sport-section{margin-bottom:30px}
-  .sport-title{color:#00ccff;font-size:1em;font-weight:bold;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #1a2a3a;display:flex;align-items:center;gap:8px}
-  .match-card{background:#111;border:1px solid #222;border-radius:6px;padding:14px;margin-bottom:14px}
-  .match-title{color:#fff;font-weight:bold;font-size:0.95em;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
-  .match-time{color:#555;font-size:0.78em;font-weight:normal}
-  .odds-table{width:100%;border-collapse:collapse;font-size:0.82em;margin-bottom:10px}
-  .odds-table th{background:#1a1a1a;color:#888;text-align:left;padding:5px 8px;font-weight:normal}
-  .odds-table td{padding:4px 8px;border-bottom:1px solid #1a1a1a}
-  .pos{color:#00ff88;font-weight:bold}
+  .sport-section{margin-bottom:32px}
+  .sport-title{color:#00ccff;font-size:0.78em;font-weight:700;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid #111;display:flex;align-items:center;gap:8px;letter-spacing:1.5px;text-transform:uppercase}
+  .match-card{background:#0d0d0d;border:1px solid #181818;border-radius:10px;padding:16px;margin-bottom:14px;transition:border-color .2s}
+  .match-card:hover{border-color:#222}
+  .match-title{color:#fff;font-weight:600;font-size:0.93em;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+  .match-time{color:#333;font-size:0.73em;font-weight:normal;white-space:nowrap}
+
+  /* ── Odds table ── */
+  .odds-table{width:100%;border-collapse:collapse;font-size:0.78em;margin-bottom:12px;overflow-x:auto;display:block}
+  .odds-table th{background:#111;color:#444;text-align:left;padding:6px 8px;font-weight:500;white-space:nowrap}
+  .odds-table td{padding:5px 8px;border-bottom:1px solid #101010;white-space:nowrap}
+  .pos{color:#00ff88;font-weight:700}
   .neg{color:#ff4444}
-  .neutral{color:#888}
-  .score-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-  .score-chip{background:#1a1a1a;border:1px solid #333;border-radius:4px;padding:4px 10px;font-size:0.8em}
-  .score-chip.top{border-color:#00ff88;color:#00ff88}
-  .score-chip.second{border-color:#88ff00;color:#88ff00}
-  .score-chip.third{border-color:#ccff00;color:#ccff00}
-  .label{color:#888;font-size:0.75em;margin-bottom:4px;margin-top:8px}
-  .value-box{background:#0a2a0a;border:1px solid #00ff8844;border-radius:6px;padding:14px;margin-top:20px}
-  .value-box h3{color:#00ff88;margin-bottom:10px;font-size:0.9em}
-  .value-item{padding:5px 0;border-bottom:1px solid #0f2a0f;font-size:0.82em;color:#00ff88}
-  .value-item .match-ref{color:#888;font-size:0.9em}
-  .tier-a{background:#00ff8822;color:#00ff88;padding:2px 6px;border-radius:3px;font-size:0.75em;font-weight:bold}
-  .tier-b{background:#ffcc0022;color:#ffcc00;padding:2px 6px;border-radius:3px;font-size:0.75em;font-weight:bold}
-  .loading{color:#555;font-style:italic;padding:20px;text-align:center}
-  .error{color:#ff4444;padding:10px;background:#1a0000;border-radius:4px;margin:10px 0;font-size:0.85em}
-  .no-games{color:#555;font-size:0.85em;padding:10px 0;font-style:italic}
-  /* ── Winner box ── */
-  .winner-box{background:#0a1a0a;border:1px solid #00ff8833;border-radius:6px;padding:12px;margin-bottom:12px}
-  .winner-box-title{color:#00ff88;font-size:0.78em;font-weight:bold;letter-spacing:1px;margin-bottom:8px}
-  .winner-row{display:flex;align-items:center;gap:8px;padding:3px 0;font-size:0.82em}
-  .winner-name{min-width:140px;color:#ddd;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .winner-name.pick{color:#00ff88;font-weight:bold}
-  .bar-wrap{flex:1;background:#1a1a1a;border-radius:3px;height:6px}
-  .bar-fill{height:6px;border-radius:3px;background:#00ff88}
-  .bar-fill.draw{background:#888}
-  .bar-fill.away{background:#00ccff}
-  .pct-label{min-width:38px;text-align:right;color:#888;font-size:0.8em}
-  .winner-summary{margin-top:8px;font-size:0.8em;color:#aaa;border-top:1px solid #1a2a1a;padding-top:8px}
-  /* ── Player props table ── */
-  .section-hdr{color:#00ccff;font-size:0.82em;font-weight:bold;margin:12px 0 6px;padding-bottom:4px;border-bottom:1px solid #1a2a3a;letter-spacing:0.5px}
-  .ptable{width:100%;border-collapse:collapse;font-size:0.8em}
-  .ptable th{background:#161616;color:#666;text-align:left;padding:4px 6px;font-weight:normal;font-size:0.85em}
-  .ptable td{padding:4px 6px;border-bottom:1px solid #161616;vertical-align:middle}
-  .ptable tr:hover td{background:#141414}
-  .pick-over{color:#00ff88;font-weight:bold}
-  .pick-under{color:#ff9944;font-weight:bold}
+  .neutral{color:#444}
+
+  /* ── Score chips ── */
+  .score-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .score-chip{background:#111;border:1px solid #1e1e1e;border-radius:6px;padding:5px 12px;font-size:0.75em;white-space:nowrap}
+  .score-chip.top{border-color:#00ff8850;color:#00ff88;background:#00ff8808}
+  .score-chip.second{border-color:#88ff0035;color:#88ff00}
+  .score-chip.third{border-color:#ccff0025;color:#ccff00}
+  .label{color:#333;font-size:0.7em;margin-bottom:6px;margin-top:10px;text-transform:uppercase;letter-spacing:0.5px}
+
+  /* ── Value box ── */
+  .value-box{background:#0a0a0a;border:1px solid #181818;border-radius:10px;padding:18px;margin-top:16px}
+  .value-box h3{color:#00ff88;margin-bottom:12px;font-size:0.82em;letter-spacing:1.5px;text-transform:uppercase}
+  .value-item{padding:7px 0;border-bottom:1px solid #101010;font-size:0.81em;color:#00ff88}
+  .value-item .match-ref{color:#444;font-size:0.9em}
+
+  /* ── Tier badges ── */
+  .tier-a{background:#00ff8815;color:#00ff88;padding:2px 9px;border-radius:12px;font-size:0.7em;font-weight:700;border:1px solid #00ff8840;display:inline-block}
+  .tier-b{background:#ffcc0012;color:#ffcc00;padding:2px 9px;border-radius:12px;font-size:0.7em;font-weight:700;border:1px solid #ffcc0030;display:inline-block}
+
   /* ── Confidence badges ── */
-  .badge{display:inline-block;padding:2px 7px;border-radius:3px;font-size:0.73em;font-weight:bold;letter-spacing:0.5px}
-  .badge-high{background:#00ff8822;color:#00ff88;border:1px solid #00ff8844}
-  .badge-med{background:#ffcc0022;color:#ffcc00;border:1px solid #ffcc0044}
-  .badge-low{background:#33333344;color:#666;border:1px solid #33333366}
-  @media(max-width:600px){.winner-name{min-width:100px}}
+  .badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:20px;font-size:0.68em;font-weight:700;letter-spacing:0.5px;white-space:nowrap}
+  .badge-high{background:#00ff8812;color:#00ff88;border:1px solid #00ff8845;box-shadow:0 0 10px #00ff8815}
+  .badge-med{background:#ffcc0012;color:#ffcc00;border:1px solid #ffcc0040}
+  .badge-low{background:#ffffff06;color:#383838;border:1px solid #222}
+
+  /* ── Pick cards ── */
+  .section-hdr{color:#00ccff;font-size:0.72em;font-weight:700;margin:14px 0 10px;padding-bottom:6px;border-bottom:1px solid #111;letter-spacing:1.5px;text-transform:uppercase}
+  .pick-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:6px}
+  .pick-card{background:#101010;border:1px solid #1a1a1a;border-radius:8px;padding:14px;position:relative;transition:border-color .2s}
+  .pick-card:hover{border-color:#252525}
+  .pick-card.best-pick{border-color:#00ff8828;background:#0a110a}
+  .pick-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .pick-card-player{font-size:0.9em;font-weight:600;color:#ddd;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pick-card.best-pick .pick-card-player{color:#fff}
+  .pick-card-stat{font-size:0.68em;color:#383838;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px}
+  .pick-card-line{font-size:1.6em;font-weight:700;color:#ffcc00;line-height:1;margin-bottom:6px}
+  .pick-card-direction{font-size:0.88em;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+  .pick-card-pct{font-size:0.75em;color:#333;font-weight:400}
+  .pick-card-reason{font-size:0.7em;color:#383838;border-top:1px solid #181818;padding-top:8px;margin-top:4px;line-height:1.5}
+  .pick-over{color:#00ff88;font-weight:700}
+  .pick-under{color:#ff9944;font-weight:700}
+
+  /* ── Hero section ── */
+  .hero-section{background:linear-gradient(160deg,#0a120a 0%,#0d0d0d 60%);border:1px solid #00ff8820;border-radius:12px;padding:20px;margin-bottom:20px}
+  .hero-title{color:#00ff88;font-size:0.78em;font-weight:700;margin-bottom:16px;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+  .hero-pick{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #0f0f0f;flex-wrap:wrap}
+  .hero-pick:last-child{border-bottom:none}
+  .hero-rank{font-size:0.9em;color:#252525;min-width:22px;font-weight:700;text-align:center}
+  .hero-pick.rank-1 .hero-rank{color:#00ff88}
+  .hero-pick.rank-2 .hero-rank{color:#00cc66}
+  .hero-player{font-weight:600;color:#ccc;font-size:0.88em}
+  .hero-detail{color:#383838;font-size:0.75em;margin-top:2px}
+
+  /* ── Record bar ── */
+  .record-bar{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+  .record-stat{background:#0f0f0f;border:1px solid #181818;border-radius:8px;padding:12px 18px;text-align:center;min-width:72px}
+  .record-num{font-size:1.5em;font-weight:700;line-height:1}
+  .record-label{font-size:0.62em;color:#383838;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+  .streak-chip{background:#0f0f0f;border:1px solid #181818;border-radius:8px;padding:12px 18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+  .streak-val{font-size:0.9em;font-weight:700}
+  .streak-w{color:#00ff88}
+  .streak-l{color:#ff4444}
+
+  /* ── History table ── */
+  .ptable{width:100%;border-collapse:collapse;font-size:0.78em}
+  .ptable th{background:#0f0f0f;color:#383838;text-align:left;padding:7px 8px;font-weight:500;font-size:0.82em;border-bottom:1px solid #181818}
+  .ptable td{padding:6px 8px;border-bottom:1px solid #0d0d0d;vertical-align:middle}
+  .ptable tr:hover td{background:#0c0c0c}
+  .mark-btn{padding:3px 10px;border-radius:12px;cursor:pointer;font-size:0.72em;font-weight:600;border:1px solid transparent;transition:all .15s}
+  .mark-w{background:#00ff8812;color:#00ff88;border-color:#00ff8840}
+  .mark-w:hover{background:#00ff8825}
+  .mark-l{background:#ff444412;color:#ff4444;border-color:#ff444440}
+  .mark-l:hover{background:#ff444425}
+  .mark-v{background:#ffffff06;color:#383838;border-color:#1e1e1e}
+  .mark-v:hover{background:#151515}
+
+  /* ── State ── */
+  .loading{color:#282828;font-style:italic;padding:40px;text-align:center;font-size:0.88em}
+  .error{color:#ff4444;padding:12px 16px;background:#110000;border-radius:8px;margin:10px 0;font-size:0.82em;border:1px solid #ff444428}
+  .no-games{color:#2a2a2a;font-size:0.82em;padding:12px 0;font-style:italic}
+
+  /* ── Winner box ── */
+  .winner-box{background:#0a0f0a;border:1px solid #161c16;border-radius:8px;padding:14px;margin-bottom:14px}
+  .winner-box-title{color:#00ff88;font-size:0.7em;font-weight:700;letter-spacing:1.5px;margin-bottom:10px;text-transform:uppercase}
+  .winner-row{display:flex;align-items:center;gap:10px;padding:4px 0;font-size:0.82em}
+  .winner-name{min-width:130px;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .winner-name.pick{color:#fff;font-weight:600}
+  .bar-wrap{flex:1;background:#111;border-radius:4px;height:4px}
+  .bar-fill{height:4px;border-radius:4px;background:#00ff88;transition:width .5s}
+  .bar-fill.draw{background:#444}
+  .bar-fill.away{background:#00ccff}
+  .pct-label{min-width:38px;text-align:right;color:#444;font-size:0.78em}
+  .winner-summary{margin-top:10px;font-size:0.78em;color:#666;border-top:1px solid #111;padding-top:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+
+  /* ── Mobile ── */
+  @media(max-width:640px){
+    .pick-cards{grid-template-columns:1fr 1fr}
+    .winner-name{min-width:90px}
+    .tab{padding:10px 10px;font-size:0.76em}
+    .record-stat,.streak-chip{padding:10px 12px}
+    .record-num{font-size:1.2em}
+    .hero-pick{gap:8px}
+    header{padding:10px 14px}
+  }
+  @media(max-width:380px){
+    .pick-cards{grid-template-columns:1fr}
+  }
 </style>
 </head>
 <body>
@@ -498,29 +574,29 @@ function renderProps(propData, matchLabel, sportLabel) {
   }
 
   let html = `<div class="section-hdr">🎯 TOP PICKS — ${matchLabel}</div>
-    <table class="ptable">
-      <tr><th>Tier</th><th>Player</th><th>Stat</th><th>Line</th><th>Pick</th><th>Conf</th><th>Reason</th></tr>`;
+    <div class="pick-cards">`;
 
   props.forEach((p, i) => {
-    // Rank 1 = best bet (A★), rank 2 = Tier A, ranks 3-5 = Tier B
     const tierHtml = i === 0
-      ? '<span class="tier-a" title="Best Bet">A★</span>'
+      ? '<span class="tier-a">A★</span>'
       : i === 1
       ? '<span class="tier-a">A</span>'
       : '<span class="tier-b">B</span>';
     const stat   = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
     const reason = propReason(parseFloat(p.c.pct), p.bookCount, p.vig);
-    html += `<tr${i === 0 ? ' style="background:#0a1a0a"' : ''}>
-      <td>${tierHtml}</td>
-      <td style="color:${i===0?'#fff':'#ddd'};font-weight:${i===0?'bold':'normal'}">${p.player}</td>
-      <td style="color:#aaa;font-size:0.9em">${stat}</td>
-      <td style="color:#ffcc00">${p.line}</td>
-      <td>${pickHtml(p.c.pick)}</td>
-      <td>${badge(p.c.conf)}</td>
-      <td style="color:#666;font-size:0.78em">${reason}</td>
-    </tr>`;
+    html += `<div class="pick-card${i === 0 ? ' best-pick' : ''}">
+      <div class="pick-card-header">
+        ${tierHtml}
+        ${badge(p.c.conf)}
+      </div>
+      <div class="pick-card-player">${p.player}</div>
+      <div class="pick-card-stat">${stat}</div>
+      <div class="pick-card-line">${p.line}</div>
+      <div class="pick-card-direction">${pickHtml(p.c.pick)} <span class="pick-card-pct">${p.c.pct}% implied</span></div>
+      <div class="pick-card-reason">${reason}</div>
+    </div>`;
   });
-  html += '</table>';
+  html += '</div>';
   return html;
 }
 
@@ -738,28 +814,74 @@ function buildHistoryTab() {
   }
   html += '</div>';
 
-  // ── Pending picks ──────────────────────────────────────────────────────────
+  // ── Record bar ─────────────────────────────────────────────────────────────
   const pending = history.filter(p => !p.result);
   const settled = history.filter(p => p.result);
+  const wins    = settled.filter(p => p.result === 'W').length;
+  const losses  = settled.filter(p => p.result === 'L').length;
+  const voids   = settled.filter(p => p.result === 'V').length;
+  const wl      = wins + losses;
+  const wr      = wl ? (wins / wl * 100).toFixed(1) : null;
 
+  // Current streak (W or L run from most recent settled pick)
+  const streak = (() => {
+    const s = settled.slice();  // newest first
+    if (!s.length) return null;
+    const last = s[0].result;
+    if (last === 'V') return null;
+    let n = 0;
+    for (const p of s) { if (p.result !== last) break; n++; }
+    return { r: last, n };
+  })();
+
+  if (wl > 0 || pending.length) {
+    html += `<div class="record-bar">
+      <div class="record-stat">
+        <div class="record-num" style="color:#00ff88">${wins}</div>
+        <div class="record-label">Wins</div>
+      </div>
+      <div class="record-stat">
+        <div class="record-num" style="color:#ff4444">${losses}</div>
+        <div class="record-label">Losses</div>
+      </div>
+      <div class="record-stat">
+        <div class="record-num" style="color:#333">${voids}</div>
+        <div class="record-label">Voids</div>
+      </div>
+      <div class="record-stat">
+        <div class="record-num" style="color:${wr && parseFloat(wr)>=50?'#00ff88':'#ff4444'}">${wr ? wr+'%' : '—'}</div>
+        <div class="record-label">Win Rate</div>
+      </div>
+      <div class="record-stat">
+        <div class="record-num" style="color:#444">${pending.length}</div>
+        <div class="record-label">Pending</div>
+      </div>
+      ${streak ? `<div class="streak-chip">
+        <div class="streak-val ${streak.r==='W'?'streak-w':'streak-l'}">${streak.n}× ${streak.r==='W'?'WIN':'LOSS'}</div>
+        <div class="record-label">Current streak</div>
+      </div>` : ''}
+    </div>`;
+  }
+
+  // ── Pending picks ──────────────────────────────────────────────────────────
   if (pending.length) {
     html += `<div style="margin-top:16px">
-      <div class="section-hdr">⏳ PENDING — mark results to train the model (${pending.length})</div>
+      <div class="section-hdr">⏳ Pending — mark results to train the model</div>
       <table class="ptable">
         <tr><th>Date</th><th>Sport</th><th>Player · Stat</th><th>Pick</th><th>Conf</th><th>Mark</th></tr>`;
     pending.slice(0, 40).forEach(p => {
       const stat = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
       const d    = new Date(p.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
       html += `<tr>
-        <td style="color:#555;font-size:0.8em">${d}</td>
-        <td style="color:#888;font-size:0.8em">${p.sport.replace(/[🏀🏈🏒⚾⚽]/u,'').trim()}</td>
-        <td style="color:#ddd">${p.player} <span style="color:#555;font-size:0.8em">${stat} ${p.line}</span></td>
+        <td style="color:#333;font-size:0.8em">${d}</td>
+        <td style="color:#444;font-size:0.8em">${p.sport.replace(/[🏀🏈🏒⚾⚽]/u,'').trim()}</td>
+        <td style="color:#bbb">${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span></td>
         <td>${pickHtml(p.pick)}</td>
         <td>${badge(p.conf)}</td>
-        <td style="white-space:nowrap">
-          <button onclick="markResult('${p.id}','W')" style="background:#00ff8820;color:#00ff88;border:1px solid #00ff8844;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:0.75em;margin-right:3px">✓ W</button>
-          <button onclick="markResult('${p.id}','L')" style="background:#ff444420;color:#ff4444;border:1px solid #ff444444;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:0.75em;margin-right:3px">✗ L</button>
-          <button onclick="markResult('${p.id}','V')" style="background:#33333320;color:#666;border:1px solid #44444444;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:0.75em">— V</button>
+        <td style="white-space:nowrap;display:flex;gap:4px">
+          <button class="mark-btn mark-w" onclick="markResult('${p.id}','W')">✓ W</button>
+          <button class="mark-btn mark-l" onclick="markResult('${p.id}','L')">✗ L</button>
+          <button class="mark-btn mark-v" onclick="markResult('${p.id}','V')">— V</button>
         </td>
       </tr>`;
     });
@@ -768,27 +890,22 @@ function buildHistoryTab() {
 
   // ── Settled picks ──────────────────────────────────────────────────────────
   if (settled.length) {
-    const wins   = settled.filter(p => p.result === 'W').length;
-    const losses = settled.filter(p => p.result === 'L').length;
-    const voids  = settled.filter(p => p.result === 'V').length;
-    const wl     = wins + losses;
-    const wr     = wl ? ((wins / wl) * 100).toFixed(1) : '—';
-    html += `<div style="margin-top:16px">
-      <div class="section-hdr">📋 SETTLED — ${wins}W / ${losses}L / ${voids}V &nbsp;·&nbsp; Win rate: ${wr}%</div>
+    html += `<div style="margin-top:20px">
+      <div class="section-hdr">📋 Settled — ${wins}W / ${losses}L / ${voids}V</div>
       <table class="ptable">
         <tr><th>Date</th><th>Sport</th><th>Player · Stat</th><th>Pick</th><th>Result</th></tr>`;
     settled.slice(0, 60).forEach(p => {
-      const stat   = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
-      const d      = new Date(p.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+      const stat    = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+      const d       = new Date(p.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
       const resHtml = p.result==='W'
-        ? '<span style="color:#00ff88;font-weight:bold">WIN</span>'
+        ? '<span style="color:#00ff88;font-weight:700">WIN</span>'
         : p.result==='L'
-        ? '<span style="color:#ff4444;font-weight:bold">LOSS</span>'
-        : '<span style="color:#666">VOID</span>';
+        ? '<span style="color:#ff4444;font-weight:700">LOSS</span>'
+        : '<span style="color:#333">VOID</span>';
       html += `<tr>
-        <td style="color:#555;font-size:0.8em">${d}</td>
-        <td style="color:#888;font-size:0.8em">${p.sport.replace(/[🏀🏈🏒⚾⚽]/u,'').trim()}</td>
-        <td style="color:#ddd">${p.player} <span style="color:#555;font-size:0.8em">${stat} ${p.line}</span></td>
+        <td style="color:#333;font-size:0.8em">${d}</td>
+        <td style="color:#444;font-size:0.8em">${p.sport.replace(/[🏀🏈🏒⚾⚽]/u,'').trim()}</td>
+        <td style="color:#bbb">${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span></td>
         <td>${pickHtml(p.pick)}</td>
         <td>${resHtml}</td>
       </tr>`;
@@ -797,7 +914,7 @@ function buildHistoryTab() {
   }
 
   if (!pending.length && !settled.length) {
-    html += `<div class="no-games" style="margin-top:16px">No picks saved yet — load a sport tab to generate picks.</div>`;
+    html += `<div class="no-games" style="margin-top:20px">No picks saved yet — load a sport tab to generate picks.</div>`;
   }
 
   container.innerHTML = html;
@@ -825,23 +942,22 @@ function buildAllTab() {
   if (allPropBets.length) {
     allPropBets.sort((a, b) => b.score - a.score);
     const top10 = allPropBets.slice(0, 10);
-    html += `<div class="value-box" style="margin-top:16px">
-      <h3>🎯 SLATE-WIDE TOP PICKS — Best Bet Per Game (${top10.length} games loaded)</h3>`;
+    html += `<div class="hero-section" style="margin-top:${allValueBets.length?'16px':'0'}">
+      <div class="hero-title">🎯 Today's Best Prop Picks &nbsp;<span style="color:#1a3a1a;font-size:0.85em">${top10.length} games loaded</span></div>`;
     top10.forEach((v, i) => {
-      const tierHtml = i < 2
-        ? '<span class="tier-a">A★</span>'
-        : '<span class="tier-b">B</span>';
+      const tierHtml = i < 2 ? '<span class="tier-a">A★</span>' : '<span class="tier-b">B</span>';
       const stat = v.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
-      const reason = propReason(parseFloat(v.pct), v.bookCount, v.vig);
-      html += `<div class="value-item" style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
+      html += `<div class="hero-pick rank-${i+1}">
+        <div class="hero-rank">${i+1}</div>
         ${tierHtml}
-        &nbsp;<strong>${v.player}</strong>
-        &nbsp;${pickHtml(v.pick)} ${v.line} ${stat}
-        &nbsp;${badge(v.conf)} ${v.pct}%
-        &nbsp;<span class="match-ref" style="margin-left:4px">${v.match} · ${v.sport} · ${v.bookCount} books · ${reason}</span>
+        <div style="flex:1;min-width:0">
+          <div class="hero-player">${v.player} &nbsp;${pickHtml(v.pick)} <span style="color:#ffcc00">${v.line}</span> <span style="color:#444;font-weight:400">${stat}</span></div>
+          <div class="hero-detail">${v.match} &nbsp;·&nbsp; ${v.sport} &nbsp;·&nbsp; ${v.bookCount} books &nbsp;·&nbsp; ${v.pct}% implied</div>
+        </div>
+        <div style="flex-shrink:0">${badge(v.conf)}</div>
       </div>`;
     });
-    html += `<p style="color:#555;font-size:0.75em;margin-top:8px">Score = edge×0.40 + consensus×0.30 + fair_price×0.20 − vig_penalty×0.10 | Only real API signals used — no projected minutes, usage, or matchup data.</p></div>`;
+    html += `<p style="color:#1e2e1e;font-size:0.7em;margin-top:14px">Ranked by: edge × consensus × vig fairness. No stats API — market signals only.</p></div>`;
   }
 
   if (!html) {
