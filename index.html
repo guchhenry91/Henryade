@@ -102,10 +102,10 @@ const allValueBets = [];
 const loadedTabs = new Set(['soccer']); // soccer loads on startup
 
 const SPORT_TABS = {
-  nba: { key: 'basketball_nba', label: '🏀 NBA', region: 'us', markets: 'player_points,player_rebounds,player_assists,player_threes' },
-  nfl: { key: 'americanfootball_nfl', label: '🏈 NFL', region: 'us', markets: 'player_pass_tds,player_rush_yds,player_receiving_yds,player_pass_yds' },
-  nhl: { key: 'icehockey_nhl', label: '🏒 NHL', region: 'us', markets: 'player_points' },
-  mlb: { key: 'baseball_mlb', label: '⚾ MLB', region: 'us', markets: 'player_hits,player_home_runs,player_strikeouts,player_total_bases' },
+  nba: { key: 'basketball_nba', label: '🏀 NBA', region: 'us', markets: 'h2h,spreads,totals' },
+  nfl: { key: 'americanfootball_nfl', label: '🏈 NFL', region: 'us', markets: 'h2h,spreads,totals' },
+  nhl: { key: 'icehockey_nhl', label: '🏒 NHL', region: 'us', markets: 'h2h,spreads,totals' },
+  mlb: { key: 'baseball_mlb', label: '⚾ MLB', region: 'us', markets: 'h2h,spreads,totals' },
 };
 
 function showTab(name) {
@@ -332,71 +332,84 @@ async function buildSoccer(forceRefresh) {
   container.innerHTML = html || '<div class="no-games">No soccer data.</div>';
 }
 
-// ── PLAYER PROPS builder ───────────────────────────────────────────────────────
-async function buildPlayerProps(tabId, sportKey, label, region, propMarkets, forceRefresh) {
+// ── SPORT ODDS builder (h2h + spreads + totals, top 15 by edge) ───────────────
+async function buildPlayerProps(tabId, sportKey, label, region, markets, forceRefresh) {
   const container = document.getElementById(tabId);
   try {
-    // ONE fetch only — props response includes game/team info
-    const propsData = await apiFetch(sportKey, propMarkets, region, forceRefresh);
+    const data = await apiFetch(sportKey, markets, region, forceRefresh);
 
-    const upcoming = (propsData || []).filter(e => {
+    const now = new Date();
+    const upcoming = (data || []).filter(e => {
       const d = new Date(e.commence_time);
-      const now = new Date();
-      return d >= now && d <= new Date(now.getTime() + 2 * 24 * 60 * 60 * 1000);
+      return d >= now && d <= new Date(now.getTime() + 4 * 24 * 60 * 60 * 1000);
     });
 
     if (upcoming.length === 0) {
-      container.innerHTML = `<div class="sport-section"><div class="sport-title">${label}</div><div class="no-games">No games in next 48 hours.</div></div>`;
+      container.innerHTML = `<div class="sport-section"><div class="sport-title">${label}</div><div class="no-games">No games in next 4 days.</div></div>`;
       return;
     }
 
-    let html = `<div class="sport-section"><div class="sport-title">${label} — ${upcoming.length} games</div>`;
-    let totalProps = 0;
-
-    upcoming.forEach(ev => {
+    // Score each game by best available edge, show top 15
+    const games = upcoming.map(ev => {
       const home = ev.home_team, away = ev.away_team;
-      html += `<div class="props-card"><div class="props-title">${home} vs ${away} <span style="color:#555;font-size:0.8em">${gameDate(ev.commence_time)}</span></div>`;
+      const h2h = bestOdds(ev, 'h2h');
+      const homeOdds = h2h[home], awayOdds = h2h[away], drawOdds = h2h['Draw'];
 
-      const playerLines = {};
-
+      // Best spread odds
+      let bestHomeSpread = null, bestAwaySpread = null, homeSpreadLine = null;
       (ev.bookmakers || []).forEach(bk => {
-        (bk.markets || []).forEach(mkt => {
-          (mkt.outcomes || []).forEach(o => {
-            const key = `${o.description || o.name}__${mkt.key}`;
-            if (!playerLines[key]) playerLines[key] = { player: o.description || o.name, market: mkt.key, line: o.point, bestOver: 0, bestUnder: 0 };
-            if (o.name === 'Over' && o.price > playerLines[key].bestOver) playerLines[key].bestOver = o.price;
-            if (o.name === 'Under' && o.price > playerLines[key].bestUnder) playerLines[key].bestUnder = o.price;
-          });
+        const mkt = (bk.markets || []).find(m => m.key === 'spreads');
+        if (!mkt) return;
+        (mkt.outcomes || []).forEach(o => {
+          if (o.name === home && (!bestHomeSpread || o.price > bestHomeSpread)) { bestHomeSpread = o.price; homeSpreadLine = o.point; }
+          if (o.name === away && (!bestAwaySpread || o.price > bestAwaySpread)) bestAwaySpread = o.price;
         });
       });
 
-      const props = Object.values(playerLines).filter(p => p.bestOver && p.bestUnder && p.line);
-      props.sort((a, b) => b.bestOver - a.bestOver);
-      const show = props.slice(0, 20);
-      totalProps += show.length;
-
-      if (show.length === 0) { html += `<div class="no-games">No player props yet for this game.</div></div>`; return; }
-
-      html += `<table class="odds-table">
-        <tr><th>Player</th><th>Market</th><th>Line</th><th>Best Over</th><th>Best Under</th><th>Over Imp%</th><th>Under Imp%</th></tr>`;
-
-      show.forEach(p => {
-        const overImp = (impliedProb(p.bestOver) * 100).toFixed(1);
-        const underImp = (impliedProb(p.bestUnder) * 100).toFixed(1);
-        const mktLabel = p.market.replace('player_', '').replace(/_/g, ' ');
-        const overVal = parseFloat(overImp) < 45 ? `<span class="pos">${overImp}%</span>` : `<span class="neutral">${overImp}%</span>`;
-        const underVal = parseFloat(underImp) < 45 ? `<span class="pos">${underImp}%</span>` : `<span class="neutral">${underImp}%</span>`;
-
-        html += `<tr>
-          <td class="prop-player">${p.player}</td>
-          <td style="color:#aaa;font-size:0.85em">${mktLabel}</td>
-          <td style="color:#ffcc00">${p.line}</td>
-          <td>${p.bestOver} <span style="color:#555;font-size:0.75em">(${overVal})</span></td>
-          <td>${p.bestUnder} <span style="color:#555;font-size:0.75em">(${underVal})</span></td>
-          <td>${overVal}</td>
-          <td>${underVal}</td>
-        </tr>`;
+      // Best totals
+      let bestOver = null, bestUnder = null, totalLine = null;
+      (ev.bookmakers || []).forEach(bk => {
+        const mkt = (bk.markets || []).find(m => m.key === 'totals');
+        if (!mkt) return;
+        (mkt.outcomes || []).forEach(o => {
+          if (o.name === 'Over' && (!bestOver || o.price > bestOver)) { bestOver = o.price; totalLine = o.point; }
+          if (o.name === 'Under' && (!bestUnder || o.price > bestUnder)) bestUnder = o.price;
+        });
       });
+
+      // Best edge across all markets (crude: lowest implied = best value on that side)
+      const edges = [];
+      if (homeOdds) edges.push(impliedProb(homeOdds));
+      if (awayOdds) edges.push(impliedProb(awayOdds));
+      if (bestOver) edges.push(impliedProb(bestOver));
+      if (bestUnder) edges.push(impliedProb(bestUnder));
+      const bestEdge = edges.length ? Math.min(...edges) : 1;
+
+      return { ev, home, away, homeOdds, awayOdds, drawOdds, bestHomeSpread, bestAwaySpread, homeSpreadLine, bestOver, bestUnder, totalLine, bestEdge };
+    });
+
+    // Sort by lowest implied prob (= longest odds = most value potential), take top 15
+    games.sort((a, b) => a.bestEdge - b.bestEdge);
+    const show = games.slice(0, 15);
+
+    let html = `<div class="sport-section"><div class="sport-title">${label} — Top ${show.length} of ${upcoming.length} games</div>`;
+
+    show.forEach(({ ev, home, away, homeOdds, awayOdds, drawOdds, bestHomeSpread, bestAwaySpread, homeSpreadLine, bestOver, bestUnder, totalLine }) => {
+      html += `<div class="match-card">
+        <div class="match-title">
+          <span>${home} vs ${away}</span>
+          <span class="match-time">${gameDate(ev.commence_time)}</span>
+        </div>
+        <table class="odds-table">
+          <tr><th>Market</th><th>Selection</th><th>Best Odds</th><th>Imp%</th></tr>`;
+
+      if (homeOdds) html += `<tr><td>Moneyline</td><td>${home}</td><td>${homeOdds}</td><td>${(impliedProb(homeOdds)*100).toFixed(1)}%</td></tr>`;
+      if (drawOdds) html += `<tr><td>Moneyline</td><td>Draw</td><td>${drawOdds}</td><td>${(impliedProb(drawOdds)*100).toFixed(1)}%</td></tr>`;
+      if (awayOdds) html += `<tr><td>Moneyline</td><td>${away}</td><td>${awayOdds}</td><td>${(impliedProb(awayOdds)*100).toFixed(1)}%</td></tr>`;
+      if (bestHomeSpread) html += `<tr><td>Spread ${homeSpreadLine > 0 ? '+' : ''}${homeSpreadLine}</td><td>${home}</td><td>${bestHomeSpread}</td><td>${(impliedProb(bestHomeSpread)*100).toFixed(1)}%</td></tr>`;
+      if (bestAwaySpread) html += `<tr><td>Spread</td><td>${away}</td><td>${bestAwaySpread}</td><td>${(impliedProb(bestAwaySpread)*100).toFixed(1)}%</td></tr>`;
+      if (bestOver && totalLine) html += `<tr><td>Total ${totalLine}+</td><td>Over</td><td>${bestOver}</td><td>${(impliedProb(bestOver)*100).toFixed(1)}%</td></tr>`;
+      if (bestUnder && totalLine) html += `<tr><td>Total ${totalLine}-</td><td>Under</td><td>${bestUnder}</td><td>${(impliedProb(bestUnder)*100).toFixed(1)}%</td></tr>`;
 
       html += `</table></div>`;
     });
