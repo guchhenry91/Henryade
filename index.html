@@ -324,12 +324,22 @@ function renderProps(propData, title) {
     });
   });
 
-  const props = Object.values(lines)
+  const allProps = Object.values(lines)
     .filter(p=>p.bestOver>0 && p.bestUnder>0 && p.line!=null)
     .map(p=>({...p, c:propConf(p.bestOver,p.bestUnder)}))
     .filter(p=>p.c)
-    .sort((a,b)=>parseFloat(b.c.pct)-parseFloat(a.c.pct))
-    .slice(0,10);
+    // Filter trivial: UNDER on a 0.5 line is nearly always ~99% and has no betting value
+    .filter(p => !(p.c.pick==='UNDER' && p.line<=0.5))
+    .sort((a,b)=>parseFloat(b.c.pct)-parseFloat(a.c.pct));
+
+  // Cap at 3 per market type so stats are diverse (hits, RBIs, total bases, etc.)
+  const mktCount = {};
+  const props = [];
+  for (const p of allProps) {
+    mktCount[p.market] = (mktCount[p.market]||0);
+    if (mktCount[p.market] < 3) { props.push(p); mktCount[p.market]++; }
+    if (props.length >= 10) break;
+  }
 
   if (!props.length) return `<div class="no-games">No player props available.</div>`;
 
