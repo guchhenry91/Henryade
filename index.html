@@ -102,10 +102,10 @@ const allValueBets = [];
 const loadedTabs = new Set(['soccer']); // soccer loads on startup
 
 const SPORT_TABS = {
-  nba: { key: 'basketball_nba', label: '🏀 NBA', region: 'us', markets: 'h2h,spreads,totals' },
-  nfl: { key: 'americanfootball_nfl', label: '🏈 NFL', region: 'us', markets: 'h2h,spreads,totals' },
-  nhl: { key: 'icehockey_nhl', label: '🏒 NHL', region: 'us', markets: 'h2h,spreads,totals' },
-  mlb: { key: 'baseball_mlb', label: '⚾ MLB', region: 'us', markets: 'h2h,spreads,totals' },
+  nba: { key: 'basketball_nba', label: '🏀 NBA', region: 'us', markets: 'player_points,player_rebounds,player_assists,player_threes' },
+  nfl: { key: 'americanfootball_nfl', label: '🏈 NFL', region: 'us', markets: 'player_pass_yds,player_rush_yds,player_receiving_yds,player_pass_tds' },
+  nhl: { key: 'icehockey_nhl', label: '🏒 NHL', region: 'us', markets: 'player_points,player_goals,player_shots_on_goal' },
+  mlb: { key: 'baseball_mlb', label: '⚾ MLB', region: 'us', markets: 'batter_hits,batter_home_runs,pitcher_strikeouts,batter_total_bases' },
 };
 
 function showTab(name) {
@@ -332,87 +332,105 @@ async function buildSoccer(forceRefresh) {
   container.innerHTML = html || '<div class="no-games">No soccer data.</div>';
 }
 
-// ── SPORT ODDS builder (h2h + spreads + totals, top 15 by edge) ───────────────
-async function buildPlayerProps(tabId, sportKey, label, region, markets, forceRefresh) {
+// ── PLAYER PROPS builder (per-event endpoint — required for props) ─────────────
+async function buildPlayerProps(tabId, sportKey, label, region, propMarkets, forceRefresh) {
   const container = document.getElementById(tabId);
+  container.innerHTML = `<div class="loading">Loading ${label} props...</div>`;
   try {
-    const data = await apiFetch(sportKey, markets, region, forceRefresh);
+    // Step 1: get event list (no markets = just metadata, cheap call)
+    const eventsUrl = `${BASE}/sports/${sportKey}/events?apiKey=${API_KEY}&dateFormat=iso`;
+    const evCacheKey = `events_${sportKey}`;
+    let events;
+    if (!forceRefresh) events = getCache(evCacheKey);
+    if (!events) {
+      const r = await fetch(eventsUrl);
+      const remaining = r.headers.get('x-requests-remaining');
+      const used = r.headers.get('x-requests-used');
+      if (remaining) document.getElementById('tokensLeft').textContent = remaining;
+      if (used) document.getElementById('tokensUsed').textContent = used;
+      if (!r.ok) throw new Error(`API ${r.status}: ${sportKey} events`);
+      events = await r.json();
+      setCache(evCacheKey, events);
+    }
 
+    // Filter to next 48 hours, take first 3 games only (saves tokens)
     const now = new Date();
-    const upcoming = (data || []).filter(e => {
-      const d = new Date(e.commence_time);
-      return d >= now && d <= new Date(now.getTime() + 4 * 24 * 60 * 60 * 1000);
-    });
+    const cutoff = new Date(now.getTime() + 48 * 60 * 60 * 1000);
+    const upcoming = (events || [])
+      .filter(e => { const d = new Date(e.commence_time); return d >= now && d <= cutoff; })
+      .slice(0, 3);
 
     if (upcoming.length === 0) {
-      container.innerHTML = `<div class="sport-section"><div class="sport-title">${label}</div><div class="no-games">No games in next 4 days.</div></div>`;
+      container.innerHTML = `<div class="sport-section"><div class="sport-title">${label}</div><div class="no-games">No games in next 48 hours.</div></div>`;
       return;
     }
 
-    // Score each game by best available edge, show top 15
-    const games = upcoming.map(ev => {
+    // Step 2: fetch props per event
+    let html = `<div class="sport-section"><div class="sport-title">${label} — ${upcoming.length} games (top 15 props each)</div>`;
+
+    for (const ev of upcoming) {
       const home = ev.home_team, away = ev.away_team;
-      const h2h = bestOdds(ev, 'h2h');
-      const homeOdds = h2h[home], awayOdds = h2h[away], drawOdds = h2h['Draw'];
+      html += `<div class="props-card"><div class="props-title">${home} vs ${away} <span style="color:#555;font-size:0.8em">${gameDate(ev.commence_time)}</span></div>`;
 
-      // Best spread odds
-      let bestHomeSpread = null, bestAwaySpread = null, homeSpreadLine = null;
-      (ev.bookmakers || []).forEach(bk => {
-        const mkt = (bk.markets || []).find(m => m.key === 'spreads');
-        if (!mkt) return;
-        (mkt.outcomes || []).forEach(o => {
-          if (o.name === home && (!bestHomeSpread || o.price > bestHomeSpread)) { bestHomeSpread = o.price; homeSpreadLine = o.point; }
-          if (o.name === away && (!bestAwaySpread || o.price > bestAwaySpread)) bestAwaySpread = o.price;
+      try {
+        const propCacheKey = `props_${ev.id}_${propMarkets}`;
+        let propData;
+        if (!forceRefresh) propData = getCache(propCacheKey);
+        if (!propData) {
+          const propUrl = `${BASE}/sports/${sportKey}/events/${ev.id}/odds?apiKey=${API_KEY}&regions=${region}&markets=${propMarkets}&oddsFormat=decimal`;
+          const pr = await fetch(propUrl);
+          const remaining = pr.headers.get('x-requests-remaining');
+          const used = pr.headers.get('x-requests-used');
+          if (remaining) document.getElementById('tokensLeft').textContent = remaining;
+          if (used) document.getElementById('tokensUsed').textContent = used;
+          if (!pr.ok) throw new Error(`API ${pr.status}`);
+          propData = await pr.json();
+          setCache(propCacheKey, propData);
+        }
+
+        // Aggregate best over/under per player+market across all bookmakers
+        const playerLines = {};
+        (propData.bookmakers || []).forEach(bk => {
+          (bk.markets || []).forEach(mkt => {
+            (mkt.outcomes || []).forEach(o => {
+              const key = `${o.description || o.name}__${mkt.key}`;
+              if (!playerLines[key]) playerLines[key] = { player: o.description || o.name, market: mkt.key, line: o.point, bestOver: 0, bestUnder: 0 };
+              if (o.name === 'Over' && o.price > playerLines[key].bestOver) playerLines[key].bestOver = o.price;
+              if (o.name === 'Under' && o.price > playerLines[key].bestUnder) playerLines[key].bestUnder = o.price;
+              if (!o.name.match(/over|under/i) && o.price > (playerLines[key].bestOver || 0)) playerLines[key].bestOver = o.price;
+            });
+          });
         });
-      });
 
-      // Best totals
-      let bestOver = null, bestUnder = null, totalLine = null;
-      (ev.bookmakers || []).forEach(bk => {
-        const mkt = (bk.markets || []).find(m => m.key === 'totals');
-        if (!mkt) return;
-        (mkt.outcomes || []).forEach(o => {
-          if (o.name === 'Over' && (!bestOver || o.price > bestOver)) { bestOver = o.price; totalLine = o.point; }
-          if (o.name === 'Under' && (!bestUnder || o.price > bestUnder)) bestUnder = o.price;
+        // Sort by best over odds desc, take top 15
+        const props = Object.values(playerLines)
+          .filter(p => p.bestOver > 0 && p.line != null)
+          .sort((a, b) => b.bestOver - a.bestOver)
+          .slice(0, 15);
+
+        if (props.length === 0) { html += `<div class="no-games">No props available yet.</div></div>`; continue; }
+
+        html += `<table class="odds-table">
+          <tr><th>Player</th><th>Market</th><th>Line</th><th>Best Over</th><th>Best Under</th></tr>`;
+
+        props.forEach(p => {
+          const mktLabel = p.market.replace(/^(player_|batter_|pitcher_)/, '').replace(/_/g, ' ');
+          const overImp = p.bestOver ? (impliedProb(p.bestOver) * 100).toFixed(1) : '—';
+          const underImp = p.bestUnder ? (impliedProb(p.bestUnder) * 100).toFixed(1) : '—';
+          html += `<tr>
+            <td class="prop-player">${p.player}</td>
+            <td style="color:#aaa;font-size:0.85em">${mktLabel}</td>
+            <td style="color:#ffcc00">${p.line}</td>
+            <td>${p.bestOver || '—'} <span style="color:#555;font-size:0.75em">(${overImp}%)</span></td>
+            <td>${p.bestUnder || '—'} <span style="color:#555;font-size:0.75em">(${underImp}%)</span></td>
+          </tr>`;
         });
-      });
-
-      // Best edge across all markets (crude: lowest implied = best value on that side)
-      const edges = [];
-      if (homeOdds) edges.push(impliedProb(homeOdds));
-      if (awayOdds) edges.push(impliedProb(awayOdds));
-      if (bestOver) edges.push(impliedProb(bestOver));
-      if (bestUnder) edges.push(impliedProb(bestUnder));
-      const bestEdge = edges.length ? Math.min(...edges) : 1;
-
-      return { ev, home, away, homeOdds, awayOdds, drawOdds, bestHomeSpread, bestAwaySpread, homeSpreadLine, bestOver, bestUnder, totalLine, bestEdge };
-    });
-
-    // Sort by lowest implied prob (= longest odds = most value potential), take top 15
-    games.sort((a, b) => a.bestEdge - b.bestEdge);
-    const show = games.slice(0, 15);
-
-    let html = `<div class="sport-section"><div class="sport-title">${label} — Top ${show.length} of ${upcoming.length} games</div>`;
-
-    show.forEach(({ ev, home, away, homeOdds, awayOdds, drawOdds, bestHomeSpread, bestAwaySpread, homeSpreadLine, bestOver, bestUnder, totalLine }) => {
-      html += `<div class="match-card">
-        <div class="match-title">
-          <span>${home} vs ${away}</span>
-          <span class="match-time">${gameDate(ev.commence_time)}</span>
-        </div>
-        <table class="odds-table">
-          <tr><th>Market</th><th>Selection</th><th>Best Odds</th><th>Imp%</th></tr>`;
-
-      if (homeOdds) html += `<tr><td>Moneyline</td><td>${home}</td><td>${homeOdds}</td><td>${(impliedProb(homeOdds)*100).toFixed(1)}%</td></tr>`;
-      if (drawOdds) html += `<tr><td>Moneyline</td><td>Draw</td><td>${drawOdds}</td><td>${(impliedProb(drawOdds)*100).toFixed(1)}%</td></tr>`;
-      if (awayOdds) html += `<tr><td>Moneyline</td><td>${away}</td><td>${awayOdds}</td><td>${(impliedProb(awayOdds)*100).toFixed(1)}%</td></tr>`;
-      if (bestHomeSpread) html += `<tr><td>Spread ${homeSpreadLine > 0 ? '+' : ''}${homeSpreadLine}</td><td>${home}</td><td>${bestHomeSpread}</td><td>${(impliedProb(bestHomeSpread)*100).toFixed(1)}%</td></tr>`;
-      if (bestAwaySpread) html += `<tr><td>Spread</td><td>${away}</td><td>${bestAwaySpread}</td><td>${(impliedProb(bestAwaySpread)*100).toFixed(1)}%</td></tr>`;
-      if (bestOver && totalLine) html += `<tr><td>Total ${totalLine}+</td><td>Over</td><td>${bestOver}</td><td>${(impliedProb(bestOver)*100).toFixed(1)}%</td></tr>`;
-      if (bestUnder && totalLine) html += `<tr><td>Total ${totalLine}-</td><td>Under</td><td>${bestUnder}</td><td>${(impliedProb(bestUnder)*100).toFixed(1)}%</td></tr>`;
-
-      html += `</table></div>`;
-    });
+        html += `</table>`;
+      } catch (propErr) {
+        html += `<div class="error">⚠ Props unavailable: ${propErr.message}</div>`;
+      }
+      html += `</div>`;
+    }
 
     html += `</div>`;
     container.innerHTML = html;
