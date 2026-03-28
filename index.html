@@ -264,8 +264,169 @@ function savePickToHistory(pick) {
 function markResult(id, result) {
   const h = getHistory();
   const p = h.find(x => x.id === id);
-  if (p) { p.result = result; try { localStorage.setItem(HISTORY_KEY, JSON.stringify(h)); } catch {} }
+  if (p) { p.result = result; p.autoGraded = false; try { localStorage.setItem(HISTORY_KEY, JSON.stringify(h)); } catch {} }
   buildHistoryTab();
+}
+
+// ── AUTO-GRADING ENGINE ───────────────────────────────────────────────────────
+// Uses ESPN's free public API to fetch completed game box scores and auto-mark
+// pending picks as W / L / V the next morning on page load.
+
+const ESPN_CFG = {
+  'NBA': { sport: 'basketball',       league: 'nba' },
+  'NFL': { sport: 'americanfootball', league: 'nfl' },
+  'NHL': { sport: 'hockey',           league: 'nhl' },
+  'MLB': { sport: 'baseball',         league: 'mlb' },
+};
+
+// Map Odds API market keys → ESPN boxscore stat keys (league-scoped where needed)
+const MARKET_STAT_KEY = {
+  player_points:        { nba: 'points',                      nhl: 'points'        },
+  player_rebounds:      { nba: 'rebounds'                                           },
+  player_assists:       { nba: 'assists',                     nhl: 'assists'        },
+  player_threes:        { nba: 'threePointFieldGoalsMade'                           },
+  player_pass_yds:      { nfl: 'passingYards'                                       },
+  player_rush_yds:      { nfl: 'rushingYards'                                       },
+  player_receiving_yds: { nfl: 'receivingYards'                                     },
+  player_pass_tds:      { nfl: 'passingTouchdowns'                                  },
+  player_receptions:    { nfl: 'receptions'                                         },
+  player_shots_on_goal: { nhl: 'shots'                                              },
+  player_goals:         { nhl: 'goals'                                              },
+  batter_home_runs:     { mlb: 'homeRuns'                                           },
+  batter_hits:          { mlb: 'hits'                                               },
+  batter_rbis:          { mlb: 'rbi'                                                },
+  batter_runs_scored:   { mlb: 'runs'                                               },
+  batter_total_bases:   { mlb: 'totalBases'                                         },
+};
+
+// Fuzzy name match on last name (handles minor ESPN vs Odds API name variations)
+function nameMatch(a, b) {
+  const n = s => s.toLowerCase().replace(/[^a-z\s]/g, '').trim();
+  const [na, nb] = [n(a), n(b)];
+  if (na === nb) return true;
+  return na.split(' ').pop() === nb.split(' ').pop();
+}
+
+// Format a date string to YYYYMMDD for ESPN scoreboard endpoint
+function espnDateStr(iso) {
+  const d = new Date(iso);
+  return `${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}`;
+}
+
+// Extract a player's stat value from an ESPN game summary boxscore
+function playerStatFromSummary(summary, playerName, statKey) {
+  for (const team of (summary?.boxscore?.players || [])) {
+    for (const grp of (team.statistics || [])) {
+      const idx = (grp.keys || []).indexOf(statKey);
+      if (idx === -1) continue;
+      for (const ath of (grp.athletes || [])) {
+        if (nameMatch(playerName, ath.athlete?.displayName || '')) {
+          const v = parseFloat(ath.stats?.[idx]);
+          if (!isNaN(v)) return v;
+        }
+      }
+    }
+  }
+  return null;
+}
+
+// Show a brief toast notification in the bottom-right corner
+function showToast(msg, color) {
+  const c = color || '#00ff88';
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.style.cssText = `position:fixed;bottom:20px;right:20px;background:${c}15;color:${c};border:1px solid ${c}40;padding:10px 18px;border-radius:8px;font-size:0.82em;font-weight:600;z-index:9999;transition:opacity .5s`;
+  document.body.appendChild(t);
+  setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 500); }, 3500);
+}
+
+// Auto-grade all pending picks from before today using ESPN API
+async function autoGrade() {
+  const history = getHistory();
+  const today   = new Date().toDateString();
+  const pending = history.filter(p => !p.result && new Date(p.date).toDateString() !== today);
+  if (!pending.length) return 0;
+
+  let graded = 0;
+
+  // Group pending picks by sport + date to minimise ESPN API calls
+  const groups = {};
+  pending.forEach(pick => {
+    const raw      = pick.sport.replace(/\p{Emoji}/gu, '').trim().toUpperCase();
+    const sportKey = Object.keys(ESPN_CFG).find(k => raw.includes(k));
+    if (!sportKey) return;
+    const gk = `${sportKey}__${espnDateStr(pick.date)}`;
+    if (!groups[gk]) groups[gk] = {
+      cfg:     ESPN_CFG[sportKey],
+      league:  sportKey.toLowerCase(),
+      dateStr: espnDateStr(pick.date),
+      picks:   [],
+    };
+    groups[gk].picks.push(pick);
+  });
+
+  for (const grp of Object.values(groups)) {
+    try {
+      const boardRes = await fetch(
+        `https://site.api.espn.com/apis/site/v2/sports/${grp.cfg.sport}/${grp.cfg.league}/scoreboard?dates=${grp.dateStr}&limit=50`
+      );
+      if (!boardRes.ok) continue;
+      const board  = await boardRes.json();
+      const events = board.events || [];
+
+      for (const pick of grp.picks) {
+        try {
+          // Find the ESPN event matching this pick's game
+          const [partA, partB] = (pick.match || '').split(/\s+vs\.?\s+/i).map(s => s.trim().toLowerCase());
+          const matchEv = events.find(ev => {
+            const names = (ev.competitions?.[0]?.competitors || [])
+              .map(c => (c.team?.displayName || c.team?.name || '').toLowerCase());
+            return names.some(n => partA && n.includes(partA.split(' ').pop())) ||
+                   names.some(n => partB && n.includes(partB.split(' ').pop()));
+          });
+          if (!matchEv) continue;
+
+          // Only grade completed games
+          if (!matchEv.competitions?.[0]?.status?.type?.completed) continue;
+
+          if (pick.market === 'match_winner') {
+            // Grade from scoreboard competitor data — no summary fetch needed
+            const comp        = matchEv.competitions?.[0]?.competitors || [];
+            const winnerComp  = comp.find(c => c.winner === true);
+            const actualWinner = winnerComp ? (winnerComp.team?.displayName || '') : 'Draw';
+            const result = nameMatch(pick.pick, actualWinner) ? 'W' : 'L';
+            const hp = history.find(x => x.id === pick.id);
+            if (hp) { hp.result = result; hp.autoGraded = true; graded++; }
+          } else {
+            // Grade player prop from box score summary
+            const statKey = (MARKET_STAT_KEY[pick.market] || {})[grp.league];
+            if (!statKey) continue;
+
+            const sumRes = await fetch(
+              `https://site.api.espn.com/apis/site/v2/sports/${grp.cfg.sport}/${grp.cfg.league}/summary?event=${matchEv.id}`
+            );
+            if (!sumRes.ok) continue;
+            const summary    = await sumRes.json();
+            const actualStat = playerStatFromSummary(summary, pick.player, statKey);
+            if (actualStat === null) continue;
+
+            const result = actualStat === pick.line ? 'V'
+              : pick.pick === 'OVER' ? (actualStat > pick.line ? 'W' : 'L')
+              : (actualStat < pick.line ? 'W' : 'L');
+
+            const hp = history.find(x => x.id === pick.id);
+            if (hp) { hp.result = result; hp.autoGraded = true; graded++; }
+          }
+        } catch { /* skip individual pick on error */ }
+      }
+    } catch { /* skip sport/date group on error */ }
+  }
+
+  if (graded > 0) {
+    try { localStorage.setItem(HISTORY_KEY, JSON.stringify(history)); } catch {}
+    showToast(`✓ Auto-graded ${graded} pick${graded > 1 ? 's' : ''}`);
+  }
+  return graded;
 }
 
 // Returns calibration multipliers for OVER and UNDER based on historical win rates.
@@ -420,7 +581,8 @@ function pickHtml(pick) {
 }
 
 // ── Winner prediction box ─────────────────────────────────────────────────────
-function winnerBox(home, away, homeOdds, awayOdds, drawOdds) {
+// eventDate + sportLabel: when provided, the pick is saved to grading history
+function winnerBox(home, away, homeOdds, awayOdds, drawOdds, eventDate, sportLabel) {
   if (!homeOdds || !awayOdds) return '';
   const hi=1/homeOdds, ai=1/awayOdds, di=drawOdds?1/drawOdds:0;
   const tot=hi+ai+di;
@@ -433,7 +595,25 @@ function winnerBox(home, away, homeOdds, awayOdds, drawOdds) {
 
   const conf = winnerPct>=65 ? 'HIGH' : winnerPct>=55 ? 'MED' : 'LOW';
 
-  const row = (name, pct, cls, isMed) => `
+  // Save this pick to the grading history so it can be auto-graded tomorrow
+  if (sportLabel && eventDate) {
+    savePickToHistory({
+      id:     `${new Date(eventDate).toDateString()}_match_${home}_${away}`.replace(/\W+/g, '_'),
+      date:   eventDate,
+      sport:  sportLabel,
+      match:  `${home} vs ${away}`,
+      type:   'match_winner',
+      player: winnerName,
+      market: 'match_winner',
+      line:   null,
+      pick:   winnerName,
+      pct:    winnerPct.toFixed(1),
+      conf:   conf,
+      result: null,
+    });
+  }
+
+  const row = (name, pct, cls) => `
     <div class="winner-row">
       <span class="winner-name ${name===winnerName?'pick':''}">${name}</span>
       <div class="bar-wrap"><div class="bar-fill ${cls}" style="width:${Math.min(pct,100).toFixed(0)}%"></div></div>
@@ -442,9 +622,9 @@ function winnerBox(home, away, homeOdds, awayOdds, drawOdds) {
 
   return `<div class="winner-box">
     <div class="winner-box-title">🏆 WINNER PREDICTION</div>
-    ${row(home, hp, '', false)}
-    ${drawOdds ? row('Draw', dp, 'draw', true) : ''}
-    ${row(away, ap, 'away', false)}
+    ${row(home, hp, '')}
+    ${drawOdds ? row('Draw', dp, 'draw') : ''}
+    ${row(away, ap, 'away')}
     <div class="winner-summary">
       Pick: <strong style="color:${winnerName!=='Draw'?'#00ff88':'#aaa'}">${winnerName}</strong>
       &nbsp;${badge(conf)}&nbsp;${winnerPct.toFixed(1)}% confidence
@@ -691,7 +871,7 @@ async function buildSoccer(force) {
 
         html += `<div class="match-card">
           <div class="match-title"><span>${home} vs ${away}</span><span class="match-time">${gameDate(ev.commence_time)}</span></div>
-          ${winnerBox(home,away,hO,aO,dO)}
+          ${winnerBox(home,away,hO,aO,dO,ev.commence_time,lg.label)}
           <table class="odds-table">
             <tr><th>Outcome</th><th>Model%</th><th>Odds</th><th>Imp%</th><th>Edge</th></tr>
             <tr><td>${home}</td><td>${(hw*100).toFixed(1)}%</td><td>${hO}</td><td>${(impliedProb(hO)*100).toFixed(1)}%</td><td>${edgeHtml(hwE.toFixed(1))}</td></tr>
@@ -767,7 +947,7 @@ async function buildSportTab(name, force) {
         </div>`;
 
       // Winner box
-      if (hO && aO) html += winnerBox(home, away, hO, aO, null);
+      if (hO && aO) html += winnerBox(home, away, hO, aO, null, ev.commence_time, s.label);
 
       // Player props
       try {
@@ -866,17 +1046,27 @@ function buildHistoryTab() {
   // ── Pending picks ──────────────────────────────────────────────────────────
   if (pending.length) {
     html += `<div style="margin-top:16px">
-      <div class="section-hdr">⏳ Pending — mark results to train the model</div>
+      <div class="section-hdr" style="display:flex;justify-content:space-between;align-items:center">
+        <span>⏳ Pending (${pending.length}) — auto-grades next morning</span>
+        <button class="btn" onclick="autoGrade().then(n=>{if(n>0){buildHistoryTab();}else{showToast('No completed games found yet','#ffcc00');}})">🤖 Auto-Grade Now</button>
+      </div>
       <table class="ptable">
-        <tr><th>Date</th><th>Sport</th><th>Player · Stat</th><th>Pick</th><th>Conf</th><th>Mark</th></tr>`;
+        <tr><th>Date</th><th>Sport</th><th>Pick Info</th><th>Pick</th><th>Conf</th><th>Mark</th></tr>`;
     pending.slice(0, 40).forEach(p => {
-      const stat = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
-      const d    = new Date(p.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+      const isMatch  = p.type === 'match_winner';
+      const stat     = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+      const d        = new Date(p.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+      const infoCell = isMatch
+        ? `<span style="color:#bbb">${p.match}</span> <span style="color:#333;font-size:0.8em">Winner</span>`
+        : `${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>`;
+      const pickCell = isMatch
+        ? `<span style="color:#00ccff;font-weight:700">${p.pick}</span>`
+        : pickHtml(p.pick);
       html += `<tr>
         <td style="color:#333;font-size:0.8em">${d}</td>
-        <td style="color:#444;font-size:0.8em">${p.sport.replace(/[🏀🏈🏒⚾⚽]/u,'').trim()}</td>
-        <td style="color:#bbb">${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span></td>
-        <td>${pickHtml(p.pick)}</td>
+        <td style="color:#444;font-size:0.8em">${p.sport.replace(/\p{Emoji}/gu,'').trim()}</td>
+        <td style="color:#bbb">${infoCell}</td>
+        <td>${pickCell}</td>
         <td>${badge(p.conf)}</td>
         <td style="white-space:nowrap;display:flex;gap:4px">
           <button class="mark-btn mark-w" onclick="markResult('${p.id}','W')">✓ W</button>
@@ -893,20 +1083,28 @@ function buildHistoryTab() {
     html += `<div style="margin-top:20px">
       <div class="section-hdr">📋 Settled — ${wins}W / ${losses}L / ${voids}V</div>
       <table class="ptable">
-        <tr><th>Date</th><th>Sport</th><th>Player · Stat</th><th>Pick</th><th>Result</th></tr>`;
+        <tr><th>Date</th><th>Sport</th><th>Pick Info</th><th>Pick</th><th>Result</th></tr>`;
     settled.slice(0, 60).forEach(p => {
-      const stat    = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
-      const d       = new Date(p.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
-      const resHtml = p.result==='W'
-        ? '<span style="color:#00ff88;font-weight:700">WIN</span>'
+      const isMatch  = p.type === 'match_winner';
+      const stat     = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+      const d        = new Date(p.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+      const infoCell = isMatch
+        ? `<span style="color:#bbb">${p.match}</span> <span style="color:#333;font-size:0.8em">Winner</span>`
+        : `${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>`;
+      const pickCell = isMatch
+        ? `<span style="color:#00ccff;font-weight:700">${p.pick}</span>`
+        : pickHtml(p.pick);
+      const autoTag  = p.autoGraded ? ' <span style="color:#333;font-size:0.72em;font-weight:400">auto</span>' : '';
+      const resHtml  = p.result==='W'
+        ? `<span style="color:#00ff88;font-weight:700">WIN${autoTag}</span>`
         : p.result==='L'
-        ? '<span style="color:#ff4444;font-weight:700">LOSS</span>'
-        : '<span style="color:#333">VOID</span>';
+        ? `<span style="color:#ff4444;font-weight:700">LOSS${autoTag}</span>`
+        : `<span style="color:#333">VOID${autoTag}</span>`;
       html += `<tr>
         <td style="color:#333;font-size:0.8em">${d}</td>
-        <td style="color:#444;font-size:0.8em">${p.sport.replace(/[🏀🏈🏒⚾⚽]/u,'').trim()}</td>
-        <td style="color:#bbb">${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span></td>
-        <td>${pickHtml(p.pick)}</td>
+        <td style="color:#444;font-size:0.8em">${p.sport.replace(/\p{Emoji}/gu,'').trim()}</td>
+        <td style="color:#bbb">${infoCell}</td>
+        <td>${pickCell}</td>
         <td>${resHtml}</td>
       </tr>`;
     });
@@ -989,7 +1187,11 @@ async function refreshAll(force=false) {
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────
-window.addEventListener('load', ()=>{ refreshAll(false); });
+window.addEventListener('load', () => {
+  refreshAll(false);
+  // Run auto-grading silently in the background — toasts if any picks are graded
+  autoGrade().catch(() => {});
+});
 </script>
 </body>
 </html>
