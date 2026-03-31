@@ -273,10 +273,14 @@ function markResult(id, result) {
 // pending picks as W / L / V the next morning on page load.
 
 const ESPN_CFG = {
-  'NBA': { sport: 'basketball',       league: 'nba' },
-  'NFL': { sport: 'americanfootball', league: 'nfl' },
-  'NHL': { sport: 'hockey',           league: 'nhl' },
-  'MLB': { sport: 'baseball',         league: 'mlb' },
+  'NBA':              { sport: 'basketball',       league: 'nba'            },
+  'NFL':              { sport: 'americanfootball', league: 'nfl'            },
+  'NHL':              { sport: 'hockey',           league: 'nhl'            },
+  'MLB':              { sport: 'baseball',         league: 'mlb'            },
+  'PREMIER LEAGUE':   { sport: 'soccer',           league: 'eng.1'          },
+  'CHAMPIONS LEAGUE': { sport: 'soccer',           league: 'uefa.champions' },
+  'LA LIGA':          { sport: 'soccer',           league: 'esp.1'          },
+  'WC QUALIFIERS':    { sport: 'soccer',           league: 'fifa.world'     },
 };
 
 // Map Odds API market keys → ESPN boxscore stat keys (league-scoped where needed)
@@ -564,7 +568,7 @@ function propConf(overOdds, underOdds) {
   const op=(oi/tot)*100, up=(ui/tot)*100;
   const pick = op>=up ? 'OVER' : 'UNDER';
   const pct  = Math.max(op, up);
-  const conf = pct>=68 ? 'HIGH' : pct>=58 ? 'MED' : 'LOW';
+  const conf = pct>=65 ? 'HIGH' : pct>=55 ? 'MED' : 'LOW';
   return { pick, pct: pct.toFixed(1), conf, op: op.toFixed(1), up: up.toFixed(1) };
 }
 
@@ -736,21 +740,23 @@ function renderProps(propData, matchLabel, sportLabel) {
 
   if (!props.length) return `<div class="no-games">No qualifying player props.</div>`;
 
-  // Push top pick to slate-wide collection + persist to history for self-improvement
-  if (sportLabel && props[0]) {
-    const topPick = {
-      // Dedup key: same player+market on same calendar day = same pick, don't double-save
-      id:         `${new Date().toDateString()}_${props[0].player}_${props[0].market}`,
-      date:       new Date().toISOString(),
-      sport:      sportLabel, match: matchLabel,
-      player:     props[0].player, market: props[0].market,
-      line:       props[0].line,   pick:  props[0].c.pick,
-      pct:        props[0].c.pct,  conf:  props[0].c.conf,
-      score:      props[0].score,  bookCount: props[0].bookCount, vig: props[0].vig,
-      result:     null,  // user marks W / L / V in the History tab
-    };
-    allPropBets.push(topPick);
-    savePickToHistory(topPick);
+  // Push top pick to slate-wide collection + persist ALL shown picks to history
+  if (sportLabel) {
+    props.forEach((p, i) => {
+      const pick = {
+        // Dedup key: same player+market on same calendar day = same pick, don't double-save
+        id:        `${new Date().toDateString()}_${p.player}_${p.market}`.replace(/\W+/g,'_'),
+        date:      new Date().toISOString(),
+        sport:     sportLabel, match: matchLabel,
+        player:    p.player,  market: p.market,
+        line:      p.line,    pick:   p.c.pick,
+        pct:       p.c.pct,   conf:   p.c.conf,
+        score:     p.score,   bookCount: p.bookCount, vig: p.vig,
+        result:    null,
+      };
+      if (i === 0) allPropBets.push(pick);  // slate-wide All tab: top pick only
+      savePickToHistory(pick);              // history: all 5 picks tracked
+    });
   }
 
   let html = `<div class="section-hdr">🎯 TOP PICKS — ${matchLabel}</div>
@@ -1043,6 +1049,61 @@ function buildHistoryTab() {
     </div>`;
   }
 
+  // ── Model Accuracy panel (auto-graded picks only) ─────────────────────────
+  const autoGraded   = settled.filter(p => p.autoGraded);
+  const autoWins     = autoGraded.filter(p => p.result === 'W').length;
+  const autoLosses   = autoGraded.filter(p => p.result === 'L').length;
+  const autoVoids    = autoGraded.filter(p => p.result === 'V').length;
+  const autoWL       = autoWins + autoLosses;
+  const autoWR       = autoWL ? (autoWins / autoWL * 100).toFixed(1) : null;
+
+  // Break down auto-graded accuracy by confidence tier
+  const tierStats = ['HIGH','MED','LOW'].map(tier => {
+    const t = autoGraded.filter(p => p.conf === tier);
+    const tw = t.filter(p => p.result === 'W').length;
+    const tl = t.filter(p => p.result === 'L').length;
+    const twl = tw + tl;
+    return { tier, tw, tl, twl, twr: twl ? (tw/twl*100).toFixed(1) : null };
+  });
+
+  if (autoGraded.length > 0) {
+    html += `<div class="value-box" style="margin-top:12px">
+      <h3 style="margin-bottom:10px">🤖 MODEL ACCURACY — Auto-Graded Picks Only</h3>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:12px">
+        <div class="record-stat">
+          <div class="record-num" style="color:#00ff88">${autoWins}</div>
+          <div class="record-label">Correct</div>
+        </div>
+        <div class="record-stat">
+          <div class="record-num" style="color:#ff4444">${autoLosses}</div>
+          <div class="record-label">Wrong</div>
+        </div>
+        <div class="record-stat">
+          <div class="record-num" style="color:#333">${autoVoids}</div>
+          <div class="record-label">Void</div>
+        </div>
+        <div class="record-stat">
+          <div class="record-num" style="color:${autoWR && parseFloat(autoWR)>=50?'#00ff88':'#ff4444'}">${autoWR ? autoWR+'%' : '—'}</div>
+          <div class="record-label">Accuracy</div>
+        </div>
+        <div class="record-stat">
+          <div class="record-num" style="color:#555">${autoGraded.length}</div>
+          <div class="record-label">Total</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        ${tierStats.map(t => `<div style="font-size:0.8em;background:#0a0f0a;padding:8px 12px;border-radius:6px;border:1px solid #161c16">
+          ${badge(t.tier)}&nbsp;
+          <span style="color:#00ff88">${t.tw}W</span> /
+          <span style="color:#ff4444">${t.tl}L</span>
+          ${t.twr ? `· <strong style="color:${parseFloat(t.twr)>=50?'#00ff88':'#ff4444'}">${t.twr}%</strong>` : ''}
+          ${!t.twl ? '<span style="color:#333">no data</span>' : ''}
+        </div>`).join('')}
+      </div>
+      <p style="color:#555;font-size:0.72em;margin-top:8px">These results are auto-graded via ESPN API — no betting required. Tracks raw model prediction accuracy.</p>
+    </div>`;
+  }
+
   // ── Pending picks ──────────────────────────────────────────────────────────
   if (pending.length) {
     html += `<div style="margin-top:16px">
@@ -1083,7 +1144,7 @@ function buildHistoryTab() {
     html += `<div style="margin-top:20px">
       <div class="section-hdr">📋 Settled — ${wins}W / ${losses}L / ${voids}V</div>
       <table class="ptable">
-        <tr><th>Date</th><th>Sport</th><th>Pick Info</th><th>Pick</th><th>Result</th></tr>`;
+        <tr><th>Date</th><th>Sport</th><th>Pick Info</th><th>Pick</th><th>Result</th><th>Graded By</th></tr>`;
     settled.slice(0, 60).forEach(p => {
       const isMatch  = p.type === 'match_winner';
       const stat     = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
@@ -1106,6 +1167,7 @@ function buildHistoryTab() {
         <td style="color:#bbb">${infoCell}</td>
         <td>${pickCell}</td>
         <td>${resHtml}</td>
+        <td style="font-size:0.75em;color:${p.autoGraded?'#00ccff':'#444'}">${p.autoGraded?'🤖 Auto':'✋ Manual'}</td>
       </tr>`;
     });
     html += '</table></div>';
