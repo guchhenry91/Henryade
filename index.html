@@ -1684,6 +1684,119 @@ function buildHistoryTab() {
 
       <p style="color:#555;font-size:0.72em;margin-top:8px">Auto-graded via ESPN API. Use hit rate by sport to focus on your strongest markets.</p>
     </div>`;
+
+    // ── Backtest: score tier analysis ──────────────────────────────────────────
+    // Bucket settled picks by composite score into 5 ranges and show win rate per bucket.
+    // This proves (or disproves) whether higher scores actually predict wins.
+    const scoreBuckets = [
+      { label: '0.50+',  min: 0.50, max: 99,   picks: [] },
+      { label: '0.35–0.50', min: 0.35, max: 0.50, picks: [] },
+      { label: '0.20–0.35', min: 0.20, max: 0.35, picks: [] },
+      { label: '0.10–0.20', min: 0.10, max: 0.20, picks: [] },
+      { label: '< 0.10', min: -99, max: 0.10,  picks: [] },
+    ];
+    const settledWithScore = settled.filter(p => p.score != null && (p.result === 'W' || p.result === 'L'));
+    settledWithScore.forEach(p => {
+      const b = scoreBuckets.find(b => p.score >= b.min && p.score < b.max);
+      if (b) b.picks.push(p);
+    });
+
+    // Direction analysis — do OVERs or UNDERs win more overall?
+    const overSettled  = settled.filter(p => p.pick === 'OVER'  && (p.result === 'W' || p.result === 'L'));
+    const underSettled = settled.filter(p => p.pick === 'UNDER' && (p.result === 'W' || p.result === 'L'));
+    const overWR2  = overSettled.length  ? (overSettled.filter(p=>p.result==='W').length  / overSettled.length  * 100).toFixed(1) : null;
+    const underWR2 = underSettled.length ? (underSettled.filter(p=>p.result==='W').length / underSettled.length * 100).toFixed(1) : null;
+
+    // Signal agreement analysis — picks where market + stats agree vs disagree
+    // (proxy: if score > 0.35 AND conf=HIGH we treat as "signals aligned")
+    const aligned    = settled.filter(p => (p.score||0) >= 0.35 && p.conf === 'HIGH' && (p.result==='W'||p.result==='L'));
+    const misaligned = settled.filter(p => (p.score||0) <  0.35 && p.conf === 'HIGH' && (p.result==='W'||p.result==='L'));
+    const alignedWR    = aligned.length    ? (aligned.filter(p=>p.result==='W').length    / aligned.length    * 100).toFixed(1) : null;
+    const misalignedWR = misaligned.length ? (misaligned.filter(p=>p.result==='W').length / misaligned.length * 100).toFixed(1) : null;
+
+    if (settledWithScore.length >= 5) {
+      html += `<div class="value-box" style="margin-top:12px">
+        <h3 style="margin-bottom:4px">🔬 BACKTEST — Does Score Actually Predict Wins?</h3>
+        <p style="color:#555;font-size:0.72em;margin-bottom:14px">Win rate per score bucket. If the model works, higher scores should show higher win rates.</p>
+
+        <div class="section-hdr">Win Rate by Composite Score</div>
+        <div style="margin-bottom:14px">
+          ${scoreBuckets.map(b => {
+            const w   = b.picks.filter(p=>p.result==='W').length;
+            const l   = b.picks.filter(p=>p.result==='L').length;
+            const wl  = w + l;
+            if (!wl) return `<div style="display:flex;align-items:center;gap:10px;padding:5px 0;font-size:0.8em">
+              <span style="min-width:80px;color:#333">${b.label}</span>
+              <span style="color:#282828">no data</span></div>`;
+            const wr  = (w / wl * 100);
+            const bar = Math.min(wr, 100);
+            return `<div style="display:flex;align-items:center;gap:10px;padding:5px 0;font-size:0.8em">
+              <span style="min-width:80px;color:#666">${b.label}</span>
+              <div style="flex:1;background:#111;border-radius:4px;height:8px;max-width:180px">
+                <div style="width:${bar.toFixed(0)}%;height:8px;border-radius:4px;background:${wr>=55?'#00ff88':wr>=45?'#ffcc00':'#ff4444'};transition:width .5s"></div>
+              </div>
+              <span style="min-width:42px;color:${wr>=55?'#00ff88':wr>=45?'#ffcc00':'#ff4444'};font-weight:700">${wr.toFixed(1)}%</span>
+              <span style="color:#333;font-size:0.85em">${w}W/${l}L</span>
+            </div>`;
+          }).join('')}
+        </div>
+
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+          <div>
+            <div class="section-hdr" style="margin-top:0">Direction Bias</div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <div style="background:#0a0f0a;padding:8px 14px;border-radius:6px;border:1px solid #161c16;font-size:0.8em">
+                <span class="pick-over">OVER</span> &nbsp;
+                ${overWR2 ? `<strong style="color:${parseFloat(overWR2)>=50?'#00ff88':'#ff4444'}">${overWR2}%</strong> <span style="color:#333">(${overSettled.length})</span>` : '<span style="color:#333">no data</span>'}
+              </div>
+              <div style="background:#0a0f0a;padding:8px 14px;border-radius:6px;border:1px solid #161c16;font-size:0.8em">
+                <span class="pick-under">UNDER</span> &nbsp;
+                ${underWR2 ? `<strong style="color:${parseFloat(underWR2)>=50?'#00ff88':'#ff4444'}">${underWR2}%</strong> <span style="color:#333">(${underSettled.length})</span>` : '<span style="color:#333">no data</span>'}
+              </div>
+            </div>
+          </div>
+          ${(alignedWR || misalignedWR) ? `<div>
+            <div class="section-hdr" style="margin-top:0">Signal Alignment</div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              ${alignedWR ? `<div style="background:#0a0f0a;padding:8px 14px;border-radius:6px;border:1px solid #161c16;font-size:0.8em">
+                <span style="color:#00ff88">HIGH score + HIGH conf</span><br>
+                <strong style="color:${parseFloat(alignedWR)>=50?'#00ff88':'#ff4444'}">${alignedWR}%</strong> <span style="color:#333">(${aligned.length} picks)</span>
+              </div>` : ''}
+              ${misalignedWR ? `<div style="background:#0a0f0a;padding:8px 14px;border-radius:6px;border:1px solid #161c16;font-size:0.8em">
+                <span style="color:#555">LOW score + HIGH conf</span><br>
+                <strong style="color:${parseFloat(misalignedWR)>=50?'#00ff88':'#ff4444'}">${misalignedWR}%</strong> <span style="color:#333">(${misaligned.length} picks)</span>
+              </div>` : ''}
+            </div>
+          </div>` : ''}
+        </div>
+
+        <div style="background:#080808;border:1px solid #111;border-radius:8px;padding:12px;font-size:0.75em;color:#444;line-height:1.7">
+          ${(() => {
+            const hasData = scoreBuckets.filter(b=>b.picks.length>=3);
+            if (hasData.length < 2) return '⚠ Need more settled picks for reliable backtest. Keep using the model daily — results populate automatically.';
+            const topBucket  = [...scoreBuckets].filter(b=>b.picks.length>0).sort((a,b)=>{
+              const wa = a.picks.filter(p=>p.result==='W').length/a.picks.length;
+              const wb = b.picks.filter(p=>p.result==='W').length/b.picks.length;
+              return wb - wa;
+            })[0];
+            const topWR = topBucket ? (topBucket.picks.filter(p=>p.result==='W').length/topBucket.picks.length*100).toFixed(1) : null;
+            const scoreCorrelates = scoreBuckets[0].picks.length > 0 && scoreBuckets[4].picks.length > 0
+              && (scoreBuckets[0].picks.filter(p=>p.result==='W').length/scoreBuckets[0].picks.length)
+               > (scoreBuckets[4].picks.filter(p=>p.result==='W').length/Math.max(scoreBuckets[4].picks.length,1));
+            return [
+              scoreCorrelates ? '✅ Score is positively correlated with wins — higher scoring picks are winning more often.' : '⚠ Score not yet correlating with wins — model may need more data or threshold tuning.',
+              topBucket && topWR ? `📊 Best performing bucket: score ${topBucket.label} at ${topWR}% win rate.` : '',
+              overWR2 && underWR2 ? (parseFloat(overWR2) > parseFloat(underWR2) ? `📈 OVERs outperforming UNDERs (${overWR2}% vs ${underWR2}%) — calibration will auto-adjust.` : `📉 UNDERs outperforming OVERs (${underWR2}% vs ${overWR2}%) — calibration will auto-adjust.`) : '',
+            ].filter(Boolean).join('<br>');
+          })()}
+        </div>
+      </div>`;
+    } else {
+      html += `<div class="value-box" style="margin-top:12px;border-color:#111">
+        <h3>🔬 BACKTEST</h3>
+        <p style="color:#383838;font-size:0.8em;margin-top:8px">Need at least 5 settled picks to run backtest analysis. Keep loading picks daily — results auto-populate.</p>
+      </div>`;
+    }
   }
 
   // ── Pending picks ──────────────────────────────────────────────────────────
