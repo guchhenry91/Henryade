@@ -189,7 +189,7 @@
     <div class="token-info">Used: <span id="tokensUsed">—</span></div>
     <div class="cache-info" id="cacheStatus">Cache: checking...</div>
     <button class="btn" onclick="refreshAll(false)">↻ Cache</button>
-    <button class="btn btn-danger" onclick="refreshAll(true)">⚡ Refresh</button>
+    <button class="btn btn-danger" onclick="if(_tokensLeft!==null&&_tokensLeft<=TOKEN_WARN){if(!confirm(`Only ${_tokensLeft} tokens left. Hard refresh will use ~10 tokens. Continue?`))return;}refreshAll(true)">⚡ Refresh</button>
   </div>
 </header>
 
@@ -214,7 +214,10 @@
 <script>
 const API_KEY = '17b4d42651ab4e81ef298300544f5a21';
 const BASE    = 'https://api.the-odds-api.com/v4';
-const CACHE_TTL = 6 * 60 * 60 * 1000;
+const CACHE_TTL    = 12 * 60 * 60 * 1000; // 12hrs — cache survives the full day, no wasted re-fetches
+const TOKEN_WARN   = 10;   // show warning banner below this many tokens remaining
+const TOKEN_BLOCK  = 3;    // block all live API calls below this — serve cache only
+let   _tokensLeft  = null; // updated on every response header
 const allValueBets = [];
 const allPropBets  = [];   // slate-wide best prop pick per game, all sports
 const loadedTabs = new Set();
@@ -905,7 +908,7 @@ function showTab(name, e) {
 }
 
 // ── Cache ─────────────────────────────────────────────────────────────────────
-function cacheKey(k)   { return 'bm_' + k + '_' + new Date().toDateString(); }
+function cacheKey(k)   { return 'bm_' + k; } // no date suffix — TTL handles expiry, key survives midnight
 function getCache(k)   {
   try { const r = localStorage.getItem(cacheKey(k)); if (!r) return null;
     const {ts,data} = JSON.parse(r); return Date.now()-ts > CACHE_TTL ? null : data;
@@ -914,24 +917,64 @@ function getCache(k)   {
 function setCache(k,d) { try { localStorage.setItem(cacheKey(k), JSON.stringify({ts:Date.now(),data:d})); } catch {} }
 function clearAllCache(){ Object.keys(localStorage).filter(k=>k.startsWith('bm_') && k !== HISTORY_KEY).forEach(k=>localStorage.removeItem(k)); }
 function updateCacheStatus(){
-  const keys = Object.keys(localStorage).filter(k=>k.startsWith('bm_'));
+  const keys = Object.keys(localStorage).filter(k => k.startsWith('bm_') && k !== HISTORY_KEY);
   if (!keys.length) { document.getElementById('cacheStatus').textContent='Cache: empty'; return; }
-  try { const ts=JSON.parse(localStorage.getItem(keys[0])).ts; const ago=Math.round((Date.now()-ts)/60000);
-    document.getElementById('cacheStatus').textContent=`Cache: ${ago}m ago (${keys.length})`; }
-  catch { document.getElementById('cacheStatus').textContent=`Cache: ${keys.length} stored`; }
+  try {
+    const entries = keys.map(k => { try { return JSON.parse(localStorage.getItem(k)).ts; } catch { return 0; } });
+    const newest = Math.max(...entries);
+    const ago = Math.round((Date.now() - newest) / 60000);
+    const left = _tokensLeft !== null ? ` · ${_tokensLeft} tokens left` : '';
+    document.getElementById('cacheStatus').textContent = `Cache: ${ago}m ago (${keys.length})${left}`;
+  } catch { document.getElementById('cacheStatus').textContent=`Cache: ${keys.length} stored`; }
+}
+
+// Token guard — returns true if safe to make a live API call
+function tokensSafe(force=false) {
+  if (_tokensLeft === null) return true; // unknown — allow
+  if (_tokensLeft <= TOKEN_BLOCK && !force) {
+    showTokenWarning(`⛔ Only ${_tokensLeft} API tokens left — serving cached data only. Refresh tomorrow.`);
+    return false;
+  }
+  return true;
+}
+
+function showTokenWarning(msg) {
+  let banner = document.getElementById('token-warning');
+  if (!banner) {
+    banner = document.createElement('div');
+    banner.id = 'token-warning';
+    banner.style.cssText = 'background:#110000;color:#ff4444;border-bottom:1px solid #ff444430;padding:8px 20px;font-size:0.78em;font-weight:600;text-align:center';
+    document.querySelector('header').insertAdjacentElement('afterend', banner);
+  }
+  banner.textContent = msg;
+  banner.style.display = 'block';
 }
 
 // ── API fetch helpers ─────────────────────────────────────────────────────────
 function updateTokens(res) {
-  const rem = res.headers.get('x-requests-remaining');
+  const rem  = res.headers.get('x-requests-remaining');
   const used = res.headers.get('x-requests-used');
-  if (rem)  document.getElementById('tokensLeft').textContent = rem;
+  if (rem)  { _tokensLeft = parseInt(rem); document.getElementById('tokensLeft').textContent = rem; }
   if (used) document.getElementById('tokensUsed').textContent = used;
+
+  if (_tokensLeft !== null) {
+    if (_tokensLeft <= TOKEN_BLOCK) {
+      showTokenWarning(`⛔ ${_tokensLeft} tokens left — all API calls paused. Cache-only mode until tomorrow.`);
+    } else if (_tokensLeft <= TOKEN_WARN) {
+      showTokenWarning(`⚠ Low tokens: ${_tokensLeft} remaining — avoid hard refreshes.`);
+    } else {
+      const banner = document.getElementById('token-warning');
+      if (banner) banner.style.display = 'none';
+    }
+    updateCacheStatus();
+  }
 }
 
 async function apiFetch(sport, markets, region='uk', force=false) {
   const ck = `${sport}_${markets}`;
-  if (!force) { const c = getCache(ck); if (c) return c; }
+  const cached = getCache(ck);
+  if (cached && (!force || !tokensSafe())) return cached; // always serve cache when tokens are low
+  if (!tokensSafe()) return cached || [];
   const url = `${BASE}/sports/${sport}/odds/?apiKey=${API_KEY}&regions=${region}&markets=${markets}&oddsFormat=decimal`;
   const res = await fetch(url);
   updateTokens(res);
@@ -943,7 +986,9 @@ async function apiFetch(sport, markets, region='uk', force=false) {
 
 async function fetchEvents(sport, force=false) {
   const ck = `events_${sport}`;
-  if (!force) { const c = getCache(ck); if (c) return c; }
+  const cached = getCache(ck);
+  if (cached && (!force || !tokensSafe())) return cached;
+  if (!tokensSafe()) return cached || [];
   const res = await fetch(`${BASE}/sports/${sport}/events?apiKey=${API_KEY}&dateFormat=iso`);
   updateTokens(res);
   if (!res.ok) throw new Error(`API ${res.status}: events`);
@@ -954,7 +999,9 @@ async function fetchEvents(sport, force=false) {
 
 async function fetchEventProps(sport, eventId, markets, region, force=false) {
   const ck = `props_${eventId}_${markets}`;
-  if (!force) { const c = getCache(ck); if (c) return c; }
+  const cached = getCache(ck);
+  if (cached && (!force || !tokensSafe())) return cached;
+  if (!tokensSafe()) return cached || { bookmakers: [] };
   const url = `${BASE}/sports/${sport}/events/${eventId}/odds?apiKey=${API_KEY}&regions=${region}&markets=${markets}&oddsFormat=decimal`;
   const res = await fetch(url);
   updateTokens(res);
