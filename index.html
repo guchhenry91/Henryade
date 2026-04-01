@@ -1489,7 +1489,7 @@ async function buildSportTab(name, force) {
     const cutoff = new Date(now.getTime() + 48*60*60*1000);
     const upcoming = (events||[])
       .filter(e=>{ const d=new Date(e.commence_time); return d>=now && d<=cutoff; })
-      .slice(0, 5); // top 5 upcoming games
+      .slice(0, 3); // top 3 upcoming games — keeps prop API calls within rate limit
 
     if (!upcoming.length) {
       container.innerHTML = `<div class="sport-section"><div class="sport-title">${s.label}</div><div class="no-games">No games in next 48 hours.</div></div>`;
@@ -1515,8 +1515,9 @@ async function buildSportTab(name, force) {
       // Winner box
       if (hO && aO) html += winnerBox(home, away, hO, aO, null, ev.commence_time, s.label);
 
-      // Player props
+      // Player props — small delay before each game's prop call to stay under rate limit
       try {
+        await new Promise(r => setTimeout(r, 300));
         const propData = await fetchEventProps(s.key, ev.id, s.props, s.region, force);
         html += await renderProps(propData, `${home} vs ${away}`, s.label, ev.id, ev.commence_time, home);
       } catch(propErr) {
@@ -1965,13 +1966,16 @@ async function refreshAll(force=false) {
   allPropBets.length  = 0;
   document.getElementById('all-loading') && (document.getElementById('all-loading').style.display='block');
 
-  // Load all tabs in parallel so every section is ready on first click
+  // Load tabs sequentially with a small delay to avoid Odds API 429 rate limit.
+  // Each sport makes multiple prop calls per game — parallel loading blows the quota.
+  const delay = ms => new Promise(r => setTimeout(r, ms));
   loadedTabs.add('soccer');
-  Object.keys(SPORT_TABS).forEach(k => loadedTabs.add(k));
-  await Promise.all([
-    buildSoccer(force),
-    ...Object.keys(SPORT_TABS).map(k => buildSportTab(k, force)),
-  ]);
+  await buildSoccer(force);
+  for (const k of Object.keys(SPORT_TABS)) {
+    loadedTabs.add(k);
+    await buildSportTab(k, force);
+    await delay(400); // 400ms between sports keeps us well under rate limit
+  }
   buildAllTab();
   buildHistoryTab();
   loadedTabs.add('history');
