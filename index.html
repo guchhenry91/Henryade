@@ -1069,6 +1069,16 @@ function buildHistoryTab() {
   });
 
   if (autoGraded.length > 0) {
+    // Hit rate breakdown per sport
+    const sportKeys = [...new Set(autoGraded.map(p => p.sport.replace(/\p{Emoji}/gu,'').trim()))];
+    const sportStats = sportKeys.map(sp => {
+      const s = autoGraded.filter(p => p.sport.replace(/\p{Emoji}/gu,'').trim() === sp);
+      const sw = s.filter(p => p.result === 'W').length;
+      const sl = s.filter(p => p.result === 'L').length;
+      const swl = sw + sl;
+      return { sp, sw, sl, swl, swr: swl ? (sw/swl*100).toFixed(0) : null };
+    }).filter(s => s.swl > 0).sort((a,b) => parseFloat(b.swr||0) - parseFloat(a.swr||0));
+
     html += `<div class="value-box" style="margin-top:12px">
       <h3 style="margin-bottom:10px">🤖 MODEL ACCURACY — Auto-Graded Picks Only</h3>
       <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:12px">
@@ -1093,7 +1103,9 @@ function buildHistoryTab() {
           <div class="record-label">Total</div>
         </div>
       </div>
-      <div style="display:flex;gap:16px;flex-wrap:wrap">
+
+      <div class="section-hdr" style="margin-top:4px">By Confidence Tier</div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
         ${tierStats.map(t => `<div style="font-size:0.8em;background:#0a0f0a;padding:8px 12px;border-radius:6px;border:1px solid #161c16">
           ${badge(t.tier)}&nbsp;
           <span style="color:#00ff88">${t.tw}W</span> /
@@ -1102,7 +1114,17 @@ function buildHistoryTab() {
           ${!t.twl ? '<span style="color:#333">no data</span>' : ''}
         </div>`).join('')}
       </div>
-      <p style="color:#555;font-size:0.72em;margin-top:8px">These results are auto-graded via ESPN API — no betting required. Tracks raw model prediction accuracy.</p>
+
+      ${sportStats.length ? `<div class="section-hdr">Hit Rate by Sport</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:6px">
+        ${sportStats.map(s => `<div style="font-size:0.8em;background:#0a0f0a;padding:8px 12px;border-radius:6px;border:1px solid ${parseFloat(s.swr||0)>=50?'#00ff8830':'#1a1a1a'}">
+          <span style="color:#888">${s.sp}</span>&nbsp;
+          <span style="color:#00ff88">${s.sw}W</span>/<span style="color:#ff4444">${s.sl}L</span>
+          ${s.swr ? `&nbsp;<strong style="color:${parseFloat(s.swr)>=50?'#00ff88':'#ff4444'}">${s.swr}%</strong>` : ''}
+        </div>`).join('')}
+      </div>` : ''}
+
+      <p style="color:#555;font-size:0.72em;margin-top:8px">Auto-graded via ESPN API. Use hit rate by sport to focus on your strongest markets.</p>
     </div>`;
   }
 
@@ -1143,17 +1165,31 @@ function buildHistoryTab() {
 
   // ── Settled picks ──────────────────────────────────────────────────────────
   if (settled.length) {
+    // Sort settled newest-first and rank by score to identify best bets
+    const rankedSettled = [...settled].sort((a,b) => (b.score||0) - (a.score||0));
+    const bestBetIds = new Set(rankedSettled.slice(0, Math.ceil(settled.length * 0.2)).map(p => p.id));
+
+    const sportList = [...new Set(settled.map(p => p.sport.replace(/\p{Emoji}/gu,'').trim()))].sort();
     html += `<div style="margin-top:20px">
-      <div class="section-hdr">📋 Settled — ${wins}W / ${losses}L / ${voids}V</div>
-      <table class="ptable">
+      <div class="section-hdr" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+        <span>📋 Settled — ${wins}W / ${losses}L / ${voids}V</span>
+        <div style="display:flex;gap:6px;flex-wrap:wrap" id="hist-filters">
+          <button class="btn active" style="font-size:0.7em;padding:3px 10px" onclick="histFilter('all',this)">All</button>
+          <button class="btn" style="font-size:0.7em;padding:3px 10px;border-color:#00ff8830;color:#555" onclick="histFilter('best',this)">⭐ Best Bets</button>
+          ${['HIGH','MED','LOW'].map(c=>`<button class="btn" style="font-size:0.7em;padding:3px 10px;border-color:#33333380;color:#555" onclick="histFilter('${c}',this)">${c}</button>`).join('')}
+          ${sportList.map(s=>`<button class="btn" style="font-size:0.7em;padding:3px 10px;border-color:#33333380;color:#555" onclick="histFilter('${s}',this)">${s}</button>`).join('')}
+        </div>
+      </div>
+      <table class="ptable" id="hist-table">
         <tr><th>Date</th><th>Sport</th><th>Pick Info</th><th>Pick</th><th>Result</th><th>Graded By</th></tr>`;
-    settled.slice(0, 60).forEach(p => {
+    settled.slice(0, 100).forEach(p => {
       const isMatch  = p.type === 'match_winner';
       const stat     = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
       const d        = new Date(p.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+      const isBest   = bestBetIds.has(p.id);
       const infoCell = isMatch
         ? `<span style="color:#bbb">${p.match}</span> <span style="color:#333;font-size:0.8em">Winner</span>`
-        : `${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>`;
+        : `${isBest ? '⭐ ' : ''}${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>`;
       const pickCell = isMatch
         ? `<span style="color:#00ccff;font-weight:700">${p.pick}</span>`
         : pickHtml(p.pick);
@@ -1163,16 +1199,17 @@ function buildHistoryTab() {
         : p.result==='L'
         ? `<span style="color:#ff4444;font-weight:700">LOSS${autoTag}</span>`
         : `<span style="color:#333">VOID${autoTag}</span>`;
-      html += `<tr>
+      const sportClean = p.sport.replace(/\p{Emoji}/gu,'').trim();
+      html += `<tr data-conf="${p.conf}" data-sport="${sportClean}" data-best="${isBest}">
         <td style="color:#333;font-size:0.8em">${d}</td>
-        <td style="color:#444;font-size:0.8em">${p.sport.replace(/\p{Emoji}/gu,'').trim()}</td>
+        <td style="color:#444;font-size:0.8em">${sportClean}</td>
         <td style="color:#bbb">${infoCell}</td>
         <td>${pickCell}</td>
         <td>${resHtml}</td>
         <td style="font-size:0.75em;color:${p.autoGraded?'#00ccff':'#444'}">${p.autoGraded?'🤖 Auto':'✋ Manual'}</td>
       </tr>`;
     });
-    html += '</table></div>';
+    html += `</table></div>`;
   }
 
   if (!pending.length && !settled.length) {
@@ -1268,6 +1305,22 @@ async function refreshAll(force=false) {
   loadedTabs.add('history');
   updateCacheStatus();
   document.getElementById('all-loading') && (document.getElementById('all-loading').style.display='none');
+}
+
+// ── History filter ────────────────────────────────────────────────────────────
+function histFilter(val, btn) {
+  document.querySelectorAll('#hist-filters .btn').forEach(b => {
+    b.classList.remove('active');
+    b.style.color = '#555';
+  });
+  btn.classList.add('active');
+  btn.style.color = '#00ff88';
+  document.querySelectorAll('#hist-table tr[data-conf]').forEach(row => {
+    if (val === 'all') { row.style.display = ''; return; }
+    if (val === 'best') { row.style.display = row.dataset.best === 'true' ? '' : 'none'; return; }
+    if (['HIGH','MED','LOW'].includes(val)) { row.style.display = row.dataset.conf === val ? '' : 'none'; return; }
+    row.style.display = row.dataset.sport === val ? '' : 'none';
+  });
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────
