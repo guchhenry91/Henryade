@@ -214,7 +214,7 @@
 <script>
 const API_KEY = '17b4d42651ab4e81ef298300544f5a21';
 const BASE    = 'https://api.the-odds-api.com/v4';
-const CACHE_TTL    = 12 * 60 * 60 * 1000; // 12hrs — cache survives the full day, no wasted re-fetches
+const CACHE_TTL    = 3 * 60 * 60 * 1000; // 3hrs — lines move fast, keep data fresh without hammering the API
 const TOKEN_WARN   = 10;   // show warning banner below this many tokens remaining
 const TOKEN_BLOCK  = 3;    // block all live API calls below this — serve cache only
 let   _tokensLeft  = null; // updated on every response header
