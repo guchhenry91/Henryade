@@ -703,7 +703,7 @@ function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineM
   const vigPenalty      = Math.max(0, (vig - FAIR_VIG) / (MAX_VIG - FAIR_VIG));
   // MLB OVER penalty — data shows 33% win rate on MLB OVERs vs 94% UNDERs.
   // Suppress OVER score for MLB until calibration has enough data to self-correct.
-  const mlbOverPenalty = (sportHint.includes('MLB') && direction === 'OVER') ? -0.12 : 0;
+  const mlbOverPenalty = (sportHint.includes('MLB') && direction === 'OVER') ? -0.06 : 0;
 
   const raw = (edgeFactor * 0.25 + consensusFactor * 0.20 + fairFactor * 0.15
     - vigPenalty * 0.10 + statsSignal * 0.20 + lineMoveSig * 0.10
