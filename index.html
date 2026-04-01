@@ -268,7 +268,8 @@ async function espnAthleteId(sport, league, playerName) {
 
 // Fetch last N games for an athlete and return average of a given stat key.
 // Returns { avg, games } or null if unavailable.
-async function espnPlayerL5(sport, league, athleteId, statKey, n = 5) {
+// Extended gamelog fetch — returns per-game entries with home/away flag and stat value
+async function espnPlayerGamelog(sport, league, athleteId, statKey) {
   try {
     const res = await fetch(
       `https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/athletes/${athleteId}/gamelog?season=2025`
@@ -276,28 +277,27 @@ async function espnPlayerL5(sport, league, athleteId, statKey, n = 5) {
     if (!res.ok) return null;
     const data = await res.json();
 
-    // ESPN gamelog structure: data.seasonTypes[].categories[].events[]
-    const events = [];
+    const entries = []; // { val, isHome }
     for (const st of (data.seasonTypes || [])) {
       for (const cat of (st.categories || [])) {
         const idx = (cat.names || []).indexOf(statKey);
         if (idx === -1) continue;
         for (const ev of (cat.events || [])) {
           const val = parseFloat((ev.stats || [])[idx]);
-          if (!isNaN(val)) events.push(val);
+          if (isNaN(val)) continue;
+          // homeAway flag: ESPN marks away games with '@' in the opponent string
+          const isHome = !(ev.opponent?.homeAway === 'away' || ev.atVs === '@');
+          entries.push({ val, isHome });
         }
       }
     }
-    if (!events.length) return null;
-    const recent = events.slice(-n);  // last N games (newest at end)
-    const avg = recent.reduce((a, b) => a + b, 0) / recent.length;
-    return { avg: parseFloat(avg.toFixed(2)), games: recent.length };
+    return entries.length ? entries : null;
   } catch { return null; }
 }
 
-// Master stats fetcher: given sport league key (nba/nfl/nhl/mlb), player name, market key, line
-// Returns { avg, games, signal, signalLabel } or null
-async function getStatSignal(leagueShort, playerName, market, line) {
+// Master stats fetcher — now includes hot/cold streak + home/away split
+// isHomeGame: true if today's game is at home for this player's team
+async function getStatSignal(leagueShort, playerName, market, line, isHomeGame = null) {
   const cfg     = ESPN_LEAGUE_CFG[leagueShort];
   if (!cfg) return null;
   const statKey = (ESPN_STAT_MAP[market] || {})[leagueShort];
@@ -306,21 +306,146 @@ async function getStatSignal(leagueShort, playerName, market, line) {
   const athleteId = await espnAthleteId(cfg.sport, cfg.league, playerName);
   if (!athleteId) return null;
 
-  const result = await espnPlayerL5(cfg.sport, cfg.league, athleteId, statKey);
-  if (!result) return null;
+  const entries = await espnPlayerGamelog(cfg.sport, cfg.league, athleteId, statKey);
+  if (!entries || !entries.length) return null;
 
-  const { avg, games } = result;
-  const diff = (avg - line) / line;  // % above/below line
+  const vals    = entries.map(e => e.val);
+  const recent5 = vals.slice(-5);
+  const recent15 = vals.slice(-15);
+  const avg5    = recent5.reduce((a,b)=>a+b,0) / recent5.length;
+  const avg15   = recent15.length >= 5 ? recent15.reduce((a,b)=>a+b,0) / recent15.length : avg5;
 
-  let signal = 0;
-  let signalLabel = '';
-  if      (diff >=  0.15) { signal =  0.20; signalLabel = `📈 L${games}: ${avg} avg (${((diff)*100).toFixed(0)}% over line)`; }
-  else if (diff >=  0.05) { signal =  0.08; signalLabel = `↑ L${games}: ${avg} avg`; }
-  else if (diff <= -0.15) { signal = -0.15; signalLabel = `📉 L${games}: ${avg} avg (${((-diff)*100).toFixed(0)}% under line)`; }
-  else if (diff <= -0.05) { signal = -0.06; signalLabel = `↓ L${games}: ${avg} avg`; }
-  else                    { signalLabel = `≈ L${games}: ${avg} avg (on line)`; }
+  // UPGRADE 1: Hot/Cold streak — compare L5 vs L15 (season trend)
+  const trendRatio = avg15 > 0 ? avg5 / avg15 : 1;
+  let streakSignal = 0;
+  let streakLabel  = '';
+  if      (trendRatio >= 1.25) { streakSignal =  0.18; streakLabel = `🔥 HOT streak: L5 avg ${avg5.toFixed(1)} vs L15 ${avg15.toFixed(1)}`; }
+  else if (trendRatio >= 1.10) { streakSignal =  0.08; streakLabel = `↗ Trending up: L5 ${avg5.toFixed(1)} vs L15 ${avg15.toFixed(1)}`; }
+  else if (trendRatio <= 0.75) { streakSignal = -0.18; streakLabel = `🥶 COLD streak: L5 avg ${avg5.toFixed(1)} vs L15 ${avg15.toFixed(1)}`; }
+  else if (trendRatio <= 0.90) { streakSignal = -0.08; streakLabel = `↘ Trending down: L5 ${avg5.toFixed(1)} vs L15 ${avg15.toFixed(1)}`; }
 
-  return { avg, games, signal, signalLabel, diff };
+  // UPGRADE 2: Home/Away split — use location-specific average when available
+  let locationAvg = avg5;
+  let locationLabel = '';
+  if (isHomeGame !== null) {
+    const locationEntries = entries.filter(e => e.isHome === isHomeGame).slice(-10);
+    if (locationEntries.length >= 3) {
+      locationAvg = locationEntries.map(e=>e.val).reduce((a,b)=>a+b,0) / locationEntries.length;
+      const loc = isHomeGame ? 'Home' : 'Away';
+      locationLabel = `🏠 ${loc} avg: ${locationAvg.toFixed(1)} (${locationEntries.length} games)`;
+    }
+  }
+
+  // Use location-specific avg if we have enough data, else fall back to L5
+  const effectiveAvg = locationLabel ? locationAvg : avg5;
+  const diff = (effectiveAvg - line) / line;
+
+  let baseSignal = 0;
+  let baseLabel  = '';
+  if      (diff >=  0.15) { baseSignal =  0.20; baseLabel = `📈 L5: ${avg5.toFixed(1)} avg (${(diff*100).toFixed(0)}% over line)`; }
+  else if (diff >=  0.05) { baseSignal =  0.08; baseLabel = `↑ L5: ${avg5.toFixed(1)} avg`; }
+  else if (diff <= -0.15) { baseSignal = -0.15; baseLabel = `📉 L5: ${avg5.toFixed(1)} avg (${(Math.abs(diff)*100).toFixed(0)}% under line)`; }
+  else if (diff <= -0.05) { baseSignal = -0.06; baseLabel = `↓ L5: ${avg5.toFixed(1)} avg`; }
+  else                    {                     baseLabel = `≈ L5: ${avg5.toFixed(1)} avg (on line)`; }
+
+  // Combined signal — base + streak adjustment (capped at ±0.35 total)
+  const totalSignal = Math.max(-0.35, Math.min(0.35, baseSignal + streakSignal * 0.5));
+  const labels = [baseLabel, streakLabel, locationLabel].filter(Boolean);
+
+  return { avg: parseFloat(avg5.toFixed(2)), games: recent5.length, signal: totalSignal, signalLabel: labels[0], extraLabels: labels.slice(1), diff };
+}
+
+// ── UPGRADE 3: Weather Factor (NFL + MLB outdoor stadiums only) ──────────────
+// Uses Open-Meteo free API — no key needed
+// Returns { wind, precip, temp, penalty, label } or null
+
+// Known NFL/MLB indoor/dome stadiums — weather irrelevant for these
+const DOME_TEAMS = new Set([
+  'Las Vegas Raiders','Detroit Lions','Indianapolis Colts','Minnesota Vikings',
+  'New Orleans Saints','Atlanta Falcons','Dallas Cowboys','Houston Texans',
+  'Arizona Cardinals','Los Angeles Rams','Los Angeles Chargers','Seattle Seahawks',
+  'Buffalo Bills',  // Highmark is open but Buffalo weather is always extreme — keep it
+  // MLB domes
+  'Tampa Bay Rays','Toronto Blue Jays','Houston Astros','Milwaukee Brewers',
+  'Seattle Mariners','Arizona Diamondbacks','Miami Marlins','Minnesota Twins',
+]);
+
+// Geocode a city from team name — rough city lookup table
+const TEAM_CITY_COORDS = {
+  // NFL
+  'Kansas City Chiefs':      [39.049, -94.484], 'Green Bay Packers':     [44.501, -88.062],
+  'San Francisco 49ers':     [37.403, -121.970],'Denver Broncos':        [39.744, -105.020],
+  'New England Patriots':    [42.091, -71.264], 'New York Giants':       [40.813, -74.074],
+  'New York Jets':           [40.813, -74.074], 'Philadelphia Eagles':   [39.901, -75.168],
+  'Pittsburgh Steelers':     [40.447, -80.016], 'Cleveland Browns':      [41.506, -81.700],
+  'Baltimore Ravens':        [39.278, -76.623], 'Washington Commanders': [38.908, -76.864],
+  'Chicago Bears':           [41.862, -87.617], 'Cincinnati Bengals':    [39.095, -84.516],
+  'Jacksonville Jaguars':    [30.324, -81.637], 'Tennessee Titans':      [36.166, -86.771],
+  'Miami Dolphins':          [25.958, -80.239], 'Carolina Panthers':     [35.226, -80.853],
+  'Tampa Bay Buccaneers':    [27.976, -82.503], 'New York Giants':       [40.813, -74.074],
+  // MLB
+  'New York Yankees':        [40.829, -73.926], 'Boston Red Sox':        [42.347, -71.097],
+  'Chicago Cubs':            [41.948, -87.656], 'Chicago White Sox':     [41.830, -87.634],
+  'Los Angeles Dodgers':     [34.074, -118.240],'Los Angeles Angels':    [33.800, -117.883],
+  'San Francisco Giants':    [37.778, -122.389],'Oakland Athletics':     [37.752, -122.201],
+  'Colorado Rockies':        [39.756, -104.994],'St. Louis Cardinals':   [38.623, -90.193],
+  'Cincinnati Reds':         [39.098, -84.507], 'Pittsburgh Pirates':    [40.447, -80.006],
+  'Atlanta Braves':          [33.891, -84.468], 'Philadelphia Phillies': [39.906, -75.166],
+  'New York Mets':           [40.757, -73.846], 'Washington Nationals':  [38.873, -77.008],
+  'Baltimore Orioles':       [39.284, -76.621], 'Cleveland Guardians':   [41.496, -81.686],
+  'Detroit Tigers':          [42.339, -83.049], 'Kansas City Royals':    [39.051, -94.481],
+  'Texas Rangers':           [32.751, -97.083], 'Oakland Athletics':     [37.752, -122.201],
+};
+
+const _weatherCache = {};
+
+async function getWeatherForGame(homeTeam, sportLabel, gameDateIso) {
+  // Only applies to NFL and MLB
+  if (!sportLabel.includes('NFL') && !sportLabel.includes('MLB')) return null;
+  // Skip dome teams
+  if (DOME_TEAMS.has(homeTeam)) return null;
+
+  const coords = TEAM_CITY_COORDS[homeTeam];
+  if (!coords) return null;
+
+  const cacheKey = `wx__${homeTeam}__${gameDateIso.split('T')[0]}`;
+  if (_weatherCache[cacheKey] !== undefined) return _weatherCache[cacheKey];
+
+  try {
+    const date = gameDateIso.split('T')[0];
+    const [lat, lon] = coords;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=wind_speed_10m_max,precipitation_sum,temperature_2m_max&start_date=${date}&end_date=${date}&wind_speed_unit=mph&timezone=auto`;
+    const res = await fetch(url);
+    if (!res.ok) { _weatherCache[cacheKey] = null; return null; }
+    const data  = await res.json();
+    const wind  = data.daily?.wind_speed_10m_max?.[0] || 0;
+    const rain  = data.daily?.precipitation_sum?.[0]  || 0;
+    const temp  = data.daily?.temperature_2m_max?.[0] || 70;
+
+    let penalty = 0;
+    const flags = [];
+
+    if (sportLabel.includes('NFL')) {
+      if (wind >= 20)       { penalty -= 0.20; flags.push(`💨 Wind ${wind.toFixed(0)}mph — passing/kicking impacted`); }
+      else if (wind >= 12)  { penalty -= 0.10; flags.push(`💨 Wind ${wind.toFixed(0)}mph — mild passing concern`); }
+      if (rain >= 5)        { penalty -= 0.10; flags.push(`🌧 Rain ${rain.toFixed(0)}mm — wet ball, rushing game likely`); }
+      if (temp <= 20)       { penalty -= 0.08; flags.push(`🥶 ${temp.toFixed(0)}°F — cold weather factor`); }
+    }
+
+    if (sportLabel.includes('MLB')) {
+      if (wind >= 15 && wind > 0) {
+        // Wind blowing IN hurts HR/hits, blowing OUT helps — we don't know direction so apply mild flag
+        penalty -= 0.08;
+        flags.push(`💨 Wind ${wind.toFixed(0)}mph — affects fly balls`);
+      }
+      if (rain >= 3)        { penalty -= 0.12; flags.push(`🌧 Rain ${rain.toFixed(0)}mm — game delay risk`); }
+      if (temp <= 45)       { penalty -= 0.08; flags.push(`🥶 ${temp.toFixed(0)}°F — cold affects bat speed`); }
+    }
+
+    const result = { wind, rain, temp, penalty, label: flags[0] || null, allFlags: flags };
+    _weatherCache[cacheKey] = result;
+    return result;
+  } catch { _weatherCache[cacheKey] = null; return null; }
 }
 
 // ── UPGRADE 1: Line Movement Detection ───────────────────────────────────────
@@ -500,16 +625,15 @@ function calcVig(overOdds, underOdds) {
 //   vig_penalty 0.10 — subtracted when vig exceeds FAIR_VIG
 //   stats       0.20 — L5 average vs prop line signal (ESPN data, 0 if unavailable)
 // calib: object from getCalibration() — applies directional win-rate multiplier
-function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineMoveSig = 0, restPenalty = 0) {
+function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineMoveSig = 0, restPenalty = 0, weatherPenalty = 0) {
   const dirCalib        = (calib && calib[direction]) || 1.0;
   const edgeFactor      = (pct - 50) / 50;
   const consensusFactor = Math.min(bookCount / 6, 1);
   const fairFactor      = Math.max(0, 1 - vig / MAX_VIG);
   const vigPenalty      = Math.max(0, (vig - FAIR_VIG) / (MAX_VIG - FAIR_VIG));
-  // lineMoveSig: +0.15 if move confirms pick direction, -0.10 if move opposes it
-  // restPenalty: -0.15 if back-to-back game detected
   return (edgeFactor * 0.25 + consensusFactor * 0.20 + fairFactor * 0.15
-    - vigPenalty * 0.10 + statsSignal * 0.20 + lineMoveSig * 0.10 + restPenalty) * dirCalib;
+    - vigPenalty * 0.10 + statsSignal * 0.20 + lineMoveSig * 0.10
+    + restPenalty + weatherPenalty) * dirCalib;
 }
 
 // ── Self-improvement: pick history & calibration ─────────────────────────────
@@ -982,10 +1106,13 @@ function gameDate(iso) {
 
 // ── Player props table renderer ───────────────────────────────────────────────
 // sportLabel: passed in so top picks can be collected for the slate-wide All tab
-async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameDate = '') {
+async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameDate = '', homeTeam = '') {
   const calib = getCalibration();  // computed once — applied to every pick's score
   const leagueShort = Object.keys(ESPN_LEAGUE_CFG).find(k => sportLabel.toUpperCase().includes(k.toUpperCase())) || null;
   const espnCfg = leagueShort ? ESPN_LEAGUE_CFG[leagueShort] : null;
+
+  // Fetch weather once per game (NFL/MLB outdoor only)
+  const weatherData = await getWeatherForGame(homeTeam, sportLabel, gameDate || new Date().toISOString());
   const lines = {};
 
   // Aggregate across bookmakers — track bestOver, bestUnder, and how many books
@@ -1031,9 +1158,17 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     });
   }
 
+  // Determine if home team players are playing at home (for home/away split)
+  const homeTeamName = homeTeam || (matchLabel.split(' vs ')[0] || '').trim();
+
   // Fetch stats + athlete IDs (needed for injury & rest) all in parallel
   const [statsResults, athleteIds] = await Promise.all([
-    Promise.all(candidates.map(p => leagueShort ? getStatSignal(leagueShort, p.player, p.market, p.line) : Promise.resolve(null))),
+    Promise.all(candidates.map(p => {
+      if (!leagueShort) return Promise.resolve(null);
+      // Pass isHomeGame = null since we don't know player's team from prop data alone
+      // ESPN gamelog will still apply home/away split when available
+      return getStatSignal(leagueShort, p.player, p.market, p.line, null);
+    })),
     Promise.all(candidates.map(p => espnCfg ? espnAthleteId(espnCfg.sport, espnCfg.league, p.player) : Promise.resolve(null))),
   ]);
 
@@ -1064,9 +1199,12 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       const restResult  = restFactors[i];
       const restPenalty = restResult ? restResult.penalty : 0;
 
-      const score = propScore(parseFloat(c.pct), p.bookCount, vig, c.pick, calib, statSig, lineMoveSig, restPenalty);
+      // UPGRADE 3: Weather penalty (NFL/MLB outdoor only)
+      const weatherPenalty = weatherData ? weatherData.penalty : 0;
+
+      const score = propScore(parseFloat(c.pct), p.bookCount, vig, c.pick, calib, statSig, lineMoveSig, restPenalty, weatherPenalty);
       const conf  = score >= 0.35 ? 'HIGH' : score >= 0.18 ? 'MED' : 'LOW';
-      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i] };
+      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData };
     })
     .filter(p => p !== null)
     .filter(p => !(p.c.pick === 'UNDER' && p.line <= 0.5))
@@ -1134,8 +1272,10 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       <div class="pick-card-line">${p.line}</div>
       <div class="pick-card-direction">${pickHtml(p.c.pick)} <span class="pick-card-pct">${p.c.pct}% implied</span></div>
       ${p.statResult ? `<div style="font-size:0.7em;margin:4px 0 2px;color:${p.statResult.signal>0?'#00ff88':p.statResult.signal<0?'#ff4444':'#555'}">${p.statResult.signalLabel}</div>` : ''}
+      ${p.statResult?.extraLabels?.map(l => `<div style="font-size:0.67em;margin:1px 0;color:#555">${l}</div>`).join('') || ''}
       ${p.lineMove ? `<div style="font-size:0.68em;margin:2px 0;color:${p.lineMove.direction===p.c.pick?'#00ccff':'#ff9944'}">${p.lineMove.label}</div>` : ''}
       ${p.restResult?.isB2B ? `<div style="font-size:0.68em;margin:2px 0;color:#ff4444">${p.restResult.label}</div>` : ''}
+      ${p.weatherData?.label ? `<div style="font-size:0.68em;margin:2px 0;color:#ff9944">${p.weatherData.label}</div>` : ''}
       <div class="pick-card-reason">${reason}</div>
     </div>`;
   });
@@ -1343,7 +1483,7 @@ async function buildSportTab(name, force) {
       // Player props
       try {
         const propData = await fetchEventProps(s.key, ev.id, s.props, s.region, force);
-        html += await renderProps(propData, `${home} vs ${away}`, s.label, ev.id, ev.commence_time);
+        html += await renderProps(propData, `${home} vs ${away}`, s.label, ev.id, ev.commence_time, home);
       } catch(propErr) {
         html += `<div class="error">⚠ Props: ${propErr.message}</div>`;
       }
