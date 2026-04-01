@@ -719,6 +719,8 @@ function renderProps(propData, matchLabel, sportLabel) {
     .filter(p => p !== null)
     .filter(p => !(p.c.pick === 'UNDER' && p.line <= 0.5))  // trivial near-certainty lines
     .filter(p => p.vig <= MAX_VIG)                           // drop heavily juiced lines
+    .filter(p => parseFloat(p.c.pct) <= 72)                 // drop "line set too wide" picks — 87%+ UNDER is not edge, it's a lazy line
+    .filter(p => parseFloat(p.c.pct) >= 53)                 // drop near-coin-flip picks with no real market lean
     .sort((a, b) => b.score - a.score);
 
   // Take up to 5, max 3 per direction so OVER and UNDER both appear when both exist.
@@ -1201,7 +1203,20 @@ function buildAllTab() {
   // ── Slate-wide top 10 player props (best bet per game, all sports) ─────────
   if (allPropBets.length) {
     allPropBets.sort((a, b) => b.score - a.score);
-    const top10 = allPropBets.slice(0, 10);
+    // Balance OVER vs UNDER in the top 10 — max 6 per direction so both sides appear
+    const dirCap = {}; const top10 = [];
+    for (const v of allPropBets) {
+      if (top10.length >= 10) break;
+      const cnt = dirCap[v.pick] || 0;
+      if (cnt < 6) { top10.push(v); dirCap[v.pick] = cnt + 1; }
+    }
+    // Fill remaining slots if one direction had fewer than 6
+    if (top10.length < 10) {
+      for (const v of allPropBets) {
+        if (top10.length >= 10) break;
+        if (!top10.includes(v)) top10.push(v);
+      }
+    }
     html += `<div class="hero-section" style="margin-top:${allValueBets.length?'16px':'0'}">
       <div class="hero-title">🎯 Today's Best Prop Picks &nbsp;<span style="color:#1a3a1a;font-size:0.85em">${top10.length} games loaded</span></div>`;
     top10.forEach((v, i) => {
