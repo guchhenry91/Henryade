@@ -1368,7 +1368,9 @@ async function buildSoccer(force) {
   ];
 
   let html = '';
+  let lgIdx = 0;
   for (const lg of leagues) {
+    if (lgIdx++ > 0) await new Promise(r => setTimeout(r, 400));
     try {
       const events = await apiFetch(lg.key, 'h2h,totals', 'uk', force);
       const now = new Date();
