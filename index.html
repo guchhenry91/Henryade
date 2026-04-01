@@ -899,11 +899,12 @@ function showTab(name, e) {
   if (e && e.target) e.target.classList.add('active');
   document.getElementById('tab-' + name).classList.add('active');
 
+  // Lazy load — only fetch when first clicked, not on startup
   if (!loadedTabs.has(name)) {
     loadedTabs.add(name);
-    if (name === 'soccer') buildSoccer(false);
+    if (name === 'soccer') buildSoccer(false).then(buildAllTab);
     else if (name === 'history') buildHistoryTab();
-    else if (SPORT_TABS[name]) buildSportTab(name, false);
+    else if (SPORT_TABS[name]) buildSportTab(name, false).then(buildAllTab);
   }
 }
 
@@ -2002,32 +2003,31 @@ function buildAllTab() {
 
 // ── Master refresh ────────────────────────────────────────────────────────────
 async function refreshAll(force=false) {
-  if (force) {
-    clearAllCache();
-    loadedTabs.clear();
-    Object.keys(SPORT_TABS).forEach(k=>{
-      document.getElementById('tab-'+k).innerHTML='<div class="loading">Loading...</div>';
-    });
-    document.getElementById('tab-soccer').innerHTML='<div class="loading">Loading...</div>';
-    document.getElementById('tab-history').innerHTML='<div class="loading">Loading...</div>';
-  }
+  // Reset state
+  loadedTabs.clear();
   allValueBets.length = 0;
   allPropBets.length  = 0;
-  document.getElementById('all-loading') && (document.getElementById('all-loading').style.display='block');
 
-  // Load tabs sequentially with a small delay to avoid Odds API 429 rate limit.
-  // Each sport makes multiple prop calls per game — parallel loading blows the quota.
-  const delay = ms => new Promise(r => setTimeout(r, ms));
+  if (force) clearAllCache();
+
+  // Sport tabs are lazy — show "Click to load" placeholder, only fetch on click
+  Object.keys(SPORT_TABS).forEach(k=>{
+    const sportName = SPORT_TABS[k]?.label || k.toUpperCase();
+    document.getElementById('tab-'+k).innerHTML =
+      `<div class="loading" style="color:#888;cursor:pointer" onclick="showTab('${k}')">Click ${sportName} tab to load picks</div>`;
+  });
+
+  // Soccer loads on startup (feeds the All Value Bets tab)
+  document.getElementById('tab-soccer').innerHTML='<div class="loading">Loading soccer...</div>';
+  document.getElementById('all-loading') && (document.getElementById('all-loading').style.display='block');
   loadedTabs.add('soccer');
   await buildSoccer(force);
-  for (const k of Object.keys(SPORT_TABS)) {
-    loadedTabs.add(k);
-    await buildSportTab(k, force);
-    await delay(400); // 400ms between sports keeps us well under rate limit
-  }
   buildAllTab();
+
+  // History tab loads on startup (no API calls, just localStorage)
   buildHistoryTab();
   loadedTabs.add('history');
+
   updateCacheStatus();
   document.getElementById('all-loading') && (document.getElementById('all-loading').style.display='none');
 }
