@@ -177,12 +177,12 @@
 </div>
 
 <div id="tab-all"    class="tab-content active"><div class="loading" id="all-loading">Loading...</div></div>
-<div id="tab-soccer" class="tab-content"><div class="loading">Click Soccer tab to load</div></div>
-<div id="tab-nba"    class="tab-content"><div class="loading">Click NBA tab to load</div></div>
-<div id="tab-nfl"    class="tab-content"><div class="loading">Click NFL tab to load</div></div>
-<div id="tab-nhl"    class="tab-content"><div class="loading">Click NHL tab to load</div></div>
-<div id="tab-mlb"     class="tab-content"><div class="loading">Click MLB tab to load</div></div>
-<div id="tab-history" class="tab-content"><div class="loading">Click History tab to load</div></div>
+<div id="tab-soccer" class="tab-content"><div class="loading">Loading...</div></div>
+<div id="tab-nba"    class="tab-content"><div class="loading">Loading...</div></div>
+<div id="tab-nfl"    class="tab-content"><div class="loading">Loading...</div></div>
+<div id="tab-nhl"    class="tab-content"><div class="loading">Loading...</div></div>
+<div id="tab-mlb"     class="tab-content"><div class="loading">Loading...</div></div>
+<div id="tab-history" class="tab-content"><div class="loading">Loading...</div></div>
 
 <script>
 const API_KEY = '17b4d42651ab4e81ef298300544f5a21';
@@ -1232,18 +1232,25 @@ async function refreshAll(force=false) {
     clearAllCache();
     loadedTabs.clear();
     Object.keys(SPORT_TABS).forEach(k=>{
-      document.getElementById('tab-'+k).innerHTML=`<div class="loading">Click the tab to load ${SPORT_TABS[k].label}</div>`;
+      document.getElementById('tab-'+k).innerHTML='<div class="loading">Loading...</div>';
     });
-    document.getElementById('tab-soccer').innerHTML='<div class="loading">Click Soccer tab to reload</div>';
+    document.getElementById('tab-soccer').innerHTML='<div class="loading">Loading...</div>';
+    document.getElementById('tab-history').innerHTML='<div class="loading">Loading...</div>';
   }
   allValueBets.length = 0;
   allPropBets.length  = 0;
-  loadedTabs.delete('history');  // force History to re-render with fresh calibration on next visit
   document.getElementById('all-loading') && (document.getElementById('all-loading').style.display='block');
 
+  // Load all tabs in parallel so every section is ready on first click
   loadedTabs.add('soccer');
-  await buildSoccer(force);
+  Object.keys(SPORT_TABS).forEach(k => loadedTabs.add(k));
+  await Promise.all([
+    buildSoccer(force),
+    ...Object.keys(SPORT_TABS).map(k => buildSportTab(k, force)),
+  ]);
   buildAllTab();
+  buildHistoryTab();
+  loadedTabs.add('history');
   updateCacheStatus();
   document.getElementById('all-loading') && (document.getElementById('all-loading').style.display='none');
 }
