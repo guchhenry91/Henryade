@@ -1614,7 +1614,7 @@ async function buildSportTab(name, force) {
     const cutoff = new Date(now.getTime() + 48*60*60*1000);
     const upcoming = (events||[])
       .filter(e=>{ const d=new Date(e.commence_time); return d>=now && d<=cutoff; })
-      .slice(0, 3); // top 3 upcoming games — keeps prop API calls within rate limit
+      .slice(0, 10); // lazy loading means only one sport loads at a time — 10 games is safe
 
     if (!upcoming.length) {
       container.innerHTML = `<div class="sport-section"><div class="sport-title">${s.label}</div><div class="no-games">No games in next 48 hours.</div></div>`;
