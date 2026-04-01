@@ -86,6 +86,33 @@
   .pick-over{color:#00ff88;font-weight:700}
   .pick-under{color:#ff9944;font-weight:700}
 
+  /* ── My Picks slip ── */
+  .my-picks-btn{position:fixed;bottom:20px;right:20px;background:#00ff88;color:#000;border:none;border-radius:50px;padding:10px 18px;font-size:0.82em;font-weight:700;cursor:pointer;z-index:1000;box-shadow:0 4px 20px #00ff8840;transition:all .2s}
+  .my-picks-btn:hover{background:#00cc66;transform:scale(1.05)}
+  .my-picks-btn .slip-count{background:#000;color:#00ff88;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:0.75em;margin-left:6px}
+  .slip-panel{position:fixed;bottom:70px;right:20px;width:320px;max-height:70vh;background:#0d0d0d;border:1px solid #1e1e1e;border-radius:12px;z-index:999;display:none;flex-direction:column;box-shadow:0 8px 40px #000a}
+  .slip-panel.open{display:flex}
+  .slip-header{padding:14px 16px;border-bottom:1px solid #181818;display:flex;justify-content:space-between;align-items:center}
+  .slip-header h3{color:#00ff88;font-size:0.82em;font-weight:700;letter-spacing:1.5px}
+  .slip-body{overflow-y:auto;flex:1;padding:10px}
+  .slip-item{background:#111;border:1px solid #1a1a1a;border-radius:8px;padding:10px 12px;margin-bottom:8px;position:relative}
+  .slip-item-player{color:#ddd;font-size:0.82em;font-weight:600}
+  .slip-item-detail{color:#444;font-size:0.7em;margin-top:2px}
+  .slip-item-pick{display:flex;gap:6px;margin-top:8px}
+  .slip-pick-btn{flex:1;padding:5px 0;border-radius:6px;border:1px solid #222;background:#0a0a0a;color:#444;font-size:0.75em;font-weight:700;cursor:pointer;transition:all .15s}
+  .slip-pick-btn.over.active{background:#00ff8815;color:#00ff88;border-color:#00ff8850}
+  .slip-pick-btn.under.active{background:#ff994415;color:#ff9944;border-color:#ff994450}
+  .slip-pick-btn:hover{background:#151515}
+  .slip-remove{position:absolute;top:8px;right:8px;background:none;border:none;color:#333;cursor:pointer;font-size:0.9em;padding:2px 6px}
+  .slip-remove:hover{color:#ff4444}
+  .slip-footer{padding:12px 16px;border-top:1px solid #181818}
+  .slip-empty{color:#333;font-size:0.8em;text-align:center;padding:20px}
+  .pick-card-select{display:flex;gap:5px;margin-top:10px;border-top:1px solid #181818;padding-top:10px}
+  .pick-select-btn{flex:1;padding:5px 0;border-radius:6px;border:1px solid #1a1a1a;background:#0a0a0a;color:#383838;font-size:0.72em;font-weight:700;cursor:pointer;transition:all .15s;text-align:center}
+  .pick-select-btn:hover{background:#151515;color:#666}
+  .pick-select-btn.over.sel{background:#00ff8815;color:#00ff88;border-color:#00ff8840}
+  .pick-select-btn.under.sel{background:#ff994415;color:#ff9944;border-color:#ff994440}
+
   /* ── Hero section ── */
   .hero-section{background:linear-gradient(160deg,#0a120a 0%,#0d0d0d 60%);border:1px solid #00ff8820;border-radius:12px;padding:20px;margin-bottom:20px}
   .hero-title{color:#00ff88;font-size:0.78em;font-weight:700;margin-bottom:16px;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
@@ -1277,6 +1304,14 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       ${p.restResult?.isB2B ? `<div style="font-size:0.68em;margin:2px 0;color:#ff4444">${p.restResult.label}</div>` : ''}
       ${p.weatherData?.label ? `<div style="font-size:0.68em;margin:2px 0;color:#ff9944">${p.weatherData.label}</div>` : ''}
       <div class="pick-card-reason">${reason}</div>
+      <div class="pick-card-select">${(() => {
+        const slipPick = { id: `${new Date().toDateString()}_${p.player}_${p.market}`.replace(/\W+/g,'_'), player: p.player, market: p.market, line: p.line, sport: sportLabel, pct: p.c.pct, myPick: null };
+        const enc = encodeURIComponent(JSON.stringify(slipPick));
+        const saved = getSlip().find(x => x.id === slipPick.id);
+        return `<button class="pick-select-btn over ${saved?.myPick==='OVER'?'sel':''}" data-slip-id="${slipPick.id}" data-dir="OVER" onclick="pickSelect(this,'${enc}','OVER')">OVER</button>
+                <button class="pick-select-btn under ${saved?.myPick==='UNDER'?'sel':''}" data-slip-id="${slipPick.id}" data-dir="UNDER" onclick="pickSelect(this,'${enc}','UNDER')">UNDER</button>`;
+      })()}
+      </div>
     </div>`;
   });
   html += '</div>';
@@ -1847,12 +1882,122 @@ function histFilter(val, btn) {
   });
 }
 
+// ── My Picks Slip ─────────────────────────────────────────────────────────────
+const SLIP_KEY = 'bm_myslip_v1';
+
+function getSlip() {
+  try { return JSON.parse(localStorage.getItem(SLIP_KEY)) || []; } catch { return []; }
+}
+function saveSlip(slip) {
+  try { localStorage.setItem(SLIP_KEY, JSON.stringify(slip)); } catch {}
+}
+
+function slipAdd(pick) {
+  const slip = getSlip();
+  if (!slip.find(p => p.id === pick.id)) {
+    slip.unshift(pick);
+    saveSlip(slip);
+  }
+  renderSlip();
+}
+
+function slipSetDirection(id, direction) {
+  const slip = getSlip();
+  const p = slip.find(x => x.id === id);
+  if (p) { p.myPick = direction; saveSlip(slip); }
+  renderSlip();
+  // Update button states on the card
+  document.querySelectorAll(`[data-slip-id="${id}"]`).forEach(btn => {
+    btn.classList.toggle('sel', btn.dataset.dir === direction);
+  });
+}
+
+function slipRemove(id) {
+  const slip = getSlip().filter(p => p.id !== id);
+  saveSlip(slip);
+  renderSlip();
+  document.querySelectorAll(`[data-slip-id="${id}"]`).forEach(btn => btn.classList.remove('sel'));
+}
+
+function slipClear() {
+  saveSlip([]);
+  renderSlip();
+  document.querySelectorAll('.pick-select-btn').forEach(b => b.classList.remove('sel'));
+}
+
+function renderSlip() {
+  const slip    = getSlip();
+  const panel   = document.getElementById('slip-panel');
+  const countEl = document.getElementById('slip-count');
+  const bodyEl  = document.getElementById('slip-body');
+
+  const active  = slip.filter(p => p.myPick);
+  if (countEl) countEl.textContent = active.length || '';
+  countEl && (countEl.style.display = active.length ? 'inline-flex' : 'none');
+
+  if (!panel) return;
+  if (!slip.length) {
+    bodyEl.innerHTML = '<div class="slip-empty">No picks added yet.<br>Tap OVER / UNDER on any pick card.</div>';
+    document.getElementById('slip-footer').innerHTML = '';
+    return;
+  }
+
+  bodyEl.innerHTML = slip.map(p => {
+    const stat = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+    return `<div class="slip-item">
+      <button class="slip-remove" onclick="slipRemove('${p.id}')">✕</button>
+      <div class="slip-item-player">${p.player}</div>
+      <div class="slip-item-detail">${stat} ${p.line} &nbsp;·&nbsp; ${p.sport} &nbsp;·&nbsp; ${p.pct}% implied</div>
+      <div class="slip-item-pick">
+        <button class="slip-pick-btn over ${p.myPick==='OVER'?'active':''}" onclick="slipSetDirection('${p.id}','OVER')">OVER</button>
+        <button class="slip-pick-btn under ${p.myPick==='UNDER'?'active':''}" onclick="slipSetDirection('${p.id}','UNDER')">UNDER</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  const wins   = active.filter(p => p.myPick === 'OVER').length;
+  const unders = active.filter(p => p.myPick === 'UNDER').length;
+  document.getElementById('slip-footer').innerHTML = active.length
+    ? `<div style="font-size:0.75em;color:#555;margin-bottom:8px">${active.length} pick${active.length>1?'s':''} selected &nbsp;·&nbsp; ${wins} OVER / ${unders} UNDER</div>
+       <button class="btn" style="width:100%;justify-content:center;font-size:0.78em" onclick="slipClear()">🗑 Clear All</button>`
+    : '';
+}
+
+function toggleSlip() {
+  const panel = document.getElementById('slip-panel');
+  panel.classList.toggle('open');
+  if (panel.classList.contains('open')) renderSlip();
+}
+
+// Called from each pick card OVER/UNDER button
+function pickSelect(btn, pickJson, direction) {
+  const pick = JSON.parse(decodeURIComponent(pickJson));
+  pick.myPick = direction;
+  slipAdd(pick);
+  slipSetDirection(pick.id, direction);
+}
+
 // ── Init ──────────────────────────────────────────────────────────────────────
 window.addEventListener('load', () => {
   refreshAll(false);
-  // Run auto-grading silently in the background — toasts if any picks are graded
   autoGrade().catch(() => {});
+  renderSlip();
 });
 </script>
+
+<!-- Floating My Picks button -->
+<button class="my-picks-btn" onclick="toggleSlip()">
+  📋 My Picks <span class="slip-count" id="slip-count" style="display:none">0</span>
+</button>
+
+<!-- Picks slip panel -->
+<div class="slip-panel" id="slip-panel">
+  <div class="slip-header">
+    <h3>📋 MY PICKS</h3>
+    <button class="btn" style="font-size:0.72em;padding:3px 10px" onclick="toggleSlip()">✕ Close</button>
+  </div>
+  <div class="slip-body" id="slip-body"></div>
+  <div class="slip-footer" id="slip-footer"></div>
+</div>
 </body>
 </html>
