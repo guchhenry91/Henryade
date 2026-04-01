@@ -323,6 +323,158 @@ async function getStatSignal(leagueShort, playerName, market, line) {
   return { avg, games, signal, signalLabel, diff };
 }
 
+// ── UPGRADE 1: Line Movement Detection ───────────────────────────────────────
+// Saves opening lines to localStorage. On next load compares with current lines.
+// Returns { moved, direction, pctChange, label } or null.
+const LINE_MOVE_KEY = 'bm_opening_lines';
+
+function saveOpeningLine(eventId, player, market, overOdds, underOdds) {
+  const key = `${eventId}__${player}__${market}`;
+  try {
+    const stored = JSON.parse(localStorage.getItem(LINE_MOVE_KEY)) || {};
+    if (!stored[key]) {
+      stored[key] = { overOdds, underOdds, ts: Date.now() };
+      localStorage.setItem(LINE_MOVE_KEY, JSON.stringify(stored));
+    }
+  } catch {}
+}
+
+function getLineMovement(eventId, player, market, currentOver, currentUnder) {
+  const key = `${eventId}__${player}__${market}`;
+  try {
+    const stored = JSON.parse(localStorage.getItem(LINE_MOVE_KEY)) || {};
+    const opening = stored[key];
+    if (!opening) return null;
+    // Age check — discard stale opening lines older than 3 days
+    if (Date.now() - opening.ts > 3 * 24 * 60 * 60 * 1000) return null;
+
+    const openOverProb  = 1 / opening.overOdds;
+    const openUnderProb = 1 / opening.underOdds;
+    const curOverProb   = 1 / currentOver;
+    const curUnderProb  = 1 / currentUnder;
+
+    const overMove  = curOverProb  - openOverProb;   // positive = money on OVER
+    const underMove = curUnderProb - openUnderProb;  // positive = money on UNDER
+
+    const threshold = 0.03; // 3% prob shift = meaningful move
+    if (Math.abs(overMove) < threshold && Math.abs(underMove) < threshold) return null;
+
+    const direction  = overMove > underMove ? 'OVER' : 'UNDER';
+    const pctChange  = Math.max(Math.abs(overMove), Math.abs(underMove));
+    const strength   = pctChange >= 0.08 ? 'sharp' : 'mild';
+    const label      = `🔀 Line moved ${(pctChange*100).toFixed(1)}% toward ${direction} (${strength})`;
+    return { direction, pctChange, strength, label };
+  } catch { return null; }
+}
+
+// ── UPGRADE 2: Injury / Status Filter ────────────────────────────────────────
+// ESPN free injury API — returns status string for a player or null
+const _injuryCache = {};
+
+async function getPlayerStatus(sport, league, athleteId) {
+  if (!athleteId) return null;
+  const cacheKey = `${league}__${athleteId}`;
+  if (_injuryCache[cacheKey] !== undefined) return _injuryCache[cacheKey];
+  try {
+    const res = await fetch(
+      `https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/athletes/${athleteId}`
+    );
+    if (!res.ok) { _injuryCache[cacheKey] = null; return null; }
+    const data   = await res.json();
+    const status = data.athlete?.status?.type?.description || null;
+    _injuryCache[cacheKey] = status;
+    return status;
+  } catch { _injuryCache[cacheKey] = null; return null; }
+}
+
+// Returns true if player should be dropped from picks
+function isPlayerUnavailable(status) {
+  if (!status) return false;
+  const s = status.toLowerCase();
+  return s.includes('out') || s.includes('doubtful') || s.includes('injured');
+}
+
+// ── UPGRADE 3: Rest & Schedule Factor (back-to-back detector) ─────────────────
+// Returns { isB2B, label } for a player's team given the game date
+const _scheduleCache = {};
+
+async function getRestFactor(sport, league, athleteId, gameDateIso) {
+  if (!athleteId) return null;
+  const cacheKey = `rest__${league}__${athleteId}`;
+  if (_scheduleCache[cacheKey] !== undefined) return _scheduleCache[cacheKey];
+  try {
+    const res = await fetch(
+      `https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/athletes/${athleteId}/gamelog?season=2025`
+    );
+    if (!res.ok) { _scheduleCache[cacheKey] = null; return null; }
+    const data = await res.json();
+
+    // Find the most recent completed game date
+    const dates = [];
+    for (const st of (data.seasonTypes || [])) {
+      for (const cat of (st.categories || [])) {
+        for (const ev of (cat.events || [])) {
+          if (ev.eventDate) dates.push(new Date(ev.eventDate.date || ev.eventDate));
+        }
+      }
+    }
+    if (!dates.length) { _scheduleCache[cacheKey] = null; return null; }
+
+    dates.sort((a, b) => b - a);
+    const lastGame  = dates[0];
+    const gameDate  = new Date(gameDateIso);
+    const daysBetween = (gameDate - lastGame) / (1000 * 60 * 60 * 24);
+
+    const result = daysBetween <= 1.5
+      ? { isB2B: true,  label: '😴 Back-to-back game — fatigue risk', penalty: -0.15 }
+      : { isB2B: false, label: null, penalty: 0 };
+
+    _scheduleCache[cacheKey] = result;
+    return result;
+  } catch { _scheduleCache[cacheKey] = null; return null; }
+}
+
+// ── UPGRADE 4: Closing Line Value (CLV) Tracking ─────────────────────────────
+// Saves opening line odds when a pick is first created.
+// After the game closes, compares pick odds to closing odds to measure CLV.
+const CLV_KEY = 'bm_clv_v1';
+
+function saveOpeningOddsForPick(pickId, overOdds, underOdds, pickedDirection) {
+  try {
+    const stored = JSON.parse(localStorage.getItem(CLV_KEY)) || {};
+    if (!stored[pickId]) {
+      stored[pickId] = {
+        openOver: overOdds, openUnder: underOdds,
+        pickedDirection, ts: Date.now()
+      };
+      localStorage.setItem(CLV_KEY, JSON.stringify(stored));
+    }
+  } catch {}
+}
+
+// Returns CLV label for history display — compares pick odds to closing odds
+function getCLV(pickId, closeOver, closeUnder) {
+  try {
+    const stored = JSON.parse(localStorage.getItem(CLV_KEY)) || {};
+    const opening = stored[pickId];
+    if (!opening) return null;
+    const dir = opening.pickedDirection;
+    const openOdds  = dir === 'OVER' ? opening.openOver  : opening.openUnder;
+    const closeOdds = dir === 'OVER' ? closeOver         : closeUnder;
+    if (!openOdds || !closeOdds) return null;
+    const openProb  = 1 / openOdds;
+    const closeProb = 1 / closeOdds;
+    const clv = (openProb - closeProb) * 100; // positive = beat the close
+    if (Math.abs(clv) < 1) return null;
+    return {
+      clv,
+      label: clv > 0
+        ? `✅ CLV +${clv.toFixed(1)}% (beat the close)`
+        : `❌ CLV ${clv.toFixed(1)}% (line moved against you)`
+    };
+  } catch { return null; }
+}
+
 // ── Prop scoring constants ────────────────────────────────────────────────────
 // Market keys to exclude — these are specialty/novelty bets with no real edge signal
 const SPECIALTY_MARKETS = new Set([
@@ -348,13 +500,16 @@ function calcVig(overOdds, underOdds) {
 //   vig_penalty 0.10 — subtracted when vig exceeds FAIR_VIG
 //   stats       0.20 — L5 average vs prop line signal (ESPN data, 0 if unavailable)
 // calib: object from getCalibration() — applies directional win-rate multiplier
-function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0) {
+function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineMoveSig = 0, restPenalty = 0) {
   const dirCalib        = (calib && calib[direction]) || 1.0;
   const edgeFactor      = (pct - 50) / 50;
   const consensusFactor = Math.min(bookCount / 6, 1);
   const fairFactor      = Math.max(0, 1 - vig / MAX_VIG);
   const vigPenalty      = Math.max(0, (vig - FAIR_VIG) / (MAX_VIG - FAIR_VIG));
-  return (edgeFactor * 0.30 + consensusFactor * 0.25 + fairFactor * 0.15 - vigPenalty * 0.10 + statsSignal * 0.20) * dirCalib;
+  // lineMoveSig: +0.15 if move confirms pick direction, -0.10 if move opposes it
+  // restPenalty: -0.15 if back-to-back game detected
+  return (edgeFactor * 0.25 + consensusFactor * 0.20 + fairFactor * 0.15
+    - vigPenalty * 0.10 + statsSignal * 0.20 + lineMoveSig * 0.10 + restPenalty) * dirCalib;
 }
 
 // ── Self-improvement: pick history & calibration ─────────────────────────────
@@ -827,9 +982,10 @@ function gameDate(iso) {
 
 // ── Player props table renderer ───────────────────────────────────────────────
 // sportLabel: passed in so top picks can be collected for the slate-wide All tab
-async function renderProps(propData, matchLabel, sportLabel) {
+async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameDate = '') {
   const calib = getCalibration();  // computed once — applied to every pick's score
   const leagueShort = Object.keys(ESPN_LEAGUE_CFG).find(k => sportLabel.toUpperCase().includes(k.toUpperCase())) || null;
+  const espnCfg = leagueShort ? ESPN_LEAGUE_CFG[leagueShort] : null;
   const lines = {};
 
   // Aggregate across bookmakers — track bestOver, bestUnder, and how many books
@@ -861,25 +1017,56 @@ async function renderProps(propData, matchLabel, sportLabel) {
     });
   });
 
-  // Score every candidate — fetch ESPN L5 stats in parallel for all candidates
+  // Score every candidate — fetch all signals in parallel
   const candidates = Object.values(lines)
     .filter(p => p.bestOver > 0 && p.bestUnder > 0 && p.line != null);
 
-  // Fetch stats for all candidates in parallel (ESPN calls, cached per session)
-  const statsResults = await Promise.all(
-    candidates.map(p => leagueShort ? getStatSignal(leagueShort, p.player, p.market, p.line) : Promise.resolve(null))
-  );
+  // Save opening lines for CLV tracking (first time we see these lines today)
+  if (eventId) {
+    candidates.forEach(p => {
+      saveOpeningLine(eventId, p.player, p.market, p.bestOver, p.bestUnder);
+      const pickId = `${new Date().toDateString()}_${p.player}_${p.market}`.replace(/\W+/g,'_');
+      const c = propConf(p.bestOver, p.bestUnder);
+      if (c) saveOpeningOddsForPick(pickId, p.bestOver, p.bestUnder, c.pick);
+    });
+  }
+
+  // Fetch stats + athlete IDs (needed for injury & rest) all in parallel
+  const [statsResults, athleteIds] = await Promise.all([
+    Promise.all(candidates.map(p => leagueShort ? getStatSignal(leagueShort, p.player, p.market, p.line) : Promise.resolve(null))),
+    Promise.all(candidates.map(p => espnCfg ? espnAthleteId(espnCfg.sport, espnCfg.league, p.player) : Promise.resolve(null))),
+  ]);
+
+  // Fetch injury status + rest factor for each athlete in parallel
+  const [injuryStatuses, restFactors] = await Promise.all([
+    Promise.all(athleteIds.map(id => espnCfg && id ? getPlayerStatus(espnCfg.sport, espnCfg.league, id) : Promise.resolve(null))),
+    Promise.all(athleteIds.map(id => espnCfg && id && gameDate ? getRestFactor(espnCfg.sport, espnCfg.league, id, gameDate) : Promise.resolve(null))),
+  ]);
 
   const scored = candidates
     .map((p, i) => {
+      // UPGRADE 2: Drop injured/doubtful players entirely
+      if (isPlayerUnavailable(injuryStatuses[i])) return null;
+
       const c = propConf(p.bestOver, p.bestUnder);
       if (!c) return null;
       const vig        = calcVig(p.bestOver, p.bestUnder);
       const statResult = statsResults[i];
       const statSig    = statResult ? statResult.signal : 0;
-      const score      = propScore(parseFloat(c.pct), p.bookCount, vig, c.pick, calib, statSig);
-      const conf       = score >= 0.35 ? 'HIGH' : score >= 0.18 ? 'MED' : 'LOW';
-      return { ...p, c: {...c, conf}, vig, score, statResult };
+
+      // UPGRADE 1: Line movement signal
+      const lineMove   = eventId ? getLineMovement(eventId, p.player, p.market, p.bestOver, p.bestUnder) : null;
+      const lineMoveSig = lineMove
+        ? (lineMove.direction === c.pick ? (lineMove.strength === 'sharp' ? 0.15 : 0.08) : -0.10)
+        : 0;
+
+      // UPGRADE 3: Rest/back-to-back penalty
+      const restResult  = restFactors[i];
+      const restPenalty = restResult ? restResult.penalty : 0;
+
+      const score = propScore(parseFloat(c.pct), p.bookCount, vig, c.pick, calib, statSig, lineMoveSig, restPenalty);
+      const conf  = score >= 0.35 ? 'HIGH' : score >= 0.18 ? 'MED' : 'LOW';
+      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i] };
     })
     .filter(p => p !== null)
     .filter(p => !(p.c.pick === 'UNDER' && p.line <= 0.5))
@@ -947,6 +1134,8 @@ async function renderProps(propData, matchLabel, sportLabel) {
       <div class="pick-card-line">${p.line}</div>
       <div class="pick-card-direction">${pickHtml(p.c.pick)} <span class="pick-card-pct">${p.c.pct}% implied</span></div>
       ${p.statResult ? `<div style="font-size:0.7em;margin:4px 0 2px;color:${p.statResult.signal>0?'#00ff88':p.statResult.signal<0?'#ff4444':'#555'}">${p.statResult.signalLabel}</div>` : ''}
+      ${p.lineMove ? `<div style="font-size:0.68em;margin:2px 0;color:${p.lineMove.direction===p.c.pick?'#00ccff':'#ff9944'}">${p.lineMove.label}</div>` : ''}
+      ${p.restResult?.isB2B ? `<div style="font-size:0.68em;margin:2px 0;color:#ff4444">${p.restResult.label}</div>` : ''}
       <div class="pick-card-reason">${reason}</div>
     </div>`;
   });
@@ -1154,7 +1343,7 @@ async function buildSportTab(name, force) {
       // Player props
       try {
         const propData = await fetchEventProps(s.key, ev.id, s.props, s.region, force);
-        html += await renderProps(propData, `${home} vs ${away}`, s.label);
+        html += await renderProps(propData, `${home} vs ${away}`, s.label, ev.id, ev.commence_time);
       } catch(propErr) {
         html += `<div class="error">⚠ Props: ${propErr.message}</div>`;
       }
@@ -1375,7 +1564,7 @@ function buildHistoryTab() {
         </div>
       </div>
       <table class="ptable" id="hist-table">
-        <tr><th>Date</th><th>Sport</th><th>Pick Info</th><th>Pick</th><th>Result</th><th>Graded By</th></tr>`;
+        <tr><th>Date</th><th>Sport</th><th>Pick Info</th><th>Pick</th><th>Result</th><th>CLV</th><th>Graded By</th></tr>`;
     settled.slice(0, 100).forEach(p => {
       const isMatch  = p.type === 'match_winner';
       const stat     = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
@@ -1400,6 +1589,7 @@ function buildHistoryTab() {
         <td style="color:#bbb">${infoCell}</td>
         <td>${pickCell}</td>
         <td>${resHtml}</td>
+        <td style="font-size:0.72em;color:${(() => { const clv = getCLV(p.id, null, null); return clv ? (clv.clv > 0 ? '#00ff88' : '#ff4444') : '#333'; })()}">${(() => { const clv = getCLV(p.id, null, null); return clv ? clv.label.split('(')[0].trim() : '—'; })()}</td>
         <td style="font-size:0.75em;color:${p.autoGraded?'#00ccff':'#444'}">${p.autoGraded?'🤖 Auto':'✋ Manual'}</td>
       </tr>`;
     });
