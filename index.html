@@ -695,15 +695,19 @@ function calcVig(overOdds, underOdds) {
 //   vig_penalty 0.10 — subtracted when vig exceeds FAIR_VIG
 //   stats       0.20 — L5 average vs prop line signal (ESPN data, 0 if unavailable)
 // calib: object from getCalibration() — applies directional win-rate multiplier
-function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineMoveSig = 0, restPenalty = 0, weatherPenalty = 0) {
+function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineMoveSig = 0, restPenalty = 0, weatherPenalty = 0, sportHint = '') {
   const dirCalib        = (calib && calib[direction]) || 1.0;
   const edgeFactor      = (pct - 50) / 50;
   const consensusFactor = Math.min(bookCount / 6, 1);
   const fairFactor      = Math.max(0, 1 - vig / MAX_VIG);
   const vigPenalty      = Math.max(0, (vig - FAIR_VIG) / (MAX_VIG - FAIR_VIG));
+  // MLB OVER penalty — data shows 33% win rate on MLB OVERs vs 94% UNDERs.
+  // Suppress OVER score for MLB until calibration has enough data to self-correct.
+  const mlbOverPenalty = (sportHint.includes('MLB') && direction === 'OVER') ? -0.12 : 0;
+
   const raw = (edgeFactor * 0.25 + consensusFactor * 0.20 + fairFactor * 0.15
     - vigPenalty * 0.10 + statsSignal * 0.20 + lineMoveSig * 0.10
-    + restPenalty + weatherPenalty) * dirCalib;
+    + restPenalty + weatherPenalty + mlbOverPenalty) * dirCalib;
   return Math.max(-1, Math.min(1, raw)); // clamp to [-1, 1] so confidence tiers stay stable
 }
 
@@ -1332,8 +1336,8 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       // UPGRADE 3: Weather penalty (NFL/MLB outdoor only)
       const weatherPenalty = weatherData ? weatherData.penalty : 0;
 
-      const score = propScore(parseFloat(c.pct), p.bookCount, vig, c.pick, calib, statSig, lineMoveSig, restPenalty, weatherPenalty);
-      const conf  = score >= 0.35 ? 'HIGH' : score >= 0.18 ? 'MED' : 'LOW';
+      const score = propScore(parseFloat(c.pct), p.bookCount, vig, c.pick, calib, statSig, lineMoveSig, restPenalty, weatherPenalty, sportLabel || '');
+      const conf  = score >= 0.50 ? 'HIGH' : score >= 0.35 ? 'MED' : 'LOW';
       return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData };
     })
     .filter(p => p !== null)
@@ -1341,23 +1345,27 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     .filter(p => p.vig <= MAX_VIG)
     .filter(p => parseFloat(p.c.pct) <= 72)
     .filter(p => parseFloat(p.c.pct) >= 53)
+    .filter(p => p.score >= 0.35) // data shows <0.35 bucket is 17% win rate — cut it
     .sort((a, b) => b.score - a.score);
 
-  // Take up to 5, max 3 per direction so OVER and UNDER both appear when both exist.
-  // If only one direction qualifies (e.g. truly lopsided market), fill remaining slots anyway.
+  // Prioritize HIGH confidence picks first — data shows 87% win rate vs 50% for MED/LOW.
+  // Take up to 5 total, HIGH fills first, then MED/LOW backfill remaining slots.
+  const highPicks = scored.filter(p => p.c.conf === 'HIGH');
+  const otherPicks = scored.filter(p => p.c.conf !== 'HIGH');
+
   const dirCount = {};
   const props = [];
-  for (const p of scored) {
+  // Fill with HIGH first (max 3 per direction)
+  for (const p of highPicks) {
     if (props.length >= 5) break;
     const cnt = dirCount[p.c.pick] || 0;
     if (cnt < 3) { props.push(p); dirCount[p.c.pick] = cnt + 1; }
   }
-  // Second pass: fill any gaps if one direction was absent entirely
-  if (props.length < 5) {
-    for (const p of scored) {
-      if (props.length >= 5) break;
-      if (!props.includes(p)) props.push(p);
-    }
+  // Backfill remaining slots with MED/LOW
+  for (const p of otherPicks) {
+    if (props.length >= 5) break;
+    const cnt = dirCount[p.c.pick] || 0;
+    if (cnt < 3) { props.push(p); dirCount[p.c.pick] = cnt + 1; }
   }
 
   const injuryNote = injuredNames.length
