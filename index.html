@@ -211,6 +211,118 @@ const SPORT_TABS = {
   },
 };
 
+// ── ESPN Stats Layer ──────────────────────────────────────────────────────────
+// Maps Odds API market keys → ESPN stat keys per league
+const ESPN_STAT_MAP = {
+  player_points:        { nba: 'points' },
+  player_rebounds:      { nba: 'rebounds' },
+  player_assists:       { nba: 'assists' },
+  player_threes:        { nba: 'threePointFieldGoalsMade' },
+  player_pass_yds:      { nfl: 'passingYards' },
+  player_rush_yds:      { nfl: 'rushingYards' },
+  player_receiving_yds: { nfl: 'receivingYards' },
+  player_pass_tds:      { nfl: 'passingTouchdowns' },
+  player_receptions:    { nfl: 'receptions' },
+  player_shots_on_goal: { nhl: 'shots' },
+  player_points:        { nhl: 'points' },
+  player_assists:       { nhl: 'assists' },
+  player_goals:         { nhl: 'goals' },
+  batter_hits:          { mlb: 'hits' },
+  batter_home_runs:     { mlb: 'homeRuns' },
+  batter_rbis:          { mlb: 'rbi' },
+  batter_runs_scored:   { mlb: 'runs' },
+  batter_total_bases:   { mlb: 'totalBases' },
+};
+
+const ESPN_LEAGUE_CFG = {
+  nba: { sport: 'basketball',       league: 'nba' },
+  nfl: { sport: 'americanfootball', league: 'nfl' },
+  nhl: { sport: 'hockey',           league: 'nhl' },
+  mlb: { sport: 'baseball',         league: 'mlb' },
+};
+
+// Cache for athlete IDs so we don't search the same player twice per session
+const _athleteIdCache = {};
+
+// Search ESPN for an athlete ID by name. Returns athlete ID string or null.
+async function espnAthleteId(sport, league, playerName) {
+  const cacheKey = `${league}__${playerName}`;
+  if (_athleteIdCache[cacheKey] !== undefined) return _athleteIdCache[cacheKey];
+  try {
+    const q = encodeURIComponent(playerName);
+    const res = await fetch(`https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/athletes?limit=5&search=${q}`);
+    if (!res.ok) { _athleteIdCache[cacheKey] = null; return null; }
+    const data = await res.json();
+    const athletes = data.items || data.athletes || [];
+    // Pick closest name match
+    const match = athletes.find(a => {
+      const n = (a.displayName || a.fullName || '').toLowerCase();
+      const p = playerName.toLowerCase();
+      return n === p || n.includes(p.split(' ').pop().toLowerCase());
+    });
+    const id = match ? (match.id || null) : null;
+    _athleteIdCache[cacheKey] = id;
+    return id;
+  } catch { _athleteIdCache[cacheKey] = null; return null; }
+}
+
+// Fetch last N games for an athlete and return average of a given stat key.
+// Returns { avg, games } or null if unavailable.
+async function espnPlayerL5(sport, league, athleteId, statKey, n = 5) {
+  try {
+    const res = await fetch(
+      `https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/athletes/${athleteId}/gamelog?season=2025`
+    );
+    if (!res.ok) return null;
+    const data = await res.json();
+
+    // ESPN gamelog structure: data.seasonTypes[].categories[].events[]
+    const events = [];
+    for (const st of (data.seasonTypes || [])) {
+      for (const cat of (st.categories || [])) {
+        const idx = (cat.names || []).indexOf(statKey);
+        if (idx === -1) continue;
+        for (const ev of (cat.events || [])) {
+          const val = parseFloat((ev.stats || [])[idx]);
+          if (!isNaN(val)) events.push(val);
+        }
+      }
+    }
+    if (!events.length) return null;
+    const recent = events.slice(-n);  // last N games (newest at end)
+    const avg = recent.reduce((a, b) => a + b, 0) / recent.length;
+    return { avg: parseFloat(avg.toFixed(2)), games: recent.length };
+  } catch { return null; }
+}
+
+// Master stats fetcher: given sport league key (nba/nfl/nhl/mlb), player name, market key, line
+// Returns { avg, games, signal, signalLabel } or null
+async function getStatSignal(leagueShort, playerName, market, line) {
+  const cfg     = ESPN_LEAGUE_CFG[leagueShort];
+  if (!cfg) return null;
+  const statKey = (ESPN_STAT_MAP[market] || {})[leagueShort];
+  if (!statKey) return null;
+
+  const athleteId = await espnAthleteId(cfg.sport, cfg.league, playerName);
+  if (!athleteId) return null;
+
+  const result = await espnPlayerL5(cfg.sport, cfg.league, athleteId, statKey);
+  if (!result) return null;
+
+  const { avg, games } = result;
+  const diff = (avg - line) / line;  // % above/below line
+
+  let signal = 0;
+  let signalLabel = '';
+  if      (diff >=  0.15) { signal =  0.20; signalLabel = `📈 L${games}: ${avg} avg (${((diff)*100).toFixed(0)}% over line)`; }
+  else if (diff >=  0.05) { signal =  0.08; signalLabel = `↑ L${games}: ${avg} avg`; }
+  else if (diff <= -0.15) { signal = -0.15; signalLabel = `📉 L${games}: ${avg} avg (${((-diff)*100).toFixed(0)}% under line)`; }
+  else if (diff <= -0.05) { signal = -0.06; signalLabel = `↓ L${games}: ${avg} avg`; }
+  else                    { signalLabel = `≈ L${games}: ${avg} avg (on line)`; }
+
+  return { avg, games, signal, signalLabel, diff };
+}
+
 // ── Prop scoring constants ────────────────────────────────────────────────────
 // Market keys to exclude — these are specialty/novelty bets with no real edge signal
 const SPECIALTY_MARKETS = new Set([
@@ -229,19 +341,20 @@ function calcVig(overOdds, underOdds) {
   return (1 / overOdds + 1 / underOdds) - 1;
 }
 
-// Composite score — only uses signals derivable from Odds API market data:
-//   edge       0.40 — vig-removed pick probability above 50%
-//   consensus  0.30 — how many distinct bookmakers offer both sides of this line
-//   fair_price 0.20 — how close to a fair (low-vig) line
+// Composite score:
+//   edge        0.30 — vig-removed pick probability above 50%
+//   consensus   0.25 — how many distinct bookmakers offer both sides of this line
+//   fair_price  0.15 — how close to a fair (low-vig) line
 //   vig_penalty 0.10 — subtracted when vig exceeds FAIR_VIG
+//   stats       0.20 — L5 average vs prop line signal (ESPN data, 0 if unavailable)
 // calib: object from getCalibration() — applies directional win-rate multiplier
-function propScore(pct, bookCount, vig, direction, calib) {
+function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0) {
   const dirCalib        = (calib && calib[direction]) || 1.0;
   const edgeFactor      = (pct - 50) / 50;
   const consensusFactor = Math.min(bookCount / 6, 1);
   const fairFactor      = Math.max(0, 1 - vig / MAX_VIG);
   const vigPenalty      = Math.max(0, (vig - FAIR_VIG) / (MAX_VIG - FAIR_VIG));
-  return (edgeFactor * 0.40 + consensusFactor * 0.30 + fairFactor * 0.20 - vigPenalty * 0.10) * dirCalib;
+  return (edgeFactor * 0.30 + consensusFactor * 0.25 + fairFactor * 0.15 - vigPenalty * 0.10 + statsSignal * 0.20) * dirCalib;
 }
 
 // ── Self-improvement: pick history & calibration ─────────────────────────────
@@ -662,7 +775,51 @@ function bestTotal(ev, line=2.5) {
 }
 function estimateXG(hO,aO,dO,tot=2.5) {
   const hi=impliedProb(hO),ai=impliedProb(aO);
-  return { homeXG: tot*(hi/(hi+ai)), awayXG: tot*(ai/(hi+ai)) };
+  // Use draw odds to refine xG split — draw probability implies low-scoring game
+  const drawAdj = dO ? Math.max(0.8, 1 - impliedProb(dO) * 0.5) : 1;
+  const homeXG  = tot * (hi/(hi+ai)) * drawAdj;
+  const awayXG  = tot * (ai/(hi+ai)) * drawAdj;
+  // Clamp to realistic range: 0.4 – 3.5 goals per team
+  return { homeXG: Math.max(0.4, Math.min(3.5, homeXG)), awayXG: Math.max(0.4, Math.min(3.5, awayXG)) };
+}
+
+// Fetch ESPN team recent form — last 5 results, returns { wins, draws, losses, goalsFor, goalsAgainst }
+async function fetchTeamForm(sport, league, teamName) {
+  try {
+    const q   = encodeURIComponent(teamName.split(' ').slice(-1)[0]); // search by last word of team name
+    const res = await fetch(`https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/teams?limit=10&search=${q}`);
+    if (!res.ok) return null;
+    const data  = await res.json();
+    const teams = data.sports?.[0]?.leagues?.[0]?.teams || [];
+    const team  = teams.find(t => {
+      const n = (t.team?.displayName || t.team?.name || '').toLowerCase();
+      return n.includes(teamName.toLowerCase().split(' ').pop().toLowerCase());
+    });
+    if (!team?.team?.id) return null;
+
+    const id     = team.team.id;
+    const evRes  = await fetch(`https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/teams/${id}/schedule?season=2025&seasontype=2`);
+    if (!evRes.ok) return null;
+    const evData = await evRes.json();
+    const events = (evData.events || []).filter(e => e.competitions?.[0]?.status?.type?.completed).slice(-5);
+    if (!events.length) return null;
+
+    let wins=0, draws=0, losses=0, gf=0, ga=0;
+    for (const e of events) {
+      const comp = e.competitions?.[0];
+      const myComp   = comp?.competitors?.find(c => c.id === String(id));
+      const oppComp  = comp?.competitors?.find(c => c.id !== String(id));
+      if (!myComp || !oppComp) continue;
+      const myScore  = parseInt(myComp.score  || 0);
+      const oppScore = parseInt(oppComp.score || 0);
+      gf += myScore; ga += oppScore;
+      if      (myComp.winner)  wins++;
+      else if (oppComp.winner) losses++;
+      else                     draws++;
+    }
+    const n = wins + draws + losses;
+    return n ? { wins, draws, losses, goalsFor: gf/n, goalsAgainst: ga/n, games: n } : null;
+  } catch { return null; }
 }
 function gameDate(iso) {
   return new Date(iso).toLocaleString('en-GB',{weekday:'short',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
@@ -670,8 +827,9 @@ function gameDate(iso) {
 
 // ── Player props table renderer ───────────────────────────────────────────────
 // sportLabel: passed in so top picks can be collected for the slate-wide All tab
-function renderProps(propData, matchLabel, sportLabel) {
+async function renderProps(propData, matchLabel, sportLabel) {
   const calib = getCalibration();  // computed once — applied to every pick's score
+  const leagueShort = Object.keys(ESPN_LEAGUE_CFG).find(k => sportLabel.toUpperCase().includes(k.toUpperCase())) || null;
   const lines = {};
 
   // Aggregate across bookmakers — track bestOver, bestUnder, and how many books
@@ -703,24 +861,31 @@ function renderProps(propData, matchLabel, sportLabel) {
     });
   });
 
-  // Score every candidate using composite formula
-  const scored = Object.values(lines)
-    .filter(p => p.bestOver > 0 && p.bestUnder > 0 && p.line != null)
-    .map(p => {
+  // Score every candidate — fetch ESPN L5 stats in parallel for all candidates
+  const candidates = Object.values(lines)
+    .filter(p => p.bestOver > 0 && p.bestUnder > 0 && p.line != null);
+
+  // Fetch stats for all candidates in parallel (ESPN calls, cached per session)
+  const statsResults = await Promise.all(
+    candidates.map(p => leagueShort ? getStatSignal(leagueShort, p.player, p.market, p.line) : Promise.resolve(null))
+  );
+
+  const scored = candidates
+    .map((p, i) => {
       const c = propConf(p.bestOver, p.bestUnder);
       if (!c) return null;
-      const vig   = calcVig(p.bestOver, p.bestUnder);
-      const score = propScore(parseFloat(c.pct), p.bookCount, vig, c.pick, calib);
-      // Derive confidence from composite score (not raw pct) so OVER picks aren't
-      // permanently penalised just because books shade lines toward UNDER.
-      const conf  = score >= 0.35 ? 'HIGH' : score >= 0.18 ? 'MED' : 'LOW';
-      return { ...p, c: {...c, conf}, vig, score };
+      const vig        = calcVig(p.bestOver, p.bestUnder);
+      const statResult = statsResults[i];
+      const statSig    = statResult ? statResult.signal : 0;
+      const score      = propScore(parseFloat(c.pct), p.bookCount, vig, c.pick, calib, statSig);
+      const conf       = score >= 0.35 ? 'HIGH' : score >= 0.18 ? 'MED' : 'LOW';
+      return { ...p, c: {...c, conf}, vig, score, statResult };
     })
     .filter(p => p !== null)
-    .filter(p => !(p.c.pick === 'UNDER' && p.line <= 0.5))  // trivial near-certainty lines
-    .filter(p => p.vig <= MAX_VIG)                           // drop heavily juiced lines
-    .filter(p => parseFloat(p.c.pct) <= 72)                 // drop "line set too wide" picks — 87%+ UNDER is not edge, it's a lazy line
-    .filter(p => parseFloat(p.c.pct) >= 53)                 // drop near-coin-flip picks with no real market lean
+    .filter(p => !(p.c.pick === 'UNDER' && p.line <= 0.5))
+    .filter(p => p.vig <= MAX_VIG)
+    .filter(p => parseFloat(p.c.pct) <= 72)
+    .filter(p => parseFloat(p.c.pct) >= 53)
     .sort((a, b) => b.score - a.score);
 
   // Take up to 5, max 3 per direction so OVER and UNDER both appear when both exist.
@@ -781,6 +946,7 @@ function renderProps(propData, matchLabel, sportLabel) {
       <div class="pick-card-stat">${stat}</div>
       <div class="pick-card-line">${p.line}</div>
       <div class="pick-card-direction">${pickHtml(p.c.pick)} <span class="pick-card-pct">${p.c.pct}% implied</span></div>
+      ${p.statResult ? `<div style="font-size:0.7em;margin:4px 0 2px;color:${p.statResult.signal>0?'#00ff88':p.statResult.signal<0?'#ff4444':'#555'}">${p.statResult.signalLabel}</div>` : ''}
       <div class="pick-card-reason">${reason}</div>
     </div>`;
   });
@@ -857,7 +1023,28 @@ async function buildSoccer(force) {
         if (!hO||!aO) continue;
 
         const tot = bestTotal(ev,2.5);
-        const {homeXG,awayXG} = estimateXG(hO,aO,dO||4,2.5);
+
+        // Fetch recent form for both teams in parallel — upgrades xG from odds-only to stats-backed
+        const espnLeague = lg.key.includes('epl') ? {sport:'soccer',league:'eng.1'}
+          : lg.key.includes('champs') ? {sport:'soccer',league:'uefa.champions'}
+          : lg.key.includes('la_liga') ? {sport:'soccer',league:'esp.1'}
+          : {sport:'soccer',league:'fifa.world'};
+        const [homeForm, awayForm] = await Promise.all([
+          fetchTeamForm(espnLeague.sport, espnLeague.league, home),
+          fetchTeamForm(espnLeague.sport, espnLeague.league, away),
+        ]);
+
+        // Blend odds-based xG with real form data when available
+        let { homeXG, awayXG } = estimateXG(hO, aO, dO||4, 2.5);
+        if (homeForm && awayForm) {
+          // Use 50% odds-based + 50% real stats blend
+          const formHomeXG = (homeForm.goalsFor  * 0.6 + awayForm.goalsAgainst * 0.4);
+          const formAwayXG = (awayForm.goalsFor  * 0.6 + homeForm.goalsAgainst * 0.4);
+          homeXG = homeXG * 0.5 + formHomeXG * 0.5;
+          awayXG = awayXG * 0.5 + formAwayXG * 0.5;
+          homeXG = Math.max(0.4, Math.min(3.5, homeXG));
+          awayXG = Math.max(0.4, Math.min(3.5, awayXG));
+        }
         const scores = correctScores(homeXG,awayXG);
         let hw=0,dr=0,aw=0,ov=0,un=0,btts=0;
         scores.forEach(s=>{
@@ -877,8 +1064,15 @@ async function buildSoccer(force) {
 
         const top5 = scores.slice(0,5);
 
+        const formTag = (form) => form
+          ? `<span style="font-size:0.7em;color:#555">${form.wins}W-${form.draws}D-${form.losses}L &nbsp;${form.goalsFor.toFixed(1)}gf/${form.goalsAgainst.toFixed(1)}ga (L${form.games})</span>`
+          : '';
         html += `<div class="match-card">
           <div class="match-title"><span>${home} vs ${away}</span><span class="match-time">${gameDate(ev.commence_time)}</span></div>
+          ${homeForm || awayForm ? `<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px;font-size:0.78em">
+            <div><span style="color:#888">${home.split(' ').pop()}:</span> ${formTag(homeForm)}</div>
+            <div><span style="color:#888">${away.split(' ').pop()}:</span> ${formTag(awayForm)}</div>
+          </div>` : ''}
           ${winnerBox(home,away,hO,aO,dO,ev.commence_time,lg.label)}
           <table class="odds-table">
             <tr><th>Outcome</th><th>Model%</th><th>Odds</th><th>Imp%</th><th>Edge</th></tr>
@@ -960,7 +1154,7 @@ async function buildSportTab(name, force) {
       // Player props
       try {
         const propData = await fetchEventProps(s.key, ev.id, s.props, s.region, force);
-        html += renderProps(propData, `${home} vs ${away}`, s.label);
+        html += await renderProps(propData, `${home} vs ${away}`, s.label);
       } catch(propErr) {
         html += `<div class="error">⚠ Props: ${propErr.message}</div>`;
       }
