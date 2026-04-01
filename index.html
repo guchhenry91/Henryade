@@ -244,9 +244,9 @@ const SPORT_TABS = {
 // ── ESPN Stats Layer ──────────────────────────────────────────────────────────
 // Maps Odds API market keys → ESPN stat keys per league
 const ESPN_STAT_MAP = {
-  player_points:        { nba: 'points' },
+  player_points:        { nba: 'points', nhl: 'points' },  // merged: was duplicate key
   player_rebounds:      { nba: 'rebounds' },
-  player_assists:       { nba: 'assists' },
+  player_assists:       { nba: 'assists', nhl: 'assists' },
   player_threes:        { nba: 'threePointFieldGoalsMade' },
   player_pass_yds:      { nfl: 'passingYards' },
   player_rush_yds:      { nfl: 'rushingYards' },
@@ -254,8 +254,6 @@ const ESPN_STAT_MAP = {
   player_pass_tds:      { nfl: 'passingTouchdowns' },
   player_receptions:    { nfl: 'receptions' },
   player_shots_on_goal: { nhl: 'shots' },
-  player_points:        { nhl: 'points' },
-  player_assists:       { nhl: 'assists' },
   player_goals:         { nhl: 'goals' },
   batter_hits:          { mlb: 'hits' },
   batter_home_runs:     { mlb: 'homeRuns' },
@@ -315,8 +313,9 @@ async function espnPlayerGamelog(sport, league, athleteId, statKey) {
         for (const ev of (cat.events || [])) {
           const val = parseFloat((ev.stats || [])[idx]);
           if (isNaN(val)) continue;
-          // homeAway flag: ESPN marks away games with '@' in the opponent string
-          const isHome = !(ev.opponent?.homeAway === 'away' || ev.atVs === '@');
+          // homeAway flag: ESPN marks the opponent as 'away' when this player's team is at home
+          // ev.opponent.homeAway === 'away' means the opponent travelled → this player is HOME
+          const isHome = ev.opponent?.homeAway === 'away' || ev.atVs !== '@';
           entries.push({ val, isHome });
         }
       }
@@ -368,6 +367,7 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
 
   // Use location-specific avg if we have enough data, else fall back to L5
   const effectiveAvg = locationLabel ? locationAvg : avg5;
+  if (!line || line === 0) return null; // can't compute signal if line is zero
   const diff = (effectiveAvg - line) / line;
 
   let baseSignal = 0;
@@ -661,9 +661,10 @@ function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineM
   const consensusFactor = Math.min(bookCount / 6, 1);
   const fairFactor      = Math.max(0, 1 - vig / MAX_VIG);
   const vigPenalty      = Math.max(0, (vig - FAIR_VIG) / (MAX_VIG - FAIR_VIG));
-  return (edgeFactor * 0.25 + consensusFactor * 0.20 + fairFactor * 0.15
+  const raw = (edgeFactor * 0.25 + consensusFactor * 0.20 + fairFactor * 0.15
     - vigPenalty * 0.10 + statsSignal * 0.20 + lineMoveSig * 0.10
     + restPenalty + weatherPenalty) * dirCalib;
+  return Math.max(-1, Math.min(1, raw)); // clamp to [-1, 1] so confidence tiers stay stable
 }
 
 // ── Self-improvement: pick history & calibration ─────────────────────────────
@@ -796,7 +797,10 @@ async function autoGrade() {
       const boardRes = await fetch(
         `https://site.api.espn.com/apis/site/v2/sports/${grp.cfg.sport}/${grp.cfg.league}/scoreboard?dates=${grp.dateStr}&limit=50`
       );
-      if (!boardRes.ok) continue;
+      if (!boardRes.ok) {
+        console.warn(`Auto-grade: ESPN scoreboard failed for ${grp.cfg.league} (${grp.dateStr}) — picks not graded`);
+        continue;
+      }
       const board  = await boardRes.json();
       const events = board.events || [];
 
@@ -831,7 +835,7 @@ async function autoGrade() {
             const sumRes = await fetch(
               `https://site.api.espn.com/apis/site/v2/sports/${grp.cfg.sport}/${grp.cfg.league}/summary?event=${matchEv.id}`
             );
-            if (!sumRes.ok) continue;
+            if (!sumRes.ok) { console.warn(`Auto-grade: ESPN summary failed for event ${matchEv.id}`); continue; }
             const summary    = await sumRes.json();
             const actualStat = playerStatFromSummary(summary, pick.player, statKey);
             if (actualStat === null) continue;
@@ -843,9 +847,9 @@ async function autoGrade() {
             const hp = history.find(x => x.id === pick.id);
             if (hp) { hp.result = result; hp.autoGraded = true; graded++; }
           }
-        } catch { /* skip individual pick on error */ }
+        } catch(e) { console.warn('Auto-grade: error on pick', pick?.id, e); }
       }
-    } catch { /* skip sport/date group on error */ }
+    } catch(e) { console.warn('Auto-grade: error on group', grp?.cfg?.league, e); }
   }
 
   if (graded > 0) {
@@ -902,9 +906,16 @@ function showTab(name, e) {
   // Lazy load — only fetch when first clicked, not on startup
   if (!loadedTabs.has(name)) {
     loadedTabs.add(name);
-    if (name === 'soccer') buildSoccer(false).then(buildAllTab);
-    else if (name === 'history') buildHistoryTab();
-    else if (SPORT_TABS[name]) buildSportTab(name, false).then(buildAllTab);
+    if (name === 'soccer') {
+      document.getElementById('tab-soccer').innerHTML = '<div class="loading">Loading soccer...</div>';
+      buildSoccer(false).then(() => { buildAllTab(); });
+    } else if (name === 'history') {
+      buildHistoryTab();
+    } else if (SPORT_TABS[name]) {
+      const sportName = SPORT_TABS[name].label || name.toUpperCase();
+      document.getElementById('tab-' + name).innerHTML = `<div class="loading">Loading ${sportName}...</div>`;
+      buildSportTab(name, false).then(() => { buildAllTab(); }); // rebuild All tab with new picks
+    }
   }
 }
 
@@ -974,8 +985,8 @@ function updateTokens(res) {
 async function apiFetch(sport, markets, region='uk', force=false) {
   const ck = `${sport}_${markets}`;
   const cached = getCache(ck);
-  if (cached && (!force || !tokensSafe())) return cached; // always serve cache when tokens are low
-  if (!tokensSafe()) return cached || [];
+  if (!tokensSafe()) return cached || []; // tokens critically low — always serve cache regardless of force
+  if (cached && !force) return cached;    // cache hit and not forced — serve cache
   const url = `${BASE}/sports/${sport}/odds/?apiKey=${API_KEY}&regions=${region}&markets=${markets}&oddsFormat=decimal`;
   const res = await fetch(url);
   updateTokens(res);
@@ -1253,9 +1264,13 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     Promise.all(athleteIds.map(id => espnCfg && id && gameDate ? getRestFactor(espnCfg.sport, espnCfg.league, id, gameDate) : Promise.resolve(null))),
   ]);
 
+  const injuredNames = candidates
+    .filter((p, i) => isPlayerUnavailable(injuryStatuses[i]))
+    .map(p => p.player);
+
   const scored = candidates
     .map((p, i) => {
-      // UPGRADE 2: Drop injured/doubtful players entirely
+      // Drop injured/doubtful players — names collected above for UI notice
       if (isPlayerUnavailable(injuryStatuses[i])) return null;
 
       const c = propConf(p.bestOver, p.bestUnder);
@@ -1305,14 +1320,18 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     }
   }
 
-  if (!props.length) return `<div class="no-games">No qualifying player props.</div>`;
+  const injuryNote = injuredNames.length
+    ? `<div style="font-size:0.72em;color:#ff6644;margin-bottom:8px">🚑 Filtered out (injury/doubtful): ${injuredNames.join(', ')}</div>`
+    : '';
+
+  if (!props.length) return injuryNote + `<div class="no-games">No qualifying player props.</div>`;
 
   // Push top pick to slate-wide collection + persist ALL shown picks to history
   if (sportLabel) {
     props.forEach((p, i) => {
       const pick = {
         // Dedup key: same player+market on same calendar day = same pick, don't double-save
-        id:        `${new Date().toDateString()}_${p.player}_${p.market}`.replace(/\W+/g,'_'),
+        id:        `${new Date().toISOString().slice(0,10)}_${p.player}_${p.market}`.replace(/\W+/g,'_'),
         date:      new Date().toISOString(),
         sport:     sportLabel, match: matchLabel,
         player:    p.player,  market: p.market,
@@ -1326,7 +1345,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     });
   }
 
-  let html = `<div class="section-hdr">🎯 TOP PICKS — ${matchLabel}</div>
+  let html = injuryNote + `<div class="section-hdr">🎯 TOP PICKS — ${matchLabel}</div>
     <div class="pick-cards">`;
 
   props.forEach((p, i) => {
