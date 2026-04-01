@@ -1039,8 +1039,8 @@ async function apiFetch(sport, markets, region='uk', force=false) {
 async function fetchEvents(sport, force=false) {
   const ck = `events_${sport}`;
   const cached = getCache(ck);
-  if (cached && (!force || !tokensSafe())) return cached;
   if (!tokensSafe()) return cached || [];
+  if (cached && !force) return cached;
   const res = await fetch(`${BASE}/sports/${sport}/events?apiKey=${API_KEY}&dateFormat=iso`);
   updateTokens(res);
   if (!res.ok) throw new Error(`API ${res.status}: events`);
@@ -1052,8 +1052,8 @@ async function fetchEvents(sport, force=false) {
 async function fetchEventProps(sport, eventId, markets, region, force=false) {
   const ck = `props_${eventId}_${markets}`;
   const cached = getCache(ck);
-  if (cached && (!force || !tokensSafe())) return cached;
   if (!tokensSafe()) return cached || { bookmakers: [] };
+  if (cached && !force) return cached;
   const url = `${BASE}/sports/${sport}/events/${eventId}/odds?apiKey=${API_KEY}&regions=${region}&markets=${markets}&oddsFormat=decimal`;
   const res = await fetch(url);
   updateTokens(res);
@@ -1120,7 +1120,7 @@ function winnerBox(home, away, homeOdds, awayOdds, drawOdds, eventDate, sportLab
   // Save this pick to the grading history so it can be auto-graded tomorrow
   if (sportLabel && eventDate) {
     savePickToHistory({
-      id:     `${new Date(eventDate).toDateString()}_match_${home}_${away}`.replace(/\W+/g, '_'),
+      id:     `${new Date(eventDate).toISOString().slice(0,10)}_match_${home}_${away}`.replace(/\W+/g, '_'),
       date:   eventDate,
       sport:  sportLabel,
       match:  `${home} vs ${away}`,
@@ -1278,7 +1278,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
   if (eventId) {
     candidates.forEach(p => {
       saveOpeningLine(eventId, p.player, p.market, p.bestOver, p.bestUnder);
-      const pickId = `${new Date().toDateString()}_${p.player}_${p.market}`.replace(/\W+/g,'_');
+      const pickId = `${new Date().toISOString().slice(0,10)}_${p.player}_${p.market}`.replace(/\W+/g,'_');
       const c = propConf(p.bestOver, p.bestUnder);
       if (c) saveOpeningOddsForPick(pickId, p.bestOver, p.bestUnder, c.pick);
     });
@@ -1425,7 +1425,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
         </span>
       </div>
       <div class="pick-card-select">${(() => {
-        const slipPick = { id: `${new Date().toDateString()}_${p.player}_${p.market}`.replace(/\W+/g,'_'), player: p.player, market: p.market, line: p.line, sport: sportLabel, pct: p.c.pct, myPick: null };
+        const slipPick = { id: `${new Date().toISOString().slice(0,10)}_${p.player}_${p.market}`.replace(/\W+/g,'_'), player: p.player, market: p.market, line: p.line, sport: sportLabel, pct: p.c.pct, myPick: null };
         const enc = encodeURIComponent(JSON.stringify(slipPick));
         const saved = getSlip().find(x => x.id === slipPick.id);
         return `<button class="pick-select-btn over ${saved?.myPick==='OVER'?'sel':''}" data-slip-id="${slipPick.id}" data-dir="OVER" onclick="pickSelect(this,'${enc}','OVER')">OVER</button>
