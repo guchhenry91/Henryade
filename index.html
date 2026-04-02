@@ -331,26 +331,27 @@ const _athleteIdCache = _loadCache(_ATHLETE_CACHE_KEY);
 // Search ESPN for an athlete ID by name. Returns athlete ID string or null.
 async function espnAthleteId(sport, league, playerName) {
   const cacheKey = `${league}__${playerName}`;
-  if (_athleteIdCache[cacheKey] !== undefined) return _athleteIdCache[cacheKey];
+  // Return cached ID if found. Retry nulls (may have been cached from dead v2 endpoint)
+  if (_athleteIdCache[cacheKey]) return _athleteIdCache[cacheKey]; // found = use it
+  // If cached as null, still retry — v3 endpoint may succeed where v2 failed
   try {
     const pLower = playerName.toLowerCase();
-    const lastName = pLower.split(' ').filter(w => w.length > 2).pop() || pLower; // skip short suffixes like "Jr"
+    const lastName = pLower.split(' ').filter(w => w.length > 2).pop() || pLower;
 
-    // Try last-name search first (fast), then fall back to full name if no match
+    // Use ESPN common/v3 search — works across all sports (v2 is dead for MLB/NBA)
     const trySearch = async (q) => {
-      const res = await fetch(`https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/athletes?limit=8&search=${encodeURIComponent(q)}`);
+      const res = await fetch(`https://site.web.api.espn.com/apis/common/v3/search?query=${encodeURIComponent(q)}&limit=8&type=player&sport=${sport}&league=${league}`);
       if (!res.ok) return null;
       const data = await res.json();
-      const athletes = data.items || data.athletes || [];
+      const athletes = data.items || [];
       return athletes.find(a => {
         const n = (a.displayName || a.fullName || '').toLowerCase();
         return n === pLower || n.includes(lastName);
       }) || null;
     };
 
-    let match = await trySearch(lastName);
-    // Fallback: search by full name if last-name search returned nothing
-    if (!match && lastName !== pLower) match = await trySearch(playerName);
+    let match = await trySearch(playerName); // full name first (more accurate with v3)
+    if (!match && lastName !== pLower) match = await trySearch(lastName); // fallback to last name
 
     const id = match ? (match.id || null) : null;
     _athleteIdCache[cacheKey] = id;
