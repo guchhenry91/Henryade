@@ -1234,17 +1234,39 @@ function bestTotal(ev, line=2.5) {
   });
   return {over:ov||null,under:un||null};
 }
-function estimateXG(hO,aO,dO,tot=2.5) {
-  const hi=impliedProb(hO),ai=impliedProb(aO);
-  // Use draw odds to refine xG split — draw probability implies low-scoring game
-  const drawAdj = dO ? Math.max(0.8, 1 - impliedProb(dO) * 0.5) : 1;
-  let homeXG  = tot * (hi/(hi+ai)) * drawAdj;
-  let awayXG  = tot * (ai/(hi+ai)) * drawAdj;
-  // Home advantage: historical data shows ~15% home scoring boost across major leagues
-  homeXG *= 1.08;  // +8% home boost (conservative — odds already partly price this in)
-  awayXG *= 0.94;  // -6% away penalty
-  // Clamp to realistic range: 0.4 – 3.5 goals per team
-  return { homeXG: Math.max(0.4, Math.min(3.5, homeXG)), awayXG: Math.max(0.4, Math.min(3.5, awayXG)) };
+function estimateXG(hO, aO, dO, totGoals = 2.5) {
+  const hi = impliedProb(hO), ai = impliedProb(aO);
+
+  // Draw adjustment: high draw probability (low odds like 3.0) = cagey, low-scoring game
+  // Low draw probability (high odds like 15.0+) = mismatch, likely high-scoring
+  // Only suppress total when draw is genuinely likely (odds < 4.0)
+  const drawProb = dO ? impliedProb(dO) : 0;
+  const drawAdj = drawProb > 0.20 ? Math.max(0.85, 1 - (drawProb - 0.20) * 0.5) : 1.0;
+
+  let homeXG = totGoals * (hi / (hi + ai)) * drawAdj;
+  let awayXG = totGoals * (ai / (hi + ai)) * drawAdj;
+
+  // Home advantage
+  homeXG *= 1.08;
+  awayXG *= 0.94;
+
+  // Clamp: away team in massive mismatch gets 0.25 min (not 0.4 — Port Vale shouldn't get 0.4 xG vs Chelsea)
+  return {
+    homeXG: Math.max(0.3, Math.min(4.0, homeXG)),
+    awayXG: Math.max(0.15, Math.min(3.5, awayXG)),
+  };
+}
+
+// Derive expected total goals from Over/Under 2.5 odds
+// If Over 2.5 is heavily favoured (low odds), total goals >> 2.5
+function impliedTotalGoals(overOdds, underOdds) {
+  if (!overOdds || !underOdds) return 2.5;
+  const overProb = 1 / overOdds;
+  const underProb = 1 / underOdds;
+  const normOver = overProb / (overProb + underProb); // vig-removed
+  // Map: 50% over = 2.5 goals, 70% over ≈ 3.2, 30% over ≈ 1.9
+  // Linear approximation: totalGoals ≈ 2.5 + (normOver - 0.5) * 3.0
+  return Math.max(1.5, Math.min(5.0, 2.5 + (normOver - 0.5) * 3.0));
 }
 
 // Fetch ESPN team recent form — last 5 results, returns { wins, draws, losses, goalsFor, goalsAgainst }
@@ -1742,7 +1764,8 @@ async function buildSoccer(force) {
         ]);
 
         // Blend odds-based xG with real form data — prefer synthetic xG from shots when available
-        let { homeXG, awayXG } = estimateXG(hO, aO, dO||4, 2.5);
+        const expectedTotal = impliedTotalGoals(tot.over, tot.under);
+        let { homeXG, awayXG } = estimateXG(hO, aO, dO||4, expectedTotal);
         if (homeForm && awayForm) {
           // Use synthetic xG (from shot stats) when available, fall back to goals-per-game
           const hasSynXG = homeForm.synXG !== null && awayForm.synXG !== null;
