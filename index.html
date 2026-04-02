@@ -254,7 +254,7 @@ const SPORT_TABS = {
   },
   mlb: {
     key: 'baseball_mlb', label: '⚾ MLB', region: 'us',
-    props: 'batter_home_runs,batter_hits,batter_rbis,batter_runs_scored,batter_total_bases'
+    props: 'batter_home_runs,batter_hits,batter_rbis,batter_runs_scored,batter_total_bases,batter_strikeouts,batter_walks,pitcher_strikeouts,pitcher_earned_runs'
   },
 };
 
@@ -279,12 +279,17 @@ const ESPN_STAT_MAP = {
   // NHL
   player_shots_on_goal:    { nhl: 'shots' },
   player_goals:            { nhl: 'goals' },
-  // MLB — v3 uses RBIs (capitalised)
+  // MLB batters — v3 uses RBIs (capitalised)
   batter_hits:             { mlb: 'hits' },
   batter_home_runs:        { mlb: 'homeRuns' },
   batter_rbis:             { mlb: 'RBIs' },
   batter_runs_scored:      { mlb: 'runs' },
   batter_total_bases:      { mlb: 'totalBases' },
+  batter_strikeouts:       { mlb: 'strikeouts' },
+  batter_walks:            { mlb: 'walks' },
+  // MLB pitchers
+  pitcher_strikeouts:      { mlb: 'strikeouts' },
+  pitcher_earned_runs:     { mlb: 'earnedRuns' },
 };
 
 const ESPN_LEAGUE_CFG = {
@@ -537,13 +542,16 @@ async function getWeatherForGame(homeTeam, sportLabel, gameDateIso) {
     }
 
     if (sportLabel.includes('MLB')) {
-      if (wind >= 15 && wind > 0) {
-        // Wind blowing IN hurts HR/hits, blowing OUT helps — we don't know direction so apply mild flag
-        penalty -= 0.08;
-        flags.push(`💨 Wind ${wind.toFixed(0)}mph — affects fly balls`);
+      // Wind: raised threshold — 15mph is normal, only flag 18+ (and we can't know direction)
+      if (wind >= 18) {
+        penalty -= 0.04; // reduced from 0.08 — direction unknown, could help or hurt
+        flags.push(`💨 Wind ${wind.toFixed(0)}mph — monitor park factors`);
       }
-      if (rain >= 3)        { penalty -= 0.12; flags.push(`🌧 Rain ${rain.toFixed(0)}mm — game delay risk`); }
-      if (temp <= 45)       { penalty -= 0.08; flags.push(`🥶 ${temp.toFixed(0)}°F — cold affects bat speed`); }
+      // Rain: only penalize significant rain (delay/cancel risk), not drizzle
+      if (rain >= 7)        { penalty -= 0.10; flags.push(`🌧 Heavy rain ${rain.toFixed(0)}mm — delay risk`); }
+      // Cold: milder penalty, scaled
+      if (temp <= 40)       { penalty -= 0.06; flags.push(`🥶 ${temp.toFixed(0)}°F — cold affects bat speed`); }
+      else if (temp <= 50)  { penalty -= 0.03; flags.push(`🌡 ${temp.toFixed(0)}°F — mildly cold`); }
     }
 
     const result = { wind, rain, temp, penalty, label: flags[0] || null, allFlags: flags };
@@ -631,6 +639,8 @@ const _scheduleCache = {};
 
 async function getRestFactor(sport, league, athleteId, gameDateIso) {
   if (!athleteId) return null;
+  // MLB plays 162 games — B2B is standard, not a fatigue signal
+  if (league === 'mlb') return { isB2B: false, label: null, penalty: 0 };
   const cacheKey = `rest__${league}__${athleteId}`;
   if (_scheduleCache[cacheKey] !== undefined) return _scheduleCache[cacheKey];
   try {
@@ -716,6 +726,9 @@ function getCLV(pickId, closeOver, closeUnder) {
 const _teamStandingsCache = {};
 
 async function getTeamStandings(sport, league) {
+  // MLB: OppPPG doesn't translate to baseball — runs allowed requires different data model
+  // Disable for now; MLB calibration + stats handle direction better than generic opponent rating
+  if (league === 'mlb') return null;
   const ck = `standings__${league}`;
   if (_teamStandingsCache[ck]) return _teamStandingsCache[ck];
   try {
@@ -801,7 +814,8 @@ function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineM
   const consensusFactor = Math.min(bookCount / 6, 1);
   const fairFactor      = Math.max(0, 1 - vig / MAX_VIG);
   const vigPenalty      = Math.max(0, (vig - FAIR_VIG) / (MAX_VIG - FAIR_VIG));
-  const overPenalty = (direction === 'OVER' && !sportHint.includes('NBA') && !sportHint.includes('NHL')) ? -0.06 : 0;
+  // OVER penalty only for soccer — NBA/NHL/MLB all handled by calibration multiplier now
+  const overPenalty = (direction === 'OVER' && sportHint.includes('Soccer')) ? -0.06 : 0;
 
   // oppSignal: positive = weak defense (boost OVER), negative = strong defense (boost UNDER)
   // Flip sign for UNDER direction: strong defense helps UNDER picks
@@ -873,9 +887,13 @@ const MARKET_STAT_KEY = {
   player_goals:            { nhl: 'goals'                                              },
   batter_home_runs:        { mlb: 'homeRuns'                                           },
   batter_hits:             { mlb: 'hits'                                               },
-  batter_rbis:             { mlb: 'rbi'                                                },
+  batter_rbis:             { mlb: 'RBIs'                                               },
   batter_runs_scored:      { mlb: 'runs'                                               },
   batter_total_bases:      { mlb: 'totalBases'                                         },
+  batter_strikeouts:       { mlb: 'strikeouts'                                         },
+  batter_walks:            { mlb: 'walks'                                              },
+  pitcher_strikeouts:      { mlb: 'strikeouts'                                         },
+  pitcher_earned_runs:     { mlb: 'earnedRuns'                                         },
 };
 
 // Fuzzy name match — handles ESPN vs Odds API name variations
