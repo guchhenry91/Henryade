@@ -1262,7 +1262,7 @@ async function fetchTeamForm(sport, league, teamName) {
     if (!team?.team?.id) return null;
 
     const id     = team.team.id;
-    const evRes  = await fetch(`https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/teams/${id}/schedule?season=2025&seasontype=2`);
+    const evRes  = await fetch(`https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/teams/${id}/schedule`);
     if (!evRes.ok) return null;
     const evData = await evRes.json();
     const events = (evData.events || []).filter(e => e.competitions?.[0]?.status?.type?.completed).slice(-10);
