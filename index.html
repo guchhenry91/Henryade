@@ -1305,7 +1305,7 @@ function poisson(lam, k) { let r=Math.exp(-lam); for(let i=1;i<=k;i++) r*=lam/i;
 // Dixon-Coles correlation adjustment for low-scoring outcomes (0-0, 1-0, 0-1, 1-1)
 // Standard Poisson assumes independence — this corrects for real-world goal correlation.
 // rho < 0 means 0-0 and 1-1 are more likely than Poisson predicts (defensive games).
-function dixonColes(h, a, hXG, aXG, rho = -0.13) {
+function dixonColes(h, a, hXG, aXG, rho = -0.05) {
   const base = poisson(hXG, h) * poisson(aXG, a);
   if (h === 0 && a === 0) return base * (1 - hXG * aXG * rho);
   if (h === 1 && a === 0) return base * (1 + aXG * rho);
@@ -1996,10 +1996,16 @@ async function buildSoccer(force) {
             homeDefense  = homeForm.homeGames >= 3 ? homeForm.homeGoalsAg : homeForm.goalsAgainst;
           }
 
-          // Proper xG estimation: team attack strength vs opponent's defensive weakness
-          // Guard against null/NaN — FA Cup teams may not have form data in eng.fa
-          const formHomeXG = (hAttack && awayDefense) ? (hAttack * 0.6 + awayDefense * 0.4) : null;
-          const formAwayXG = (aAttack && homeDefense) ? (aAttack * 0.6 + homeDefense * 0.4) : null;
+          // Proper xG estimation: attack strength × opponent defensive weakness
+          // Uses league-average divisor method: xG = attack × (oppDefense / leagueAvg)
+          // This preserves spread — strong teams stay high, weak teams stay low
+          const leagueAvgGoals = 1.30; // EPL/La Liga average ~1.3 goals per team per game
+          const formHomeXG = (hAttack && awayDefense)
+            ? hAttack * (awayDefense / leagueAvgGoals) // strong defense (low xGA) suppresses, weak defense boosts
+            : null;
+          const formAwayXG = (aAttack && homeDefense)
+            ? aAttack * (homeDefense / leagueAvgGoals)
+            : null;
 
           if (formHomeXG && formAwayXG && !isNaN(formHomeXG) && !isNaN(formAwayXG)) {
             const oddsW = hasSynXG ? 0.40 : 0.45;
