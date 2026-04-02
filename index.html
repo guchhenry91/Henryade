@@ -484,7 +484,7 @@ async function getWeatherForGame(homeTeam, sportLabel, gameDateIso) {
     const timer = setTimeout(() => ctrl.abort(), 5000); // 5s timeout — don't block game card render
     let res;
     try { res = await fetch(url, { signal: ctrl.signal }); } finally { clearTimeout(timer); }
-    if (!res.ok) { _weatherCache[cacheKey] = null; return null; }
+    if (!res || !res.ok) { _weatherCache[cacheKey] = null; return null; }
     const data  = await res.json();
     const wind  = data.daily?.wind_speed_10m_max?.[0] || 0;
     const rain  = data.daily?.precipitation_sum?.[0]  || 0;
@@ -886,11 +886,7 @@ async function autoGrade(forceAll = false) {
             return names.some(n => partA && nameMatch(partA, n)) ||
                    names.some(n => partB && nameMatch(partB, n));
           });
-          if (!matchEv) {
-            // Skip already-graded picks but don't log picks that might match in the other date group
-            if (!groups) console.warn(`Auto-grade: no ESPN match for "${pick.match}"`);
-            continue;
-          }
+          if (!matchEv) continue; // may match in another date group
 
           // Only grade completed games
           if (!matchEv.competitions?.[0]?.status?.type?.completed) continue;
@@ -948,7 +944,7 @@ function getCalibration() {
   if (settled.length < MIN_CALIBRATE) return base;
 
   const wr = arr => arr.length ? arr.filter(x => x.result === 'W').length / arr.length : 0.5;
-  const factor = w => Math.max(0.80, Math.min(1.20, 1.0 + (w - 0.5) * 0.5));
+  const factor = w => Math.max(0.65, Math.min(1.25, 1.0 + (w - 0.5) * 0.5)); // wider range so calibration is more responsive
 
   const overPicks  = settled.filter(p => p.pick === 'OVER');
   const underPicks = settled.filter(p => p.pick === 'UNDER');
@@ -1051,7 +1047,7 @@ function updateTokens(res) {
 
   if (_tokensLeft !== null) {
     if (_tokensLeft <= TOKEN_BLOCK) {
-      showTokenWarning(`⛔ ${_tokensLeft} tokens left — all API calls paused. Cache-only mode until tomorrow.`);
+      showTokenWarning(`⛔ ${_tokensLeft} tokens left — showing CACHED data (may be stale). Lines may have moved since last fetch.`);
     } else if (_tokensLeft <= TOKEN_WARN) {
       showTokenWarning(`⚠ Low tokens: ${_tokensLeft} remaining — avoid hard refreshes.`);
     } else {
@@ -1313,7 +1309,7 @@ async function fetchTeamForm(sport, league, teamName) {
     // Fetch synthetic xG from shot stats (last 6 games max to limit API calls)
     let totalSynXG = 0, totalSynXGA = 0, synGames = 0;
     let homeSynXG = 0, homeSynGames = 0, awaySynXG = 0, awaySynGames = 0;
-    const xgBatch = eventIds.slice(-6);
+    const xgBatch = eventIds.slice(-3); // 3 recent games for xG — balances accuracy vs API load
     for (const { eid, isHome } of xgBatch) {
       try {
         const sumRes = await fetch(
@@ -1475,7 +1471,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     .filter(p => !(p.c.pick === 'UNDER' && p.line <= 0.5))
     .filter(p => p.vig <= MAX_VIG)
     .filter(p => parseFloat(p.c.pct) <= 72)
-    .filter(p => parseFloat(p.c.pct) >= 53)
+    // Removed hard 53% floor — score threshold (0.50) and edge already filter bad picks
     .filter(p => p.score >= 0.50) // 169-pick data: only 0.50+ bucket is profitable (65.7%)
     .sort((a, b) => b.score - a.score);
 
@@ -1556,7 +1552,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
             <div style="color:#555;margin-bottom:4px;font-size:0.85em">SCORE BREAKDOWN</div>
             <div style="color:${parseFloat(p.c.pct)>60?'#00ff88':'#888'}">📊 Edge: ${((parseFloat(p.c.pct)-50)/50*0.25).toFixed(3)}</div>
             <div style="color:#888">📚 Books: ${(Math.min(p.bookCount/6,1)*0.20).toFixed(3)} (${p.bookCount} books)</div>
-            <div style="color:#888">💰 Vig: ${(Math.max(0,1-p.vig/15)*0.15).toFixed(3)} (${p.vig.toFixed(1)}%)</div>
+            <div style="color:#888">💰 Vig: ${(Math.max(0,1-p.vig/MAX_VIG)*0.15).toFixed(3)} (${(p.vig*100).toFixed(1)}%)</div>
             ${p.statResult ? `<div style="color:${p.statResult.signal>0?'#00ff88':p.statResult.signal<0?'#ff4444':'#555'}">📈 Stats: ${(p.statResult.signal*0.20).toFixed(3)}</div>` : '<div style="color:#333">📈 Stats: no data</div>'}
             ${p.lineMove ? `<div style="color:${p.lineMove.direction===p.c.pick?'#00ccff':'#ff9944'}">🔀 Line move: ${p.lineMove.direction===p.c.pick?'+':'-'}${(Math.abs(p.lineMove.pctChange>=0.08?0.15:0.08)*0.10).toFixed(3)}</div>` : '<div style="color:#333">🔀 Line move: none</div>'}
             ${p.restResult?.isB2B ? `<div style="color:#ff4444">😴 B2B penalty: ${(p.restResult.penalty).toFixed(3)}</div>` : ''}
@@ -1770,26 +1766,24 @@ async function buildSoccer(force) {
           // Use synthetic xG (from shot stats) when available, fall back to goals-per-game
           const hasSynXG = homeForm.synXG !== null && awayForm.synXG !== null;
 
-          let hAttack, hDefense, aAttack, aDefense;
+          // Attack = team's own xG created. Defense = xG they concede (opponent's xGA).
+          // Home team xG = home attack vs away defense. Away team xG = away attack vs home defense.
+          let hAttack, awayDefense, aAttack, homeDefense;
           if (hasSynXG) {
-            // Synthetic xG from ESPN shot data — much more predictive than raw goals
-            hAttack  = homeForm.homeGames >= 2 ? homeForm.homeSynXG : homeForm.synXG;
-            hDefense = awayForm.awayGames >= 2 ? awayForm.awaySynXG : awayForm.synXGA;
-            aAttack  = awayForm.awayGames >= 2 ? awayForm.awaySynXG : awayForm.synXG;
-            aDefense = homeForm.homeGames >= 2 ? homeForm.homeSynXG : homeForm.synXGA;
-            // Fix: use team's own xGA for defense, not their attack xG
-            hDefense = awayForm.synXGA || awayForm.goalsAgainst;
-            aDefense = homeForm.synXGA || homeForm.goalsAgainst;
+            hAttack      = homeForm.homeSynXG || homeForm.synXG;   // how much xG home team creates
+            awayDefense  = awayForm.synXGA || awayForm.goalsAgainst; // how much xG away team concedes
+            aAttack      = awayForm.awaySynXG || awayForm.synXG;   // how much xG away team creates
+            homeDefense  = homeForm.synXGA || homeForm.goalsAgainst; // how much xG home team concedes
           } else {
-            hAttack  = homeForm.homeGames >= 3 ? homeForm.homeGoalsFor : homeForm.goalsFor;
-            hDefense = awayForm.awayGames >= 3 ? awayForm.awayGoalsAg  : awayForm.goalsAgainst;
-            aAttack  = awayForm.awayGames >= 3 ? awayForm.awayGoalsFor : awayForm.goalsFor;
-            aDefense = homeForm.homeGames >= 3 ? homeForm.homeGoalsAg  : homeForm.goalsAgainst;
+            hAttack      = homeForm.homeGames >= 3 ? homeForm.homeGoalsFor : homeForm.goalsFor;
+            awayDefense  = awayForm.awayGames >= 3 ? awayForm.awayGoalsAg : awayForm.goalsAgainst;
+            aAttack      = awayForm.awayGames >= 3 ? awayForm.awayGoalsFor : awayForm.goalsFor;
+            homeDefense  = homeForm.homeGames >= 3 ? homeForm.homeGoalsAg : homeForm.goalsAgainst;
           }
 
-          // Attack strength × defensive weakness blend
-          const formHomeXG = (hAttack * 0.6 + hDefense * 0.4);
-          const formAwayXG = (aAttack * 0.6 + aDefense * 0.4);
+          // Proper xG estimation: team attack strength vs opponent's defensive weakness
+          const formHomeXG = (hAttack * 0.6 + awayDefense * 0.4);
+          const formAwayXG = (aAttack * 0.6 + homeDefense * 0.4);
           // With synthetic xG: 40% odds + 60% xG data (shot data is more predictive)
           // Without: 45% odds + 55% goals form
           const oddsW = hasSynXG ? 0.40 : 0.45;
@@ -1977,7 +1971,7 @@ function buildHistoryTab() {
 
   // Current streak (W or L run from most recent settled pick)
   const streak = (() => {
-    const s = settled.slice();  // newest first
+    const s = settled.slice().sort((a,b) => new Date(b.date) - new Date(a.date)); // newest first by date
     if (!s.length) return null;
     const last = s[0].result;
     if (last === 'V') return null;
