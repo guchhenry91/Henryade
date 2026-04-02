@@ -207,13 +207,13 @@
   <div class="tab" onclick="showTab('history',event)">📊 History</div>
 </div>
 
-<div id="tab-all"    class="tab-content active"><div class="loading" id="all-loading">Loading...</div></div>
-<div id="tab-soccer" class="tab-content"><div class="loading">Loading...</div></div>
-<div id="tab-nba"    class="tab-content"><div class="loading">Loading...</div></div>
-<div id="tab-nfl"    class="tab-content"><div class="loading">Loading...</div></div>
-<div id="tab-nhl"    class="tab-content"><div class="loading">Loading...</div></div>
-<div id="tab-mlb"     class="tab-content"><div class="loading">Loading...</div></div>
-<div id="tab-history" class="tab-content"><div class="loading">Loading...</div></div>
+<div id="tab-all"    class="tab-content active"><div class="loading" id="all-loading">⏳ Waking up — fetching soccer odds...</div></div>
+<div id="tab-soccer" class="tab-content"><div class="loading">⏳ Waking up — fetching soccer odds...</div></div>
+<div id="tab-nba"    class="tab-content"><div class="loading" style="color:#555">Click 🏀 NBA tab to load picks</div></div>
+<div id="tab-nfl"    class="tab-content"><div class="loading" style="color:#555">Click 🏈 NFL tab to load picks</div></div>
+<div id="tab-nhl"    class="tab-content"><div class="loading" style="color:#555">Click 🏒 NHL tab to load picks</div></div>
+<div id="tab-mlb"     class="tab-content"><div class="loading" style="color:#555">Click ⚾ MLB tab to load picks</div></div>
+<div id="tab-history" class="tab-content"><div class="loading" style="color:#555">Click 📊 History tab to view picks</div></div>
 
 <script>
 const API_KEY = '17b4d42651ab4e81ef298300544f5a21';
@@ -1294,14 +1294,14 @@ function showTab(name, e) {
   if (!loadedTabs.has(name)) {
     loadedTabs.add(name);
     if (name === 'soccer') {
-      document.getElementById('tab-soccer').innerHTML = '<div class="loading">Loading soccer...</div>';
+      document.getElementById('tab-soccer').innerHTML = '<div class="loading">⚽ Fetching odds & form data...</div>';
       buildSoccer(false).then(() => { buildAllTab(); });
     } else if (name === 'history') {
       buildHistoryTab();
     } else if (SPORT_TABS[name]) {
       const sportName = SPORT_TABS[name].label || name.toUpperCase();
-      document.getElementById('tab-' + name).innerHTML = `<div class="loading">Loading ${sportName}...</div>`;
-      buildSportTab(name, false).then(() => { buildAllTab(); }); // rebuild All tab with new picks
+      document.getElementById('tab-' + name).innerHTML = `<div class="loading">${sportName} — Fetching odds & player stats...</div>`;
+      buildSportTab(name, false).then(() => { buildAllTab(); });
     }
   }
 }
@@ -2137,7 +2137,7 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
 // ── SOCCER tab ────────────────────────────────────────────────────────────────
 async function buildSoccer(force) {
   const container = document.getElementById('tab-soccer');
-  container.innerHTML = '<div class="loading">Loading soccer...</div>';
+  container.innerHTML = '<div class="loading">⚽ Fetching odds for 5 leagues...</div>';
 
   const leagues = [
     { key:'soccer_epl',                           label:'🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League',    props:true  },
@@ -2303,14 +2303,14 @@ async function buildSoccer(force) {
       html += `<div class="sport-section"><div class="sport-title">${lg.label}</div><div class="error">⚠ ${e.message}</div></div>`;
     }
   }
-  container.innerHTML = html || '<div class="no-games">No soccer data.</div>';
+  container.innerHTML = html || '<div class="no-games">✅ No soccer matches found. Leagues may be on break.</div>';
 }
 
 // ── SPORT TAB builder (NBA/NFL/NHL/MLB) ───────────────────────────────────────
 async function buildSportTab(name, force) {
   const s = SPORT_TABS[name];
   const container = document.getElementById('tab-' + name);
-  container.innerHTML = `<div class="loading">Loading ${s.label}...</div>`;
+  container.innerHTML = `<div class="loading">${s.label} — Fetching odds & player stats...</div>`;
 
   try {
     // 1. h2h bulk for winner predictions
@@ -2326,7 +2326,7 @@ async function buildSportTab(name, force) {
       ; // no cap — show all games for the day
 
     if (!upcoming.length) {
-      container.innerHTML = `<div class="sport-section"><div class="sport-title">${s.label}</div><div class="no-games">No games in next 48 hours.</div></div>`;
+      container.innerHTML = `<div class="sport-section"><div class="sport-title">${s.label}</div><div class="no-games">✅ No games scheduled in next 48 hours. Check back later.</div></div>`;
       return;
     }
 
@@ -2819,7 +2819,7 @@ async function refreshAll(force=false) {
   });
 
   // Soccer loads on startup (feeds the All Value Bets tab)
-  document.getElementById('tab-soccer').innerHTML='<div class="loading">Loading soccer...</div>';
+  document.getElementById('tab-soccer').innerHTML='<div class="loading">⚽ Fetching odds for 5 leagues...</div>';
   document.getElementById('all-loading') && (document.getElementById('all-loading').style.display='block');
   loadedTabs.add('soccer');
   await buildSoccer(force);
