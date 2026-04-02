@@ -1270,6 +1270,8 @@ async function fetchTeamForm(sport, league, teamName) {
 
     let wins=0, draws=0, losses=0, gf=0, ga=0;
     let homeGF=0, homeGA=0, homeGames=0, awayGF=0, awayGA=0, awayGames=0;
+    // Collect event IDs for synthetic xG (shot stats from summaries)
+    const eventIds = [];
     for (const e of events) {
       const comp = e.competitions?.[0];
       const myComp   = comp?.competitors?.find(c => c.id === String(id));
@@ -1281,11 +1283,47 @@ async function fetchTeamForm(sport, league, teamName) {
       if      (myComp.winner)  wins++;
       else if (oppComp.winner) losses++;
       else                     draws++;
-      // Track home/away form separately for more accurate xG blending
       if (myComp.homeAway === 'home') { homeGF += myScore; homeGA += oppScore; homeGames++; }
       else                            { awayGF += myScore; awayGA += oppScore; awayGames++; }
+      if (e.id) eventIds.push({ eid: e.id, isHome: myComp.homeAway === 'home' });
     }
+
+    // Fetch synthetic xG from shot stats (last 6 games max to limit API calls)
+    let totalSynXG = 0, totalSynXGA = 0, synGames = 0;
+    let homeSynXG = 0, homeSynGames = 0, awaySynXG = 0, awaySynGames = 0;
+    const xgBatch = eventIds.slice(-6);
+    for (const { eid, isHome } of xgBatch) {
+      try {
+        const sumRes = await fetch(
+          `https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/summary?event=${eid}`
+        );
+        if (!sumRes.ok) continue;
+        const sum = await sumRes.json();
+        const bxTeams = sum?.boxscore?.teams || [];
+        // Find our team and opponent in boxscore
+        for (const bxTeam of bxTeams) {
+          const statsMap = {};
+          (bxTeam.statistics || []).forEach(s => { statsMap[s.name] = parseFloat(s.displayValue) || 0; });
+          const shots = statsMap.totalShots || 0;
+          const onTarget = statsMap.shotsOnTarget || 0;
+          const offTarget = shots - onTarget;
+          // Synthetic xG: on-target shots × 0.30 + off-target × 0.03
+          const synXG = onTarget * 0.30 + offTarget * 0.03;
+          const isMyTeam = bxTeam.team?.id === String(id);
+          if (isMyTeam) {
+            totalSynXG += synXG; synGames++;
+            if (isHome) { homeSynXG += synXG; homeSynGames++; }
+            else        { awaySynXG += synXG; awaySynGames++; }
+          } else {
+            totalSynXGA += synXG;
+          }
+        }
+      } catch { /* skip this game's stats */ }
+    }
+
     const n = wins + draws + losses;
+    const synXGpg  = synGames  ? totalSynXG / synGames  : null;
+    const synXGApg = synGames  ? totalSynXGA / synGames : null;
     return n ? {
       wins, draws, losses, goalsFor: gf/n, goalsAgainst: ga/n, games: n,
       homeGoalsFor: homeGames ? homeGF/homeGames : gf/n,
@@ -1293,6 +1331,11 @@ async function fetchTeamForm(sport, league, teamName) {
       awayGoalsFor: awayGames ? awayGF/awayGames : gf/n,
       awayGoalsAg:  awayGames ? awayGA/awayGames : ga/n,
       homeGames, awayGames,
+      // Synthetic xG from ESPN shot data
+      synXG: synXGpg, synXGA: synXGApg,
+      homeSynXG: homeSynGames ? homeSynXG / homeSynGames : synXGpg,
+      awaySynXG: awaySynGames ? awaySynXG / awaySynGames : synXGpg,
+      synGames,
     } : null;
   } catch { return null; }
 }
@@ -1515,7 +1558,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
 
 // ── Soccer goal scorer renderer ───────────────────────────────────────────────
 // Enhanced goal scorer renderer: vig-removed, consensus-tracked, form-blended
-async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague) {
+async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, homeForm = null, awayForm = null) {
   // Aggregate: track best odds, all odds (for vig calc), and book count per player
   const scorers = {};
   (propData.bookmakers||[]).forEach(bk=>{
@@ -1581,17 +1624,29 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague) {
     list.slice(0, 5).forEach((s, i) => { s.form = goalResults[i]; });
   }
 
-  // Blend: if form data available, adjust probability (60% odds + 40% form signal)
+  // Team xG multiplier — if a team creates more xG than league average (1.3), boost their scorers
+  const LEAGUE_AVG_XG = 1.30;
+  const teamXGmult = (() => {
+    // Combine both teams' attacking xG for a match-level multiplier
+    const homeXG = homeForm?.synXG || homeForm?.goalsFor || null;
+    const awayXG = awayForm?.synXG || awayForm?.goalsFor || null;
+    if (!homeXG && !awayXG) return 1.0;
+    const avgXG = homeXG && awayXG ? (homeXG + awayXG) / 2 : (homeXG || awayXG);
+    return Math.max(0.7, Math.min(1.4, avgXG / LEAGUE_AVG_XG)); // clamp to 0.7-1.4x
+  })();
+
+  // Blend: odds + form + team xG context
   list.forEach(s => {
     if (s.form && s.form.goalsPerGame > 0) {
-      // Convert goals per game to anytime scorer probability (~1 - e^-gpg from Poisson)
       const formProb = (1 - Math.exp(-s.form.goalsPerGame)) * 100;
-      s.blendedProb = s.prob * 0.6 + formProb * 0.4;
+      s.blendedProb = (s.prob * 0.55 + formProb * 0.35) * teamXGmult;
+      // Remaining 10% comes from the xG multiplier itself
       s.formLabel = `${s.form.goalsPerGame.toFixed(2)} gpg (L${s.form.games})`;
     } else {
-      s.blendedProb = s.prob;
+      s.blendedProb = s.prob * teamXGmult;
       s.formLabel = null;
     }
+    s.xgMult = teamXGmult;
   });
 
   // Re-sort by blended probability
@@ -1617,7 +1672,10 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague) {
     });
   });
 
-  let html = `<div class="section-hdr">⚽ TOP 10 LIKELY GOAL SCORERS <span style="font-size:0.8em;color:#444">(vig removed · ${Object.keys(scorers).length} players)</span></div>
+  const xgNote = teamXGmult !== 1.0
+    ? ` · xG mult ${teamXGmult.toFixed(2)}×${teamXGmult > 1.05 ? ' ↑ high-chance game' : teamXGmult < 0.95 ? ' ↓ low-chance game' : ''}`
+    : '';
+  let html = `<div class="section-hdr">⚽ TOP 10 LIKELY GOAL SCORERS <span style="font-size:0.8em;color:#444">(vig removed${xgNote} · ${Object.keys(scorers).length} players)</span></div>
     <table class="ptable">
       <tr><th>#</th><th>Player</th><th>Odds</th><th>Prob%</th><th>Books</th><th>Form</th><th>Confidence</th></tr>`;
 
@@ -1683,20 +1741,37 @@ async function buildSoccer(force) {
           fetchTeamForm(espnLeague.sport, espnLeague.league, away),
         ]);
 
-        // Blend odds-based xG with real form data when available
+        // Blend odds-based xG with real form data — prefer synthetic xG from shots when available
         let { homeXG, awayXG } = estimateXG(hO, aO, dO||4, 2.5);
         if (homeForm && awayForm) {
-          // Use location-specific form when available (home team's HOME goals, away team's AWAY goals)
-          const hGF = homeForm.homeGames >= 3 ? homeForm.homeGoalsFor : homeForm.goalsFor;
-          const hGA = awayForm.awayGames >= 3 ? awayForm.awayGoalsAg  : awayForm.goalsAgainst;
-          const aGF = awayForm.awayGames >= 3 ? awayForm.awayGoalsFor : awayForm.goalsFor;
-          const aGA = homeForm.homeGames >= 3 ? homeForm.homeGoalsAg  : homeForm.goalsAgainst;
+          // Use synthetic xG (from shot stats) when available, fall back to goals-per-game
+          const hasSynXG = homeForm.synXG !== null && awayForm.synXG !== null;
+
+          let hAttack, hDefense, aAttack, aDefense;
+          if (hasSynXG) {
+            // Synthetic xG from ESPN shot data — much more predictive than raw goals
+            hAttack  = homeForm.homeGames >= 2 ? homeForm.homeSynXG : homeForm.synXG;
+            hDefense = awayForm.awayGames >= 2 ? awayForm.awaySynXG : awayForm.synXGA;
+            aAttack  = awayForm.awayGames >= 2 ? awayForm.awaySynXG : awayForm.synXG;
+            aDefense = homeForm.homeGames >= 2 ? homeForm.homeSynXG : homeForm.synXGA;
+            // Fix: use team's own xGA for defense, not their attack xG
+            hDefense = awayForm.synXGA || awayForm.goalsAgainst;
+            aDefense = homeForm.synXGA || homeForm.goalsAgainst;
+          } else {
+            hAttack  = homeForm.homeGames >= 3 ? homeForm.homeGoalsFor : homeForm.goalsFor;
+            hDefense = awayForm.awayGames >= 3 ? awayForm.awayGoalsAg  : awayForm.goalsAgainst;
+            aAttack  = awayForm.awayGames >= 3 ? awayForm.awayGoalsFor : awayForm.goalsFor;
+            aDefense = homeForm.homeGames >= 3 ? homeForm.homeGoalsAg  : homeForm.goalsAgainst;
+          }
+
           // Attack strength × defensive weakness blend
-          const formHomeXG = (hGF * 0.6 + hGA * 0.4);
-          const formAwayXG = (aGF * 0.6 + aGA * 0.4);
-          // 45% odds + 55% form (form is now more reliable with 10-game sample + location split)
-          homeXG = homeXG * 0.45 + formHomeXG * 0.55;
-          awayXG = awayXG * 0.45 + formAwayXG * 0.55;
+          const formHomeXG = (hAttack * 0.6 + hDefense * 0.4);
+          const formAwayXG = (aAttack * 0.6 + aDefense * 0.4);
+          // With synthetic xG: 40% odds + 60% xG data (shot data is more predictive)
+          // Without: 45% odds + 55% goals form
+          const oddsW = hasSynXG ? 0.40 : 0.45;
+          homeXG = homeXG * oddsW + formHomeXG * (1 - oddsW);
+          awayXG = awayXG * oddsW + formAwayXG * (1 - oddsW);
           homeXG = Math.max(0.4, Math.min(3.5, homeXG));
           awayXG = Math.max(0.4, Math.min(3.5, awayXG));
         }
@@ -1719,9 +1794,13 @@ async function buildSoccer(force) {
 
         const top5 = scores.slice(0,5);
 
-        const formTag = (form) => form
-          ? `<span style="font-size:0.7em;color:#555">${form.wins}W-${form.draws}D-${form.losses}L &nbsp;${form.goalsFor.toFixed(1)}gf/${form.goalsAgainst.toFixed(1)}ga (L${form.games})</span>`
-          : '';
+        const formTag = (form) => {
+          if (!form) return '';
+          const xgTag = form.synXG !== null
+            ? `<span style="color:#00ccff">xG ${form.synXG.toFixed(2)}</span>/${form.synXGA !== null ? form.synXGA.toFixed(2) : '?'}xGA`
+            : '';
+          return `<span style="font-size:0.7em;color:#555">${form.wins}W-${form.draws}D-${form.losses}L &nbsp;${form.goalsFor.toFixed(1)}gf/${form.goalsAgainst.toFixed(1)}ga ${xgTag} (L${form.games})</span>`;
+        };
         html += `<div class="match-card">
           <div class="match-title"><span>${home} vs ${away}</span><span class="match-time">${gameDate(ev.commence_time)}</span></div>
           ${homeForm || awayForm ? `<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px;font-size:0.78em">
@@ -1758,7 +1837,7 @@ async function buildSoccer(force) {
         if (lg.props) {
           try {
             const propData = await fetchEventProps(lg.key, ev.id, 'player_goal_scorer_anytime', 'uk', force);
-            html += await renderGoalScorers(propData, lg.label, `${home} vs ${away}`, espnLeague);
+            html += await renderGoalScorers(propData, lg.label, `${home} vs ${away}`, espnLeague, homeForm, awayForm);
           } catch(e) {
             html += `<div class="no-games" style="margin-top:8px">Goal scorer odds unavailable</div>`;
           }
