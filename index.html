@@ -1514,36 +1514,122 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
 }
 
 // ── Soccer goal scorer renderer ───────────────────────────────────────────────
-function renderGoalScorers(propData) {
+// Enhanced goal scorer renderer: vig-removed, consensus-tracked, form-blended
+async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague) {
+  // Aggregate: track best odds, all odds (for vig calc), and book count per player
   const scorers = {};
   (propData.bookmakers||[]).forEach(bk=>{
     (bk.markets||[]).forEach(mkt=>{
       if (mkt.key !== 'player_goal_scorer_anytime') return;
       (mkt.outcomes||[]).forEach(o=>{
-        if (!scorers[o.name] || o.price < scorers[o.name]) scorers[o.name]=o.price;
+        if (!scorers[o.name]) scorers[o.name] = { bestOdds: o.price, allOdds: [o.price], books: 1 };
+        else {
+          scorers[o.name].allOdds.push(o.price);
+          scorers[o.name].books++;
+          if (o.price < scorers[o.name].bestOdds) scorers[o.name].bestOdds = o.price;
+        }
       });
     });
   });
 
-  const list = Object.entries(scorers)
-    .map(([name,odds])=>({name, odds, prob:(1/odds*100)}))
-    .sort((a,b)=>b.prob-a.prob)
-    .slice(0,10);
+  if (!Object.keys(scorers).length) return '';
 
-  if (!list.length) return '';
+  // Calculate total overround to remove vig
+  const allImplied = Object.values(scorers).map(s => 1/s.bestOdds);
+  const totalOverround = allImplied.reduce((a,b) => a+b, 0);
+  const vigFactor = totalOverround > 1 ? 1 / totalOverround : 1; // normalize so probs sum to ~100%
 
-  let html = `<div class="section-hdr">⚽ TOP 10 LIKELY GOAL SCORERS</div>
+  // Build list with vig-removed probability
+  let list = Object.entries(scorers)
+    .map(([name, s]) => ({
+      name,
+      odds: s.bestOdds,
+      rawProb: (1/s.bestOdds) * 100,
+      prob: (1/s.bestOdds) * vigFactor * 100, // vig removed
+      books: s.books,
+    }))
+    .sort((a,b) => b.prob - a.prob)
+    .slice(0, 10);
+
+  // Fetch ESPN recent goals for top 5 scorers (free API, no tokens)
+  if (espnLeague) {
+    const goalPromises = list.slice(0, 5).map(async (s) => {
+      try {
+        const athleteId = await espnAthleteId(espnLeague.sport, espnLeague.league, s.name);
+        if (!athleteId) return null;
+        const res = await fetch(
+          `https://site.api.espn.com/apis/site/v2/sports/${espnLeague.sport}/${espnLeague.league}/athletes/${athleteId}/gamelog?season=2025`
+        );
+        if (!res.ok) return null;
+        const data = await res.json();
+        let goals = 0, games = 0;
+        for (const st of (data.seasonTypes || [])) {
+          for (const cat of (st.categories || [])) {
+            const idx = (cat.names || []).indexOf('totalGoals');
+            const idx2 = idx === -1 ? (cat.names || []).indexOf('goals') : idx;
+            if (idx2 === -1) continue;
+            for (const ev of (cat.events || [])) {
+              const val = parseFloat((ev.stats || [])[idx2]);
+              if (!isNaN(val)) { goals += val; games++; }
+            }
+          }
+        }
+        return games >= 3 ? { goalsPerGame: goals / games, games } : null;
+      } catch { return null; }
+    });
+    const goalResults = await Promise.all(goalPromises);
+    list.slice(0, 5).forEach((s, i) => { s.form = goalResults[i]; });
+  }
+
+  // Blend: if form data available, adjust probability (60% odds + 40% form signal)
+  list.forEach(s => {
+    if (s.form && s.form.goalsPerGame > 0) {
+      // Convert goals per game to anytime scorer probability (~1 - e^-gpg from Poisson)
+      const formProb = (1 - Math.exp(-s.form.goalsPerGame)) * 100;
+      s.blendedProb = s.prob * 0.6 + formProb * 0.4;
+      s.formLabel = `${s.form.goalsPerGame.toFixed(2)} gpg (L${s.form.games})`;
+    } else {
+      s.blendedProb = s.prob;
+      s.formLabel = null;
+    }
+  });
+
+  // Re-sort by blended probability
+  list.sort((a,b) => b.blendedProb - a.blendedProb);
+
+  // Confidence after vig removal: thresholds are lower since vig is stripped
+  // HIGH = 28%+ (realistic for top strikers), MED = 15-28%, LOW = <15%
+  list.forEach(s => {
+    s.conf = s.blendedProb >= 28 ? 'HIGH' : s.blendedProb >= 15 ? 'MED' : 'LOW';
+  });
+
+  // Save top 3 scorer picks to history for tracking
+  list.slice(0, 3).forEach((s, i) => {
+    savePickToHistory({
+      id: `${new Date().toISOString().slice(0,10)}_scorer_${s.name}_${matchLabel}`.replace(/\W+/g,'_'),
+      date: new Date().toISOString(),
+      sport: sportLabel, match: matchLabel,
+      player: s.name, market: 'anytime_goalscorer',
+      line: 0.5, pick: 'OVER', // anytime = score 1+ goals
+      pct: s.blendedProb.toFixed(1), conf: s.conf,
+      score: s.blendedProb / 100, bookCount: s.books, vig: 0,
+      result: null,
+    });
+  });
+
+  let html = `<div class="section-hdr">⚽ TOP 10 LIKELY GOAL SCORERS <span style="font-size:0.8em;color:#444">(vig removed · ${Object.keys(scorers).length} players)</span></div>
     <table class="ptable">
-      <tr><th>#</th><th>Player</th><th>Odds</th><th>Probability</th><th>Confidence</th></tr>`;
+      <tr><th>#</th><th>Player</th><th>Odds</th><th>Prob%</th><th>Books</th><th>Form</th><th>Confidence</th></tr>`;
 
   list.forEach((s,i)=>{
-    const conf = s.prob>=35?'HIGH':s.prob>=20?'MED':'LOW';
     html += `<tr>
       <td style="color:#555">${i+1}</td>
       <td style="color:#fff;font-weight:bold">${s.name}</td>
-      <td style="color:#ffcc00">${s.odds}</td>
-      <td style="color:#aaa">${s.prob.toFixed(1)}%</td>
-      <td>${badge(conf)}</td>
+      <td style="color:#ffcc00">${s.odds.toFixed(2)}</td>
+      <td style="color:#aaa">${s.blendedProb.toFixed(1)}%</td>
+      <td style="color:${s.books>=3?'#00ff88':s.books>=2?'#ffcc00':'#555'}">${s.books}</td>
+      <td style="color:${s.formLabel?'#00ccff':'#333'};font-size:0.85em">${s.formLabel || '—'}</td>
+      <td>${badge(s.conf)}</td>
     </tr>`;
   });
   html += '</table>';
@@ -1557,9 +1643,9 @@ async function buildSoccer(force) {
 
   const leagues = [
     { key:'soccer_epl',                           label:'🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League',    props:true  },
-    { key:'soccer_fa_cup',                        label:'🏆 FA Cup',                      props:false },
-    { key:'soccer_uefa_champs_league',            label:'🌍 Champions League',            props:false },
-    { key:'soccer_spain_la_liga',                 label:'🇪🇸 La Liga',                    props:false },
+    { key:'soccer_fa_cup',                        label:'🏆 FA Cup',                      props:true  },
+    { key:'soccer_uefa_champs_league',            label:'🌍 Champions League',            props:true  },
+    { key:'soccer_spain_la_liga',                 label:'🇪🇸 La Liga',                    props:true  },
     { key:'soccer_fifa_world_cup_qualifiers_europe', label:'🌐 WC Qualifiers',            props:false },
   ];
 
@@ -1668,11 +1754,11 @@ async function buildSoccer(force) {
         // Save opening line for this soccer event (enables line movement tracking)
         if (tot.over && tot.under) saveOpeningLine(ev.id, 'totals', 'match_total', tot.over, tot.under);
 
-        // EPL goal scorers
+        // Goal scorer props — now enabled for EPL, FA Cup, CL, La Liga
         if (lg.props) {
           try {
             const propData = await fetchEventProps(lg.key, ev.id, 'player_goal_scorer_anytime', 'uk', force);
-            html += renderGoalScorers(propData);
+            html += await renderGoalScorers(propData, lg.label, `${home} vs ${away}`, espnLeague);
           } catch(e) {
             html += `<div class="no-games" style="margin-top:8px">Goal scorer odds unavailable</div>`;
           }
