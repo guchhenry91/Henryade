@@ -242,7 +242,7 @@ function getTabAge(name) {
 const SPORT_TABS = {
   nba: {
     key: 'basketball_nba', label: '🏀 NBA', region: 'us',
-    props: 'player_points,player_rebounds,player_assists,player_threes'
+    props: 'player_points,player_rebounds,player_assists,player_threes,player_blocks,player_steals,player_turnovers'
   },
   nfl: {
     key: 'americanfootball_nfl', label: '🏈 NFL', region: 'us',
@@ -261,22 +261,30 @@ const SPORT_TABS = {
 // ── ESPN Stats Layer ──────────────────────────────────────────────────────────
 // Maps Odds API market keys → ESPN stat keys per league
 const ESPN_STAT_MAP = {
-  player_points:        { nba: 'points', nhl: 'points' },  // merged: was duplicate key
-  player_rebounds:      { nba: 'rebounds' },
-  player_assists:       { nba: 'assists', nhl: 'assists' },
-  player_threes:        { nba: 'threePointFieldGoalsMade' },
-  player_pass_yds:      { nfl: 'passingYards' },
-  player_rush_yds:      { nfl: 'rushingYards' },
-  player_receiving_yds: { nfl: 'receivingYards' },
-  player_pass_tds:      { nfl: 'passingTouchdowns' },
-  player_receptions:    { nfl: 'receptions' },
-  player_shots_on_goal: { nhl: 'shots' },
-  player_goals:         { nhl: 'goals' },
-  batter_hits:          { mlb: 'hits' },
-  batter_home_runs:     { mlb: 'homeRuns' },
-  batter_rbis:          { mlb: 'rbi' },
-  batter_runs_scored:   { mlb: 'runs' },
-  batter_total_bases:   { mlb: 'totalBases' },
+  // NBA — v3 uses totalRebounds, compound threePointFieldGoalsMade-...Attempted
+  player_points:           { nba: 'points', nhl: 'points' },
+  player_rebounds:         { nba: 'totalRebounds' },
+  player_assists:          { nba: 'assists', nhl: 'assists' },
+  player_threes:           { nba: 'threePointFieldGoalsMade' }, // v3 compound — parser takes first number
+  player_blocks:           { nba: 'blocks' },
+  player_steals:           { nba: 'steals' },
+  player_made_field_goals: { nba: 'fieldGoalsMade' },
+  player_turnovers:        { nba: 'turnovers' },
+  // NFL
+  player_pass_yds:         { nfl: 'passingYards' },
+  player_rush_yds:         { nfl: 'rushingYards' },
+  player_receiving_yds:    { nfl: 'receivingYards' },
+  player_pass_tds:         { nfl: 'passingTouchdowns' },
+  player_receptions:       { nfl: 'receptions' },
+  // NHL
+  player_shots_on_goal:    { nhl: 'shots' },
+  player_goals:            { nhl: 'goals' },
+  // MLB — v3 uses RBIs (capitalised)
+  batter_hits:             { mlb: 'hits' },
+  batter_home_runs:        { mlb: 'homeRuns' },
+  batter_rbis:             { mlb: 'RBIs' },
+  batter_runs_scored:      { mlb: 'runs' },
+  batter_total_bases:      { mlb: 'totalBases' },
 };
 
 const ESPN_LEAGUE_CFG = {
@@ -319,28 +327,56 @@ async function espnAthleteId(sport, league, playerName) {
   } catch { _athleteIdCache[cacheKey] = null; return null; }
 }
 
-// Fetch last N games for an athlete and return average of a given stat key.
-// Returns { avg, games } or null if unavailable.
-// Extended gamelog fetch — returns per-game entries with home/away flag and stat value
+// Fetch gamelog from ESPN common/v3 endpoint — works for all sports.
+// Returns per-game entries with stat value and home/away flag, or null.
+// Handles compound stats like "9-21" (made-attempted) by taking the first number.
 async function espnPlayerGamelog(sport, league, athleteId, statKey) {
   try {
+    // v3 common endpoint — no season param needed, returns current season
     const res = await fetch(
-      `https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/athletes/${athleteId}/gamelog?season=2025`
+      `https://site.web.api.espn.com/apis/common/v3/sports/${sport}/${league}/athletes/${athleteId}/gamelog`
     );
     if (!res.ok) return null;
     const data = await res.json();
 
+    // v3 format: top-level "names" array for stat keys, "seasonTypes" with events
+    const names = data.names || [];
+    let idx = names.indexOf(statKey);
+
+    // Handle compound stat keys: "threePointFieldGoalsMade" is stored as
+    // "threePointFieldGoalsMade-threePointFieldGoalsAttempted" in v3
+    if (idx === -1) {
+      idx = names.findIndex(n => n.startsWith(statKey + '-') || n === statKey);
+    }
+    // Also try common renames between v2 and v3
+    const v3Renames = { rebounds: 'totalRebounds', rbi: 'RBIs' };
+    if (idx === -1 && v3Renames[statKey]) {
+      idx = names.indexOf(v3Renames[statKey]);
+    }
+    if (idx === -1) return null;
+
     const entries = []; // { val, isHome }
+    const eventsMap = data.events || {};
+
     for (const st of (data.seasonTypes || [])) {
       for (const cat of (st.categories || [])) {
-        const idx = (cat.names || []).indexOf(statKey);
-        if (idx === -1) continue;
         for (const ev of (cat.events || [])) {
-          const val = parseFloat((ev.stats || [])[idx]);
+          const rawVal = (ev.stats || [])[idx];
+          if (rawVal == null) continue;
+          // Parse compound "made-attempted" fields: take first number (made)
+          let val;
+          if (typeof rawVal === 'string' && rawVal.includes('-')) {
+            val = parseFloat(rawVal.split('-')[0]);
+          } else {
+            val = parseFloat(rawVal);
+          }
           if (isNaN(val)) continue;
-          // homeAway flag: ESPN marks the opponent as 'away' when this player's team is at home
-          // ev.opponent.homeAway === 'away' means the opponent travelled → this player is HOME
-          const isHome = ev.opponent?.homeAway === 'away' || ev.atVs !== '@';
+
+          // Home/away: check events map for this event's home team info
+          const evInfo = eventsMap[ev.eventId] || {};
+          const isHome = evInfo.homeTeamId
+            ? true // if homeTeamId exists, ESPN marks it; check atVs for away
+            : (ev.atVs !== '@');
           entries.push({ val, isHome });
         }
       }
@@ -599,17 +635,20 @@ async function getRestFactor(sport, league, athleteId, gameDateIso) {
   if (_scheduleCache[cacheKey] !== undefined) return _scheduleCache[cacheKey];
   try {
     const res = await fetch(
-      `https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/athletes/${athleteId}/gamelog?season=2025`
+      `https://site.web.api.espn.com/apis/common/v3/sports/${sport}/${league}/athletes/${athleteId}/gamelog`
     );
     if (!res.ok) { _scheduleCache[cacheKey] = null; return null; }
     const data = await res.json();
 
-    // Find the most recent completed game date
+    // Find the most recent completed game date — v3 stores events in top-level map
+    const eventsMap = data.events || {};
     const dates = [];
     for (const st of (data.seasonTypes || [])) {
       for (const cat of (st.categories || [])) {
         for (const ev of (cat.events || [])) {
-          if (ev.eventDate) dates.push(new Date(ev.eventDate.date || ev.eventDate));
+          const evInfo = eventsMap[ev.eventId] || {};
+          if (evInfo.gameDate) dates.push(new Date(evInfo.gameDate));
+          else if (ev.eventDate) dates.push(new Date(ev.eventDate.date || ev.eventDate));
         }
       }
     }
@@ -621,7 +660,7 @@ async function getRestFactor(sport, league, athleteId, gameDateIso) {
     const daysBetween = (gameDate - lastGame) / (1000 * 60 * 60 * 24);
 
     const result = daysBetween <= 1.5
-      ? { isB2B: true,  label: '😴 Back-to-back game — fatigue risk', penalty: -0.15 }
+      ? { isB2B: true,  label: '😴 Back-to-back game — significant fatigue risk', penalty: -0.25 }
       : { isB2B: false, label: null, penalty: 0 };
 
     _scheduleCache[cacheKey] = result;
@@ -701,9 +740,9 @@ function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineM
   const consensusFactor = Math.min(bookCount / 6, 1);
   const fairFactor      = Math.max(0, 1 - vig / MAX_VIG);
   const vigPenalty      = Math.max(0, (vig - FAIR_VIG) / (MAX_VIG - FAIR_VIG));
-  // Universal OVER penalty — 169-pick data: OVERs at 48.1% across all sports vs UNDERs at 64.4%.
-  // This is not MLB-specific — the OVER underperformance is league-wide.
-  const overPenalty = (direction === 'OVER') ? -0.06 : 0;
+  // OVER penalty — MLB/Soccer OVERs underperform. NBA OVERs are near-neutral (51-53%).
+  // Only penalize sports with proven OVER weakness; NBA gets no penalty.
+  const overPenalty = (direction === 'OVER' && !sportHint.includes('NBA') && !sportHint.includes('NHL')) ? -0.06 : 0;
 
   const raw = (edgeFactor * 0.25 + consensusFactor * 0.20 + fairFactor * 0.15
     - vigPenalty * 0.10 + statsSignal * 0.20 + lineMoveSig * 0.10
@@ -753,22 +792,26 @@ const ESPN_CFG = {
 
 // Map Odds API market keys → ESPN boxscore stat keys (league-scoped where needed)
 const MARKET_STAT_KEY = {
-  player_points:        { nba: 'points',                      nhl: 'points'        },
-  player_rebounds:      { nba: 'rebounds'                                           },
-  player_assists:       { nba: 'assists',                     nhl: 'assists'        },
-  player_threes:        { nba: 'threePointFieldGoalsMade'                           },
-  player_pass_yds:      { nfl: 'passingYards'                                       },
-  player_rush_yds:      { nfl: 'rushingYards'                                       },
-  player_receiving_yds: { nfl: 'receivingYards'                                     },
-  player_pass_tds:      { nfl: 'passingTouchdowns'                                  },
-  player_receptions:    { nfl: 'receptions'                                         },
-  player_shots_on_goal: { nhl: 'shots'                                              },
-  player_goals:         { nhl: 'goals'                                              },
-  batter_home_runs:     { mlb: 'homeRuns'                                           },
-  batter_hits:          { mlb: 'hits'                                               },
-  batter_rbis:          { mlb: 'rbi'                                                },
-  batter_runs_scored:   { mlb: 'runs'                                               },
-  batter_total_bases:   { mlb: 'totalBases'                                         },
+  player_points:           { nba: 'points',                      nhl: 'points'        },
+  player_rebounds:         { nba: 'rebounds'                                           },
+  player_assists:          { nba: 'assists',                     nhl: 'assists'        },
+  player_threes:           { nba: 'threePointFieldGoalsMade'                           },
+  player_blocks:           { nba: 'blocks'                                             },
+  player_steals:           { nba: 'steals'                                             },
+  player_turnovers:        { nba: 'turnovers'                                          },
+  player_made_field_goals: { nba: 'fieldGoalsMade'                                     },
+  player_pass_yds:         { nfl: 'passingYards'                                       },
+  player_rush_yds:         { nfl: 'rushingYards'                                       },
+  player_receiving_yds:    { nfl: 'receivingYards'                                     },
+  player_pass_tds:         { nfl: 'passingTouchdowns'                                  },
+  player_receptions:       { nfl: 'receptions'                                         },
+  player_shots_on_goal:    { nhl: 'shots'                                              },
+  player_goals:            { nhl: 'goals'                                              },
+  batter_home_runs:        { mlb: 'homeRuns'                                           },
+  batter_hits:             { mlb: 'hits'                                               },
+  batter_rbis:             { mlb: 'rbi'                                                },
+  batter_runs_scored:      { mlb: 'runs'                                               },
+  batter_total_bases:      { mlb: 'totalBases'                                         },
 };
 
 // Fuzzy name match — handles ESPN vs Odds API name variations
@@ -1468,9 +1511,9 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData };
     })
     .filter(p => p !== null)
-    .filter(p => !(p.c.pick === 'UNDER' && p.line <= 0.5))
+    // Removed UNDER <= 0.5 filter — rebounds/assists UNDERs at 2.5/3.5 are legitimate picks
     .filter(p => p.vig <= MAX_VIG)
-    .filter(p => parseFloat(p.c.pct) <= 72)
+    .filter(p => parseFloat(p.c.pct) <= 80) // raised from 72 — some 73-80% picks have genuine edge
     // Removed hard 53% floor — score threshold (0.50) and edge already filter bad picks
     .filter(p => p.score >= 0.50) // 169-pick data: only 0.50+ bucket is profitable (65.7%)
     .sort((a, b) => b.score - a.score);
@@ -1619,18 +1662,20 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
         const athleteId = await espnAthleteId(espnLeague.sport, espnLeague.league, s.name);
         if (!athleteId) return null;
         const res = await fetch(
-          `https://site.api.espn.com/apis/site/v2/sports/${espnLeague.sport}/${espnLeague.league}/athletes/${athleteId}/gamelog?season=2025`
+          `https://site.web.api.espn.com/apis/common/v3/sports/${espnLeague.sport}/${espnLeague.league}/athletes/${athleteId}/gamelog`
         );
         if (!res.ok) return null;
         const data = await res.json();
         let goals = 0, games = 0;
+        // v3 format: names at top level, events nested in seasonTypes.categories
+        const names = data.names || [];
+        let goalIdx = names.indexOf('totalGoals');
+        if (goalIdx === -1) goalIdx = names.indexOf('goals');
+        if (goalIdx === -1) return null;
         for (const st of (data.seasonTypes || [])) {
           for (const cat of (st.categories || [])) {
-            const idx = (cat.names || []).indexOf('totalGoals');
-            const idx2 = idx === -1 ? (cat.names || []).indexOf('goals') : idx;
-            if (idx2 === -1) continue;
             for (const ev of (cat.events || [])) {
-              const val = parseFloat((ev.stats || [])[idx2]);
+              const val = parseFloat((ev.stats || [])[goalIdx]);
               if (!isNaN(val)) { goals += val; games++; }
             }
           }
