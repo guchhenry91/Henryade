@@ -774,16 +774,37 @@ async function getRestFactor(sport, league, athleteId, gameDateIso) {
     if (!dates.length) { _scheduleCache[cacheKey] = null; return null; }
 
     dates.sort((a, b) => b - a);
-    const lastGame  = dates[0];
-    const gameDate  = new Date(gameDateIso);
-    const daysBetween = (gameDate - lastGame) / (1000 * 60 * 60 * 24);
+    const gameDate = new Date(gameDateIso);
 
-    // NHL: B2B is common (82 games), milder fatigue than NBA. NBA: severe.
-    const b2bPenalty = league === 'nhl' ? -0.10 : -0.25;
-    const b2bLabel = league === 'nhl' ? '😴 Back-to-back (common in NHL)' : '😴 Back-to-back — significant fatigue risk';
-    const result = daysBetween <= 1.5
-      ? { isB2B: true,  label: b2bLabel, penalty: b2bPenalty }
-      : { isB2B: false, label: null, penalty: 0 };
+    // ── Granular fatigue system (inspired by BookieX) ──
+    // Instead of simple B2B yes/no, compute composite fatigue score from:
+    // 1. Rest days (0=same day, 1=B2B, 2=normal, 3+=well rested)
+    // 2. B2B2B detection (3 games in 3 nights)
+    // 3. Each factor weighted by sport
+    const restDays = dates.length ? Math.max(0, (gameDate - dates[0]) / (1000 * 60 * 60 * 24)) : 99;
+    const isB2B   = restDays <= 1.5;
+    const isB2B2B = dates.length >= 2 && restDays <= 1.5
+      && (gameDate - dates[1]) / (1000 * 60 * 60 * 24) <= 3.0;
+
+    // Rest penalty dict (BookieX-style): 0-day=extreme, 1-day=B2B, 2-day=normal, 3+=fresh
+    const restPenalties = { nba: { 0: -0.30, 1: -0.20, 2: -0.05, 3: 0 }, nhl: { 0: -0.15, 1: -0.10, 2: -0.03, 3: 0 } };
+    const sportPenalties = restPenalties[league] || restPenalties.nba;
+    const restBucket = Math.min(3, Math.floor(restDays));
+    let fatigue = sportPenalties[restBucket] || 0;
+
+    // B2B2B: extra penalty — 3 games in 3 nights is brutal
+    if (isB2B2B) fatigue -= (league === 'nhl' ? 0.08 : 0.15);
+
+    const labels = [];
+    if (isB2B2B)     labels.push(`🔥 3-in-3 nights — heavy fatigue`);
+    else if (isB2B)  labels.push(`😴 Back-to-back (${restDays.toFixed(1)} days rest)`);
+    else if (restDays <= 2.5) labels.push(`💤 ${restDays.toFixed(0)} days rest`);
+    else labels.push(`✅ Well rested (${restDays.toFixed(0)} days)`);
+
+    const result = {
+      isB2B, isB2B2B, restDays: parseFloat(restDays.toFixed(1)),
+      label: labels[0], penalty: fatigue,
+    };
 
     _scheduleCache[cacheKey] = result;
     return result;
@@ -937,7 +958,12 @@ function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineM
     - vigPenalty * 0.08 + statsSignal * 0.20 + lineMoveSig * 0.08
     + oppAdj * 0.12 // opponent defense + pace: 12% weight
     + restPenalty + weatherPenalty + overPenalty) * dirCalib;
-  return Math.max(-1, Math.min(1, raw));
+
+  // Market regression (BookieX-style): pull score 20% toward neutral (0)
+  // Prevents overconfidence when model strongly disagrees with market
+  // A raw 0.80 becomes 0.64, a raw 0.50 becomes 0.40 — conservative anchor
+  const regressed = raw * 0.80;
+  return Math.max(-1, Math.min(1, regressed));
 }
 
 // ── Self-improvement: pick history & calibration ─────────────────────────────
@@ -1177,14 +1203,48 @@ async function autoGrade(forceAll = false) {
 // Only active once MIN_CALIBRATE picks have settled.
 function getCalibration() {
   const settled = getHistory().filter(p => p.result === 'W' || p.result === 'L');
-  const base = { OVER: 1.0, UNDER: 1.0, settled: settled.length, ready: false };
+  const base = { OVER: 1.0, UNDER: 1.0, settled: settled.length, ready: false, edgeBuckets: null, bias: null };
   if (settled.length < MIN_CALIBRATE) return base;
 
   const wr = arr => arr.length ? arr.filter(x => x.result === 'W').length / arr.length : 0.5;
-  const factor = w => Math.max(0.65, Math.min(1.25, 1.0 + (w - 0.5) * 0.5)); // wider range so calibration is more responsive
+  const factor = w => Math.max(0.65, Math.min(1.25, 1.0 + (w - 0.5) * 0.5));
 
   const overPicks  = settled.filter(p => p.pick === 'OVER');
   const underPicks = settled.filter(p => p.pick === 'UNDER');
+
+  // ── Edge-bucket calibration (BookieX-style) ──
+  // Track win rates by score magnitude to know which edge sizes actually win
+  const withScore = settled.filter(p => p.score != null);
+  const edgeBuckets = [
+    { label: '0.70+',     min: 0.70, max: 99 },
+    { label: '0.60–0.70', min: 0.60, max: 0.70 },
+    { label: '0.50–0.60', min: 0.50, max: 0.60 },
+    { label: '0.40–0.50', min: 0.40, max: 0.50 },
+    { label: '<0.40',     min: -99,  max: 0.40 },
+  ].map(b => {
+    const picks = withScore.filter(p => p.score >= b.min && p.score < b.max);
+    const w = picks.filter(p => p.result === 'W').length;
+    const l = picks.filter(p => p.result === 'L').length;
+    return { ...b, w, l, total: w+l, wr: (w+l) ? (w/(w+l)*100).toFixed(1) : null };
+  });
+
+  // ── Bias detection (BookieX-style) ──
+  // Separate win rates: favorite/underdog + per-sport + flipped vs non-flipped
+  const favPicks = settled.filter(p => parseFloat(p.pct) >= 55); // odds-favored picks
+  const dogPicks = settled.filter(p => parseFloat(p.pct) < 55);  // odds-underdog picks
+  const sports = [...new Set(settled.map(p => (p.sport || '').replace(/\p{Emoji}/gu, '').trim()))];
+  const sportBias = sports.map(sp => {
+    const s = settled.filter(p => (p.sport || '').replace(/\p{Emoji}/gu, '').trim() === sp);
+    const ov = s.filter(p => p.pick === 'OVER');
+    const un = s.filter(p => p.pick === 'UNDER');
+    return {
+      sport: sp,
+      overWR:  ov.length >= 3 ? (wr(ov) * 100).toFixed(0) : null,
+      underWR: un.length >= 3 ? (wr(un) * 100).toFixed(0) : null,
+      overN: ov.length, underN: un.length,
+    };
+  });
+
   return {
     OVER:       factor(wr(overPicks)),
     UNDER:      factor(wr(underPicks)),
@@ -1194,6 +1254,14 @@ function getCalibration() {
     underCount: underPicks.length,
     settled:    settled.length,
     ready:      true,
+    // BookieX additions
+    edgeBuckets,
+    bias: {
+      favWR: favPicks.length >= 5 ? (wr(favPicks) * 100).toFixed(0) : null,
+      dogWR: dogPicks.length >= 5 ? (wr(dogPicks) * 100).toFixed(0) : null,
+      favN: favPicks.length, dogN: dogPicks.length,
+      sportBias,
+    },
   };
 }
 
@@ -1749,16 +1817,49 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       const weatherPenalty = weatherData ? weatherData.penalty : 0;
 
       const oppSig = gameOppFactor ? gameOppFactor.signal : 0;
-      const score = propScore(parseFloat(c.pct), p.bookCount, vig, c.pick, calib, statSig, lineMoveSig, restPenalty, weatherPenalty, sportLabel || '', oppSig);
-      const conf  = score >= 0.50 ? 'HIGH' : score >= 0.35 ? 'MED' : 'LOW';
-      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData, oppFactor: gameOppFactor, flipped, warning };
+      let score = propScore(parseFloat(c.pct), p.bookCount, vig, c.pick, calib, statSig, lineMoveSig, restPenalty, weatherPenalty, sportLabel || '', oppSig);
+
+      // ── Model agreement gating (BookieX-style) ──
+      // Count how many signals agree with the pick direction.
+      // Full agreement = confidence boost. Disagreement = penalty.
+      const signals = [];
+      // Odds direction
+      signals.push(parseFloat(c.op) > parseFloat(c.up) ? 'OVER' : 'UNDER');
+      // Stats direction (if available)
+      if (statResult && statResult.hitProbOver != null) {
+        signals.push(statResult.hitProbOver >= 0.5 ? 'OVER' : 'UNDER');
+      }
+      // Line movement direction (if available)
+      if (lineMove) signals.push(lineMove.direction);
+      // Opponent defense direction
+      if (gameOppFactor && gameOppFactor.signal !== 0) {
+        signals.push(gameOppFactor.signal > 0 ? 'OVER' : 'UNDER');
+      }
+
+      const agreeing = signals.filter(s => s === c.pick).length;
+      const total = signals.length;
+      const agreementRatio = total > 0 ? agreeing / total : 0.5;
+
+      // Boost for full alignment, penalty for disagreement
+      let agreement = '';
+      if (total >= 3 && agreementRatio >= 0.75) {
+        score *= 1.10; // 10% boost — strong consensus across signals
+        agreement = '🤝 Signals aligned';
+      } else if (total >= 3 && agreementRatio <= 0.35) {
+        score *= 0.85; // 15% penalty — signals disagree
+        agreement = '⚔️ Signals conflict';
+      }
+      score = Math.max(-1, Math.min(1, score));
+
+      const conf  = score >= 0.40 ? 'HIGH' : score >= 0.28 ? 'MED' : 'LOW';
+      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData, oppFactor: gameOppFactor, flipped, warning, agreement, agreementRatio };
     })
     .filter(p => p !== null)
     // Removed UNDER <= 0.5 filter — rebounds/assists UNDERs at 2.5/3.5 are legitimate picks
     .filter(p => p.vig <= MAX_VIG)
     .filter(p => parseFloat(p.c.pct) <= 80) // raised from 72 — some 73-80% picks have genuine edge
     // Removed hard 53% floor — score threshold (0.50) and edge already filter bad picks
-    .filter(p => p.score >= 0.50) // 169-pick data: only 0.50+ bucket is profitable (65.7%)
+    .filter(p => p.score >= 0.40) // adjusted for 20% market regression (0.50 pre-regression = 0.40 post)
     .sort((a, b) => b.score - a.score);
 
   // Drop LOW confidence picks entirely — 169-pick data shows 14.3% win rate (1W/6L).
@@ -1835,6 +1936,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       ${p.restResult?.isB2B ? `<div style="font-size:0.68em;margin:2px 0;color:#ff4444">${p.restResult.label}</div>` : ''}
       ${p.weatherData?.label ? `<div style="font-size:0.68em;margin:2px 0;color:#ff9944">${p.weatherData.label}</div>` : ''}
       ${p.oppFactor?.label ? `<div style="font-size:0.68em;margin:2px 0;color:${p.oppFactor.signal>0?'#00ff88':'#ff6644'}">${p.oppFactor.label}</div>` : ''}
+      ${p.agreement ? `<div style="font-size:0.68em;margin:2px 0;color:${p.agreementRatio>=0.75?'#00ff88':'#ff9944'}">${p.agreement} (${(p.agreementRatio*100).toFixed(0)}%)</div>` : ''}
       <div class="pick-card-reason">${reason}
         <span class="score-badge">score ${p.score.toFixed(2)}
           <div class="score-tip">
