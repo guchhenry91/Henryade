@@ -1695,28 +1695,45 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       const statResult = statsResults[i];
       const statSig    = statResult ? statResult.signal : 0;
 
-      // ── STATS OVERRIDE: flip direction when stats strongly disagree with odds ──
-      // If odds say UNDER 52% but stats say 70%+ OVER, the stats should win.
-      // Only flip when: (1) odds lean is weak (<57%), (2) stats have clear direction,
-      // (3) hit probability from negative binomial strongly supports the flip.
+      // ── STATS OVERRIDE: the model picks its OWN direction based on data ──
+      // Instead of always following bookmaker odds, compare odds vs stats strength.
+      // The stronger signal wins. Stats need higher confidence to override stronger odds.
       let flipped = false;
+      let warning = null;
       if (statResult && statResult.hitProbOver != null) {
-        const oddsLean = parseFloat(c.pct); // how strong the bookmaker lean is
+        const oddsLean = parseFloat(c.pct);
         const statsOverProb = statResult.hitProbOver * 100;
         const statsUnderProb = statResult.hitProbUnder * 100;
 
-        if (c.pick === 'UNDER' && statsOverProb >= 62 && oddsLean < 57) {
-          // Odds barely favor UNDER but stats strongly favor OVER → flip to OVER
-          c.pick = 'OVER';
-          c.pct = statsOverProb.toFixed(1);
-          c.conf = statsOverProb >= 70 ? 'HIGH' : 'MED';
-          flipped = true;
-        } else if (c.pick === 'OVER' && statsUnderProb >= 62 && oddsLean < 57) {
-          // Odds barely favor OVER but stats strongly favor UNDER → flip to UNDER
-          c.pick = 'UNDER';
-          c.pct = statsUnderProb.toFixed(1);
-          c.conf = statsUnderProb >= 70 ? 'HIGH' : 'MED';
-          flipped = true;
+        // Stats direction: which way does the neg binomial lean?
+        const statsDirection = statsOverProb >= statsUnderProb ? 'OVER' : 'UNDER';
+        const statsStrength  = Math.max(statsOverProb, statsUnderProb);
+        const statsProb      = statsDirection === 'OVER' ? statsOverProb : statsUnderProb;
+
+        // Disagreement check: stats and odds point different ways
+        if (statsDirection !== c.pick) {
+          const disagreement = statsStrength + oddsLean - 100; // how far apart they are
+
+          // ── Tiered override system ──
+          // Tier 1: Weak odds (<57%) + any stats signal (>55%) → flip
+          // Tier 2: Medium odds (57-65%) + strong stats (>65%) → flip
+          // Tier 3: Strong odds (65-75%) + very strong stats (>75%) → flip
+          // Tier 4: Very strong odds (>75%) + extreme stats (>80%) + high hit rate → flip
+          const shouldFlip =
+            (oddsLean < 57  && statsProb >= 55) ||
+            (oddsLean < 65  && statsProb >= 65) ||
+            (oddsLean < 75  && statsProb >= 75) ||
+            (oddsLean < 85  && statsProb >= 80 && statResult.actualHitRate >= 0.75);
+
+          if (shouldFlip) {
+            c.pick = statsDirection;
+            c.pct  = statsProb.toFixed(1);
+            c.conf = statsProb >= 75 ? 'HIGH' : statsProb >= 65 ? 'MED' : 'LOW';
+            flipped = true;
+          } else if (disagreement >= 30) {
+            // Can't flip (odds too strong) but flag the disagreement
+            warning = `⚠️ Stats say ${statsDirection} ${statsProb.toFixed(0)}% but odds say ${c.pick} ${oddsLean.toFixed(0)}% — check lineup/matchup`;
+          }
         }
       }
 
@@ -1733,7 +1750,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       const oppSig = gameOppFactor ? gameOppFactor.signal : 0;
       const score = propScore(parseFloat(c.pct), p.bookCount, vig, c.pick, calib, statSig, lineMoveSig, restPenalty, weatherPenalty, sportLabel || '', oppSig);
       const conf  = score >= 0.50 ? 'HIGH' : score >= 0.35 ? 'MED' : 'LOW';
-      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData, oppFactor: gameOppFactor, flipped };
+      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData, oppFactor: gameOppFactor, flipped, warning };
     })
     .filter(p => p !== null)
     // Removed UNDER <= 0.5 filter — rebounds/assists UNDERs at 2.5/3.5 are legitimate picks
@@ -1809,6 +1826,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       <div class="pick-card-stat">${stat}</div>
       <div class="pick-card-line">${p.line}</div>
       <div class="pick-card-direction">${pickHtml(p.c.pick)} <span class="pick-card-pct">${p.c.pct}% ${p.flipped ? 'stats override' : 'implied'}</span>${p.flipped ? ' <span style="font-size:0.7em;color:#00ccff;font-weight:700">⚡ FLIPPED</span>' : ''}</div>
+      ${p.warning ? `<div style="font-size:0.68em;margin:2px 0;padding:4px 8px;background:#ff660010;border:1px solid #ff660030;border-radius:4px;color:#ff9944">${p.warning}</div>` : ''}
       ${p.statResult ? `<div style="font-size:0.7em;margin:4px 0 2px;color:${p.statResult.signal>0?'#00ff88':p.statResult.signal<0?'#ff4444':'#555'}">${p.statResult.signalLabel}</div>` : ''}
       ${p.statResult?.hitProbOver != null ? `<div style="font-size:0.68em;margin:1px 0;color:${(p.c.pick==='OVER'?p.statResult.hitProbOver:p.statResult.hitProbUnder)>=0.6?'#00ff88':(p.c.pick==='OVER'?p.statResult.hitProbOver:p.statResult.hitProbUnder)>=0.5?'#ffcc00':'#ff4444'}">🎲 Hit prob: ${((p.c.pick==='OVER'?p.statResult.hitProbOver:p.statResult.hitProbUnder)*100).toFixed(0)}% ${p.statResult.consistencyTag||''}</div>` : ''}
       ${p.statResult?.extraLabels?.map(l => `<div style="font-size:0.67em;margin:1px 0;color:#555">${l}</div>`).join('') || ''}
