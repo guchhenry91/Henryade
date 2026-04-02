@@ -1997,13 +1997,16 @@ async function buildSoccer(force) {
           }
 
           // Proper xG estimation: team attack strength vs opponent's defensive weakness
-          const formHomeXG = (hAttack * 0.6 + awayDefense * 0.4);
-          const formAwayXG = (aAttack * 0.6 + homeDefense * 0.4);
-          // With synthetic xG: 40% odds + 60% xG data (shot data is more predictive)
-          // Without: 45% odds + 55% goals form
-          const oddsW = hasSynXG ? 0.40 : 0.45;
-          homeXG = homeXG * oddsW + formHomeXG * (1 - oddsW);
-          awayXG = awayXG * oddsW + formAwayXG * (1 - oddsW);
+          // Guard against null/NaN — FA Cup teams may not have form data in eng.fa
+          const formHomeXG = (hAttack && awayDefense) ? (hAttack * 0.6 + awayDefense * 0.4) : null;
+          const formAwayXG = (aAttack && homeDefense) ? (aAttack * 0.6 + homeDefense * 0.4) : null;
+
+          if (formHomeXG && formAwayXG && !isNaN(formHomeXG) && !isNaN(formAwayXG)) {
+            const oddsW = hasSynXG ? 0.40 : 0.45;
+            homeXG = homeXG * oddsW + formHomeXG * (1 - oddsW);
+            awayXG = awayXG * oddsW + formAwayXG * (1 - oddsW);
+          }
+          // else: keep odds-only xG from estimateXG() — better than NaN
           homeXG = Math.max(0.4, Math.min(3.5, homeXG));
           awayXG = Math.max(0.4, Math.min(3.5, awayXG));
         }
