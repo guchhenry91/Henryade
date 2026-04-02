@@ -1105,9 +1105,25 @@ async function fetchEventProps(sport, eventId, markets, region, force=false) {
 
 // ── Poisson model ─────────────────────────────────────────────────────────────
 function poisson(lam, k) { let r=Math.exp(-lam); for(let i=1;i<=k;i++) r*=lam/i; return r; }
+
+// Dixon-Coles correlation adjustment for low-scoring outcomes (0-0, 1-0, 0-1, 1-1)
+// Standard Poisson assumes independence — this corrects for real-world goal correlation.
+// rho < 0 means 0-0 and 1-1 are more likely than Poisson predicts (defensive games).
+function dixonColes(h, a, hXG, aXG, rho = -0.13) {
+  const base = poisson(hXG, h) * poisson(aXG, a);
+  if (h === 0 && a === 0) return base * (1 - hXG * aXG * rho);
+  if (h === 1 && a === 0) return base * (1 + aXG * rho);
+  if (h === 0 && a === 1) return base * (1 + hXG * rho);
+  if (h === 1 && a === 1) return base * (1 - rho);
+  return base;
+}
+
 function correctScores(hXG, aXG, max=6) {
   const s=[];
-  for(let h=0;h<=max;h++) for(let a=0;a<=max;a++) s.push({h,a,p:poisson(hXG,h)*poisson(aXG,a)});
+  for(let h=0;h<=max;h++) for(let a=0;a<=max;a++) s.push({h,a,p:dixonColes(h,a,hXG,aXG)});
+  // Normalize so probabilities sum to 1
+  const total = s.reduce((sum,x) => sum + x.p, 0);
+  s.forEach(x => x.p /= total);
   s.sort((a,b)=>b.p-a.p); return s;
 }
 function impliedProb(o) { return 1/o; }
@@ -1222,8 +1238,11 @@ function estimateXG(hO,aO,dO,tot=2.5) {
   const hi=impliedProb(hO),ai=impliedProb(aO);
   // Use draw odds to refine xG split — draw probability implies low-scoring game
   const drawAdj = dO ? Math.max(0.8, 1 - impliedProb(dO) * 0.5) : 1;
-  const homeXG  = tot * (hi/(hi+ai)) * drawAdj;
-  const awayXG  = tot * (ai/(hi+ai)) * drawAdj;
+  let homeXG  = tot * (hi/(hi+ai)) * drawAdj;
+  let awayXG  = tot * (ai/(hi+ai)) * drawAdj;
+  // Home advantage: historical data shows ~15% home scoring boost across major leagues
+  homeXG *= 1.08;  // +8% home boost (conservative — odds already partly price this in)
+  awayXG *= 0.94;  // -6% away penalty
   // Clamp to realistic range: 0.4 – 3.5 goals per team
   return { homeXG: Math.max(0.4, Math.min(3.5, homeXG)), awayXG: Math.max(0.4, Math.min(3.5, awayXG)) };
 }
@@ -1246,10 +1265,11 @@ async function fetchTeamForm(sport, league, teamName) {
     const evRes  = await fetch(`https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/teams/${id}/schedule?season=2025&seasontype=2`);
     if (!evRes.ok) return null;
     const evData = await evRes.json();
-    const events = (evData.events || []).filter(e => e.competitions?.[0]?.status?.type?.completed).slice(-5);
+    const events = (evData.events || []).filter(e => e.competitions?.[0]?.status?.type?.completed).slice(-10);
     if (!events.length) return null;
 
     let wins=0, draws=0, losses=0, gf=0, ga=0;
+    let homeGF=0, homeGA=0, homeGames=0, awayGF=0, awayGA=0, awayGames=0;
     for (const e of events) {
       const comp = e.competitions?.[0];
       const myComp   = comp?.competitors?.find(c => c.id === String(id));
@@ -1261,9 +1281,19 @@ async function fetchTeamForm(sport, league, teamName) {
       if      (myComp.winner)  wins++;
       else if (oppComp.winner) losses++;
       else                     draws++;
+      // Track home/away form separately for more accurate xG blending
+      if (myComp.homeAway === 'home') { homeGF += myScore; homeGA += oppScore; homeGames++; }
+      else                            { awayGF += myScore; awayGA += oppScore; awayGames++; }
     }
     const n = wins + draws + losses;
-    return n ? { wins, draws, losses, goalsFor: gf/n, goalsAgainst: ga/n, games: n } : null;
+    return n ? {
+      wins, draws, losses, goalsFor: gf/n, goalsAgainst: ga/n, games: n,
+      homeGoalsFor: homeGames ? homeGF/homeGames : gf/n,
+      homeGoalsAg:  homeGames ? homeGA/homeGames : ga/n,
+      awayGoalsFor: awayGames ? awayGF/awayGames : gf/n,
+      awayGoalsAg:  awayGames ? awayGA/awayGames : ga/n,
+      homeGames, awayGames,
+    } : null;
   } catch { return null; }
 }
 function gameDate(iso) {
@@ -1558,6 +1588,7 @@ async function buildSoccer(force) {
 
         // Fetch recent form for both teams in parallel — upgrades xG from odds-only to stats-backed
         const espnLeague = lg.key.includes('epl') ? {sport:'soccer',league:'eng.1'}
+          : lg.key.includes('fa_cup') ? {sport:'soccer',league:'eng.fa'}
           : lg.key.includes('champs') ? {sport:'soccer',league:'uefa.champions'}
           : lg.key.includes('la_liga') ? {sport:'soccer',league:'esp.1'}
           : {sport:'soccer',league:'fifa.world'};
@@ -1569,11 +1600,17 @@ async function buildSoccer(force) {
         // Blend odds-based xG with real form data when available
         let { homeXG, awayXG } = estimateXG(hO, aO, dO||4, 2.5);
         if (homeForm && awayForm) {
-          // Use 50% odds-based + 50% real stats blend
-          const formHomeXG = (homeForm.goalsFor  * 0.6 + awayForm.goalsAgainst * 0.4);
-          const formAwayXG = (awayForm.goalsFor  * 0.6 + homeForm.goalsAgainst * 0.4);
-          homeXG = homeXG * 0.5 + formHomeXG * 0.5;
-          awayXG = awayXG * 0.5 + formAwayXG * 0.5;
+          // Use location-specific form when available (home team's HOME goals, away team's AWAY goals)
+          const hGF = homeForm.homeGames >= 3 ? homeForm.homeGoalsFor : homeForm.goalsFor;
+          const hGA = awayForm.awayGames >= 3 ? awayForm.awayGoalsAg  : awayForm.goalsAgainst;
+          const aGF = awayForm.awayGames >= 3 ? awayForm.awayGoalsFor : awayForm.goalsFor;
+          const aGA = homeForm.homeGames >= 3 ? homeForm.homeGoalsAg  : homeForm.goalsAgainst;
+          // Attack strength × defensive weakness blend
+          const formHomeXG = (hGF * 0.6 + hGA * 0.4);
+          const formAwayXG = (aGF * 0.6 + aGA * 0.4);
+          // 45% odds + 55% form (form is now more reliable with 10-game sample + location split)
+          homeXG = homeXG * 0.45 + formHomeXG * 0.55;
+          awayXG = awayXG * 0.45 + formAwayXG * 0.55;
           homeXG = Math.max(0.4, Math.min(3.5, homeXG));
           awayXG = Math.max(0.4, Math.min(3.5, awayXG));
         }
@@ -1615,7 +1652,15 @@ async function buildSoccer(force) {
             ${tot.under?`<tr><td>Under 2.5</td><td>${(un*100).toFixed(1)}%</td><td>${tot.under}</td><td>${(impliedProb(tot.under)*100).toFixed(1)}%</td><td>${edgeHtml(unE.toFixed(1))}</td></tr>`:''}
             <tr><td>BTTS</td><td>${(btts*100).toFixed(1)}%</td><td colspan="3" style="color:${btts>0.5?'#00ff88':'#ff6666'}">${btts>0.5?'YES — likely':'NO — unlikely'}</td></tr>
           </table>
-          <div class="label">TOP 5 CORRECT SCORES (Poisson)</div>
+          <div class="label">TOP 5 CORRECT SCORES (Dixon-Coles Poisson)
+            ${(() => {
+              const top5sum = top5.reduce((s,x) => s + x.p, 0);
+              const dataQuality = homeForm && awayForm
+                ? (homeForm.games >= 8 && awayForm.games >= 8 ? '🟢 Strong data' : '🟡 Limited data')
+                : '🔴 Odds-only (no form)';
+              return `<span style="float:right;font-size:0.85em;color:#444">${dataQuality} · Top 5 cover ${(top5sum*100).toFixed(0)}%</span>`;
+            })()}
+          </div>
           <div class="score-grid">
             ${top5.map((s,i)=>`<div class="score-chip ${i===0?'top':i===1?'second':i===2?'third':''}">${home.split(' ').pop()} ${s.h}–${s.a} ${away.split(' ').pop()} <span style="color:#555">${(s.p*100).toFixed(2)}%</span></div>`).join('')}
           </div>`;
