@@ -219,6 +219,21 @@
 const API_KEY = '17b4d42651ab4e81ef298300544f5a21';
 const BASE    = 'https://api.the-odds-api.com/v4';
 const CACHE_TTL    = 3 * 60 * 60 * 1000; // 3hrs — lines move fast, keep data fresh without hammering the API
+
+// ── All dates use US Eastern timezone (matches ESPN + US sportsbooks) ─────────
+const TZ = 'America/New_York';
+function todayET() {
+  // Returns YYYY-MM-DD in US Eastern time
+  return new Date().toLocaleDateString('en-CA', { timeZone: TZ }); // en-CA = YYYY-MM-DD format
+}
+function dateToET(d) {
+  // Converts any Date/ISO string to YYYY-MM-DD in US Eastern
+  return new Date(d).toLocaleDateString('en-CA', { timeZone: TZ });
+}
+function displayDateET(iso) {
+  // Human-readable: "Wed, 2 Apr 19:30" in US Eastern
+  return new Date(iso).toLocaleString('en-GB', { timeZone: TZ, weekday:'short', day:'numeric', month:'short', hour:'2-digit', minute:'2-digit' });
+}
 const TOKEN_WARN   = 10;   // show warning banner below this many tokens remaining
 const TOKEN_BLOCK  = 3;    // block all live API calls below this — serve cache only
 let   _tokensLeft  = null; // updated on every response header
@@ -989,10 +1004,8 @@ function nameMatch(a, b) {
 // Format a date string to YYYYMMDD in US Eastern time (ESPN uses ET for game dates)
 // Without this, a UK user's local date can be one day ahead of ESPN's game date
 function espnDateStr(iso) {
-  const d = new Date(iso);
-  // Convert to US Eastern — Intl gives "M/D/YYYY" which we reformat to YYYYMMDD
-  const parts = d.toLocaleDateString('en-US', { timeZone: 'America/New_York' }).split('/');
-  return `${parts[2]}${parts[0].padStart(2,'0')}${parts[1].padStart(2,'0')}`;
+  // YYYYMMDD in US Eastern — ESPN uses ET for all game dates
+  return dateToET(iso).replace(/-/g, '');
 }
 
 // Extract a player's stat value from an ESPN game summary boxscore
@@ -1372,7 +1385,7 @@ function winnerBox(home, away, homeOdds, awayOdds, drawOdds, eventDate, sportLab
   // Save this pick to the grading history so it can be auto-graded tomorrow
   if (sportLabel && eventDate) {
     savePickToHistory({
-      id:     `${new Date(eventDate).toISOString().slice(0,10)}_match_${home}_${away}`.replace(/\W+/g, '_'),
+      id:     `${dateToET(eventDate)}_match_${home}_${away}`.replace(/\W+/g, '_'),
       date:   eventDate,
       sport:  sportLabel,
       match:  `${home} vs ${away}`,
@@ -1558,7 +1571,7 @@ async function fetchTeamForm(sport, league, teamName) {
   } catch { return null; }
 }
 function gameDate(iso) {
-  return new Date(iso).toLocaleString('en-GB',{weekday:'short',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+  return displayDateET(iso) + ' ET';
 }
 
 // ── Player props table renderer ───────────────────────────────────────────────
@@ -1618,7 +1631,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
   if (eventId) {
     candidates.forEach(p => {
       saveOpeningLine(eventId, p.player, p.market, p.bestOver, p.bestUnder);
-      const pickId = `${new Date().toISOString().slice(0,10)}_${p.player}_${p.market}`.replace(/\W+/g,'_');
+      const pickId = `${todayET()}_${p.player}_${p.market}`.replace(/\W+/g,'_');
       const c = propConf(p.bestOver, p.bestUnder);
       if (c) saveOpeningOddsForPick(pickId, p.bestOver, p.bestUnder, c.pick);
     });
@@ -1717,7 +1730,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     props.forEach((p, i) => {
       const pick = {
         // Dedup key: same player+market on same calendar day = same pick, don't double-save
-        id:        `${new Date().toISOString().slice(0,10)}_${p.player}_${p.market}`.replace(/\W+/g,'_'),
+        id:        `${todayET()}_${p.player}_${p.market}`.replace(/\W+/g,'_'),
         date:      new Date().toISOString(),
         sport:     sportLabel, match: matchLabel,
         player:    p.player,  market: p.market,
@@ -1774,7 +1787,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
         </span>
       </div>
       <div class="pick-card-select">${(() => {
-        const slipPick = { id: `${new Date().toISOString().slice(0,10)}_${p.player}_${p.market}`.replace(/\W+/g,'_'), player: p.player, market: p.market, line: p.line, sport: sportLabel, pct: p.c.pct, myPick: null };
+        const slipPick = { id: `${todayET()}_${p.player}_${p.market}`.replace(/\W+/g,'_'), player: p.player, market: p.market, line: p.line, sport: sportLabel, pct: p.c.pct, myPick: null };
         const enc = encodeURIComponent(JSON.stringify(slipPick));
         const saved = getSlip().find(x => x.id === slipPick.id);
         return `<button class="pick-select-btn over ${saved?.myPick==='OVER'?'sel':''}" data-slip-id="${slipPick.id}" data-dir="OVER" onclick="pickSelect(this,'${enc}','OVER')">OVER</button>
@@ -1894,7 +1907,7 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
   // Save top 3 scorer picks to history for tracking
   list.slice(0, 3).forEach((s, i) => {
     savePickToHistory({
-      id: `${new Date().toISOString().slice(0,10)}_scorer_${s.name}_${matchLabel}`.replace(/\W+/g,'_'),
+      id: `${todayET()}_scorer_${s.name}_${matchLabel}`.replace(/\W+/g,'_'),
       date: new Date().toISOString(),
       sport: sportLabel, match: matchLabel,
       player: s.name, market: 'anytime_goalscorer',
@@ -2449,7 +2462,7 @@ function buildHistoryTab() {
     pending.slice(0, 40).forEach(p => {
       const isMatch  = p.type === 'match_winner';
       const stat     = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
-      const d        = new Date(p.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+      const d        = new Date(p.date).toLocaleDateString('en-US',{day:'numeric',month:'short',timeZone:TZ});
       const infoCell = isMatch
         ? `<span style="color:#bbb">${p.match}</span> <span style="color:#333;font-size:0.8em">Winner</span>`
         : `${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>`;
@@ -2494,7 +2507,7 @@ function buildHistoryTab() {
     settled.slice(0, 100).forEach(p => {
       const isMatch  = p.type === 'match_winner';
       const stat     = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
-      const d        = new Date(p.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+      const d        = new Date(p.date).toLocaleDateString('en-US',{day:'numeric',month:'short',timeZone:TZ});
       const isBest   = bestBetIds.has(p.id);
       const infoCell = isMatch
         ? `<span style="color:#bbb">${p.match}</span> <span style="color:#333;font-size:0.8em">Winner</span>`
