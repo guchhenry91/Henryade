@@ -709,6 +709,67 @@ function getCLV(pickId, closeOver, closeUnder) {
   } catch { return null; }
 }
 
+// ── UPGRADE 4: Opponent Defensive Rating & Pace Factor ──────────────────────
+// Fetches NBA/NHL team standings to determine how many points a team allows (OppPPG).
+// A player facing a bottom-5 defense gets boosted; facing a top-5 defense gets suppressed.
+// Pace proxy: PPG + OppPPG — fast games = more possessions = higher player totals.
+const _teamStandingsCache = {};
+
+async function getTeamStandings(sport, league) {
+  const ck = `standings__${league}`;
+  if (_teamStandingsCache[ck]) return _teamStandingsCache[ck];
+  try {
+    const res = await fetch(`https://site.web.api.espn.com/apis/v2/sports/${sport}/${league}/standings`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    const teams = {};
+    let totalPPG = 0, totalOPPG = 0, count = 0;
+    for (const conf of (data.children || [])) {
+      for (const entry of (conf.standings?.entries || [])) {
+        const name = entry.team?.displayName || '';
+        const stats = {};
+        (entry.stats || []).forEach(s => { stats[s.name] = parseFloat(s.value) || 0; });
+        const ppg = stats.avgPointsFor || 0;
+        const oppg = stats.avgPointsAgainst || 0;
+        if (name && ppg > 0) {
+          teams[name.toLowerCase()] = { ppg, oppg, pace: ppg + oppg };
+          totalPPG += ppg; totalOPPG += oppg; count++;
+        }
+      }
+    }
+    const leagueAvg = count ? { ppg: totalPPG/count, oppg: totalOPPG/count, pace: (totalPPG+totalOPPG)/count } : null;
+    const result = { teams, leagueAvg };
+    _teamStandingsCache[ck] = result;
+    return result;
+  } catch { return null; }
+}
+
+// Returns { defenseRating, paceMultiplier, label } for the OPPONENT team
+// defenseRating: <1 = tough defense (suppresses props), >1 = weak defense (boosts props)
+// paceMultiplier: <1 = slow game, >1 = fast game
+function getOpponentFactor(standings, opponentName) {
+  if (!standings || !standings.leagueAvg) return null;
+  const opp = standings.teams[opponentName.toLowerCase()];
+  if (!opp) return null;
+  const avg = standings.leagueAvg;
+  // Defense rating: opponent's OppPPG / league avg OppPPG
+  // >1 means they allow MORE points than average (weak defense = boost)
+  // <1 means they allow FEWER (strong defense = suppress)
+  const defenseRating = opp.oppg / avg.oppg;
+  // Pace: game pace / league avg pace
+  const paceMultiplier = opp.pace / avg.pace;
+  // Combined factor: 70% defense + 30% pace
+  const factor = defenseRating * 0.7 + paceMultiplier * 0.3;
+  // Convert to a signal: centered at 0, positive = boost, negative = suppress
+  const signal = (factor - 1.0) * 0.5; // scale down — a 10% defense difference = +0.05 signal
+  const label = defenseRating > 1.05
+    ? `🎯 Weak defense: ${opp.oppg.toFixed(1)} OppPPG (${((defenseRating-1)*100).toFixed(0)}% above avg)`
+    : defenseRating < 0.95
+    ? `🛡 Strong defense: ${opp.oppg.toFixed(1)} OppPPG (${((1-defenseRating)*100).toFixed(0)}% below avg)`
+    : null;
+  return { defenseRating, paceMultiplier, signal, factor, label };
+}
+
 // ── Prop scoring constants ────────────────────────────────────────────────────
 // Market keys to exclude — these are specialty/novelty bets with no real edge signal
 const SPECIALTY_MARKETS = new Set([
@@ -734,20 +795,23 @@ function calcVig(overOdds, underOdds) {
 //   vig_penalty 0.10 — subtracted when vig exceeds FAIR_VIG
 //   stats       0.20 — L5 average vs prop line signal (ESPN data, 0 if unavailable)
 // calib: object from getCalibration() — applies directional win-rate multiplier
-function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineMoveSig = 0, restPenalty = 0, weatherPenalty = 0, sportHint = '') {
+function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineMoveSig = 0, restPenalty = 0, weatherPenalty = 0, sportHint = '', oppSignal = 0) {
   const dirCalib        = (calib && calib[direction]) || 1.0;
   const edgeFactor      = (pct - 50) / 50;
   const consensusFactor = Math.min(bookCount / 6, 1);
   const fairFactor      = Math.max(0, 1 - vig / MAX_VIG);
   const vigPenalty      = Math.max(0, (vig - FAIR_VIG) / (MAX_VIG - FAIR_VIG));
-  // OVER penalty — MLB/Soccer OVERs underperform. NBA OVERs are near-neutral (51-53%).
-  // Only penalize sports with proven OVER weakness; NBA gets no penalty.
   const overPenalty = (direction === 'OVER' && !sportHint.includes('NBA') && !sportHint.includes('NHL')) ? -0.06 : 0;
 
-  const raw = (edgeFactor * 0.25 + consensusFactor * 0.20 + fairFactor * 0.15
-    - vigPenalty * 0.10 + statsSignal * 0.20 + lineMoveSig * 0.10
+  // oppSignal: positive = weak defense (boost OVER), negative = strong defense (boost UNDER)
+  // Flip sign for UNDER direction: strong defense helps UNDER picks
+  const oppAdj = direction === 'OVER' ? oppSignal : -oppSignal;
+
+  const raw = (edgeFactor * 0.22 + consensusFactor * 0.18 + fairFactor * 0.12
+    - vigPenalty * 0.08 + statsSignal * 0.20 + lineMoveSig * 0.08
+    + oppAdj * 0.12 // opponent defense + pace: 12% weight
     + restPenalty + weatherPenalty + overPenalty) * dirCalib;
-  return Math.max(-1, Math.min(1, raw)); // clamp to [-1, 1] so confidence tiers stay stable
+  return Math.max(-1, Math.min(1, raw));
 }
 
 // ── Self-improvement: pick history & calibration ─────────────────────────────
@@ -1407,12 +1471,21 @@ function gameDate(iso) {
 // ── Player props table renderer ───────────────────────────────────────────────
 // sportLabel: passed in so top picks can be collected for the slate-wide All tab
 async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameDate = '', homeTeam = '') {
-  const calib = getCalibration();  // computed once — applied to every pick's score
+  const calib = getCalibration();
   const leagueShort = Object.keys(ESPN_LEAGUE_CFG).find(k => sportLabel.toUpperCase().includes(k.toUpperCase())) || null;
   const espnCfg = leagueShort ? ESPN_LEAGUE_CFG[leagueShort] : null;
 
-  // Fetch weather once per game (NFL/MLB outdoor only)
-  const weatherData = await getWeatherForGame(homeTeam, sportLabel, gameDate || new Date().toISOString());
+  // Fetch weather + opponent defensive rating in parallel
+  const awayTeam = (matchLabel.split(' vs ')[1] || '').trim();
+  const [weatherData, standings] = await Promise.all([
+    getWeatherForGame(homeTeam, sportLabel, gameDate || new Date().toISOString()),
+    espnCfg ? getTeamStandings(espnCfg.sport, espnCfg.league) : Promise.resolve(null),
+  ]);
+  // Get opponent factor for both teams (we don't know which team the player is on yet)
+  const homeOppFactor = getOpponentFactor(standings, awayTeam);  // home players face away defense
+  const awayOppFactor = getOpponentFactor(standings, homeTeam);  // away players face home defense
+  // Use average of both as a game-level signal (we can't determine per-player team from props alone)
+  const gameOppFactor = homeOppFactor || awayOppFactor || null;
   const lines = {};
 
   // Aggregate across bookmakers — track bestOver, bestUnder, and how many books
@@ -1506,9 +1579,10 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       // UPGRADE 3: Weather penalty (NFL/MLB outdoor only)
       const weatherPenalty = weatherData ? weatherData.penalty : 0;
 
-      const score = propScore(parseFloat(c.pct), p.bookCount, vig, c.pick, calib, statSig, lineMoveSig, restPenalty, weatherPenalty, sportLabel || '');
+      const oppSig = gameOppFactor ? gameOppFactor.signal : 0;
+      const score = propScore(parseFloat(c.pct), p.bookCount, vig, c.pick, calib, statSig, lineMoveSig, restPenalty, weatherPenalty, sportLabel || '', oppSig);
       const conf  = score >= 0.50 ? 'HIGH' : score >= 0.35 ? 'MED' : 'LOW';
-      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData };
+      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData, oppFactor: gameOppFactor };
     })
     .filter(p => p !== null)
     // Removed UNDER <= 0.5 filter — rebounds/assists UNDERs at 2.5/3.5 are legitimate picks
@@ -1589,6 +1663,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       ${p.lineMove ? `<div style="font-size:0.68em;margin:2px 0;color:${p.lineMove.direction===p.c.pick?'#00ccff':'#ff9944'}">${p.lineMove.label}</div>` : ''}
       ${p.restResult?.isB2B ? `<div style="font-size:0.68em;margin:2px 0;color:#ff4444">${p.restResult.label}</div>` : ''}
       ${p.weatherData?.label ? `<div style="font-size:0.68em;margin:2px 0;color:#ff9944">${p.weatherData.label}</div>` : ''}
+      ${p.oppFactor?.label ? `<div style="font-size:0.68em;margin:2px 0;color:${p.oppFactor.signal>0?'#00ff88':'#ff6644'}">${p.oppFactor.label}</div>` : ''}
       <div class="pick-card-reason">${reason}
         <span class="score-badge">score ${p.score.toFixed(2)}
           <div class="score-tip">
@@ -1600,6 +1675,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
             ${p.lineMove ? `<div style="color:${p.lineMove.direction===p.c.pick?'#00ccff':'#ff9944'}">🔀 Line move: ${p.lineMove.direction===p.c.pick?'+':'-'}${(Math.abs(p.lineMove.pctChange>=0.08?0.15:0.08)*0.10).toFixed(3)}</div>` : '<div style="color:#333">🔀 Line move: none</div>'}
             ${p.restResult?.isB2B ? `<div style="color:#ff4444">😴 B2B penalty: ${(p.restResult.penalty).toFixed(3)}</div>` : ''}
             ${p.weatherData?.penalty ? `<div style="color:#ff9944">🌦 Weather: ${(p.weatherData.penalty).toFixed(3)}</div>` : ''}
+            ${p.oppFactor ? `<div style="color:${p.oppFactor.signal>0?'#00ff88':'#ff6644'}">🛡 Opp defense: ${(p.oppFactor.signal*0.12).toFixed(3)} (${p.oppFactor.defenseRating.toFixed(2)}×)</div>` : '<div style="color:#333">🛡 Opp defense: no data</div>'}
           </div>
         </span>
       </div>
