@@ -250,7 +250,7 @@ const SPORT_TABS = {
   },
   nhl: {
     key: 'icehockey_nhl', label: '🏒 NHL', region: 'us',
-    props: 'player_shots_on_goal,player_points,player_assists,player_goals'
+    props: 'player_shots_on_goal,player_points,player_assists,player_goals,player_power_play_points,player_blocked_shots'
   },
   mlb: {
     key: 'baseball_mlb', label: '⚾ MLB', region: 'us',
@@ -276,9 +276,11 @@ const ESPN_STAT_MAP = {
   player_receiving_yds:    { nfl: 'receivingYards' },
   player_pass_tds:         { nfl: 'passingTouchdowns' },
   player_receptions:       { nfl: 'receptions' },
-  // NHL
-  player_shots_on_goal:    { nhl: 'shots' },
+  // NHL — v3 uses shotsTotal not shots, powerPlayGoals+Assists for PPP
+  player_shots_on_goal:    { nhl: 'shotsTotal' },
   player_goals:            { nhl: 'goals' },
+  player_power_play_points:{ nhl: 'powerPlayGoals' }, // proxy — PPG is part of PPP
+  player_blocked_shots:    { nhl: 'blockedShots' },
   // MLB batters — v3 uses RBIs (capitalised)
   batter_hits:             { mlb: 'hits' },
   batter_home_runs:        { mlb: 'homeRuns' },
@@ -354,7 +356,11 @@ async function espnPlayerGamelog(sport, league, athleteId, statKey) {
       idx = names.findIndex(n => n.startsWith(statKey + '-') || n === statKey);
     }
     // Also try common renames between v2 and v3
-    const v3Renames = { rebounds: 'totalRebounds', rbi: 'RBIs' };
+    const v3Renames = {
+      rebounds: 'totalRebounds', rbi: 'RBIs',       // NBA/MLB
+      shots: 'shotsTotal', blockedShots: 'blocked',  // NHL — v3 uses different names
+      powerPlayPoints: 'powerPlayGoals',              // NHL — proxy PPG for PPP gamelog
+    };
     if (idx === -1 && v3Renames[statKey]) {
       idx = names.indexOf(v3Renames[statKey]);
     }
@@ -669,8 +675,11 @@ async function getRestFactor(sport, league, athleteId, gameDateIso) {
     const gameDate  = new Date(gameDateIso);
     const daysBetween = (gameDate - lastGame) / (1000 * 60 * 60 * 24);
 
+    // NHL: B2B is common (82 games), milder fatigue than NBA. NBA: severe.
+    const b2bPenalty = league === 'nhl' ? -0.10 : -0.25;
+    const b2bLabel = league === 'nhl' ? '😴 Back-to-back (common in NHL)' : '😴 Back-to-back — significant fatigue risk';
     const result = daysBetween <= 1.5
-      ? { isB2B: true,  label: '😴 Back-to-back game — significant fatigue risk', penalty: -0.25 }
+      ? { isB2B: true,  label: b2bLabel, penalty: b2bPenalty }
       : { isB2B: false, label: null, penalty: 0 };
 
     _scheduleCache[cacheKey] = result;
@@ -883,8 +892,10 @@ const MARKET_STAT_KEY = {
   player_receiving_yds:    { nfl: 'receivingYards'                                     },
   player_pass_tds:         { nfl: 'passingTouchdowns'                                  },
   player_receptions:       { nfl: 'receptions'                                         },
-  player_shots_on_goal:    { nhl: 'shots'                                              },
+  player_shots_on_goal:    { nhl: 'shotsOnGoal'                                        },
   player_goals:            { nhl: 'goals'                                              },
+  player_power_play_points:{ nhl: 'powerPlayPoints'                                    },
+  player_blocked_shots:    { nhl: 'blockedShots'                                       },
   batter_home_runs:        { mlb: 'homeRuns'                                           },
   batter_hits:             { mlb: 'hits'                                               },
   batter_rbis:             { mlb: 'RBIs'                                               },
