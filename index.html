@@ -398,7 +398,7 @@ async function espnPlayerGamelog(sport, league, athleteId, statKey) {
     }
     if (idx === -1) return null;
 
-    const entries = []; // { val, isHome }
+    const entries = []; // { val, isHome, gameDate }
     const eventsMap = data.events || {};
 
     for (const st of (data.seasonTypes || [])) {
@@ -406,7 +406,6 @@ async function espnPlayerGamelog(sport, league, athleteId, statKey) {
         for (const ev of (cat.events || [])) {
           const rawVal = (ev.stats || [])[idx];
           if (rawVal == null) continue;
-          // Parse compound "made-attempted" fields: take first number (made)
           let val;
           if (typeof rawVal === 'string' && rawVal.includes('-')) {
             val = parseFloat(rawVal.split('-')[0]);
@@ -415,12 +414,12 @@ async function espnPlayerGamelog(sport, league, athleteId, statKey) {
           }
           if (isNaN(val)) continue;
 
-          // Home/away: check events map for this event's home team info
           const evInfo = eventsMap[ev.eventId] || {};
           const isHome = evInfo.homeTeamId
-            ? true // if homeTeamId exists, ESPN marks it; check atVs for away
+            ? true
             : (ev.atVs !== '@');
-          entries.push({ val, isHome });
+          const gameDate = evInfo.gameDate || null;
+          entries.push({ val, isHome, gameDate });
         }
       }
     }
@@ -537,19 +536,27 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
   // ── Combined signal: distribution + streak ──
   const totalSignal = Math.max(-0.35, Math.min(0.35, distSignal + streakSignal * 0.4));
 
+  // ── Staleness detection — how old is the most recent game in ESPN's data? ──
+  const gameDates = entries.filter(e => e.gameDate).map(e => new Date(e.gameDate));
+  const latestGameDate = gameDates.length ? new Date(Math.max(...gameDates)) : null;
+  const daysStale = latestGameDate ? Math.floor((new Date() - latestGameDate) / (1000*60*60*24)) : null;
+  const staleLabel = daysStale !== null && daysStale >= 2
+    ? `📅 Stats from ${latestGameDate.toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:TZ})} (${daysStale}d ago${daysStale >= 4 ? ' ⚠️ STALE' : ''})`
+    : null;
+
   // ── Labels ──
   const consistencyTag = variance <= effectiveMean ? '🎯 Consistent' : variance >= effectiveMean * 2 ? '🎲 Volatile' : '';
   const diff = (effectiveMean - line) / line;
   const probLabel = `📊 ${(hitProbOver*100).toFixed(0)}% OVER / ${(hitProbUnder*100).toFixed(0)}% UNDER (L${varianceSample.length} distribution)`;
   const avgLabel = `📈 L5: ${avg5.toFixed(1)} avg ${consistencyTag} (hit ${(actualHitRate*100).toFixed(0)}% of L5)`;
 
-  const labels = [probLabel, avgLabel, streakLabel, locationLabel].filter(Boolean);
+  const labels = [probLabel, avgLabel, streakLabel, locationLabel, staleLabel].filter(Boolean);
 
   return {
     avg: parseFloat(avg5.toFixed(2)), games: recent5.length,
     signal: totalSignal, signalLabel: labels[0], extraLabels: labels.slice(1), diff,
     hitProbOver, hitProbUnder, variance: parseFloat(variance.toFixed(2)),
-    actualHitRate, consistencyTag,
+    actualHitRate, consistencyTag, daysStale, staleLabel,
   };
 }
 
