@@ -785,10 +785,13 @@ function nameMatch(a, b) {
   return false;
 }
 
-// Format a date string to YYYYMMDD for ESPN scoreboard endpoint
+// Format a date string to YYYYMMDD in US Eastern time (ESPN uses ET for game dates)
+// Without this, a UK user's local date can be one day ahead of ESPN's game date
 function espnDateStr(iso) {
   const d = new Date(iso);
-  return `${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}`;
+  // Convert to US Eastern — Intl gives "M/D/YYYY" which we reformat to YYYYMMDD
+  const parts = d.toLocaleDateString('en-US', { timeZone: 'America/New_York' }).split('/');
+  return `${parts[2]}${parts[0].padStart(2,'0')}${parts[1].padStart(2,'0')}`;
 }
 
 // Extract a player's stat value from an ESPN game summary boxscore
@@ -820,12 +823,14 @@ function showToast(msg, color) {
 
 // Auto-grade all pending picks from before today using ESPN API
 // Tries both the pick date AND the day before (handles late-night games saved after midnight)
-async function autoGrade() {
+async function autoGrade(forceAll = false) {
   const history = getHistory();
   const now     = new Date();
-  // Only skip picks from the last 6 hours (today's picks that haven't been played yet)
-  const cutoff  = new Date(now.getTime() - 6 * 60 * 60 * 1000);
-  const pending = history.filter(p => !p.result && new Date(p.date) < cutoff);
+  // forceAll (manual button): try ALL pending picks including today's
+  // auto (page load): only picks from 6+ hours ago
+  const pending = forceAll
+    ? history.filter(p => !p.result)
+    : history.filter(p => !p.result && new Date(p.date) < new Date(now.getTime() - 6 * 60 * 60 * 1000));
   if (!pending.length) return 0;
 
   let graded = 0;
@@ -1983,7 +1988,7 @@ function buildHistoryTab() {
     html += `<div style="margin-top:16px">
       <div class="section-hdr" style="display:flex;justify-content:space-between;align-items:center">
         <span>⏳ Pending (${pending.length}) — auto-grades next morning</span>
-        <button class="btn" onclick="autoGrade().then(n=>{if(n>0){buildHistoryTab();}else{showToast('No completed games found yet','#ffcc00');}})">🤖 Auto-Grade Now</button>
+        <button class="btn" onclick="autoGrade(true).then(n=>{if(n>0){buildHistoryTab();}else{showToast('No completed games found yet — games may still be in progress','#ffcc00');}})">🤖 Auto-Grade Now</button>
       </div>
       <table class="ptable">
         <tr><th>Date</th><th>Sport</th><th>Pick Info</th><th>Pick</th><th>Conf</th><th>Mark</th></tr>`;
