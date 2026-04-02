@@ -770,12 +770,19 @@ const MARKET_STAT_KEY = {
   batter_total_bases:   { mlb: 'totalBases'                                         },
 };
 
-// Fuzzy name match on last name (handles minor ESPN vs Odds API name variations)
+// Fuzzy name match — handles ESPN vs Odds API name variations
+// Checks: exact, last name, last-two-words (for "Trail Blazers", "Red Sox" etc.)
 function nameMatch(a, b) {
   const n = s => s.toLowerCase().replace(/[^a-z\s]/g, '').trim();
   const [na, nb] = [n(a), n(b)];
   if (na === nb) return true;
-  return na.split(' ').pop() === nb.split(' ').pop();
+  if (na.split(' ').pop() === nb.split(' ').pop()) return true;
+  // Multi-word match for teams like Trail Blazers, Blue Jays, Red Sox, White Sox
+  const lastTwo = s => s.split(' ').slice(-2).join(' ');
+  if (lastTwo(na) === lastTwo(nb)) return true;
+  // Partial inclusion for shortened names
+  if (na.includes(nb) || nb.includes(na)) return true;
+  return false;
 }
 
 // Format a date string to YYYYMMDD for ESPN scoreboard endpoint
@@ -812,28 +819,43 @@ function showToast(msg, color) {
 }
 
 // Auto-grade all pending picks from before today using ESPN API
+// Tries both the pick date AND the day before (handles late-night games saved after midnight)
 async function autoGrade() {
   const history = getHistory();
-  const today   = new Date().toDateString();
-  const pending = history.filter(p => !p.result && new Date(p.date).toDateString() !== today);
+  const now     = new Date();
+  // Only skip picks from the last 6 hours (today's picks that haven't been played yet)
+  const cutoff  = new Date(now.getTime() - 6 * 60 * 60 * 1000);
+  const pending = history.filter(p => !p.result && new Date(p.date) < cutoff);
   if (!pending.length) return 0;
 
   let graded = 0;
 
   // Group pending picks by sport + date to minimise ESPN API calls
+  // Also include the day before in case game was saved after midnight
   const groups = {};
   pending.forEach(pick => {
     const raw      = pick.sport.replace(/\p{Emoji}/gu, '').trim().toUpperCase();
     const sportKey = Object.keys(ESPN_CFG).find(k => raw.includes(k));
     if (!sportKey) return;
-    const gk = `${sportKey}__${espnDateStr(pick.date)}`;
-    if (!groups[gk]) groups[gk] = {
-      cfg:     ESPN_CFG[sportKey],
-      league:  sportKey.toLowerCase(),
-      dateStr: espnDateStr(pick.date),
-      picks:   [],
-    };
-    groups[gk].picks.push(pick);
+
+    const pickDate = new Date(pick.date);
+    const dayBefore = new Date(pickDate.getTime() - 24 * 60 * 60 * 1000);
+    const dates = [espnDateStr(pick.date), espnDateStr(dayBefore.toISOString())];
+
+    // Create group for each date to search (deduped)
+    for (const dateStr of [...new Set(dates)]) {
+      const gk = `${sportKey}__${dateStr}`;
+      if (!groups[gk]) groups[gk] = {
+        cfg:     ESPN_CFG[sportKey],
+        league:  sportKey.toLowerCase(),
+        dateStr,
+        picks:   [],
+      };
+      // Add pick to group if not already there
+      if (!groups[gk].picks.find(p => p.id === pick.id)) {
+        groups[gk].picks.push(pick);
+      }
+    }
   });
 
   for (const grp of Object.values(groups)) {
@@ -850,15 +872,19 @@ async function autoGrade() {
 
       for (const pick of grp.picks) {
         try {
-          // Find the ESPN event matching this pick's game
-          const [partA, partB] = (pick.match || '').split(/\s+vs\.?\s+/i).map(s => s.trim().toLowerCase());
+          // Find the ESPN event matching this pick's game — use fuzzy nameMatch
+          const [partA, partB] = (pick.match || '').split(/\s+vs\.?\s+/i).map(s => s.trim());
           const matchEv = events.find(ev => {
             const names = (ev.competitions?.[0]?.competitors || [])
-              .map(c => (c.team?.displayName || c.team?.name || '').toLowerCase());
-            return names.some(n => partA && n.includes(partA.split(' ').pop())) ||
-                   names.some(n => partB && n.includes(partB.split(' ').pop()));
+              .map(c => c.team?.displayName || c.team?.name || '');
+            return names.some(n => partA && nameMatch(partA, n)) ||
+                   names.some(n => partB && nameMatch(partB, n));
           });
-          if (!matchEv) continue;
+          if (!matchEv) {
+            // Skip already-graded picks but don't log picks that might match in the other date group
+            if (!groups) console.warn(`Auto-grade: no ESPN match for "${pick.match}"`);
+            continue;
+          }
 
           // Only grade completed games
           if (!matchEv.competitions?.[0]?.status?.type?.completed) continue;
@@ -898,7 +924,11 @@ async function autoGrade() {
 
   if (graded > 0) {
     try { localStorage.setItem(HISTORY_KEY, JSON.stringify(history)); } catch {}
-    showToast(`✓ Auto-graded ${graded} pick${graded > 1 ? 's' : ''}`);
+    const stillPending = history.filter(p => !p.result).length;
+    const msg = stillPending > 0
+      ? `✓ Auto-graded ${graded} pick${graded > 1 ? 's' : ''} · ${stillPending} still pending`
+      : `✓ Auto-graded ${graded} pick${graded > 1 ? 's' : ''} — all caught up!`;
+    showToast(msg);
   }
   return graded;
 }
@@ -2244,7 +2274,13 @@ function pickSelect(btn, pickJson, direction) {
 // ── Init ──────────────────────────────────────────────────────────────────────
 window.addEventListener('load', () => {
   refreshAll(false);
-  autoGrade().catch(() => {});
+  autoGrade().then(n => {
+    // Retry after 30s for any picks ESPN hadn't processed yet on first pass
+    const pending = getHistory().filter(p => !p.result);
+    if (pending.length > 0) {
+      setTimeout(() => autoGrade().then(n2 => { if (n2 > 0) buildHistoryTab(); }).catch(() => {}), 30000);
+    }
+  }).catch(() => {});
   renderSlip();
 });
 </script>
