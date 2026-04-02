@@ -959,10 +959,9 @@ function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineM
     + oppAdj * 0.12 // opponent defense + pace: 12% weight
     + restPenalty + weatherPenalty + overPenalty) * dirCalib;
 
-  // Market regression (BookieX-style): pull score 20% toward neutral (0)
-  // Prevents overconfidence when model strongly disagrees with market
-  // A raw 0.80 becomes 0.64, a raw 0.50 becomes 0.40 — conservative anchor
-  const regressed = raw * 0.80;
+  // Market regression (BookieX-style): pull score 10% toward neutral
+  // Mild anchor — prevents overconfidence without killing valid picks
+  const regressed = raw * 0.90;
   return Math.max(-1, Math.min(1, regressed));
 }
 
@@ -1851,7 +1850,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       }
       score = Math.max(-1, Math.min(1, score));
 
-      const conf  = score >= 0.40 ? 'HIGH' : score >= 0.28 ? 'MED' : 'LOW';
+      const conf  = score >= 0.35 ? 'HIGH' : score >= 0.22 ? 'MED' : 'LOW';
       return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData, oppFactor: gameOppFactor, flipped, warning, agreement, agreementRatio };
     })
     .filter(p => p !== null)
@@ -1859,7 +1858,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     .filter(p => p.vig <= MAX_VIG)
     .filter(p => parseFloat(p.c.pct) <= 80) // raised from 72 — some 73-80% picks have genuine edge
     // Removed hard 53% floor — score threshold (0.50) and edge already filter bad picks
-    .filter(p => p.score >= 0.40) // adjusted for 20% market regression (0.50 pre-regression = 0.40 post)
+    .filter(p => p.score >= 0.25) // post-regression threshold: shows quality picks without over-filtering
     .sort((a, b) => b.score - a.score);
 
   // Drop LOW confidence picks entirely — 169-pick data shows 14.3% win rate (1W/6L).
