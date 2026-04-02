@@ -316,8 +316,17 @@ const ESPN_LEAGUE_CFG = {
   mlb: { sport: 'baseball',         league: 'mlb' },
 };
 
-// Cache for athlete IDs so we don't search the same player twice per session
-const _athleteIdCache = {};
+// Persistent caches — survive page refresh, avoid re-fetching ESPN data
+const _ATHLETE_CACHE_KEY = 'bm_athlete_ids_v2';
+const _INJURY_CACHE_KEY  = 'bm_injury_v1';
+const _GAMELOG_CACHE_KEY  = 'bm_gamelogs_v1';
+const _STANDINGS_CACHE_KEY = 'bm_standings_v1';
+
+function _loadCache(key) { try { return JSON.parse(localStorage.getItem(key)) || {}; } catch { return {}; } }
+function _saveCache(key, data) { try { localStorage.setItem(key, JSON.stringify(data)); } catch {} }
+
+// Athlete ID cache — persistent across refreshes (players don't change IDs)
+const _athleteIdCache = _loadCache(_ATHLETE_CACHE_KEY);
 
 // Search ESPN for an athlete ID by name. Returns athlete ID string or null.
 async function espnAthleteId(sport, league, playerName) {
@@ -345,6 +354,7 @@ async function espnAthleteId(sport, league, playerName) {
 
     const id = match ? (match.id || null) : null;
     _athleteIdCache[cacheKey] = id;
+    _saveCache(_ATHLETE_CACHE_KEY, _athleteIdCache);
     return id;
   } catch { _athleteIdCache[cacheKey] = null; return null; }
 }
@@ -352,14 +362,20 @@ async function espnAthleteId(sport, league, playerName) {
 // Fetch gamelog from ESPN common/v3 endpoint — works for all sports.
 // Returns per-game entries with stat value and home/away flag, or null.
 // Handles compound stats like "9-21" (made-attempted) by taking the first number.
+const _gamelogRawCache = {};
 async function espnPlayerGamelog(sport, league, athleteId, statKey) {
   try {
-    // v3 common endpoint — no season param needed, returns current season
-    const res = await fetch(
-      `https://site.web.api.espn.com/apis/common/v3/sports/${sport}/${league}/athletes/${athleteId}/gamelog`
-    );
-    if (!res.ok) return null;
-    const data = await res.json();
+    // Cache raw gamelog per athlete — reused by stats + rest factor
+    const glKey = `${league}__${athleteId}`;
+    let data = _gamelogRawCache[glKey];
+    if (!data) {
+      const res = await fetch(
+        `https://site.web.api.espn.com/apis/common/v3/sports/${sport}/${league}/athletes/${athleteId}/gamelog`
+      );
+      if (!res.ok) return null;
+      data = await res.json();
+      _gamelogRawCache[glKey] = data; // cache for reuse by getRestFactor
+    }
 
     // v3 format: top-level "names" array for stat keys, "seasonTypes" with events
     const names = data.names || [];
@@ -693,7 +709,7 @@ function getLineMovement(eventId, player, market, currentOver, currentUnder) {
 
 // ── UPGRADE 2: Injury / Status Filter ────────────────────────────────────────
 // ESPN free injury API — returns status string for a player or null
-const _injuryCache = {};
+const _injuryCache = _loadCache(_INJURY_CACHE_KEY); // persisted — injury status doesn't change mid-session
 
 async function getPlayerStatus(sport, league, athleteId) {
   if (!athleteId) return null;
@@ -707,6 +723,7 @@ async function getPlayerStatus(sport, league, athleteId) {
     const data   = await res.json();
     const status = data.athlete?.status?.type?.description || null;
     _injuryCache[cacheKey] = status;
+    _saveCache(_INJURY_CACHE_KEY, _injuryCache);
     return status;
   } catch { _injuryCache[cacheKey] = null; return null; }
 }
@@ -729,11 +746,17 @@ async function getRestFactor(sport, league, athleteId, gameDateIso) {
   const cacheKey = `rest__${league}__${athleteId}`;
   if (_scheduleCache[cacheKey] !== undefined) return _scheduleCache[cacheKey];
   try {
-    const res = await fetch(
-      `https://site.web.api.espn.com/apis/common/v3/sports/${sport}/${league}/athletes/${athleteId}/gamelog`
-    );
-    if (!res.ok) { _scheduleCache[cacheKey] = null; return null; }
-    const data = await res.json();
+    // Reuse cached gamelog from espnPlayerGamelog() — avoids duplicate ESPN call
+    const glKey = `${league}__${athleteId}`;
+    let data = _gamelogRawCache[glKey];
+    if (!data) {
+      const res = await fetch(
+        `https://site.web.api.espn.com/apis/common/v3/sports/${sport}/${league}/athletes/${athleteId}/gamelog`
+      );
+      if (!res.ok) { _scheduleCache[cacheKey] = null; return null; }
+      data = await res.json();
+      _gamelogRawCache[glKey] = data;
+    }
 
     // Find the most recent completed game date — v3 stores events in top-level map
     const eventsMap = data.events || {};
@@ -1522,7 +1545,7 @@ async function fetchTeamForm(sport, league, teamName) {
     // Fetch synthetic xG from shot stats (last 6 games max to limit API calls)
     let totalSynXG = 0, totalSynXGA = 0, synGames = 0;
     let homeSynXG = 0, homeSynGames = 0, awaySynXG = 0, awaySynGames = 0;
-    const xgBatch = eventIds.slice(-3); // 3 recent games for xG — balances accuracy vs API load
+    const xgBatch = eventIds.slice(-1); // 1 most recent game for xG — fast load, still useful signal
     for (const { eid, isHome } of xgBatch) {
       try {
         const sumRes = await fetch(
@@ -1954,11 +1977,16 @@ async function buildSoccer(force) {
   ];
 
   let html = '';
-  let lgIdx = 0;
-  for (const lg of leagues) {
-    if (lgIdx++ > 0) await new Promise(r => setTimeout(r, 400));
+
+  // Fetch all league odds in parallel (removes 2s of sequential delays)
+  const leagueOdds = await Promise.all(
+    leagues.map(lg => apiFetch(lg.key, 'h2h,totals', 'uk', force).catch(() => []))
+  );
+
+  for (let lgIdx = 0; lgIdx < leagues.length; lgIdx++) {
+    const lg = leagues[lgIdx];
     try {
-      const events = await apiFetch(lg.key, 'h2h,totals', 'uk', force);
+      const events = leagueOdds[lgIdx];
       const now = new Date();
       const today = events.filter(e=>{
         const d=new Date(e.commence_time);
@@ -2133,10 +2161,23 @@ async function buildSportTab(name, force) {
 
     let html = `<div class="sport-section"><div class="sport-title" style="justify-content:space-between">${s.label} — ${upcoming.length} games<span id="tab-stamp-${name}" style="color:#282828;font-size:0.7em;font-weight:400;letter-spacing:0"></span></div>`;
 
-    for (const ev of upcoming) {
-      const home=ev.home_team, away=ev.away_team;
+    // Fetch ALL props in parallel first (no more 300ms sequential delays)
+    // Then render sequentially for correct HTML order
+    const propResults = await Promise.all(
+      upcoming.map(ev =>
+        fetchEventProps(s.key, ev.id, s.props, s.region, force).catch(() => ({ bookmakers: [] }))
+      )
+    );
 
-      // Get h2h odds from bulk data
+    // Render all props in parallel too (ESPN stats calls happen inside)
+    const propsHtmlResults = await Promise.all(
+      upcoming.map((ev, i) =>
+        renderProps(propResults[i], `${ev.home_team} vs ${ev.away_team}`, s.label, ev.id, ev.commence_time, ev.home_team).catch(() => '')
+      )
+    );
+
+    upcoming.forEach((ev, i) => {
+      const home=ev.home_team, away=ev.away_team;
       const h2hEv = (h2hBulk||[]).find(e=>e.id===ev.id);
       const h2h   = h2hEv ? bestOdds(h2hEv,'h2h') : {};
       const hO=h2h[home], aO=h2h[away];
@@ -2146,21 +2187,10 @@ async function buildSportTab(name, force) {
           <span>${home} vs ${away}</span>
           <span class="match-time">${gameDate(ev.commence_time)}</span>
         </div>`;
-
-      // Winner box
       if (hO && aO) html += winnerBox(home, away, hO, aO, null, ev.commence_time, s.label);
-
-      // Player props — small delay before each game's prop call to stay under rate limit
-      try {
-        await new Promise(r => setTimeout(r, 300));
-        const propData = await fetchEventProps(s.key, ev.id, s.props, s.region, force);
-        html += await renderProps(propData, `${home} vs ${away}`, s.label, ev.id, ev.commence_time, home);
-      } catch(propErr) {
-        html += `<div class="error">⚠ Props: ${propErr.message}</div>`;
-      }
-
+      html += propsHtmlResults[i];
       html += '</div>';
-    }
+    });
 
     html += '</div>';
     container.innerHTML = html;
