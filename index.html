@@ -745,6 +745,7 @@ const ESPN_CFG = {
   'NHL':              { sport: 'hockey',           league: 'nhl'            },
   'MLB':              { sport: 'baseball',         league: 'mlb'            },
   'PREMIER LEAGUE':   { sport: 'soccer',           league: 'eng.1'          },
+  'FA CUP':           { sport: 'soccer',           league: 'eng.fa'         },
   'CHAMPIONS LEAGUE': { sport: 'soccer',           league: 'uefa.champions' },
   'LA LIGA':          { sport: 'soccer',           league: 'esp.1'          },
   'WC QUALIFIERS':    { sport: 'soccer',           league: 'fifa.world'     },
@@ -1526,6 +1527,7 @@ async function buildSoccer(force) {
 
   const leagues = [
     { key:'soccer_epl',                           label:'🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League',    props:true  },
+    { key:'soccer_fa_cup',                        label:'🏆 FA Cup',                      props:false },
     { key:'soccer_uefa_champs_league',            label:'🌍 Champions League',            props:false },
     { key:'soccer_spain_la_liga',                 label:'🇪🇸 La Liga',                    props:false },
     { key:'soccer_fifa_world_cup_qualifiers_europe', label:'🌐 WC Qualifiers',            props:false },
