@@ -1932,6 +1932,8 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     });
   }
 
+  const generatedAt = Date.now(); // timestamp for staleness detection
+
   let html = injuryNote + `<div class="section-hdr">🎯 TOP PICKS — ${matchLabel}</div>
     <div class="pick-cards">`;
 
@@ -1943,7 +1945,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       : '<span class="tier-b">B</span>';
     const stat   = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
     const reason = propReason(parseFloat(p.c.pct), p.bookCount, p.vig);
-    html += `<div class="pick-card${i === 0 ? ' best-pick' : ''}">
+    html += `<div class="pick-card${i === 0 ? ' best-pick' : ''}" data-edge="${p.edge.toFixed(1)}" data-score="${p.score.toFixed(3)}" data-dir="${p.c.pick}">
       <div class="pick-card-header">
         ${tierHtml}
         ${badge(p.c.conf)}
@@ -1979,6 +1981,10 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
             ${p.oppFactor ? `<div style="color:${p.oppFactor.signal>0?'#00ff88':'#ff6644'}">🛡 Opp defense: ${(p.oppFactor.signal*0.12).toFixed(3)} (${p.oppFactor.defenseRating.toFixed(2)}×)</div>` : '<div style="color:#333">🛡 Opp defense: no data</div>'}
           </div>
         </span>
+      </div>
+      <div style="font-size:0.65em;color:#282828;margin-top:4px;display:flex;justify-content:space-between" data-generated="${generatedAt}">
+        <span>Generated ${new Date(generatedAt).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:TZ})} ET</span>
+        <span class="pick-stale-check"></span>
       </div>
       <div class="pick-card-select">${(() => {
         const slipPick = { id: `${todayET()}_${p.player}_${p.market}`.replace(/\W+/g,'_'), player: p.player, market: p.market, line: p.line, sport: sportLabel, pct: p.c.pct, myPick: null };
@@ -2330,7 +2336,14 @@ async function buildSportTab(name, force) {
       return;
     }
 
-    let html = `<div class="sport-section"><div class="sport-title" style="justify-content:space-between">${s.label} — ${upcoming.length} games<span id="tab-stamp-${name}" style="color:#282828;font-size:0.7em;font-weight:400;letter-spacing:0"></span></div>`;
+    let html = `<div class="sport-section"><div class="sport-title" style="justify-content:space-between">${s.label} — ${upcoming.length} games<span id="tab-stamp-${name}" style="color:#282828;font-size:0.7em;font-weight:400;letter-spacing:0"></span></div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;font-size:0.72em">
+        <button class="btn" style="padding:3px 10px" onclick="sortPickCards(this,'edge')">Sort by Edge ↓</button>
+        <button class="btn" style="padding:3px 10px" onclick="sortPickCards(this,'score')">Sort by Score ↓</button>
+        <button class="btn" style="padding:3px 10px" onclick="filterPickCards(this,'OVER')">OVERs only</button>
+        <button class="btn" style="padding:3px 10px" onclick="filterPickCards(this,'UNDER')">UNDERs only</button>
+        <button class="btn" style="padding:3px 10px" onclick="filterPickCards(this,'all')">All</button>
+      </div>`;
 
     // Fetch ALL props in parallel first (no more 300ms sequential delays)
     // Then render sequentially for correct HTML order
@@ -2444,6 +2457,28 @@ function buildHistoryTab() {
         <div class="streak-val ${streak.r==='W'?'streak-w':'streak-l'}">${streak.n}× ${streak.r==='W'?'WIN':'LOSS'}</div>
         <div class="record-label">Current streak</div>
       </div>` : ''}
+    </div>`;
+
+    // ── P/L Tracking — units won/lost, ROI ──
+    // Assumes flat 1-unit stake per pick. Win = (odds - 1) profit. Loss = -1 unit.
+    let totalUnits = 0;
+    settled.filter(p => p.result === 'W' || p.result === 'L').forEach(p => {
+      if (p.result === 'W') {
+        // Estimate decimal odds from implied pct (vig-removed)
+        const prob = parseFloat(p.pct) / 100;
+        const estOdds = prob > 0 ? 1 / prob : 2.0;
+        totalUnits += (estOdds - 1); // profit on win
+      } else {
+        totalUnits -= 1; // loss
+      }
+    });
+    const roi = wl > 0 ? (totalUnits / wl * 100) : 0;
+
+    html += `<div style="margin:12px 0;padding:12px 16px;background:#0a0f0a;border:1px solid ${totalUnits>=0?'#00ff8830':'#ff444430'};border-radius:8px;display:flex;gap:20px;flex-wrap:wrap;align-items:center">
+      <div style="font-size:0.75em;color:#555;text-transform:uppercase;letter-spacing:1px">P/L Tracker</div>
+      <div style="font-size:1.1em;font-weight:700;color:${totalUnits>=0?'#00ff88':'#ff4444'}">${totalUnits>=0?'+':''}${totalUnits.toFixed(2)} units</div>
+      <div style="font-size:0.82em;color:${roi>=0?'#00ff88':'#ff4444'}">ROI: ${roi>=0?'+':''}${roi.toFixed(1)}%</div>
+      <div style="font-size:0.72em;color:#444">${wl} bets @ 1 unit each</div>
     </div>`;
   }
 
@@ -2944,6 +2979,24 @@ function pickSelect(btn, pickJson, direction) {
   slipSetDirection(pick.id, direction);
 }
 
+// ── Sort/filter pick cards within sport tabs ──
+function sortPickCards(btn, by) {
+  const section = btn.closest('.sport-section');
+  if (!section) return;
+  section.querySelectorAll('.pick-cards').forEach(grid => {
+    const cards = [...grid.querySelectorAll('.pick-card')];
+    cards.sort((a,b) => parseFloat(b.dataset[by]||0) - parseFloat(a.dataset[by]||0));
+    cards.forEach(c => grid.appendChild(c));
+  });
+}
+function filterPickCards(btn, dir) {
+  const section = btn.closest('.sport-section');
+  if (!section) return;
+  section.querySelectorAll('.pick-card').forEach(card => {
+    card.style.display = (dir === 'all' || card.dataset.dir === dir) ? '' : 'none';
+  });
+}
+
 // ── Init ──────────────────────────────────────────────────────────────────────
 window.addEventListener('load', () => {
   refreshAll(false);
@@ -2955,6 +3008,24 @@ window.addEventListener('load', () => {
     }
   }).catch(() => {});
   renderSlip();
+
+  // Staleness checker — every 60s, flag pick cards older than 2 hours
+  setInterval(() => {
+    document.querySelectorAll('[data-generated]').forEach(el => {
+      const age = Date.now() - parseInt(el.dataset.generated);
+      const hrs = age / (1000 * 60 * 60);
+      const badge = el.querySelector('.pick-stale-check');
+      if (!badge) return;
+      if (hrs >= 2) {
+        badge.textContent = `⚠️ ${hrs.toFixed(1)}hr old — lines may have moved`;
+        badge.style.color = '#ff4444';
+        el.closest('.pick-card').style.borderColor = '#ff444430';
+      } else if (hrs >= 1) {
+        badge.textContent = `${(hrs*60).toFixed(0)}min ago`;
+        badge.style.color = '#ffcc00';
+      }
+    });
+  }, 60000);
 });
 </script>
 
