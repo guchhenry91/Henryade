@@ -396,8 +396,49 @@ async function espnPlayerGamelog(sport, league, athleteId, statKey) {
   } catch { return null; }
 }
 
-// Master stats fetcher — now includes hot/cold streak + home/away split
-// isHomeGame: true if today's game is at home for this player's team
+// ── Negative Binomial Distribution ────────────────────────────────────────────
+// Replaces simple L5 average comparison with full probability distribution.
+// Given a player's mean and variance, calculates exact P(OVER line) or P(UNDER line).
+// Handles overdispersion (variance > mean) which Poisson cannot.
+
+// Negative binomial PMF: P(X=k) = C(k+r-1, k) * p^r * (1-p)^k
+// Parameterized from mean (μ) and variance (σ²): r = μ²/(σ²-μ), p = μ/σ²
+function negBinomCDF(mean, variance, threshold) {
+  // If variance <= mean, use Poisson (no overdispersion)
+  if (variance <= mean || mean <= 0) {
+    let cdf = 0;
+    for (let k = 0; k <= Math.floor(threshold); k++) {
+      cdf += poisson(mean, k);
+    }
+    return Math.min(1, Math.max(0, cdf));
+  }
+  // Negative binomial parameters
+  const r = (mean * mean) / (variance - mean);
+  const p = mean / variance;
+  if (r <= 0 || p <= 0 || p >= 1) return 0.5; // degenerate — return neutral
+
+  // CDF: sum PMF from 0 to floor(threshold)
+  let cdf = 0;
+  const maxK = Math.floor(threshold);
+  // Use log-space to avoid overflow for large k
+  let logPMF = r * Math.log(p); // log(P(X=0)) = r*log(p)
+  cdf += Math.exp(logPMF);
+  for (let k = 1; k <= maxK; k++) {
+    // Recurrence: P(X=k) = P(X=k-1) * (k+r-1)/k * (1-p)
+    logPMF += Math.log((k + r - 1) / k) + Math.log(1 - p);
+    cdf += Math.exp(logPMF);
+    if (cdf > 0.999) break; // numerical stability
+  }
+  return Math.min(1, Math.max(0, cdf));
+}
+
+// Returns P(OVER threshold) using negative binomial distribution
+function probOverLine(mean, variance, line) {
+  return 1 - negBinomCDF(mean, variance, line);
+}
+
+// Master stats fetcher — negative binomial distribution + hot/cold streak + home/away split
+// Returns { signal, hitProb, avg, variance, ... } with distribution-based probability
 async function getStatSignal(leagueShort, playerName, market, line, isHomeGame = null) {
   const cfg     = ESPN_LEAGUE_CFG[leagueShort];
   if (!cfg) return null;
@@ -413,48 +454,71 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
   const vals    = entries.map(e => e.val);
   const recent5 = vals.slice(-5);
   const recent15 = vals.slice(-15);
+  if (!recent5.length) return null;
   const avg5    = recent5.reduce((a,b)=>a+b,0) / recent5.length;
   const avg15   = recent15.length >= 5 ? recent15.reduce((a,b)=>a+b,0) / recent15.length : avg5;
 
-  // UPGRADE 1: Hot/Cold streak — compare L5 vs L15 (season trend)
-  const trendRatio = avg15 > 0 ? avg5 / avg15 : 1;
-  let streakSignal = 0;
-  let streakLabel  = '';
-  if      (trendRatio >= 1.25) { streakSignal =  0.18; streakLabel = `🔥 HOT streak: L5 avg ${avg5.toFixed(1)} vs L15 ${avg15.toFixed(1)}`; }
-  else if (trendRatio >= 1.10) { streakSignal =  0.08; streakLabel = `↗ Trending up: L5 ${avg5.toFixed(1)} vs L15 ${avg15.toFixed(1)}`; }
-  else if (trendRatio <= 0.75) { streakSignal = -0.18; streakLabel = `🥶 COLD streak: L5 avg ${avg5.toFixed(1)} vs L15 ${avg15.toFixed(1)}`; }
-  else if (trendRatio <= 0.90) { streakSignal = -0.08; streakLabel = `↘ Trending down: L5 ${avg5.toFixed(1)} vs L15 ${avg15.toFixed(1)}`; }
+  // ── Negative binomial: compute variance from recent games ──
+  // Use max(L10, L15) for variance estimation — need enough samples
+  const varianceSample = vals.slice(-Math.max(10, recent15.length));
+  const sampleMean = varianceSample.reduce((a,b)=>a+b,0) / varianceSample.length;
+  const variance = varianceSample.length >= 5
+    ? varianceSample.reduce((sum,v) => sum + (v - sampleMean)**2, 0) / (varianceSample.length - 1)
+    : sampleMean * 1.5; // fallback: assume moderate overdispersion
 
-  // UPGRADE 2: Home/Away split — use location-specific average when available
-  let locationAvg = avg5;
+  // Effective mean: use location-specific or L5
+  let effectiveMean = avg5;
   let locationLabel = '';
   if (isHomeGame !== null) {
     const locationEntries = entries.filter(e => e.isHome === isHomeGame).slice(-10);
     if (locationEntries.length >= 3) {
-      locationAvg = locationEntries.map(e=>e.val).reduce((a,b)=>a+b,0) / locationEntries.length;
+      effectiveMean = locationEntries.map(e=>e.val).reduce((a,b)=>a+b,0) / locationEntries.length;
       const loc = isHomeGame ? 'Home' : 'Away';
-      locationLabel = `🏠 ${loc} avg: ${locationAvg.toFixed(1)} (${locationEntries.length} games)`;
+      locationLabel = `🏠 ${loc} avg: ${effectiveMean.toFixed(1)} (${locationEntries.length} games)`;
     }
   }
 
-  // Use location-specific avg if we have enough data, else fall back to L5
-  const effectiveAvg = locationLabel ? locationAvg : avg5;
-  if (!line || line === 0) return null; // can't compute signal if line is zero
-  const diff = (effectiveAvg - line) / line;
+  if (!line || line === 0) return null;
 
-  let baseSignal = 0;
-  let baseLabel  = '';
-  if      (diff >=  0.15) { baseSignal =  0.20; baseLabel = `📈 L5: ${avg5.toFixed(1)} avg (${(diff*100).toFixed(0)}% over line)`; }
-  else if (diff >=  0.05) { baseSignal =  0.08; baseLabel = `↑ L5: ${avg5.toFixed(1)} avg`; }
-  else if (diff <= -0.15) { baseSignal = -0.15; baseLabel = `📉 L5: ${avg5.toFixed(1)} avg (${(Math.abs(diff)*100).toFixed(0)}% under line)`; }
-  else if (diff <= -0.05) { baseSignal = -0.06; baseLabel = `↓ L5: ${avg5.toFixed(1)} avg`; }
-  else                    {                     baseLabel = `≈ L5: ${avg5.toFixed(1)} avg (on line)`; }
+  // ── Distribution-based hit probability ──
+  const hitProbOver  = probOverLine(effectiveMean, variance, line);
+  const hitProbUnder = 1 - hitProbOver;
+  // How many of the last games actually hit OVER?
+  const actualHitRate = recent5.filter(v => v > line).length / recent5.length;
 
-  // Combined signal — base + streak adjustment (capped at ±0.35 total)
-  const totalSignal = Math.max(-0.35, Math.min(0.35, baseSignal + streakSignal * 0.5));
-  const labels = [baseLabel, streakLabel, locationLabel].filter(Boolean);
+  // ── Signal from distribution (replaces simple diff thresholds) ──
+  // Signal = how far the distribution probability deviates from 50%
+  // P(OVER) = 70% → signal = +0.20 (strong OVER)
+  // P(OVER) = 55% → signal = +0.05 (mild OVER)
+  // P(OVER) = 45% → signal = -0.05 (mild UNDER)
+  const distSignal = (hitProbOver - 0.5) * 0.5; // scale: 70% → +0.10, 80% → +0.15
 
-  return { avg: parseFloat(avg5.toFixed(2)), games: recent5.length, signal: totalSignal, signalLabel: labels[0], extraLabels: labels.slice(1), diff };
+  // ── Hot/Cold streak ──
+  const trendRatio = avg15 > 0 ? avg5 / avg15 : 1;
+  let streakSignal = 0;
+  let streakLabel  = '';
+  if      (trendRatio >= 1.25) { streakSignal =  0.15; streakLabel = `🔥 HOT: L5 ${avg5.toFixed(1)} vs L15 ${avg15.toFixed(1)}`; }
+  else if (trendRatio >= 1.10) { streakSignal =  0.06; streakLabel = `↗ Trending up: L5 ${avg5.toFixed(1)} vs L15 ${avg15.toFixed(1)}`; }
+  else if (trendRatio <= 0.75) { streakSignal = -0.15; streakLabel = `🥶 COLD: L5 ${avg5.toFixed(1)} vs L15 ${avg15.toFixed(1)}`; }
+  else if (trendRatio <= 0.90) { streakSignal = -0.06; streakLabel = `↘ Trending down: L5 ${avg5.toFixed(1)} vs L15 ${avg15.toFixed(1)}`; }
+
+  // ── Combined signal: distribution + streak ──
+  const totalSignal = Math.max(-0.35, Math.min(0.35, distSignal + streakSignal * 0.4));
+
+  // ── Labels ──
+  const consistencyTag = variance <= effectiveMean ? '🎯 Consistent' : variance >= effectiveMean * 2 ? '🎲 Volatile' : '';
+  const diff = (effectiveMean - line) / line;
+  const probLabel = `📊 ${(hitProbOver*100).toFixed(0)}% OVER / ${(hitProbUnder*100).toFixed(0)}% UNDER (L${varianceSample.length} distribution)`;
+  const avgLabel = `📈 L5: ${avg5.toFixed(1)} avg ${consistencyTag} (hit ${(actualHitRate*100).toFixed(0)}% of L5)`;
+
+  const labels = [probLabel, avgLabel, streakLabel, locationLabel].filter(Boolean);
+
+  return {
+    avg: parseFloat(avg5.toFixed(2)), games: recent5.length,
+    signal: totalSignal, signalLabel: labels[0], extraLabels: labels.slice(1), diff,
+    hitProbOver, hitProbUnder, variance: parseFloat(variance.toFixed(2)),
+    actualHitRate, consistencyTag,
+  };
 }
 
 // ── UPGRADE 3: Weather Factor (NFL + MLB outdoor stadiums only) ──────────────
@@ -1688,6 +1752,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       <div class="pick-card-line">${p.line}</div>
       <div class="pick-card-direction">${pickHtml(p.c.pick)} <span class="pick-card-pct">${p.c.pct}% implied</span></div>
       ${p.statResult ? `<div style="font-size:0.7em;margin:4px 0 2px;color:${p.statResult.signal>0?'#00ff88':p.statResult.signal<0?'#ff4444':'#555'}">${p.statResult.signalLabel}</div>` : ''}
+      ${p.statResult?.hitProbOver != null ? `<div style="font-size:0.68em;margin:1px 0;color:${(p.c.pick==='OVER'?p.statResult.hitProbOver:p.statResult.hitProbUnder)>=0.6?'#00ff88':(p.c.pick==='OVER'?p.statResult.hitProbOver:p.statResult.hitProbUnder)>=0.5?'#ffcc00':'#ff4444'}">🎲 Hit prob: ${((p.c.pick==='OVER'?p.statResult.hitProbOver:p.statResult.hitProbUnder)*100).toFixed(0)}% ${p.statResult.consistencyTag||''}</div>` : ''}
       ${p.statResult?.extraLabels?.map(l => `<div style="font-size:0.67em;margin:1px 0;color:#555">${l}</div>`).join('') || ''}
       ${p.lineMove ? `<div style="font-size:0.68em;margin:2px 0;color:${p.lineMove.direction===p.c.pick?'#00ccff':'#ff9944'}">${p.lineMove.label}</div>` : ''}
       ${p.restResult?.isB2B ? `<div style="font-size:0.68em;margin:2px 0;color:#ff4444">${p.restResult.label}</div>` : ''}
@@ -1700,7 +1765,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
             <div style="color:${parseFloat(p.c.pct)>60?'#00ff88':'#888'}">📊 Edge: ${((parseFloat(p.c.pct)-50)/50*0.25).toFixed(3)}</div>
             <div style="color:#888">📚 Books: ${(Math.min(p.bookCount/6,1)*0.20).toFixed(3)} (${p.bookCount} books)</div>
             <div style="color:#888">💰 Vig: ${(Math.max(0,1-p.vig/MAX_VIG)*0.15).toFixed(3)} (${(p.vig*100).toFixed(1)}%)</div>
-            ${p.statResult ? `<div style="color:${p.statResult.signal>0?'#00ff88':p.statResult.signal<0?'#ff4444':'#555'}">📈 Stats: ${(p.statResult.signal*0.20).toFixed(3)}</div>` : '<div style="color:#333">📈 Stats: no data</div>'}
+            ${p.statResult ? `<div style="color:${p.statResult.signal>0?'#00ff88':p.statResult.signal<0?'#ff4444':'#555'}">📈 Stats: ${(p.statResult.signal*0.20).toFixed(3)} (${(p.statResult.hitProbOver*100).toFixed(0)}% OVER prob)</div>` : '<div style="color:#333">📈 Stats: no data</div>'}
             ${p.lineMove ? `<div style="color:${p.lineMove.direction===p.c.pick?'#00ccff':'#ff9944'}">🔀 Line move: ${p.lineMove.direction===p.c.pick?'+':'-'}${(Math.abs(p.lineMove.pctChange>=0.08?0.15:0.08)*0.10).toFixed(3)}</div>` : '<div style="color:#333">🔀 Line move: none</div>'}
             ${p.restResult?.isB2B ? `<div style="color:#ff4444">😴 B2B penalty: ${(p.restResult.penalty).toFixed(3)}</div>` : ''}
             ${p.weatherData?.penalty ? `<div style="color:#ff9944">🌦 Weather: ${(p.weatherData.penalty).toFixed(3)}</div>` : ''}
