@@ -701,13 +701,13 @@ function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineM
   const consensusFactor = Math.min(bookCount / 6, 1);
   const fairFactor      = Math.max(0, 1 - vig / MAX_VIG);
   const vigPenalty      = Math.max(0, (vig - FAIR_VIG) / (MAX_VIG - FAIR_VIG));
-  // MLB OVER penalty — data shows 33% win rate on MLB OVERs vs 94% UNDERs.
-  // Suppress OVER score for MLB until calibration has enough data to self-correct.
-  const mlbOverPenalty = (sportHint.includes('MLB') && direction === 'OVER') ? -0.06 : 0;
+  // Universal OVER penalty — 169-pick data: OVERs at 48.1% across all sports vs UNDERs at 64.4%.
+  // This is not MLB-specific — the OVER underperformance is league-wide.
+  const overPenalty = (direction === 'OVER') ? -0.06 : 0;
 
   const raw = (edgeFactor * 0.25 + consensusFactor * 0.20 + fairFactor * 0.15
     - vigPenalty * 0.10 + statsSignal * 0.20 + lineMoveSig * 0.10
-    + restPenalty + weatherPenalty + mlbOverPenalty) * dirCalib;
+    + restPenalty + weatherPenalty + overPenalty) * dirCalib;
   return Math.max(-1, Math.min(1, raw)); // clamp to [-1, 1] so confidence tiers stay stable
 }
 
@@ -1380,13 +1380,14 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     .filter(p => p.vig <= MAX_VIG)
     .filter(p => parseFloat(p.c.pct) <= 72)
     .filter(p => parseFloat(p.c.pct) >= 53)
-    .filter(p => p.score >= 0.35) // data shows <0.35 bucket is 17% win rate — cut it
+    .filter(p => p.score >= 0.50) // 169-pick data: only 0.50+ bucket is profitable (65.7%)
     .sort((a, b) => b.score - a.score);
 
-  // Prioritize HIGH confidence picks first — data shows 87% win rate vs 50% for MED/LOW.
-  // Take up to 5 total, HIGH fills first, then MED/LOW backfill remaining slots.
-  const highPicks = scored.filter(p => p.c.conf === 'HIGH');
-  const otherPicks = scored.filter(p => p.c.conf !== 'HIGH');
+  // Drop LOW confidence picks entirely — 169-pick data shows 14.3% win rate (1W/6L).
+  // Prioritize HIGH first, then MED backfill. Take up to 5 total.
+  const qualifiedPicks = scored.filter(p => p.c.conf !== 'LOW');
+  const highPicks = qualifiedPicks.filter(p => p.c.conf === 'HIGH');
+  const medPicks  = qualifiedPicks.filter(p => p.c.conf === 'MED');
 
   const dirCount = {};
   const props = [];
@@ -1396,8 +1397,8 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     const cnt = dirCount[p.c.pick] || 0;
     if (cnt < 3) { props.push(p); dirCount[p.c.pick] = cnt + 1; }
   }
-  // Backfill remaining slots with MED/LOW
-  for (const p of otherPicks) {
+  // Backfill remaining slots with MED only (no LOW)
+  for (const p of medPicks) {
     if (props.length >= 5) break;
     const cnt = dirCount[p.c.pick] || 0;
     if (cnt < 3) { props.push(p); dirCount[p.c.pick] = cnt + 1; }
