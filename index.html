@@ -1575,7 +1575,7 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
     });
   });
 
-  if (!Object.keys(scorers).length) return '';
+  if (!Object.keys(scorers).length) return '<div style="font-size:0.72em;color:#444;margin-top:8px">⚽ Goal scorer odds not yet available — typically appear 24-48hrs before kickoff</div>';
 
   // Calculate total overround to remove vig
   const allImplied = Object.values(scorers).map(s => 1/s.bestOdds);
