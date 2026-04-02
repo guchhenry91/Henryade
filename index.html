@@ -1858,7 +1858,25 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       score = Math.max(-1, Math.min(1, score));
 
       const conf  = score >= 0.35 ? 'HIGH' : score >= 0.22 ? 'MED' : 'LOW';
-      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData, oppFactor: gameOppFactor, flipped, warning, agreement, agreementRatio };
+
+      // ── Edge & Kelly Stake calculation ──
+      // Model prob: blend of odds-implied + stats hit probability (if available)
+      const bookProb = c.pick === 'OVER'
+        ? parseFloat(c.op) / 100
+        : parseFloat(c.up) / 100;
+      const modelProb = (statResult && statResult.hitProbOver != null)
+        ? (c.pick === 'OVER' ? statResult.hitProbOver : statResult.hitProbUnder)
+        : bookProb + (score * 0.15); // fallback: book prob + score-based adjustment
+      const clampedModelProb = Math.max(0.01, Math.min(0.99, modelProb));
+      const edge = ((clampedModelProb - bookProb) * 100); // e.g. +10% edge
+      // Kelly criterion: (bp - q) / b where b=decimal odds-1, p=model prob, q=1-p
+      const bestOdds = c.pick === 'OVER' ? p.bestOver : p.bestUnder;
+      const b = bestOdds - 1;
+      const kellyFraction = b > 0 ? Math.max(0, (b * clampedModelProb - (1 - clampedModelProb)) / b) : 0;
+      // Cap Kelly at 10% of bankroll (full Kelly is too aggressive)
+      const kellyPct = Math.min(10, kellyFraction * 100);
+
+      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData, oppFactor: gameOppFactor, flipped, warning, agreement, agreementRatio, modelProb: clampedModelProb, bookProb, edge, kellyPct };
     })
     .filter(p => p !== null)
     // Removed UNDER <= 0.5 filter — rebounds/assists UNDERs at 2.5/3.5 are legitimate picks
@@ -1934,6 +1952,10 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       <div class="pick-card-stat">${stat}</div>
       <div class="pick-card-line">${p.line}</div>
       <div class="pick-card-direction">${pickHtml(p.c.pick)} <span class="pick-card-pct">${p.c.pct}% ${p.flipped ? 'stats override' : 'implied'}</span>${p.flipped ? ' <span style="font-size:0.7em;color:#00ccff;font-weight:700">⚡ FLIPPED</span>' : ''}</div>
+      <div style="font-size:0.72em;margin:4px 0;padding:5px 8px;background:#0a0a0a;border:1px solid #1a1a1a;border-radius:6px;display:flex;justify-content:space-between;align-items:center">
+        <span style="color:${p.edge>=5?'#00ff88':p.edge>=0?'#ffcc00':'#ff4444'}">Model: ${(p.modelProb*100).toFixed(0)}% / Book: ${(p.bookProb*100).toFixed(0)}% → <strong>${p.edge>=0?'+':''}${p.edge.toFixed(1)}% edge</strong></span>
+        <span style="color:${p.kellyPct>=3?'#00ff88':p.kellyPct>=1?'#ffcc00':'#555'};font-weight:700">${p.kellyPct>=0.5 ? p.kellyPct.toFixed(1)+'% stake' : 'No bet'}</span>
+      </div>
       ${p.warning ? `<div style="font-size:0.68em;margin:2px 0;padding:4px 8px;background:#ff660010;border:1px solid #ff660030;border-radius:4px;color:#ff9944">${p.warning}</div>` : ''}
       ${p.statResult ? `<div style="font-size:0.7em;margin:4px 0 2px;color:${p.statResult.signal>0?'#00ff88':p.statResult.signal<0?'#ff4444':'#555'}">${p.statResult.signalLabel}</div>` : ''}
       ${p.statResult?.hitProbOver != null ? `<div style="font-size:0.68em;margin:1px 0;color:${(p.c.pick==='OVER'?p.statResult.hitProbOver:p.statResult.hitProbUnder)>=0.6?'#00ff88':(p.c.pick==='OVER'?p.statResult.hitProbOver:p.statResult.hitProbUnder)>=0.5?'#ffcc00':'#ff4444'}">🎲 Hit prob: ${((p.c.pick==='OVER'?p.statResult.hitProbOver:p.statResult.hitProbUnder)*100).toFixed(0)}% ${p.statResult.consistencyTag||''}</div>` : ''}
