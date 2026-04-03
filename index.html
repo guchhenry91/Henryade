@@ -1014,7 +1014,7 @@ const ESPN_CFG = {
 
 // Map Odds API market keys → ESPN boxscore stat keys (league-scoped where needed)
 const MARKET_STAT_KEY = {
-  player_points:           { nba: 'points',                      nhl: 'points'        },
+  player_points:           { nba: 'points',                      nhl: 'points'        }, // NHL 'points' handled specially in playerStatFromSummary (goals+assists)
   player_rebounds:         { nba: 'rebounds'                                           },
   player_assists:          { nba: 'assists',                     nhl: 'assists'        },
   player_threes:           { nba: 'threePointFieldGoalsMade'                           },
@@ -1027,9 +1027,9 @@ const MARKET_STAT_KEY = {
   player_receiving_yds:    { nfl: 'receivingYards'                                     },
   player_pass_tds:         { nfl: 'passingTouchdowns'                                  },
   player_receptions:       { nfl: 'receptions'                                         },
-  player_shots_on_goal:    { nhl: 'shotsOnGoal'                                        },
+  player_shots_on_goal:    { nhl: 'shotsTotal'                                         },
   player_goals:            { nhl: 'goals'                                              },
-  player_power_play_points:{ nhl: 'powerPlayPoints'                                    },
+  player_power_play_points:{ nhl: '_nhl_pp_points'                                     }, // special: goals+assists in PP, handled below
   player_blocked_shots:    { nhl: 'blockedShots'                                       },
   batter_home_runs:        { mlb: 'homeRuns'                                           },
   batter_hits:             { mlb: 'hits'                                               },
@@ -1066,6 +1066,15 @@ function espnDateStr(iso) {
 
 // Extract a player's stat value from an ESPN game summary boxscore
 function playerStatFromSummary(summary, playerName, statKey) {
+  // Special NHL composite stats — boxscore stores components separately
+  if (statKey === 'points' || statKey === '_nhl_pp_points') {
+    // NHL "points" = goals + assists (not a single boxscore column)
+    const goals = playerStatFromSummary(summary, playerName, 'goals');
+    const assists = playerStatFromSummary(summary, playerName, 'assists');
+    if (goals !== null && assists !== null) return goals + assists;
+    return null;
+  }
+
   for (const team of (summary?.boxscore?.players || [])) {
     for (const grp of (team.statistics || [])) {
       const idx = (grp.keys || []).indexOf(statKey);
