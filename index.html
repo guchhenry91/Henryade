@@ -269,7 +269,7 @@ const SPORT_TABS = {
   },
   mlb: {
     key: 'baseball_mlb', label: '⚾ MLB', region: 'us',
-    props: 'batter_home_runs,batter_hits,batter_rbis,batter_runs_scored,batter_total_bases,batter_strikeouts,batter_walks,pitcher_strikeouts,pitcher_earned_runs'
+    props: 'batter_home_runs,batter_hits,batter_rbis,batter_runs_scored,batter_total_bases,batter_strikeouts,batter_walks,batter_hits_runs_rbis,pitcher_strikeouts,pitcher_earned_runs'
   },
 };
 
@@ -304,6 +304,7 @@ const ESPN_STAT_MAP = {
   batter_total_bases:      { mlb: 'totalBases' },
   batter_strikeouts:       { mlb: 'strikeouts' },
   batter_walks:            { mlb: 'walks' },
+  batter_hits_runs_rbis:   { mlb: 'hitsRunsRBIs' }, // composite: H+R+RBI
   // MLB pitchers
   pitcher_strikeouts:      { mlb: 'strikeouts' },
   pitcher_earned_runs:     { mlb: 'earnedRuns' },
@@ -1038,6 +1039,7 @@ const MARKET_STAT_KEY = {
   batter_total_bases:      { mlb: 'totalBases'                                         },
   batter_strikeouts:       { mlb: 'strikeouts'                                         },
   batter_walks:            { mlb: 'walks'                                              },
+  batter_hits_runs_rbis:   { mlb: 'hitsRunsRBIs'                                       }, // composite
   pitcher_strikeouts:      { mlb: 'strikeouts'                                         },
   pitcher_earned_runs:     { mlb: 'earnedRuns'                                         },
 };
@@ -1075,23 +1077,31 @@ function playerStatFromSummary(summary, playerName, statKey) {
     return null;
   }
   if (statKey === 'totalBases') {
-    // MLB totalBases = hits + extraBaseHits. Boxscore has hits and homeRuns.
-    // Approximation: totalBases ≈ hits + homeRuns * 3 (HR=4 bases, already counted in hits)
-    // More accurate: we'd need doubles/triples but boxscore doesn't have them.
-    // Best proxy: hits + (homeRuns × 3) — each HR adds 3 extra bases beyond the hit
     const hits = playerStatFromSummary(summary, playerName, 'hits');
     const hr   = playerStatFromSummary(summary, playerName, 'homeRuns');
     if (hits !== null && hr !== null) return hits + (hr * 3);
     return null;
   }
+  if (statKey === 'hitsRunsRBIs') {
+    // MLB H+R+RBI composite
+    const h = playerStatFromSummary(summary, playerName, 'hits');
+    const r = playerStatFromSummary(summary, playerName, 'runs');
+    const rbi = playerStatFromSummary(summary, playerName, 'RBIs');
+    if (h !== null && r !== null && rbi !== null) return h + r + rbi;
+    return null;
+  }
 
   for (const team of (summary?.boxscore?.players || [])) {
     for (const grp of (team.statistics || [])) {
-      const idx = (grp.keys || []).indexOf(statKey);
+      // Exact match first, then compound match (e.g. 'threePointFieldGoalsMade' matches 'threePointFieldGoalsMade-threePointFieldGoalsAttempted')
+      let idx = (grp.keys || []).indexOf(statKey);
+      if (idx === -1) idx = (grp.keys || []).findIndex(k => k.startsWith(statKey + '-'));
       if (idx === -1) continue;
       for (const ath of (grp.athletes || [])) {
         if (nameMatch(playerName, ath.athlete?.displayName || '')) {
-          const v = parseFloat(ath.stats?.[idx]);
+          const raw = ath.stats?.[idx];
+          // Parse compound "made-attempted" fields: take first number
+          const v = (typeof raw === 'string' && raw.includes('-')) ? parseFloat(raw.split('-')[0]) : parseFloat(raw);
           if (!isNaN(v)) return v;
         }
       }
