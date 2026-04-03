@@ -1066,12 +1066,22 @@ function espnDateStr(iso) {
 
 // Extract a player's stat value from an ESPN game summary boxscore
 function playerStatFromSummary(summary, playerName, statKey) {
-  // Special NHL composite stats — boxscore stores components separately
+  // Special composite stats — boxscore stores components separately
   if (statKey === 'points' || statKey === '_nhl_pp_points') {
-    // NHL "points" = goals + assists (not a single boxscore column)
+    // NHL "points" = goals + assists
     const goals = playerStatFromSummary(summary, playerName, 'goals');
     const assists = playerStatFromSummary(summary, playerName, 'assists');
     if (goals !== null && assists !== null) return goals + assists;
+    return null;
+  }
+  if (statKey === 'totalBases') {
+    // MLB totalBases = hits + extraBaseHits. Boxscore has hits and homeRuns.
+    // Approximation: totalBases ≈ hits + homeRuns * 3 (HR=4 bases, already counted in hits)
+    // More accurate: we'd need doubles/triples but boxscore doesn't have them.
+    // Best proxy: hits + (homeRuns × 3) — each HR adds 3 extra bases beyond the hit
+    const hits = playerStatFromSummary(summary, playerName, 'hits');
+    const hr   = playerStatFromSummary(summary, playerName, 'homeRuns');
+    if (hits !== null && hr !== null) return hits + (hr * 3);
     return null;
   }
 
