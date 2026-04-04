@@ -972,6 +972,7 @@ function calcVig(overOdds, underOdds) {
 //   × 0.90 market regression
 // calib: object from getCalibration() — applies directional win-rate multiplier
 function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineMoveSig = 0, restPenalty = 0, weatherPenalty = 0, sportHint = '', oppSignal = 0) {
+  if (isNaN(pct) || !direction) return 0; // guard against garbage input
   const dirCalib        = (calib && calib[direction]) || 1.0;
   const edgeFactor      = (pct - 50) / 50;
   const consensusFactor = Math.min(bookCount / 6, 1);
