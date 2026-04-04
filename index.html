@@ -2212,7 +2212,7 @@ async function buildSoccer(force) {
 
   // Fetch all league odds in parallel (removes 2s of sequential delays)
   const leagueOdds = await Promise.all(
-    leagues.map(lg => apiFetch(lg.key, 'h2h,totals,btts,draw_no_bet', 'uk', force).catch(() => []))
+    leagues.map(lg => apiFetch(lg.key, 'h2h,totals', 'uk', force).catch(() => []))
   );
 
   for (let lgIdx = 0; lgIdx < leagues.length; lgIdx++) {
@@ -2235,8 +2235,16 @@ async function buildSoccer(force) {
         if (!hO||!aO) continue;
 
         const tot = bestTotal(ev,2.5);
-        const bttsOdds = bestBTTS(ev);
-        const dnbOdds = bestDNB(ev);
+        // BTTS + DNB: only available on event-level endpoint, not bulk
+        let bttsOdds = { yes: null, no: null };
+        let dnbOdds = { home: null, away: null };
+        if (ev.id) {
+          try {
+            const extraData = await fetchEventProps(lg.key, ev.id, 'btts,draw_no_bet', 'uk', force);
+            bttsOdds = bestBTTS(extraData);
+            dnbOdds = bestDNB(extraData);
+          } catch {}
+        }
 
         // Fetch recent form for both teams in parallel — upgrades xG from odds-only to stats-backed
         const espnLeague = lg.key.includes('epl') ? {sport:'soccer',league:'eng.1'}
