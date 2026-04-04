@@ -562,7 +562,7 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
 
   // ── Staleness detection — how old is the most recent game in ESPN's data? ──
   const gameDates = entries.filter(e => e.gameDate).map(e => new Date(e.gameDate));
-  const latestGameDate = gameDates.length ? new Date(Math.max(...gameDates)) : null;
+  const latestGameDate = gameDates.length ? new Date(Math.max(...gameDates.map(d => d.getTime()))) : null;
   const daysStale = latestGameDate ? Math.floor((new Date() - latestGameDate) / (1000*60*60*24)) : null;
   const staleLabel = daysStale !== null && daysStale >= 2
     ? `📅 Stats from ${latestGameDate.toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:TZ})} (${daysStale}d ago${daysStale >= 4 ? ' ⚠️ STALE' : ''})`
@@ -2785,7 +2785,7 @@ function buildHistoryTab() {
     html += `<div style="margin-top:16px">
       <div class="section-hdr" style="display:flex;justify-content:space-between;align-items:center">
         <span>⏳ Pending (${pending.length}) — auto-grades next morning</span>
-        <button class="btn" onclick="autoGrade(true).then(n=>{if(n>0){buildHistoryTab();}else{showToast('No completed games found yet — games may still be in progress','#ffcc00');}})">🤖 Auto-Grade Now</button>
+        <button class="btn" onclick="autoGrade(true).then(n=>{if(n>0){buildHistoryTab();}else{showToast('No completed games found yet — games may still be in progress','#ffcc00');}}).catch(()=>showToast('Auto-grade error — try again','#ff4444'))">🤖 Auto-Grade Now</button>
       </div>
       <table class="ptable">
         <tr><th>Date</th><th>Sport</th><th>Pick Info</th><th>Pick</th><th>Conf</th><th>Mark</th></tr>`;
