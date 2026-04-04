@@ -397,6 +397,29 @@ async function espnPlayerGamelog(sport, league, athleteId, statKey) {
     if (idx === -1 && v3Renames[statKey]) {
       idx = names.indexOf(v3Renames[statKey]);
     }
+    // Composite stats: H+R+RBI — sum multiple columns from gamelog
+    if (idx === -1 && statKey === 'hitsRunsRBIs') {
+      const hIdx = names.indexOf('hits');
+      const rIdx = names.indexOf('runs');
+      const rbiIdx = names.indexOf('RBIs');
+      if (hIdx === -1 || rIdx === -1 || rbiIdx === -1) return null;
+      const entries = [];
+      const eventsMap = data.events || {};
+      for (const st of (data.seasonTypes || [])) {
+        for (const cat of (st.categories || [])) {
+          for (const ev of (cat.events || [])) {
+            const h = parseFloat((ev.stats||[])[hIdx]) || 0;
+            const r = parseFloat((ev.stats||[])[rIdx]) || 0;
+            const rbi = parseFloat((ev.stats||[])[rbiIdx]) || 0;
+            const evInfo = eventsMap[ev.eventId] || {};
+            const isHome = evInfo.homeTeamId ? true : (ev.atVs !== '@');
+            const gameDate = evInfo.gameDate || null;
+            entries.push({ val: h + r + rbi, isHome, gameDate });
+          }
+        }
+      }
+      return entries.length ? entries : null;
+    }
     if (idx === -1) return null;
 
     const entries = []; // { val, isHome, gameDate }
@@ -942,12 +965,11 @@ function calcVig(overOdds, underOdds) {
   return (1 / overOdds + 1 / underOdds) - 1;
 }
 
-// Composite score:
-//   edge        0.30 — vig-removed pick probability above 50%
-//   consensus   0.25 — how many distinct bookmakers offer both sides of this line
-//   fair_price  0.15 — how close to a fair (low-vig) line
-//   vig_penalty 0.10 — subtracted when vig exceeds FAIR_VIG
-//   stats       0.20 — L5 average vs prop line signal (ESPN data, 0 if unavailable)
+// Composite score (weights must sum to ~1.0 before penalties):
+//   edge 0.22 + consensus 0.18 + fair 0.12 - vig 0.08 + stats 0.20 + lineMove 0.08 + opp 0.12
+//   + rest/weather/overPenalty (flat additive)
+//   × dirCalib (OVER/UNDER multiplier from historical win rates)
+//   × 0.90 market regression
 // calib: object from getCalibration() — applies directional win-rate multiplier
 function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineMoveSig = 0, restPenalty = 0, weatherPenalty = 0, sportHint = '', oppSignal = 0) {
   const dirCalib        = (calib && calib[direction]) || 1.0;
@@ -2246,6 +2268,8 @@ async function buildSoccer(force) {
           try {
             const extraData = await fetchEventProps(lg.key, ev.id, 'btts,draw_no_bet', 'uk', force);
             bttsOdds = bestBTTS(extraData);
+            // DNB needs team names — inject them from the bulk event data
+            if (extraData) { extraData.home_team = home; extraData.away_team = away; }
             dnbOdds = bestDNB(extraData);
           } catch {}
         }
@@ -2343,7 +2367,7 @@ async function buildSoccer(force) {
             <tr><td>${away}</td><td>${(aw*100).toFixed(1)}%</td><td>${aO}</td><td>${(impliedProb(aO)*100).toFixed(1)}%</td><td>${edgeHtml(awE.toFixed(1))}</td></tr>
             ${tot.over?`<tr><td>Over 2.5</td><td>${(ov*100).toFixed(1)}%</td><td>${tot.over}</td><td>${(impliedProb(tot.over)*100).toFixed(1)}%</td><td>${edgeHtml(ovE.toFixed(1))}</td></tr>`:''}
             ${tot.under?`<tr><td>Under 2.5</td><td>${(un*100).toFixed(1)}%</td><td>${tot.under}</td><td>${(impliedProb(tot.under)*100).toFixed(1)}%</td><td>${edgeHtml(unE.toFixed(1))}</td></tr>`:''}
-            <tr><td>BTTS</td><td>${(btts*100).toFixed(1)}%</td>${bttsOdds.yes ? `<td style="color:#ffcc00">${bttsOdds.yes.toFixed(2)} / ${bttsOdds.no.toFixed(2)}</td><td>${(impliedProb(bttsOdds.yes)*100).toFixed(1)}%</td><td>${edgeHtml(((btts - impliedProb(bttsOdds.yes))*100).toFixed(1))}</td>` : `<td colspan="3" style="color:${btts>0.5?'#00ff88':'#ff6666'}">${btts>0.5?'YES — likely':'NO — unlikely'}</td>`}</tr>
+            <tr><td>BTTS</td><td>${(btts*100).toFixed(1)}%</td>${bttsOdds.yes && bttsOdds.no ? `<td style="color:#ffcc00">${bttsOdds.yes.toFixed(2)} / ${bttsOdds.no.toFixed(2)}</td><td>${(impliedProb(bttsOdds.yes)*100).toFixed(1)}%</td><td>${edgeHtml(((btts - impliedProb(bttsOdds.yes))*100).toFixed(1))}</td>` : `<td colspan="3" style="color:${btts>0.5?'#00ff88':'#ff6666'}">${btts>0.5?'YES — likely':'NO — unlikely'}</td>`}</tr>
             ${dnbOdds.home ? `<tr><td>Draw No Bet</td><td colspan="2" style="color:#ffcc00">${home.split(' ').pop()} ${dnbOdds.home.toFixed(2)} / ${away.split(' ').pop()} ${dnbOdds.away.toFixed(2)}</td><td colspan="2" style="color:#888">Safer winner bet</td></tr>` : ''}
           </table>
           <div class="label">TOP 5 CORRECT SCORES (Dixon-Coles Poisson)
