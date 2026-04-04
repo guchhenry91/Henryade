@@ -437,7 +437,7 @@ async function espnPlayerGamelog(sport, league, athleteId, statKey) {
 // Parameterized from mean (μ) and variance (σ²): r = μ²/(σ²-μ), p = μ/σ²
 function negBinomCDF(mean, variance, threshold) {
   // If variance <= mean, use Poisson (no overdispersion)
-  if (variance <= mean || mean <= 0) {
+  if (variance <= mean * 1.01 || mean <= 0) { // 1% tolerance — avoids numerical instability when variance ≈ mean
     let cdf = 0;
     for (let k = 0; k <= Math.floor(threshold); k++) {
       cdf += poisson(mean, k);
@@ -1883,9 +1883,13 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       // ── Model agreement gating (BookieX-style) ──
       // Count how many signals agree with the pick direction.
       // Full agreement = confidence boost. Disagreement = penalty.
+      // If pick was FLIPPED by stats override, skip odds from signals
+      // (the flip was intentional — odds disagreement is expected and already priced in)
       const signals = [];
-      // Odds direction
-      signals.push(parseFloat(c.op) > parseFloat(c.up) ? 'OVER' : 'UNDER');
+      // Odds direction — only count if pick wasn't flipped
+      if (!flipped) {
+        signals.push(parseFloat(c.op) > parseFloat(c.up) ? 'OVER' : 'UNDER');
+      }
       // Stats direction (if available)
       if (statResult && statResult.hitProbOver != null) {
         signals.push(statResult.hitProbOver >= 0.5 ? 'OVER' : 'UNDER');
