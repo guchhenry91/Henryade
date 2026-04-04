@@ -1570,6 +1570,32 @@ function bestTotal(ev, line=2.5) {
   });
   return {over:ov||null,under:un||null};
 }
+// Extract BTTS (Both Teams To Score) odds from event data
+function bestBTTS(ev) {
+  let yes=0, no=0;
+  (ev.bookmakers||[]).forEach(bk=>{
+    const m=(bk.markets||[]).find(m=>m.key==='btts'); if(!m) return;
+    (m.outcomes||[]).forEach(o=>{
+      if(o.name==='Yes' && o.price>yes) yes=o.price;
+      if(o.name==='No'  && o.price>no)  no=o.price;
+    });
+  });
+  return { yes: yes||null, no: no||null };
+}
+
+// Extract Draw No Bet odds from event data
+function bestDNB(ev) {
+  let home=0, away=0;
+  (ev.bookmakers||[]).forEach(bk=>{
+    const m=(bk.markets||[]).find(m=>m.key==='draw_no_bet'); if(!m) return;
+    (m.outcomes||[]).forEach(o=>{
+      if(o.name===ev.home_team && o.price>home) home=o.price;
+      if(o.name===ev.away_team && o.price>away) away=o.price;
+    });
+  });
+  return { home: home||null, away: away||null };
+}
+
 function estimateXG(hO, aO, dO, totGoals = 2.5) {
   const hi = impliedProb(hO), ai = impliedProb(aO);
 
@@ -2186,7 +2212,7 @@ async function buildSoccer(force) {
 
   // Fetch all league odds in parallel (removes 2s of sequential delays)
   const leagueOdds = await Promise.all(
-    leagues.map(lg => apiFetch(lg.key, 'h2h,totals', 'uk', force).catch(() => []))
+    leagues.map(lg => apiFetch(lg.key, 'h2h,totals,btts,draw_no_bet', 'uk', force).catch(() => []))
   );
 
   for (let lgIdx = 0; lgIdx < leagues.length; lgIdx++) {
@@ -2209,6 +2235,8 @@ async function buildSoccer(force) {
         if (!hO||!aO) continue;
 
         const tot = bestTotal(ev,2.5);
+        const bttsOdds = bestBTTS(ev);
+        const dnbOdds = bestDNB(ev);
 
         // Fetch recent form for both teams in parallel — upgrades xG from odds-only to stats-backed
         const espnLeague = lg.key.includes('epl') ? {sport:'soccer',league:'eng.1'}
@@ -2303,7 +2331,8 @@ async function buildSoccer(force) {
             <tr><td>${away}</td><td>${(aw*100).toFixed(1)}%</td><td>${aO}</td><td>${(impliedProb(aO)*100).toFixed(1)}%</td><td>${edgeHtml(awE.toFixed(1))}</td></tr>
             ${tot.over?`<tr><td>Over 2.5</td><td>${(ov*100).toFixed(1)}%</td><td>${tot.over}</td><td>${(impliedProb(tot.over)*100).toFixed(1)}%</td><td>${edgeHtml(ovE.toFixed(1))}</td></tr>`:''}
             ${tot.under?`<tr><td>Under 2.5</td><td>${(un*100).toFixed(1)}%</td><td>${tot.under}</td><td>${(impliedProb(tot.under)*100).toFixed(1)}%</td><td>${edgeHtml(unE.toFixed(1))}</td></tr>`:''}
-            <tr><td>BTTS</td><td>${(btts*100).toFixed(1)}%</td><td colspan="3" style="color:${btts>0.5?'#00ff88':'#ff6666'}">${btts>0.5?'YES — likely':'NO — unlikely'}</td></tr>
+            <tr><td>BTTS</td><td>${(btts*100).toFixed(1)}%</td>${bttsOdds.yes ? `<td style="color:#ffcc00">${bttsOdds.yes.toFixed(2)} / ${bttsOdds.no.toFixed(2)}</td><td>${(impliedProb(bttsOdds.yes)*100).toFixed(1)}%</td><td>${edgeHtml(((btts - impliedProb(bttsOdds.yes))*100).toFixed(1))}</td>` : `<td colspan="3" style="color:${btts>0.5?'#00ff88':'#ff6666'}">${btts>0.5?'YES — likely':'NO — unlikely'}</td>`}</tr>
+            ${dnbOdds.home ? `<tr><td>Draw No Bet</td><td colspan="2" style="color:#ffcc00">${home.split(' ').pop()} ${dnbOdds.home.toFixed(2)} / ${away.split(' ').pop()} ${dnbOdds.away.toFixed(2)}</td><td colspan="2" style="color:#888">Safer winner bet</td></tr>` : ''}
           </table>
           <div class="label">TOP 5 CORRECT SCORES (Dixon-Coles Poisson)
             ${(() => {
