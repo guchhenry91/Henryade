@@ -424,10 +424,16 @@ async function espnPlayerGamelog(sport, league, athleteId, statKey) {
 
     const entries = []; // { val, isHome, gameDate }
     const eventsMap = data.events || {};
+    const minsIdx = names.indexOf('minutes'); // to detect DNP (0 minutes = didn't play)
 
     for (const st of (data.seasonTypes || [])) {
       for (const cat of (st.categories || [])) {
         for (const ev of (cat.events || [])) {
+          // Skip DNP games — 0 minutes means player didn't play, not "scored 0"
+          if (minsIdx >= 0) {
+            const mins = (ev.stats || [])[minsIdx];
+            if (mins === '0' || mins === '0:00' || mins === 0) continue;
+          }
           const rawVal = (ev.stats || [])[idx];
           if (rawVal == null) continue;
           let val;
@@ -560,13 +566,24 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
   // ── Combined signal: distribution + streak ──
   const totalSignal = Math.max(-0.35, Math.min(0.35, distSignal + streakSignal * 0.4));
 
-  // ── Staleness detection — how old is the most recent game in ESPN's data? ──
+  // ── Staleness + gap detection — ESPN can have recent data but miss games in between ──
   const gameDates = entries.filter(e => e.gameDate).map(e => new Date(e.gameDate));
   const latestGameDate = gameDates.length ? new Date(Math.max(...gameDates.map(d => d.getTime()))) : null;
   const daysStale = latestGameDate ? Math.floor((new Date() - latestGameDate) / (1000*60*60*24)) : null;
-  const staleLabel = daysStale !== null && daysStale >= 2
+
+  // Gap detection: check if L5 games span too many days (should be ~7-10 days for NBA, gaps = missing games)
+  let gapWarning = null;
+  if (gameDates.length >= 5) {
+    const sorted = [...gameDates].sort((a,b) => b-a);
+    const l5span = (sorted[0] - sorted[4]) / (1000*60*60*24); // days between newest and 5th newest
+    // NBA plays ~3-4 games/week, so L5 should span ~10-14 days max
+    // If L5 spans 20+ days, ESPN is missing games in between
+    if (l5span > 20) gapWarning = `⚠️ ESPN data gap: L5 spans ${l5span.toFixed(0)} days (likely missing games)`;
+  }
+
+  const staleLabel = (daysStale !== null && daysStale >= 2)
     ? `📅 Stats from ${latestGameDate.toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:TZ})} (${daysStale}d ago${daysStale >= 4 ? ' ⚠️ STALE' : ''})`
-    : null;
+    : gapWarning;
 
   // ── Labels ──
   const consistencyTag = variance <= effectiveMean ? '🎯 Consistent' : variance >= effectiveMean * 2 ? '🎲 Volatile' : '';
