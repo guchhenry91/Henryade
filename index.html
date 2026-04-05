@@ -1975,7 +1975,29 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       // Cap Kelly at 10% of bankroll (full Kelly is too aggressive)
       const kellyPct = Math.min(10, kellyFraction * 100);
 
-      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData, oppFactor: gameOppFactor, flipped, warning, agreement, agreementRatio, modelProb: clampedModelProb, bookProb, edge, kellyPct };
+      // ── Data quality flags — catch every kind of bad data so user doesn't have to ──
+      const dataFlags = [];
+      if (!statResult) {
+        dataFlags.push('⚠️ No ESPN stats — pick based on odds only');
+      } else {
+        if (statResult.daysStale >= 4) dataFlags.push(`⚠️ ESPN data ${statResult.daysStale}d stale`);
+        if (statResult.staleLabel && statResult.staleLabel.includes('gap')) dataFlags.push(statResult.staleLabel);
+        if (statResult.games < 3) dataFlags.push(`⚠️ Only ${statResult.games} games of data — low sample`);
+        // Check if model prob and actual hit rate strongly disagree (model might be wrong)
+        if (statResult.actualHitRate != null) {
+          const modelDir = c.pick === 'OVER' ? statResult.hitProbOver : statResult.hitProbUnder;
+          const actualDir = c.pick === 'OVER' ? statResult.actualHitRate : (1 - statResult.actualHitRate);
+          if (modelDir && Math.abs(modelDir - actualDir) > 0.3) {
+            dataFlags.push(`⚠️ Model ${(modelDir*100).toFixed(0)}% but actual hit rate ${(actualDir*100).toFixed(0)}% — verify`);
+          }
+        }
+      }
+      // Edge too high = suspicious (bookmaker rarely wrong by 20%+)
+      if (edge > 20) dataFlags.push(`⚠️ Edge +${edge.toFixed(0)}% is unusually high — verify line is current`);
+
+      const dataQuality = dataFlags.length === 0 ? 'clean' : dataFlags.length <= 1 ? 'warn' : 'danger';
+
+      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData, oppFactor: gameOppFactor, flipped, warning, agreement, agreementRatio, modelProb: clampedModelProb, bookProb, edge, kellyPct, dataFlags, dataQuality };
     })
     .filter(p => p !== null)
     // Removed UNDER <= 0.5 filter — rebounds/assists UNDERs at 2.5/3.5 are legitimate picks
@@ -2044,7 +2066,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       : '<span class="tier-b">B</span>';
     const stat   = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
     const reason = propReason(parseFloat(p.c.pct), p.bookCount, p.vig);
-    html += `<div class="pick-card${i === 0 ? ' best-pick' : ''}" data-edge="${p.edge.toFixed(1)}" data-score="${p.score.toFixed(3)}" data-dir="${p.c.pick}">
+    html += `<div class="pick-card${i === 0 && p.dataQuality === 'clean' ? ' best-pick' : ''}" data-edge="${p.edge.toFixed(1)}" data-score="${p.score.toFixed(3)}" data-dir="${p.c.pick}" style="${p.dataQuality==='danger'?'border-color:#ff444440;background:#110808':p.dataQuality==='warn'?'border-color:#ff994430':''}">
       <div class="pick-card-header">
         ${tierHtml}
         ${badge(p.c.conf)}
@@ -2058,6 +2080,9 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
         <span style="color:${p.kellyPct>=3?'#00ff88':p.kellyPct>=1?'#ffcc00':'#555'};font-weight:700">${p.kellyPct>=0.5 ? p.kellyPct.toFixed(1)+'% stake' : 'No bet'}</span>
       </div>
       ${p.warning ? `<div style="font-size:0.68em;margin:2px 0;padding:4px 8px;background:#ff660010;border:1px solid #ff660030;border-radius:4px;color:#ff9944">${p.warning}</div>` : ''}
+      ${p.dataFlags && p.dataFlags.length ? `<div style="font-size:0.68em;margin:4px 0;padding:5px 8px;background:${p.dataQuality==='danger'?'#ff000012':'#ff880008'};border:1px solid ${p.dataQuality==='danger'?'#ff000030':'#ff880020'};border-radius:4px;color:${p.dataQuality==='danger'?'#ff4444':'#ff9944'}">
+        ${p.dataFlags.join('<br>')}
+      </div>` : `<div style="font-size:0.65em;margin:2px 0;color:#1a3a1a">✅ Data verified</div>`}
       ${p.statResult ? `<div style="font-size:0.7em;margin:4px 0 2px;color:${p.statResult.signal>0?'#00ff88':p.statResult.signal<0?'#ff4444':'#555'}">${p.statResult.signalLabel}</div>` : ''}
       ${p.statResult?.hitProbOver != null ? `<div style="font-size:0.68em;margin:1px 0;color:${(p.c.pick==='OVER'?p.statResult.hitProbOver:p.statResult.hitProbUnder)>=0.6?'#00ff88':(p.c.pick==='OVER'?p.statResult.hitProbOver:p.statResult.hitProbUnder)>=0.5?'#ffcc00':'#ff4444'}">🎲 Hit prob: ${((p.c.pick==='OVER'?p.statResult.hitProbOver:p.statResult.hitProbUnder)*100).toFixed(0)}% ${p.statResult.consistencyTag||''}</div>` : ''}
       ${p.statResult?.extraLabels?.map(l => `<div style="font-size:0.67em;margin:1px 0;color:#555">${l}</div>`).join('') || ''}
