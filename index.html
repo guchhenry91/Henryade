@@ -2005,12 +2005,12 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       // ESPN gamelog will still apply home/away split when available
       return getStatSignal(leagueShort, p.player, p.market, p.line, null);
     })),
-    // Skip ESPN athlete lookup for sports that use proxy (NHL CORS blocked on ESPN)
-    Promise.all(candidates.map(p => (espnCfg && leagueShort !== 'nhl') ? espnAthleteId(espnCfg.sport, espnCfg.league, p.player) : Promise.resolve(null))),
+    // Skip ESPN athlete lookup — NBA/NHL CORS blocked, MLB uses own API. Only NFL needs ESPN.
+    Promise.all(candidates.map(p => (espnCfg && leagueShort === 'nfl') ? espnAthleteId(espnCfg.sport, espnCfg.league, p.player) : Promise.resolve(null))),
   ]);
 
-  // Fetch injury status + rest factor — skip for NHL (ESPN CORS blocked, proxy handles rest)
-  const skipEspnCalls = leagueShort === 'nhl';
+  // Fetch injury status + rest factor — only for NFL (ESPN CORS blocks NBA/NHL, MLB has own API)
+  const skipEspnCalls = leagueShort !== 'nfl';
   const [injuryStatuses, restFactors] = await Promise.all([
     Promise.all(athleteIds.map(id => espnCfg && id && !skipEspnCalls ? getPlayerStatus(espnCfg.sport, espnCfg.league, id) : Promise.resolve(null))),
     Promise.all(athleteIds.map(id => espnCfg && id && gameDate && !skipEspnCalls ? getRestFactor(espnCfg.sport, espnCfg.league, id, gameDate) : Promise.resolve(null))),
