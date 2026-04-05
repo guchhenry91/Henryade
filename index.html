@@ -2035,17 +2035,33 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
   if (!props.length) return injuryNote + `<div class="no-games">No qualifying player props.</div>`;
 
   // ── SAFE PICKS: the easiest wins — clean data, stats+odds agree, high hit rate ──
-  const safePicks = scored.filter(p =>
-    p.dataQuality === 'clean' &&             // no data warnings
-    !p.flipped &&                             // stats and odds agree (same direction)
-    p.statResult &&                           // has ESPN stats
-    p.statResult.hitProbOver != null &&        // has distribution data
-    (p.c.pick === 'OVER' ? p.statResult.hitProbOver : p.statResult.hitProbUnder) >= 0.60 && // 60%+ model probability
-    p.statResult.actualHitRate != null &&
-    (p.c.pick === 'OVER' ? p.statResult.actualHitRate : (1 - p.statResult.actualHitRate)) >= 0.60 && // 60%+ actual hit rate in L5
-    p.bookCount >= 3 &&                       // 3+ books agree
-    p.vig <= FAIR_VIG                         // fair line (low vig)
-  ).slice(0, 3);
+  const safePicks = scored.filter(p => {
+    // STRICT safe pick criteria — every check must pass
+    if (p.dataQuality !== 'clean') return false;      // no data warnings
+    if (p.flipped) return false;                       // stats and odds must agree naturally
+    if (!p.statResult) return false;                   // must have ESPN stats
+    if (p.statResult.hitProbOver == null) return false; // must have distribution data
+    if (p.bookCount < 3) return false;                 // 3+ books agree
+    if (p.vig < 0 || p.vig > FAIR_VIG) return false;  // POSITIVE fair vig only (negative = broken odds)
+    if (p.edge > 20) return false;                     // suspiciously high edge = bad data
+
+    // Model probability must be 60%+
+    const modelHitProb = p.c.pick === 'OVER' ? p.statResult.hitProbOver : p.statResult.hitProbUnder;
+    if (modelHitProb < 0.60) return false;
+
+    // Actual hit rate must be 60%+ (player literally did this recently)
+    const actualHitForDir = p.c.pick === 'OVER' ? p.statResult.actualHitRate : (1 - p.statResult.actualHitRate);
+    if (actualHitForDir < 0.60) return false;
+
+    // Cross-check: model probability and actual hit rate should roughly agree
+    // If model says 80% but actual is 20%, something is wrong (stale data)
+    if (Math.abs(modelHitProb - actualHitForDir) > 0.35) return false;
+
+    // Cross-check: if edge is huge (>15%) with weak odds lean (<55%), likely stale data
+    if (p.edge > 15 && parseFloat(p.c.pct) < 55) return false;
+
+    return true;
+  }).slice(0, 3);
 
   // Push top pick to slate-wide collection + persist ALL shown picks to history
   if (sportLabel) {
