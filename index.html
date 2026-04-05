@@ -571,14 +571,17 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
   const latestGameDate = gameDates.length ? new Date(Math.max(...gameDates.map(d => d.getTime()))) : null;
   const daysStale = latestGameDate ? Math.floor((new Date() - latestGameDate) / (1000*60*60*24)) : null;
 
-  // Gap detection: check if L5 games span too many days (should be ~7-10 days for NBA, gaps = missing games)
+  // Gap detection: check if L5 games span too many days (gaps = missing games)
+  // NBA: plays every 1-2 days, L5 should span ~8-12 days. MLB: every day, ~5-7 days.
   let gapWarning = null;
+  let hasDataGap = false;
   if (gameDates.length >= 5) {
     const sorted = [...gameDates].sort((a,b) => b-a);
-    const l5span = (sorted[0] - sorted[4]) / (1000*60*60*24); // days between newest and 5th newest
-    // NBA plays ~3-4 games/week, so L5 should span ~10-14 days max
-    // If L5 spans 20+ days, ESPN is missing games in between
-    if (l5span > 20) gapWarning = `⚠️ ESPN data gap: L5 spans ${l5span.toFixed(0)} days (likely missing games)`;
+    const l5span = (sorted[0] - sorted[4]) / (1000*60*60*24);
+    if (l5span > 14) {
+      gapWarning = `⚠️ ESPN data gap: L5 spans ${l5span.toFixed(0)} days (missing games — stats unreliable)`;
+      hasDataGap = true;
+    }
   }
 
   const staleLabel = (daysStale !== null && daysStale >= 2)
@@ -593,11 +596,18 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
 
   const labels = [probLabel, avgLabel, streakLabel, locationLabel, staleLabel].filter(Boolean);
 
+  // If data gap detected, KILL the signal — don't let stale data influence direction
+  // The hit probability and avg are still shown but the signal is zeroed out
+  const safeSignal = hasDataGap ? 0 : totalSignal;
+  const safeHitProbOver  = hasDataGap ? null : hitProbOver;
+  const safeHitProbUnder = hasDataGap ? null : hitProbUnder;
+
   return {
     avg: parseFloat(avg5.toFixed(2)), games: recent5.length,
-    signal: totalSignal, signalLabel: labels[0], extraLabels: labels.slice(1), diff,
-    hitProbOver, hitProbUnder, variance: parseFloat(variance.toFixed(2)),
-    actualHitRate, consistencyTag, daysStale, staleLabel,
+    signal: safeSignal, signalLabel: labels[0], extraLabels: labels.slice(1), diff,
+    hitProbOver: safeHitProbOver, hitProbUnder: safeHitProbUnder,
+    variance: parseFloat(variance.toFixed(2)),
+    actualHitRate, consistencyTag, daysStale, staleLabel, hasDataGap,
   };
 }
 
