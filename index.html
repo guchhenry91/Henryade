@@ -470,7 +470,8 @@ async function mlbOfficialGamelog(playerName, statKey) {
       const res = await fetch(`https://statsapi.mlb.com/api/v1/people/${playerId}/stats?stats=gameLog&season=2026&group=${g}`);
       if (!res.ok) continue;
       const data = await res.json();
-      const splits = (data.stats || [{}])[0].splits || [];
+      const statsArr = data.stats || [];
+      const splits = (statsArr.length ? statsArr[0].splits : null) || [];
       if (!splits.length) continue;
 
       // Map our stat keys to MLB API keys
