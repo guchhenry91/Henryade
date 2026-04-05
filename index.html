@@ -1165,8 +1165,8 @@ function getOpponentFactor(standings, opponentName) {
   // Defense rating: opponent's OppPPG / league avg OppPPG
   // >1 means they allow MORE points than average (weak defense = boost)
   // <1 means they allow FEWER (strong defense = suppress)
+  if (!avg.oppg || !avg.pace) return null; // guard against division by zero
   const defenseRating = opp.oppg / avg.oppg;
-  // Pace: game pace / league avg pace
   const paceMultiplier = opp.pace / avg.pace;
   // Combined factor: 70% defense + 30% pace
   const factor = defenseRating * 0.7 + paceMultiplier * 0.3;
@@ -2208,6 +2208,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     if (modelHitProb < 0.58) return false;
 
     // Actual hit rate must be 60%+ in last 5 games
+    if (p.statResult.actualHitRate == null) return false; // no hit rate data = can't verify
     const actualHitForDir = p.c.pick === 'OVER' ? p.statResult.actualHitRate : (1 - p.statResult.actualHitRate);
     if (actualHitForDir < 0.60) return false;
 
