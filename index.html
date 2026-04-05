@@ -375,8 +375,12 @@ async function nbaProxyGamelog(playerName, statKey, line) {
     };
     const market = marketMap[statKey] || statKey;
 
-    const res = await fetch(`${NBA_PROXY}/api/nba/player/${encodeURIComponent(playerName)}/gamelog`, { signal: AbortSignal.timeout(60000) }); // 60s timeout — Render free tier can take 30s to wake up
-    if (!res.ok) return null;
+    // 90s timeout — Render free tier takes 30-50s to wake, then each player lookup is 3-5s
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 90000);
+    let res;
+    try { res = await fetch(`${NBA_PROXY}/api/nba/player/${encodeURIComponent(playerName)}/gamelog`, { signal: ctrl.signal }); } finally { clearTimeout(timer); }
+    if (!res || !res.ok) return null;
     const data = await res.json();
     if (!data.games || !data.games.length) return null;
 
@@ -477,13 +481,16 @@ async function nhlOfficialGamelog(playerName, statKey) {
     const cacheKey = `nhl__${playerName}`;
     let playerId = _nhlPlayerCache[cacheKey];
     if (playerId === undefined) {
-      const lastName = playerName.split(' ').pop();
-      const searchRes = await fetch(`https://search.d3.nhle.com/api/v1/search/player?culture=en-us&limit=5&q=${encodeURIComponent(lastName)}`);
+      // Search by FULL name first (last name only returns wrong players like "Stephen MacKinnon" for "Nathan MacKinnon")
+      const searchRes = await fetch(`https://search.d3.nhle.com/api/v1/search/player?culture=en-us&limit=5&q=${encodeURIComponent(playerName)}`);
       if (!searchRes.ok) return null;
       const players = await searchRes.json();
       const pLower = playerName.toLowerCase();
       const match = players.find(p => (p.name || '').toLowerCase() === pLower)
-        || players.find(p => (p.name || '').toLowerCase().includes(lastName.toLowerCase()));
+        || players.find(p => {
+          const n = (p.name || '').toLowerCase();
+          return n.includes(pLower.split(' ').pop()) && n.includes(pLower.split(' ')[0]);
+        });
       playerId = match ? match.playerId : null;
       _nhlPlayerCache[cacheKey] = playerId;
     }
