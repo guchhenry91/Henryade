@@ -784,7 +784,7 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
     const sorted = [...gameDates].sort((a,b) => b-a);
     const l5span = (sorted[0] - sorted[4]) / (1000*60*60*24);
     if (l5span > 14) {
-      gapWarning = `⚠️ ESPN data gap: L5 spans ${l5span.toFixed(0)} days (missing games — stats unreliable)`;
+      gapWarning = `⚠️ Data gap: L5 spans ${l5span.toFixed(0)} days (missing games — stats may be unreliable)`;
       hasDataGap = true;
     }
   }
@@ -2136,9 +2136,9 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       // ── Data quality flags — catch every kind of bad data so user doesn't have to ──
       const dataFlags = [];
       if (!statResult) {
-        dataFlags.push('⚠️ No ESPN stats — pick based on odds only');
+        dataFlags.push('⚠️ No player stats loaded — pick based on odds only');
       } else {
-        if (statResult.daysStale >= 4) dataFlags.push(`⚠️ ESPN data ${statResult.daysStale}d stale`);
+        if (statResult.daysStale >= 4) dataFlags.push(`⚠️ Stats data ${statResult.daysStale}d old`);
         if (statResult.staleLabel && statResult.staleLabel.includes('gap')) dataFlags.push(statResult.staleLabel);
         if (statResult.games < 3) dataFlags.push(`⚠️ Only ${statResult.games} games of data — low sample`);
         // Check if model prob and actual hit rate strongly disagree (model might be wrong)
@@ -3367,6 +3367,8 @@ function filterPickCards(btn, dir) {
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 window.addEventListener('load', () => {
+  // Pre-warm the Render proxy so it's awake when sport tabs load
+  fetch(`${NBA_PROXY}/health`).catch(() => {});
   refreshAll(false);
   autoGrade().then(n => {
     // Retry after 30s for any picks ESPN hadn't processed yet on first pass
