@@ -670,16 +670,22 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
   const statKey = (ESPN_STAT_MAP[market] || {})[leagueShort];
   if (!statKey) return null;
 
-  // ── Real-time APIs only — no ESPN fallback (stale data causes wrong picks) ──
+  // ── Real-time APIs first — ESPN fallback only for NHL (CORS blocks gamelog) and NFL ──
   let entries = null;
   if (leagueShort === 'nba') {
     entries = await nbaProxyGamelog(playerName, statKey, line);
   } else if (leagueShort === 'mlb') {
     entries = await mlbOfficialGamelog(playerName, statKey);
   } else if (leagueShort === 'nhl') {
+    // NHL gamelog endpoint has no CORS headers — browser fetch blocked
+    // Try official API first, fall back to ESPN
     entries = await nhlOfficialGamelog(playerName, statKey);
+    if (!entries || !entries.length) {
+      const athleteId = await espnAthleteId(cfg.sport, cfg.league, playerName);
+      if (athleteId) entries = await espnPlayerGamelog(cfg.sport, cfg.league, athleteId, statKey);
+    }
   } else {
-    // NFL only — still uses ESPN (off-season, no better option)
+    // NFL — still uses ESPN (off-season)
     const athleteId = await espnAthleteId(cfg.sport, cfg.league, playerName);
     if (athleteId) entries = await espnPlayerGamelog(cfg.sport, cfg.league, athleteId, statKey);
   }
