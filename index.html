@@ -361,6 +361,48 @@ async function espnAthleteId(sport, league, playerName) {
   } catch { _athleteIdCache[cacheKey] = null; return null; }
 }
 
+// ── NBA Stats Proxy (Render) — real-time via nba_api backend ────────────────
+// Calls our own proxy which uses nba_api to bypass NBA.com bot protection
+const NBA_PROXY = 'https://nba-stats-proxy-9kur.onrender.com';
+
+async function nbaProxyGamelog(playerName, statKey, line) {
+  try {
+    // Map our stat keys to the proxy's market names
+    const marketMap = {
+      points: 'points', totalRebounds: 'rebounds', assists: 'assists',
+      threePointFieldGoalsMade: 'threes', blocks: 'blocks', steals: 'steals',
+      turnovers: 'turnovers', fieldGoalsMade: 'fieldGoalsMade',
+    };
+    const market = marketMap[statKey] || statKey;
+
+    const res = await fetch(`${NBA_PROXY}/api/nba/player/${encodeURIComponent(playerName)}/gamelog`, { signal: AbortSignal.timeout(15000) });
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (!data.games || !data.games.length) return null;
+
+    // Map proxy response to our standard entries format { val, isHome, gameDate }
+    const keyMap = {
+      points: 'pts', totalRebounds: 'reb', assists: 'ast',
+      threePointFieldGoalsMade: 'fg3m', blocks: 'blk', steals: 'stl',
+      turnovers: 'tov', fieldGoalsMade: 'fgm',
+    };
+    const gameKey = keyMap[statKey] || 'pts';
+
+    const entries = [];
+    for (const g of data.games) {
+      // Skip DNP (0 minutes)
+      if (!g.min || g.min === 0) continue;
+      const val = parseFloat(g[gameKey]);
+      if (isNaN(val)) continue;
+      entries.push({ val, isHome: g.is_home || false, gameDate: g.date || null });
+    }
+
+    // Proxy returns newest-first, but our code expects oldest-first (slice(-5) = last 5)
+    entries.reverse();
+    return entries.length ? entries : null;
+  } catch { return null; }
+}
+
 // ── Official MLB Stats API (statsapi.mlb.com) — real-time, no key needed ────
 // Returns per-game entries { val, isHome, gameDate } or null
 const _mlbPlayerCache = {};
@@ -621,14 +663,16 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
   const statKey = (ESPN_STAT_MAP[market] || {})[leagueShort];
   if (!statKey) return null;
 
-  // ── Try official real-time APIs first (MLB + NHL), fallback to ESPN ──
+  // ── Try official real-time APIs first, fallback to ESPN ──
   let entries = null;
-  if (leagueShort === 'mlb') {
+  if (leagueShort === 'nba') {
+    entries = await nbaProxyGamelog(playerName, statKey, line);
+  } else if (leagueShort === 'mlb') {
     entries = await mlbOfficialGamelog(playerName, statKey);
   } else if (leagueShort === 'nhl') {
     entries = await nhlOfficialGamelog(playerName, statKey);
   }
-  // Fallback to ESPN for NBA/NFL or if official API failed
+  // Fallback to ESPN for NFL or if primary API failed
   if (!entries || !entries.length) {
     const athleteId = await espnAthleteId(cfg.sport, cfg.league, playerName);
     if (!athleteId) return null;
