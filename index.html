@@ -407,6 +407,37 @@ async function nbaProxyGamelog(playerName, statKey, line) {
   } catch { return null; }
 }
 
+// ── NHL Stats via Render Proxy (bypasses CORS on api-web.nhle.com) ──────────
+async function nhlProxyGamelog(playerName, statKey) {
+  try {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 90000);
+    let res;
+    try { res = await fetch(`${NBA_PROXY}/api/nhl/player/${encodeURIComponent(playerName)}/gamelog`, { signal: ctrl.signal }); } finally { clearTimeout(timer); }
+    if (!res || !res.ok) return null;
+    const data = await res.json();
+    if (!data.games || !data.games.length) return null;
+
+    // Map stat keys to proxy response fields
+    const keyMap = {
+      goals: 'goals', assists: 'assists', points: 'points',
+      shotsTotal: 'shots', blockedShots: 'blocked_shots',
+      powerPlayGoals: 'pp_goals', powerPlayPoints: 'pp_points',
+    };
+    const gameKey = keyMap[statKey] || 'points';
+
+    const entries = [];
+    for (const g of data.games) {
+      const val = parseFloat(g[gameKey]);
+      if (isNaN(val)) continue;
+      entries.push({ val, isHome: g.is_home || false, gameDate: g.date || null });
+    }
+    // Proxy returns newest-first, reverse for our code (expects oldest-first)
+    entries.reverse();
+    return entries.length ? entries : null;
+  } catch { return null; }
+}
+
 // ── Official MLB Stats API (statsapi.mlb.com) — real-time, no key needed ────
 // Returns per-game entries { val, isHome, gameDate } or null
 const _mlbPlayerCache = {};
@@ -677,13 +708,8 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
   } else if (leagueShort === 'mlb') {
     entries = await mlbOfficialGamelog(playerName, statKey);
   } else if (leagueShort === 'nhl') {
-    // NHL gamelog endpoint has no CORS headers — browser fetch blocked
-    // Try official API first, fall back to ESPN
-    entries = await nhlOfficialGamelog(playerName, statKey);
-    if (!entries || !entries.length) {
-      const athleteId = await espnAthleteId(cfg.sport, cfg.league, playerName);
-      if (athleteId) entries = await espnPlayerGamelog(cfg.sport, cfg.league, athleteId, statKey);
-    }
+    // NHL gamelog CORS-blocked from browser — use our Render proxy instead
+    entries = await nhlProxyGamelog(playerName, statKey);
   } else {
     // NFL — still uses ESPN (off-season)
     const athleteId = await espnAthleteId(cfg.sport, cfg.league, playerName);
