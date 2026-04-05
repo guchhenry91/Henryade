@@ -2378,36 +2378,30 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
     .sort((a,b) => b.prob - a.prob)
     .slice(0, 10);
 
-  // Fetch ESPN recent goals for top 5 scorers (free API, no tokens)
+  // Fetch top scorers from proxy (real-time, one call per league instead of per-player)
   if (espnLeague) {
-    const goalPromises = list.slice(0, 5).map(async (s) => {
-      try {
-        const athleteId = await espnAthleteId(espnLeague.sport, espnLeague.league, s.name);
-        if (!athleteId) return null;
-        const res = await fetch(
-          `https://site.web.api.espn.com/apis/common/v3/sports/${espnLeague.sport}/${espnLeague.league}/athletes/${athleteId}/gamelog`
-        );
-        if (!res.ok) return null;
-        const data = await res.json();
-        let goals = 0, games = 0;
-        // v3 format: names at top level, events nested in seasonTypes.categories
-        const names = data.names || [];
-        let goalIdx = names.indexOf('totalGoals');
-        if (goalIdx === -1) goalIdx = names.indexOf('goals');
-        if (goalIdx === -1) return null;
-        for (const st of (data.seasonTypes || [])) {
-          for (const cat of (st.categories || [])) {
-            for (const ev of (cat.events || [])) {
-              const val = parseFloat((ev.stats || [])[goalIdx]);
-              if (!isNaN(val)) { goals += val; games++; }
-            }
+    const leagueKey = SOCCER_LEAGUE_MAP[espnLeague.league] || 'epl';
+    try {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 30000);
+      let scorerRes;
+      try { scorerRes = await fetch(`${NBA_PROXY}/api/soccer/scorers/${leagueKey}`, { signal: ctrl.signal }); } finally { clearTimeout(timer); }
+      if (scorerRes && scorerRes.ok) {
+        const scorerData = await scorerRes.json();
+        const scorers = scorerData.scorers || [];
+        // Match each player in our list to the top scorers data
+        list.forEach(s => {
+          const sLower = s.name.toLowerCase();
+          const match = scorers.find(sc =>
+            sc.name.toLowerCase() === sLower ||
+            sc.name.toLowerCase().includes(sLower.split(' ').pop()) && sLower.includes(sc.name.toLowerCase().split(' ').pop())
+          );
+          if (match && match.matches >= 3) {
+            s.form = { goalsPerGame: match.goals_per_game, games: match.matches, goals: match.goals };
           }
-        }
-        return games >= 3 ? { goalsPerGame: goals / games, games } : null;
-      } catch { return null; }
-    });
-    const goalResults = await Promise.all(goalPromises);
-    list.slice(0, 5).forEach((s, i) => { s.form = goalResults[i]; });
+        });
+      }
+    } catch { /* proxy unavailable — continue without form */ }
   }
 
   // Team xG multiplier — if a team creates more xG than league average (1.3), boost their scorers
