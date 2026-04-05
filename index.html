@@ -2130,8 +2130,8 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       const bestOdds = c.pick === 'OVER' ? p.bestOver : p.bestUnder;
       const b = bestOdds - 1;
       const kellyFraction = b > 0 ? Math.max(0, (b * clampedModelProb - (1 - clampedModelProb)) / b) : 0;
-      // Cap Kelly at 10% of bankroll (full Kelly is too aggressive)
-      const kellyPct = Math.min(10, kellyFraction * 100);
+      // No edge = no bet. Cap at 5% (half-Kelly is safer than full Kelly)
+      const kellyPct = edge <= 0 ? 0 : Math.min(5, kellyFraction * 50); // half-Kelly, capped at 5%
 
       // ── Data quality flags — catch every kind of bad data so user doesn't have to ──
       const dataFlags = [];
