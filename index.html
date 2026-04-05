@@ -375,7 +375,7 @@ async function nbaProxyGamelog(playerName, statKey, line) {
     };
     const market = marketMap[statKey] || statKey;
 
-    const res = await fetch(`${NBA_PROXY}/api/nba/player/${encodeURIComponent(playerName)}/gamelog`, { signal: AbortSignal.timeout(15000) });
+    const res = await fetch(`${NBA_PROXY}/api/nba/player/${encodeURIComponent(playerName)}/gamelog`, { signal: AbortSignal.timeout(60000) }); // 60s timeout — Render free tier can take 30s to wake up
     if (!res.ok) return null;
     const data = await res.json();
     if (!data.games || !data.games.length) return null;
@@ -663,7 +663,7 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
   const statKey = (ESPN_STAT_MAP[market] || {})[leagueShort];
   if (!statKey) return null;
 
-  // ── Try official real-time APIs first, fallback to ESPN ──
+  // ── Real-time APIs only — no ESPN fallback (stale data causes wrong picks) ──
   let entries = null;
   if (leagueShort === 'nba') {
     entries = await nbaProxyGamelog(playerName, statKey, line);
@@ -671,12 +671,10 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
     entries = await mlbOfficialGamelog(playerName, statKey);
   } else if (leagueShort === 'nhl') {
     entries = await nhlOfficialGamelog(playerName, statKey);
-  }
-  // Fallback to ESPN for NFL or if primary API failed
-  if (!entries || !entries.length) {
+  } else {
+    // NFL only — still uses ESPN (off-season, no better option)
     const athleteId = await espnAthleteId(cfg.sport, cfg.league, playerName);
-    if (!athleteId) return null;
-    entries = await espnPlayerGamelog(cfg.sport, cfg.league, athleteId, statKey);
+    if (athleteId) entries = await espnPlayerGamelog(cfg.sport, cfg.league, athleteId, statKey);
   }
   if (!entries || !entries.length) return null;
 
