@@ -2378,30 +2378,50 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
     .sort((a,b) => b.prob - a.prob)
     .slice(0, 10);
 
-  // Fetch top scorers from proxy (real-time, one call per league instead of per-player)
+  // Fetch player stats from proxy — try Understat (xG/shots) first, fall back to ESPN scorers
   if (espnLeague) {
     const leagueKey = SOCCER_LEAGUE_MAP[espnLeague.league] || 'epl';
     try {
       const ctrl = new AbortController();
-      const timer = setTimeout(() => ctrl.abort(), 30000);
-      let scorerRes;
-      try { scorerRes = await fetch(`${NBA_PROXY}/api/soccer/scorers/${leagueKey}`, { signal: ctrl.signal }); } finally { clearTimeout(timer); }
-      if (scorerRes && scorerRes.ok) {
-        const scorerData = await scorerRes.json();
-        const scorers = scorerData.scorers || [];
-        // Match each player in our list to the top scorers data
+      const timer = setTimeout(() => ctrl.abort(), 45000);
+      // Try Understat first (has xG, shots, xA — EPL + La Liga only)
+      let playerData = null;
+      try {
+        const usRes = await fetch(`${NBA_PROXY}/api/soccer/players/${leagueKey}`, { signal: ctrl.signal });
+        if (usRes && usRes.ok) playerData = (await usRes.json()).players || [];
+      } catch {}
+      // Fall back to ESPN scorers if Understat doesn't cover this league
+      if (!playerData) {
+        try {
+          const scRes = await fetch(`${NBA_PROXY}/api/soccer/scorers/${leagueKey}`, { signal: ctrl.signal });
+          if (scRes && scRes.ok) {
+            const scData = await scRes.json();
+            playerData = (scData.scorers || []).map(sc => ({
+              name: sc.name, team: sc.team, goals: sc.goals, games: sc.matches,
+              goals_per_game: sc.goals_per_game, shots: null, xg: null, shots_per_game: null, xg_per_game: null,
+            }));
+          }
+        } catch {}
+      }
+      clearTimeout(timer);
+
+      if (playerData) {
         list.forEach(s => {
           const sLower = s.name.toLowerCase();
-          const match = scorers.find(sc =>
-            sc.name.toLowerCase() === sLower ||
-            sc.name.toLowerCase().includes(sLower.split(' ').pop()) && sLower.includes(sc.name.toLowerCase().split(' ').pop())
+          const match = playerData.find(p =>
+            p.name.toLowerCase() === sLower ||
+            (p.name.toLowerCase().includes(sLower.split(' ').pop()) && sLower.includes(p.name.toLowerCase().split(' ').pop()))
           );
-          if (match && match.matches >= 3) {
-            s.form = { goalsPerGame: match.goals_per_game, games: match.matches, goals: match.goals };
+          if (match && match.games >= 3) {
+            s.form = {
+              goalsPerGame: match.goals_per_game, games: match.games, goals: match.goals,
+              shots: match.shots, xg: match.xg, xgPerGame: match.xg_per_game,
+              shotsPerGame: match.shots_per_game, xa: match.xa,
+            };
           }
         });
       }
-    } catch { /* proxy unavailable — continue without form */ }
+    } catch { /* proxy unavailable */ }
   }
 
   // Team xG multiplier — if a team creates more xG than league average (1.3), boost their scorers
@@ -2421,7 +2441,8 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
       const formProb = (1 - Math.exp(-s.form.goalsPerGame)) * 100;
       s.blendedProb = (s.prob * 0.55 + formProb * 0.35) * teamXGmult;
       // Remaining 10% comes from the xG multiplier itself
-      s.formLabel = `${s.form.goalsPerGame.toFixed(2)} gpg (L${s.form.games})`;
+      const xgTag = s.form.xg != null ? ` · xG:${s.form.xg} · ${s.form.shotsPerGame?.toFixed(1) || '?'} shots/g` : '';
+      s.formLabel = `${s.form.goalsPerGame.toFixed(2)} gpg (L${s.form.games})${xgTag}`;
     } else {
       s.blendedProb = s.prob * teamXGmult;
       s.formLabel = null;
