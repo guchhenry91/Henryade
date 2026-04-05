@@ -199,6 +199,7 @@
 
 <div class="tabs">
   <div class="tab active" onclick="showTab('all',event)">All Value Bets</div>
+  <div class="tab" onclick="showTab('safe',event)">💰 Safe Bets</div>
   <div class="tab" onclick="showTab('soccer',event)">⚽ Soccer</div>
   <div class="tab" onclick="showTab('nba',event)">🏀 NBA</div>
   <div class="tab" onclick="showTab('nfl',event)">🏈 NFL</div>
@@ -207,6 +208,7 @@
   <div class="tab" onclick="showTab('history',event)">📊 History</div>
 </div>
 
+<div id="tab-safe"   class="tab-content"><div class="loading" style="color:#555">Load sport tabs first — safe picks collected automatically</div></div>
 <div id="tab-all"    class="tab-content active"><div class="loading" id="all-loading">⏳ Waking up — fetching soccer odds...</div></div>
 <div id="tab-soccer" class="tab-content"><div class="loading">⏳ Waking up — fetching soccer odds...</div></div>
 <div id="tab-nba"    class="tab-content"><div class="loading" style="color:#555">Click 🏀 NBA tab to load picks</div></div>
@@ -239,6 +241,7 @@ const TOKEN_BLOCK  = 3;    // block all live API calls below this — serve cach
 let   _tokensLeft  = null; // updated on every response header
 const allValueBets = [];
 const allPropBets  = [];   // slate-wide best prop pick per game, all sports
+const allSafePicks = [];   // collected from all sports for the 💰 Safe Bets tab
 const loadedTabs = new Set();
 const tabLoadedAt = {}; // tracks when each tab last loaded, for "X mins ago" display
 
@@ -1580,13 +1583,15 @@ function showTab(name, e) {
     loadedTabs.add(name);
     if (name === 'soccer') {
       document.getElementById('tab-soccer').innerHTML = '<div class="loading">⚽ Fetching odds & form data...</div>';
-      buildSoccer(false).then(() => { buildAllTab(); });
+      buildSoccer(false).then(() => { buildAllTab(); buildSafeTab(); });
+    } else if (name === 'safe') {
+      buildSafeTab();
     } else if (name === 'history') {
       buildHistoryTab();
     } else if (SPORT_TABS[name]) {
       const sportName = SPORT_TABS[name].label || name.toUpperCase();
       document.getElementById('tab-' + name).innerHTML = `<div class="loading">${sportName} — Fetching odds & player stats...</div>`;
-      buildSportTab(name, false).then(() => { buildAllTab(); });
+      buildSportTab(name, false).then(() => { buildAllTab(); buildSafeTab(); });
     }
   }
 }
@@ -2220,6 +2225,14 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
 
     return true;
   }).slice(0, 3);
+
+  // Collect safe picks for the global 💰 Safe Bets tab
+  safePicks.forEach(p => {
+    allSafePicks.push({
+      ...p, sportLabel, matchLabel,
+      generatedAt: Date.now(),
+    });
+  });
 
   // Push top pick to slate-wide collection + persist ALL shown picks to history
   if (sportLabel) {
@@ -3149,6 +3162,61 @@ function buildHistoryTab() {
 }
 
 // ── ALL VALUE BETS ────────────────────────────────────────────────────────────
+function buildSafeTab() {
+  const container = document.getElementById('tab-safe');
+  if (!allSafePicks.length) {
+    container.innerHTML = `<div class="no-games" style="padding:40px;text-align:center">
+      <div style="font-size:1.5em;margin-bottom:12px">💰</div>
+      <div style="color:#555;font-size:0.9em">No safe picks found yet.</div>
+      <div style="color:#333;font-size:0.78em;margin-top:8px">Load NBA, NHL, or MLB tabs first — safe picks are collected from all sports automatically.<br>A pick needs 58%+ model probability, 60%+ actual hit rate, and clean data to qualify.</div>
+    </div>`;
+    return;
+  }
+
+  // Sort by model hit probability (highest first)
+  allSafePicks.sort((a, b) => {
+    const aProb = a.c.pick === 'OVER' ? (a.statResult?.hitProbOver || 0) : (a.statResult?.hitProbUnder || 0);
+    const bProb = b.c.pick === 'OVER' ? (b.statResult?.hitProbOver || 0) : (b.statResult?.hitProbUnder || 0);
+    return bProb - aProb;
+  });
+
+  let html = `<div class="hero-section" style="border-color:#00ff8840">
+    <div class="hero-title">💰 SAFE BETS — All Sports (${allSafePicks.length} picks)</div>
+    <p style="color:#555;font-size:0.75em;margin-bottom:14px">Stats + odds + history all agree. These are the most winnable props across all loaded sports.</p>
+    <div class="pick-cards">`;
+
+  allSafePicks.forEach(p => {
+    const stat = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+    const hitProb = p.c.pick === 'OVER' ? (p.statResult?.hitProbOver || 0) : (p.statResult?.hitProbUnder || 0);
+    const hitRate = p.statResult?.actualHitRate != null
+      ? (p.c.pick === 'OVER' ? p.statResult.actualHitRate : (1 - p.statResult.actualHitRate))
+      : null;
+
+    html += `<div class="pick-card best-pick" style="border-color:#00ff8850;background:#0a140a">
+      <div class="pick-card-header">
+        <span style="background:#00ff8820;color:#00ff88;padding:2px 10px;border-radius:12px;font-size:0.7em;font-weight:700;border:1px solid #00ff8860">💰 SAFE</span>
+        <span style="font-size:0.68em;color:#444">${p.sportLabel || ''}</span>
+      </div>
+      <div class="pick-card-player">${p.player}</div>
+      <div class="pick-card-stat">${stat} · ${p.matchLabel || ''}</div>
+      <div class="pick-card-line">${p.line}</div>
+      <div class="pick-card-direction">${pickHtml(p.c.pick)} <span class="pick-card-pct">${p.c.pct}%</span></div>
+      <div style="font-size:0.72em;margin:4px 0;padding:5px 8px;background:#0a0a0a;border:1px solid #1a1a1a;border-radius:6px;display:flex;justify-content:space-between;align-items:center">
+        <span style="color:${p.edge>=5?'#00ff88':p.edge>=0?'#ffcc00':'#ff4444'}">Model: ${(p.modelProb*100).toFixed(0)}% / Book: ${(p.bookProb*100).toFixed(0)}% → <strong>${p.edge>=0?'+':''}${p.edge.toFixed(1)}% edge</strong></span>
+        <span style="color:${p.kellyPct>=3?'#00ff88':p.kellyPct>=1?'#ffcc00':'#555'};font-weight:700">${p.kellyPct>=0.5 ? p.kellyPct.toFixed(1)+'%' : 'No bet'}</span>
+      </div>
+      <div style="font-size:0.72em;padding:5px 8px;background:#00ff8808;border:1px solid #00ff8820;border-radius:6px;margin:4px 0">
+        <div style="color:#00ff88">🎲 ${(hitProb*100).toFixed(0)}% model probability</div>
+        ${hitRate != null ? `<div style="color:#00ff88">✅ Hit in ${(hitRate*100).toFixed(0)}% of last 5 games</div>` : ''}
+        <div style="color:#888">${p.bookCount} books · ${p.statResult?.consistencyTag || ''}</div>
+      </div>
+    </div>`;
+  });
+
+  html += '</div></div>';
+  container.innerHTML = html;
+}
+
 function buildAllTab() {
   const container = document.getElementById('tab-all');
   let html = '';
@@ -3213,6 +3281,7 @@ async function refreshAll(force=false) {
   loadedTabs.clear();
   allValueBets.length = 0;
   allPropBets.length  = 0;
+  allSafePicks.length = 0;
 
   if (force) clearAllCache();
 
@@ -3229,6 +3298,7 @@ async function refreshAll(force=false) {
   loadedTabs.add('soccer');
   await buildSoccer(force);
   buildAllTab();
+  buildSafeTab();
 
   // History tab loads on startup (no API calls, just localStorage)
   buildHistoryTab();
