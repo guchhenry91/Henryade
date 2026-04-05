@@ -1609,9 +1609,9 @@ function updateCacheStatus(){
   const keys = Object.keys(localStorage).filter(k => k.startsWith('bm_') && k !== HISTORY_KEY);
   if (!keys.length) { document.getElementById('cacheStatus').textContent='Cache: empty'; return; }
   try {
-    const entries = keys.map(k => { try { return JSON.parse(localStorage.getItem(k)).ts; } catch { return 0; } });
-    const newest = Math.max(...entries);
-    const ago = Math.round((Date.now() - newest) / 60000);
+    const entries = keys.map(k => { try { return JSON.parse(localStorage.getItem(k)).ts || 0; } catch { return 0; } });
+    const newest = Math.max(...entries.filter(t => t > 0));
+    const ago = newest ? Math.round((Date.now() - newest) / 60000) : '?';
     const left = _tokensLeft !== null ? ` · ${_tokensLeft} tokens left` : '';
     document.getElementById('cacheStatus').textContent = `Cache: ${ago}m ago (${keys.length})${left}`;
   } catch { document.getElementById('cacheStatus').textContent=`Cache: ${keys.length} stored`; }
@@ -2005,13 +2005,15 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       // ESPN gamelog will still apply home/away split when available
       return getStatSignal(leagueShort, p.player, p.market, p.line, null);
     })),
-    Promise.all(candidates.map(p => espnCfg ? espnAthleteId(espnCfg.sport, espnCfg.league, p.player) : Promise.resolve(null))),
+    // Skip ESPN athlete lookup for sports that use proxy (NHL CORS blocked on ESPN)
+    Promise.all(candidates.map(p => (espnCfg && leagueShort !== 'nhl') ? espnAthleteId(espnCfg.sport, espnCfg.league, p.player) : Promise.resolve(null))),
   ]);
 
-  // Fetch injury status + rest factor for each athlete in parallel
+  // Fetch injury status + rest factor — skip for NHL (ESPN CORS blocked, proxy handles rest)
+  const skipEspnCalls = leagueShort === 'nhl';
   const [injuryStatuses, restFactors] = await Promise.all([
-    Promise.all(athleteIds.map(id => espnCfg && id ? getPlayerStatus(espnCfg.sport, espnCfg.league, id) : Promise.resolve(null))),
-    Promise.all(athleteIds.map(id => espnCfg && id && gameDate ? getRestFactor(espnCfg.sport, espnCfg.league, id, gameDate) : Promise.resolve(null))),
+    Promise.all(athleteIds.map(id => espnCfg && id && !skipEspnCalls ? getPlayerStatus(espnCfg.sport, espnCfg.league, id) : Promise.resolve(null))),
+    Promise.all(athleteIds.map(id => espnCfg && id && gameDate && !skipEspnCalls ? getRestFactor(espnCfg.sport, espnCfg.league, id, gameDate) : Promise.resolve(null))),
   ]);
 
   const injuredNames = candidates
