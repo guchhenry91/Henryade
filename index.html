@@ -2226,12 +2226,15 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     return true;
   }).slice(0, 3);
 
-  // Collect safe picks for the global 💰 Safe Bets tab
+  // Collect safe picks for the global 💰 Safe Bets tab (dedup by player+market+match)
   safePicks.forEach(p => {
-    allSafePicks.push({
-      ...p, sportLabel, matchLabel,
-      generatedAt: Date.now(),
-    });
+    const dedupKey = `${p.player}_${p.market}_${matchLabel}`;
+    if (!allSafePicks.find(x => `${x.player}_${x.market}_${x.matchLabel}` === dedupKey)) {
+      allSafePicks.push({
+        ...p, sportLabel, matchLabel,
+        generatedAt: Date.now(),
+      });
+    }
   });
 
   // Push top pick to slate-wide collection + persist ALL shown picks to history
