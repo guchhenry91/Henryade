@@ -1887,96 +1887,39 @@ function impliedTotalGoals(overOdds, underOdds) {
 }
 
 // Fetch ESPN team recent form — last 5 results, returns { wins, draws, losses, goalsFor, goalsAgainst }
+// Map ESPN league codes to proxy league keys
+const SOCCER_LEAGUE_MAP = {
+  'eng.1': 'epl', 'eng.fa': 'fa_cup',
+  'esp.1': 'laliga', 'uefa.champions': 'ucl',
+};
+
 async function fetchTeamForm(sport, league, teamName) {
-  try {
-    const q   = encodeURIComponent(teamName.split(' ').slice(-1)[0]); // search by last word of team name
-    const res = await fetch(`https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/teams?limit=10&search=${q}`);
-    if (!res.ok) return null;
-    const data  = await res.json();
-    const teams = data.sports?.[0]?.leagues?.[0]?.teams || [];
-    const team  = teams.find(t => {
-      const n = (t.team?.displayName || t.team?.name || '').toLowerCase();
-      return n.includes(teamName.toLowerCase().split(' ').pop().toLowerCase());
-    });
-    if (!team?.team?.id) return null;
-
-    const id     = team.team.id;
-    const evRes  = await fetch(`https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/teams/${id}/schedule`);
-    if (!evRes.ok) return null;
-    const evData = await evRes.json();
-    const events = (evData.events || []).filter(e => e.competitions?.[0]?.status?.type?.completed).slice(-10);
-    if (!events.length) return null;
-
-    let wins=0, draws=0, losses=0, gf=0, ga=0;
-    let homeGF=0, homeGA=0, homeGames=0, awayGF=0, awayGA=0, awayGames=0;
-    // Collect event IDs for synthetic xG (shot stats from summaries)
-    const eventIds = [];
-    for (const e of events) {
-      const comp = e.competitions?.[0];
-      const myComp   = comp?.competitors?.find(c => c.id === String(id));
-      const oppComp  = comp?.competitors?.find(c => c.id !== String(id));
-      if (!myComp || !oppComp) continue;
-      const myScore  = parseInt(myComp.score  || 0);
-      const oppScore = parseInt(oppComp.score || 0);
-      gf += myScore; ga += oppScore;
-      if      (myComp.winner)  wins++;
-      else if (oppComp.winner) losses++;
-      else                     draws++;
-      if (myComp.homeAway === 'home') { homeGF += myScore; homeGA += oppScore; homeGames++; }
-      else                            { awayGF += myScore; awayGA += oppScore; awayGames++; }
-      if (e.id) eventIds.push({ eid: e.id, isHome: myComp.homeAway === 'home' });
-    }
-
-    // Fetch synthetic xG from shot stats (last 6 games max to limit API calls)
-    let totalSynXG = 0, totalSynXGA = 0, synGames = 0;
-    let homeSynXG = 0, homeSynGames = 0, awaySynXG = 0, awaySynGames = 0;
-    const xgBatch = eventIds.slice(-1); // 1 most recent game for xG — fast load, still useful signal
-    for (const { eid, isHome } of xgBatch) {
+  // Use Render proxy for soccer (TheSportsDB real-time data)
+  if (sport === 'soccer') {
+    try {
+      const proxyLeague = SOCCER_LEAGUE_MAP[league] || 'epl';
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 60000);
+      let res;
       try {
-        const sumRes = await fetch(
-          `https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/summary?event=${eid}`
-        );
-        if (!sumRes.ok) continue;
-        const sum = await sumRes.json();
-        const bxTeams = sum?.boxscore?.teams || [];
-        // Find our team and opponent in boxscore
-        for (const bxTeam of bxTeams) {
-          const statsMap = {};
-          (bxTeam.statistics || []).forEach(s => { statsMap[s.name] = parseFloat(s.displayValue) || 0; });
-          const shots = statsMap.totalShots || 0;
-          const onTarget = statsMap.shotsOnTarget || 0;
-          const offTarget = shots - onTarget;
-          // Synthetic xG: on-target shots × 0.30 + off-target × 0.03
-          const synXG = onTarget * 0.30 + offTarget * 0.03;
-          const isMyTeam = bxTeam.team?.id === String(id);
-          if (isMyTeam) {
-            totalSynXG += synXG; synGames++;
-            if (isHome) { homeSynXG += synXG; homeSynGames++; }
-            else        { awaySynXG += synXG; awaySynGames++; }
-          } else {
-            totalSynXGA += synXG;
-          }
-        }
-      } catch { /* skip this game's stats */ }
-    }
-
-    const n = wins + draws + losses;
-    const synXGpg  = synGames  ? totalSynXG / synGames  : null;
-    const synXGApg = synGames  ? totalSynXGA / synGames : null;
-    return n ? {
-      wins, draws, losses, goalsFor: gf/n, goalsAgainst: ga/n, games: n,
-      homeGoalsFor: homeGames ? homeGF/homeGames : gf/n,
-      homeGoalsAg:  homeGames ? homeGA/homeGames : ga/n,
-      awayGoalsFor: awayGames ? awayGF/awayGames : gf/n,
-      awayGoalsAg:  awayGames ? awayGA/awayGames : ga/n,
-      homeGames, awayGames,
-      // Synthetic xG from ESPN shot data
-      synXG: synXGpg, synXGA: synXGApg,
-      homeSynXG: homeSynGames ? homeSynXG / homeSynGames : synXGpg,
-      awaySynXG: awaySynGames ? awaySynXG / awaySynGames : synXGpg,
-      synGames,
-    } : null;
-  } catch { return null; }
+        res = await fetch(`${NBA_PROXY}/api/soccer/team/${encodeURIComponent(teamName)}/form?league=${proxyLeague}`, { signal: ctrl.signal });
+      } finally { clearTimeout(timer); }
+      if (!res || !res.ok) return null;
+      const d = await res.json();
+      if (d.error) return null;
+      return {
+        wins: d.wins, draws: d.draws, losses: d.losses,
+        goalsFor: d.goals_for, goalsAgainst: d.goals_against, games: d.games,
+        homeGoalsFor: d.home_goals_for, homeGoalsAg: d.home_goals_ag,
+        awayGoalsFor: d.away_goals_for, awayGoalsAg: d.away_goals_ag,
+        homeGames: d.home_games, awayGames: d.away_games,
+        synXG: null, synXGA: null, homeSynXG: null, awaySynXG: null, synGames: 0,
+        latestDate: d.latest_date,
+      };
+    } catch { return null; }
+  }
+  // Non-soccer: shouldn't reach here (form only used for soccer)
+  return null;
 }
 function gameDate(iso) {
   return displayDateET(iso) + ' ET';
