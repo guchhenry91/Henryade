@@ -2034,11 +2034,25 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
 
   if (!props.length) return injuryNote + `<div class="no-games">No qualifying player props.</div>`;
 
+  // ── SAFE PICKS: the easiest wins — clean data, stats+odds agree, high hit rate ──
+  const safePicks = scored.filter(p =>
+    p.dataQuality === 'clean' &&             // no data warnings
+    !p.flipped &&                             // stats and odds agree (same direction)
+    p.statResult &&                           // has ESPN stats
+    p.statResult.hitProbOver != null &&        // has distribution data
+    (p.c.pick === 'OVER' ? p.statResult.hitProbOver : p.statResult.hitProbUnder) >= 0.60 && // 60%+ model probability
+    p.statResult.actualHitRate != null &&
+    (p.c.pick === 'OVER' ? p.statResult.actualHitRate : (1 - p.statResult.actualHitRate)) >= 0.60 && // 60%+ actual hit rate in L5
+    p.bookCount >= 3 &&                       // 3+ books agree
+    p.vig <= FAIR_VIG                         // fair line (low vig)
+  ).slice(0, 3);
+
   // Push top pick to slate-wide collection + persist ALL shown picks to history
   if (sportLabel) {
-    props.forEach((p, i) => {
+    // Save safe picks first, then regular picks
+    const allShownPicks = [...safePicks, ...props.filter(p => !safePicks.includes(p))];
+    allShownPicks.forEach((p, i) => {
       const pick = {
-        // Dedup key: same player+market on same calendar day = same pick, don't double-save
         id:        `${todayET()}_${p.player}_${p.market}`.replace(/\W+/g,'_'),
         date:      new Date().toISOString(),
         sport:     sportLabel, match: matchLabel,
@@ -2047,15 +2061,45 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
         pct:       p.c.pct,   conf:   p.c.conf,
         score:     p.score,   bookCount: p.bookCount, vig: p.vig,
         result:    null,
+        safe:      safePicks.includes(p),
       };
-      if (i === 0) allPropBets.push(pick);  // slate-wide All tab: top pick only
-      savePickToHistory(pick);              // history: all 5 picks tracked
+      if (i === 0) allPropBets.push(pick);
+      savePickToHistory(pick);
     });
   }
 
-  const generatedAt = Date.now(); // timestamp for staleness detection
+  const generatedAt = Date.now();
 
-  let html = injuryNote + `<div class="section-hdr">🎯 TOP PICKS — ${matchLabel}</div>
+  // ── Render SAFE PICKS section first (if any) ──
+  let html = injuryNote;
+  if (safePicks.length) {
+    html += `<div class="section-hdr" style="color:#00ff88;border-bottom-color:#00ff8830">💰 SAFE PICKS — ${matchLabel} <span style="font-size:0.85em;color:#00ff8880">(stats + odds + history all agree)</span></div>
+      <div class="pick-cards">`;
+    safePicks.forEach(p => {
+      const stat = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+      const hitProb = p.c.pick === 'OVER' ? p.statResult.hitProbOver : p.statResult.hitProbUnder;
+      const hitRate = p.c.pick === 'OVER' ? p.statResult.actualHitRate : (1 - p.statResult.actualHitRate);
+      html += `<div class="pick-card best-pick" style="border-color:#00ff8850;background:#0a140a" data-edge="${p.edge.toFixed(1)}" data-score="${p.score.toFixed(3)}" data-dir="${p.c.pick}">
+        <div class="pick-card-header">
+          <span style="background:#00ff8820;color:#00ff88;padding:2px 10px;border-radius:12px;font-size:0.7em;font-weight:700;border:1px solid #00ff8860">💰 SAFE</span>
+          ${badge(p.c.conf)}
+        </div>
+        <div class="pick-card-player">${p.player}</div>
+        <div class="pick-card-stat">${stat}</div>
+        <div class="pick-card-line">${p.line}</div>
+        <div class="pick-card-direction">${pickHtml(p.c.pick)} <span class="pick-card-pct">${p.c.pct}%</span></div>
+        <div style="font-size:0.72em;padding:5px 8px;background:#00ff8808;border:1px solid #00ff8820;border-radius:6px;margin:4px 0">
+          <div style="color:#00ff88">🎲 ${(hitProb*100).toFixed(0)}% model probability</div>
+          <div style="color:#00ff88">✅ Hit in ${(hitRate*100).toFixed(0)}% of last 5 games</div>
+          <div style="color:#888">${p.bookCount} books agree · ${(p.vig*100).toFixed(1)}% vig</div>
+        </div>
+      </div>`;
+    });
+    html += '</div>';
+  }
+
+  // ── Regular picks section ──
+  html += `<div class="section-hdr">🎯 TOP PICKS — ${matchLabel}</div>
     <div class="pick-cards">`;
 
   props.forEach((p, i) => {
