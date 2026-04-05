@@ -361,9 +361,124 @@ async function espnAthleteId(sport, league, playerName) {
   } catch { _athleteIdCache[cacheKey] = null; return null; }
 }
 
-// Fetch gamelog from ESPN common/v3 endpoint — works for all sports.
+// ── Official MLB Stats API (statsapi.mlb.com) — real-time, no key needed ────
+// Returns per-game entries { val, isHome, gameDate } or null
+const _mlbPlayerCache = {};
+async function mlbOfficialGamelog(playerName, statKey) {
+  try {
+    // Search for player
+    const cacheKey = `mlb__${playerName}`;
+    let playerId = _mlbPlayerCache[cacheKey];
+    if (playerId === undefined) {
+      const searchRes = await fetch(`https://statsapi.mlb.com/api/v1/people/search?names=${encodeURIComponent(playerName)}&sportIds=1`);
+      if (!searchRes.ok) return null;
+      const searchData = await searchRes.json();
+      const match = (searchData.people || []).find(p => {
+        const n = (p.fullName || '').toLowerCase();
+        return n === playerName.toLowerCase() || n.includes(playerName.toLowerCase().split(' ').pop());
+      });
+      playerId = match ? match.id : null;
+      _mlbPlayerCache[cacheKey] = playerId;
+    }
+    if (!playerId) return null;
+
+    // Determine hitting vs pitching group
+    const isPitcher = statKey === 'strikeouts' && (statKey === 'earnedRuns' || true); // pitcher markets
+    const group = ['strikeouts', 'earnedRuns', 'walks'].includes(statKey) && !['hits','homeRuns','rbi','runs','totalBases'].includes(statKey)
+      ? 'pitching' : 'hitting';
+    // Actually: for batter_strikeouts the group is hitting, for pitcher_strikeouts it's pitching
+    // We can't tell from statKey alone — try hitting first, if no data try pitching
+
+    for (const g of ['hitting', 'pitching']) {
+      const res = await fetch(`https://statsapi.mlb.com/api/v1/people/${playerId}/stats?stats=gameLog&season=2026&group=${g}`);
+      if (!res.ok) continue;
+      const data = await res.json();
+      const splits = (data.stats || [{}])[0].splits || [];
+      if (!splits.length) continue;
+
+      // Map our stat keys to MLB API keys
+      const keyMap = {
+        hits: 'hits', homeRuns: 'homeRuns', RBIs: 'rbi', runs: 'runs',
+        totalBases: 'totalBases', strikeouts: 'strikeOuts', walks: 'baseOnBalls',
+        earnedRuns: 'earnedRuns', hitsRunsRBIs: '_composite_hrr',
+      };
+      const mlbKey = keyMap[statKey];
+      if (!mlbKey && statKey !== 'hitsRunsRBIs') continue;
+
+      const entries = [];
+      for (const s of splits) {
+        const stat = s.stat || {};
+        let val;
+        if (statKey === 'hitsRunsRBIs') {
+          val = (stat.hits || 0) + (stat.runs || 0) + (stat.rbi || 0);
+        } else {
+          val = stat[mlbKey];
+        }
+        if (val == null) continue;
+        val = parseFloat(val);
+        if (isNaN(val)) continue;
+        const isHome = s.isHome || false;
+        const gameDate = s.date || null;
+        entries.push({ val, isHome, gameDate });
+      }
+      if (entries.length) return entries;
+    }
+    return null;
+  } catch { return null; }
+}
+
+// ── Official NHL Stats API (api-web.nhle.com) — real-time, no key needed ────
+const _nhlPlayerCache = {};
+async function nhlOfficialGamelog(playerName, statKey) {
+  try {
+    // Search for player
+    const cacheKey = `nhl__${playerName}`;
+    let playerId = _nhlPlayerCache[cacheKey];
+    if (playerId === undefined) {
+      const lastName = playerName.split(' ').pop();
+      const searchRes = await fetch(`https://search.d3.nhle.com/api/v1/search/player?culture=en-us&limit=5&q=${encodeURIComponent(lastName)}`);
+      if (!searchRes.ok) return null;
+      const players = await searchRes.json();
+      const pLower = playerName.toLowerCase();
+      const match = players.find(p => (p.name || '').toLowerCase() === pLower)
+        || players.find(p => (p.name || '').toLowerCase().includes(lastName.toLowerCase()));
+      playerId = match ? match.playerId : null;
+      _nhlPlayerCache[cacheKey] = playerId;
+    }
+    if (!playerId) return null;
+
+    // Fetch gamelog
+    const res = await fetch(`https://api-web.nhle.com/v1/player/${playerId}/game-log/20252026/2`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    const games = data.gameLog || [];
+    if (!games.length) return null;
+
+    // Map our stat keys to NHL API keys
+    const keyMap = {
+      goals: 'goals', assists: 'assists', points: 'points',
+      shotsTotal: 'shots', blockedShots: 'blockedShots',
+      powerPlayGoals: 'powerPlayGoals', powerPlayPoints: 'powerPlayPoints',
+    };
+    const nhlKey = keyMap[statKey];
+    if (!nhlKey) return null;
+
+    const entries = [];
+    for (const g of games) {
+      // Skip games with 0 TOI (DNP/scratched)
+      if (g.toi === '00:00' || g.toi === '0:00') continue;
+      const val = parseFloat(g[nhlKey]);
+      if (isNaN(val)) continue;
+      const isHome = g.homeRoadFlag === 'H';
+      const gameDate = g.gameDate || null;
+      entries.push({ val, isHome, gameDate });
+    }
+    return entries.length ? entries : null;
+  } catch { return null; }
+}
+
+// Fetch gamelog from ESPN common/v3 endpoint — fallback for NBA/NFL.
 // Returns per-game entries with stat value and home/away flag, or null.
-// Handles compound stats like "9-21" (made-attempted) by taking the first number.
 const _gamelogRawCache = {};
 async function espnPlayerGamelog(sport, league, athleteId, statKey) {
   try {
@@ -499,17 +614,26 @@ function probOverLine(mean, variance, line) {
 }
 
 // Master stats fetcher — negative binomial distribution + hot/cold streak + home/away split
-// Returns { signal, hitProb, avg, variance, ... } with distribution-based probability
+// Uses official MLB/NHL APIs (real-time) with ESPN v3 as fallback for NBA/NFL
 async function getStatSignal(leagueShort, playerName, market, line, isHomeGame = null) {
   const cfg     = ESPN_LEAGUE_CFG[leagueShort];
   if (!cfg) return null;
   const statKey = (ESPN_STAT_MAP[market] || {})[leagueShort];
   if (!statKey) return null;
 
-  const athleteId = await espnAthleteId(cfg.sport, cfg.league, playerName);
-  if (!athleteId) return null;
-
-  const entries = await espnPlayerGamelog(cfg.sport, cfg.league, athleteId, statKey);
+  // ── Try official real-time APIs first (MLB + NHL), fallback to ESPN ──
+  let entries = null;
+  if (leagueShort === 'mlb') {
+    entries = await mlbOfficialGamelog(playerName, statKey);
+  } else if (leagueShort === 'nhl') {
+    entries = await nhlOfficialGamelog(playerName, statKey);
+  }
+  // Fallback to ESPN for NBA/NFL or if official API failed
+  if (!entries || !entries.length) {
+    const athleteId = await espnAthleteId(cfg.sport, cfg.league, playerName);
+    if (!athleteId) return null;
+    entries = await espnPlayerGamelog(cfg.sport, cfg.league, athleteId, statKey);
+  }
   if (!entries || !entries.length) return null;
 
   const vals    = entries.map(e => e.val);
