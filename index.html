@@ -200,6 +200,7 @@
 <div class="tabs">
   <div class="tab active" onclick="showTab('all',event)">All Value Bets</div>
   <div class="tab" onclick="showTab('safe',event)">💰 Safe Bets</div>
+  <div class="tab" onclick="showTab('parlay',event)">🎰 Parlays</div>
   <div class="tab" onclick="showTab('soccer',event)">⚽ Soccer</div>
   <div class="tab" onclick="showTab('nba',event)">🏀 NBA</div>
   <div class="tab" onclick="showTab('nfl',event)">🏈 NFL</div>
@@ -209,6 +210,7 @@
 </div>
 
 <div id="tab-safe"   class="tab-content"><div class="loading" style="color:#555">Load sport tabs first — safe picks collected automatically</div></div>
+<div id="tab-parlay" class="tab-content"><div class="loading" style="color:#555">Load sport tabs first — parlays built from safe picks</div></div>
 <div id="tab-all"    class="tab-content active"><div class="loading" id="all-loading">⏳ Waking up — fetching soccer odds...</div></div>
 <div id="tab-soccer" class="tab-content"><div class="loading">⏳ Waking up — fetching soccer odds...</div></div>
 <div id="tab-nba"    class="tab-content"><div class="loading" style="color:#555">Click 🏀 NBA tab to load picks</div></div>
@@ -1589,15 +1591,17 @@ function showTab(name, e) {
     loadedTabs.add(name);
     if (name === 'soccer') {
       document.getElementById('tab-soccer').innerHTML = '<div class="loading">⚽ Fetching odds & form data...</div>';
-      buildSoccer(false).then(() => { buildAllTab(); buildSafeTab(); });
+      buildSoccer(false).then(() => { buildAllTab(); buildSafeTab(); buildParlayTab(); });
     } else if (name === 'safe') {
       buildSafeTab();
+    } else if (name === 'parlay') {
+      buildParlayTab();
     } else if (name === 'history') {
       buildHistoryTab();
     } else if (SPORT_TABS[name]) {
       const sportName = SPORT_TABS[name].label || name.toUpperCase();
       document.getElementById('tab-' + name).innerHTML = `<div class="loading">${sportName} — Fetching odds & player stats...</div>`;
-      buildSportTab(name, false).then(() => { buildAllTab(); buildSafeTab(); });
+      buildSportTab(name, false).then(() => { buildAllTab(); buildSafeTab(); buildParlayTab(); });
     }
   }
 }
@@ -3233,6 +3237,159 @@ function buildSafeTab() {
   container.innerHTML = html;
 }
 
+function buildParlayTab() {
+  const container = document.getElementById('tab-parlay');
+
+  // Only use safe picks — same strict filter already applied
+  if (allSafePicks.length < 2) {
+    container.innerHTML = `<div class="no-games" style="padding:40px;text-align:center">
+      <div style="font-size:1.5em;margin-bottom:12px">🎰</div>
+      <div style="color:#555;font-size:0.9em">Need at least 2 safe picks to build parlays.</div>
+      <div style="color:#333;font-size:0.78em;margin-top:8px">Load more sport tabs — parlays are built from 💰 Safe Bets only.</div>
+    </div>`;
+    return;
+  }
+
+  // Sort safe picks by model hit probability (highest first)
+  const picks = [...allSafePicks].sort((a, b) => {
+    const aProb = a.c.pick === 'OVER' ? (a.statResult?.hitProbOver || 0) : (a.statResult?.hitProbUnder || 0);
+    const bProb = b.c.pick === 'OVER' ? (b.statResult?.hitProbOver || 0) : (b.statResult?.hitProbUnder || 0);
+    return bProb - aProb;
+  });
+
+  // Rule: only 1 pick per game (correlated picks in same game kill parlays)
+  const usedMatches = new Set();
+  const uncorrelated = picks.filter(p => {
+    if (usedMatches.has(p.matchLabel)) return false;
+    usedMatches.add(p.matchLabel);
+    return true;
+  });
+
+  if (uncorrelated.length < 2) {
+    container.innerHTML = `<div class="no-games" style="padding:40px;text-align:center">
+      <div style="font-size:1.5em;margin-bottom:12px">🎰</div>
+      <div style="color:#555;font-size:0.9em">Need safe picks from 2+ different games for parlays.</div>
+      <div style="color:#333;font-size:0.78em;margin-top:8px">Parlays use 1 pick per game to avoid correlated legs.</div>
+    </div>`;
+    return;
+  }
+
+  // Build parlay combos: 2-leg, 3-leg, 4-leg (max 5)
+  const parlays = [];
+
+  // Helper: calculate combined probability and odds
+  function buildParlay(legs) {
+    let combinedProb = 1;
+    let combinedOdds = 1;
+    legs.forEach(p => {
+      const hitProb = p.c.pick === 'OVER' ? (p.statResult?.hitProbOver || 0.5) : (p.statResult?.hitProbUnder || 0.5);
+      combinedProb *= hitProb;
+      const odds = p.c.pick === 'OVER' ? p.bestOver : p.bestUnder;
+      combinedOdds *= (odds || 1.5);
+    });
+    // Implied parlay probability from bookmaker
+    const impliedProb = 1 / combinedOdds;
+    const edge = ((combinedProb - impliedProb) * 100);
+    return { legs, combinedProb, combinedOdds, impliedProb, edge };
+  }
+
+  // 2-leg parlays (top 3 combinations)
+  if (uncorrelated.length >= 2) {
+    for (let i = 0; i < Math.min(uncorrelated.length, 4); i++) {
+      for (let j = i + 1; j < Math.min(uncorrelated.length, 5); j++) {
+        parlays.push(buildParlay([uncorrelated[i], uncorrelated[j]]));
+      }
+    }
+  }
+
+  // 3-leg parlay (top 3 picks)
+  if (uncorrelated.length >= 3) {
+    parlays.push(buildParlay(uncorrelated.slice(0, 3)));
+  }
+
+  // 4-leg parlay (top 4 picks)
+  if (uncorrelated.length >= 4) {
+    parlays.push(buildParlay(uncorrelated.slice(0, 4)));
+  }
+
+  // Sort by edge (best parlay first), filter out negative edge
+  parlays.sort((a, b) => b.edge - a.edge);
+  const goodParlays = parlays.filter(p => p.edge > 0 && p.combinedProb >= 0.15);
+
+  let html = `<div class="hero-section" style="border-color:#ffcc0040">
+    <div class="hero-title">🎰 SMART PARLAYS — Built from Safe Picks Only</div>
+    <p style="color:#555;font-size:0.75em;margin-bottom:14px">
+      Each leg passes the strict safe filter (65%+ model prob, 75%+ hit rate, consistent, clean data).
+      Only 1 pick per game (no correlated legs). Sorted by combined edge.
+    </p>`;
+
+  if (!goodParlays.length) {
+    html += `<div class="no-games">No profitable parlays found. Need more safe picks from different games.</div>`;
+  }
+
+  goodParlays.forEach((parlay, idx) => {
+    const legs = parlay.legs;
+    const probPct = (parlay.combinedProb * 100).toFixed(1);
+    const implPct = (parlay.impliedProb * 100).toFixed(1);
+    const edgePct = parlay.edge.toFixed(1);
+    const oddsStr = parlay.combinedOdds.toFixed(2);
+
+    // Confidence rating based on combined probability
+    const rating = parlay.combinedProb >= 0.45 ? '🟢 Strong'
+      : parlay.combinedProb >= 0.30 ? '🟡 Decent'
+      : parlay.combinedProb >= 0.18 ? '🟠 Risky'
+      : '🔴 Long shot';
+
+    html += `<div class="match-card" style="border-color:${parlay.edge>=10?'#00ff8840':parlay.edge>=5?'#ffcc0030':'#1a1a1a'}">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <div>
+          <span style="color:#ffcc00;font-weight:700;font-size:0.9em">${legs.length}-Leg Parlay</span>
+          <span style="color:#444;font-size:0.75em;margin-left:8px">${rating}</span>
+        </div>
+        <div style="text-align:right">
+          <div style="color:#ffcc00;font-weight:700;font-size:1.1em">@ ${oddsStr}</div>
+          <div style="color:#444;font-size:0.7em">£10 wins £${(10 * parlay.combinedOdds - 10).toFixed(2)}</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;margin-bottom:10px;flex-wrap:wrap">
+        <div style="background:#0a0f0a;padding:6px 12px;border-radius:6px;border:1px solid #161c16;font-size:0.78em">
+          <span style="color:#888">Model:</span> <strong style="color:#00ff88">${probPct}%</strong>
+        </div>
+        <div style="background:#0a0f0a;padding:6px 12px;border-radius:6px;border:1px solid #161c16;font-size:0.78em">
+          <span style="color:#888">Book:</span> <strong style="color:#ffcc00">${implPct}%</strong>
+        </div>
+        <div style="background:#0a0f0a;padding:6px 12px;border-radius:6px;border:1px solid ${parlay.edge>=5?'#00ff8830':'#161c16'};font-size:0.78em">
+          <span style="color:#888">Edge:</span> <strong style="color:${parlay.edge>=5?'#00ff88':'#ffcc00'}">${parlay.edge>=0?'+':''}${edgePct}%</strong>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid #111;padding-top:10px">`;
+
+    legs.forEach((p, i) => {
+      const stat = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+      const hitProb = p.c.pick === 'OVER' ? (p.statResult?.hitProbOver || 0) : (p.statResult?.hitProbUnder || 0);
+      const odds = p.c.pick === 'OVER' ? p.bestOver : p.bestUnder;
+      html += `<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;${i<legs.length-1?'border-bottom:1px solid #0d0d0d':''}">
+        <div>
+          <span style="color:#ddd;font-weight:600;font-size:0.82em">${p.player}</span>
+          <span style="color:#444;font-size:0.72em"> · ${stat} ${p.line} ${p.c.pick}</span>
+          <div style="font-size:0.68em;color:#555">${p.sportLabel || ''} · ${p.matchLabel || ''}</div>
+        </div>
+        <div style="text-align:right">
+          <div style="color:#00ff88;font-size:0.78em;font-weight:600">${(hitProb*100).toFixed(0)}%</div>
+          <div style="color:#ffcc00;font-size:0.7em">${odds ? odds.toFixed(2) : '?'}</div>
+        </div>
+      </div>`;
+    });
+
+    html += `</div></div>`;
+  });
+
+  html += '</div>';
+  container.innerHTML = html;
+}
+
 function buildAllTab() {
   const container = document.getElementById('tab-all');
   let html = '';
@@ -3315,6 +3472,7 @@ async function refreshAll(force=false) {
   await buildSoccer(force);
   buildAllTab();
   buildSafeTab();
+  buildParlayTab();
 
   // History tab loads on startup (no API calls, just localStorage)
   buildHistoryTab();
