@@ -2181,6 +2181,18 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     .filter(p => parseFloat(p.c.pct) <= 80) // raised from 72 — some 73-80% picks have genuine edge
     // Removed hard 53% floor — score threshold (0.50) and edge already filter bad picks
     .filter(p => p.score >= 0.25) // post-regression threshold: shows quality picks without over-filtering
+    // ── Hard gate: block picks with critical data quality issues ──
+    .filter(p => {
+      if (p.dataQuality === 'danger') return false; // 2+ flags = kill
+      // Block specific critical flags even with only 1
+      if (p.dataFlags && p.dataFlags.some(f =>
+        /stats data \d+d old/i.test(f) && parseInt(f.match(/(\d+)d/)?.[1]) >= 7 ||  // 7d+ stale stats
+        /only [12] games? of data/i.test(f) ||                                       // 1-2 games only
+        /edge \+\d+% is unusually high/i.test(f) ||                                  // edge 20%+ suspicious
+        /no player stats loaded/i.test(f)                                             // no stats at all
+      )) return false;
+      return true;
+    })
     .sort((a, b) => b.score - a.score);
 
   // Drop LOW confidence picks entirely — 169-pick data shows 14.3% win rate (1W/6L).
