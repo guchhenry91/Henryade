@@ -2206,30 +2206,35 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
 
   if (!props.length) return injuryNote + `<div class="no-games">No qualifying player props.</div>`;
 
-  // ── SAFE PICKS: the easiest wins — clean data, stats+odds agree, high hit rate ──
+  // ── SAFE PICKS: STRICT — only the most winnable props. Previous 2/4 rate was too loose. ──
   const safePicks = scored.filter(p => {
-    // Safe pick criteria — real-time data makes some checks less strict
-    if (!p.statResult) return false;                    // must have stats
-    if (p.statResult.hitProbOver == null) return false;  // must have distribution data
-    if (p.bookCount < 2) return false;                  // 2+ books agree (relaxed from 3)
-    if (p.vig < 0) return false;                        // no negative vig (broken odds)
-    if (p.vig > MAX_VIG) return false;                  // not over max vig
-    if (p.edge > 25) return false;                      // suspiciously high edge
+    if (!p.statResult) return false;                     // must have stats
+    if (p.statResult.hitProbOver == null) return false;   // must have distribution data
+    if (p.statResult.actualHitRate == null) return false; // must have actual hit rate
+    if (p.bookCount < 3) return false;                   // 3+ books agree (tightened from 2)
+    if (p.vig < 0) return false;                         // no negative vig
+    if (p.vig > 0.10) return false;                      // vig under 10% (tightened from MAX_VIG 15%)
+    if (p.edge > 18) return false;                       // edge under 18% (tightened from 25%)
+    if (p.edge < 1) return false;                        // must have positive edge
+    if (p.dataQuality === 'danger') return false;        // no danger-flagged picks
+    if (p.statResult.hasDataGap) return false;           // no gapped data
 
-    // Model probability must be 58%+ (relaxed from 60% — real-time data is trustworthy)
+    // Model probability must be 65%+ (tightened from 58%)
     const modelHitProb = p.c.pick === 'OVER' ? p.statResult.hitProbOver : p.statResult.hitProbUnder;
-    if (modelHitProb < 0.58) return false;
+    if (modelHitProb < 0.65) return false;
 
-    // Actual hit rate must be 60%+ in last 5 games
-    if (p.statResult.actualHitRate == null) return false; // no hit rate data = can't verify
+    // Actual hit rate must be 75%+ in L5 (tightened from 60% — need 4/5 or 5/5 games hitting)
     const actualHitForDir = p.c.pick === 'OVER' ? p.statResult.actualHitRate : (1 - p.statResult.actualHitRate);
-    if (actualHitForDir < 0.60) return false;
+    if (actualHitForDir < 0.75) return false;
 
-    // Cross-check: model and actual should roughly agree
-    if (Math.abs(modelHitProb - actualHitForDir) > 0.40) return false;
+    // Model and actual must agree closely (tightened from 40% gap to 25%)
+    if (Math.abs(modelHitProb - actualHitForDir) > 0.25) return false;
 
-    // Cross-check: huge edge with weak odds = suspicious
-    if (p.edge > 20 && parseFloat(p.c.pct) < 53) return false;
+    // Must be consistent (not volatile) — volatile players are unpredictable
+    if (p.statResult.consistencyTag === '🎲 Volatile') return false;
+
+    // Suspicious edge combos
+    if (p.edge > 15 && parseFloat(p.c.pct) < 53) return false;
 
     return true;
   }).slice(0, 3);
