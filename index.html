@@ -2182,6 +2182,16 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     .filter(p => parseFloat(p.c.pct) <= 80) // raised from 72 — some 73-80% picks have genuine edge
     // Removed hard 53% floor — score threshold (0.50) and edge already filter bad picks
     .filter(p => p.score >= 0.25) // post-regression threshold: shows quality picks without over-filtering
+    // ── Hard gate: block negative edge and low hit probability picks ──
+    .filter(p => p.edge > 0) // negative edge = no bet, don't show at all
+    .filter(p => {
+      // Block picks where model hit probability is below 60%
+      if (p.statResult) {
+        const hitProb = p.c.pick === 'OVER' ? (p.statResult.hitProbOver || 0) : (p.statResult.hitProbUnder || 0);
+        if (hitProb < 0.60) return false;
+      }
+      return true;
+    })
     // ── Hard gate: block picks with critical data quality issues ──
     .filter(p => {
       if (p.dataQuality === 'danger') return false; // 2+ flags = kill
