@@ -814,11 +814,94 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
   const safeHitProbUnder = hasDataGap ? null : hitProbUnder;
 
   return {
-    avg: parseFloat(avg5.toFixed(2)), games: recent5.length,
+    avg: parseFloat(avg5.toFixed(2)), avg15: parseFloat(avg15.toFixed(2)),
+    games: recent5.length, totalGames: vals.length,
     signal: safeSignal, signalLabel: labels[0], extraLabels: labels.slice(1), diff,
     hitProbOver: safeHitProbOver, hitProbUnder: safeHitProbUnder,
     variance: parseFloat(variance.toFixed(2)),
+    effectiveMean: parseFloat(effectiveMean.toFixed(2)),
     actualHitRate, consistencyTag, daysStale, staleLabel, hasDataGap,
+    trendRatio: parseFloat(trendRatio.toFixed(3)),
+  };
+}
+
+// ── PHASE 2: Independent Player Projection ──────────────────────────────────
+// Builds a projected stat line INDEPENDENT of book odds, then compares to the line.
+// projection = baseAvg × matchupFactor × paceFactor × restFactor × homeAwayFactor × trendFactor
+// Then uses neg-binom distribution to get P(OVER) from the PROJECTED mean.
+
+function projectPlayerStat(statResult, oppFactor, restResult, isHomeGame) {
+  if (!statResult || !statResult.avg) return null;
+
+  // Base: blend of L5 (60%) and L15 (40%) for stability + recency
+  const avg5 = statResult.avg;
+  const avg15 = statResult.avg15 || avg5;
+  let projection = avg5 * 0.60 + avg15 * 0.40;
+
+  let factors = [];
+
+  // ── Matchup factor: opponent defense rating ──
+  // defenseRating >1 = weak defense (player scores MORE), <1 = strong defense (scores LESS)
+  let matchupFactor = 1.0;
+  if (oppFactor && oppFactor.defenseRating) {
+    // Scale the impact: defense rating 1.10 → projection × 1.07 (70% pass-through)
+    matchupFactor = 1.0 + (oppFactor.defenseRating - 1.0) * 0.70;
+    matchupFactor = Math.max(0.80, Math.min(1.25, matchupFactor)); // cap at ±25%
+    factors.push({ name: 'matchup', value: matchupFactor, label: oppFactor.label || `Defense: ${oppFactor.defenseRating.toFixed(2)}x` });
+  }
+
+  // ── Pace factor: fast games = more possessions = more stats ──
+  let paceFactor = 1.0;
+  if (oppFactor && oppFactor.paceMultiplier) {
+    paceFactor = 1.0 + (oppFactor.paceMultiplier - 1.0) * 0.40; // 40% pass-through
+    paceFactor = Math.max(0.90, Math.min(1.12, paceFactor)); // cap at ±12%
+    factors.push({ name: 'pace', value: paceFactor, label: `Pace: ${oppFactor.paceMultiplier.toFixed(2)}x` });
+  }
+
+  // ── Rest factor: back-to-back = lower output ──
+  let restFactor = 1.0;
+  if (restResult && restResult.penalty) {
+    // restResult.penalty is negative (e.g. -0.04 for B2B)
+    // Convert to multiplicative: -0.04 → 0.96×
+    restFactor = 1.0 + restResult.penalty * 2.5; // amplify: -0.04 → 0.90×
+    restFactor = Math.max(0.85, Math.min(1.05, restFactor));
+    if (restFactor !== 1.0) factors.push({ name: 'rest', value: restFactor, label: restResult.label || 'Rest adj' });
+  }
+
+  // ── Home/away factor: players perform differently at home ──
+  let homeAwayFactor = 1.0;
+  if (isHomeGame === true) {
+    homeAwayFactor = 1.03; // 3% home boost
+    factors.push({ name: 'home', value: homeAwayFactor, label: 'Home: +3%' });
+  } else if (isHomeGame === false) {
+    homeAwayFactor = 0.97; // 3% away penalty
+    factors.push({ name: 'away', value: homeAwayFactor, label: 'Away: -3%' });
+  }
+
+  // ── Trend factor: hot/cold streaks ──
+  let trendFactor = 1.0;
+  if (statResult.trendRatio) {
+    // trendRatio >1.25 = hot streak, <0.75 = cold streak
+    // Mild pass-through: 30% of the trend (don't overreact to streaks)
+    trendFactor = 1.0 + (statResult.trendRatio - 1.0) * 0.30;
+    trendFactor = Math.max(0.88, Math.min(1.15, trendFactor));
+    if (Math.abs(trendFactor - 1.0) > 0.03) {
+      factors.push({ name: 'trend', value: trendFactor, label: `Trend: ${statResult.trendRatio.toFixed(2)}x` });
+    }
+  }
+
+  // Apply all factors
+  projection *= matchupFactor * paceFactor * restFactor * homeAwayFactor * trendFactor;
+
+  // Total adjustment from baseline
+  const totalAdj = matchupFactor * paceFactor * restFactor * homeAwayFactor * trendFactor;
+
+  return {
+    projection: parseFloat(projection.toFixed(2)),
+    baseline: parseFloat((avg5 * 0.60 + avg15 * 0.40).toFixed(2)),
+    factors,
+    totalAdj: parseFloat(totalAdj.toFixed(3)),
+    matchupFactor, paceFactor, restFactor, homeAwayFactor, trendFactor,
   };
 }
 
@@ -2229,14 +2312,30 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
 
       const conf  = score >= 0.35 ? 'HIGH' : score >= 0.22 ? 'MED' : 'LOW';
 
-      // ── Edge & Kelly Stake calculation ──
-      // Model prob: blend of odds-implied + stats hit probability (if available)
+      // ── PHASE 2: Independent Player Projection → Model Probability ──
+      // Build our OWN projected stat line, then calculate P(OVER) from that.
+      // This is independent of book odds — we compare our number to theirs for edge.
+      const restResult = restFactors[i];
+      const playerProjection = projectPlayerStat(statResult, gameOppFactor, restResult, null);
+
       const bookProb = c.pick === 'OVER'
         ? parseFloat(c.op) / 100
         : parseFloat(c.up) / 100;
-      const modelProb = (statResult && statResult.hitProbOver != null)
-        ? (c.pick === 'OVER' ? statResult.hitProbOver : statResult.hitProbUnder)
-        : bookProb + (score * 0.15); // fallback: book prob + score-based adjustment
+
+      let modelProb;
+      if (playerProjection && statResult && statResult.variance != null && p.line > 0) {
+        // USE PROJECTION: recalculate hit probability from projected mean
+        const projMean = playerProjection.projection;
+        const projVariance = statResult.variance * (playerProjection.totalAdj ** 2); // scale variance too
+        const projHitProbOver = probOverLine(projMean, projVariance, p.line);
+        const projHitProbUnder = 1 - projHitProbOver;
+        modelProb = c.pick === 'OVER' ? projHitProbOver : projHitProbUnder;
+      } else if (statResult && statResult.hitProbOver != null) {
+        // Fallback: raw stats probability (no matchup adjustment)
+        modelProb = c.pick === 'OVER' ? statResult.hitProbOver : statResult.hitProbUnder;
+      } else {
+        modelProb = bookProb + (score * 0.15); // last resort: book + score adjustment
+      }
       const clampedModelProb = Math.max(0.01, Math.min(0.99, modelProb));
       const edge = ((clampedModelProb - bookProb) * 100); // e.g. +10% edge
       // Kelly criterion: (bp - q) / b where b=decimal odds-1, p=model prob, q=1-p
@@ -2269,7 +2368,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
 
       const dataQuality = dataFlags.length === 0 ? 'clean' : dataFlags.length <= 1 ? 'warn' : 'danger';
 
-      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData, oppFactor: gameOppFactor, flipped, warning, agreement, agreementRatio, modelProb: clampedModelProb, bookProb, edge, kellyPct, dataFlags, dataQuality };
+      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData, oppFactor: gameOppFactor, flipped, warning, agreement, agreementRatio, modelProb: clampedModelProb, bookProb, edge, kellyPct, dataFlags, dataQuality, playerProjection };
     })
     .filter(p => p !== null)
     // Removed UNDER <= 0.5 filter — rebounds/assists UNDERs at 2.5/3.5 are legitimate picks
@@ -2448,6 +2547,10 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
         <span style="color:${p.edge>=5?'#00ff88':p.edge>=0?'#ffcc00':'#ff4444'}">Model: ${(p.modelProb*100).toFixed(0)}% / Book: ${(p.bookProb*100).toFixed(0)}% → <strong>${p.edge>=0?'+':''}${p.edge.toFixed(1)}% edge</strong></span>
         <span style="color:${p.kellyPct>=3?'#00ff88':p.kellyPct>=1?'#ffcc00':'#555'};font-weight:700">${p.kellyPct>=0.5 ? p.kellyPct.toFixed(1)+'% stake' : 'No bet'}</span>
       </div>
+      ${p.playerProjection ? `<div style="font-size:0.68em;margin:4px 0;padding:5px 8px;background:#00ccff08;border:1px solid #00ccff20;border-radius:4px;color:#00ccff">
+        📐 Projected: <strong>${p.playerProjection.projection}</strong> (base ${p.playerProjection.baseline}${p.playerProjection.totalAdj !== 1 ? ` × ${p.playerProjection.totalAdj}` : ''})
+        ${p.playerProjection.factors.length ? '<span style="color:#555"> · ' + p.playerProjection.factors.map(f => f.name + ' ' + f.value.toFixed(2) + 'x').join(' · ') + '</span>' : ''}
+      </div>` : ''}
       ${p.warning ? `<div style="font-size:0.68em;margin:2px 0;padding:4px 8px;background:#ff660010;border:1px solid #ff660030;border-radius:4px;color:#ff9944">${p.warning}</div>` : ''}
       ${p.dataFlags && p.dataFlags.length ? `<div style="font-size:0.68em;margin:4px 0;padding:5px 8px;background:${p.dataQuality==='danger'?'#ff000012':'#ff880008'};border:1px solid ${p.dataQuality==='danger'?'#ff000030':'#ff880020'};border-radius:4px;color:${p.dataQuality==='danger'?'#ff4444':'#ff9944'}">
         ${p.dataFlags.join('<br>')}
