@@ -244,6 +244,7 @@ let   _tokensLeft  = null; // updated on every response header
 const allValueBets = [];
 const allPropBets  = [];   // slate-wide best prop pick per game, all sports
 const allSafePicks = [];   // collected from all sports for the 💰 Safe Bets tab
+const MAX_DAILY_EXPOSURE = 10; // max 10% of bankroll at risk per day
 const loadedTabs = new Set();
 const tabLoadedAt = {}; // tracks when each tab last loaded, for "X mins ago" display
 
@@ -1650,6 +1651,95 @@ function getCalibration() {
   };
 }
 
+// ── PHASE 3: Daily Exposure Tracking ──────────────────────────────────────────
+// Sums up all pending (unbettled) picks' Kelly stakes for today.
+// If total exposure exceeds 10%, remaining picks show "exposure limit" warning.
+function getDailyExposure() {
+  const today = todayET();
+  const h = getHistory();
+  const todayPicks = h.filter(p => p.id && p.id.startsWith(today) && !p.result && !p.parlay);
+  const totalExposure = todayPicks.reduce((sum, p) => {
+    // Estimate Kelly from stored data
+    const prob = parseFloat(p.pct) / 100;
+    const odds = prob > 0 ? 1 / prob : 2.0;
+    const b = odds - 1;
+    const modelProb = p.score ? Math.min(0.85, prob + p.score * 0.15) : prob;
+    const kelly = b > 0 ? Math.max(0, (b * modelProb - (1 - modelProb)) / b) : 0;
+    const stake = Math.min(3, kelly * 25); // quarter-Kelly capped at 3%
+    return sum + stake;
+  }, 0);
+  return { totalExposure: parseFloat(totalExposure.toFixed(1)), picksCount: todayPicks.length, remaining: parseFloat((MAX_DAILY_EXPOSURE - totalExposure).toFixed(1)) };
+}
+
+// ── PHASE 3: Confidence Decay per Sport ─────────────────────────────────────
+// If a sport has lost 5+ of the last 7 picks, reduce its score by 30%.
+// If it's lost 7+ of the last 10, reduce by 50%. Self-corrects as wins come in.
+function getConfidenceDecay(sportLabel) {
+  const h = getHistory();
+  const sportClean = (sportLabel || '').replace(/\p{Emoji}/gu, '').trim().toUpperCase();
+  const sportPicks = h.filter(p => {
+    const sp = (p.sport || '').replace(/\p{Emoji}/gu, '').trim().toUpperCase();
+    return sp === sportClean && (p.result === 'W' || p.result === 'L');
+  }).slice(0, 10); // most recent 10
+
+  if (sportPicks.length < 5) return { multiplier: 1.0, label: null }; // not enough data
+
+  const last7 = sportPicks.slice(0, 7);
+  const last10 = sportPicks.slice(0, 10);
+  const last7Losses = last7.filter(p => p.result === 'L').length;
+  const last10Losses = last10.filter(p => p.result === 'L').length;
+
+  if (last10.length >= 10 && last10Losses >= 7) {
+    return { multiplier: 0.50, label: `⚠️ ${sportClean} cold: ${10 - last10Losses}W/${last10Losses}L last 10 — exposure halved` };
+  }
+  if (last7.length >= 7 && last7Losses >= 5) {
+    return { multiplier: 0.70, label: `⚠️ ${sportClean} cooling: ${7 - last7Losses}W/${last7Losses}L last 7 — exposure reduced 30%` };
+  }
+  // Opposite: if winning streak, slight boost
+  const last7Wins = last7.filter(p => p.result === 'W').length;
+  if (last7.length >= 7 && last7Wins >= 6) {
+    return { multiplier: 1.10, label: `🔥 ${sportClean} hot: ${last7Wins}W/${7 - last7Wins}L last 7 — slight boost` };
+  }
+  return { multiplier: 1.0, label: null };
+}
+
+// ── PHASE 3: Model Drift Detection ──────────────────────────────────────────
+// Checks if the model's recent win rate has drifted significantly from its
+// historical baseline. If it has, flags it and adjusts confidence.
+function detectModelDrift() {
+  const h = getHistory();
+  const settled = h.filter(p => (p.result === 'W' || p.result === 'L') && !p.parlay);
+  if (settled.length < 20) return { drifting: false, label: null };
+
+  const recent20 = settled.slice(0, 20);
+  const older = settled.slice(20);
+
+  const recentWR = recent20.filter(p => p.result === 'W').length / recent20.length;
+  const olderWR = older.length >= 10 ? older.filter(p => p.result === 'W').length / older.length : 0.5;
+
+  const drift = recentWR - olderWR;
+
+  if (drift <= -0.15) {
+    return {
+      drifting: true,
+      direction: 'declining',
+      recentWR: (recentWR * 100).toFixed(0),
+      olderWR: (olderWR * 100).toFixed(0),
+      label: `⚠️ MODEL DRIFT: Recent 20 picks at ${(recentWR*100).toFixed(0)}% vs historical ${(olderWR*100).toFixed(0)}% — consider pausing or reducing stakes`,
+    };
+  }
+  if (drift >= 0.15) {
+    return {
+      drifting: false,
+      direction: 'improving',
+      recentWR: (recentWR * 100).toFixed(0),
+      olderWR: (olderWR * 100).toFixed(0),
+      label: `✅ Model improving: Recent ${(recentWR*100).toFixed(0)}% vs historical ${(olderWR*100).toFixed(0)}%`,
+    };
+  }
+  return { drifting: false, label: null };
+}
+
 // Short reason string — only references real signals
 function propReason(pct, bookCount, vig) {
   const parts = [];
@@ -2310,12 +2400,16 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       }
       score = Math.max(-1, Math.min(1, score));
 
+      // ── PHASE 3: Confidence decay — reduce score for cold sports ──
+      const decay = getConfidenceDecay(sportLabel);
+      score *= decay.multiplier;
+      score = Math.max(-1, Math.min(1, score));
+
       const conf  = score >= 0.35 ? 'HIGH' : score >= 0.22 ? 'MED' : 'LOW';
 
       // ── PHASE 2: Independent Player Projection → Model Probability ──
       // Build our OWN projected stat line, then calculate P(OVER) from that.
       // This is independent of book odds — we compare our number to theirs for edge.
-      const restResult = restFactors[i];
       const playerProjection = projectPlayerStat(statResult, gameOppFactor, restResult, null);
 
       const bookProb = c.pick === 'OVER'
@@ -2342,8 +2436,8 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       const bestOdds = c.pick === 'OVER' ? p.bestOver : p.bestUnder;
       const b = bestOdds - 1;
       const kellyFraction = b > 0 ? Math.max(0, (b * clampedModelProb - (1 - clampedModelProb)) / b) : 0;
-      // No edge = no bet. Cap at 5% (half-Kelly is safer than full Kelly)
-      const kellyPct = edge <= 0 ? 0 : Math.min(5, kellyFraction * 50); // half-Kelly, capped at 5%
+      // Quarter-Kelly (safer than half-Kelly for unknown model accuracy), max 3% per bet
+      const kellyPct = edge <= 0 ? 0 : Math.min(3, kellyFraction * 25); // quarter-Kelly, capped at 3%
 
       // ── Data quality flags — catch every kind of bad data so user doesn't have to ──
       const dataFlags = [];
@@ -2368,7 +2462,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
 
       const dataQuality = dataFlags.length === 0 ? 'clean' : dataFlags.length <= 1 ? 'warn' : 'danger';
 
-      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData, oppFactor: gameOppFactor, flipped, warning, agreement, agreementRatio, modelProb: clampedModelProb, bookProb, edge, kellyPct, dataFlags, dataQuality, playerProjection };
+      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData, oppFactor: gameOppFactor, flipped, warning, agreement, agreementRatio, modelProb: clampedModelProb, bookProb, edge, kellyPct, dataFlags, dataQuality, playerProjection, confidenceDecay: decay };
     })
     .filter(p => p !== null)
     // Removed UNDER <= 0.5 filter — rebounds/assists UNDERs at 2.5/3.5 are legitimate picks
@@ -2545,7 +2639,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       <div class="pick-card-direction">${pickHtml(p.c.pick)} <span class="pick-card-pct">${p.c.pct}% ${p.flipped ? 'stats override' : 'implied'}</span>${p.flipped ? ' <span style="font-size:0.7em;color:#00ccff;font-weight:700">⚡ FLIPPED</span>' : ''}</div>
       <div style="font-size:0.72em;margin:4px 0;padding:5px 8px;background:#0a0a0a;border:1px solid #1a1a1a;border-radius:6px;display:flex;justify-content:space-between;align-items:center">
         <span style="color:${p.edge>=5?'#00ff88':p.edge>=0?'#ffcc00':'#ff4444'}">Model: ${(p.modelProb*100).toFixed(0)}% / Book: ${(p.bookProb*100).toFixed(0)}% → <strong>${p.edge>=0?'+':''}${p.edge.toFixed(1)}% edge</strong></span>
-        <span style="color:${p.kellyPct>=3?'#00ff88':p.kellyPct>=1?'#ffcc00':'#555'};font-weight:700">${p.kellyPct>=0.5 ? p.kellyPct.toFixed(1)+'% stake' : 'No bet'}</span>
+        <span style="color:${p.kellyPct>=2?'#00ff88':p.kellyPct>=0.5?'#ffcc00':'#555'};font-weight:700">${p.kellyPct>=0.5 ? p.kellyPct.toFixed(1)+'% stake' : 'No bet'}</span>
       </div>
       ${p.playerProjection ? `<div style="font-size:0.68em;margin:4px 0;padding:5px 8px;background:#00ccff08;border:1px solid #00ccff20;border-radius:4px;color:#00ccff">
         📐 Projected: <strong>${p.playerProjection.projection}</strong> (base ${p.playerProjection.baseline}${p.playerProjection.totalAdj !== 1 ? ` × ${p.playerProjection.totalAdj}` : ''})
@@ -2562,6 +2656,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       ${p.restResult?.isB2B ? `<div style="font-size:0.68em;margin:2px 0;color:#ff4444">${p.restResult.label}</div>` : ''}
       ${p.weatherData?.label ? `<div style="font-size:0.68em;margin:2px 0;color:#ff9944">${p.weatherData.label}</div>` : ''}
       ${p.oppFactor?.label ? `<div style="font-size:0.68em;margin:2px 0;color:${p.oppFactor.signal>0?'#00ff88':'#ff6644'}">${p.oppFactor.label}</div>` : ''}
+      ${p.confidenceDecay?.label ? `<div style="font-size:0.68em;margin:2px 0;padding:3px 6px;background:${p.confidenceDecay.multiplier<1?'#ff000008':'#00ff8808'};border-radius:4px;color:${p.confidenceDecay.multiplier<1?'#ff9944':'#00ff88'}">${p.confidenceDecay.label}</div>` : ''}
       ${p.agreement ? `<div style="font-size:0.68em;margin:2px 0;color:${p.agreementRatio>=0.75?'#00ff88':'#ff9944'}">${p.agreement} (${(p.agreementRatio*100).toFixed(0)}%)</div>` : ''}
       <div class="pick-card-reason">${reason}
         <span class="score-badge">score ${p.score.toFixed(2)}
@@ -3379,6 +3474,62 @@ function buildHistoryTab() {
       </div>`;
     }
   }
+
+  // ── PHASE 3: Risk Management Dashboard ─────────────────────────────────────
+  const exposure = getDailyExposure();
+  const drift = detectModelDrift();
+  const sportDecays = ['NBA', 'NHL', 'MLB', 'PREMIER LEAGUE', 'LA LIGA'].map(sp => ({
+    sport: sp, ...getConfidenceDecay(sp)
+  })).filter(d => d.label);
+
+  html += `<div class="value-box" style="margin-top:12px;border-color:#00ccff30">
+    <h3 style="color:#00ccff">📊 RISK MANAGEMENT</h3>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:8px">
+
+      <div style="flex:1;min-width:180px;background:#0a0a0a;padding:12px;border-radius:8px;border:1px solid #1a1a1a">
+        <div style="font-size:0.72em;color:#555;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Today's Exposure</div>
+        <div style="font-size:1.3em;font-weight:700;color:${exposure.totalExposure >= MAX_DAILY_EXPOSURE ? '#ff4444' : exposure.totalExposure >= 7 ? '#ffcc00' : '#00ff88'}">${exposure.totalExposure}%</div>
+        <div style="font-size:0.72em;color:#444">${exposure.picksCount} picks · ${exposure.remaining > 0 ? exposure.remaining + '% remaining' : 'LIMIT REACHED'}</div>
+        <div style="background:#111;border-radius:4px;height:5px;margin-top:6px">
+          <div style="width:${Math.min(100, exposure.totalExposure / MAX_DAILY_EXPOSURE * 100)}%;height:5px;border-radius:4px;background:${exposure.totalExposure >= MAX_DAILY_EXPOSURE ? '#ff4444' : '#00ff88'}"></div>
+        </div>
+      </div>
+
+      <div style="flex:1;min-width:180px;background:#0a0a0a;padding:12px;border-radius:8px;border:1px solid #1a1a1a">
+        <div style="font-size:0.72em;color:#555;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Stake Sizing</div>
+        <div style="font-size:0.85em;color:#888;line-height:1.8">
+          <div>Method: <span style="color:#00ccff">Quarter-Kelly</span></div>
+          <div>Max per bet: <span style="color:#ffcc00">3%</span></div>
+          <div>Max daily: <span style="color:#ffcc00">${MAX_DAILY_EXPOSURE}%</span></div>
+        </div>
+      </div>
+
+      <div style="flex:1;min-width:180px;background:#0a0a0a;padding:12px;border-radius:8px;border:1px solid #1a1a1a">
+        <div style="font-size:0.72em;color:#555;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">CLV Summary</div>
+        ${(() => {
+          const clvPicks = settled.filter(p => {
+            const clv = getCLV(p.id, null, null);
+            return clv && clv.clv !== 0;
+          });
+          const clvValues = clvPicks.map(p => getCLV(p.id, null, null).clv);
+          const avgCLV = clvValues.length ? (clvValues.reduce((a,b) => a+b, 0) / clvValues.length) : null;
+          const positive = clvValues.filter(v => v > 0).length;
+          if (avgCLV === null) return '<div style="font-size:0.82em;color:#333">No CLV data yet</div>';
+          return `<div style="font-size:1.1em;font-weight:700;color:${avgCLV >= 0 ? '#00ff88' : '#ff4444'}">${avgCLV >= 0 ? '+' : ''}${avgCLV.toFixed(1)}% avg</div>
+            <div style="font-size:0.72em;color:#444">${positive}/${clvValues.length} beat the close · Target: +3%</div>`;
+        })()}
+      </div>
+    </div>
+
+    ${drift.label ? `<div style="margin-top:10px;padding:8px 12px;background:${drift.drifting?'#ff000010':'#00ff8808'};border:1px solid ${drift.drifting?'#ff000030':'#00ff8820'};border-radius:6px;font-size:0.78em;color:${drift.drifting?'#ff4444':'#00ff88'}">${drift.label}</div>` : ''}
+
+    ${sportDecays.length ? `<div style="margin-top:10px">
+      <div style="font-size:0.72em;color:#555;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Sport Confidence</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        ${sportDecays.map(d => `<div style="font-size:0.75em;padding:6px 10px;background:#0a0a0a;border-radius:6px;border:1px solid ${d.multiplier < 1 ? '#ff444430' : '#00ff8830'};color:${d.multiplier < 1 ? '#ff9944' : '#00ff88'}">${d.label}</div>`).join('')}
+      </div>
+    </div>` : ''}
+  </div>`;
 
   // ── Pending picks ──────────────────────────────────────────────────────────
   if (pending.length) {
