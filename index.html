@@ -2159,12 +2159,13 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
         if (statResult.daysStale >= 4) dataFlags.push(`⚠️ Stats data ${statResult.daysStale}d old`);
         if (statResult.staleLabel && statResult.staleLabel.includes('gap')) dataFlags.push(statResult.staleLabel);
         if (statResult.games < 3) dataFlags.push(`⚠️ Only ${statResult.games} games of data — low sample`);
-        // Check if model prob and actual hit rate strongly disagree (model might be wrong)
+        // Check if model and actual hit rate disagree on DIRECTION (model says OVER but actual says UNDER or vice versa)
         if (statResult.actualHitRate != null) {
           const modelDir = c.pick === 'OVER' ? statResult.hitProbOver : statResult.hitProbUnder;
           const actualDir = c.pick === 'OVER' ? statResult.actualHitRate : (1 - statResult.actualHitRate);
-          if (modelDir && Math.abs(modelDir - actualDir) > 0.3) {
-            dataFlags.push(`⚠️ Model ${(modelDir*100).toFixed(0)}% but actual hit rate ${(actualDir*100).toFixed(0)}% — verify`);
+          // Only flag when they disagree on direction: one says >50% and other says <50%
+          if (modelDir && ((modelDir > 0.5 && actualDir < 0.4) || (modelDir < 0.5 && actualDir > 0.6))) {
+            dataFlags.push(`⚠️ Model ${(modelDir*100).toFixed(0)}% but actual hit rate ${(actualDir*100).toFixed(0)}% — direction mismatch`);
           }
         }
       }
