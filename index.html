@@ -2958,6 +2958,37 @@ function buildHistoryTab() {
         </div>`).join('')}
       </div>` : ''}
 
+      ${(() => {
+        // Safe Bets performance
+        const safeSettled = autoGraded.filter(p => p.safe);
+        const safeW = safeSettled.filter(p => p.result === 'W').length;
+        const safeL = safeSettled.filter(p => p.result === 'L').length;
+        const safeWL = safeW + safeL;
+        const safeWR = safeWL ? (safeW / safeWL * 100).toFixed(1) : null;
+
+        // Parlay performance
+        const parlaySettled = autoGraded.filter(p => p.parlay);
+        const parlayW = parlaySettled.filter(p => p.result === 'W').length;
+        const parlayL = parlaySettled.filter(p => p.result === 'L').length;
+        const parlayWL = parlayW + parlayL;
+        const parlayWR = parlayWL ? (parlayW / parlayWL * 100).toFixed(1) : null;
+
+        if (!safeSettled.length && !parlaySettled.length) return '';
+        return `<div class="section-hdr">Safe Bets & Parlays Performance</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:6px">
+          <div style="font-size:0.8em;background:#0a0f0a;padding:10px 14px;border-radius:6px;border:1px solid ${safeWR && parseFloat(safeWR)>=50?'#00ff8830':'#1a1a1a'}">
+            <span style="color:#00ff88">💰 Safe Bets</span>&nbsp;
+            ${safeWL ? `<span style="color:#00ff88">${safeW}W</span>/<span style="color:#ff4444">${safeL}L</span>
+            &nbsp;<strong style="color:${parseFloat(safeWR)>=50?'#00ff88':'#ff4444'}">${safeWR}%</strong>` : '<span style="color:#333">no graded picks yet</span>'}
+          </div>
+          <div style="font-size:0.8em;background:#0a0f0a;padding:10px 14px;border-radius:6px;border:1px solid ${parlayWR && parseFloat(parlayWR)>=50?'#ffcc0030':'#1a1a1a'}">
+            <span style="color:#ffcc00">🎰 Parlays</span>&nbsp;
+            ${parlayWL ? `<span style="color:#00ff88">${parlayW}W</span>/<span style="color:#ff4444">${parlayL}L</span>
+            &nbsp;<strong style="color:${parseFloat(parlayWR)>=50?'#00ff88':'#ff4444'}">${parlayWR}%</strong>` : '<span style="color:#333">no graded picks yet</span>'}
+          </div>
+        </div>`;
+      })()}
+
       <p style="color:#555;font-size:0.72em;margin-top:8px">Auto-graded via ESPN API. Use hit rate by sport to focus on your strongest markets.</p>
     </div>`;
 
@@ -3100,12 +3131,19 @@ function buildHistoryTab() {
         <tr><th>Date</th><th>Sport</th><th>Pick Info</th><th>Pick</th><th>Conf</th><th>Mark</th></tr>`;
     pending.slice(0, 40).forEach(p => {
       const isMatch  = p.type === 'match_winner';
-      const stat     = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+      const isParlay = p.type === 'parlay';
+      const stat     = isParlay ? '' : p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
       const d        = new Date(p.date).toLocaleDateString('en-US',{day:'numeric',month:'short',timeZone:TZ});
-      const infoCell = isMatch
-        ? `<span style="color:#bbb">${p.match}</span> <span style="color:#333;font-size:0.8em">Winner</span>`
-        : `${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>`;
-      const pickCell = isMatch
+      const safeLabel = p.safe ? ' <span style="color:#00ff88;font-size:0.65em;background:#00ff8810;padding:1px 5px;border-radius:8px;border:1px solid #00ff8830">SAFE</span>' : '';
+      const parlayLabel = isParlay ? ' <span style="color:#ffcc00;font-size:0.65em;background:#ffcc0010;padding:1px 5px;border-radius:8px;border:1px solid #ffcc0030">PARLAY</span>' : '';
+      const infoCell = isParlay
+        ? `<span style="color:#ffcc00;font-weight:600">${p.market}</span> <span style="color:#333;font-size:0.75em">@ ${p.line}</span>${parlayLabel}<br><span style="color:#555;font-size:0.72em">${p.player}</span>`
+        : isMatch
+        ? `<span style="color:#bbb">${p.match}</span> <span style="color:#333;font-size:0.8em">Winner</span>${safeLabel}`
+        : `${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>${safeLabel}`;
+      const pickCell = isParlay
+        ? `<span style="color:#ffcc00;font-weight:700">${p.market}</span>`
+        : isMatch
         ? `<span style="color:#00ccff;font-weight:700">${p.pick}</span>`
         : pickHtml(p.pick);
       html += `<tr>
@@ -3131,12 +3169,16 @@ function buildHistoryTab() {
     const bestBetIds = new Set(rankedSettled.slice(0, Math.ceil(settled.length * 0.2)).map(p => p.id));
 
     const sportList = [...new Set(settled.map(p => p.sport.replace(/\p{Emoji}/gu,'').trim()))].sort();
+    const safeCount = settled.filter(p => p.safe).length;
+    const parlayCount = settled.filter(p => p.parlay).length;
     html += `<div style="margin-top:20px">
       <div class="section-hdr" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
         <span>📋 Settled — ${wins}W / ${losses}L / ${voids}V</span>
         <div style="display:flex;gap:6px;flex-wrap:wrap" id="hist-filters">
           <button class="btn active" style="font-size:0.7em;padding:3px 10px" onclick="histFilter('all',this)">All</button>
           <button class="btn" style="font-size:0.7em;padding:3px 10px;border-color:#00ff8830;color:#555" onclick="histFilter('best',this)">⭐ Best Bets</button>
+          <button class="btn" style="font-size:0.7em;padding:3px 10px;border-color:#00ff8830;color:#555" onclick="histFilter('safe',this)">💰 Safe (${safeCount})</button>
+          <button class="btn" style="font-size:0.7em;padding:3px 10px;border-color:#ffcc0030;color:#555" onclick="histFilter('parlay',this)">🎰 Parlays (${parlayCount})</button>
           ${['HIGH','MED','LOW'].map(c=>`<button class="btn" style="font-size:0.7em;padding:3px 10px;border-color:#33333380;color:#555" onclick="histFilter('${c}',this)">${c}</button>`).join('')}
           ${sportList.map(s=>`<button class="btn" style="font-size:0.7em;padding:3px 10px;border-color:#33333380;color:#555" onclick="histFilter('${s}',this)">${s}</button>`).join('')}
         </div>
@@ -3145,13 +3187,18 @@ function buildHistoryTab() {
         <tr><th>Date</th><th>Sport</th><th>Pick Info</th><th>Pick</th><th>Result</th><th>CLV</th><th>Graded By</th></tr>`;
     settled.slice(0, 100).forEach(p => {
       const isMatch  = p.type === 'match_winner';
-      const stat     = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+      const isParlay = p.type === 'parlay';
+      const stat     = isParlay ? '' : p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
       const d        = new Date(p.date).toLocaleDateString('en-US',{day:'numeric',month:'short',timeZone:TZ});
       const isBest   = bestBetIds.has(p.id);
-      const infoCell = isMatch
+      const infoCell = isParlay
+        ? `<span style="color:#ffcc00;font-weight:600">${p.market}</span> <span style="color:#333;font-size:0.75em">@ ${p.line}</span><br><span style="color:#555;font-size:0.72em">${p.player}</span>`
+        : isMatch
         ? `<span style="color:#bbb">${p.match}</span> <span style="color:#333;font-size:0.8em">Winner</span>`
         : `${isBest ? '⭐ ' : ''}${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>`;
-      const pickCell = isMatch
+      const pickCell = isParlay
+        ? `<span style="color:#ffcc00;font-weight:700">${p.market}</span>`
+        : isMatch
         ? `<span style="color:#00ccff;font-weight:700">${p.pick}</span>`
         : pickHtml(p.pick);
       const autoTag  = p.autoGraded ? ' <span style="color:#333;font-size:0.72em;font-weight:400">auto</span>' : '';
@@ -3161,10 +3208,12 @@ function buildHistoryTab() {
         ? `<span style="color:#ff4444;font-weight:700">LOSS${autoTag}</span>`
         : `<span style="color:#333">VOID${autoTag}</span>`;
       const sportClean = p.sport.replace(/\p{Emoji}/gu,'').trim();
-      html += `<tr data-conf="${p.conf}" data-sport="${sportClean}" data-best="${isBest}">
+      const safeTag = p.safe ? ' <span style="color:#00ff88;font-size:0.65em;background:#00ff8810;padding:1px 5px;border-radius:8px;border:1px solid #00ff8830">SAFE</span>' : '';
+      const parlayTag = p.parlay ? ' <span style="color:#ffcc00;font-size:0.65em;background:#ffcc0010;padding:1px 5px;border-radius:8px;border:1px solid #ffcc0030">PARLAY</span>' : '';
+      html += `<tr data-conf="${p.conf}" data-sport="${sportClean}" data-best="${isBest}" data-safe="${!!p.safe}" data-parlay="${!!p.parlay}">
         <td style="color:#333;font-size:0.8em">${d}</td>
         <td style="color:#444;font-size:0.8em">${sportClean}</td>
-        <td style="color:#bbb">${infoCell}</td>
+        <td style="color:#bbb">${infoCell}${safeTag}${parlayTag}</td>
         <td>${pickCell}</td>
         <td>${resHtml}</td>
         <td style="font-size:0.72em;color:${(() => { const clv = getCLV(p.id, null, null); return clv ? (clv.clv > 0 ? '#00ff88' : '#ff4444') : '#333'; })()}">${(() => { const clv = getCLV(p.id, null, null); return clv ? clv.label.split('(')[0].trim() : '—'; })()}</td>
@@ -3384,6 +3433,32 @@ function buildParlayTab() {
     });
 
     html += `</div></div>`;
+
+    // Save parlay to history for tracking
+    const legIds = legs.map(p => `${p.player}_${p.market}`).join('+');
+    const parlayPick = {
+      id:        `${todayET()}_parlay_${legs.length}leg_${idx}`.replace(/\W+/g,'_'),
+      date:      new Date().toISOString(),
+      sport:     legs.map(p => p.sportLabel || '').filter(Boolean).join('/'),
+      match:     legs.map(p => p.matchLabel || '').join(' | '),
+      player:    legs.map(p => p.player).join(' + '),
+      market:    `${legs.length}-leg parlay`,
+      line:      oddsStr,
+      pick:      legs.map(p => `${p.player} ${p.c.pick} ${p.line}`).join(', '),
+      pct:       probPct,
+      conf:      parlay.combinedProb >= 0.45 ? 'HIGH' : parlay.combinedProb >= 0.30 ? 'MED' : 'LOW',
+      score:     parlay.edge / 100,
+      bookCount: legs.length,
+      vig:       0,
+      result:    null,
+      parlay:    true,
+      parlayLegs: legs.map(p => ({
+        player: p.player, market: p.market, line: p.line,
+        pick: p.c.pick, sport: p.sportLabel, match: p.matchLabel
+      })),
+      type:      'parlay',
+    };
+    savePickToHistory(parlayPick);
   });
 
   html += '</div>';
@@ -3493,6 +3568,8 @@ function histFilter(val, btn) {
   document.querySelectorAll('#hist-table tr[data-conf]').forEach(row => {
     if (val === 'all') { row.style.display = ''; return; }
     if (val === 'best') { row.style.display = row.dataset.best === 'true' ? '' : 'none'; return; }
+    if (val === 'safe') { row.style.display = row.dataset.safe === 'true' ? '' : 'none'; return; }
+    if (val === 'parlay') { row.style.display = row.dataset.parlay === 'true' ? '' : 'none'; return; }
     if (['HIGH','MED','LOW'].includes(val)) { row.style.display = row.dataset.conf === val ? '' : 'none'; return; }
     row.style.display = row.dataset.sport === val ? '' : 'none';
   });
