@@ -1357,9 +1357,15 @@ function playerStatFromSummary(summary, playerName, statKey) {
       if (idx === -1) idx = (grp.keys || []).findIndex(k => k.startsWith(statKey + '-'));
       if (idx === -1) continue;
       for (const ath of (grp.athletes || [])) {
-        if (nameMatch(playerName, ath.athlete?.displayName || '')) {
+        // Strict player matching for grading — require first AND last name match
+        // to avoid "Draymond Green" matching "Jeff Green" by last name only
+        const athName = (ath.athlete?.displayName || '').toLowerCase().replace(/[^a-z\s]/g,'').trim();
+        const searchName = playerName.toLowerCase().replace(/[^a-z\s]/g,'').trim();
+        const firstMatch = athName.split(' ')[0] === searchName.split(' ')[0] ||
+                           athName.includes(searchName.split(' ')[0]);
+        const lastMatch = athName.split(' ').pop() === searchName.split(' ').pop();
+        if ((athName === searchName) || (firstMatch && lastMatch)) {
           const raw = ath.stats?.[idx];
-          // Parse compound "made-attempted" fields: take first number
           const v = (typeof raw === 'string' && raw.includes('-')) ? parseFloat(raw.split('-')[0]) : parseFloat(raw);
           if (!isNaN(v)) return v;
         }
