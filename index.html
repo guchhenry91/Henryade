@@ -1716,7 +1716,7 @@ function poisson(lam, k) { let r=Math.exp(-lam); for(let i=1;i<=k;i++) r*=lam/i;
 // Dixon-Coles correlation adjustment for low-scoring outcomes (0-0, 1-0, 0-1, 1-1)
 // Standard Poisson assumes independence — this corrects for real-world goal correlation.
 // rho < 0 means 0-0 and 1-1 are more likely than Poisson predicts (defensive games).
-function dixonColes(h, a, hXG, aXG, rho = -0.05) {
+function dixonColes(h, a, hXG, aXG, rho = -0.08) {
   const base = poisson(hXG, h) * poisson(aXG, a);
   if (h === 0 && a === 0) return base * (1 - hXG * aXG * rho);
   if (h === 1 && a === 0) return base * (1 + aXG * rho);
@@ -1725,9 +1725,9 @@ function dixonColes(h, a, hXG, aXG, rho = -0.05) {
   return base;
 }
 
-function correctScores(hXG, aXG, max=6) {
+function correctScores(hXG, aXG, rho = -0.08, max=6) {
   const s=[];
-  for(let h=0;h<=max;h++) for(let a=0;a<=max;a++) s.push({h,a,p:dixonColes(h,a,hXG,aXG)});
+  for(let h=0;h<=max;h++) for(let a=0;a<=max;a++) s.push({h,a,p:dixonColes(h,a,hXG,aXG,rho)});
   // Normalize so probabilities sum to 1
   const total = s.reduce((sum,x) => sum + x.p, 0);
   s.forEach(x => x.p /= total);
@@ -1902,12 +1902,107 @@ function impliedTotalGoals(overOdds, underOdds) {
   return Math.max(1.5, Math.min(5.0, 2.5 + (normOver - 0.5) * 3.0));
 }
 
-// Fetch ESPN team recent form — last 5 results, returns { wins, draws, losses, goalsFor, goalsAgainst }
-// Map ESPN league codes to proxy league keys
+// ── Independent Team xG (Understat via proxy) ──────────────────────────────
+// This is the CORE of Phase 1: team-level xG that is INDEPENDENT of bookmaker odds.
+// Used as PRIMARY input to Poisson model. Book odds are only used to find edge.
+
 const SOCCER_LEAGUE_MAP = {
   'eng.1': 'epl', 'eng.fa': 'fa_cup',
   'esp.1': 'laliga', 'uefa.champions': 'ucl',
 };
+
+// Understat league keys (team xG available for these)
+const XG_LEAGUES = { 'epl': true, 'laliga': true, 'bundesliga': true, 'seriea': true, 'ligue1': true };
+
+// Per-league Dixon-Coles rho — calibrated per league's low-scoring correlation pattern
+const LEAGUE_RHO = {
+  'epl': -0.13,      // EPL: strong 0-0/1-1 correction
+  'laliga': -0.10,   // La Liga: slightly less defensive
+  'bundesliga': -0.08,// Bundesliga: high scoring, less correction needed
+  'seriea': -0.11,   // Serie A: defensive league
+  'ligue1': -0.09,   // Ligue 1: moderate
+  'ucl': -0.06,      // UCL: open attacking games, less low-score bias
+  'fa_cup': -0.05,   // Cup ties: unpredictable
+  'default': -0.08,
+};
+
+// Cache team xG data per league (fetched once per session)
+const _teamXGCache = {};
+
+async function fetchLeagueTeamXG(leagueKey) {
+  if (!XG_LEAGUES[leagueKey]) return null; // no Understat data for this league
+  if (_teamXGCache[leagueKey]) return _teamXGCache[leagueKey];
+
+  try {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 30000);
+    const res = await fetch(`${NBA_PROXY}/api/soccer/team-xg/${leagueKey}`, { signal: ctrl.signal });
+    clearTimeout(timer);
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (data.error) return null;
+    _teamXGCache[leagueKey] = data;
+    return data;
+  } catch { return null; }
+}
+
+// Look up a team's xG stats from the cached league data
+function getTeamXG(leagueData, teamName) {
+  if (!leagueData || !leagueData.teams) return null;
+  const t = teamName.toLowerCase();
+  // Try exact match, then partial match
+  return leagueData.teams.find(x => x.team.toLowerCase() === t)
+    || leagueData.teams.find(x => t.includes(x.team.toLowerCase()) || x.team.toLowerCase().includes(t))
+    || null;
+}
+
+// ── Independent xG Model ────────────────────────────────────────────────────
+// Builds expected goals from TEAM STATS (attack strength × defensive weakness)
+// This is the new PRIMARY path. Book odds are only used for edge comparison.
+function independentXG(homeTeamXG, awayTeamXG, leagueData) {
+  if (!homeTeamXG || !awayTeamXG || !leagueData) return null;
+
+  const leagueAvg = leagueData.league_avg_xg || 1.3;
+
+  // Attack strength = team's xG per game / league average
+  // Defense strength = team's xGA per game / league average
+  // Expected goals = attack strength × opponent defense strength × league average
+  const homeAttack  = (homeTeamXG.home_xg_per_game || homeTeamXG.xg_per_game) / leagueAvg;
+  const homeDefense = (homeTeamXG.home_xga_per_game || homeTeamXG.xga_per_game) / leagueAvg;
+  const awayAttack  = (awayTeamXG.away_xg_per_game || awayTeamXG.xg_per_game) / leagueAvg;
+  const awayDefense = (awayTeamXG.away_xga_per_game || awayTeamXG.xga_per_game) / leagueAvg;
+
+  // Home team xG = home attack strength × away defense weakness × league avg × home advantage
+  let homeXG = homeAttack * awayDefense * leagueAvg * 1.06; // 6% home advantage
+  let awayXG = awayAttack * homeDefense * leagueAvg * 0.94; // 6% away disadvantage
+
+  // Blend season average with recent form (last 5) for recency weighting
+  // 60% recent form, 40% season — captures current form without overreacting
+  const r5HomeXG = homeTeamXG.recent5_xg || homeTeamXG.xg_per_game;
+  const r5HomeXGA = homeTeamXG.recent5_xga || homeTeamXG.xga_per_game;
+  const r5AwayXG = awayTeamXG.recent5_xg || awayTeamXG.xg_per_game;
+  const r5AwayXGA = awayTeamXG.recent5_xga || awayTeamXG.xga_per_game;
+
+  const recentHomeAttack = (r5HomeXG / leagueAvg);
+  const recentAwayDefense = (r5AwayXGA / leagueAvg);
+  const recentAwayAttack = (r5AwayXG / leagueAvg);
+  const recentHomeDefense = (r5HomeXGA / leagueAvg);
+
+  const recentHomeXG = recentHomeAttack * recentAwayDefense * leagueAvg * 1.06;
+  const recentAwayXG = recentAwayAttack * recentHomeDefense * leagueAvg * 0.94;
+
+  // Blend: 40% season, 60% recent form
+  homeXG = homeXG * 0.40 + recentHomeXG * 0.60;
+  awayXG = awayXG * 0.40 + recentAwayXG * 0.60;
+
+  // Clamp to reasonable range
+  homeXG = Math.max(0.3, Math.min(4.0, homeXG));
+  awayXG = Math.max(0.15, Math.min(3.5, awayXG));
+
+  return { homeXG, awayXG, source: 'understat_xg' };
+}
+
+// Fetch ESPN team recent form — last 5 results, returns { wins, draws, losses, goalsFor, goalsAgainst }
 
 async function fetchTeamForm(sport, league, teamName) {
   // Use Render proxy for soccer (TheSportsDB real-time data)
@@ -2569,9 +2664,19 @@ async function buildSoccer(force) {
   let html = '';
 
   // Fetch all league odds in parallel (removes 2s of sequential delays)
-  const leagueOdds = await Promise.all(
-    leagues.map(lg => apiFetch(lg.key, 'h2h,totals', 'uk', force).catch(() => []))
-  );
+  // Also pre-fetch team xG data for leagues that have Understat coverage
+  const xgLeagueMap = {
+    'soccer_epl': 'epl', 'soccer_spain_la_liga': 'laliga',
+    'soccer_germany_bundesliga': 'bundesliga', 'soccer_italy_serie_a': 'seriea',
+    'soccer_france_ligue_one': 'ligue1',
+  };
+  const [leagueOdds, ...xgResults] = await Promise.all([
+    Promise.all(leagues.map(lg => apiFetch(lg.key, 'h2h,totals', 'uk', force).catch(() => []))),
+    ...Object.values(xgLeagueMap).map(k => fetchLeagueTeamXG(k).catch(() => null)),
+  ]);
+  // Map xG results back to league keys
+  const xgData = {};
+  Object.keys(xgLeagueMap).forEach((k, i) => { xgData[xgLeagueMap[k]] = xgResults[i]; });
 
   for (let lgIdx = 0; lgIdx < leagues.length; lgIdx++) {
     const lg = leagues[lgIdx];
@@ -2606,7 +2711,16 @@ async function buildSoccer(force) {
           } catch {}
         }
 
-        // Fetch recent form for both teams in parallel — upgrades xG from odds-only to stats-backed
+        // ── PHASE 1: Independent xG Model ──────────────────────────────────────
+        // PRIMARY: Use Understat team xG (independent of book odds)
+        // FALLBACK: Form-based goals from TheSportsDB
+        // LAST RESORT: Odds-derived xG (old circular method — only for FA Cup, WC Qualifiers)
+        const leagueXGKey = xgLeagueMap[lg.key] || null;
+        const leagueXG = leagueXGKey ? xgData[leagueXGKey] : null;
+        const homeTeamXG = getTeamXG(leagueXG, home);
+        const awayTeamXG = getTeamXG(leagueXG, away);
+
+        // Also fetch form data as supplementary (W-D-L, momentum)
         const espnLeague = lg.key.includes('epl') ? {sport:'soccer',league:'eng.1'}
           : lg.key.includes('fa_cup') ? {sport:'soccer',league:'eng.fa'}
           : lg.key.includes('champs') ? {sport:'soccer',league:'uefa.champions'}
@@ -2617,49 +2731,63 @@ async function buildSoccer(force) {
           fetchTeamForm(espnLeague.sport, espnLeague.league, away),
         ]);
 
-        // Blend odds-based xG with real form data — prefer synthetic xG from shots when available
-        const expectedTotal = impliedTotalGoals(tot.over, tot.under);
-        let { homeXG, awayXG } = estimateXG(hO, aO, dO||4, expectedTotal);
-        if (homeForm && awayForm) {
-          // Use synthetic xG (from shot stats) when available, fall back to goals-per-game
-          const hasSynXG = homeForm.synXG !== null && awayForm.synXG !== null;
+        let homeXG, awayXG;
+        let xgSource = 'odds'; // track which path we used
 
-          // Attack = team's own xG created. Defense = xG they concede (opponent's xGA).
-          // Home team xG = home attack vs away defense. Away team xG = away attack vs home defense.
-          let hAttack, awayDefense, aAttack, homeDefense;
-          if (hasSynXG) {
-            hAttack      = homeForm.homeSynXG || homeForm.synXG;   // how much xG home team creates
-            awayDefense  = awayForm.synXGA || awayForm.goalsAgainst; // how much xG away team concedes
-            aAttack      = awayForm.awaySynXG || awayForm.synXG;   // how much xG away team creates
-            homeDefense  = homeForm.synXGA || homeForm.goalsAgainst; // how much xG home team concedes
-          } else {
-            hAttack      = homeForm.homeGames >= 3 ? homeForm.homeGoalsFor : homeForm.goalsFor;
-            awayDefense  = awayForm.awayGames >= 3 ? awayForm.awayGoalsAg : awayForm.goalsAgainst;
-            aAttack      = awayForm.awayGames >= 3 ? awayForm.awayGoalsFor : awayForm.goalsFor;
-            homeDefense  = homeForm.homeGames >= 3 ? homeForm.homeGoalsAg : homeForm.goalsAgainst;
+        // PATH 1: Independent xG from Understat (BEST — truly independent of book odds)
+        const indepXG = independentXG(homeTeamXG, awayTeamXG, leagueXG);
+        if (indepXG) {
+          homeXG = indepXG.homeXG;
+          awayXG = indepXG.awayXG;
+          xgSource = 'understat';
+
+          // Light calibration: if odds imply a VERY different total (±1.5 goals),
+          // nudge 15% toward odds. This catches rare cases like red cards, injuries
+          // that Understat season data wouldn't know about.
+          const expectedTotal = impliedTotalGoals(tot.over, tot.under);
+          const modelTotal = homeXG + awayXG;
+          if (Math.abs(modelTotal - expectedTotal) > 1.5) {
+            const oddsXG = estimateXG(hO, aO, dO||4, expectedTotal);
+            homeXG = homeXG * 0.85 + oddsXG.homeXG * 0.15;
+            awayXG = awayXG * 0.85 + oddsXG.awayXG * 0.15;
+            xgSource = 'understat+odds';
           }
+        }
+        // PATH 2: Form-based (TheSportsDB) — for leagues without Understat coverage
+        else if (homeForm && awayForm) {
+          const leagueAvgGoals = 1.30;
+          const hAttack = homeForm.homeGames >= 3 ? homeForm.homeGoalsFor : homeForm.goalsFor;
+          const awayDefense = awayForm.awayGames >= 3 ? awayForm.awayGoalsAg : awayForm.goalsAgainst;
+          const aAttack = awayForm.awayGames >= 3 ? awayForm.awayGoalsFor : awayForm.goalsFor;
+          const homeDefense = homeForm.homeGames >= 3 ? homeForm.homeGoalsAg : homeForm.goalsAgainst;
 
-          // Proper xG estimation: attack strength × opponent defensive weakness
-          // Uses league-average divisor method: xG = attack × (oppDefense / leagueAvg)
-          // This preserves spread — strong teams stay high, weak teams stay low
-          const leagueAvgGoals = 1.30; // EPL/La Liga average ~1.3 goals per team per game
-          const formHomeXG = (hAttack && awayDefense)
-            ? hAttack * (awayDefense / leagueAvgGoals) // strong defense (low xGA) suppresses, weak defense boosts
-            : null;
-          const formAwayXG = (aAttack && homeDefense)
-            ? aAttack * (homeDefense / leagueAvgGoals)
-            : null;
+          const formHomeXG = (hAttack && awayDefense) ? hAttack * (awayDefense / leagueAvgGoals) : null;
+          const formAwayXG = (aAttack && homeDefense) ? aAttack * (homeDefense / leagueAvgGoals) : null;
 
           if (formHomeXG && formAwayXG && !isNaN(formHomeXG) && !isNaN(formAwayXG)) {
-            const oddsW = hasSynXG ? 0.40 : 0.45;
-            homeXG = homeXG * oddsW + formHomeXG * (1 - oddsW);
-            awayXG = awayXG * oddsW + formAwayXG * (1 - oddsW);
+            // Blend 55% form, 45% odds (form is less reliable than xG)
+            const oddsXG = estimateXG(hO, aO, dO||4, impliedTotalGoals(tot.over, tot.under));
+            homeXG = oddsXG.homeXG * 0.45 + formHomeXG * 0.55;
+            awayXG = oddsXG.awayXG * 0.45 + formAwayXG * 0.55;
+            xgSource = 'form+odds';
+          } else {
+            const oddsXG = estimateXG(hO, aO, dO||4, impliedTotalGoals(tot.over, tot.under));
+            homeXG = oddsXG.homeXG;
+            awayXG = oddsXG.awayXG;
           }
-          // else: keep odds-only xG from estimateXG() — better than NaN
           homeXG = Math.max(0.4, Math.min(3.5, homeXG));
           awayXG = Math.max(0.4, Math.min(3.5, awayXG));
         }
-        const scores = correctScores(homeXG,awayXG);
+        // PATH 3: Odds-only (last resort — circular but better than nothing)
+        else {
+          const oddsXG = estimateXG(hO, aO, dO||4, impliedTotalGoals(tot.over, tot.under));
+          homeXG = oddsXG.homeXG;
+          awayXG = oddsXG.awayXG;
+        }
+
+        // Per-league rho for Dixon-Coles
+        const rho = LEAGUE_RHO[leagueXGKey] || LEAGUE_RHO[espnLeague.league === 'uefa.champions' ? 'ucl' : espnLeague.league === 'eng.fa' ? 'fa_cup' : 'default'];
+        const scores = correctScores(homeXG, awayXG, rho);
         let hw=0,dr=0,aw=0,ov=0,un=0,btts=0;
         scores.forEach(s=>{
           if(s.h>s.a) hw+=s.p; else if(s.h===s.a) dr+=s.p; else aw+=s.p;
@@ -2678,19 +2806,25 @@ async function buildSoccer(force) {
 
         const top5 = scores.slice(0,5);
 
-        const formTag = (form) => {
+        // Display team xG info (independent or form-based)
+        const teamXGTag = (teamXG, form) => {
+          if (teamXG) {
+            return `<span style="font-size:0.7em;color:#555"><span style="color:#00ccff">xG ${teamXG.xg_per_game}</span>/${teamXG.xga_per_game}xGA &nbsp;R5: ${teamXG.recent5_xg}/${teamXG.recent5_xga} &nbsp;(${teamXG.games}gp)</span>`;
+          }
           if (!form) return '';
-          const xgTag = form.synXG !== null
-            ? `<span style="color:#00ccff">xG ${form.synXG.toFixed(2)}</span>/${form.synXGA !== null ? form.synXGA.toFixed(2) : '?'}xGA`
-            : '';
-          return `<span style="font-size:0.7em;color:#555">${form.wins}W-${form.draws}D-${form.losses}L &nbsp;${form.goalsFor.toFixed(1)}gf/${form.goalsAgainst.toFixed(1)}ga ${xgTag} (L${form.games})</span>`;
+          return `<span style="font-size:0.7em;color:#555">${form.wins}W-${form.draws}D-${form.losses}L &nbsp;${form.goalsFor.toFixed(1)}gf/${form.goalsAgainst.toFixed(1)}ga (L${form.games})</span>`;
         };
+        const sourceColor = xgSource.includes('understat') ? '#00ff88' : xgSource.includes('form') ? '#ffcc00' : '#ff4444';
+        const sourceLabel = xgSource === 'understat' ? 'Independent xG' : xgSource === 'understat+odds' ? 'xG + odds calibrated' : xgSource === 'form+odds' ? 'Form + odds' : 'Odds-derived';
         html += `<div class="match-card">
           <div class="match-title"><span>${home} vs ${away}</span><span class="match-time">${gameDate(ev.commence_time)}</span></div>
-          ${homeForm || awayForm ? `<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px;font-size:0.78em">
-            <div><span style="color:#888">${home.split(' ').pop()}:</span> ${formTag(homeForm)}</div>
-            <div><span style="color:#888">${away.split(' ').pop()}:</span> ${formTag(awayForm)}</div>
-          </div>` : ''}
+          <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px;font-size:0.78em">
+            <div><span style="color:#888">${home.split(' ').pop()}:</span> ${teamXGTag(homeTeamXG, homeForm)}</div>
+            <div><span style="color:#888">${away.split(' ').pop()}:</span> ${teamXGTag(awayTeamXG, awayForm)}</div>
+            <div style="margin-left:auto"><span style="color:${sourceColor};font-size:0.72em;font-weight:600;background:${sourceColor}12;padding:2px 8px;border-radius:8px;border:1px solid ${sourceColor}30">${sourceLabel}</span>
+              <span style="color:#444;font-size:0.68em;margin-left:4px">hXG:${homeXG.toFixed(2)} aXG:${awayXG.toFixed(2)} rho:${rho}</span>
+            </div>
+          </div>
           ${winnerBox(home,away,hO,aO,dO,ev.commence_time,lg.label)}
           <table class="odds-table">
             <tr><th>Outcome</th><th>Model%</th><th>Odds</th><th>Imp%</th><th>Edge</th></tr>
@@ -3553,6 +3687,7 @@ async function refreshAll(force=false) {
   allValueBets.length = 0;
   allPropBets.length  = 0;
   allSafePicks.length = 0;
+  Object.keys(_teamXGCache).forEach(k => delete _teamXGCache[k]); // clear xG cache
 
   if (force) clearAllCache();
 
