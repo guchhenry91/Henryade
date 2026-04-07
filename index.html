@@ -199,6 +199,8 @@
 
 <div class="tabs">
   <div class="tab active" onclick="showTab('all',event)">All Value Bets</div>
+  <div class="tab" onclick="showTab('safe',event)">💰 Safe Bets</div>
+  <div class="tab" onclick="showTab('parlay',event)">🎰 Parlays</div>
   <div class="tab" onclick="showTab('soccer',event)">⚽ Soccer</div>
   <div class="tab" onclick="showTab('nba',event)">🏀 NBA</div>
   <div class="tab" onclick="showTab('nfl',event)">🏈 NFL</div>
@@ -207,6 +209,8 @@
   <div class="tab" onclick="showTab('history',event)">📊 History</div>
 </div>
 
+<div id="tab-safe"   class="tab-content"><div class="loading" style="color:#555">Load sport tabs first — safe picks collected automatically</div></div>
+<div id="tab-parlay" class="tab-content"><div class="loading" style="color:#555">Load sport tabs first — parlays built from safe picks</div></div>
 <div id="tab-all"    class="tab-content active"><div class="loading" id="all-loading">⏳ Waking up — fetching soccer odds...</div></div>
 <div id="tab-soccer" class="tab-content"><div class="loading">⏳ Waking up — fetching soccer odds...</div></div>
 <div id="tab-nba"    class="tab-content"><div class="loading" style="color:#555">Click 🏀 NBA tab to load picks</div></div>
@@ -239,6 +243,8 @@ const TOKEN_BLOCK  = 3;    // block all live API calls below this — serve cach
 let   _tokensLeft  = null; // updated on every response header
 const allValueBets = [];
 const allPropBets  = [];   // slate-wide best prop pick per game, all sports
+const allSafePicks = [];   // collected from all sports for the 💰 Safe Bets tab
+const MAX_DAILY_EXPOSURE = 10; // max 10% of bankroll at risk per day
 const loadedTabs = new Set();
 const tabLoadedAt = {}; // tracks when each tab last loaded, for "X mins ago" display
 
@@ -269,7 +275,7 @@ const SPORT_TABS = {
   },
   mlb: {
     key: 'baseball_mlb', label: '⚾ MLB', region: 'us',
-    props: 'batter_home_runs,batter_hits,batter_rbis,batter_runs_scored,batter_total_bases,batter_strikeouts,batter_walks,pitcher_strikeouts,pitcher_earned_runs'
+    props: 'batter_home_runs,batter_hits,batter_rbis,batter_runs_scored,batter_total_bases,batter_strikeouts,batter_walks,batter_hits_runs_rbis,pitcher_strikeouts,pitcher_earned_runs'
   },
 };
 
@@ -304,6 +310,7 @@ const ESPN_STAT_MAP = {
   batter_total_bases:      { mlb: 'totalBases' },
   batter_strikeouts:       { mlb: 'strikeouts' },
   batter_walks:            { mlb: 'walks' },
+  batter_hits_runs_rbis:   { mlb: 'hitsRunsRBIs' }, // composite: H+R+RBI
   // MLB pitchers
   pitcher_strikeouts:      { mlb: 'strikeouts' },
   pitcher_earned_runs:     { mlb: 'earnedRuns' },
@@ -360,9 +367,205 @@ async function espnAthleteId(sport, league, playerName) {
   } catch { _athleteIdCache[cacheKey] = null; return null; }
 }
 
-// Fetch gamelog from ESPN common/v3 endpoint — works for all sports.
+// ── NBA Stats Proxy (Render) — real-time via nba_api backend ────────────────
+// Calls our own proxy which uses nba_api to bypass NBA.com bot protection
+const NBA_PROXY = 'https://nba-stats-proxy-9kur.onrender.com';
+
+async function nbaProxyGamelog(playerName, statKey, line) {
+  try {
+    // Map our stat keys to the proxy's market names
+    const marketMap = {
+      points: 'points', totalRebounds: 'rebounds', assists: 'assists',
+      threePointFieldGoalsMade: 'threes', blocks: 'blocks', steals: 'steals',
+      turnovers: 'turnovers', fieldGoalsMade: 'fieldGoalsMade',
+    };
+    const market = marketMap[statKey] || statKey;
+
+    // 90s timeout — Render free tier takes 30-50s to wake, then each player lookup is 3-5s
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 90000);
+    let res;
+    try { res = await fetch(`${NBA_PROXY}/api/nba/player/${encodeURIComponent(playerName)}/gamelog`, { signal: ctrl.signal }); } finally { clearTimeout(timer); }
+    if (!res || !res.ok) return null;
+    const data = await res.json();
+    if (!data.games || !data.games.length) return null;
+
+    // Map proxy response to our standard entries format { val, isHome, gameDate }
+    const keyMap = {
+      points: 'pts', totalRebounds: 'reb', assists: 'ast',
+      threePointFieldGoalsMade: 'fg3m', blocks: 'blk', steals: 'stl',
+      turnovers: 'tov', fieldGoalsMade: 'fgm',
+    };
+    const gameKey = keyMap[statKey] || 'pts';
+
+    const entries = [];
+    for (const g of data.games) {
+      // Skip DNP (0 minutes)
+      if (!g.min || g.min === 0) continue;
+      const val = parseFloat(g[gameKey]);
+      if (isNaN(val)) continue;
+      entries.push({ val, isHome: g.is_home || false, gameDate: g.date || null });
+    }
+
+    // Proxy returns newest-first, but our code expects oldest-first (slice(-5) = last 5)
+    entries.reverse();
+    return entries.length ? entries : null;
+  } catch { return null; }
+}
+
+// ── NHL Stats via Render Proxy (bypasses CORS on api-web.nhle.com) ──────────
+async function nhlProxyGamelog(playerName, statKey) {
+  try {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 90000);
+    let res;
+    try { res = await fetch(`${NBA_PROXY}/api/nhl/player/${encodeURIComponent(playerName)}/gamelog`, { signal: ctrl.signal }); } finally { clearTimeout(timer); }
+    if (!res || !res.ok) return null;
+    const data = await res.json();
+    if (!data.games || !data.games.length) return null;
+
+    // Map stat keys to proxy response fields
+    const keyMap = {
+      goals: 'goals', assists: 'assists', points: 'points',
+      shotsTotal: 'shots', blockedShots: 'blocked_shots',
+      powerPlayGoals: 'pp_goals', powerPlayPoints: 'pp_points',
+    };
+    const gameKey = keyMap[statKey] || 'points';
+
+    const entries = [];
+    for (const g of data.games) {
+      const val = parseFloat(g[gameKey]);
+      if (isNaN(val)) continue;
+      entries.push({ val, isHome: g.is_home || false, gameDate: g.date || null });
+    }
+    // Proxy returns newest-first, reverse for our code (expects oldest-first)
+    entries.reverse();
+    return entries.length ? entries : null;
+  } catch { return null; }
+}
+
+// ── Official MLB Stats API (statsapi.mlb.com) — real-time, no key needed ────
+// Returns per-game entries { val, isHome, gameDate } or null
+const _mlbPlayerCache = {};
+async function mlbOfficialGamelog(playerName, statKey) {
+  try {
+    // Search for player
+    const cacheKey = `mlb__${playerName}`;
+    let playerId = _mlbPlayerCache[cacheKey];
+    if (playerId === undefined) {
+      const searchRes = await fetch(`https://statsapi.mlb.com/api/v1/people/search?names=${encodeURIComponent(playerName)}&sportIds=1`);
+      if (!searchRes.ok) return null;
+      const searchData = await searchRes.json();
+      const match = (searchData.people || []).find(p => {
+        const n = (p.fullName || '').toLowerCase();
+        return n === playerName.toLowerCase() || n.includes(playerName.toLowerCase().split(' ').pop());
+      });
+      playerId = match ? match.id : null;
+      _mlbPlayerCache[cacheKey] = playerId;
+    }
+    if (!playerId) return null;
+
+    // Determine hitting vs pitching group
+    const isPitcher = statKey === 'strikeouts' && (statKey === 'earnedRuns' || true); // pitcher markets
+    const group = ['strikeouts', 'earnedRuns', 'walks'].includes(statKey) && !['hits','homeRuns','rbi','runs','totalBases'].includes(statKey)
+      ? 'pitching' : 'hitting';
+    // Actually: for batter_strikeouts the group is hitting, for pitcher_strikeouts it's pitching
+    // We can't tell from statKey alone — try hitting first, if no data try pitching
+
+    for (const g of ['hitting', 'pitching']) {
+      const res = await fetch(`https://statsapi.mlb.com/api/v1/people/${playerId}/stats?stats=gameLog&season=2026&group=${g}`);
+      if (!res.ok) continue;
+      const data = await res.json();
+      const statsArr = data.stats || [];
+      const splits = (statsArr.length ? statsArr[0].splits : null) || [];
+      if (!splits.length) continue;
+
+      // Map our stat keys to MLB API keys
+      const keyMap = {
+        hits: 'hits', homeRuns: 'homeRuns', RBIs: 'rbi', runs: 'runs',
+        totalBases: 'totalBases', strikeouts: 'strikeOuts', walks: 'baseOnBalls',
+        earnedRuns: 'earnedRuns', hitsRunsRBIs: '_composite_hrr',
+      };
+      const mlbKey = keyMap[statKey];
+      if (!mlbKey && statKey !== 'hitsRunsRBIs') continue;
+
+      const entries = [];
+      for (const s of splits) {
+        const stat = s.stat || {};
+        let val;
+        if (statKey === 'hitsRunsRBIs') {
+          val = (stat.hits || 0) + (stat.runs || 0) + (stat.rbi || 0);
+        } else {
+          val = stat[mlbKey];
+        }
+        if (val == null) continue;
+        val = parseFloat(val);
+        if (isNaN(val)) continue;
+        const isHome = s.isHome || false;
+        const gameDate = s.date || null;
+        entries.push({ val, isHome, gameDate });
+      }
+      if (entries.length) return entries;
+    }
+    return null;
+  } catch { return null; }
+}
+
+// ── Official NHL Stats API (api-web.nhle.com) — real-time, no key needed ────
+const _nhlPlayerCache = {};
+async function nhlOfficialGamelog(playerName, statKey) {
+  try {
+    // Search for player
+    const cacheKey = `nhl__${playerName}`;
+    let playerId = _nhlPlayerCache[cacheKey];
+    if (playerId === undefined) {
+      // Search by FULL name first (last name only returns wrong players like "Stephen MacKinnon" for "Nathan MacKinnon")
+      const searchRes = await fetch(`https://search.d3.nhle.com/api/v1/search/player?culture=en-us&limit=5&q=${encodeURIComponent(playerName)}`);
+      if (!searchRes.ok) return null;
+      const players = await searchRes.json();
+      const pLower = playerName.toLowerCase();
+      const match = players.find(p => (p.name || '').toLowerCase() === pLower)
+        || players.find(p => {
+          const n = (p.name || '').toLowerCase();
+          return n.includes(pLower.split(' ').pop()) && n.includes(pLower.split(' ')[0]);
+        });
+      playerId = match ? match.playerId : null;
+      _nhlPlayerCache[cacheKey] = playerId;
+    }
+    if (!playerId) return null;
+
+    // Fetch gamelog
+    const res = await fetch(`https://api-web.nhle.com/v1/player/${playerId}/game-log/20252026/2`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    const games = data.gameLog || [];
+    if (!games.length) return null;
+
+    // Map our stat keys to NHL API keys
+    const keyMap = {
+      goals: 'goals', assists: 'assists', points: 'points',
+      shotsTotal: 'shots', blockedShots: 'blockedShots',
+      powerPlayGoals: 'powerPlayGoals', powerPlayPoints: 'powerPlayPoints',
+    };
+    const nhlKey = keyMap[statKey];
+    if (!nhlKey) return null;
+
+    const entries = [];
+    for (const g of games) {
+      // Skip games with 0 TOI (DNP/scratched)
+      if (g.toi === '00:00' || g.toi === '0:00') continue;
+      const val = parseFloat(g[nhlKey]);
+      if (isNaN(val)) continue;
+      const isHome = g.homeRoadFlag === 'H';
+      const gameDate = g.gameDate || null;
+      entries.push({ val, isHome, gameDate });
+    }
+    return entries.length ? entries : null;
+  } catch { return null; }
+}
+
+// Fetch gamelog from ESPN common/v3 endpoint — fallback for NBA/NFL.
 // Returns per-game entries with stat value and home/away flag, or null.
-// Handles compound stats like "9-21" (made-attempted) by taking the first number.
 const _gamelogRawCache = {};
 async function espnPlayerGamelog(sport, league, athleteId, statKey) {
   try {
@@ -396,14 +599,43 @@ async function espnPlayerGamelog(sport, league, athleteId, statKey) {
     if (idx === -1 && v3Renames[statKey]) {
       idx = names.indexOf(v3Renames[statKey]);
     }
+    // Composite stats: H+R+RBI — sum multiple columns from gamelog
+    if (idx === -1 && statKey === 'hitsRunsRBIs') {
+      const hIdx = names.indexOf('hits');
+      const rIdx = names.indexOf('runs');
+      const rbiIdx = names.indexOf('RBIs');
+      if (hIdx === -1 || rIdx === -1 || rbiIdx === -1) return null;
+      const entries = [];
+      const eventsMap = data.events || {};
+      for (const st of (data.seasonTypes || [])) {
+        for (const cat of (st.categories || [])) {
+          for (const ev of (cat.events || [])) {
+            const h = parseFloat((ev.stats||[])[hIdx]) || 0;
+            const r = parseFloat((ev.stats||[])[rIdx]) || 0;
+            const rbi = parseFloat((ev.stats||[])[rbiIdx]) || 0;
+            const evInfo = eventsMap[ev.eventId] || {};
+            const isHome = evInfo.homeTeamId ? true : (ev.atVs !== '@');
+            const gameDate = evInfo.gameDate || null;
+            entries.push({ val: h + r + rbi, isHome, gameDate });
+          }
+        }
+      }
+      return entries.length ? entries : null;
+    }
     if (idx === -1) return null;
 
     const entries = []; // { val, isHome, gameDate }
     const eventsMap = data.events || {};
+    const minsIdx = names.indexOf('minutes'); // to detect DNP (0 minutes = didn't play)
 
     for (const st of (data.seasonTypes || [])) {
       for (const cat of (st.categories || [])) {
         for (const ev of (cat.events || [])) {
+          // Skip DNP games — 0 minutes means player didn't play, not "scored 0"
+          if (minsIdx >= 0) {
+            const mins = (ev.stats || [])[minsIdx];
+            if (mins === '0' || mins === '0:00' || mins === 0) continue;
+          }
           const rawVal = (ev.stats || [])[idx];
           if (rawVal == null) continue;
           let val;
@@ -436,7 +668,7 @@ async function espnPlayerGamelog(sport, league, athleteId, statKey) {
 // Parameterized from mean (μ) and variance (σ²): r = μ²/(σ²-μ), p = μ/σ²
 function negBinomCDF(mean, variance, threshold) {
   // If variance <= mean, use Poisson (no overdispersion)
-  if (variance <= mean || mean <= 0) {
+  if (variance <= mean * 1.01 || mean <= 0) { // 1% tolerance — avoids numerical instability when variance ≈ mean
     let cdf = 0;
     for (let k = 0; k <= Math.floor(threshold); k++) {
       cdf += poisson(mean, k);
@@ -469,17 +701,27 @@ function probOverLine(mean, variance, line) {
 }
 
 // Master stats fetcher — negative binomial distribution + hot/cold streak + home/away split
-// Returns { signal, hitProb, avg, variance, ... } with distribution-based probability
+// Uses official MLB/NHL APIs (real-time) with ESPN v3 as fallback for NBA/NFL
 async function getStatSignal(leagueShort, playerName, market, line, isHomeGame = null) {
   const cfg     = ESPN_LEAGUE_CFG[leagueShort];
   if (!cfg) return null;
   const statKey = (ESPN_STAT_MAP[market] || {})[leagueShort];
   if (!statKey) return null;
 
-  const athleteId = await espnAthleteId(cfg.sport, cfg.league, playerName);
-  if (!athleteId) return null;
-
-  const entries = await espnPlayerGamelog(cfg.sport, cfg.league, athleteId, statKey);
+  // ── Real-time APIs first — ESPN fallback only for NHL (CORS blocks gamelog) and NFL ──
+  let entries = null;
+  if (leagueShort === 'nba') {
+    entries = await nbaProxyGamelog(playerName, statKey, line);
+  } else if (leagueShort === 'mlb') {
+    entries = await mlbOfficialGamelog(playerName, statKey);
+  } else if (leagueShort === 'nhl') {
+    // NHL gamelog CORS-blocked from browser — use our Render proxy instead
+    entries = await nhlProxyGamelog(playerName, statKey);
+  } else {
+    // NFL — still uses ESPN (off-season)
+    const athleteId = await espnAthleteId(cfg.sport, cfg.league, playerName);
+    if (athleteId) entries = await espnPlayerGamelog(cfg.sport, cfg.league, athleteId, statKey);
+  }
   if (!entries || !entries.length) return null;
 
   const vals    = entries.map(e => e.val);
@@ -536,13 +778,27 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
   // ── Combined signal: distribution + streak ──
   const totalSignal = Math.max(-0.35, Math.min(0.35, distSignal + streakSignal * 0.4));
 
-  // ── Staleness detection — how old is the most recent game in ESPN's data? ──
+  // ── Staleness + gap detection — ESPN can have recent data but miss games in between ──
   const gameDates = entries.filter(e => e.gameDate).map(e => new Date(e.gameDate));
-  const latestGameDate = gameDates.length ? new Date(Math.max(...gameDates)) : null;
+  const latestGameDate = gameDates.length ? new Date(Math.max(...gameDates.map(d => d.getTime()))) : null;
   const daysStale = latestGameDate ? Math.floor((new Date() - latestGameDate) / (1000*60*60*24)) : null;
-  const staleLabel = daysStale !== null && daysStale >= 2
+
+  // Gap detection: check if L5 games span too many days (gaps = missing games)
+  // NBA: plays every 1-2 days, L5 should span ~8-12 days. MLB: every day, ~5-7 days.
+  let gapWarning = null;
+  let hasDataGap = false;
+  if (gameDates.length >= 5) {
+    const sorted = [...gameDates].sort((a,b) => b-a);
+    const l5span = (sorted[0] - sorted[4]) / (1000*60*60*24);
+    if (l5span > 14) {
+      gapWarning = `⚠️ Data gap: L5 spans ${l5span.toFixed(0)} days (missing games — stats may be unreliable)`;
+      hasDataGap = true;
+    }
+  }
+
+  const staleLabel = (daysStale !== null && daysStale >= 2)
     ? `📅 Stats from ${latestGameDate.toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:TZ})} (${daysStale}d ago${daysStale >= 4 ? ' ⚠️ STALE' : ''})`
-    : null;
+    : gapWarning;
 
   // ── Labels ──
   const consistencyTag = variance <= effectiveMean ? '🎯 Consistent' : variance >= effectiveMean * 2 ? '🎲 Volatile' : '';
@@ -552,11 +808,101 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
 
   const labels = [probLabel, avgLabel, streakLabel, locationLabel, staleLabel].filter(Boolean);
 
+  // If data gap detected, KILL the signal — don't let stale data influence direction
+  // The hit probability and avg are still shown but the signal is zeroed out
+  const safeSignal = hasDataGap ? 0 : totalSignal;
+  const safeHitProbOver  = hasDataGap ? null : hitProbOver;
+  const safeHitProbUnder = hasDataGap ? null : hitProbUnder;
+
   return {
-    avg: parseFloat(avg5.toFixed(2)), games: recent5.length,
-    signal: totalSignal, signalLabel: labels[0], extraLabels: labels.slice(1), diff,
-    hitProbOver, hitProbUnder, variance: parseFloat(variance.toFixed(2)),
-    actualHitRate, consistencyTag, daysStale, staleLabel,
+    avg: parseFloat(avg5.toFixed(2)), avg15: parseFloat(avg15.toFixed(2)),
+    games: recent5.length, totalGames: vals.length,
+    signal: safeSignal, signalLabel: labels[0], extraLabels: labels.slice(1), diff,
+    hitProbOver: safeHitProbOver, hitProbUnder: safeHitProbUnder,
+    variance: parseFloat(variance.toFixed(2)),
+    effectiveMean: parseFloat(effectiveMean.toFixed(2)),
+    actualHitRate, consistencyTag, daysStale, staleLabel, hasDataGap,
+    trendRatio: parseFloat(trendRatio.toFixed(3)),
+  };
+}
+
+// ── PHASE 2: Independent Player Projection ──────────────────────────────────
+// Builds a projected stat line INDEPENDENT of book odds, then compares to the line.
+// projection = baseAvg × matchupFactor × paceFactor × restFactor × homeAwayFactor × trendFactor
+// Then uses neg-binom distribution to get P(OVER) from the PROJECTED mean.
+
+function projectPlayerStat(statResult, oppFactor, restResult, isHomeGame) {
+  if (!statResult || !statResult.avg) return null;
+
+  // Base: blend of L5 (60%) and L15 (40%) for stability + recency
+  const avg5 = statResult.avg;
+  const avg15 = statResult.avg15 || avg5;
+  let projection = avg5 * 0.60 + avg15 * 0.40;
+
+  let factors = [];
+
+  // ── Matchup factor: opponent defense rating ──
+  // defenseRating >1 = weak defense (player scores MORE), <1 = strong defense (scores LESS)
+  let matchupFactor = 1.0;
+  if (oppFactor && oppFactor.defenseRating) {
+    // Scale the impact: defense rating 1.10 → projection × 1.07 (70% pass-through)
+    matchupFactor = 1.0 + (oppFactor.defenseRating - 1.0) * 0.70;
+    matchupFactor = Math.max(0.80, Math.min(1.25, matchupFactor)); // cap at ±25%
+    factors.push({ name: 'matchup', value: matchupFactor, label: oppFactor.label || `Defense: ${oppFactor.defenseRating.toFixed(2)}x` });
+  }
+
+  // ── Pace factor: fast games = more possessions = more stats ──
+  let paceFactor = 1.0;
+  if (oppFactor && oppFactor.paceMultiplier) {
+    paceFactor = 1.0 + (oppFactor.paceMultiplier - 1.0) * 0.40; // 40% pass-through
+    paceFactor = Math.max(0.90, Math.min(1.12, paceFactor)); // cap at ±12%
+    factors.push({ name: 'pace', value: paceFactor, label: `Pace: ${oppFactor.paceMultiplier.toFixed(2)}x` });
+  }
+
+  // ── Rest factor: back-to-back = lower output ──
+  let restFactor = 1.0;
+  if (restResult && restResult.penalty) {
+    // restResult.penalty is negative (e.g. -0.04 for B2B)
+    // Convert to multiplicative: -0.04 → 0.96×
+    restFactor = 1.0 + restResult.penalty * 2.5; // amplify: -0.04 → 0.90×
+    restFactor = Math.max(0.85, Math.min(1.05, restFactor));
+    if (restFactor !== 1.0) factors.push({ name: 'rest', value: restFactor, label: restResult.label || 'Rest adj' });
+  }
+
+  // ── Home/away factor: players perform differently at home ──
+  let homeAwayFactor = 1.0;
+  if (isHomeGame === true) {
+    homeAwayFactor = 1.03; // 3% home boost
+    factors.push({ name: 'home', value: homeAwayFactor, label: 'Home: +3%' });
+  } else if (isHomeGame === false) {
+    homeAwayFactor = 0.97; // 3% away penalty
+    factors.push({ name: 'away', value: homeAwayFactor, label: 'Away: -3%' });
+  }
+
+  // ── Trend factor: hot/cold streaks ──
+  let trendFactor = 1.0;
+  if (statResult.trendRatio) {
+    // trendRatio >1.25 = hot streak, <0.75 = cold streak
+    // Mild pass-through: 30% of the trend (don't overreact to streaks)
+    trendFactor = 1.0 + (statResult.trendRatio - 1.0) * 0.30;
+    trendFactor = Math.max(0.88, Math.min(1.15, trendFactor));
+    if (Math.abs(trendFactor - 1.0) > 0.03) {
+      factors.push({ name: 'trend', value: trendFactor, label: `Trend: ${statResult.trendRatio.toFixed(2)}x` });
+    }
+  }
+
+  // Apply all factors
+  projection *= matchupFactor * paceFactor * restFactor * homeAwayFactor * trendFactor;
+
+  // Total adjustment from baseline
+  const totalAdj = matchupFactor * paceFactor * restFactor * homeAwayFactor * trendFactor;
+
+  return {
+    projection: parseFloat(projection.toFixed(2)),
+    baseline: parseFloat((avg5 * 0.60 + avg15 * 0.40).toFixed(2)),
+    factors,
+    totalAdj: parseFloat(totalAdj.toFixed(3)),
+    matchupFactor, paceFactor, restFactor, homeAwayFactor, trendFactor,
   };
 }
 
@@ -908,8 +1254,8 @@ function getOpponentFactor(standings, opponentName) {
   // Defense rating: opponent's OppPPG / league avg OppPPG
   // >1 means they allow MORE points than average (weak defense = boost)
   // <1 means they allow FEWER (strong defense = suppress)
+  if (!avg.oppg || !avg.pace) return null; // guard against division by zero
   const defenseRating = opp.oppg / avg.oppg;
-  // Pace: game pace / league avg pace
   const paceMultiplier = opp.pace / avg.pace;
   // Combined factor: 70% defense + 30% pace
   const factor = defenseRating * 0.7 + paceMultiplier * 0.3;
@@ -941,14 +1287,14 @@ function calcVig(overOdds, underOdds) {
   return (1 / overOdds + 1 / underOdds) - 1;
 }
 
-// Composite score:
-//   edge        0.30 — vig-removed pick probability above 50%
-//   consensus   0.25 — how many distinct bookmakers offer both sides of this line
-//   fair_price  0.15 — how close to a fair (low-vig) line
-//   vig_penalty 0.10 — subtracted when vig exceeds FAIR_VIG
-//   stats       0.20 — L5 average vs prop line signal (ESPN data, 0 if unavailable)
+// Composite score (weights must sum to ~1.0 before penalties):
+//   edge 0.22 + consensus 0.18 + fair 0.12 - vig 0.08 + stats 0.20 + lineMove 0.08 + opp 0.12
+//   + rest/weather/overPenalty (flat additive)
+//   × dirCalib (OVER/UNDER multiplier from historical win rates)
+//   × 0.90 market regression
 // calib: object from getCalibration() — applies directional win-rate multiplier
 function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineMoveSig = 0, restPenalty = 0, weatherPenalty = 0, sportHint = '', oppSignal = 0) {
+  if (isNaN(pct) || !direction) return 0; // guard against garbage input
   const dirCalib        = (calib && calib[direction]) || 1.0;
   const edgeFactor      = (pct - 50) / 50;
   const consensusFactor = Math.min(bookCount / 6, 1);
@@ -1014,7 +1360,7 @@ const ESPN_CFG = {
 
 // Map Odds API market keys → ESPN boxscore stat keys (league-scoped where needed)
 const MARKET_STAT_KEY = {
-  player_points:           { nba: 'points',                      nhl: 'points'        },
+  player_points:           { nba: 'points',                      nhl: 'points'        }, // NHL 'points' handled specially in playerStatFromSummary (goals+assists)
   player_rebounds:         { nba: 'rebounds'                                           },
   player_assists:          { nba: 'assists',                     nhl: 'assists'        },
   player_threes:           { nba: 'threePointFieldGoalsMade'                           },
@@ -1027,9 +1373,9 @@ const MARKET_STAT_KEY = {
   player_receiving_yds:    { nfl: 'receivingYards'                                     },
   player_pass_tds:         { nfl: 'passingTouchdowns'                                  },
   player_receptions:       { nfl: 'receptions'                                         },
-  player_shots_on_goal:    { nhl: 'shotsOnGoal'                                        },
+  player_shots_on_goal:    { nhl: 'shotsTotal'                                         },
   player_goals:            { nhl: 'goals'                                              },
-  player_power_play_points:{ nhl: 'powerPlayPoints'                                    },
+  player_power_play_points:{ nhl: '_nhl_pp_points'                                     }, // special: goals+assists in PP, handled below
   player_blocked_shots:    { nhl: 'blockedShots'                                       },
   batter_home_runs:        { mlb: 'homeRuns'                                           },
   batter_hits:             { mlb: 'hits'                                               },
@@ -1038,6 +1384,7 @@ const MARKET_STAT_KEY = {
   batter_total_bases:      { mlb: 'totalBases'                                         },
   batter_strikeouts:       { mlb: 'strikeouts'                                         },
   batter_walks:            { mlb: 'walks'                                              },
+  batter_hits_runs_rbis:   { mlb: 'hitsRunsRBIs'                                       }, // composite
   pitcher_strikeouts:      { mlb: 'strikeouts'                                         },
   pitcher_earned_runs:     { mlb: 'earnedRuns'                                         },
 };
@@ -1066,13 +1413,46 @@ function espnDateStr(iso) {
 
 // Extract a player's stat value from an ESPN game summary boxscore
 function playerStatFromSummary(summary, playerName, statKey) {
+  // Special composite stats — boxscore stores components separately
+  if (statKey === 'points' || statKey === '_nhl_pp_points') {
+    // NHL "points" = goals + assists
+    const goals = playerStatFromSummary(summary, playerName, 'goals');
+    const assists = playerStatFromSummary(summary, playerName, 'assists');
+    if (goals !== null && assists !== null) return goals + assists;
+    return null;
+  }
+  if (statKey === 'totalBases') {
+    const hits = playerStatFromSummary(summary, playerName, 'hits');
+    const hr   = playerStatFromSummary(summary, playerName, 'homeRuns');
+    if (hits !== null && hr !== null) return hits + (hr * 3);
+    return null;
+  }
+  if (statKey === 'hitsRunsRBIs') {
+    // MLB H+R+RBI composite
+    const h = playerStatFromSummary(summary, playerName, 'hits');
+    const r = playerStatFromSummary(summary, playerName, 'runs');
+    const rbi = playerStatFromSummary(summary, playerName, 'RBIs');
+    if (h !== null && r !== null && rbi !== null) return h + r + rbi;
+    return null;
+  }
+
   for (const team of (summary?.boxscore?.players || [])) {
     for (const grp of (team.statistics || [])) {
-      const idx = (grp.keys || []).indexOf(statKey);
+      // Exact match first, then compound match (e.g. 'threePointFieldGoalsMade' matches 'threePointFieldGoalsMade-threePointFieldGoalsAttempted')
+      let idx = (grp.keys || []).indexOf(statKey);
+      if (idx === -1) idx = (grp.keys || []).findIndex(k => k.startsWith(statKey + '-'));
       if (idx === -1) continue;
       for (const ath of (grp.athletes || [])) {
-        if (nameMatch(playerName, ath.athlete?.displayName || '')) {
-          const v = parseFloat(ath.stats?.[idx]);
+        // Strict player matching for grading — require first AND last name match
+        // to avoid "Draymond Green" matching "Jeff Green" by last name only
+        const athName = (ath.athlete?.displayName || '').toLowerCase().replace(/[^a-z\s]/g,'').trim();
+        const searchName = playerName.toLowerCase().replace(/[^a-z\s]/g,'').trim();
+        const firstMatch = athName.split(' ')[0] === searchName.split(' ')[0] ||
+                           athName.includes(searchName.split(' ')[0]);
+        const lastMatch = athName.split(' ').pop() === searchName.split(' ').pop();
+        if ((athName === searchName) || (firstMatch && lastMatch)) {
+          const raw = ath.stats?.[idx];
+          const v = (typeof raw === 'string' && raw.includes('-')) ? parseFloat(raw.split('-')[0]) : parseFloat(raw);
           if (!isNaN(v)) return v;
         }
       }
@@ -1271,6 +1651,95 @@ function getCalibration() {
   };
 }
 
+// ── PHASE 3: Daily Exposure Tracking ──────────────────────────────────────────
+// Sums up all pending (unbettled) picks' Kelly stakes for today.
+// If total exposure exceeds 10%, remaining picks show "exposure limit" warning.
+function getDailyExposure() {
+  const today = todayET();
+  const h = getHistory();
+  const todayPicks = h.filter(p => p.id && p.id.startsWith(today) && !p.result && !p.parlay);
+  const totalExposure = todayPicks.reduce((sum, p) => {
+    // Estimate Kelly from stored data
+    const prob = parseFloat(p.pct) / 100;
+    const odds = prob > 0 ? 1 / prob : 2.0;
+    const b = odds - 1;
+    const modelProb = p.score ? Math.min(0.85, prob + p.score * 0.15) : prob;
+    const kelly = b > 0 ? Math.max(0, (b * modelProb - (1 - modelProb)) / b) : 0;
+    const stake = Math.min(3, kelly * 25); // quarter-Kelly capped at 3%
+    return sum + stake;
+  }, 0);
+  return { totalExposure: parseFloat(totalExposure.toFixed(1)), picksCount: todayPicks.length, remaining: parseFloat((MAX_DAILY_EXPOSURE - totalExposure).toFixed(1)) };
+}
+
+// ── PHASE 3: Confidence Decay per Sport ─────────────────────────────────────
+// If a sport has lost 5+ of the last 7 picks, reduce its score by 30%.
+// If it's lost 7+ of the last 10, reduce by 50%. Self-corrects as wins come in.
+function getConfidenceDecay(sportLabel) {
+  const h = getHistory();
+  const sportClean = (sportLabel || '').replace(/\p{Emoji}/gu, '').trim().toUpperCase();
+  const sportPicks = h.filter(p => {
+    const sp = (p.sport || '').replace(/\p{Emoji}/gu, '').trim().toUpperCase();
+    return sp === sportClean && (p.result === 'W' || p.result === 'L');
+  }).slice(0, 10); // most recent 10
+
+  if (sportPicks.length < 5) return { multiplier: 1.0, label: null }; // not enough data
+
+  const last7 = sportPicks.slice(0, 7);
+  const last10 = sportPicks.slice(0, 10);
+  const last7Losses = last7.filter(p => p.result === 'L').length;
+  const last10Losses = last10.filter(p => p.result === 'L').length;
+
+  if (last10.length >= 10 && last10Losses >= 7) {
+    return { multiplier: 0.50, label: `⚠️ ${sportClean} cold: ${10 - last10Losses}W/${last10Losses}L last 10 — exposure halved` };
+  }
+  if (last7.length >= 7 && last7Losses >= 5) {
+    return { multiplier: 0.70, label: `⚠️ ${sportClean} cooling: ${7 - last7Losses}W/${last7Losses}L last 7 — exposure reduced 30%` };
+  }
+  // Opposite: if winning streak, slight boost
+  const last7Wins = last7.filter(p => p.result === 'W').length;
+  if (last7.length >= 7 && last7Wins >= 6) {
+    return { multiplier: 1.10, label: `🔥 ${sportClean} hot: ${last7Wins}W/${7 - last7Wins}L last 7 — slight boost` };
+  }
+  return { multiplier: 1.0, label: null };
+}
+
+// ── PHASE 3: Model Drift Detection ──────────────────────────────────────────
+// Checks if the model's recent win rate has drifted significantly from its
+// historical baseline. If it has, flags it and adjusts confidence.
+function detectModelDrift() {
+  const h = getHistory();
+  const settled = h.filter(p => (p.result === 'W' || p.result === 'L') && !p.parlay);
+  if (settled.length < 20) return { drifting: false, label: null };
+
+  const recent20 = settled.slice(0, 20);
+  const older = settled.slice(20);
+
+  const recentWR = recent20.filter(p => p.result === 'W').length / recent20.length;
+  const olderWR = older.length >= 10 ? older.filter(p => p.result === 'W').length / older.length : 0.5;
+
+  const drift = recentWR - olderWR;
+
+  if (drift <= -0.15) {
+    return {
+      drifting: true,
+      direction: 'declining',
+      recentWR: (recentWR * 100).toFixed(0),
+      olderWR: (olderWR * 100).toFixed(0),
+      label: `⚠️ MODEL DRIFT: Recent 20 picks at ${(recentWR*100).toFixed(0)}% vs historical ${(olderWR*100).toFixed(0)}% — consider pausing or reducing stakes`,
+    };
+  }
+  if (drift >= 0.15) {
+    return {
+      drifting: false,
+      direction: 'improving',
+      recentWR: (recentWR * 100).toFixed(0),
+      olderWR: (olderWR * 100).toFixed(0),
+      label: `✅ Model improving: Recent ${(recentWR*100).toFixed(0)}% vs historical ${(olderWR*100).toFixed(0)}%`,
+    };
+  }
+  return { drifting: false, label: null };
+}
+
 // Short reason string — only references real signals
 function propReason(pct, bookCount, vig) {
   const parts = [];
@@ -1295,13 +1764,17 @@ function showTab(name, e) {
     loadedTabs.add(name);
     if (name === 'soccer') {
       document.getElementById('tab-soccer').innerHTML = '<div class="loading">⚽ Fetching odds & form data...</div>';
-      buildSoccer(false).then(() => { buildAllTab(); });
+      buildSoccer(false).then(() => { buildAllTab(); buildSafeTab(); buildParlayTab(); });
+    } else if (name === 'safe') {
+      buildSafeTab();
+    } else if (name === 'parlay') {
+      buildParlayTab();
     } else if (name === 'history') {
       buildHistoryTab();
     } else if (SPORT_TABS[name]) {
       const sportName = SPORT_TABS[name].label || name.toUpperCase();
       document.getElementById('tab-' + name).innerHTML = `<div class="loading">${sportName} — Fetching odds & player stats...</div>`;
-      buildSportTab(name, false).then(() => { buildAllTab(); });
+      buildSportTab(name, false).then(() => { buildAllTab(); buildSafeTab(); buildParlayTab(); });
     }
   }
 }
@@ -1319,9 +1792,9 @@ function updateCacheStatus(){
   const keys = Object.keys(localStorage).filter(k => k.startsWith('bm_') && k !== HISTORY_KEY);
   if (!keys.length) { document.getElementById('cacheStatus').textContent='Cache: empty'; return; }
   try {
-    const entries = keys.map(k => { try { return JSON.parse(localStorage.getItem(k)).ts; } catch { return 0; } });
-    const newest = Math.max(...entries);
-    const ago = Math.round((Date.now() - newest) / 60000);
+    const entries = keys.map(k => { try { return JSON.parse(localStorage.getItem(k)).ts || 0; } catch { return 0; } });
+    const newest = Math.max(...entries.filter(t => t > 0));
+    const ago = newest ? Math.round((Date.now() - newest) / 60000) : '?';
     const left = _tokensLeft !== null ? ` · ${_tokensLeft} tokens left` : '';
     document.getElementById('cacheStatus').textContent = `Cache: ${ago}m ago (${keys.length})${left}`;
   } catch { document.getElementById('cacheStatus').textContent=`Cache: ${keys.length} stored`; }
@@ -1416,7 +1889,7 @@ function poisson(lam, k) { let r=Math.exp(-lam); for(let i=1;i<=k;i++) r*=lam/i;
 // Dixon-Coles correlation adjustment for low-scoring outcomes (0-0, 1-0, 0-1, 1-1)
 // Standard Poisson assumes independence — this corrects for real-world goal correlation.
 // rho < 0 means 0-0 and 1-1 are more likely than Poisson predicts (defensive games).
-function dixonColes(h, a, hXG, aXG, rho = -0.05) {
+function dixonColes(h, a, hXG, aXG, rho = -0.08) {
   const base = poisson(hXG, h) * poisson(aXG, a);
   if (h === 0 && a === 0) return base * (1 - hXG * aXG * rho);
   if (h === 1 && a === 0) return base * (1 + aXG * rho);
@@ -1425,9 +1898,9 @@ function dixonColes(h, a, hXG, aXG, rho = -0.05) {
   return base;
 }
 
-function correctScores(hXG, aXG, max=6) {
+function correctScores(hXG, aXG, rho = -0.08, max=6) {
   const s=[];
-  for(let h=0;h<=max;h++) for(let a=0;a<=max;a++) s.push({h,a,p:dixonColes(h,a,hXG,aXG)});
+  for(let h=0;h<=max;h++) for(let a=0;a<=max;a++) s.push({h,a,p:dixonColes(h,a,hXG,aXG,rho)});
   // Normalize so probabilities sum to 1
   const total = s.reduce((sum,x) => sum + x.p, 0);
   s.forEach(x => x.p /= total);
@@ -1541,6 +2014,32 @@ function bestTotal(ev, line=2.5) {
   });
   return {over:ov||null,under:un||null};
 }
+// Extract BTTS (Both Teams To Score) odds from event data
+function bestBTTS(ev) {
+  let yes=0, no=0;
+  (ev.bookmakers||[]).forEach(bk=>{
+    const m=(bk.markets||[]).find(m=>m.key==='btts'); if(!m) return;
+    (m.outcomes||[]).forEach(o=>{
+      if(o.name==='Yes' && o.price>yes) yes=o.price;
+      if(o.name==='No'  && o.price>no)  no=o.price;
+    });
+  });
+  return { yes: yes||null, no: no||null };
+}
+
+// Extract Draw No Bet odds from event data
+function bestDNB(ev) {
+  let home=0, away=0;
+  (ev.bookmakers||[]).forEach(bk=>{
+    const m=(bk.markets||[]).find(m=>m.key==='draw_no_bet'); if(!m) return;
+    (m.outcomes||[]).forEach(o=>{
+      if(o.name===ev.home_team && o.price>home) home=o.price;
+      if(o.name===ev.away_team && o.price>away) away=o.price;
+    });
+  });
+  return { home: home||null, away: away||null };
+}
+
 function estimateXG(hO, aO, dO, totGoals = 2.5) {
   const hi = impliedProb(hO), ai = impliedProb(aO);
 
@@ -1576,97 +2075,135 @@ function impliedTotalGoals(overOdds, underOdds) {
   return Math.max(1.5, Math.min(5.0, 2.5 + (normOver - 0.5) * 3.0));
 }
 
-// Fetch ESPN team recent form — last 5 results, returns { wins, draws, losses, goalsFor, goalsAgainst }
-async function fetchTeamForm(sport, league, teamName) {
+// ── Independent Team xG (Understat via proxy) ──────────────────────────────
+// This is the CORE of Phase 1: team-level xG that is INDEPENDENT of bookmaker odds.
+// Used as PRIMARY input to Poisson model. Book odds are only used to find edge.
+
+const SOCCER_LEAGUE_MAP = {
+  'eng.1': 'epl', 'eng.fa': 'fa_cup',
+  'esp.1': 'laliga', 'uefa.champions': 'ucl',
+};
+
+// Understat league keys (team xG available for these)
+const XG_LEAGUES = { 'epl': true, 'laliga': true, 'bundesliga': true, 'seriea': true, 'ligue1': true };
+
+// Per-league Dixon-Coles rho — calibrated per league's low-scoring correlation pattern
+const LEAGUE_RHO = {
+  'epl': -0.13,      // EPL: strong 0-0/1-1 correction
+  'laliga': -0.10,   // La Liga: slightly less defensive
+  'bundesliga': -0.08,// Bundesliga: high scoring, less correction needed
+  'seriea': -0.11,   // Serie A: defensive league
+  'ligue1': -0.09,   // Ligue 1: moderate
+  'ucl': -0.06,      // UCL: open attacking games, less low-score bias
+  'fa_cup': -0.05,   // Cup ties: unpredictable
+  'default': -0.08,
+};
+
+// Cache team xG data per league (fetched once per session)
+const _teamXGCache = {};
+
+async function fetchLeagueTeamXG(leagueKey) {
+  if (!XG_LEAGUES[leagueKey]) return null; // no Understat data for this league
+  if (_teamXGCache[leagueKey]) return _teamXGCache[leagueKey];
+
   try {
-    const q   = encodeURIComponent(teamName.split(' ').slice(-1)[0]); // search by last word of team name
-    const res = await fetch(`https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/teams?limit=10&search=${q}`);
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 30000);
+    const res = await fetch(`${NBA_PROXY}/api/soccer/team-xg/${leagueKey}`, { signal: ctrl.signal });
+    clearTimeout(timer);
     if (!res.ok) return null;
-    const data  = await res.json();
-    const teams = data.sports?.[0]?.leagues?.[0]?.teams || [];
-    const team  = teams.find(t => {
-      const n = (t.team?.displayName || t.team?.name || '').toLowerCase();
-      return n.includes(teamName.toLowerCase().split(' ').pop().toLowerCase());
-    });
-    if (!team?.team?.id) return null;
-
-    const id     = team.team.id;
-    const evRes  = await fetch(`https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/teams/${id}/schedule`);
-    if (!evRes.ok) return null;
-    const evData = await evRes.json();
-    const events = (evData.events || []).filter(e => e.competitions?.[0]?.status?.type?.completed).slice(-10);
-    if (!events.length) return null;
-
-    let wins=0, draws=0, losses=0, gf=0, ga=0;
-    let homeGF=0, homeGA=0, homeGames=0, awayGF=0, awayGA=0, awayGames=0;
-    // Collect event IDs for synthetic xG (shot stats from summaries)
-    const eventIds = [];
-    for (const e of events) {
-      const comp = e.competitions?.[0];
-      const myComp   = comp?.competitors?.find(c => c.id === String(id));
-      const oppComp  = comp?.competitors?.find(c => c.id !== String(id));
-      if (!myComp || !oppComp) continue;
-      const myScore  = parseInt(myComp.score  || 0);
-      const oppScore = parseInt(oppComp.score || 0);
-      gf += myScore; ga += oppScore;
-      if      (myComp.winner)  wins++;
-      else if (oppComp.winner) losses++;
-      else                     draws++;
-      if (myComp.homeAway === 'home') { homeGF += myScore; homeGA += oppScore; homeGames++; }
-      else                            { awayGF += myScore; awayGA += oppScore; awayGames++; }
-      if (e.id) eventIds.push({ eid: e.id, isHome: myComp.homeAway === 'home' });
-    }
-
-    // Fetch synthetic xG from shot stats (last 6 games max to limit API calls)
-    let totalSynXG = 0, totalSynXGA = 0, synGames = 0;
-    let homeSynXG = 0, homeSynGames = 0, awaySynXG = 0, awaySynGames = 0;
-    const xgBatch = eventIds.slice(-1); // 1 most recent game for xG — fast load, still useful signal
-    for (const { eid, isHome } of xgBatch) {
-      try {
-        const sumRes = await fetch(
-          `https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/summary?event=${eid}`
-        );
-        if (!sumRes.ok) continue;
-        const sum = await sumRes.json();
-        const bxTeams = sum?.boxscore?.teams || [];
-        // Find our team and opponent in boxscore
-        for (const bxTeam of bxTeams) {
-          const statsMap = {};
-          (bxTeam.statistics || []).forEach(s => { statsMap[s.name] = parseFloat(s.displayValue) || 0; });
-          const shots = statsMap.totalShots || 0;
-          const onTarget = statsMap.shotsOnTarget || 0;
-          const offTarget = shots - onTarget;
-          // Synthetic xG: on-target shots × 0.30 + off-target × 0.03
-          const synXG = onTarget * 0.30 + offTarget * 0.03;
-          const isMyTeam = bxTeam.team?.id === String(id);
-          if (isMyTeam) {
-            totalSynXG += synXG; synGames++;
-            if (isHome) { homeSynXG += synXG; homeSynGames++; }
-            else        { awaySynXG += synXG; awaySynGames++; }
-          } else {
-            totalSynXGA += synXG;
-          }
-        }
-      } catch { /* skip this game's stats */ }
-    }
-
-    const n = wins + draws + losses;
-    const synXGpg  = synGames  ? totalSynXG / synGames  : null;
-    const synXGApg = synGames  ? totalSynXGA / synGames : null;
-    return n ? {
-      wins, draws, losses, goalsFor: gf/n, goalsAgainst: ga/n, games: n,
-      homeGoalsFor: homeGames ? homeGF/homeGames : gf/n,
-      homeGoalsAg:  homeGames ? homeGA/homeGames : ga/n,
-      awayGoalsFor: awayGames ? awayGF/awayGames : gf/n,
-      awayGoalsAg:  awayGames ? awayGA/awayGames : ga/n,
-      homeGames, awayGames,
-      // Synthetic xG from ESPN shot data
-      synXG: synXGpg, synXGA: synXGApg,
-      homeSynXG: homeSynGames ? homeSynXG / homeSynGames : synXGpg,
-      awaySynXG: awaySynGames ? awaySynXG / awaySynGames : synXGpg,
-      synGames,
-    } : null;
+    const data = await res.json();
+    if (data.error) return null;
+    _teamXGCache[leagueKey] = data;
+    return data;
   } catch { return null; }
+}
+
+// Look up a team's xG stats from the cached league data
+function getTeamXG(leagueData, teamName) {
+  if (!leagueData || !leagueData.teams) return null;
+  const t = teamName.toLowerCase();
+  // Try exact match, then partial match
+  return leagueData.teams.find(x => x.team.toLowerCase() === t)
+    || leagueData.teams.find(x => t.includes(x.team.toLowerCase()) || x.team.toLowerCase().includes(t))
+    || null;
+}
+
+// ── Independent xG Model ────────────────────────────────────────────────────
+// Builds expected goals from TEAM STATS (attack strength × defensive weakness)
+// This is the new PRIMARY path. Book odds are only used for edge comparison.
+function independentXG(homeTeamXG, awayTeamXG, leagueData) {
+  if (!homeTeamXG || !awayTeamXG || !leagueData) return null;
+
+  const leagueAvg = leagueData.league_avg_xg || 1.3;
+
+  // Attack strength = team's xG per game / league average
+  // Defense strength = team's xGA per game / league average
+  // Expected goals = attack strength × opponent defense strength × league average
+  const homeAttack  = (homeTeamXG.home_xg_per_game || homeTeamXG.xg_per_game) / leagueAvg;
+  const homeDefense = (homeTeamXG.home_xga_per_game || homeTeamXG.xga_per_game) / leagueAvg;
+  const awayAttack  = (awayTeamXG.away_xg_per_game || awayTeamXG.xg_per_game) / leagueAvg;
+  const awayDefense = (awayTeamXG.away_xga_per_game || awayTeamXG.xga_per_game) / leagueAvg;
+
+  // Home team xG = home attack strength × away defense weakness × league avg × home advantage
+  let homeXG = homeAttack * awayDefense * leagueAvg * 1.06; // 6% home advantage
+  let awayXG = awayAttack * homeDefense * leagueAvg * 0.94; // 6% away disadvantage
+
+  // Blend season average with recent form (last 5) for recency weighting
+  // 60% recent form, 40% season — captures current form without overreacting
+  const r5HomeXG = homeTeamXG.recent5_xg || homeTeamXG.xg_per_game;
+  const r5HomeXGA = homeTeamXG.recent5_xga || homeTeamXG.xga_per_game;
+  const r5AwayXG = awayTeamXG.recent5_xg || awayTeamXG.xg_per_game;
+  const r5AwayXGA = awayTeamXG.recent5_xga || awayTeamXG.xga_per_game;
+
+  const recentHomeAttack = (r5HomeXG / leagueAvg);
+  const recentAwayDefense = (r5AwayXGA / leagueAvg);
+  const recentAwayAttack = (r5AwayXG / leagueAvg);
+  const recentHomeDefense = (r5HomeXGA / leagueAvg);
+
+  const recentHomeXG = recentHomeAttack * recentAwayDefense * leagueAvg * 1.06;
+  const recentAwayXG = recentAwayAttack * recentHomeDefense * leagueAvg * 0.94;
+
+  // Blend: 40% season, 60% recent form
+  homeXG = homeXG * 0.40 + recentHomeXG * 0.60;
+  awayXG = awayXG * 0.40 + recentAwayXG * 0.60;
+
+  // Clamp to reasonable range
+  homeXG = Math.max(0.3, Math.min(4.0, homeXG));
+  awayXG = Math.max(0.15, Math.min(3.5, awayXG));
+
+  return { homeXG, awayXG, source: 'understat_xg' };
+}
+
+// Fetch ESPN team recent form — last 5 results, returns { wins, draws, losses, goalsFor, goalsAgainst }
+
+async function fetchTeamForm(sport, league, teamName) {
+  // Use Render proxy for soccer (TheSportsDB real-time data)
+  if (sport === 'soccer') {
+    try {
+      const proxyLeague = SOCCER_LEAGUE_MAP[league] || 'epl';
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 60000);
+      let res;
+      try {
+        res = await fetch(`${NBA_PROXY}/api/soccer/team/${encodeURIComponent(teamName)}/form?league=${proxyLeague}`, { signal: ctrl.signal });
+      } finally { clearTimeout(timer); }
+      if (!res || !res.ok) return null;
+      const d = await res.json();
+      if (d.error) return null;
+      return {
+        wins: d.wins, draws: d.draws, losses: d.losses,
+        goalsFor: d.goals_for, goalsAgainst: d.goals_against, games: d.games,
+        homeGoalsFor: d.home_goals_for, homeGoalsAg: d.home_goals_ag,
+        awayGoalsFor: d.away_goals_for, awayGoalsAg: d.away_goals_ag,
+        homeGames: d.home_games, awayGames: d.away_games,
+        synXG: null, synXGA: null, homeSynXG: null, awaySynXG: null, synGames: 0,
+        latestDate: d.latest_date,
+      };
+    } catch { return null; }
+  }
+  // Non-soccer: shouldn't reach here (form only used for soccer)
+  return null;
 }
 function gameDate(iso) {
   return displayDateET(iso) + ' ET';
@@ -1746,13 +2283,15 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       // ESPN gamelog will still apply home/away split when available
       return getStatSignal(leagueShort, p.player, p.market, p.line, null);
     })),
-    Promise.all(candidates.map(p => espnCfg ? espnAthleteId(espnCfg.sport, espnCfg.league, p.player) : Promise.resolve(null))),
+    // Skip ESPN athlete lookup — NBA/NHL CORS blocked, MLB uses own API. Only NFL needs ESPN.
+    Promise.all(candidates.map(p => (espnCfg && leagueShort === 'nfl') ? espnAthleteId(espnCfg.sport, espnCfg.league, p.player) : Promise.resolve(null))),
   ]);
 
-  // Fetch injury status + rest factor for each athlete in parallel
+  // Fetch injury status + rest factor — only for NFL (ESPN CORS blocks NBA/NHL, MLB has own API)
+  const skipEspnCalls = leagueShort !== 'nfl';
   const [injuryStatuses, restFactors] = await Promise.all([
-    Promise.all(athleteIds.map(id => espnCfg && id ? getPlayerStatus(espnCfg.sport, espnCfg.league, id) : Promise.resolve(null))),
-    Promise.all(athleteIds.map(id => espnCfg && id && gameDate ? getRestFactor(espnCfg.sport, espnCfg.league, id, gameDate) : Promise.resolve(null))),
+    Promise.all(athleteIds.map(id => espnCfg && id && !skipEspnCalls ? getPlayerStatus(espnCfg.sport, espnCfg.league, id) : Promise.resolve(null))),
+    Promise.all(athleteIds.map(id => espnCfg && id && gameDate && !skipEspnCalls ? getRestFactor(espnCfg.sport, espnCfg.league, id, gameDate) : Promise.resolve(null))),
   ]);
 
   const injuredNames = candidates
@@ -1828,9 +2367,13 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       // ── Model agreement gating (BookieX-style) ──
       // Count how many signals agree with the pick direction.
       // Full agreement = confidence boost. Disagreement = penalty.
+      // If pick was FLIPPED by stats override, skip odds from signals
+      // (the flip was intentional — odds disagreement is expected and already priced in)
       const signals = [];
-      // Odds direction
-      signals.push(parseFloat(c.op) > parseFloat(c.up) ? 'OVER' : 'UNDER');
+      // Odds direction — only count if pick wasn't flipped
+      if (!flipped) {
+        signals.push(parseFloat(c.op) > parseFloat(c.up) ? 'OVER' : 'UNDER');
+      }
       // Stats direction (if available)
       if (statResult && statResult.hitProbOver != null) {
         signals.push(statResult.hitProbOver >= 0.5 ? 'OVER' : 'UNDER');
@@ -1857,26 +2400,69 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       }
       score = Math.max(-1, Math.min(1, score));
 
+      // ── PHASE 3: Confidence decay — reduce score for cold sports ──
+      const decay = getConfidenceDecay(sportLabel);
+      score *= decay.multiplier;
+      score = Math.max(-1, Math.min(1, score));
+
       const conf  = score >= 0.35 ? 'HIGH' : score >= 0.22 ? 'MED' : 'LOW';
 
-      // ── Edge & Kelly Stake calculation ──
-      // Model prob: blend of odds-implied + stats hit probability (if available)
+      // ── PHASE 2: Independent Player Projection → Model Probability ──
+      // Build our OWN projected stat line, then calculate P(OVER) from that.
+      // This is independent of book odds — we compare our number to theirs for edge.
+      const playerProjection = projectPlayerStat(statResult, gameOppFactor, restResult, null);
+
       const bookProb = c.pick === 'OVER'
         ? parseFloat(c.op) / 100
         : parseFloat(c.up) / 100;
-      const modelProb = (statResult && statResult.hitProbOver != null)
-        ? (c.pick === 'OVER' ? statResult.hitProbOver : statResult.hitProbUnder)
-        : bookProb + (score * 0.15); // fallback: book prob + score-based adjustment
+
+      let modelProb;
+      if (playerProjection && statResult && statResult.variance != null && p.line > 0) {
+        // USE PROJECTION: recalculate hit probability from projected mean
+        const projMean = playerProjection.projection;
+        const projVariance = statResult.variance * (playerProjection.totalAdj ** 2); // scale variance too
+        const projHitProbOver = probOverLine(projMean, projVariance, p.line);
+        const projHitProbUnder = 1 - projHitProbOver;
+        modelProb = c.pick === 'OVER' ? projHitProbOver : projHitProbUnder;
+      } else if (statResult && statResult.hitProbOver != null) {
+        // Fallback: raw stats probability (no matchup adjustment)
+        modelProb = c.pick === 'OVER' ? statResult.hitProbOver : statResult.hitProbUnder;
+      } else {
+        modelProb = bookProb + (score * 0.15); // last resort: book + score adjustment
+      }
       const clampedModelProb = Math.max(0.01, Math.min(0.99, modelProb));
       const edge = ((clampedModelProb - bookProb) * 100); // e.g. +10% edge
       // Kelly criterion: (bp - q) / b where b=decimal odds-1, p=model prob, q=1-p
       const bestOdds = c.pick === 'OVER' ? p.bestOver : p.bestUnder;
       const b = bestOdds - 1;
       const kellyFraction = b > 0 ? Math.max(0, (b * clampedModelProb - (1 - clampedModelProb)) / b) : 0;
-      // Cap Kelly at 10% of bankroll (full Kelly is too aggressive)
-      const kellyPct = Math.min(10, kellyFraction * 100);
+      // Quarter-Kelly (safer than half-Kelly for unknown model accuracy), max 3% per bet
+      const kellyPct = edge <= 0 ? 0 : Math.min(3, kellyFraction * 25); // quarter-Kelly, capped at 3%
 
-      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData, oppFactor: gameOppFactor, flipped, warning, agreement, agreementRatio, modelProb: clampedModelProb, bookProb, edge, kellyPct };
+      // ── Data quality flags — catch every kind of bad data so user doesn't have to ──
+      const dataFlags = [];
+      if (!statResult) {
+        dataFlags.push('⚠️ No player stats loaded — pick based on odds only');
+      } else {
+        if (statResult.daysStale >= 4) dataFlags.push(`⚠️ Stats data ${statResult.daysStale}d old`);
+        if (statResult.staleLabel && statResult.staleLabel.includes('gap')) dataFlags.push(statResult.staleLabel);
+        if (statResult.games < 3) dataFlags.push(`⚠️ Only ${statResult.games} games of data — low sample`);
+        // Check if model and actual hit rate disagree on DIRECTION (model says OVER but actual says UNDER or vice versa)
+        if (statResult.actualHitRate != null) {
+          const modelDir = c.pick === 'OVER' ? statResult.hitProbOver : statResult.hitProbUnder;
+          const actualDir = c.pick === 'OVER' ? statResult.actualHitRate : (1 - statResult.actualHitRate);
+          // Only flag when they disagree on direction: one says >50% and other says <50%
+          if (modelDir && ((modelDir > 0.5 && actualDir < 0.4) || (modelDir < 0.5 && actualDir > 0.6))) {
+            dataFlags.push(`⚠️ Model ${(modelDir*100).toFixed(0)}% but actual hit rate ${(actualDir*100).toFixed(0)}% — direction mismatch`);
+          }
+        }
+      }
+      // Edge too high = suspicious (bookmaker rarely wrong by 20%+)
+      if (edge > 20) dataFlags.push(`⚠️ Edge +${edge.toFixed(0)}% is unusually high — verify line is current`);
+
+      const dataQuality = dataFlags.length === 0 ? 'clean' : dataFlags.length <= 1 ? 'warn' : 'danger';
+
+      return { ...p, c: {...c, conf}, vig, score, statResult, lineMove, restResult, injuryStatus: injuryStatuses[i], weatherData, oppFactor: gameOppFactor, flipped, warning, agreement, agreementRatio, modelProb: clampedModelProb, bookProb, edge, kellyPct, dataFlags, dataQuality, playerProjection, confidenceDecay: decay };
     })
     .filter(p => p !== null)
     // Removed UNDER <= 0.5 filter — rebounds/assists UNDERs at 2.5/3.5 are legitimate picks
@@ -1884,6 +2470,28 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     .filter(p => parseFloat(p.c.pct) <= 80) // raised from 72 — some 73-80% picks have genuine edge
     // Removed hard 53% floor — score threshold (0.50) and edge already filter bad picks
     .filter(p => p.score >= 0.25) // post-regression threshold: shows quality picks without over-filtering
+    // ── Hard gate: block negative edge and low hit probability picks ──
+    .filter(p => p.edge > 0) // negative edge = no bet, don't show at all
+    .filter(p => {
+      // Block picks where model hit probability is below 60%
+      if (p.statResult) {
+        const hitProb = p.c.pick === 'OVER' ? (p.statResult.hitProbOver || 0) : (p.statResult.hitProbUnder || 0);
+        if (hitProb < 0.60) return false;
+      }
+      return true;
+    })
+    // ── Hard gate: block picks with critical data quality issues ──
+    .filter(p => {
+      if (p.dataQuality === 'danger') return false; // 2+ flags = kill
+      // Block specific critical flags even with only 1
+      if (p.dataFlags && p.dataFlags.some(f =>
+        /stats data \d+d old/i.test(f) && parseInt(f.match(/(\d+)d/)?.[1]) >= 7 ||  // 7d+ stale stats
+        /only [12] games? of data/i.test(f) ||                                       // 1-2 games only
+        /edge \+\d+% is unusually high/i.test(f) ||                                  // edge 20%+ suspicious
+        /no player stats loaded/i.test(f)                                             // no stats at all
+      )) return false;
+      return true;
+    })
     .sort((a, b) => b.score - a.score);
 
   // Drop LOW confidence picks entirely — 169-pick data shows 14.3% win rate (1W/6L).
@@ -1913,11 +2521,56 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
 
   if (!props.length) return injuryNote + `<div class="no-games">No qualifying player props.</div>`;
 
+  // ── SAFE PICKS: STRICT — only the most winnable props. Previous 2/4 rate was too loose. ──
+  const safePicks = scored.filter(p => {
+    if (!p.statResult) return false;                     // must have stats
+    if (p.statResult.hitProbOver == null) return false;   // must have distribution data
+    if (p.statResult.actualHitRate == null) return false; // must have actual hit rate
+    if (p.bookCount < 3) return false;                   // 3+ books agree (tightened from 2)
+    if (p.vig < 0) return false;                         // no negative vig
+    if (p.vig > 0.10) return false;                      // vig under 10% (tightened from MAX_VIG 15%)
+    if (p.edge > 18) return false;                       // edge under 18% (tightened from 25%)
+    if (p.edge < 1) return false;                        // must have positive edge
+    if (p.dataQuality === 'danger') return false;        // no danger-flagged picks
+    if (p.statResult.hasDataGap) return false;           // no gapped data
+
+    // Model probability must be 65%+ (tightened from 58%)
+    const modelHitProb = p.c.pick === 'OVER' ? p.statResult.hitProbOver : p.statResult.hitProbUnder;
+    if (modelHitProb < 0.65) return false;
+
+    // Actual hit rate must be 75%+ in L5 (tightened from 60% — need 4/5 or 5/5 games hitting)
+    const actualHitForDir = p.c.pick === 'OVER' ? p.statResult.actualHitRate : (1 - p.statResult.actualHitRate);
+    if (actualHitForDir < 0.75) return false;
+
+    // Model and actual must agree closely (tightened from 40% gap to 25%)
+    if (Math.abs(modelHitProb - actualHitForDir) > 0.25) return false;
+
+    // Must be consistent (not volatile) — volatile players are unpredictable
+    if (p.statResult.consistencyTag === '🎲 Volatile') return false;
+
+    // Suspicious edge combos
+    if (p.edge > 15 && parseFloat(p.c.pct) < 53) return false;
+
+    return true;
+  }).slice(0, 3);
+
+  // Collect safe picks for the global 💰 Safe Bets tab (dedup by player+market+match)
+  safePicks.forEach(p => {
+    const dedupKey = `${p.player}_${p.market}_${matchLabel}`;
+    if (!allSafePicks.find(x => `${x.player}_${x.market}_${x.matchLabel}` === dedupKey)) {
+      allSafePicks.push({
+        ...p, sportLabel, matchLabel,
+        generatedAt: Date.now(),
+      });
+    }
+  });
+
   // Push top pick to slate-wide collection + persist ALL shown picks to history
   if (sportLabel) {
-    props.forEach((p, i) => {
+    // Save safe picks first, then regular picks
+    const allShownPicks = [...safePicks, ...props.filter(p => !safePicks.includes(p))];
+    allShownPicks.forEach((p, i) => {
       const pick = {
-        // Dedup key: same player+market on same calendar day = same pick, don't double-save
         id:        `${todayET()}_${p.player}_${p.market}`.replace(/\W+/g,'_'),
         date:      new Date().toISOString(),
         sport:     sportLabel, match: matchLabel,
@@ -1926,15 +2579,45 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
         pct:       p.c.pct,   conf:   p.c.conf,
         score:     p.score,   bookCount: p.bookCount, vig: p.vig,
         result:    null,
+        safe:      safePicks.includes(p),
       };
-      if (i === 0) allPropBets.push(pick);  // slate-wide All tab: top pick only
-      savePickToHistory(pick);              // history: all 5 picks tracked
+      if (i === 0) allPropBets.push(pick);
+      savePickToHistory(pick);
     });
   }
 
-  const generatedAt = Date.now(); // timestamp for staleness detection
+  const generatedAt = Date.now();
 
-  let html = injuryNote + `<div class="section-hdr">🎯 TOP PICKS — ${matchLabel}</div>
+  // ── Render SAFE PICKS section first (if any) ──
+  let html = injuryNote;
+  if (safePicks.length) {
+    html += `<div class="section-hdr" style="color:#00ff88;border-bottom-color:#00ff8830">💰 SAFE PICKS — ${matchLabel} <span style="font-size:0.85em;color:#00ff8880">(stats + odds + history all agree)</span></div>
+      <div class="pick-cards">`;
+    safePicks.forEach(p => {
+      const stat = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+      const hitProb = p.c.pick === 'OVER' ? p.statResult.hitProbOver : p.statResult.hitProbUnder;
+      const hitRate = p.c.pick === 'OVER' ? p.statResult.actualHitRate : (1 - p.statResult.actualHitRate);
+      html += `<div class="pick-card best-pick" style="border-color:#00ff8850;background:#0a140a" data-edge="${p.edge.toFixed(1)}" data-score="${p.score.toFixed(3)}" data-dir="${p.c.pick}">
+        <div class="pick-card-header">
+          <span style="background:#00ff8820;color:#00ff88;padding:2px 10px;border-radius:12px;font-size:0.7em;font-weight:700;border:1px solid #00ff8860">💰 SAFE</span>
+          ${badge(p.c.conf)}
+        </div>
+        <div class="pick-card-player">${p.player}</div>
+        <div class="pick-card-stat">${stat}</div>
+        <div class="pick-card-line">${p.line}</div>
+        <div class="pick-card-direction">${pickHtml(p.c.pick)} <span class="pick-card-pct">${p.c.pct}%</span></div>
+        <div style="font-size:0.72em;padding:5px 8px;background:#00ff8808;border:1px solid #00ff8820;border-radius:6px;margin:4px 0">
+          <div style="color:#00ff88">🎲 ${(hitProb*100).toFixed(0)}% model probability</div>
+          <div style="color:#00ff88">✅ Hit in ${(hitRate*100).toFixed(0)}% of last 5 games</div>
+          <div style="color:#888">${p.bookCount} books agree · ${(p.vig*100).toFixed(1)}% vig</div>
+        </div>
+      </div>`;
+    });
+    html += '</div>';
+  }
+
+  // ── Regular picks section ──
+  html += `<div class="section-hdr">🎯 TOP PICKS — ${matchLabel}</div>
     <div class="pick-cards">`;
 
   props.forEach((p, i) => {
@@ -1945,7 +2628,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       : '<span class="tier-b">B</span>';
     const stat   = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
     const reason = propReason(parseFloat(p.c.pct), p.bookCount, p.vig);
-    html += `<div class="pick-card${i === 0 ? ' best-pick' : ''}" data-edge="${p.edge.toFixed(1)}" data-score="${p.score.toFixed(3)}" data-dir="${p.c.pick}">
+    html += `<div class="pick-card${i === 0 && p.dataQuality === 'clean' ? ' best-pick' : ''}" data-edge="${p.edge.toFixed(1)}" data-score="${p.score.toFixed(3)}" data-dir="${p.c.pick}" style="${p.dataQuality==='danger'?'border-color:#ff444440;background:#110808':p.dataQuality==='warn'?'border-color:#ff994430':''}">
       <div class="pick-card-header">
         ${tierHtml}
         ${badge(p.c.conf)}
@@ -1956,9 +2639,16 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       <div class="pick-card-direction">${pickHtml(p.c.pick)} <span class="pick-card-pct">${p.c.pct}% ${p.flipped ? 'stats override' : 'implied'}</span>${p.flipped ? ' <span style="font-size:0.7em;color:#00ccff;font-weight:700">⚡ FLIPPED</span>' : ''}</div>
       <div style="font-size:0.72em;margin:4px 0;padding:5px 8px;background:#0a0a0a;border:1px solid #1a1a1a;border-radius:6px;display:flex;justify-content:space-between;align-items:center">
         <span style="color:${p.edge>=5?'#00ff88':p.edge>=0?'#ffcc00':'#ff4444'}">Model: ${(p.modelProb*100).toFixed(0)}% / Book: ${(p.bookProb*100).toFixed(0)}% → <strong>${p.edge>=0?'+':''}${p.edge.toFixed(1)}% edge</strong></span>
-        <span style="color:${p.kellyPct>=3?'#00ff88':p.kellyPct>=1?'#ffcc00':'#555'};font-weight:700">${p.kellyPct>=0.5 ? p.kellyPct.toFixed(1)+'% stake' : 'No bet'}</span>
+        <span style="color:${p.kellyPct>=2?'#00ff88':p.kellyPct>=0.5?'#ffcc00':'#555'};font-weight:700">${p.kellyPct>=0.5 ? p.kellyPct.toFixed(1)+'% stake' : 'No bet'}</span>
       </div>
+      ${p.playerProjection ? `<div style="font-size:0.68em;margin:4px 0;padding:5px 8px;background:#00ccff08;border:1px solid #00ccff20;border-radius:4px;color:#00ccff">
+        📐 Projected: <strong>${p.playerProjection.projection}</strong> (base ${p.playerProjection.baseline}${p.playerProjection.totalAdj !== 1 ? ` × ${p.playerProjection.totalAdj}` : ''})
+        ${p.playerProjection.factors.length ? '<span style="color:#555"> · ' + p.playerProjection.factors.map(f => f.name + ' ' + f.value.toFixed(2) + 'x').join(' · ') + '</span>' : ''}
+      </div>` : ''}
       ${p.warning ? `<div style="font-size:0.68em;margin:2px 0;padding:4px 8px;background:#ff660010;border:1px solid #ff660030;border-radius:4px;color:#ff9944">${p.warning}</div>` : ''}
+      ${p.dataFlags && p.dataFlags.length ? `<div style="font-size:0.68em;margin:4px 0;padding:5px 8px;background:${p.dataQuality==='danger'?'#ff000012':'#ff880008'};border:1px solid ${p.dataQuality==='danger'?'#ff000030':'#ff880020'};border-radius:4px;color:${p.dataQuality==='danger'?'#ff4444':'#ff9944'}">
+        ${p.dataFlags.join('<br>')}
+      </div>` : `<div style="font-size:0.65em;margin:2px 0;color:#1a3a1a">✅ Data verified</div>`}
       ${p.statResult ? `<div style="font-size:0.7em;margin:4px 0 2px;color:${p.statResult.signal>0?'#00ff88':p.statResult.signal<0?'#ff4444':'#555'}">${p.statResult.signalLabel}</div>` : ''}
       ${p.statResult?.hitProbOver != null ? `<div style="font-size:0.68em;margin:1px 0;color:${(p.c.pick==='OVER'?p.statResult.hitProbOver:p.statResult.hitProbUnder)>=0.6?'#00ff88':(p.c.pick==='OVER'?p.statResult.hitProbOver:p.statResult.hitProbUnder)>=0.5?'#ffcc00':'#ff4444'}">🎲 Hit prob: ${((p.c.pick==='OVER'?p.statResult.hitProbOver:p.statResult.hitProbUnder)*100).toFixed(0)}% ${p.statResult.consistencyTag||''}</div>` : ''}
       ${p.statResult?.extraLabels?.map(l => `<div style="font-size:0.67em;margin:1px 0;color:#555">${l}</div>`).join('') || ''}
@@ -1966,6 +2656,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       ${p.restResult?.isB2B ? `<div style="font-size:0.68em;margin:2px 0;color:#ff4444">${p.restResult.label}</div>` : ''}
       ${p.weatherData?.label ? `<div style="font-size:0.68em;margin:2px 0;color:#ff9944">${p.weatherData.label}</div>` : ''}
       ${p.oppFactor?.label ? `<div style="font-size:0.68em;margin:2px 0;color:${p.oppFactor.signal>0?'#00ff88':'#ff6644'}">${p.oppFactor.label}</div>` : ''}
+      ${p.confidenceDecay?.label ? `<div style="font-size:0.68em;margin:2px 0;padding:3px 6px;background:${p.confidenceDecay.multiplier<1?'#ff000008':'#00ff8808'};border-radius:4px;color:${p.confidenceDecay.multiplier<1?'#ff9944':'#00ff88'}">${p.confidenceDecay.label}</div>` : ''}
       ${p.agreement ? `<div style="font-size:0.68em;margin:2px 0;color:${p.agreementRatio>=0.75?'#00ff88':'#ff9944'}">${p.agreement} (${(p.agreementRatio*100).toFixed(0)}%)</div>` : ''}
       <div class="pick-card-reason">${reason}
         <span class="score-badge">score ${p.score.toFixed(2)}
@@ -2038,36 +2729,50 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
     .sort((a,b) => b.prob - a.prob)
     .slice(0, 10);
 
-  // Fetch ESPN recent goals for top 5 scorers (free API, no tokens)
+  // Fetch player stats from proxy — try Understat (xG/shots) first, fall back to ESPN scorers
   if (espnLeague) {
-    const goalPromises = list.slice(0, 5).map(async (s) => {
+    const leagueKey = SOCCER_LEAGUE_MAP[espnLeague.league] || 'epl';
+    try {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 45000);
+      // Try Understat first (has xG, shots, xA — EPL + La Liga only)
+      let playerData = null;
       try {
-        const athleteId = await espnAthleteId(espnLeague.sport, espnLeague.league, s.name);
-        if (!athleteId) return null;
-        const res = await fetch(
-          `https://site.web.api.espn.com/apis/common/v3/sports/${espnLeague.sport}/${espnLeague.league}/athletes/${athleteId}/gamelog`
-        );
-        if (!res.ok) return null;
-        const data = await res.json();
-        let goals = 0, games = 0;
-        // v3 format: names at top level, events nested in seasonTypes.categories
-        const names = data.names || [];
-        let goalIdx = names.indexOf('totalGoals');
-        if (goalIdx === -1) goalIdx = names.indexOf('goals');
-        if (goalIdx === -1) return null;
-        for (const st of (data.seasonTypes || [])) {
-          for (const cat of (st.categories || [])) {
-            for (const ev of (cat.events || [])) {
-              const val = parseFloat((ev.stats || [])[goalIdx]);
-              if (!isNaN(val)) { goals += val; games++; }
-            }
+        const usRes = await fetch(`${NBA_PROXY}/api/soccer/players/${leagueKey}`, { signal: ctrl.signal });
+        if (usRes && usRes.ok) playerData = (await usRes.json()).players || [];
+      } catch {}
+      // Fall back to ESPN scorers if Understat doesn't cover this league
+      if (!playerData) {
+        try {
+          const scRes = await fetch(`${NBA_PROXY}/api/soccer/scorers/${leagueKey}`, { signal: ctrl.signal });
+          if (scRes && scRes.ok) {
+            const scData = await scRes.json();
+            playerData = (scData.scorers || []).map(sc => ({
+              name: sc.name, team: sc.team, goals: sc.goals, games: sc.matches,
+              goals_per_game: sc.goals_per_game, shots: null, xg: null, shots_per_game: null, xg_per_game: null,
+            }));
           }
-        }
-        return games >= 3 ? { goalsPerGame: goals / games, games } : null;
-      } catch { return null; }
-    });
-    const goalResults = await Promise.all(goalPromises);
-    list.slice(0, 5).forEach((s, i) => { s.form = goalResults[i]; });
+        } catch {}
+      }
+      clearTimeout(timer);
+
+      if (playerData) {
+        list.forEach(s => {
+          const sLower = s.name.toLowerCase();
+          const match = playerData.find(p =>
+            p.name.toLowerCase() === sLower ||
+            (p.name.toLowerCase().includes(sLower.split(' ').pop()) && sLower.includes(p.name.toLowerCase().split(' ').pop()))
+          );
+          if (match && match.games >= 3) {
+            s.form = {
+              goalsPerGame: match.goals_per_game, games: match.games, goals: match.goals,
+              shots: match.shots, xg: match.xg, xgPerGame: match.xg_per_game,
+              shotsPerGame: match.shots_per_game, xa: match.xa,
+            };
+          }
+        });
+      }
+    } catch { /* proxy unavailable */ }
   }
 
   // Team xG multiplier — if a team creates more xG than league average (1.3), boost their scorers
@@ -2087,7 +2792,8 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
       const formProb = (1 - Math.exp(-s.form.goalsPerGame)) * 100;
       s.blendedProb = (s.prob * 0.55 + formProb * 0.35) * teamXGmult;
       // Remaining 10% comes from the xG multiplier itself
-      s.formLabel = `${s.form.goalsPerGame.toFixed(2)} gpg (L${s.form.games})`;
+      const xgTag = s.form.xg != null ? ` · xG:${s.form.xg} · ${s.form.shotsPerGame?.toFixed(1) || '?'} shots/g` : '';
+      s.formLabel = `${s.form.goalsPerGame.toFixed(2)} gpg (L${s.form.games})${xgTag}`;
     } else {
       s.blendedProb = s.prob * teamXGmult;
       s.formLabel = null;
@@ -2156,9 +2862,19 @@ async function buildSoccer(force) {
   let html = '';
 
   // Fetch all league odds in parallel (removes 2s of sequential delays)
-  const leagueOdds = await Promise.all(
-    leagues.map(lg => apiFetch(lg.key, 'h2h,totals', 'uk', force).catch(() => []))
-  );
+  // Also pre-fetch team xG data for leagues that have Understat coverage
+  const xgLeagueMap = {
+    'soccer_epl': 'epl', 'soccer_spain_la_liga': 'laliga',
+    'soccer_germany_bundesliga': 'bundesliga', 'soccer_italy_serie_a': 'seriea',
+    'soccer_france_ligue_one': 'ligue1',
+  };
+  const [leagueOdds, ...xgResults] = await Promise.all([
+    Promise.all(leagues.map(lg => apiFetch(lg.key, 'h2h,totals', 'uk', force).catch(() => []))),
+    ...Object.values(xgLeagueMap).map(k => fetchLeagueTeamXG(k).catch(() => null)),
+  ]);
+  // Map xG results back to league keys
+  const xgData = {};
+  Object.keys(xgLeagueMap).forEach((k, i) => { xgData[xgLeagueMap[k]] = xgResults[i]; });
 
   for (let lgIdx = 0; lgIdx < leagues.length; lgIdx++) {
     const lg = leagues[lgIdx];
@@ -2180,8 +2896,29 @@ async function buildSoccer(force) {
         if (!hO||!aO) continue;
 
         const tot = bestTotal(ev,2.5);
+        // BTTS + DNB: only available on event-level endpoint, not bulk
+        let bttsOdds = { yes: null, no: null };
+        let dnbOdds = { home: null, away: null };
+        if (ev.id) {
+          try {
+            const extraData = await fetchEventProps(lg.key, ev.id, 'btts,draw_no_bet', 'uk', force);
+            bttsOdds = bestBTTS(extraData);
+            // DNB needs team names — inject them from the bulk event data
+            if (extraData) { extraData.home_team = home; extraData.away_team = away; }
+            dnbOdds = bestDNB(extraData);
+          } catch {}
+        }
 
-        // Fetch recent form for both teams in parallel — upgrades xG from odds-only to stats-backed
+        // ── PHASE 1: Independent xG Model ──────────────────────────────────────
+        // PRIMARY: Use Understat team xG (independent of book odds)
+        // FALLBACK: Form-based goals from TheSportsDB
+        // LAST RESORT: Odds-derived xG (old circular method — only for FA Cup, WC Qualifiers)
+        const leagueXGKey = xgLeagueMap[lg.key] || null;
+        const leagueXG = leagueXGKey ? xgData[leagueXGKey] : null;
+        const homeTeamXG = getTeamXG(leagueXG, home);
+        const awayTeamXG = getTeamXG(leagueXG, away);
+
+        // Also fetch form data as supplementary (W-D-L, momentum)
         const espnLeague = lg.key.includes('epl') ? {sport:'soccer',league:'eng.1'}
           : lg.key.includes('fa_cup') ? {sport:'soccer',league:'eng.fa'}
           : lg.key.includes('champs') ? {sport:'soccer',league:'uefa.champions'}
@@ -2192,49 +2929,63 @@ async function buildSoccer(force) {
           fetchTeamForm(espnLeague.sport, espnLeague.league, away),
         ]);
 
-        // Blend odds-based xG with real form data — prefer synthetic xG from shots when available
-        const expectedTotal = impliedTotalGoals(tot.over, tot.under);
-        let { homeXG, awayXG } = estimateXG(hO, aO, dO||4, expectedTotal);
-        if (homeForm && awayForm) {
-          // Use synthetic xG (from shot stats) when available, fall back to goals-per-game
-          const hasSynXG = homeForm.synXG !== null && awayForm.synXG !== null;
+        let homeXG, awayXG;
+        let xgSource = 'odds'; // track which path we used
 
-          // Attack = team's own xG created. Defense = xG they concede (opponent's xGA).
-          // Home team xG = home attack vs away defense. Away team xG = away attack vs home defense.
-          let hAttack, awayDefense, aAttack, homeDefense;
-          if (hasSynXG) {
-            hAttack      = homeForm.homeSynXG || homeForm.synXG;   // how much xG home team creates
-            awayDefense  = awayForm.synXGA || awayForm.goalsAgainst; // how much xG away team concedes
-            aAttack      = awayForm.awaySynXG || awayForm.synXG;   // how much xG away team creates
-            homeDefense  = homeForm.synXGA || homeForm.goalsAgainst; // how much xG home team concedes
-          } else {
-            hAttack      = homeForm.homeGames >= 3 ? homeForm.homeGoalsFor : homeForm.goalsFor;
-            awayDefense  = awayForm.awayGames >= 3 ? awayForm.awayGoalsAg : awayForm.goalsAgainst;
-            aAttack      = awayForm.awayGames >= 3 ? awayForm.awayGoalsFor : awayForm.goalsFor;
-            homeDefense  = homeForm.homeGames >= 3 ? homeForm.homeGoalsAg : homeForm.goalsAgainst;
+        // PATH 1: Independent xG from Understat (BEST — truly independent of book odds)
+        const indepXG = independentXG(homeTeamXG, awayTeamXG, leagueXG);
+        if (indepXG) {
+          homeXG = indepXG.homeXG;
+          awayXG = indepXG.awayXG;
+          xgSource = 'understat';
+
+          // Light calibration: if odds imply a VERY different total (±1.5 goals),
+          // nudge 15% toward odds. This catches rare cases like red cards, injuries
+          // that Understat season data wouldn't know about.
+          const expectedTotal = impliedTotalGoals(tot.over, tot.under);
+          const modelTotal = homeXG + awayXG;
+          if (Math.abs(modelTotal - expectedTotal) > 1.5) {
+            const oddsXG = estimateXG(hO, aO, dO||4, expectedTotal);
+            homeXG = homeXG * 0.85 + oddsXG.homeXG * 0.15;
+            awayXG = awayXG * 0.85 + oddsXG.awayXG * 0.15;
+            xgSource = 'understat+odds';
           }
+        }
+        // PATH 2: Form-based (TheSportsDB) — for leagues without Understat coverage
+        else if (homeForm && awayForm) {
+          const leagueAvgGoals = 1.30;
+          const hAttack = homeForm.homeGames >= 3 ? homeForm.homeGoalsFor : homeForm.goalsFor;
+          const awayDefense = awayForm.awayGames >= 3 ? awayForm.awayGoalsAg : awayForm.goalsAgainst;
+          const aAttack = awayForm.awayGames >= 3 ? awayForm.awayGoalsFor : awayForm.goalsFor;
+          const homeDefense = homeForm.homeGames >= 3 ? homeForm.homeGoalsAg : homeForm.goalsAgainst;
 
-          // Proper xG estimation: attack strength × opponent defensive weakness
-          // Uses league-average divisor method: xG = attack × (oppDefense / leagueAvg)
-          // This preserves spread — strong teams stay high, weak teams stay low
-          const leagueAvgGoals = 1.30; // EPL/La Liga average ~1.3 goals per team per game
-          const formHomeXG = (hAttack && awayDefense)
-            ? hAttack * (awayDefense / leagueAvgGoals) // strong defense (low xGA) suppresses, weak defense boosts
-            : null;
-          const formAwayXG = (aAttack && homeDefense)
-            ? aAttack * (homeDefense / leagueAvgGoals)
-            : null;
+          const formHomeXG = (hAttack && awayDefense) ? hAttack * (awayDefense / leagueAvgGoals) : null;
+          const formAwayXG = (aAttack && homeDefense) ? aAttack * (homeDefense / leagueAvgGoals) : null;
 
           if (formHomeXG && formAwayXG && !isNaN(formHomeXG) && !isNaN(formAwayXG)) {
-            const oddsW = hasSynXG ? 0.40 : 0.45;
-            homeXG = homeXG * oddsW + formHomeXG * (1 - oddsW);
-            awayXG = awayXG * oddsW + formAwayXG * (1 - oddsW);
+            // Blend 55% form, 45% odds (form is less reliable than xG)
+            const oddsXG = estimateXG(hO, aO, dO||4, impliedTotalGoals(tot.over, tot.under));
+            homeXG = oddsXG.homeXG * 0.45 + formHomeXG * 0.55;
+            awayXG = oddsXG.awayXG * 0.45 + formAwayXG * 0.55;
+            xgSource = 'form+odds';
+          } else {
+            const oddsXG = estimateXG(hO, aO, dO||4, impliedTotalGoals(tot.over, tot.under));
+            homeXG = oddsXG.homeXG;
+            awayXG = oddsXG.awayXG;
           }
-          // else: keep odds-only xG from estimateXG() — better than NaN
           homeXG = Math.max(0.4, Math.min(3.5, homeXG));
           awayXG = Math.max(0.4, Math.min(3.5, awayXG));
         }
-        const scores = correctScores(homeXG,awayXG);
+        // PATH 3: Odds-only (last resort — circular but better than nothing)
+        else {
+          const oddsXG = estimateXG(hO, aO, dO||4, impliedTotalGoals(tot.over, tot.under));
+          homeXG = oddsXG.homeXG;
+          awayXG = oddsXG.awayXG;
+        }
+
+        // Per-league rho for Dixon-Coles
+        const rho = LEAGUE_RHO[leagueXGKey] || LEAGUE_RHO[espnLeague.league === 'uefa.champions' ? 'ucl' : espnLeague.league === 'eng.fa' ? 'fa_cup' : 'default'];
+        const scores = correctScores(homeXG, awayXG, rho);
         let hw=0,dr=0,aw=0,ov=0,un=0,btts=0;
         scores.forEach(s=>{
           if(s.h>s.a) hw+=s.p; else if(s.h===s.a) dr+=s.p; else aw+=s.p;
@@ -2253,19 +3004,25 @@ async function buildSoccer(force) {
 
         const top5 = scores.slice(0,5);
 
-        const formTag = (form) => {
+        // Display team xG info (independent or form-based)
+        const teamXGTag = (teamXG, form) => {
+          if (teamXG) {
+            return `<span style="font-size:0.7em;color:#555"><span style="color:#00ccff">xG ${teamXG.xg_per_game}</span>/${teamXG.xga_per_game}xGA &nbsp;R5: ${teamXG.recent5_xg}/${teamXG.recent5_xga} &nbsp;(${teamXG.games}gp)</span>`;
+          }
           if (!form) return '';
-          const xgTag = form.synXG !== null
-            ? `<span style="color:#00ccff">xG ${form.synXG.toFixed(2)}</span>/${form.synXGA !== null ? form.synXGA.toFixed(2) : '?'}xGA`
-            : '';
-          return `<span style="font-size:0.7em;color:#555">${form.wins}W-${form.draws}D-${form.losses}L &nbsp;${form.goalsFor.toFixed(1)}gf/${form.goalsAgainst.toFixed(1)}ga ${xgTag} (L${form.games})</span>`;
+          return `<span style="font-size:0.7em;color:#555">${form.wins}W-${form.draws}D-${form.losses}L &nbsp;${form.goalsFor.toFixed(1)}gf/${form.goalsAgainst.toFixed(1)}ga (L${form.games})</span>`;
         };
+        const sourceColor = xgSource.includes('understat') ? '#00ff88' : xgSource.includes('form') ? '#ffcc00' : '#ff4444';
+        const sourceLabel = xgSource === 'understat' ? 'Independent xG' : xgSource === 'understat+odds' ? 'xG + odds calibrated' : xgSource === 'form+odds' ? 'Form + odds' : 'Odds-derived';
         html += `<div class="match-card">
           <div class="match-title"><span>${home} vs ${away}</span><span class="match-time">${gameDate(ev.commence_time)}</span></div>
-          ${homeForm || awayForm ? `<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px;font-size:0.78em">
-            <div><span style="color:#888">${home.split(' ').pop()}:</span> ${formTag(homeForm)}</div>
-            <div><span style="color:#888">${away.split(' ').pop()}:</span> ${formTag(awayForm)}</div>
-          </div>` : ''}
+          <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px;font-size:0.78em">
+            <div><span style="color:#888">${home.split(' ').pop()}:</span> ${teamXGTag(homeTeamXG, homeForm)}</div>
+            <div><span style="color:#888">${away.split(' ').pop()}:</span> ${teamXGTag(awayTeamXG, awayForm)}</div>
+            <div style="margin-left:auto"><span style="color:${sourceColor};font-size:0.72em;font-weight:600;background:${sourceColor}12;padding:2px 8px;border-radius:8px;border:1px solid ${sourceColor}30">${sourceLabel}</span>
+              <span style="color:#444;font-size:0.68em;margin-left:4px">hXG:${homeXG.toFixed(2)} aXG:${awayXG.toFixed(2)} rho:${rho}</span>
+            </div>
+          </div>
           ${winnerBox(home,away,hO,aO,dO,ev.commence_time,lg.label)}
           <table class="odds-table">
             <tr><th>Outcome</th><th>Model%</th><th>Odds</th><th>Imp%</th><th>Edge</th></tr>
@@ -2274,7 +3031,8 @@ async function buildSoccer(force) {
             <tr><td>${away}</td><td>${(aw*100).toFixed(1)}%</td><td>${aO}</td><td>${(impliedProb(aO)*100).toFixed(1)}%</td><td>${edgeHtml(awE.toFixed(1))}</td></tr>
             ${tot.over?`<tr><td>Over 2.5</td><td>${(ov*100).toFixed(1)}%</td><td>${tot.over}</td><td>${(impliedProb(tot.over)*100).toFixed(1)}%</td><td>${edgeHtml(ovE.toFixed(1))}</td></tr>`:''}
             ${tot.under?`<tr><td>Under 2.5</td><td>${(un*100).toFixed(1)}%</td><td>${tot.under}</td><td>${(impliedProb(tot.under)*100).toFixed(1)}%</td><td>${edgeHtml(unE.toFixed(1))}</td></tr>`:''}
-            <tr><td>BTTS</td><td>${(btts*100).toFixed(1)}%</td><td colspan="3" style="color:${btts>0.5?'#00ff88':'#ff6666'}">${btts>0.5?'YES — likely':'NO — unlikely'}</td></tr>
+            <tr><td>BTTS</td><td>${(btts*100).toFixed(1)}%</td>${bttsOdds.yes && bttsOdds.no ? `<td style="color:#ffcc00">${bttsOdds.yes.toFixed(2)} / ${bttsOdds.no.toFixed(2)}</td><td>${(impliedProb(bttsOdds.yes)*100).toFixed(1)}%</td><td>${edgeHtml(((btts - impliedProb(bttsOdds.yes))*100).toFixed(1))}</td>` : `<td colspan="3" style="color:${btts>0.5?'#00ff88':'#ff6666'}">${btts>0.5?'YES — likely':'NO — unlikely'}</td>`}</tr>
+            ${dnbOdds.home ? `<tr><td>Draw No Bet</td><td colspan="2" style="color:#ffcc00">${home.split(' ').pop()} ${dnbOdds.home.toFixed(2)} / ${away.split(' ').pop()} ${dnbOdds.away.toFixed(2)}</td><td colspan="2" style="color:#888">Safer winner bet</td></tr>` : ''}
           </table>
           <div class="label">TOP 5 CORRECT SCORES (Dixon-Coles Poisson)
             ${(() => {
@@ -2555,6 +3313,37 @@ function buildHistoryTab() {
         </div>`).join('')}
       </div>` : ''}
 
+      ${(() => {
+        // Safe Bets performance
+        const safeSettled = autoGraded.filter(p => p.safe);
+        const safeW = safeSettled.filter(p => p.result === 'W').length;
+        const safeL = safeSettled.filter(p => p.result === 'L').length;
+        const safeWL = safeW + safeL;
+        const safeWR = safeWL ? (safeW / safeWL * 100).toFixed(1) : null;
+
+        // Parlay performance
+        const parlaySettled = autoGraded.filter(p => p.parlay);
+        const parlayW = parlaySettled.filter(p => p.result === 'W').length;
+        const parlayL = parlaySettled.filter(p => p.result === 'L').length;
+        const parlayWL = parlayW + parlayL;
+        const parlayWR = parlayWL ? (parlayW / parlayWL * 100).toFixed(1) : null;
+
+        if (!safeSettled.length && !parlaySettled.length) return '';
+        return `<div class="section-hdr">Safe Bets & Parlays Performance</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:6px">
+          <div style="font-size:0.8em;background:#0a0f0a;padding:10px 14px;border-radius:6px;border:1px solid ${safeWR && parseFloat(safeWR)>=50?'#00ff8830':'#1a1a1a'}">
+            <span style="color:#00ff88">💰 Safe Bets</span>&nbsp;
+            ${safeWL ? `<span style="color:#00ff88">${safeW}W</span>/<span style="color:#ff4444">${safeL}L</span>
+            &nbsp;<strong style="color:${parseFloat(safeWR)>=50?'#00ff88':'#ff4444'}">${safeWR}%</strong>` : '<span style="color:#333">no graded picks yet</span>'}
+          </div>
+          <div style="font-size:0.8em;background:#0a0f0a;padding:10px 14px;border-radius:6px;border:1px solid ${parlayWR && parseFloat(parlayWR)>=50?'#ffcc0030':'#1a1a1a'}">
+            <span style="color:#ffcc00">🎰 Parlays</span>&nbsp;
+            ${parlayWL ? `<span style="color:#00ff88">${parlayW}W</span>/<span style="color:#ff4444">${parlayL}L</span>
+            &nbsp;<strong style="color:${parseFloat(parlayWR)>=50?'#00ff88':'#ff4444'}">${parlayWR}%</strong>` : '<span style="color:#333">no graded picks yet</span>'}
+          </div>
+        </div>`;
+      })()}
+
       <p style="color:#555;font-size:0.72em;margin-top:8px">Auto-graded via ESPN API. Use hit rate by sport to focus on your strongest markets.</p>
     </div>`;
 
@@ -2686,23 +3475,86 @@ function buildHistoryTab() {
     }
   }
 
+  // ── PHASE 3: Risk Management Dashboard ─────────────────────────────────────
+  const exposure = getDailyExposure();
+  const drift = detectModelDrift();
+  const sportDecays = ['NBA', 'NHL', 'MLB', 'PREMIER LEAGUE', 'LA LIGA'].map(sp => ({
+    sport: sp, ...getConfidenceDecay(sp)
+  })).filter(d => d.label);
+
+  html += `<div class="value-box" style="margin-top:12px;border-color:#00ccff30">
+    <h3 style="color:#00ccff">📊 RISK MANAGEMENT</h3>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:8px">
+
+      <div style="flex:1;min-width:180px;background:#0a0a0a;padding:12px;border-radius:8px;border:1px solid #1a1a1a">
+        <div style="font-size:0.72em;color:#555;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Today's Exposure</div>
+        <div style="font-size:1.3em;font-weight:700;color:${exposure.totalExposure >= MAX_DAILY_EXPOSURE ? '#ff4444' : exposure.totalExposure >= 7 ? '#ffcc00' : '#00ff88'}">${exposure.totalExposure}%</div>
+        <div style="font-size:0.72em;color:#444">${exposure.picksCount} picks · ${exposure.remaining > 0 ? exposure.remaining + '% remaining' : 'LIMIT REACHED'}</div>
+        <div style="background:#111;border-radius:4px;height:5px;margin-top:6px">
+          <div style="width:${Math.min(100, exposure.totalExposure / MAX_DAILY_EXPOSURE * 100)}%;height:5px;border-radius:4px;background:${exposure.totalExposure >= MAX_DAILY_EXPOSURE ? '#ff4444' : '#00ff88'}"></div>
+        </div>
+      </div>
+
+      <div style="flex:1;min-width:180px;background:#0a0a0a;padding:12px;border-radius:8px;border:1px solid #1a1a1a">
+        <div style="font-size:0.72em;color:#555;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Stake Sizing</div>
+        <div style="font-size:0.85em;color:#888;line-height:1.8">
+          <div>Method: <span style="color:#00ccff">Quarter-Kelly</span></div>
+          <div>Max per bet: <span style="color:#ffcc00">3%</span></div>
+          <div>Max daily: <span style="color:#ffcc00">${MAX_DAILY_EXPOSURE}%</span></div>
+        </div>
+      </div>
+
+      <div style="flex:1;min-width:180px;background:#0a0a0a;padding:12px;border-radius:8px;border:1px solid #1a1a1a">
+        <div style="font-size:0.72em;color:#555;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">CLV Summary</div>
+        ${(() => {
+          const clvPicks = settled.filter(p => {
+            const clv = getCLV(p.id, null, null);
+            return clv && clv.clv !== 0;
+          });
+          const clvValues = clvPicks.map(p => getCLV(p.id, null, null).clv);
+          const avgCLV = clvValues.length ? (clvValues.reduce((a,b) => a+b, 0) / clvValues.length) : null;
+          const positive = clvValues.filter(v => v > 0).length;
+          if (avgCLV === null) return '<div style="font-size:0.82em;color:#333">No CLV data yet</div>';
+          return `<div style="font-size:1.1em;font-weight:700;color:${avgCLV >= 0 ? '#00ff88' : '#ff4444'}">${avgCLV >= 0 ? '+' : ''}${avgCLV.toFixed(1)}% avg</div>
+            <div style="font-size:0.72em;color:#444">${positive}/${clvValues.length} beat the close · Target: +3%</div>`;
+        })()}
+      </div>
+    </div>
+
+    ${drift.label ? `<div style="margin-top:10px;padding:8px 12px;background:${drift.drifting?'#ff000010':'#00ff8808'};border:1px solid ${drift.drifting?'#ff000030':'#00ff8820'};border-radius:6px;font-size:0.78em;color:${drift.drifting?'#ff4444':'#00ff88'}">${drift.label}</div>` : ''}
+
+    ${sportDecays.length ? `<div style="margin-top:10px">
+      <div style="font-size:0.72em;color:#555;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Sport Confidence</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        ${sportDecays.map(d => `<div style="font-size:0.75em;padding:6px 10px;background:#0a0a0a;border-radius:6px;border:1px solid ${d.multiplier < 1 ? '#ff444430' : '#00ff8830'};color:${d.multiplier < 1 ? '#ff9944' : '#00ff88'}">${d.label}</div>`).join('')}
+      </div>
+    </div>` : ''}
+  </div>`;
+
   // ── Pending picks ──────────────────────────────────────────────────────────
   if (pending.length) {
     html += `<div style="margin-top:16px">
       <div class="section-hdr" style="display:flex;justify-content:space-between;align-items:center">
         <span>⏳ Pending (${pending.length}) — auto-grades next morning</span>
-        <button class="btn" onclick="autoGrade(true).then(n=>{if(n>0){buildHistoryTab();}else{showToast('No completed games found yet — games may still be in progress','#ffcc00');}})">🤖 Auto-Grade Now</button>
+        <button class="btn" onclick="autoGrade(true).then(n=>{if(n>0){buildHistoryTab();}else{showToast('No completed games found yet — games may still be in progress','#ffcc00');}}).catch(()=>showToast('Auto-grade error — try again','#ff4444'))">🤖 Auto-Grade Now</button>
       </div>
       <table class="ptable">
         <tr><th>Date</th><th>Sport</th><th>Pick Info</th><th>Pick</th><th>Conf</th><th>Mark</th></tr>`;
     pending.slice(0, 40).forEach(p => {
       const isMatch  = p.type === 'match_winner';
-      const stat     = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+      const isParlay = p.type === 'parlay';
+      const stat     = isParlay ? '' : p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
       const d        = new Date(p.date).toLocaleDateString('en-US',{day:'numeric',month:'short',timeZone:TZ});
-      const infoCell = isMatch
-        ? `<span style="color:#bbb">${p.match}</span> <span style="color:#333;font-size:0.8em">Winner</span>`
-        : `${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>`;
-      const pickCell = isMatch
+      const safeLabel = p.safe ? ' <span style="color:#00ff88;font-size:0.65em;background:#00ff8810;padding:1px 5px;border-radius:8px;border:1px solid #00ff8830">SAFE</span>' : '';
+      const parlayLabel = isParlay ? ' <span style="color:#ffcc00;font-size:0.65em;background:#ffcc0010;padding:1px 5px;border-radius:8px;border:1px solid #ffcc0030">PARLAY</span>' : '';
+      const infoCell = isParlay
+        ? `<span style="color:#ffcc00;font-weight:600">${p.market}</span> <span style="color:#333;font-size:0.75em">@ ${p.line}</span>${parlayLabel}<br><span style="color:#555;font-size:0.72em">${p.player}</span>`
+        : isMatch
+        ? `<span style="color:#bbb">${p.match}</span> <span style="color:#333;font-size:0.8em">Winner</span>${safeLabel}`
+        : `${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>${safeLabel}`;
+      const pickCell = isParlay
+        ? `<span style="color:#ffcc00;font-weight:700">${p.market}</span>`
+        : isMatch
         ? `<span style="color:#00ccff;font-weight:700">${p.pick}</span>`
         : pickHtml(p.pick);
       html += `<tr>
@@ -2728,12 +3580,16 @@ function buildHistoryTab() {
     const bestBetIds = new Set(rankedSettled.slice(0, Math.ceil(settled.length * 0.2)).map(p => p.id));
 
     const sportList = [...new Set(settled.map(p => p.sport.replace(/\p{Emoji}/gu,'').trim()))].sort();
+    const safeCount = settled.filter(p => p.safe).length;
+    const parlayCount = settled.filter(p => p.parlay).length;
     html += `<div style="margin-top:20px">
       <div class="section-hdr" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
         <span>📋 Settled — ${wins}W / ${losses}L / ${voids}V</span>
         <div style="display:flex;gap:6px;flex-wrap:wrap" id="hist-filters">
           <button class="btn active" style="font-size:0.7em;padding:3px 10px" onclick="histFilter('all',this)">All</button>
           <button class="btn" style="font-size:0.7em;padding:3px 10px;border-color:#00ff8830;color:#555" onclick="histFilter('best',this)">⭐ Best Bets</button>
+          <button class="btn" style="font-size:0.7em;padding:3px 10px;border-color:#00ff8830;color:#555" onclick="histFilter('safe',this)">💰 Safe (${safeCount})</button>
+          <button class="btn" style="font-size:0.7em;padding:3px 10px;border-color:#ffcc0030;color:#555" onclick="histFilter('parlay',this)">🎰 Parlays (${parlayCount})</button>
           ${['HIGH','MED','LOW'].map(c=>`<button class="btn" style="font-size:0.7em;padding:3px 10px;border-color:#33333380;color:#555" onclick="histFilter('${c}',this)">${c}</button>`).join('')}
           ${sportList.map(s=>`<button class="btn" style="font-size:0.7em;padding:3px 10px;border-color:#33333380;color:#555" onclick="histFilter('${s}',this)">${s}</button>`).join('')}
         </div>
@@ -2742,13 +3598,18 @@ function buildHistoryTab() {
         <tr><th>Date</th><th>Sport</th><th>Pick Info</th><th>Pick</th><th>Result</th><th>CLV</th><th>Graded By</th></tr>`;
     settled.slice(0, 100).forEach(p => {
       const isMatch  = p.type === 'match_winner';
-      const stat     = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+      const isParlay = p.type === 'parlay';
+      const stat     = isParlay ? '' : p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
       const d        = new Date(p.date).toLocaleDateString('en-US',{day:'numeric',month:'short',timeZone:TZ});
       const isBest   = bestBetIds.has(p.id);
-      const infoCell = isMatch
+      const infoCell = isParlay
+        ? `<span style="color:#ffcc00;font-weight:600">${p.market}</span> <span style="color:#333;font-size:0.75em">@ ${p.line}</span><br><span style="color:#555;font-size:0.72em">${p.player}</span>`
+        : isMatch
         ? `<span style="color:#bbb">${p.match}</span> <span style="color:#333;font-size:0.8em">Winner</span>`
         : `${isBest ? '⭐ ' : ''}${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>`;
-      const pickCell = isMatch
+      const pickCell = isParlay
+        ? `<span style="color:#ffcc00;font-weight:700">${p.market}</span>`
+        : isMatch
         ? `<span style="color:#00ccff;font-weight:700">${p.pick}</span>`
         : pickHtml(p.pick);
       const autoTag  = p.autoGraded ? ' <span style="color:#333;font-size:0.72em;font-weight:400">auto</span>' : '';
@@ -2758,10 +3619,12 @@ function buildHistoryTab() {
         ? `<span style="color:#ff4444;font-weight:700">LOSS${autoTag}</span>`
         : `<span style="color:#333">VOID${autoTag}</span>`;
       const sportClean = p.sport.replace(/\p{Emoji}/gu,'').trim();
-      html += `<tr data-conf="${p.conf}" data-sport="${sportClean}" data-best="${isBest}">
+      const safeTag = p.safe ? ' <span style="color:#00ff88;font-size:0.65em;background:#00ff8810;padding:1px 5px;border-radius:8px;border:1px solid #00ff8830">SAFE</span>' : '';
+      const parlayTag = p.parlay ? ' <span style="color:#ffcc00;font-size:0.65em;background:#ffcc0010;padding:1px 5px;border-radius:8px;border:1px solid #ffcc0030">PARLAY</span>' : '';
+      html += `<tr data-conf="${p.conf}" data-sport="${sportClean}" data-best="${isBest}" data-safe="${!!p.safe}" data-parlay="${!!p.parlay}">
         <td style="color:#333;font-size:0.8em">${d}</td>
         <td style="color:#444;font-size:0.8em">${sportClean}</td>
-        <td style="color:#bbb">${infoCell}</td>
+        <td style="color:#bbb">${infoCell}${safeTag}${parlayTag}</td>
         <td>${pickCell}</td>
         <td>${resHtml}</td>
         <td style="font-size:0.72em;color:${(() => { const clv = getCLV(p.id, null, null); return clv ? (clv.clv > 0 ? '#00ff88' : '#ff4444') : '#333'; })()}">${(() => { const clv = getCLV(p.id, null, null); return clv ? clv.label.split('(')[0].trim() : '—'; })()}</td>
@@ -2779,6 +3642,240 @@ function buildHistoryTab() {
 }
 
 // ── ALL VALUE BETS ────────────────────────────────────────────────────────────
+function buildSafeTab() {
+  const container = document.getElementById('tab-safe');
+  if (!allSafePicks.length) {
+    container.innerHTML = `<div class="no-games" style="padding:40px;text-align:center">
+      <div style="font-size:1.5em;margin-bottom:12px">💰</div>
+      <div style="color:#555;font-size:0.9em">No safe picks found yet.</div>
+      <div style="color:#333;font-size:0.78em;margin-top:8px">Load NBA, NHL, or MLB tabs first — safe picks are collected from all sports automatically.<br>A pick needs 58%+ model probability, 60%+ actual hit rate, and clean data to qualify.</div>
+    </div>`;
+    return;
+  }
+
+  // Sort by model hit probability (highest first)
+  allSafePicks.sort((a, b) => {
+    const aProb = a.c.pick === 'OVER' ? (a.statResult?.hitProbOver || 0) : (a.statResult?.hitProbUnder || 0);
+    const bProb = b.c.pick === 'OVER' ? (b.statResult?.hitProbOver || 0) : (b.statResult?.hitProbUnder || 0);
+    return bProb - aProb;
+  });
+
+  let html = `<div class="hero-section" style="border-color:#00ff8840">
+    <div class="hero-title">💰 SAFE BETS — All Sports (${allSafePicks.length} picks)</div>
+    <p style="color:#555;font-size:0.75em;margin-bottom:14px">Stats + odds + history all agree. These are the most winnable props across all loaded sports.</p>
+    <div class="pick-cards">`;
+
+  allSafePicks.forEach(p => {
+    const stat = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+    const hitProb = p.c.pick === 'OVER' ? (p.statResult?.hitProbOver || 0) : (p.statResult?.hitProbUnder || 0);
+    const hitRate = p.statResult?.actualHitRate != null
+      ? (p.c.pick === 'OVER' ? p.statResult.actualHitRate : (1 - p.statResult.actualHitRate))
+      : null;
+
+    html += `<div class="pick-card best-pick" style="border-color:#00ff8850;background:#0a140a">
+      <div class="pick-card-header">
+        <span style="background:#00ff8820;color:#00ff88;padding:2px 10px;border-radius:12px;font-size:0.7em;font-weight:700;border:1px solid #00ff8860">💰 SAFE</span>
+        <span style="font-size:0.68em;color:#444">${p.sportLabel || ''}</span>
+      </div>
+      <div class="pick-card-player">${p.player}</div>
+      <div class="pick-card-stat">${stat} · ${p.matchLabel || ''}</div>
+      <div class="pick-card-line">${p.line}</div>
+      <div class="pick-card-direction">${pickHtml(p.c.pick)} <span class="pick-card-pct">${p.c.pct}%</span></div>
+      <div style="font-size:0.72em;margin:4px 0;padding:5px 8px;background:#0a0a0a;border:1px solid #1a1a1a;border-radius:6px;display:flex;justify-content:space-between;align-items:center">
+        <span style="color:${p.edge>=5?'#00ff88':p.edge>=0?'#ffcc00':'#ff4444'}">Model: ${(p.modelProb*100).toFixed(0)}% / Book: ${(p.bookProb*100).toFixed(0)}% → <strong>${p.edge>=0?'+':''}${p.edge.toFixed(1)}% edge</strong></span>
+        <span style="color:${p.kellyPct>=3?'#00ff88':p.kellyPct>=1?'#ffcc00':'#555'};font-weight:700">${p.kellyPct>=0.5 ? p.kellyPct.toFixed(1)+'%' : 'No bet'}</span>
+      </div>
+      <div style="font-size:0.72em;padding:5px 8px;background:#00ff8808;border:1px solid #00ff8820;border-radius:6px;margin:4px 0">
+        <div style="color:#00ff88">🎲 ${(hitProb*100).toFixed(0)}% model probability</div>
+        ${hitRate != null ? `<div style="color:#00ff88">✅ Hit in ${(hitRate*100).toFixed(0)}% of last 5 games</div>` : ''}
+        <div style="color:#888">${p.bookCount} books · ${p.statResult?.consistencyTag || ''}</div>
+      </div>
+    </div>`;
+  });
+
+  html += '</div></div>';
+  container.innerHTML = html;
+}
+
+function buildParlayTab() {
+  const container = document.getElementById('tab-parlay');
+
+  // Only use safe picks — same strict filter already applied
+  if (allSafePicks.length < 2) {
+    container.innerHTML = `<div class="no-games" style="padding:40px;text-align:center">
+      <div style="font-size:1.5em;margin-bottom:12px">🎰</div>
+      <div style="color:#555;font-size:0.9em">Need at least 2 safe picks to build parlays.</div>
+      <div style="color:#333;font-size:0.78em;margin-top:8px">Load more sport tabs — parlays are built from 💰 Safe Bets only.</div>
+    </div>`;
+    return;
+  }
+
+  // Sort safe picks by model hit probability (highest first)
+  const picks = [...allSafePicks].sort((a, b) => {
+    const aProb = a.c.pick === 'OVER' ? (a.statResult?.hitProbOver || 0) : (a.statResult?.hitProbUnder || 0);
+    const bProb = b.c.pick === 'OVER' ? (b.statResult?.hitProbOver || 0) : (b.statResult?.hitProbUnder || 0);
+    return bProb - aProb;
+  });
+
+  // Rule: only 1 pick per game (correlated picks in same game kill parlays)
+  const usedMatches = new Set();
+  const uncorrelated = picks.filter(p => {
+    if (usedMatches.has(p.matchLabel)) return false;
+    usedMatches.add(p.matchLabel);
+    return true;
+  });
+
+  if (uncorrelated.length < 2) {
+    container.innerHTML = `<div class="no-games" style="padding:40px;text-align:center">
+      <div style="font-size:1.5em;margin-bottom:12px">🎰</div>
+      <div style="color:#555;font-size:0.9em">Need safe picks from 2+ different games for parlays.</div>
+      <div style="color:#333;font-size:0.78em;margin-top:8px">Parlays use 1 pick per game to avoid correlated legs.</div>
+    </div>`;
+    return;
+  }
+
+  // Build parlay combos: 2-leg, 3-leg, 4-leg (max 5)
+  const parlays = [];
+
+  // Helper: calculate combined probability and odds
+  function buildParlay(legs) {
+    let combinedProb = 1;
+    let combinedOdds = 1;
+    legs.forEach(p => {
+      const hitProb = p.c.pick === 'OVER' ? (p.statResult?.hitProbOver || 0.5) : (p.statResult?.hitProbUnder || 0.5);
+      combinedProb *= hitProb;
+      const odds = p.c.pick === 'OVER' ? p.bestOver : p.bestUnder;
+      combinedOdds *= (odds || 1.5);
+    });
+    // Implied parlay probability from bookmaker
+    const impliedProb = 1 / combinedOdds;
+    const edge = ((combinedProb - impliedProb) * 100);
+    return { legs, combinedProb, combinedOdds, impliedProb, edge };
+  }
+
+  // 2-leg parlays (top 3 combinations)
+  if (uncorrelated.length >= 2) {
+    for (let i = 0; i < Math.min(uncorrelated.length, 4); i++) {
+      for (let j = i + 1; j < Math.min(uncorrelated.length, 5); j++) {
+        parlays.push(buildParlay([uncorrelated[i], uncorrelated[j]]));
+      }
+    }
+  }
+
+  // 3-leg parlay (top 3 picks)
+  if (uncorrelated.length >= 3) {
+    parlays.push(buildParlay(uncorrelated.slice(0, 3)));
+  }
+
+  // 4-leg parlay (top 4 picks)
+  if (uncorrelated.length >= 4) {
+    parlays.push(buildParlay(uncorrelated.slice(0, 4)));
+  }
+
+  // Sort by edge (best parlay first), filter out negative edge
+  parlays.sort((a, b) => b.edge - a.edge);
+  const goodParlays = parlays.filter(p => p.edge > 0 && p.combinedProb >= 0.15);
+
+  let html = `<div class="hero-section" style="border-color:#ffcc0040">
+    <div class="hero-title">🎰 SMART PARLAYS — Built from Safe Picks Only</div>
+    <p style="color:#555;font-size:0.75em;margin-bottom:14px">
+      Each leg passes the strict safe filter (65%+ model prob, 75%+ hit rate, consistent, clean data).
+      Only 1 pick per game (no correlated legs). Sorted by combined edge.
+    </p>`;
+
+  if (!goodParlays.length) {
+    html += `<div class="no-games">No profitable parlays found. Need more safe picks from different games.</div>`;
+  }
+
+  goodParlays.forEach((parlay, idx) => {
+    const legs = parlay.legs;
+    const probPct = (parlay.combinedProb * 100).toFixed(1);
+    const implPct = (parlay.impliedProb * 100).toFixed(1);
+    const edgePct = parlay.edge.toFixed(1);
+    const oddsStr = parlay.combinedOdds.toFixed(2);
+
+    // Confidence rating based on combined probability
+    const rating = parlay.combinedProb >= 0.45 ? '🟢 Strong'
+      : parlay.combinedProb >= 0.30 ? '🟡 Decent'
+      : parlay.combinedProb >= 0.18 ? '🟠 Risky'
+      : '🔴 Long shot';
+
+    html += `<div class="match-card" style="border-color:${parlay.edge>=10?'#00ff8840':parlay.edge>=5?'#ffcc0030':'#1a1a1a'}">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <div>
+          <span style="color:#ffcc00;font-weight:700;font-size:0.9em">${legs.length}-Leg Parlay</span>
+          <span style="color:#444;font-size:0.75em;margin-left:8px">${rating}</span>
+        </div>
+        <div style="text-align:right">
+          <div style="color:#ffcc00;font-weight:700;font-size:1.1em">@ ${oddsStr}</div>
+          <div style="color:#444;font-size:0.7em">£10 wins £${(10 * parlay.combinedOdds - 10).toFixed(2)}</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;margin-bottom:10px;flex-wrap:wrap">
+        <div style="background:#0a0f0a;padding:6px 12px;border-radius:6px;border:1px solid #161c16;font-size:0.78em">
+          <span style="color:#888">Model:</span> <strong style="color:#00ff88">${probPct}%</strong>
+        </div>
+        <div style="background:#0a0f0a;padding:6px 12px;border-radius:6px;border:1px solid #161c16;font-size:0.78em">
+          <span style="color:#888">Book:</span> <strong style="color:#ffcc00">${implPct}%</strong>
+        </div>
+        <div style="background:#0a0f0a;padding:6px 12px;border-radius:6px;border:1px solid ${parlay.edge>=5?'#00ff8830':'#161c16'};font-size:0.78em">
+          <span style="color:#888">Edge:</span> <strong style="color:${parlay.edge>=5?'#00ff88':'#ffcc00'}">${parlay.edge>=0?'+':''}${edgePct}%</strong>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid #111;padding-top:10px">`;
+
+    legs.forEach((p, i) => {
+      const stat = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+      const hitProb = p.c.pick === 'OVER' ? (p.statResult?.hitProbOver || 0) : (p.statResult?.hitProbUnder || 0);
+      const odds = p.c.pick === 'OVER' ? p.bestOver : p.bestUnder;
+      html += `<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;${i<legs.length-1?'border-bottom:1px solid #0d0d0d':''}">
+        <div>
+          <span style="color:#ddd;font-weight:600;font-size:0.82em">${p.player}</span>
+          <span style="color:#444;font-size:0.72em"> · ${stat} ${p.line} ${p.c.pick}</span>
+          <div style="font-size:0.68em;color:#555">${p.sportLabel || ''} · ${p.matchLabel || ''}</div>
+        </div>
+        <div style="text-align:right">
+          <div style="color:#00ff88;font-size:0.78em;font-weight:600">${(hitProb*100).toFixed(0)}%</div>
+          <div style="color:#ffcc00;font-size:0.7em">${odds ? odds.toFixed(2) : '?'}</div>
+        </div>
+      </div>`;
+    });
+
+    html += `</div></div>`;
+
+    // Save parlay to history for tracking
+    const legIds = legs.map(p => `${p.player}_${p.market}`).join('+');
+    const parlayPick = {
+      id:        `${todayET()}_parlay_${legs.length}leg_${idx}`.replace(/\W+/g,'_'),
+      date:      new Date().toISOString(),
+      sport:     legs.map(p => p.sportLabel || '').filter(Boolean).join('/'),
+      match:     legs.map(p => p.matchLabel || '').join(' | '),
+      player:    legs.map(p => p.player).join(' + '),
+      market:    `${legs.length}-leg parlay`,
+      line:      oddsStr,
+      pick:      legs.map(p => `${p.player} ${p.c.pick} ${p.line}`).join(', '),
+      pct:       probPct,
+      conf:      parlay.combinedProb >= 0.45 ? 'HIGH' : parlay.combinedProb >= 0.30 ? 'MED' : 'LOW',
+      score:     parlay.edge / 100,
+      bookCount: legs.length,
+      vig:       0,
+      result:    null,
+      parlay:    true,
+      parlayLegs: legs.map(p => ({
+        player: p.player, market: p.market, line: p.line,
+        pick: p.c.pick, sport: p.sportLabel, match: p.matchLabel
+      })),
+      type:      'parlay',
+    };
+    savePickToHistory(parlayPick);
+  });
+
+  html += '</div>';
+  container.innerHTML = html;
+}
+
 function buildAllTab() {
   const container = document.getElementById('tab-all');
   let html = '';
@@ -2843,6 +3940,8 @@ async function refreshAll(force=false) {
   loadedTabs.clear();
   allValueBets.length = 0;
   allPropBets.length  = 0;
+  allSafePicks.length = 0;
+  Object.keys(_teamXGCache).forEach(k => delete _teamXGCache[k]); // clear xG cache
 
   if (force) clearAllCache();
 
@@ -2859,6 +3958,8 @@ async function refreshAll(force=false) {
   loadedTabs.add('soccer');
   await buildSoccer(force);
   buildAllTab();
+  buildSafeTab();
+  buildParlayTab();
 
   // History tab loads on startup (no API calls, just localStorage)
   buildHistoryTab();
@@ -2879,6 +3980,8 @@ function histFilter(val, btn) {
   document.querySelectorAll('#hist-table tr[data-conf]').forEach(row => {
     if (val === 'all') { row.style.display = ''; return; }
     if (val === 'best') { row.style.display = row.dataset.best === 'true' ? '' : 'none'; return; }
+    if (val === 'safe') { row.style.display = row.dataset.safe === 'true' ? '' : 'none'; return; }
+    if (val === 'parlay') { row.style.display = row.dataset.parlay === 'true' ? '' : 'none'; return; }
     if (['HIGH','MED','LOW'].includes(val)) { row.style.display = row.dataset.conf === val ? '' : 'none'; return; }
     row.style.display = row.dataset.sport === val ? '' : 'none';
   });
@@ -2999,6 +4102,8 @@ function filterPickCards(btn, dir) {
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 window.addEventListener('load', () => {
+  // Pre-warm the Render proxy so it's awake when sport tabs load
+  fetch(`${NBA_PROXY}/health`).catch(() => {});
   refreshAll(false);
   autoGrade().then(n => {
     // Retry after 30s for any picks ESPN hadn't processed yet on first pass
