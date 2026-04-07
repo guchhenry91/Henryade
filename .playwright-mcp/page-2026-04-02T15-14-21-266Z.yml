@@ -1,0 +1,630 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e6]:
+          - link "Reed.co.uk" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Reed.co.uk" [ref=e8]
+          - list [ref=e9]:
+            - listitem [ref=e10]:
+              - link "Jobs" [ref=e11] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e12]: Jobs
+            - listitem [ref=e13]:
+              - link "Courses" [ref=e14] [cursor=pointer]:
+                - /url: /courses/?itm_source=js_navigation&itm_medium=jobseeker&itm_campaign=courses_tab&itm_content=standard_version
+                - generic [ref=e15]: Courses
+            - listitem [ref=e16]:
+              - link "Career advice" [ref=e17] [cursor=pointer]:
+                - /url: /career-advice/
+                - generic [ref=e18]: Career advice
+            - listitem [ref=e19]:
+              - link "Recruiting? Post a job" [ref=e20] [cursor=pointer]:
+                - /url: /recruiter/
+                - generic [ref=e21]:
+                  - text: Recruiting?
+                  - strong [ref=e22]: Post a job
+          - generic [ref=e23]:
+            - link "Register CV" [ref=e24] [cursor=pointer]:
+              - /url: /authentication/register?returnTo=%2Fjobs%2Fit-infrastructure-engineer%2F56732585
+            - list [ref=e25]:
+              - listitem [ref=e26]:
+                - link "Saved jobs" [ref=e27] [cursor=pointer]:
+                  - /url: /account/jobs/shortlisted-jobs
+                  - img [ref=e29]
+                  - generic [ref=e31]: Saved jobs
+              - listitem [ref=e32]:
+                - status [ref=e33]:
+                  - img "Loading" [ref=e34]
+      - search [ref=e38]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: What
+            - textbox "e.g. \"office assistant\"" [ref=e44]
+          - generic [ref=e45]:
+            - generic [ref=e46]: Where
+            - generic [ref=e47]:
+              - textbox "town or postcode" [ref=e48]
+              - button "Get current location" [ref=e49] [cursor=pointer]:
+                - img [ref=e50]
+          - button "Search jobs" [ref=e54] [cursor=pointer]
+          - link "Browse jobs" [ref=e56] [cursor=pointer]:
+            - /url: /popularjobs
+            - text: Browse jobs
+            - img [ref=e57]
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - link "ArrowSearch results" [ref=e64] [cursor=pointer]:
+            - /url: /jobs/it-infrastructure-engineer-jobs-in-london?jobId=56732585
+            - img "Arrow"
+            - text: Search results
+          - list [ref=e66]:
+            - listitem [ref=e67]:
+              - link "Home" [ref=e68] [cursor=pointer]:
+                - /url: /
+            - text: /
+            - listitem [ref=e69]:
+              - text: /
+              - link "Information Technology" [ref=e70] [cursor=pointer]:
+                - /url: /jobs/information-technology-jobs
+            - listitem [ref=e71]:
+              - text: /
+              - link "Engineer" [ref=e72] [cursor=pointer]:
+                - /url: /jobs/engineering-jobs
+            - listitem [ref=e73]:
+              - text: /
+              - link "Information Engineer" [ref=e74] [cursor=pointer]:
+                - /url: /jobs/information-engineer-jobs
+            - listitem [ref=e75]: /Job details
+        - generic [ref=e76]:
+          - generic [ref=e78]:
+            - img "Job image banner" [ref=e79]
+            - generic [ref=e80]:
+              - generic [ref=e81]: Featured
+              - generic [ref=e82]: New
+              - generic [ref=e83]:
+                - img [ref=e84]
+                - text: Easy Apply
+            - generic [ref=e86]:
+              - generic [ref=e87]:
+                - heading "IT Infrastructure Engineer" [level=1] [ref=e88]
+                - generic [ref=e89]:
+                  - text: Yesterday by
+                  - link "Matchtech" [ref=e90] [cursor=pointer]:
+                    - /url: /company-profile/Matchtech--76790
+              - link "Matchtech jobs" [ref=e92] [cursor=pointer]:
+                - /url: /company-profile/Matchtech--76790
+                - img "Matchtech jobs" [ref=e93]
+            - list [ref=e94]:
+              - listitem [ref=e95]:
+                - img "Salary" [ref=e96]
+                - text: Salary negotiable
+              - listitem [ref=e98]:
+                - img "Location" [ref=e99]
+                - text: London
+              - listitem [ref=e101]:
+                - img "Clock" [ref=e102]
+                - text: Permanent, full-time
+              - listitem [ref=e104]:
+                - generic [ref=e105]:
+                  - img "Check Mark" [ref=e106]
+                  - 'link "Skills: Infrastructure Engineer" [ref=e108] [cursor=pointer]':
+                    - /url: "#skills"
+                    - generic [ref=e109]: "Skills:"
+                    - generic [ref=e111]: Infrastructure Engineer
+            - generic [ref=e113]:
+              - button "Apply now" [disabled]
+              - button "Shortlist job" [disabled]:
+                - img
+                - text: Save
+            - generic [ref=e115]:
+              - paragraph [ref=e116]
+              - paragraph [ref=e117]
+              - strong [ref=e118]: About the Role
+              - paragraph [ref=e119]:
+                - text: We're looking for an IT Infrasructre Engineer for a small, collaborative organisation looking for someone to join their close-knit IT team. This is a
+                - strong [ref=e120]: permanent position
+                - text: ", ideal for someone seeking long-term stability and who enjoys working in a smaller, hands-on environment where you can genuinely influence how things are done."
+              - paragraph [ref=e121]: In this role, you'll support the delivery of our internal IT services across desktop, server, and cloud environments. You'll act as an all-rounder, working both independently and alongside our MSP. Your day-to-day work will include desktop support, server and cloud administration (Azure, Windows Server, Linux), and involvement in a variety of infrastructure projects such as server upgrades, cloud transformation, Wi-Fi improvements, and network hardware refreshes.
+              - paragraph [ref=e122]:
+                - text: We are
+                - strong [ref=e123]: not
+                - text: looking for a cyber-security specialist - this role is firmly focused on infrastructure, support, and operational IT.
+              - paragraph [ref=e124]
+              - strong [ref=e125]: Candidate Requirements
+              - strong [ref=e126]: Essential
+              - list [ref=e127]:
+                - listitem [ref=e128]:
+                  - paragraph [ref=e129]:
+                    - strong [ref=e130]: Minimum 4 years' experience
+                    - text: in an IT infrastructure or support engineering role.
+                - listitem [ref=e131]:
+                  - paragraph [ref=e132]:
+                    - text: Comfortable working in a
+                    - strong [ref=e133]: small company environment
+                    - text: ", contributing across multiple areas."
+                - listitem [ref=e134]:
+                  - paragraph [ref=e135]:
+                    - text: Strong experience with
+                    - strong [ref=e136]: Windows Server, Windows desktop, and cloud technologies
+                    - text: .
+                - listitem [ref=e137]:
+                  - paragraph [ref=e138]:
+                    - text: Solid understanding of
+                    - strong [ref=e139]: Azure
+                    - text: .
+                - listitem [ref=e140]:
+                  - paragraph [ref=e141]:
+                    - text: Good working knowledge of
+                    - strong [ref=e142]: Linux
+                    - text: (Ubuntu preferred).
+                - listitem [ref=e143]:
+                  - paragraph [ref=e144]:
+                    - text: Strong grounding in
+                    - strong [ref=e145]: networking, virtualisation, and cloud technologies
+                    - text: ", including Identity & Access Management."
+                - listitem [ref=e146]:
+                  - paragraph [ref=e147]:
+                    - text: Proficiency with
+                    - strong [ref=e148]: infrastructure automation and scripting
+                    - text: .
+                - listitem [ref=e149]:
+                  - paragraph [ref=e150]: Excellent communication and problem-solving skills.
+                - listitem [ref=e151]:
+                  - paragraph [ref=e152]: Ability to work both independently and collaboratively within a small team.
+                - listitem [ref=e153]:
+                  - paragraph [ref=e154]:
+                    - text: Background in
+                    - strong [ref=e155]: permanent roles or long-term contracts
+                    - text: ", demonstrating stability and commitment."
+              - strong [ref=e156]: Preferred
+              - list [ref=e157]:
+                - listitem [ref=e158]:
+                  - paragraph [ref=e159]: "Experience with:"
+                  - list [ref=e160]:
+                    - listitem [ref=e161]:
+                      - paragraph [ref=e162]: Windows Server 2019 / 2022
+                    - listitem [ref=e163]:
+                      - paragraph [ref=e164]: Windows 11
+                    - listitem [ref=e165]:
+                      - paragraph [ref=e166]: Linux Ubuntu 24.02
+                    - listitem [ref=e167]:
+                      - paragraph [ref=e168]: Microsoft Azure & Microsoft 365
+                - listitem [ref=e169]:
+                  - paragraph [ref=e170]: Degree in IT / Computer Science.
+                - listitem [ref=e171]:
+                  - paragraph [ref=e172]: Cisco CCNP certification.
+                - listitem [ref=e173]:
+                  - paragraph [ref=e174]: Azure Security Engineer certification
+              - paragraph [ref=e175]
+            - generic [ref=e176]:
+              - generic [ref=e177]: Skills
+              - list [ref=e178]:
+                - listitem [ref=e179]: Infrastructure Engineer
+            - group [ref=e180]:
+              - button "shareShare" [ref=e183] [cursor=pointer]:
+                - img "share" [ref=e184]
+                - text: Share
+              - generic [ref=e186]:
+                - button "EyeHide" [disabled]:
+                  - img "Eye"
+                  - text: Hide
+          - generic [ref=e187]:
+            - banner [ref=e188]:
+              - heading "Create alerts for similar jobs" [level=2] [ref=e189]
+            - generic [ref=e191]:
+              - generic [ref=e192]:
+                - generic [ref=e193]:
+                  - generic [ref=e194]:
+                    - generic [ref=e196]: IT Infrastructure Engineer
+                    - generic [ref=e197]: London
+                  - button "Edit" [ref=e198] [cursor=pointer]
+                - generic [ref=e199]:
+                  - generic [ref=e200]: Email address
+                  - textbox "Email address" [ref=e202]
+              - generic [ref=e203]:
+                - button "Create alert" [disabled]:
+                  - generic:
+                    - img
+                  - text: Create alert
+              - generic [ref=e204]:
+                - text: By creating an alert, you agree to the
+                - link "Terms and conditions" [ref=e205] [cursor=pointer]:
+                  - /url: /policies
+                - text: applicable to our service and acknowledge that your personal data will be used in accordance with our
+                - link "Privacy policy" [ref=e206] [cursor=pointer]:
+                  - /url: /policies
+                - text: and you will receive emails and communications about jobs and career related topics.
+          - generic [ref=e207]:
+            - heading "Similar Jobs" [level=3] [ref=e209]
+            - generic [ref=e210]:
+              - link "Shortlist job IT Infrastructure Engineer 19 March by Ritz Recruitment Ltd Salary£50,000 per annum LocationCentral London, London ClockPermanent, full-time" [ref=e211] [cursor=pointer]:
+                - /url: /jobs/it-infrastructure-engineer/56674883?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e212]:
+                      - img [ref=e213]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: IT Infrastructure Engineer
+                          - generic: 19 March by Ritz Recruitment Ltd
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £50,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: Central London, London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Easy Apply IT Infrastructure Engineer 23 February by Adecco Salary£35,000 - £45,000 per annum LocationRainham, Essex ClockPermanent, full-time" [ref=e215] [cursor=pointer]:
+                - /url: /jobs/it-infrastructure-engineer/56520961?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e216]:
+                      - img [ref=e217]
+                    - generic:
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: IT Infrastructure Engineer
+                          - generic: 23 February by Adecco
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £35,000 - £45,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: Rainham, Essex
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Featured Easy Apply IT Infrastructure Engineer - MSP 2 days ago by Ashdown Group Salary£55,000 - £60,000 per annum LocationBorehamwood, Hertfordshire ClockPermanent, full-time" [ref=e219] [cursor=pointer]:
+                - /url: /jobs/it-infrastructure-engineer-msp/56721823?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e220]:
+                      - img [ref=e221]
+                    - generic:
+                      - generic: Featured
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: IT Infrastructure Engineer - MSP
+                          - generic: 2 days ago by Ashdown Group
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £55,000 - £60,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: Borehamwood, Hertfordshire
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job 3rd Line / IT Infrastructure Engineer 12 March by SER (Staffing) Ltd Salary£50,000 - £55,000 per annum LocationLondon ClockPermanent, full-time" [ref=e223] [cursor=pointer]:
+                - /url: /jobs/3rd-line-it-infrastructure-engineer/56633569?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e224]:
+                      - img [ref=e225]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: 3rd Line / IT Infrastructure Engineer
+                          - generic: 12 March by SER (Staffing) Ltd
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £50,000 - £55,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Trainee IT Infrastructure Engineer - Cyber 23 February by Newto Training Salary£25,000 - £78,000 per annum LocationUnited Kingdom ClockPermanent, full-time" [ref=e227] [cursor=pointer]:
+                - /url: /jobs/trainee-it-infrastructure-engineer-cyber/56518300?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e228]:
+                      - img [ref=e229]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Trainee IT Infrastructure Engineer - Cyber
+                          - generic: 23 February by Newto Training
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £25,000 - £78,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: United Kingdom
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Promoted Easy Apply Onsite IT Support Engineer 18 March by RFA SalarySalary negotiable LocationLondon ClockPermanent, full-time" [ref=e231] [cursor=pointer]:
+                - /url: /jobs/onsite-it-support-engineer/56665903?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e232]:
+                      - img [ref=e233]
+                    - generic:
+                      - generic: Promoted
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Onsite IT Support Engineer
+                          - generic: 18 March by RFA
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Salary negotiable
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+            - link "See more jobs like this" [ref=e236] [cursor=pointer]:
+              - /url: /jobs/information-engineer-jobs
+          - generic [ref=e237]:
+            - generic [ref=e239]: Recommended courses
+            - generic [ref=e240]:
+              - link "Microsoft Certified Windows Server Hybrid Administrator Associate Online, Self-paced £395" [ref=e241] [cursor=pointer]:
+                - /url: /courses/microsoft-certified-windows-server-hybrid-administrator-associate/511179?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=computer%20maintenance_courses_511179
+                - generic: Microsoft Certified Windows Server Hybrid Administrator Associate
+                - generic: Online, Self-paced
+                - generic: £395
+              - 'link "CompTIA : CompTIA Cloud+ Online, Self-paced £899" [ref=e242] [cursor=pointer]':
+                - /url: /courses/comptia--comptia-cloud/340760?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=computer%20maintenance_courses_340760
+                - generic: "CompTIA : CompTIA Cloud+"
+                - generic: Online, Self-paced
+                - generic: £899
+              - link "CompTIA Cloud Essentials Online, Self-paced £899" [ref=e243] [cursor=pointer]:
+                - /url: /courses/comptia-cloud-essentials/340792?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=computer%20maintenance_courses_340792
+                - generic: CompTIA Cloud Essentials
+                - generic: Online, Self-paced
+                - generic: £899
+            - link "View Computer maintenance courses" [ref=e245] [cursor=pointer]:
+              - /url: https://www.reed.co.uk/courses/all?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=view_computer%20maintenance_courses
+          - generic [ref=e247]:
+            - generic [ref=e248]: Posted by Matchtech
+            - link "View all jobs and profile Chevron" [ref=e249] [cursor=pointer]:
+              - /url: /jobs/matchtech-19617/p19617
+              - generic [ref=e250]: View all jobs and profile
+              - img "Chevron" [ref=e251]
+          - generic [ref=e254]:
+            - generic [ref=e255]: Not what you are looking for?
+            - list [ref=e256]:
+              - listitem [ref=e257]:
+                - link "It Support Engineer jobs" [ref=e258] [cursor=pointer]:
+                  - /url: /jobs/it-support-engineer-jobs-in-london
+              - listitem [ref=e259]:
+                - link "Infrastructure Engineer jobs" [ref=e260] [cursor=pointer]:
+                  - /url: /jobs/infrastructure-engineer-jobs-in-london
+              - listitem [ref=e261]:
+                - link "3Rd Line Support jobs" [ref=e262] [cursor=pointer]:
+                  - /url: /jobs/3rd-line-support-jobs-in-london
+              - listitem [ref=e263]:
+                - link "Senior Infrastructure Engineer jobs" [ref=e264] [cursor=pointer]:
+                  - /url: /jobs/senior-infrastructure-engineer-jobs-in-london
+              - listitem [ref=e265]:
+                - link "3Rd Line Infrastructure Engineer jobs" [ref=e266] [cursor=pointer]:
+                  - /url: /jobs/3rd-line-infrastructure-engineer-jobs-in-london
+          - generic [ref=e267]:
+            - generic [ref=e268]: "Reference: 56732585"
+            - generic [ref=e269]:
+              - text: Please note that
+              - link "Reed.co.uk" [ref=e270] [cursor=pointer]:
+                - /url: https://reed.co.uk
+              - text: will never ask you to provide your bank, passport or driving licence details during the application process.
+            - link "Report this job Open in new tab" [ref=e272] [cursor=pointer]:
+              - /url: /enquiries?reportJobRef=56732585
+              - text: Report this job
+              - img "Open in new tab"
+        - complementary
+    - contentinfo [ref=e273]:
+      - generic [ref=e275]:
+        - navigation [ref=e276]:
+          - button "JOBS" [ref=e278] [cursor=pointer]
+          - list [ref=e281]:
+            - listitem [ref=e282]:
+              - link "Contact us" [ref=e283] [cursor=pointer]:
+                - /url: /enquiries
+            - listitem [ref=e284]:
+              - link "Job search" [ref=e285] [cursor=pointer]:
+                - /url: /jobs
+            - listitem [ref=e286]:
+              - link "Recruiter directory" [ref=e287] [cursor=pointer]:
+                - /url: /recruiterdirectory
+            - listitem [ref=e288]:
+              - link "Work from home" [ref=e289] [cursor=pointer]:
+                - /url: /jobs/work-from-home-jobs
+            - listitem [ref=e290]:
+              - link "Browse jobs" [ref=e291] [cursor=pointer]:
+                - /url: /popularjobs
+            - listitem [ref=e292]:
+              - link "Browse locations" [ref=e293] [cursor=pointer]:
+                - /url: /location
+            - listitem [ref=e294]:
+              - link "Popular searches" [ref=e295] [cursor=pointer]:
+                - /url: /popularsearches
+            - listitem [ref=e296]:
+              - link "Career advice" [ref=e297] [cursor=pointer]:
+                - /url: /career-advice
+            - listitem [ref=e298]:
+              - link "Tax calculator" [ref=e299] [cursor=pointer]:
+                - /url: /tax-calculator
+            - listitem [ref=e300]:
+              - link "Average salary checker" [ref=e301] [cursor=pointer]:
+                - /url: /average-salary
+            - listitem [ref=e302]:
+              - link "Help" [ref=e303] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e304]:
+              - link "Contact a REED office" [ref=e305] [cursor=pointer]:
+                - /url: https://www.reed.com/offices
+            - listitem [ref=e306]:
+              - link "Sitemap" [ref=e307] [cursor=pointer]:
+                - /url: /html-sitemap
+        - navigation [ref=e308]:
+          - button "RECRUITER" [ref=e310] [cursor=pointer]
+          - list [ref=e313]:
+            - listitem [ref=e314]:
+              - link "Recruiter site" [ref=e315] [cursor=pointer]:
+                - /url: /recruiter?directjob=recruiter
+            - listitem [ref=e316]:
+              - link "Post a job" [ref=e317] [cursor=pointer]:
+                - /url: /recruiter/post-a-job?directjob=recruiter
+            - listitem [ref=e318]:
+              - link "CV Search" [ref=e319] [cursor=pointer]:
+                - /url: /recruiter/cv-search?directjob=recruiter
+            - listitem [ref=e320]:
+              - link "Recruitment agencies" [ref=e321] [cursor=pointer]:
+                - /url: /recruiter/recruitment-agencies?directjob=recruiter
+            - listitem [ref=e322]:
+              - link "Recruiter Advice" [ref=e323] [cursor=pointer]:
+                - /url: /recruiter-advice/?directjob=recruiter
+        - navigation [ref=e324]:
+          - button "COURSES" [ref=e326] [cursor=pointer]
+          - list [ref=e329]:
+            - listitem [ref=e330]:
+              - link "Help" [ref=e331] [cursor=pointer]:
+                - /url: /courses/help
+            - listitem [ref=e332]:
+              - link "Contact us" [ref=e333] [cursor=pointer]:
+                - /url: /courses/contact-us
+            - listitem [ref=e334]:
+              - link "Find a course" [ref=e335] [cursor=pointer]:
+                - /url: /courses/
+            - listitem [ref=e336]:
+              - link "View all subjects" [ref=e337] [cursor=pointer]:
+                - /url: /courses/directory
+            - listitem [ref=e338]:
+              - link "Discount courses" [ref=e339] [cursor=pointer]:
+                - /url: /courses/discount
+            - listitem [ref=e340]:
+              - link "Free courses" [ref=e341] [cursor=pointer]:
+                - /url: /courses/free
+            - listitem [ref=e342]:
+              - link "Awarding body directory" [ref=e343] [cursor=pointer]:
+                - /url: /courses/awarding-bodies
+            - listitem [ref=e344]:
+              - link "Career guides" [ref=e345] [cursor=pointer]:
+                - /url: /courses/career-guides
+            - listitem [ref=e346]:
+              - link "Advertise a course" [ref=e347] [cursor=pointer]:
+                - /url: /courses/providers/
+            - listitem [ref=e348]:
+              - link "Courses sitemap" [ref=e349] [cursor=pointer]:
+                - /url: /courses/html-sitemap
+        - navigation [ref=e350]:
+          - button "MORE FROM Reed.co.uk" [ref=e352] [cursor=pointer]
+          - list [ref=e355]:
+            - listitem [ref=e356]:
+              - link "About us" [ref=e357] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e358]:
+              - link "Careers at Reed.co.uk" [ref=e359] [cursor=pointer]:
+                - /url: https://www.reed.com/careers/jobs?businessDivision=Reed.co.uk
+            - listitem [ref=e360]:
+              - link "Press office" [ref=e361] [cursor=pointer]:
+                - /url: /press-office
+            - listitem [ref=e362]:
+              - link "Corporate governance" [ref=e363] [cursor=pointer]:
+                - /url: /corporate-governance
+            - listitem [ref=e364]:
+              - link "Modern slavery statement" [ref=e365] [cursor=pointer]:
+                - /url: https://www.reed.co.uk/cdn/jobseeker/pdf/Reed_MSA_Statement.pdf
+        - navigation [ref=e366]:
+          - button "REED" [ref=e368] [cursor=pointer]
+          - list [ref=e371]:
+            - listitem [ref=e372]:
+              - 'link "Tempzone: timesheets & holiday" [ref=e373] [cursor=pointer]':
+                - /url: https://candidate.reed.co.uk/candlogin.asp
+            - listitem [ref=e374]:
+              - link "Authorise timesheets" [ref=e375] [cursor=pointer]:
+                - /url: https://client.reed.co.uk/
+            - listitem [ref=e376]:
+              - link "Reed Group Services" [ref=e377] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e378]:
+              - link "Reed Specialist Recruitment" [ref=e379] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e380]:
+              - link "Reed in Partnership" [ref=e381] [cursor=pointer]:
+                - /url: https://www.reedinpartnership.co.uk/
+            - listitem [ref=e382]:
+              - link "Careers with REED" [ref=e383] [cursor=pointer]:
+                - /url: https://www.reed.com/careers
+            - listitem [ref=e384]:
+              - link "James Reed - Official Site" [ref=e385] [cursor=pointer]:
+                - /url: /james-reed/
+            - listitem [ref=e386]:
+              - 'link "Podcast - James Reed: all about business" [ref=e387] [cursor=pointer]':
+                - /url: https://www.reed.com/podcasts
+            - listitem [ref=e388]:
+              - link "ESG & sustainability" [ref=e389] [cursor=pointer]:
+                - /url: https://www.reed.com/esg-and-sustainability
+      - generic [ref=e391]:
+        - generic [ref=e392]:
+          - generic [ref=e394]:
+            - link "PhilCo" [ref=e395] [cursor=pointer]:
+              - /url: https://philco.org.uk/
+              - img "PhilCo" [ref=e396]
+            - generic [ref=e397]: Learn how Reed is leading the way in philanthropy
+          - img "Love Mondays" [ref=e399]
+        - generic [ref=e400]:
+          - generic [ref=e401]:
+            - 'link "James Reed: all about business" [ref=e402] [cursor=pointer]':
+              - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+              - 'img "James Reed: all about business" [ref=e403]'
+            - generic [ref=e404]:
+              - heading "Introducing our new podcast New" [level=3] [ref=e405]:
+                - text: Introducing our new podcast
+                - generic [ref=e406]: New
+              - paragraph [ref=e407]: "James Reed: all about business"
+              - link "Listen here" [ref=e408] [cursor=pointer]:
+                - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+          - generic [ref=e409]:
+            - generic [ref=e410]:
+              - generic [ref=e411]:
+                - link "Download on the App Store" [ref=e412] [cursor=pointer]:
+                  - /url: https://itunes.apple.com/GB/app/id1040443949?mt=8
+                  - img "Download on the App Store" [ref=e413]
+                - link "Get it on Google Play" [ref=e414] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.reedcouk.jobs&referrer=af_tranid%3D_HgKgkJ-aFiIn4G5iigdZQ%26pid%3DWebsite_Footer%26utm_source%3DWebsite_Footer
+                  - img "Get it on Google Play" [ref=e415]
+              - generic [ref=e416]:
+                - link "Facebook" [ref=e417] [cursor=pointer]:
+                  - /url: https://www.facebook.com/reedcouk
+                  - img "Facebook" [ref=e418]
+                - link "Instagram" [ref=e419] [cursor=pointer]:
+                  - /url: https://www.instagram.com/reedcouk/
+                  - img "Instagram" [ref=e420]
+                - link "Tiktok" [ref=e421] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@reedjobs
+                  - img "Tiktok" [ref=e422]
+            - list [ref=e423]:
+              - listitem [ref=e424]:
+                - button "Manage Preferences" [ref=e425] [cursor=pointer]
+                - text: ","
+              - listitem [ref=e426]:
+                - link "Security, Privacy, Terms & Conditions" [ref=e427] [cursor=pointer]:
+                  - /url: /policies
+            - paragraph [ref=e428]: COPYRIGHT © Reed.co.uk 2026
+  - alert [ref=e429]

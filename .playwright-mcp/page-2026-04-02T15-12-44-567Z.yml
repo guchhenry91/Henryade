@@ -1,0 +1,654 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e6]:
+          - link "Reed.co.uk" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Reed.co.uk" [ref=e8]
+          - list [ref=e9]:
+            - listitem [ref=e10]:
+              - link "Jobs" [ref=e11] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e12]: Jobs
+            - listitem [ref=e13]:
+              - link "Courses" [ref=e14] [cursor=pointer]:
+                - /url: /courses/?itm_source=js_navigation&itm_medium=jobseeker&itm_campaign=courses_tab&itm_content=standard_version
+                - generic [ref=e15]: Courses
+            - listitem [ref=e16]:
+              - link "Career advice" [ref=e17] [cursor=pointer]:
+                - /url: /career-advice/
+                - generic [ref=e18]: Career advice
+            - listitem [ref=e19]:
+              - link "Recruiting? Post a job" [ref=e20] [cursor=pointer]:
+                - /url: /recruiter/
+                - generic [ref=e21]:
+                  - text: Recruiting?
+                  - strong [ref=e22]: Post a job
+          - generic [ref=e23]:
+            - link "Register CV" [ref=e24] [cursor=pointer]:
+              - /url: /authentication/register?returnTo=%2Fjobs%2Fazure-qualified-technical-support-engineer-investment-banking%2F56728786
+            - list [ref=e25]:
+              - listitem [ref=e26]:
+                - link "Saved jobs" [ref=e27] [cursor=pointer]:
+                  - /url: /account/jobs/shortlisted-jobs
+                  - img [ref=e29]
+                  - generic [ref=e31]: Saved jobs
+              - listitem [ref=e32]:
+                - status [ref=e33]:
+                  - img "Loading" [ref=e34]
+      - search [ref=e38]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: What
+            - textbox "e.g. \"it support\"" [ref=e44]
+          - generic [ref=e45]:
+            - generic [ref=e46]: Where
+            - generic [ref=e47]:
+              - textbox "town or postcode" [ref=e48]
+              - button "Get current location" [ref=e49] [cursor=pointer]:
+                - img [ref=e50]
+          - button "Search jobs" [ref=e54] [cursor=pointer]
+          - link "Browse jobs" [ref=e56] [cursor=pointer]:
+            - /url: /popularjobs
+            - text: Browse jobs
+            - img [ref=e57]
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - link "ArrowSearch results" [ref=e64] [cursor=pointer]:
+            - /url: /jobs/azure-qualified-technical-support-engineer---investment-banking-jobs-in-london?jobId=56728786
+            - img "Arrow"
+            - text: Search results
+          - list [ref=e66]:
+            - listitem [ref=e67]:
+              - link "Home" [ref=e68] [cursor=pointer]:
+                - /url: /
+            - text: /
+            - listitem [ref=e69]:
+              - text: /
+              - link "Information Technology" [ref=e70] [cursor=pointer]:
+                - /url: /jobs/information-technology-jobs
+            - listitem [ref=e71]:
+              - text: /
+              - link "Engineer" [ref=e72] [cursor=pointer]:
+                - /url: /jobs/engineering-jobs
+            - listitem [ref=e73]:
+              - text: /
+              - link "Support Engineer" [ref=e74] [cursor=pointer]:
+                - /url: /jobs/support-engineer-jobs
+            - listitem [ref=e75]: /Job details
+        - generic [ref=e76]:
+          - generic [ref=e78]:
+            - generic [ref=e79]:
+              - generic [ref=e80]: Featured
+              - generic [ref=e81]: New
+              - generic [ref=e82]:
+                - img [ref=e83]
+                - text: Easy Apply
+            - generic [ref=e85]:
+              - generic [ref=e86]:
+                - heading "Azure qualified Technical Support Engineer - Investment Banking" [level=1] [ref=e87]
+                - generic [ref=e88]:
+                  - text: Yesterday by
+                  - link "Global Technology Solutions Ltd" [ref=e89] [cursor=pointer]:
+                    - /url: /company-profile/Global-Technology-Solutions-Ltd-73038
+              - link "Global Technology Solutions Ltd jobs" [ref=e91] [cursor=pointer]:
+                - /url: /company-profile/Global-Technology-Solutions-Ltd-73038
+                - img "Global Technology Solutions Ltd jobs" [ref=e92]
+            - list [ref=e93]:
+              - listitem [ref=e94]:
+                - img "Salary" [ref=e95]
+                - text: £260 - £300 per day
+              - listitem [ref=e97]:
+                - img "Location" [ref=e98]
+                - text: London
+              - listitem [ref=e100]:
+                - img "Clock" [ref=e101]
+                - text: Contract, full-time
+            - generic [ref=e104]:
+              - button "Apply now" [disabled]
+              - button "Shortlist job" [disabled]:
+                - img
+                - text: Save
+            - generic [ref=e106]:
+              - strong [ref=e107]: Azure-Certified Desktop Support Engineer – Investment Banking (VIP Support)
+              - paragraph [ref=e108]:
+                - strong [ref=e109]: Immediate Start
+              - paragraph [ref=e110]:
+                - text: We are seeking an experienced
+                - strong [ref=e111]: Desktop Support Engineer
+                - text: with a strong
+                - strong [ref=e112]: VIP support background in Investment Banking
+                - text: and a
+                - strong [ref=e113]: valid Azure certification
+                - text: to join our client’s team in
+                - strong [ref=e114]: Central London
+                - text: . This is a
+                - strong [ref=e115]: fully onsite, hands-on desktop role
+                - text: for an initial
+                - strong [ref=e116]: 6 month contract
+                - text: ", with a strong possibility of extension."
+              - strong [ref=e117]: Key Details
+              - list [ref=e118]:
+                - listitem [ref=e119]:
+                  - paragraph [ref=e120]:
+                    - strong [ref=e121]: "Location:"
+                    - text: Onsite, Central London
+                - listitem [ref=e122]:
+                  - paragraph [ref=e123]:
+                    - strong [ref=e124]: "Working Pattern:"
+                    - text: Rotational shifts
+                  - list [ref=e125]:
+                    - listitem [ref=e126]:
+                      - paragraph [ref=e127]: 07:30 – 16:30
+                    - listitem [ref=e128]:
+                      - paragraph [ref=e129]:
+                        - text: 10:30 – 19:30
+                        - emphasis [ref=e130]: (Monday to Friday)
+                - listitem [ref=e131]:
+                  - paragraph [ref=e132]:
+                    - strong [ref=e133]: "Rate:"
+                    - text: £275 per day (Inside IR35 – Umbrella only)
+                - listitem [ref=e134]:
+                  - paragraph [ref=e135]:
+                    - strong [ref=e136]: "Languages:"
+                    - text: French fluency advantageous
+              - strong [ref=e137]: Role Overview
+              - paragraph [ref=e138]:
+                - text: This role is heavily
+                - strong [ref=e139]: desktop and floor-walking focused
+                - text: ", supporting"
+                - strong [ref=e140]: front-office and senior stakeholders
+                - text: in a high-pressure investment banking environment. The successful candidate will deliver
+                - strong [ref=e141]: white-glove, face-to-face technical support
+                - text: ", resolving incidents quickly and professionally while maintaining excellent customer experience standards."
+              - strong [ref=e142]: Essential Skills & Experience (Non-Negotiable)
+              - list [ref=e143]:
+                - listitem [ref=e144]:
+                  - paragraph [ref=e145]:
+                    - text: Proven
+                    - strong [ref=e146]: VIP / Executive Desktop Support experience
+                    - text: within
+                    - strong [ref=e147]: Investment Banking
+                - listitem [ref=e148]:
+                  - paragraph [ref=e149]:
+                    - strong [ref=e150]: Azure certification
+                    - text: with practical exposure to Azure-based user and endpoint support
+                - listitem [ref=e151]:
+                  - paragraph [ref=e152]:
+                    - strong [ref=e153]: Minimum 5 years’ experience
+                    - text: across
+                    - strong [ref=e154]: 1st–3rd Line Desktop / End-User Support
+                - listitem [ref=e155]:
+                  - paragraph [ref=e156]:
+                    - text: Strong
+                    - strong [ref=e157]: onsite desktop support background
+                    - text: ", including floor walking and desk-side troubleshooting"
+                - listitem [ref=e158]:
+                  - paragraph [ref=e159]:
+                    - text: Experience working within a
+                    - strong [ref=e160]: Service Desk / Incident Management environment
+                - listitem [ref=e161]:
+                  - paragraph [ref=e162]:
+                    - text: Advanced support of
+                    - strong [ref=e163]: Windows OS
+                    - text: (Windows 7 & Windows 10)
+                - listitem [ref=e164]:
+                  - paragraph [ref=e165]:
+                    - strong [ref=e166]: Microsoft Office 365
+                    - text: desktop support (Outlook, Teams, Excel, Word)
+                - listitem [ref=e167]:
+                  - paragraph [ref=e168]:
+                    - text: Strong knowledge of
+                    - strong [ref=e169]: Windows workstation builds, imaging, and hardware troubleshooting
+                - listitem [ref=e170]:
+                  - paragraph [ref=e171]:
+                    - text: Confident supporting users both
+                    - strong [ref=e172]: face-to-face and remotely
+                - listitem [ref=e173]:
+                  - paragraph [ref=e174]:
+                    - text: Exceptional
+                    - strong [ref=e175]: customer-facing skills
+                    - text: ", with a polished, professional presence"
+                - listitem [ref=e176]:
+                  - paragraph [ref=e177]: Excellent troubleshooting ability with strong attention to detail
+                - listitem [ref=e178]:
+                  - paragraph [ref=e179]:
+                    - text: Service-oriented mindset with a focus on
+                    - strong [ref=e180]: first-time fix and user satisfaction
+              - strong [ref=e181]: Desirable Skills
+              - list [ref=e182]:
+                - listitem [ref=e183]:
+                  - paragraph [ref=e184]:
+                    - text: Fluency in
+                    - strong [ref=e185]: French
+                - listitem [ref=e186]:
+                  - paragraph [ref=e187]:
+                    - text: Experience supporting
+                    - strong [ref=e188]: front-office trading environments
+                - listitem [ref=e189]:
+                  - paragraph [ref=e190]:
+                    - text: Exposure to
+                    - strong [ref=e191]: Azure AD / Intune user support
+                - listitem [ref=e192]:
+                  - paragraph [ref=e193]: Knowledge of endpoint security and encryption tools
+              - strong [ref=e194]: Why Apply
+              - paragraph [ref=e195]:
+                - text: If you are a
+                - strong [ref=e196]: hands-on Desktop Support Engineer
+                - text: with
+                - strong [ref=e197]: Investment Banking VIP experience
+                - text: ", strong"
+                - strong [ref=e198]: onsite support skills
+                - text: ", and a recognised"
+                - strong [ref=e199]: Azure certification
+                - text: ", and you are available to start immediately, this is an excellent opportunity to join a fast-paced, high-profile environment."
+            - group [ref=e200]:
+              - button "shareShare" [ref=e203] [cursor=pointer]:
+                - img "share" [ref=e204]
+                - text: Share
+              - generic [ref=e206]:
+                - button "EyeHide" [disabled]:
+                  - img "Eye"
+                  - text: Hide
+          - generic [ref=e207]:
+            - banner [ref=e208]:
+              - heading "Create alerts for similar jobs" [level=2] [ref=e209]
+            - generic [ref=e211]:
+              - generic [ref=e212]:
+                - generic [ref=e213]:
+                  - generic [ref=e214]:
+                    - generic [ref=e216]: Azure qualified Technical Support Engineer - Investment Banking
+                    - generic [ref=e217]: London
+                  - button "Edit" [ref=e218] [cursor=pointer]
+                - generic [ref=e219]:
+                  - generic [ref=e220]: Email address
+                  - textbox "Email address" [ref=e222]
+              - generic [ref=e223]:
+                - button "Create alert" [disabled]:
+                  - generic:
+                    - img
+                  - text: Create alert
+              - generic [ref=e224]:
+                - text: By creating an alert, you agree to the
+                - link "Terms and conditions" [ref=e225] [cursor=pointer]:
+                  - /url: /policies
+                - text: applicable to our service and acknowledge that your personal data will be used in accordance with our
+                - link "Privacy policy" [ref=e226] [cursor=pointer]:
+                  - /url: /policies
+                - text: and you will receive emails and communications about jobs and career related topics.
+          - generic [ref=e227]:
+            - heading "Similar Jobs" [level=3] [ref=e229]
+            - generic [ref=e230]:
+              - link "Shortlist job Azure Platform Engineer 12 March by Canada Life SalaryCompetitive salary LocationLondon ClockPermanent, full-time" [ref=e231] [cursor=pointer]:
+                - /url: /jobs/azure-platform-engineer/56633381?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e232]:
+                      - img [ref=e233]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Azure Platform Engineer
+                          - generic: 12 March by Canada Life
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Competitive salary
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Promoted Management Consultant - Banking 4 hrs ago by Accenture SalaryCompetitive salary LocationLondon ClockPermanent, full-time" [ref=e235] [cursor=pointer]:
+                - /url: /jobs/management-consultant-banking/56035216?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e236]:
+                      - img [ref=e237]
+                    - generic:
+                      - generic: Promoted
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Management Consultant - Banking
+                          - generic: 4 hrs ago by Accenture
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Competitive salary
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Promoted Cloud Advisory Architecture Associate Manager 13 March by Accenture SalaryCompetitive salary LocationLondon ClockPermanent, full-time" [ref=e239] [cursor=pointer]:
+                - /url: /jobs/cloud-advisory-architecture-associate-manager/56644156?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e240]:
+                      - img [ref=e241]
+                    - generic:
+                      - generic: Promoted
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Cloud Advisory Architecture Associate Manager
+                          - generic: 13 March by Accenture
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Competitive salary
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Promoted Banking Operations & Control Specialist 18 March by CMC Markets SalaryCompetitive salary LocationLondon ClockContract, full-time" [ref=e243] [cursor=pointer]:
+                - /url: /jobs/banking-operations-control-specialist/56653947?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e244]:
+                      - img [ref=e245]
+                    - generic:
+                      - generic: Promoted
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Banking Operations & Control Specialist
+                          - generic: 18 March by CMC Markets
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Competitive salary
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Contract, full-time
+              - link "Shortlist job Ending soon Easy Apply Azure Security Specialist 20 February by Oliver James SalarySalary negotiable LocationLondon ClockPermanent, full-time" [ref=e247] [cursor=pointer]:
+                - /url: /jobs/azure-security-specialist/56506822?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e248]:
+                      - img [ref=e249]
+                    - generic:
+                      - generic: Ending soon
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Azure Security Specialist
+                          - generic: 20 February by Oliver James
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Salary negotiable
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Easy Apply Azure Solution Architect - up to £90,000 + Bonus + Benefits 2 March by Involved Solutions Salary£75,000 - £90,000 per annum LocationLondon ClockPermanent, full-time" [ref=e251] [cursor=pointer]:
+                - /url: /jobs/azure-solution-architect-up-to-90000--bonus--benefits/56566129?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e252]:
+                      - img [ref=e253]
+                    - generic:
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Azure Solution Architect - up to £90,000 + Bonus + Benefits
+                          - generic: 2 March by Involved Solutions
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £75,000 - £90,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+            - link "See more jobs like this" [ref=e256] [cursor=pointer]:
+              - /url: /jobs/support-engineer-jobs
+          - generic [ref=e257]:
+            - generic [ref=e259]: Recommended courses
+            - generic [ref=e260]:
+              - link "Microsoft 365 Certified Endpoint Administrator Associate Online, Self-paced £395" [ref=e261] [cursor=pointer]:
+                - /url: /courses/microsoft-365-certified-endpoint-administrator-associate/510938?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it_courses_510938
+                - generic: Microsoft 365 Certified Endpoint Administrator Associate
+                - generic: Online, Self-paced
+                - generic: £395
+              - link "Microsoft Azure Bundle with 3 Exams (3 Certifications) Online, Self-paced £1,395" [ref=e262] [cursor=pointer]:
+                - /url: /courses/microsoft-azure-bundle-with-3-exams-3-certifications/284295?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it_courses_284295
+                - generic: Microsoft Azure Bundle with 3 Exams (3 Certifications)
+                - generic: Online, Self-paced
+                - generic: £1,395
+              - link "Microsoft Certified Azure Developer Associate Online, Self-paced £395" [ref=e263] [cursor=pointer]:
+                - /url: /courses/microsoft-certified-azure-developer-associate/511132?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it_courses_511132
+                - generic: Microsoft Certified Azure Developer Associate
+                - generic: Online, Self-paced
+                - generic: £395
+            - link "View IT courses" [ref=e265] [cursor=pointer]:
+              - /url: https://www.reed.co.uk/courses/all?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=view_it_courses
+          - generic [ref=e267]:
+            - generic [ref=e268]: Posted by Global Technology Solutions Ltd
+            - link "View all jobs and profile Chevron" [ref=e269] [cursor=pointer]:
+              - /url: /jobs/global-technology-solutions/p2937
+              - generic [ref=e270]: View all jobs and profile
+              - img "Chevron" [ref=e271]
+          - generic [ref=e274]:
+            - generic [ref=e275]: "Reference: 56728786"
+            - generic [ref=e276]:
+              - text: Please note that
+              - link "Reed.co.uk" [ref=e277] [cursor=pointer]:
+                - /url: https://reed.co.uk
+              - text: will never ask you to provide your bank, passport or driving licence details during the application process.
+            - link "Report this job Open in new tab" [ref=e279] [cursor=pointer]:
+              - /url: /enquiries?reportJobRef=56728786
+              - text: Report this job
+              - img "Open in new tab"
+        - complementary
+    - contentinfo [ref=e280]:
+      - generic [ref=e282]:
+        - navigation [ref=e283]:
+          - button "JOBS" [ref=e285] [cursor=pointer]
+          - list [ref=e288]:
+            - listitem [ref=e289]:
+              - link "Contact us" [ref=e290] [cursor=pointer]:
+                - /url: /enquiries
+            - listitem [ref=e291]:
+              - link "Job search" [ref=e292] [cursor=pointer]:
+                - /url: /jobs
+            - listitem [ref=e293]:
+              - link "Recruiter directory" [ref=e294] [cursor=pointer]:
+                - /url: /recruiterdirectory
+            - listitem [ref=e295]:
+              - link "Work from home" [ref=e296] [cursor=pointer]:
+                - /url: /jobs/work-from-home-jobs
+            - listitem [ref=e297]:
+              - link "Browse jobs" [ref=e298] [cursor=pointer]:
+                - /url: /popularjobs
+            - listitem [ref=e299]:
+              - link "Browse locations" [ref=e300] [cursor=pointer]:
+                - /url: /location
+            - listitem [ref=e301]:
+              - link "Popular searches" [ref=e302] [cursor=pointer]:
+                - /url: /popularsearches
+            - listitem [ref=e303]:
+              - link "Career advice" [ref=e304] [cursor=pointer]:
+                - /url: /career-advice
+            - listitem [ref=e305]:
+              - link "Tax calculator" [ref=e306] [cursor=pointer]:
+                - /url: /tax-calculator
+            - listitem [ref=e307]:
+              - link "Average salary checker" [ref=e308] [cursor=pointer]:
+                - /url: /average-salary
+            - listitem [ref=e309]:
+              - link "Help" [ref=e310] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e311]:
+              - link "Contact a REED office" [ref=e312] [cursor=pointer]:
+                - /url: https://www.reed.com/offices
+            - listitem [ref=e313]:
+              - link "Sitemap" [ref=e314] [cursor=pointer]:
+                - /url: /html-sitemap
+        - navigation [ref=e315]:
+          - button "RECRUITER" [ref=e317] [cursor=pointer]
+          - list [ref=e320]:
+            - listitem [ref=e321]:
+              - link "Recruiter site" [ref=e322] [cursor=pointer]:
+                - /url: /recruiter?directjob=recruiter
+            - listitem [ref=e323]:
+              - link "Post a job" [ref=e324] [cursor=pointer]:
+                - /url: /recruiter/post-a-job?directjob=recruiter
+            - listitem [ref=e325]:
+              - link "CV Search" [ref=e326] [cursor=pointer]:
+                - /url: /recruiter/cv-search?directjob=recruiter
+            - listitem [ref=e327]:
+              - link "Recruitment agencies" [ref=e328] [cursor=pointer]:
+                - /url: /recruiter/recruitment-agencies?directjob=recruiter
+            - listitem [ref=e329]:
+              - link "Recruiter Advice" [ref=e330] [cursor=pointer]:
+                - /url: /recruiter-advice/?directjob=recruiter
+        - navigation [ref=e331]:
+          - button "COURSES" [ref=e333] [cursor=pointer]
+          - list [ref=e336]:
+            - listitem [ref=e337]:
+              - link "Help" [ref=e338] [cursor=pointer]:
+                - /url: /courses/help
+            - listitem [ref=e339]:
+              - link "Contact us" [ref=e340] [cursor=pointer]:
+                - /url: /courses/contact-us
+            - listitem [ref=e341]:
+              - link "Find a course" [ref=e342] [cursor=pointer]:
+                - /url: /courses/
+            - listitem [ref=e343]:
+              - link "View all subjects" [ref=e344] [cursor=pointer]:
+                - /url: /courses/directory
+            - listitem [ref=e345]:
+              - link "Discount courses" [ref=e346] [cursor=pointer]:
+                - /url: /courses/discount
+            - listitem [ref=e347]:
+              - link "Free courses" [ref=e348] [cursor=pointer]:
+                - /url: /courses/free
+            - listitem [ref=e349]:
+              - link "Awarding body directory" [ref=e350] [cursor=pointer]:
+                - /url: /courses/awarding-bodies
+            - listitem [ref=e351]:
+              - link "Career guides" [ref=e352] [cursor=pointer]:
+                - /url: /courses/career-guides
+            - listitem [ref=e353]:
+              - link "Advertise a course" [ref=e354] [cursor=pointer]:
+                - /url: /courses/providers/
+            - listitem [ref=e355]:
+              - link "Courses sitemap" [ref=e356] [cursor=pointer]:
+                - /url: /courses/html-sitemap
+        - navigation [ref=e357]:
+          - button "MORE FROM Reed.co.uk" [ref=e359] [cursor=pointer]
+          - list [ref=e362]:
+            - listitem [ref=e363]:
+              - link "About us" [ref=e364] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e365]:
+              - link "Careers at Reed.co.uk" [ref=e366] [cursor=pointer]:
+                - /url: https://www.reed.com/careers/jobs?businessDivision=Reed.co.uk
+            - listitem [ref=e367]:
+              - link "Press office" [ref=e368] [cursor=pointer]:
+                - /url: /press-office
+            - listitem [ref=e369]:
+              - link "Corporate governance" [ref=e370] [cursor=pointer]:
+                - /url: /corporate-governance
+            - listitem [ref=e371]:
+              - link "Modern slavery statement" [ref=e372] [cursor=pointer]:
+                - /url: https://www.reed.co.uk/cdn/jobseeker/pdf/Reed_MSA_Statement.pdf
+        - navigation [ref=e373]:
+          - button "REED" [ref=e375] [cursor=pointer]
+          - list [ref=e378]:
+            - listitem [ref=e379]:
+              - 'link "Tempzone: timesheets & holiday" [ref=e380] [cursor=pointer]':
+                - /url: https://candidate.reed.co.uk/candlogin.asp
+            - listitem [ref=e381]:
+              - link "Authorise timesheets" [ref=e382] [cursor=pointer]:
+                - /url: https://client.reed.co.uk/
+            - listitem [ref=e383]:
+              - link "Reed Group Services" [ref=e384] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e385]:
+              - link "Reed Specialist Recruitment" [ref=e386] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e387]:
+              - link "Reed in Partnership" [ref=e388] [cursor=pointer]:
+                - /url: https://www.reedinpartnership.co.uk/
+            - listitem [ref=e389]:
+              - link "Careers with REED" [ref=e390] [cursor=pointer]:
+                - /url: https://www.reed.com/careers
+            - listitem [ref=e391]:
+              - link "James Reed - Official Site" [ref=e392] [cursor=pointer]:
+                - /url: /james-reed/
+            - listitem [ref=e393]:
+              - 'link "Podcast - James Reed: all about business" [ref=e394] [cursor=pointer]':
+                - /url: https://www.reed.com/podcasts
+            - listitem [ref=e395]:
+              - link "ESG & sustainability" [ref=e396] [cursor=pointer]:
+                - /url: https://www.reed.com/esg-and-sustainability
+      - generic [ref=e398]:
+        - generic [ref=e399]:
+          - generic [ref=e401]:
+            - link "PhilCo" [ref=e402] [cursor=pointer]:
+              - /url: https://philco.org.uk/
+              - img "PhilCo" [ref=e403]
+            - generic [ref=e404]: Learn how Reed is leading the way in philanthropy
+          - img "Love Mondays" [ref=e406]
+        - generic [ref=e407]:
+          - generic [ref=e408]:
+            - 'link "James Reed: all about business" [ref=e409] [cursor=pointer]':
+              - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+              - 'img "James Reed: all about business" [ref=e410]'
+            - generic [ref=e411]:
+              - heading "Introducing our new podcast New" [level=3] [ref=e412]:
+                - text: Introducing our new podcast
+                - generic [ref=e413]: New
+              - paragraph [ref=e414]: "James Reed: all about business"
+              - link "Listen here" [ref=e415] [cursor=pointer]:
+                - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+          - generic [ref=e416]:
+            - generic [ref=e417]:
+              - generic [ref=e418]:
+                - link "Download on the App Store" [ref=e419] [cursor=pointer]:
+                  - /url: https://itunes.apple.com/GB/app/id1040443949?mt=8
+                  - img "Download on the App Store" [ref=e420]
+                - link "Get it on Google Play" [ref=e421] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.reedcouk.jobs&referrer=af_tranid%3D_HgKgkJ-aFiIn4G5iigdZQ%26pid%3DWebsite_Footer%26utm_source%3DWebsite_Footer
+                  - img "Get it on Google Play" [ref=e422]
+              - generic [ref=e423]:
+                - link "Facebook" [ref=e424] [cursor=pointer]:
+                  - /url: https://www.facebook.com/reedcouk
+                  - img "Facebook" [ref=e425]
+                - link "Instagram" [ref=e426] [cursor=pointer]:
+                  - /url: https://www.instagram.com/reedcouk/
+                  - img "Instagram" [ref=e427]
+                - link "Tiktok" [ref=e428] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@reedjobs
+                  - img "Tiktok" [ref=e429]
+            - list [ref=e430]:
+              - listitem [ref=e431]:
+                - button "Manage Preferences" [ref=e432] [cursor=pointer]
+                - text: ","
+              - listitem [ref=e433]:
+                - link "Security, Privacy, Terms & Conditions" [ref=e434] [cursor=pointer]:
+                  - /url: /policies
+            - paragraph [ref=e435]: COPYRIGHT © Reed.co.uk 2026
+  - alert [ref=e436]

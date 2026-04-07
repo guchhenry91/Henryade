@@ -1,0 +1,35 @@
+[     409ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-27T15:03:54.422Z Invalid eventBatchSize undefined, defaulting to 10 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-25:1
+[     409ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-27T15:03:54.423Z Invalid eventFlushInterval undefined, defaulting to 1000 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-25:1
+[     989ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-27T15:03:55.002Z Invalid eventBatchSize undefined, defaulting to 10 @ https://www.totaljobs.com/viewlets/searchbarrenderer/search-bar-renderer/uk/1_71_0__d3c02e3/vendors.af106491529af76777df.js:1
+[     989ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-27T15:03:55.002Z Invalid eventFlushInterval undefined, defaulting to 1000 @ https://www.totaljobs.com/viewlets/searchbarrenderer/search-bar-renderer/uk/1_71_0__d3c02e3/vendors.af106491529af76777df.js:1
+[    1146ms] [WARNING] Datadog Browser SDK: SDK is loaded more than once. This is unsupported and might have unexpected behavior. @ https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:1
+[    1942ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at ui (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:494595)
+    at wl (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:567403)
+    at bc (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:554965)
+    at yc (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:554893)
+    at vc (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:554756)
+    at ic (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:549921)
+    at C (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:584732)
+    at F (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:585264)
+    at e.exports (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:19882)
+    at g.<computed> (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:35098)
+[    1943ms] Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wl (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:567089)
+    at bc (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:554965)
+    at yc (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:554893)
+    at vc (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:554756)
+    at ac (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:551591)
+    at ic (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:550147)
+    at C (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:584732)
+    at F (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:585264)
+    at e.exports (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:19882)
+    at g.<computed> (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:35098)
+[    5403ms] [WARNING] This error hasn't been sent to DataDog: Global_Tracking_Error: TimestampError: SPP response is missing Date header; cannot capture sppTimestamp {dateHeader: null} @ https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:0
+[    5403ms] [WARNING] This error hasn't been sent to DataDog: Global_Tracking_Error: Call to "/analytics/api/v2/tracking" has failed: SyntaxError: Failed to execute 'json' on 'Response': Unexpected end of JSON input
+    at ct (https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:1:73523)
+    at async https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:1:159555
+    at async https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:1:159462 @ https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:0
+[   15941ms] [WARNING] Engagement SDK failed to load within 10000ms. Resolving pending calls gracefully. @ https://www.totaljobs.com/sharedassets/@stepstone/amplitude-wrapper-sap/latest/main.js:0
+[   15941ms] [WARNING] Engagement SDK method 'boot' still in queue (isAsyncMethod=true); attempting to resolve as no-op. @ https://www.totaljobs.com/sharedassets/@stepstone/amplitude-wrapper-sap/latest/main.js:0
+[   15941ms] [WARNING] Engagement SDK method 'boot' resolved as no-op due to script loading failure @ https://www.totaljobs.com/sharedassets/@stepstone/amplitude-wrapper-sap/latest/main.js:0

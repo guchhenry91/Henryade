@@ -1,0 +1,65 @@
+[     779ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-27T14:35:40.828Z Invalid eventBatchSize undefined, defaulting to 10 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-23:1
+[     779ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-27T14:35:40.843Z Invalid eventFlushInterval undefined, defaulting to 1000 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-23:1
+[    1094ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://www.totaljobs.com/CompanyLogos/?im=Resize=(40,40):0
+[    1267ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-27T14:35:41.329Z Invalid eventBatchSize undefined, defaulting to 10 @ https://www.totaljobs.com/viewlets/searchbarrenderer/search-bar-renderer/uk/1_71_0__d3c02e3/vendors.af106491529af76777df.js:1
+[    1268ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-27T14:35:41.332Z Invalid eventFlushInterval undefined, defaulting to 1000 @ https://www.totaljobs.com/viewlets/searchbarrenderer/search-bar-renderer/uk/1_71_0__d3c02e3/vendors.af106491529af76777df.js:1
+[    1436ms] [WARNING] Datadog Browser SDK: SDK is loaded more than once. This is unsupported and might have unexpected behavior. @ https://www.totaljobs.com/static/ld/job-ad-display/732-5b534f846661efa34dd3.js?a530840429f56731c414:1
+[    1598ms] [ERROR] Datadog Browser SDK: DD_LOGS is already initialized. @ https://www.totaljobs.com/static/ld/job-ad-display/732-5b534f846661efa34dd3.js?a530840429f56731c414:1
+[    1840ms] [WARNING] Datadog Browser SDK: SDK is loaded more than once. This is unsupported and might have unexpected behavior. @ https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:1
+[    2498ms] Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at Qr (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:184594)
+    at Xs (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:225824)
+    at Su (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249971)
+    at wu (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249711)
+    at bu (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249578)
+    at vu (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249441)
+    at au (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:244606)
+    at E (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:621416)
+    at O (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:621948)
+    at e.exports (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:19882)
+[    2498ms] Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at kl (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:261774)
+    at wu (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249650)
+    at bu (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249578)
+    at vu (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249441)
+    at su (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:246276)
+    at au (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:244832)
+    at E (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:621416)
+    at O (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:621948)
+    at e.exports (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:19882)
+    at g.<computed> (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:35098)
+[    2625ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://www.totaljobs.com/savedjobs/web:0
+[    2637ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://www.totaljobs.com/CompanyLogos/?im=Resize=(40,40):0
+[    2679ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://www.totaljobs.com/CompanyLogos/?im=Resize=(56,56):0
+[    2729ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.totaljobs.com/premium/api/v1/candidate/subscription/status:0
+[    3449ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://www.totaljobs.com/membersarea/api/savedjobscount:0
+[    3618ms] [ERROR] TypeError: window.DD_RUM.addAction is not a function
+    at prompt (https://www.totaljobs.com/rlac/google-onetap-wrapper/assets/client-bundle.js:2:160301)
+    at https://www.totaljobs.com/rlac/google-onetap-wrapper/assets/client-bundle.js:2:350565
+    at ol (https://www.totaljobs.com/rlac/google-onetap-wrapper/assets/client-bundle.js:2:96234)
+    at Cc (https://www.totaljobs.com/rlac/google-onetap-wrapper/assets/client-bundle.js:2:116179)
+    at https://www.totaljobs.com/rlac/google-onetap-wrapper/assets/client-bundle.js:2:112838
+    at A (https://www.totaljobs.com/rlac/google-onetap-wrapper/assets/client-bundle.js:2:142712)
+    at D (https://www.totaljobs.com/rlac/google-onetap-wrapper/assets/client-bundle.js:2:143244)
+    at e.exports (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:19882)
+    at g.<computed> (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:35098)
+    at Number.b (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:34956) @ https://www.totaljobs.com/rlac/google-onetap-wrapper/assets/client-bundle.js:1
+[    3620ms] TypeError: window.DD_RUM.addAction is not a function
+    at prompt (https://www.totaljobs.com/rlac/google-onetap-wrapper/assets/client-bundle.js:2:160301)
+    at https://www.totaljobs.com/rlac/google-onetap-wrapper/assets/client-bundle.js:2:350565
+    at ol (https://www.totaljobs.com/rlac/google-onetap-wrapper/assets/client-bundle.js:2:96234)
+    at Cc (https://www.totaljobs.com/rlac/google-onetap-wrapper/assets/client-bundle.js:2:116179)
+    at https://www.totaljobs.com/rlac/google-onetap-wrapper/assets/client-bundle.js:2:112838
+    at A (https://www.totaljobs.com/rlac/google-onetap-wrapper/assets/client-bundle.js:2:142712)
+    at D (https://www.totaljobs.com/rlac/google-onetap-wrapper/assets/client-bundle.js:2:143244)
+    at e.exports (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:19882)
+    at g.<computed> (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:35098)
+    at Number.b (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:34956)
+[    3684ms] [WARNING] This error hasn't been sent to DataDog: Global_Tracking_Error: TimestampError: SPP response is missing Date header; cannot capture sppTimestamp {dateHeader: null} @ https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:0
+[    3684ms] [WARNING] This error hasn't been sent to DataDog: Global_Tracking_Error: Call to "/analytics/api/v2/tracking" has failed: SyntaxError: Failed to execute 'json' on 'Response': Unexpected end of JSON input
+    at ct (https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:1:73523)
+    at async https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:1:159555
+    at async https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:1:159462 @ https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:0
+[   14058ms] [WARNING] Engagement SDK failed to load within 10000ms. Resolving pending calls gracefully. @ https://www.totaljobs.com/sharedassets/@stepstone/amplitude-wrapper-sap/latest/main.js:0
+[   14058ms] [WARNING] Engagement SDK method 'boot' still in queue (isAsyncMethod=true); attempting to resolve as no-op. @ https://www.totaljobs.com/sharedassets/@stepstone/amplitude-wrapper-sap/latest/main.js:0
+[   14058ms] [WARNING] Engagement SDK method 'boot' resolved as no-op due to script loading failure @ https://www.totaljobs.com/sharedassets/@stepstone/amplitude-wrapper-sap/latest/main.js:0

@@ -1,0 +1,412 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e6]:
+          - link "Reed.co.uk" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Reed.co.uk" [ref=e8]
+          - list [ref=e9]:
+            - listitem [ref=e10]:
+              - link "Jobs" [ref=e11] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e12]: Jobs
+            - listitem [ref=e13]:
+              - link "Courses" [ref=e14] [cursor=pointer]:
+                - /url: /courses/?itm_source=js_navigation&itm_medium=jobseeker&itm_campaign=courses_tab&itm_content=standard_version
+                - generic [ref=e15]: Courses
+            - listitem [ref=e16]:
+              - link "Career advice" [ref=e17] [cursor=pointer]:
+                - /url: /career-advice/
+                - generic [ref=e18]: Career advice
+            - listitem [ref=e19]:
+              - link "Recruiting? Post a job" [ref=e20] [cursor=pointer]:
+                - /url: /recruiter/
+                - generic [ref=e21]:
+                  - text: Recruiting?
+                  - strong [ref=e22]: Post a job
+          - generic [ref=e23]:
+            - link "Register CV" [ref=e24] [cursor=pointer]:
+              - /url: /authentication/register?returnTo=%2Fjobs%2Ffield-service-technician-hardware-break-fix--london-se%2F56728741
+            - list [ref=e25]:
+              - listitem [ref=e26]:
+                - link "Saved jobs" [ref=e27] [cursor=pointer]:
+                  - /url: /account/jobs/shortlisted-jobs
+                  - img [ref=e29]
+                  - generic [ref=e31]: Saved jobs
+              - listitem [ref=e32]:
+                - status [ref=e33]:
+                  - img "Loading" [ref=e34]
+      - search [ref=e38]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: What
+            - textbox "e.g. \"legal\"" [ref=e44]
+          - generic [ref=e45]:
+            - generic [ref=e46]: Where
+            - generic [ref=e47]:
+              - textbox "town or postcode" [ref=e48]
+              - button "Get current location" [ref=e49] [cursor=pointer]:
+                - img [ref=e50]
+          - button "Search jobs" [ref=e54] [cursor=pointer]
+          - link "Browse jobs" [ref=e56] [cursor=pointer]:
+            - /url: /popularjobs
+            - text: Browse jobs
+            - img [ref=e57]
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - link "ArrowSearch results" [ref=e64] [cursor=pointer]:
+            - /url: /jobs/jobs-in-london?keywords=Field+Service+Technician+%28Hardware+Break%2FFix%29+%E2%80%93+London+SE&jobId=56728741
+            - img "Arrow"
+            - text: Search results
+          - list [ref=e66]:
+            - listitem [ref=e67]:
+              - link "Home" [ref=e68] [cursor=pointer]:
+                - /url: /
+            - text: /
+            - listitem [ref=e69]:
+              - text: /
+              - link "Engineering" [ref=e70] [cursor=pointer]:
+                - /url: /jobs/engineering-jobs
+            - listitem [ref=e71]:
+              - text: /
+              - link "Technician" [ref=e72] [cursor=pointer]:
+                - /url: /jobs/technician-jobs
+            - listitem [ref=e73]:
+              - text: /
+              - link "Service Technician" [ref=e74] [cursor=pointer]:
+                - /url: /jobs/service-technician-jobs
+            - listitem [ref=e75]: /Job details
+        - generic [ref=e76]:
+          - generic [ref=e78]:
+            - generic [ref=e79]:
+              - generic [ref=e80]: Featured
+              - generic [ref=e81]: New
+              - generic [ref=e82]:
+                - img [ref=e83]
+                - text: Easy Apply
+            - generic [ref=e85]:
+              - generic [ref=e86]:
+                - heading "Field Service Technician (Hardware Break/Fix) – London SE" [level=1] [ref=e87]
+                - generic [ref=e88]:
+                  - text: Yesterday by
+                  - link "Global Technology Solutions Ltd" [ref=e89] [cursor=pointer]:
+                    - /url: /company-profile/Global-Technology-Solutions-Ltd-73038
+              - link "Global Technology Solutions Ltd jobs" [ref=e91] [cursor=pointer]:
+                - /url: /company-profile/Global-Technology-Solutions-Ltd-73038
+                - img "Global Technology Solutions Ltd jobs" [ref=e92]
+            - list [ref=e93]:
+              - listitem [ref=e94]:
+                - img "Salary" [ref=e95]
+                - text: £150 - £165 per day
+              - listitem [ref=e97]:
+                - img "Location" [ref=e98]
+                - text: London
+              - listitem [ref=e100]:
+                - img "Clock" [ref=e101]
+                - text: Contract, full-time
+            - generic [ref=e104]:
+              - button "Apply now" [disabled]
+              - button "Shortlist job" [disabled]:
+                - img
+                - text: Save
+            - generic [ref=e106]:
+              - paragraph [ref=e107]: Field Service Technician (Hardware Break/Fix) – London SE
+              - paragraph [ref=e108]:
+                - text: "Location: London SE"
+                - text: "Skill Level: Level 2 Technician"
+                - text: "Start Date: asap"
+                - text: "Travel Requirement: Up to 50%+ daily travel Pay : £"
+              - paragraph [ref=e109]: Role Overview
+              - paragraph [ref=e110]: We are seeking an experienced Field Service Technician to provide hardware break/fix support for HP and Lenovo laptops and desktops across the LE, CV, and B postal regions. This role is not deskside support and requires hands-on hardware diagnostic and repair experience.
+              - paragraph [ref=e111]: The successful candidate will work independently in the field, traveling to customer sites to troubleshoot, diagnose, repair, and maintain IT hardware equipment.
+              - paragraph [ref=e112]
+              - paragraph [ref=e113]: Key Responsibilities
+              - list [ref=e114]:
+                - listitem [ref=e115]: Perform diagnostics, troubleshooting, and repair of HP and Lenovo desktop and laptop hardware.
+                - listitem [ref=e116]: Conduct installation, maintenance, and replacement of hardware components.
+                - listitem [ref=e117]: Respond to customer service requests and technical issues promptly.
+                - listitem [ref=e118]: Maintain daily communication through phone, email, voicemail, and internal communication tools.
+                - listitem [ref=e119]: Ensure all administrative tasks and service updates are completed accurately.
+                - listitem [ref=e120]: Follow best practice standards and operational procedures.
+                - listitem [ref=e121]: Maintain and manage tools, spare parts, and test equipment.
+                - listitem [ref=e122]: Utilize escalation and support processes to resolve complex service issues.
+                - listitem [ref=e123]: Travel extensively to customer locations across assigned regions.
+                - listitem [ref=e124]: Lift and transport equipment or parts up to 25 kg.
+              - paragraph [ref=e125]
+              - paragraph [ref=e126]: Requirements
+              - list [ref=e127]:
+                - listitem [ref=e128]: Minimum 3 years of experience diagnosing and repairing desktop and laptop hardware.
+                - listitem [ref=e129]: Strong experience with HP and Lenovo hardware break/fix.
+                - listitem [ref=e130]: Proven ability to troubleshoot hardware issues and resolve customer concerns.
+                - listitem [ref=e131]: Comfortable working independently in a field-based role.
+                - listitem [ref=e132]: Ability to travel extensively with extended periods of driving.
+                - listitem [ref=e133]: Valid driver’s license and good driving record required.
+                - listitem [ref=e134]: Ability to lift and carry equipment up to 25 kg.
+              - paragraph [ref=e135]
+              - paragraph [ref=e136]: Important Note
+              - paragraph [ref=e137]: This role is strictly hardware break/fix field support. Candidates with only deskside support experience (e.g., battery or keyboard replacements only) will not be considered.
+              - paragraph [ref=e138]
+            - group [ref=e139]:
+              - button "shareShare" [ref=e142] [cursor=pointer]:
+                - img "share" [ref=e143]
+                - text: Share
+              - generic [ref=e145]:
+                - button "EyeHide" [disabled]:
+                  - img "Eye"
+                  - text: Hide
+          - generic [ref=e146]:
+            - banner [ref=e147]:
+              - heading "Create alerts for similar jobs" [level=2] [ref=e148]
+            - generic [ref=e150]:
+              - generic [ref=e151]:
+                - generic [ref=e152]:
+                  - generic [ref=e153]:
+                    - generic [ref=e155]: Field Service Technician (Hardware Break/Fix) – London SE
+                    - generic [ref=e156]: London
+                  - button "Edit" [ref=e157] [cursor=pointer]
+                - generic [ref=e158]:
+                  - generic [ref=e159]: Email address
+                  - textbox "Email address" [ref=e161]
+              - generic [ref=e162]:
+                - button "Create alert" [disabled]:
+                  - generic:
+                    - img
+                  - text: Create alert
+              - generic [ref=e163]:
+                - text: By creating an alert, you agree to the
+                - link "Terms and conditions" [ref=e164] [cursor=pointer]:
+                  - /url: /policies
+                - text: applicable to our service and acknowledge that your personal data will be used in accordance with our
+                - link "Privacy policy" [ref=e165] [cursor=pointer]:
+                  - /url: /policies
+                - text: and you will receive emails and communications about jobs and career related topics.
+          - generic [ref=e166]:
+            - generic [ref=e168]: Recommended courses
+            - generic [ref=e169]:
+              - link "Mobile Phone Technician Training - Repair and Servicing Online, Self-paced £19" [ref=e170] [cursor=pointer]:
+                - /url: /courses/mobile-phone-technician-training-repair-and-servicing/514899?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it_courses_514899
+                - generic: Mobile Phone Technician Training - Repair and Servicing
+                - generic: Online, Self-paced
+                - generic: £19
+              - link "Level 2 Mobile Phone Repairing & Hardware Maintenance Course Online, Self-paced £25.99" [ref=e171] [cursor=pointer]:
+                - /url: /courses/level-2-mobile-phone-repairing-hardware-maintenance-course/533830?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it_courses_533830
+                - generic: Level 2 Mobile Phone Repairing & Hardware Maintenance Course
+                - generic: Online, Self-paced
+                - generic: £25.99
+              - link "BTEC ICT Specialist Certificate Level 2 - No Attendance Required Online, Self-paced £378 - £483" [ref=e172] [cursor=pointer]:
+                - /url: /courses/btec-ict-specialist-certificate-level-2-no-attendance-required/213451?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it_courses_213451
+                - generic: BTEC ICT Specialist Certificate Level 2 - No Attendance Required
+                - generic: Online, Self-paced
+                - generic: £378 - £483
+            - link "View IT courses" [ref=e174] [cursor=pointer]:
+              - /url: https://www.reed.co.uk/courses/all?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=view_it_courses
+          - generic [ref=e176]:
+            - generic [ref=e177]: Posted by Global Technology Solutions Ltd
+            - link "View all jobs and profile Chevron" [ref=e178] [cursor=pointer]:
+              - /url: /jobs/global-technology-solutions/p2937
+              - generic [ref=e179]: View all jobs and profile
+              - img "Chevron" [ref=e180]
+          - generic [ref=e183]:
+            - generic [ref=e184]: "Reference: 56728741"
+            - generic [ref=e185]:
+              - text: Please note that
+              - link "Reed.co.uk" [ref=e186] [cursor=pointer]:
+                - /url: https://reed.co.uk
+              - text: will never ask you to provide your bank, passport or driving licence details during the application process.
+            - link "Report this job Open in new tab" [ref=e188] [cursor=pointer]:
+              - /url: /enquiries?reportJobRef=56728741
+              - text: Report this job
+              - img "Open in new tab"
+        - complementary
+    - contentinfo [ref=e189]:
+      - generic [ref=e191]:
+        - navigation [ref=e192]:
+          - button "JOBS" [ref=e194] [cursor=pointer]
+          - list [ref=e197]:
+            - listitem [ref=e198]:
+              - link "Contact us" [ref=e199] [cursor=pointer]:
+                - /url: /enquiries
+            - listitem [ref=e200]:
+              - link "Job search" [ref=e201] [cursor=pointer]:
+                - /url: /jobs
+            - listitem [ref=e202]:
+              - link "Recruiter directory" [ref=e203] [cursor=pointer]:
+                - /url: /recruiterdirectory
+            - listitem [ref=e204]:
+              - link "Work from home" [ref=e205] [cursor=pointer]:
+                - /url: /jobs/work-from-home-jobs
+            - listitem [ref=e206]:
+              - link "Browse jobs" [ref=e207] [cursor=pointer]:
+                - /url: /popularjobs
+            - listitem [ref=e208]:
+              - link "Browse locations" [ref=e209] [cursor=pointer]:
+                - /url: /location
+            - listitem [ref=e210]:
+              - link "Popular searches" [ref=e211] [cursor=pointer]:
+                - /url: /popularsearches
+            - listitem [ref=e212]:
+              - link "Career advice" [ref=e213] [cursor=pointer]:
+                - /url: /career-advice
+            - listitem [ref=e214]:
+              - link "Tax calculator" [ref=e215] [cursor=pointer]:
+                - /url: /tax-calculator
+            - listitem [ref=e216]:
+              - link "Average salary checker" [ref=e217] [cursor=pointer]:
+                - /url: /average-salary
+            - listitem [ref=e218]:
+              - link "Help" [ref=e219] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e220]:
+              - link "Contact a REED office" [ref=e221] [cursor=pointer]:
+                - /url: https://www.reed.com/offices
+            - listitem [ref=e222]:
+              - link "Sitemap" [ref=e223] [cursor=pointer]:
+                - /url: /html-sitemap
+        - navigation [ref=e224]:
+          - button "RECRUITER" [ref=e226] [cursor=pointer]
+          - list [ref=e229]:
+            - listitem [ref=e230]:
+              - link "Recruiter site" [ref=e231] [cursor=pointer]:
+                - /url: /recruiter?directjob=recruiter
+            - listitem [ref=e232]:
+              - link "Post a job" [ref=e233] [cursor=pointer]:
+                - /url: /recruiter/post-a-job?directjob=recruiter
+            - listitem [ref=e234]:
+              - link "CV Search" [ref=e235] [cursor=pointer]:
+                - /url: /recruiter/cv-search?directjob=recruiter
+            - listitem [ref=e236]:
+              - link "Recruitment agencies" [ref=e237] [cursor=pointer]:
+                - /url: /recruiter/recruitment-agencies?directjob=recruiter
+            - listitem [ref=e238]:
+              - link "Recruiter Advice" [ref=e239] [cursor=pointer]:
+                - /url: /recruiter-advice/?directjob=recruiter
+        - navigation [ref=e240]:
+          - button "COURSES" [ref=e242] [cursor=pointer]
+          - list [ref=e245]:
+            - listitem [ref=e246]:
+              - link "Help" [ref=e247] [cursor=pointer]:
+                - /url: /courses/help
+            - listitem [ref=e248]:
+              - link "Contact us" [ref=e249] [cursor=pointer]:
+                - /url: /courses/contact-us
+            - listitem [ref=e250]:
+              - link "Find a course" [ref=e251] [cursor=pointer]:
+                - /url: /courses/
+            - listitem [ref=e252]:
+              - link "View all subjects" [ref=e253] [cursor=pointer]:
+                - /url: /courses/directory
+            - listitem [ref=e254]:
+              - link "Discount courses" [ref=e255] [cursor=pointer]:
+                - /url: /courses/discount
+            - listitem [ref=e256]:
+              - link "Free courses" [ref=e257] [cursor=pointer]:
+                - /url: /courses/free
+            - listitem [ref=e258]:
+              - link "Awarding body directory" [ref=e259] [cursor=pointer]:
+                - /url: /courses/awarding-bodies
+            - listitem [ref=e260]:
+              - link "Career guides" [ref=e261] [cursor=pointer]:
+                - /url: /courses/career-guides
+            - listitem [ref=e262]:
+              - link "Advertise a course" [ref=e263] [cursor=pointer]:
+                - /url: /courses/providers/
+            - listitem [ref=e264]:
+              - link "Courses sitemap" [ref=e265] [cursor=pointer]:
+                - /url: /courses/html-sitemap
+        - navigation [ref=e266]:
+          - button "MORE FROM Reed.co.uk" [ref=e268] [cursor=pointer]
+          - list [ref=e271]:
+            - listitem [ref=e272]:
+              - link "About us" [ref=e273] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e274]:
+              - link "Careers at Reed.co.uk" [ref=e275] [cursor=pointer]:
+                - /url: https://www.reed.com/careers/jobs?businessDivision=Reed.co.uk
+            - listitem [ref=e276]:
+              - link "Press office" [ref=e277] [cursor=pointer]:
+                - /url: /press-office
+            - listitem [ref=e278]:
+              - link "Corporate governance" [ref=e279] [cursor=pointer]:
+                - /url: /corporate-governance
+            - listitem [ref=e280]:
+              - link "Modern slavery statement" [ref=e281] [cursor=pointer]:
+                - /url: https://www.reed.co.uk/cdn/jobseeker/pdf/Reed_MSA_Statement.pdf
+        - navigation [ref=e282]:
+          - button "REED" [ref=e284] [cursor=pointer]
+          - list [ref=e287]:
+            - listitem [ref=e288]:
+              - 'link "Tempzone: timesheets & holiday" [ref=e289] [cursor=pointer]':
+                - /url: https://candidate.reed.co.uk/candlogin.asp
+            - listitem [ref=e290]:
+              - link "Authorise timesheets" [ref=e291] [cursor=pointer]:
+                - /url: https://client.reed.co.uk/
+            - listitem [ref=e292]:
+              - link "Reed Group Services" [ref=e293] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e294]:
+              - link "Reed Specialist Recruitment" [ref=e295] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e296]:
+              - link "Reed in Partnership" [ref=e297] [cursor=pointer]:
+                - /url: https://www.reedinpartnership.co.uk/
+            - listitem [ref=e298]:
+              - link "Careers with REED" [ref=e299] [cursor=pointer]:
+                - /url: https://www.reed.com/careers
+            - listitem [ref=e300]:
+              - link "James Reed - Official Site" [ref=e301] [cursor=pointer]:
+                - /url: /james-reed/
+            - listitem [ref=e302]:
+              - 'link "Podcast - James Reed: all about business" [ref=e303] [cursor=pointer]':
+                - /url: https://www.reed.com/podcasts
+            - listitem [ref=e304]:
+              - link "ESG & sustainability" [ref=e305] [cursor=pointer]:
+                - /url: https://www.reed.com/esg-and-sustainability
+      - generic [ref=e307]:
+        - generic [ref=e308]:
+          - generic [ref=e310]:
+            - link "PhilCo" [ref=e311] [cursor=pointer]:
+              - /url: https://philco.org.uk/
+              - img "PhilCo" [ref=e312]
+            - generic [ref=e313]: Learn how Reed is leading the way in philanthropy
+          - img "Love Mondays" [ref=e315]
+        - generic [ref=e316]:
+          - generic [ref=e317]:
+            - 'link "James Reed: all about business" [ref=e318] [cursor=pointer]':
+              - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+              - 'img "James Reed: all about business" [ref=e319]'
+            - generic [ref=e320]:
+              - heading "Introducing our new podcast New" [level=3] [ref=e321]:
+                - text: Introducing our new podcast
+                - generic [ref=e322]: New
+              - paragraph [ref=e323]: "James Reed: all about business"
+              - link "Listen here" [ref=e324] [cursor=pointer]:
+                - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+          - generic [ref=e325]:
+            - generic [ref=e326]:
+              - generic [ref=e327]:
+                - link "Download on the App Store" [ref=e328] [cursor=pointer]:
+                  - /url: https://itunes.apple.com/GB/app/id1040443949?mt=8
+                  - img "Download on the App Store" [ref=e329]
+                - link "Get it on Google Play" [ref=e330] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.reedcouk.jobs&referrer=af_tranid%3D_HgKgkJ-aFiIn4G5iigdZQ%26pid%3DWebsite_Footer%26utm_source%3DWebsite_Footer
+                  - img "Get it on Google Play" [ref=e331]
+              - generic [ref=e332]:
+                - link "Facebook" [ref=e333] [cursor=pointer]:
+                  - /url: https://www.facebook.com/reedcouk
+                  - img "Facebook" [ref=e334]
+                - link "Instagram" [ref=e335] [cursor=pointer]:
+                  - /url: https://www.instagram.com/reedcouk/
+                  - img "Instagram" [ref=e336]
+                - link "Tiktok" [ref=e337] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@reedjobs
+                  - img "Tiktok" [ref=e338]
+            - list [ref=e339]:
+              - listitem [ref=e340]:
+                - button "Manage Preferences" [ref=e341] [cursor=pointer]
+                - text: ","
+              - listitem [ref=e342]:
+                - link "Security, Privacy, Terms & Conditions" [ref=e343] [cursor=pointer]:
+                  - /url: /policies
+            - paragraph [ref=e344]: COPYRIGHT © Reed.co.uk 2026
+  - alert [ref=e345]

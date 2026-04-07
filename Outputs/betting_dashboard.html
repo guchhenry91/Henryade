@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Betting Model Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',monospace;background:#0a0a0a;color:#ddd;min-height:100vh}
+  header{background:#111;border-bottom:1px solid #222;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  header h1{color:#00ff88;font-size:1.1em;letter-spacing:1px}
+  .token-bar{display:flex;gap:16px;align-items:center;font-size:0.8em}
+  .token-info{background:#1a1a1a;padding:5px 12px;border-radius:4px;border:1px solid #333}
+  .token-info span{color:#ffcc00;font-weight:bold}
+  .cache-info{color:#555;font-size:0.75em}
+  .btn{background:#1a2a1a;color:#00ff88;border:1px solid #00ff88;padding:6px 14px;border-radius:4px;cursor:pointer;font-size:0.8em;transition:all .2s}
+  .btn:hover{background:#00ff88;color:#000}
+  .btn-danger{border-color:#ff4444;color:#ff4444}
+  .btn-danger:hover{background:#ff4444;color:#000}
+  .tabs{display:flex;gap:4px;padding:12px 20px;background:#111;border-bottom:1px solid #222;overflow-x:auto;white-space:nowrap}
+  .tab{padding:6px 14px;border-radius:4px;cursor:pointer;font-size:0.85em;color:#888;border:1px solid transparent;transition:all .2s}
+  .tab:hover{color:#ddd}
+  .tab.active{background:#1a2a1a;color:#00ff88;border-color:#00ff88}
+  .tab-content{display:none;padding:20px}
+  .tab-content.active{display:block}
+  .sport-section{margin-bottom:30px}
+  .sport-title{color:#00ccff;font-size:1em;font-weight:bold;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #1a2a3a;display:flex;align-items:center;gap:8px}
+  .match-card{background:#111;border:1px solid #222;border-radius:6px;padding:14px;margin-bottom:14px}
+  .match-title{color:#fff;font-weight:bold;font-size:0.95em;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+  .match-time{color:#555;font-size:0.78em;font-weight:normal}
+  .odds-table{width:100%;border-collapse:collapse;font-size:0.82em;margin-bottom:10px}
+  .odds-table th{background:#1a1a1a;color:#888;text-align:left;padding:5px 8px;font-weight:normal}
+  .odds-table td{padding:4px 8px;border-bottom:1px solid #1a1a1a}
+  .pos{color:#00ff88;font-weight:bold}
+  .neg{color:#ff4444}
+  .neutral{color:#888}
+  .score-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .score-chip{background:#1a1a1a;border:1px solid #333;border-radius:4px;padding:4px 10px;font-size:0.8em;cursor:default}
+  .score-chip.top{border-color:#00ff88;color:#00ff88}
+  .score-chip.second{border-color:#88ff00;color:#88ff00}
+  .score-chip.third{border-color:#ccff00;color:#ccff00}
+  .label{color:#888;font-size:0.75em;margin-bottom:4px;margin-top:8px}
+  .props-card{background:#111;border:1px solid #222;border-radius:6px;padding:14px;margin-bottom:14px}
+  .props-title{color:#00ccff;font-size:0.9em;font-weight:bold;margin-bottom:10px}
+  .prop-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid #1a1a1a;font-size:0.82em}
+  .prop-player{color:#fff;font-weight:bold}
+  .prop-line{color:#aaa}
+  .prop-edge{font-weight:bold;font-size:0.85em}
+  .value-box{background:#0a2a0a;border:1px solid #00ff8844;border-radius:6px;padding:14px;margin-top:20px}
+  .value-box h3{color:#00ff88;margin-bottom:10px;font-size:0.9em}
+  .value-item{padding:5px 0;border-bottom:1px solid #0f2a0f;font-size:0.82em;color:#00ff88}
+  .value-item .match-ref{color:#888;font-size:0.9em}
+  .tier-a{background:#00ff8822;color:#00ff88;padding:2px 6px;border-radius:3px;font-size:0.75em;font-weight:bold}
+  .tier-b{background:#ffcc0022;color:#ffcc00;padding:2px 6px;border-radius:3px;font-size:0.75em;font-weight:bold}
+  .loading{color:#555;font-style:italic;padding:20px;text-align:center}
+  .error{color:#ff4444;padding:10px;background:#1a0000;border-radius:4px;margin:10px 0;font-size:0.85em}
+  .no-games{color:#555;font-size:0.85em;padding:10px 0;font-style:italic}
+  .btts-yes{color:#00ff88}.btts-no{color:#ff6666}
+  .summary-row{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:12px}
+  .stat-box{background:#1a1a1a;border-radius:4px;padding:8px 14px;font-size:0.82em;text-align:center}
+  .stat-box .val{font-size:1.3em;font-weight:bold;color:#00ff88}
+  .stat-box .lbl{color:#888;font-size:0.75em}
+  @media(max-width:600px){.summary-row{gap:8px}.stat-box{padding:6px 10px}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>⚡ BETTING MODEL DASHBOARD</h1>
+  <div class="token-bar">
+    <div class="token-info">Tokens Remaining: <span id="tokensLeft">—</span></div>
+    <div class="token-info">Used Today: <span id="tokensUsed">—</span></div>
+    <div class="cache-info" id="cacheStatus">Cache: checking...</div>
+    <button class="btn" onclick="refreshAll(false)">↻ Use Cache</button>
+    <button class="btn btn-danger" onclick="refreshAll(true)">⚡ Force Refresh</button>
+  </div>
+</header>
+
+<div class="tabs">
+  <div class="tab active" onclick="showTab('all')">All Value Bets</div>
+  <div class="tab" onclick="showTab('soccer')">⚽ Soccer</div>
+  <div class="tab" onclick="showTab('nba')">🏀 NBA</div>
+  <div class="tab" onclick="showTab('nfl')">🏈 NFL</div>
+  <div class="tab" onclick="showTab('nhl')">🏒 NHL</div>
+  <div class="tab" onclick="showTab('mlb')">⚾ MLB</div>
+</div>
+
+<div id="tab-all" class="tab-content active"><div class="loading" id="all-loading">Loading all data...</div></div>
+<div id="tab-soccer" class="tab-content"><div class="loading">Loading soccer...</div></div>
+<div id="tab-nba" class="tab-content"><div class="loading">Loading NBA...</div></div>
+<div id="tab-nfl" class="tab-content"><div class="loading">Loading NFL...</div></div>
+<div id="tab-nhl" class="tab-content"><div class="loading">Loading NHL...</div></div>
+<div id="tab-mlb" class="tab-content"><div class="loading">Loading MLB...</div></div>
+
+<script>
+const API_KEY = '17b4d42651ab4e81ef298300544f5a21';
+const BASE = 'https://api.the-odds-api.com/v4';
+const CACHE_TTL = 6 * 60 * 60 * 1000; // 6 hours
+const allValueBets = [];
+
+// ── Tab navigation (lazy load) ────────────────────────────────────────────────
+const loadedTabs = new Set(['soccer']); // soccer loads on startup
+
+const SPORT_TABS = {
+  nba: { key: 'basketball_nba', label: '🏀 NBA', region: 'us', markets: 'player_points,player_rebounds,player_assists,player_threes' },
+  nfl: { key: 'americanfootball_nfl', label: '🏈 NFL', region: 'us', markets: 'player_pass_tds,player_rush_yds,player_receiving_yds,player_pass_yds' },
+  nhl: { key: 'icehockey_nhl', label: '🏒 NHL', region: 'us', markets: 'player_points' },
+  mlb: { key: 'baseball_mlb', label: '⚾ MLB', region: 'us', markets: 'player_hits,player_home_runs,player_strikeouts,player_total_bases' },
+};
+
+function showTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('tab-' + name).classList.add('active');
+
+  // Lazy load sports tabs on first click
+  if (SPORT_TABS[name] && !loadedTabs.has(name)) {
+    loadedTabs.add(name);
+    const s = SPORT_TABS[name];
+    buildPlayerProps('tab-' + name, s.key, s.label, s.region, s.markets, false);
+  }
+}
+
+// ── Cache helpers ─────────────────────────────────────────────────────────────
+function cacheKey(key) { return 'bm_' + key + '_' + new Date().toDateString(); }
+
+function getCache(key) {
+  try {
+    const raw = localStorage.getItem(cacheKey(key));
+    if (!raw) return null;
+    const { ts, data } = JSON.parse(raw);
+    if (Date.now() - ts > CACHE_TTL) return null;
+    return data;
+  } catch { return null; }
+}
+
+function setCache(key, data) {
+  try {
+    localStorage.setItem(cacheKey(key), JSON.stringify({ ts: Date.now(), data }));
+  } catch {}
+}
+
+function clearAllCache() {
+  Object.keys(localStorage).filter(k => k.startsWith('bm_')).forEach(k => localStorage.removeItem(k));
+}
+
+function updateCacheStatus() {
+  const keys = Object.keys(localStorage).filter(k => k.startsWith('bm_'));
+  if (keys.length === 0) {
+    document.getElementById('cacheStatus').textContent = 'Cache: empty';
+    return;
+  }
+  try {
+    const ts = JSON.parse(localStorage.getItem(keys[0])).ts;
+    const ago = Math.round((Date.now() - ts) / 60000);
+    document.getElementById('cacheStatus').textContent = `Cache: ${ago}m ago (${keys.length} sports)`;
+  } catch {
+    document.getElementById('cacheStatus').textContent = `Cache: ${keys.length} stored`;
+  }
+}
+
+// ── API fetch with token tracking ─────────────────────────────────────────────
+async function apiFetch(sport, markets, region = 'uk', forceRefresh = false) {
+  const ckey = `${sport}_${markets}`;
+  if (!forceRefresh) {
+    const cached = getCache(ckey);
+    if (cached) return cached;
+  }
+  const url = `${BASE}/sports/${sport}/odds/?apiKey=${API_KEY}&regions=${region}&markets=${markets}&oddsFormat=decimal`;
+  const res = await fetch(url);
+  const remaining = res.headers.get('x-requests-remaining');
+  const used = res.headers.get('x-requests-used');
+  if (remaining) document.getElementById('tokensLeft').textContent = remaining;
+  if (used) document.getElementById('tokensUsed').textContent = used;
+  if (!res.ok) throw new Error(`API ${res.status}: ${sport}`);
+  const data = await res.json();
+  setCache(ckey, data);
+  return data;
+}
+
+// ── Poisson model ─────────────────────────────────────────────────────────────
+function poisson(lam, k) {
+  let r = Math.exp(-lam);
+  for (let i = 1; i <= k; i++) r *= lam / i;
+  return r;
+}
+
+function correctScores(hXG, aXG, max = 6) {
+  const s = [];
+  for (let h = 0; h <= max; h++)
+    for (let a = 0; a <= max; a++)
+      s.push({ h, a, p: poisson(hXG, h) * poisson(aXG, a) });
+  s.sort((a, b) => b.p - a.p);
+  return s;
+}
+
+function impliedProb(odds) { return 1 / odds; }
+function edge(mProb, odds) { return ((mProb - impliedProb(odds)) * 100).toFixed(1); }
+function edgeHtml(e) {
+  const n = parseFloat(e);
+  if (n > 3) return `<span class="pos">+${e}%</span>`;
+  if (n < -3) return `<span class="neg">${e}%</span>`;
+  return `<span class="neutral">${e}%</span>`;
+}
+
+// ── Extract best odds from bookmakers ─────────────────────────────────────────
+function bestOdds(event, marketKey) {
+  let best = {};
+  (event.bookmakers || []).forEach(bk => {
+    const mkt = (bk.markets || []).find(m => m.key === marketKey);
+    if (!mkt) return;
+    (mkt.outcomes || []).forEach(o => {
+      if (!best[o.name] || o.price > best[o.name]) best[o.name] = o.price;
+    });
+  });
+  return best;
+}
+
+function bestTotal(event, line = 2.5) {
+  let over = 0, under = 0;
+  (event.bookmakers || []).forEach(bk => {
+    const mkt = (bk.markets || []).find(m => m.key === 'totals');
+    if (!mkt) return;
+    (mkt.outcomes || []).forEach(o => {
+      if (Math.abs((o.point || 2.5) - line) < 0.3) {
+        if (o.name === 'Over' && o.price > over) over = o.price;
+        if (o.name === 'Under' && o.price > under) under = o.price;
+      }
+    });
+  });
+  return { over: over || null, under: under || null };
+}
+
+function gameDate(iso) {
+  const d = new Date(iso);
+  return d.toLocaleString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+}
+
+// ── xG estimation from O/U and h2h ────────────────────────────────────────────
+function estimateXG(homeOdds, awayOdds, drawOdds, totalLine) {
+  const hi = impliedProb(homeOdds), ai = impliedProb(awayOdds);
+  const tot = totalLine || 2.5;
+  const homeXG = tot * (hi / (hi + ai));
+  const awayXG = tot * (ai / (hi + ai));
+  return { homeXG, awayXG };
+}
+
+// ── SOCCER builder ────────────────────────────────────────────────────────────
+async function buildSoccer(forceRefresh) {
+  const container = document.getElementById('tab-soccer');
+  const leagues = [
+    { key: 'soccer_epl', label: '🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League' },
+    { key: 'soccer_uefa_champs_league', label: '🌍 UEFA Champions League' },
+    { key: 'soccer_spain_la_liga', label: '🇪🇸 La Liga' },
+    { key: 'soccer_fifa_world_cup_qualifiers_europe', label: '🌐 WC Qualifiers' },
+  ];
+
+  let html = '';
+  for (const lg of leagues) {
+    try {
+      const events = await apiFetch(lg.key, 'h2h,totals', 'uk', forceRefresh);
+      const today = events.filter(e => {
+        const d = new Date(e.commence_time);
+        const now = new Date();
+        return d >= now && d <= new Date(now.getTime() + 4 * 24 * 60 * 60 * 1000);
+      });
+
+      html += `<div class="sport-section"><div class="sport-title">${lg.label} <span style="color:#555;font-size:0.8em">(${today.length} upcoming)</span></div>`;
+      if (today.length === 0) { html += `<div class="no-games">No matches in next 4 days.</div></div>`; continue; }
+
+      today.forEach(ev => {
+        const h2h = bestOdds(ev, 'h2h');
+        const home = ev.home_team, away = ev.away_team;
+        const homeOdds = h2h[home], awayOdds = h2h[away], drawOdds = h2h['Draw'];
+        if (!homeOdds || !awayOdds) return;
+
+        // Find the main O/U line
+        const totals = bestTotal(ev, 2.5);
+        const totalLine = 2.5;
+        const { homeXG, awayXG } = estimateXG(homeOdds, awayOdds, drawOdds || 4, totalLine);
+
+        const scores = correctScores(homeXG, awayXG);
+        let hw = 0, dr = 0, aw = 0, ov = 0, un = 0, btts = 0;
+        scores.forEach(s => {
+          if (s.h > s.a) hw += s.p;
+          else if (s.h === s.a) dr += s.p;
+          else aw += s.p;
+          if (s.h + s.a > 2.5) ov += s.p;
+          else un += s.p;
+          if (s.h > 0 && s.a > 0) btts += s.p;
+        });
+
+        const hwE = parseFloat(edge(hw, homeOdds));
+        const drE = parseFloat(edge(dr, drawOdds || 99));
+        const awE = parseFloat(edge(aw, awayOdds));
+        const ovE = totals.over ? parseFloat(edge(ov, totals.over)) : null;
+        const unE = totals.under ? parseFloat(edge(un, totals.under)) : null;
+
+        // Collect value bets
+        if (hwE > 3) allValueBets.push({ sport: lg.label, match: `${home} vs ${away}`, bet: `${home} Win`, e: hwE });
+        if (drE > 3) allValueBets.push({ sport: lg.label, match: `${home} vs ${away}`, bet: `Draw`, e: drE });
+        if (awE > 3) allValueBets.push({ sport: lg.label, match: `${home} vs ${away}`, bet: `${away} Win`, e: awE });
+        if (ovE && ovE > 3) allValueBets.push({ sport: lg.label, match: `${home} vs ${away}`, bet: `Over 2.5`, e: ovE });
+        if (unE && unE > 3) allValueBets.push({ sport: lg.label, match: `${home} vs ${away}`, bet: `Under 2.5`, e: unE });
+
+        const top5 = scores.slice(0, 5);
+
+        html += `<div class="match-card">
+          <div class="match-title">
+            <span>${home} vs ${away}</span>
+            <span class="match-time">${gameDate(ev.commence_time)}</span>
+          </div>
+          <table class="odds-table">
+            <tr><th>Outcome</th><th>Model%</th><th>Best Odds</th><th>Imp%</th><th>Edge</th></tr>
+            <tr><td>${home}</td><td>${(hw*100).toFixed(1)}%</td><td>${homeOdds}</td><td>${(impliedProb(homeOdds)*100).toFixed(1)}%</td><td>${edgeHtml(hwE.toFixed(1))}</td></tr>
+            ${drawOdds ? `<tr><td>Draw</td><td>${(dr*100).toFixed(1)}%</td><td>${drawOdds}</td><td>${(impliedProb(drawOdds)*100).toFixed(1)}%</td><td>${edgeHtml(drE.toFixed(1))}</td></tr>` : ''}
+            <tr><td>${away}</td><td>${(aw*100).toFixed(1)}%</td><td>${awayOdds}</td><td>${(impliedProb(awayOdds)*100).toFixed(1)}%</td><td>${edgeHtml(awE.toFixed(1))}</td></tr>
+            ${totals.over ? `<tr><td>Over 2.5</td><td>${(ov*100).toFixed(1)}%</td><td>${totals.over}</td><td>${(impliedProb(totals.over)*100).toFixed(1)}%</td><td>${edgeHtml(ovE.toFixed(1))}</td></tr>` : ''}
+            ${totals.under ? `<tr><td>Under 2.5</td><td>${(un*100).toFixed(1)}%</td><td>${totals.under}</td><td>${(impliedProb(totals.under)*100).toFixed(1)}%</td><td>${edgeHtml(unE.toFixed(1))}</td></tr>` : ''}
+            <tr><td>BTTS</td><td>${(btts*100).toFixed(1)}%</td><td colspan="3" style="color:${btts>0.5?'#00ff88':'#ff6666'}">${btts>0.5?'YES — likely':'NO — unlikely'}</td></tr>
+          </table>
+          <div class="label">TOP 5 CORRECT SCORES (Poisson)</div>
+          <div class="score-grid">
+            ${top5.map((s, i) => `<div class="score-chip ${i===0?'top':i===1?'second':i===2?'third':''}">${home.split(' ').pop()} ${s.h}–${s.a} ${away.split(' ').pop()} <span style="color:#555">${(s.p*100).toFixed(2)}%</span></div>`).join('')}
+          </div>
+        </div>`;
+      });
+      html += `</div>`;
+    } catch (e) {
+      html += `<div class="sport-section"><div class="sport-title">${lg.label}</div><div class="error">⚠ ${e.message}</div></div>`;
+    }
+  }
+  container.innerHTML = html || '<div class="no-games">No soccer data.</div>';
+}
+
+// ── PLAYER PROPS builder ───────────────────────────────────────────────────────
+async function buildPlayerProps(tabId, sportKey, label, region, propMarkets, forceRefresh) {
+  const container = document.getElementById(tabId);
+  try {
+    // ONE fetch only — props response includes game/team info
+    const propsData = await apiFetch(sportKey, propMarkets, region, forceRefresh);
+
+    const upcoming = (propsData || []).filter(e => {
+      const d = new Date(e.commence_time);
+      const now = new Date();
+      return d >= now && d <= new Date(now.getTime() + 2 * 24 * 60 * 60 * 1000);
+    });
+
+    if (upcoming.length === 0) {
+      container.innerHTML = `<div class="sport-section"><div class="sport-title">${label}</div><div class="no-games">No games in next 48 hours.</div></div>`;
+      return;
+    }
+
+    let html = `<div class="sport-section"><div class="sport-title">${label} — ${upcoming.length} games</div>`;
+    let totalProps = 0;
+
+    upcoming.forEach(ev => {
+      const home = ev.home_team, away = ev.away_team;
+      html += `<div class="props-card"><div class="props-title">${home} vs ${away} <span style="color:#555;font-size:0.8em">${gameDate(ev.commence_time)}</span></div>`;
+
+      // Collect all player props across bookmakers
+      const playerLines = {}; // player_name+market -> { line, bestOver, bestUnder }
+
+      (ev.bookmakers || []).forEach(bk => {
+        (bk.markets || []).forEach(mkt => {
+          (mkt.outcomes || []).forEach(o => {
+            const key = `${o.description || o.name}__${mkt.key}`;
+            if (!playerLines[key]) playerLines[key] = { player: o.description || o.name, market: mkt.key, line: o.point, bestOver: 0, bestUnder: 0 };
+            if (o.name === 'Over' && o.price > playerLines[key].bestOver) playerLines[key].bestOver = o.price;
+            if (o.name === 'Under' && o.price > playerLines[key].bestUnder) playerLines[key].bestUnder = o.price;
+          });
+        });
+      });
+
+      const props = Object.values(playerLines).filter(p => p.bestOver && p.bestUnder && p.line);
+      props.sort((a, b) => b.bestOver - a.bestOver);
+      const show = props.slice(0, 20);
+      totalProps += show.length;
+
+      if (show.length === 0) { html += `<div class="no-games">No player props yet for this game.</div></div>`; return; }
+
+      html += `<table class="odds-table">
+        <tr><th>Player</th><th>Market</th><th>Line</th><th>Best Over</th><th>Best Under</th><th>Over Imp%</th><th>Under Imp%</th></tr>`;
+
+      show.forEach(p => {
+        const overImp = (impliedProb(p.bestOver) * 100).toFixed(1);
+        const underImp = (impliedProb(p.bestUnder) * 100).toFixed(1);
+        const mktLabel = p.market.replace('player_', '').replace(/_/g, ' ');
+
+        // Flag value: if Over implied < 50% (means under more likely) or vice versa
+        const overVal = parseFloat(overImp) < 45 ? `<span class="pos">${overImp}%</span>` : `<span class="neutral">${overImp}%</span>`;
+        const underVal = parseFloat(underImp) < 45 ? `<span class="pos">${underImp}%</span>` : `<span class="neutral">${underImp}%</span>`;
+
+        // Value = when both sides don't add to ~105% (market inefficiency)
+        const total = parseFloat(overImp) + parseFloat(underImp);
+        const vig = total - 100;
+
+        html += `<tr>
+          <td class="prop-player">${p.player}</td>
+          <td style="color:#aaa;font-size:0.85em">${mktLabel}</td>
+          <td style="color:#ffcc00">${p.line}</td>
+          <td>${p.bestOver} <span style="color:#555;font-size:0.75em">(${overVal})</span></td>
+          <td>${p.bestUnder} <span style="color:#555;font-size:0.75em">(${underVal})</span></td>
+          <td>${overVal}</td>
+          <td>${underVal}</td>
+        </tr>`;
+      });
+
+      html += `</table></div>`;
+    });
+
+    html += `</div>`;
+    container.innerHTML = html;
+  } catch (e) {
+    container.innerHTML = `<div class="error">⚠ ${label} error: ${e.message}</div>`;
+  }
+}
+
+// ── ALL VALUE BETS tab ────────────────────────────────────────────────────────
+function buildAllTab() {
+  const container = document.getElementById('tab-all');
+  if (allValueBets.length === 0) {
+    container.innerHTML = `<div class="no-games">No value bets detected across all sports today. All edges are within bookmaker margin.</div>`;
+    return;
+  }
+  allValueBets.sort((a, b) => b.e - a.e);
+  const tier = b => b.e >= 8 ? '<span class="tier-a">A</span>' : '<span class="tier-b">B</span>';
+  let html = `<div class="value-box"><h3>✅ ALL VALUE BETS — Edge > +3% (${allValueBets.length} found)</h3>`;
+  allValueBets.forEach(v => {
+    html += `<div class="value-item">${tier(v)} +${v.e}% &nbsp;|&nbsp; <strong>${v.bet}</strong> &nbsp;|&nbsp; <span class="match-ref">${v.match} (${v.sport})</span></div>`;
+  });
+  html += `</div>`;
+  container.innerHTML = html;
+}
+
+// ── Master refresh ────────────────────────────────────────────────────────────
+async function refreshAll(forceRefresh = false) {
+  if (forceRefresh) {
+    clearAllCache();
+    // Mark all sport tabs as unloaded so they re-fetch when clicked
+    Object.keys(SPORT_TABS).forEach(k => loadedTabs.delete(k));
+    // Reset sport tab placeholders
+    Object.entries(SPORT_TABS).forEach(([k, s]) => {
+      document.getElementById('tab-' + k).innerHTML = `<div class="loading">Click the ${s.label} tab to load (saves API tokens)</div>`;
+    });
+  }
+  allValueBets.length = 0;
+  document.getElementById('all-loading').style.display = 'block';
+
+  // Only load soccer on startup — sport tabs load lazily on click
+  await buildSoccer(forceRefresh);
+
+  buildAllTab();
+  updateCacheStatus();
+  document.getElementById('all-loading').style.display = 'none';
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+window.addEventListener('load', () => {
+  // Set placeholder text for lazy-loaded tabs
+  Object.entries(SPORT_TABS).forEach(([k, s]) => {
+    document.getElementById('tab-' + k).innerHTML = `<div class="loading" style="cursor:pointer" onclick="document.querySelector('.tab[onclick*=\\'${k}\\']').click()">👆 Click the ${s.label} tab above to load player props</div>`;
+  });
+  refreshAll(false);
+});
+</script>
+</body>
+</html>

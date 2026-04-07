@@ -1,0 +1,5 @@
+[    5189ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://github.com/github-copilot/chat/entitlement:0
+[   79504ms] [ERROR] Refused to get unsafe header "X-Digest-Sha256" @ https://github.githubassets.com/assets/behaviors-16a09f816045b7f3.js:1
+[   79505ms] [ERROR] Refused to get unsafe header "X-Digest-Sha256-Hmac" @ https://github.githubassets.com/assets/behaviors-16a09f816045b7f3.js:1
+[   85229ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://github.com/github-copilot/chat/entitlement:0
+[   88161ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://github.com/github-copilot/chat/entitlement:0

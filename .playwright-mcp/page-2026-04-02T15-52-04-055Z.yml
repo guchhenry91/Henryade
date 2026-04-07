@@ -1,0 +1,303 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - region "Toast message":
+      - heading "0 notifications total" [level=2] [ref=e3]
+      - alert
+  - generic [ref=e4]:
+    - generic [ref=e6]:
+      - button "Skip to search" [ref=e7] [cursor=pointer]:
+        - generic [ref=e8]: Skip to search
+      - button "Skip to main content" [ref=e9] [cursor=pointer]:
+        - generic [ref=e10]: Skip to main content
+      - button "Keyboard shortcuts" [ref=e11] [cursor=pointer]:
+        - generic [ref=e12]: Keyboard shortcuts
+      - button "Close jump menu" [ref=e13] [cursor=pointer]:
+        - img [ref=e14]
+        - generic [ref=e16]: Close jump menu
+    - banner "Global Navigation" [ref=e17]:
+      - generic [ref=e18]:
+        - link "LinkedIn" [ref=e19] [cursor=pointer]:
+          - /url: https://www.linkedin.com/feed/?nis=true
+          - img "LinkedIn" [ref=e22]:
+            - img [ref=e23]
+        - generic [ref=e27]:
+          - generic [ref=e30]:
+            - generic [ref=e31]:
+              - generic [ref=e32]: Search by title, skill, or company
+              - img [ref=e33]
+            - combobox "Search by title, skill, or company" [ref=e35]: Helpdesk
+            - textbox [disabled]
+          - generic [ref=e38]:
+            - generic [ref=e39]:
+              - generic [ref=e40]: City, state, or zip code
+              - img [ref=e41]
+            - combobox "City, state, or zip code" [ref=e43]: London, England, United Kingdom
+            - textbox [disabled]
+          - button "Search" [ref=e44] [cursor=pointer]
+        - navigation "Primary Navigation" [ref=e45]:
+          - list [ref=e46]:
+            - listitem [ref=e47]:
+              - link "new feed updates notifications Home" [ref=e48] [cursor=pointer]:
+                - /url: https://www.linkedin.com/feed/?nis=true&
+                - generic [ref=e49]:
+                  - generic [ref=e52]: new feed updates notifications
+                  - img [ref=e56]
+                - generic "Home" [ref=e58]
+            - listitem [ref=e59]:
+              - link "My Network" [ref=e60] [cursor=pointer]:
+                - /url: https://www.linkedin.com/mynetwork/?
+                - img [ref=e64]
+                - generic "My Network" [ref=e66]
+            - listitem [ref=e67]:
+              - link "Jobs" [ref=e68] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/?
+                - img [ref=e72]
+                - generic "Jobs" [ref=e74]
+            - listitem [ref=e75]:
+              - link "Messaging" [ref=e76] [cursor=pointer]:
+                - /url: https://www.linkedin.com/messaging/?
+                - img [ref=e80]
+                - generic "Messaging" [ref=e82]
+            - listitem [ref=e83]:
+              - link "Notifications" [ref=e84] [cursor=pointer]:
+                - /url: https://www.linkedin.com/notifications/?
+                - img [ref=e88]
+                - generic "Notifications" [ref=e90]
+            - listitem [ref=e91]:
+              - button "Adegboyega Ogidan Me" [ref=e93] [cursor=pointer]:
+                - img "Adegboyega Ogidan" [ref=e94]
+                - generic [ref=e95]:
+                  - text: Me
+                  - img [ref=e96]
+            - listitem [ref=e98]:
+              - button "For Business" [ref=e100] [cursor=pointer]:
+                - img [ref=e104]
+                - generic "For Business" [ref=e106]:
+                  - text: For Business
+                  - img [ref=e107]
+            - listitem [ref=e109]:
+              - link "Post a job" [ref=e110] [cursor=pointer]:
+                - /url: https://www.linkedin.com/talent/job-posting-redirect?trk=nav_spotlight_post_job&
+                - img [ref=e114]
+                - generic "Post a job" [ref=e119]
+    - generic [ref=e121]:
+      - region "search filters" [ref=e124]:
+        - heading "Jobs search" [level=2] [ref=e125]
+      - main [ref=e136]:
+        - generic [ref=e138]:
+          - generic [ref=e139]:
+            - generic [ref=e140]:
+              - generic [ref=e141]:
+                - generic "Helpdesk in London, England, United Kingdom" [ref=e142]
+                - generic [ref=e145]: 6 results
+              - generic [ref=e148] [cursor=pointer]:
+                - generic [ref=e149]: Set alert
+                - generic [ref=e150]: Set job alert for Helpdesk in London
+                - switch "Set job alert for Helpdesk in London"
+            - generic [ref=e151]:
+              - button "Jump to active job details":
+                - generic [ref=e152] [cursor=pointer]: Jump to active job details
+              - button "Jump to active search result":
+                - generic [ref=e153] [cursor=pointer]: Jump to active search result
+              - list [ref=e154]:
+                - listitem [ref=e155]:
+                  - generic [ref=e157] [cursor=pointer]:
+                    - generic [ref=e158]:
+                      - generic [ref=e159]:
+                        - img "Centre People Appointments logo" [ref=e163]
+                        - generic [ref=e164]:
+                          - link "IT Desktop Helpdesk" [ref=e166]:
+                            - /url: /jobs/view/4384881350/?eBP=CwEAAAGdTuT_0AP-QZqWmgq12cDbzbDf2ecMxTsrAhei7aiS4KfDsVQjCwUOfqAse6zkLCcfrriscdknRPsYYYTgGYglM5cM4K6EFtnIcMFr9270w6FfpMSfYHVi6zU3JQLXV8KEcgBSaqCh128JXWbJdJQoBr9OWUB4GHypw7K4c9fiGgF_AEhWOIwSof4uI4rKa7pkN58fNIPjJiYN5gPsh7fiTTEO2LG6pwLerhwPGe4xTBUlA9Wsbey39pJwSRbyiNeDDz3f8zUNHnrnGlsDy2-Rq6i2EgDpmSj78Gyhx1zMNFUFGl6uXLTFbane_Qup9JxA0Ue3i-oNhMukYUWzcKWv99yqniBqXxTysqSh2az2e7fnveLoVctQHqD0vohM-_ns6vLWaE_DJH67W5efXKi1ZwK-gRKu_ipo4Y3DmaL9ML2Lz0woJqG-5iJ5VQ8JPTAtjE5Yrt1p91NTirqyUZPv8-REJNXYgtBfacgEti6FCy56n7eUEngd33WBPFAyZMkHe6Q3pdLRs4sItokSU8yqPo4yV7qrPtWU2bb91iTy1BkStg0VxCCw0LY&refId=byyv1y0%2BfjHjfRcwtlbB8Q%3D%3D&trackingId=eIjF1Dsd9xEeBI0%2B0Cn80g%3D%3D&trk=flagship3_search_srp_jobs
+                            - strong [ref=e168]: IT Desktop Helpdesk
+                            - generic [ref=e169]: IT Desktop Helpdesk
+                          - generic [ref=e171]: Centre People Appointments
+                          - list [ref=e173]:
+                            - listitem [ref=e174]:
+                              - generic [ref=e175]: London Area, United Kingdom (Hybrid)
+                      - generic [ref=e177]:
+                        - img "Actively reviewing applicants" [ref=e181]
+                        - generic [ref=e182]: Actively reviewing applicants
+                      - list [ref=e183]:
+                        - listitem [ref=e184]:
+                          - generic [ref=e185]: Promoted
+                        - listitem [ref=e186]:
+                          - img [ref=e187]:
+                            - img [ref=e188]
+                          - generic [ref=e190]: Easy Apply
+                    - button "Dismiss IT Desktop Helpdesk job" [ref=e194]:
+                      - img [ref=e196]
+                - listitem [ref=e199]:
+                  - generic [ref=e201] [cursor=pointer]:
+                    - generic [ref=e202]:
+                      - generic [ref=e203]:
+                        - img "Panavision logo" [ref=e207]
+                        - generic [ref=e208]:
+                          - link "Technical and Product Support - Panalux London" [ref=e210]:
+                            - /url: /jobs/view/4391711012/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=byyv1y0%2BfjHjfRcwtlbB8Q%3D%3D&trackingId=5SchL5xVxzrtfy7W0OLDjA%3D%3D&trk=flagship3_search_srp_jobs
+                            - strong [ref=e212]: Technical and Product Support - Panalux London
+                            - generic [ref=e213]: Technical and Product Support - Panalux London
+                          - generic [ref=e215]: Panavision
+                          - list [ref=e217]:
+                            - listitem [ref=e218]:
+                              - generic [ref=e219]: London, England, United Kingdom (On-site)
+                      - generic [ref=e225]:
+                        - generic [ref=e226]: 3 company alumni work here
+                        - generic [ref=e227]: 3 Sky company alumni work here
+                      - list [ref=e228]:
+                        - listitem [ref=e229]: Viewed
+                        - listitem [ref=e230]:
+                          - strong [ref=e232]:
+                            - generic [ref=e233]: Be an early applicant
+                        - listitem [ref=e234]:
+                          - img [ref=e235]:
+                            - img [ref=e236]
+                          - generic [ref=e238]: Easy Apply
+                    - button "Dismiss Technical and Product Support - Panalux London job" [ref=e242]:
+                      - img [ref=e244]
+                - listitem [ref=e247]:
+                  - generic [ref=e249] [cursor=pointer]:
+                    - generic [ref=e250]:
+                      - generic [ref=e251]:
+                        - img "Escalent logo" [ref=e255]
+                        - generic [ref=e256]:
+                          - link "Helpdesk Support Specialist" [ref=e258]:
+                            - /url: /jobs/view/4392890761/?eBP=CwEAAAGdTuT_0LtfU54kmE7WVTHgpKXF_e0N0X3Qs0UAQxdV1PV69KL6BzATqvOGR_CaJDEM1HVOwcF8rN6QSXXYlY37XjVFK-RtUXYPIKAAiIV_l3fD7gK-dXk76FulTQ_DZ_WytOBmUpGLu4HUYWqufQYPT77C9IWGBdmc3OX_raXBwowQ99oueANHES9xWMPaC-zV_63YMFaXqcqcu_oSwn09HJJIcA4cb7C34yjBJ8JkFesPDUx-uY0DZZwA-RRgdTwyUrNX0Om54SeEZAskm9PhqkapoCc4lAxOGoMXH5YY8CVIdCEDEIR2NooIDXsOzluaDDpOwmfwT12yqhb1qeidGI59JbcfH8x2V2MB2zVziBQCyJW4DXabQfi2oqYCOKn4rmhxym8cz2mskh_g1yr_EA_kxDmYc-CrqXQF_VkTtvWVTAVEk7PJcFb4Z72tMf6_r2QZHFodIqT8cuO4fJFD9ozrHXzymYQd0iqPg-qppDvnTADzw6NwWTumV0zJ5o4J&refId=byyv1y0%2BfjHjfRcwtlbB8Q%3D%3D&trackingId=hft%2BBwbXkyvJPSE%2Fh3hUGA%3D%3D&trk=flagship3_search_srp_jobs
+                            - strong [ref=e260]: Helpdesk Support Specialist
+                            - generic [ref=e261]: Helpdesk Support Specialist
+                          - generic [ref=e263]: Escalent
+                          - list [ref=e265]:
+                            - listitem [ref=e266]:
+                              - generic [ref=e267]: London Area, United Kingdom (Hybrid)
+                      - list [ref=e268]:
+                        - listitem [ref=e269]: Applied
+                    - button "Dismiss Helpdesk Support Specialist job" [ref=e273]:
+                      - img [ref=e275]
+                - listitem [ref=e278]:
+                  - generic [ref=e280] [cursor=pointer]:
+                    - generic [ref=e281]:
+                      - generic [ref=e282]:
+                        - img "Cyclops Electronics logo" [ref=e286]
+                        - generic [ref=e287]:
+                          - link "IT Support & ERP Systems Developer (Odoo) with verification" [ref=e289]:
+                            - /url: /jobs/view/4395337918/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=byyv1y0%2BfjHjfRcwtlbB8Q%3D%3D&trackingId=tn3yXn8b3FdgFvNGeEuyYw%3D%3D&trk=flagship3_search_srp_jobs
+                            - generic [ref=e290]:
+                              - strong [ref=e291]: IT Support & ERP Systems Developer (Odoo)
+                              - img [ref=e293]
+                            - generic [ref=e295]: IT Support & ERP Systems Developer (Odoo) with verification
+                          - generic [ref=e297]: Cyclops Electronics
+                          - list [ref=e299]:
+                            - listitem [ref=e300]:
+                              - generic [ref=e301]: United Kingdom (Remote)
+                      - list [ref=e302]:
+                        - listitem [ref=e303]:
+                          - time [ref=e304]:
+                            - text: 12 minutes ago
+                            - generic [ref=e305]: Within the past 24 hours
+                        - listitem [ref=e306]:
+                          - img [ref=e307]:
+                            - img [ref=e308]
+                          - generic [ref=e310]: Easy Apply
+                    - button "Dismiss IT Support & ERP Systems Developer (Odoo) job" [ref=e314]:
+                      - img [ref=e316]
+                - listitem [ref=e319]:
+                  - generic [ref=e321] [cursor=pointer]:
+                    - generic [ref=e322]:
+                      - generic [ref=e323]:
+                        - img "Clarksons logo" [ref=e327]
+                        - generic [ref=e328]:
+                          - link "End User Support Lead with verification" [ref=e330]:
+                            - /url: /jobs/view/4396937822/?eBP=CwEAAAGdTuT_0OUGwaRl23ATLJf3LbuOeMKRwDVOyj593bfZYXwLRqrwsAtxD01CDgUzgbwljujIH4JKw965ZwNbSduJfDdulqXisS5l9GLXaO_JEW46qrJwO0Ij3X41GxUujv68ahzFl67dpbo8a8OmIJMjdNrdToQt_I2lFqF2JaahaN50k4pPw3aDK4kEeaniiGlXpFi2AyWkz-WTMnuINv-Z6xkgOWAtWhY45qC84l6guj_vpBbRde0Vavxri_V_BzyCpp69zu9vclC53FW0ZgaoTFlK_JtmglFoqkSLJLqc-u08X5ZCR05NlVbpWe-rAMzU_t8IsYawau9JPC-fC7I3eV-1bLUvnNuZ4ekobprMtqEO0YSoDD3y2WMS5XhqjQ0Jyy57DxBfo2GIf5wJWvLAA51TYIbY0Qpsd1b4T8Q03LPJhroCTQwbtevIjtex922eMfGQjZvj-t2XhzpXx3Cfy8Kx4r4CDKjKJiXh-xGoQti7yvKcQ4n_N_oegYcI0s9TdFWq_4AUOij3GpHnNOKH8oArdHU2CDZfYAJ6BNIdwnBPLqJV1rP7M7U&refId=byyv1y0%2BfjHjfRcwtlbB8Q%3D%3D&trackingId=v3cmEl1HlovmZWjBktftkQ%3D%3D&trk=flagship3_search_srp_jobs
+                            - generic [ref=e331]:
+                              - strong [ref=e332]: End User Support Lead
+                              - img [ref=e334]
+                            - generic [ref=e336]: End User Support Lead with verification
+                          - generic [ref=e338]: Clarksons
+                          - list [ref=e340]:
+                            - listitem [ref=e341]:
+                              - generic [ref=e342]: London Area, United Kingdom (On-site)
+                      - generic [ref=e348]:
+                        - generic [ref=e349]: 3 company alumni work here
+                        - generic [ref=e350]: 3 Sky company alumni work here
+                      - list [ref=e351]:
+                        - listitem [ref=e352]: Applied
+                    - button "Dismiss End User Support Lead job" [ref=e356]:
+                      - img [ref=e358]
+                - listitem [ref=e361]:
+                  - generic [ref=e363] [cursor=pointer]:
+                    - generic [ref=e364]:
+                      - generic [ref=e365]:
+                        - img "Marks Sattin logo" [ref=e369]
+                        - generic [ref=e370]:
+                          - link "Fenergo System Support - Contract with verification" [ref=e372]:
+                            - /url: /jobs/view/4396465563/?eBP=BUDGET_EXHAUSTED_JOB&refId=byyv1y0%2BfjHjfRcwtlbB8Q%3D%3D&trackingId=ciD6dxBrJvKD%2Fy2YyEknAw%3D%3D&trk=flagship3_search_srp_jobs
+                            - generic [ref=e373]:
+                              - strong [ref=e374]: Fenergo System Support - Contract
+                              - img [ref=e376]
+                            - generic [ref=e378]: Fenergo System Support - Contract with verification
+                          - generic [ref=e380]: Marks Sattin
+                          - list [ref=e382]:
+                            - listitem [ref=e383]:
+                              - generic [ref=e384]: United Kingdom (Remote)
+                      - list [ref=e385]:
+                        - listitem [ref=e386]:
+                          - generic [ref=e387]: Promoted
+                        - listitem [ref=e388]:
+                          - img [ref=e389]:
+                            - img [ref=e390]
+                          - generic [ref=e392]: Easy Apply
+                    - button "Dismiss Fenergo System Support - Contract job" [ref=e396]:
+                      - img [ref=e398]
+              - generic [ref=e403]:
+                - generic [ref=e404]:
+                  - heading "Are these results helpful?" [level=2] [ref=e405]
+                  - paragraph [ref=e406]: Your feedback helps us improve search results.
+                - generic [ref=e407]:
+                  - button "Are you finding what you’re looking for? No" [ref=e408] [cursor=pointer]:
+                    - img [ref=e409]
+                    - generic [ref=e410]: Are you finding what you’re looking for? No
+                  - button "Are you finding what you’re looking for? Yes" [ref=e411] [cursor=pointer]:
+                    - img [ref=e412]
+                    - generic [ref=e413]: Are you finding what you’re looking for? Yes
+              - generic [ref=e414]:
+                - list [ref=e417]:
+                  - listitem [ref=e418]:
+                    - button "Page 1" [ref=e419] [cursor=pointer]: "1"
+                - generic "LinkedIn Footer Content" [ref=e421]
+          - generic "IT Desktop Helpdesk" [ref=e425]:
+            - generic [ref=e429]:
+              - generic [ref=e433]:
+                - generic [ref=e436]:
+                  - button "Share" [ref=e439] [cursor=pointer]:
+                    - img [ref=e440]
+                    - generic [ref=e442]: Share
+                  - button "Show more options" [ref=e444] [cursor=pointer]:
+                    - img [ref=e445]
+                    - generic [ref=e447]: Show more options
+                - heading "IT Desktop Helpdesk" [level=1] [ref=e450]:
+                  - link "IT Desktop Helpdesk" [ref=e451] [cursor=pointer]:
+                    - /url: /jobs/view/4384881350/?alternateChannel=search&refId=NotAvailable&trackingId=3vPZMOz%2BTWSge7K5Ki%2FYRQ%3D%3D&trk=d_flagship3_search_srp_jobs
+                - generic:
+                  - list
+              - article [ref=e464]:
+                - heading "About the job" [level=2] [ref=e467]
+    - generic:
+      - generic:
+        - complementary:
+          - generic [ref=e501]:
+            - generic [ref=e503] [cursor=pointer]:
+              - img "Adegboyega Ogidan" [ref=e505]
+              - button "You are on the messaging overlay. Press enter to open the list of conversations." [ref=e506]:
+                - generic [ref=e507]:
+                  - generic [ref=e508]: Messaging
+                  - generic [ref=e509]: You are on the messaging overlay. Press enter to open the list of conversations.
+            - generic [ref=e510]:
+              - button "Open messenger dropdown menu" [ref=e512] [cursor=pointer]:
+                - img "Open messenger dropdown menu" [ref=e513]
+              - button "Compose message" [ref=e516] [cursor=pointer]:
+                - img [ref=e517]
+                - generic [ref=e519]: Compose message
+              - button "You are on the messaging overlay. Press enter to open the list of conversations." [ref=e520] [cursor=pointer]:
+                - img [ref=e521]
+                - generic [ref=e523]: You are on the messaging overlay. Press enter to open the list of conversations.
+        - complementary "AI-powered assistant to get help with your career, jobs etc"
+  - region [ref=e524]

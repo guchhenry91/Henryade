@@ -1,0 +1,17 @@
+[    3066ms] [LOG] Visibility threshold pct=50, Visibility threshold ms = 0 @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[    3224ms] [LOG] Influent Media script loaded @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[    3271ms] [LOG] Influent Media script initialized @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[    3312ms] [INFO] [REFRESH PATCH] pubads.refresh patched @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[    3855ms] [INFO] [REFRESH PATCH] Injecting targeting {key: AnonymisedSignalLift, value: 0} @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[    4110ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[    4112ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[    4112ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15
+[   24082ms] [LOG] Visibility threshold pct=50, Visibility threshold ms = 0 @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[   24162ms] [INFO] [REFRESH PATCH] pubads.refresh patched @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[   24198ms] [LOG] Influent Media script loaded @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[   24274ms] [LOG] Influent Media script initialized @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[   24628ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/service-desk-engineer/56665903:0
+[   24814ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[   24817ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[   24817ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15
+[   25019ms] [INFO] [REFRESH PATCH] Injecting targeting {key: AnonymisedSignalLift, value: 0} @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0

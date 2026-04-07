@@ -1,0 +1,25 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - heading "⚡ BETTING MODEL DASHBOARD" [level=1] [ref=e3]
+    - generic [ref=e4]:
+      - generic [ref=e5]: "Tokens Left: 14355"
+      - generic [ref=e6]: "Used: 5645"
+      - generic [ref=e7]: "Cache: NaNm ago (16) · 14355 tokens left"
+      - button "↻ Cache" [ref=e8] [cursor=pointer]
+      - button "⚡ Refresh" [ref=e9] [cursor=pointer]
+  - generic [ref=e10]:
+    - generic [ref=e11] [cursor=pointer]: All Value Bets
+    - generic [ref=e12] [cursor=pointer]: 💰 Safe Bets
+    - generic [ref=e13] [cursor=pointer]: ⚽ Soccer
+    - generic [ref=e14] [cursor=pointer]: 🏀 NBA
+    - generic [ref=e15] [cursor=pointer]: 🏈 NFL
+    - generic [ref=e16] [cursor=pointer]: 🏒 NHL
+    - generic [ref=e17] [cursor=pointer]: ⚾ MLB
+    - generic [ref=e18] [cursor=pointer]: 📊 History
+  - generic [ref=e50]:
+    - generic [ref=e51]: 💰
+    - generic [ref=e52]: No safe picks found yet.
+    - generic [ref=e53]:
+      - text: Load NBA, NHL, or MLB tabs first — safe picks are collected from all sports automatically.
+      - text: A pick needs 58%+ model probability, 60%+ actual hit rate, and clean data to qualify.
+  - button "📋 My Picks" [ref=e21] [cursor=pointer]

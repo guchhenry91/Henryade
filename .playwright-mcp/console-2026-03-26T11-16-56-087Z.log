@@ -1,0 +1,13 @@
+[     723ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:16:56.809Z Invalid eventBatchSize undefined, defaulting to 10 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-23:1
+[     723ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:16:56.810Z Invalid eventFlushInterval undefined, defaulting to 1000 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-23:1
+[    1158ms] [WARNING] Datadog Browser SDK: SDK is loaded more than once. This is unsupported and might have unexpected behavior. @ https://www.totaljobs.com/application/process-renderer/assets/cvCapture.cfd139a84cbf1e427a02.js:1
+[    8419ms] [WARNING] [Meta Pixel] - Duplicate Pixel ID: 665267016975562. @ https://connect.facebook.net/en_US/fbevents.js:175
+[    8463ms] Uncaught The pagetype parameter is required when you include the prodid parameter.
+    at UET.throwError (https://bat.bing.com/bat.js:0:26126)
+    at UET.validateDataObjectNew (https://bat.bing.com/bat.js:0:31565)
+    at UET.evt (https://bat.bing.com/bat.js:0:35110)
+    at UET._push (https://bat.bing.com/bat.js:0:16964)
+    at UET.checkuetHostdocumentload (https://bat.bing.com/bat.js:0:7903)
+    at <anonymous> (https://bat.bing.com/bat.js:0:8194)
+[    8978ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/f5a4d88d-78d2-4464-9d9f-4845280dc569/application/external/cv-download?locale=en_GB:0
+[    8978ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/f5a4d88d-78d2-4464-9d9f-4845280dc569/application/external/cv-download?locale=en_GB:0

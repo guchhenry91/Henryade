@@ -1,0 +1,5 @@
+[    3359ms] [WARNING] The following CSA option(s) were ignored due to being overridden by native style controls: fontFamily @ https://www.google.com/adsense/search/async-ads.js:218
+[    3359ms] [WARNING] The following CSA option(s) are unsupported: longerHeadlines, fontSizeTitle, fontSizeDescription, fontSizeDomainLink, colorTitleLink, colorDomainLink @ https://www.google.com/adsense/search/async-ads.js:218
+[    3914ms] [WARNING] Anonymised tag: Unset or used incorrect value of the cmp-provider:'undefined'. 
+        The default TCFv2 API will be used @ https://cdn1.anonymised.io/light/bundle.js?v=1.8.51:0
+[    4266ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/2nd-line-it-support-analyst-remote-based/56703270:0

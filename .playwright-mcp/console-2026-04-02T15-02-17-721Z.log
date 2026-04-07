@@ -1,0 +1,7 @@
+[     898ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://www.reed.co.uk/account/edit:0
+[     898ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://www.reed.co.uk/account/edit:0
+[     898ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://www.reed.co.uk/account/edit:0
+[    1092ms] [LOG] Visibility threshold pct=50, Visibility threshold ms = 0 @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[    1715ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[    1717ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[    1718ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15

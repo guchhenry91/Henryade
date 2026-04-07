@@ -1,0 +1,1886 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e6]:
+          - link "Reed.co.uk" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Reed.co.uk" [ref=e8]
+          - list [ref=e9]:
+            - listitem [ref=e10]:
+              - link "Jobs" [ref=e11] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e12]: Jobs
+            - listitem [ref=e13]:
+              - link "Courses" [ref=e14] [cursor=pointer]:
+                - /url: /courses/?itm_source=js_navigation&itm_medium=jobseeker&itm_campaign=courses_tab&itm_content=standard_version
+                - generic [ref=e15]: Courses
+            - listitem [ref=e16]:
+              - link "Career advice" [ref=e17] [cursor=pointer]:
+                - /url: /career-advice/
+                - generic [ref=e18]: Career advice
+            - listitem [ref=e19]:
+              - link "Recruiting? Post a job" [ref=e20] [cursor=pointer]:
+                - /url: /recruiter/
+                - generic [ref=e21]:
+                  - text: Recruiting?
+                  - strong [ref=e22]: Post a job
+          - generic [ref=e23]:
+            - link "Register CV" [ref=e24] [cursor=pointer]:
+              - /url: /authentication/register?returnTo=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26salaryfrom%3D33000%26salaryto%3D100000
+            - list [ref=e25]:
+              - listitem [ref=e26]:
+                - link "Saved jobs" [ref=e27] [cursor=pointer]:
+                  - /url: /account/jobs/shortlisted-jobs
+                  - img [ref=e29]
+                  - generic [ref=e31]: Saved jobs
+              - listitem [ref=e32]:
+                - status [ref=e33]:
+                  - img "Loading" [ref=e34]
+      - search [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]:
+            - generic [ref=e41]:
+              - generic [ref=e42]: What
+              - generic [ref=e43]:
+                - textbox "e.g. \"it support\"" [ref=e44]: it engineer
+                - button "clear keywords" [ref=e45] [cursor=pointer]:
+                  - img [ref=e46]
+            - generic [ref=e49]:
+              - generic [ref=e50]: Where
+              - generic [ref=e51]:
+                - textbox "town or postcode" [ref=e52]: london
+                - button "clear location" [ref=e53] [cursor=pointer]:
+                  - img [ref=e54]
+            - button "Search jobs" [ref=e58] [cursor=pointer]
+            - link "Browse jobs" [ref=e60] [cursor=pointer]:
+              - /url: /popularjobs
+              - text: Browse jobs
+              - img [ref=e61]
+          - generic [ref=e63]:
+            - generic [ref=e64]: "Similar searches:"
+            - list [ref=e65]:
+              - listitem [ref=e66]:
+                - link "It Support jobs" [ref=e67] [cursor=pointer]:
+                  - /url: /jobs/it-support-jobs-in-london
+              - listitem [ref=e68]:
+                - link "It Manager jobs" [ref=e69] [cursor=pointer]:
+                  - /url: /jobs/it-manager-jobs-in-london
+              - listitem [ref=e70]:
+                - link "It Administrator jobs" [ref=e71] [cursor=pointer]:
+                  - /url: /jobs/it-administrator-jobs-in-london
+              - listitem [ref=e72]:
+                - link "It Technician jobs" [ref=e73] [cursor=pointer]:
+                  - /url: /jobs/it-technician-jobs-in-london
+              - listitem [ref=e74]:
+                - link "It jobs" [ref=e75] [cursor=pointer]:
+                  - /url: /jobs/it-jobs-in-london
+              - listitem [ref=e76]:
+                - link "It Engineer Jobs in East London" [ref=e77] [cursor=pointer]:
+                  - /url: /jobs/it-engineer-jobs-in-east-london?salaryFrom=33000&salaryTo=100000
+              - listitem [ref=e78]:
+                - link "It Engineer Jobs in Watford" [ref=e79] [cursor=pointer]:
+                  - /url: /jobs/it-engineer-jobs-in-watford?salaryFrom=33000&salaryTo=100000
+              - listitem [ref=e80]:
+                - link "It Engineer Jobs in South West London" [ref=e81] [cursor=pointer]:
+                  - /url: /jobs/it-engineer-jobs-in-south-west-london?salaryFrom=33000&salaryTo=100000
+      - generic [ref=e83]:
+        - generic [ref=e86]:
+          - heading "7,582 It Engineer Jobs in London" [level=1] [ref=e88]:
+            - text: 7,582
+            - link "It Engineer" [ref=e89] [cursor=pointer]:
+              - /url: /jobs/it-engineer-jobs
+            - text: Jobs in
+            - link "London" [ref=e90] [cursor=pointer]:
+              - /url: /jobs/jobs-in-london
+          - button "Get Job Alerts" [ref=e97] [cursor=pointer]:
+            - img [ref=e98]
+            - text: Get job alerts
+        - generic [ref=e101]:
+          - main [ref=e102]:
+            - article [ref=e104]:
+              - generic [ref=e105]:
+                - button "IT Infrastructure Engineer" [ref=e106] [cursor=pointer]
+                - generic [ref=e107]:
+                  - generic [ref=e108]:
+                    - generic [ref=e109]:
+                      - generic [ref=e110]:
+                        - generic [ref=e111]: Featured
+                        - generic [ref=e112]: New
+                        - generic [ref=e113]:
+                          - img [ref=e114]
+                          - text: Easy Apply
+                      - heading "IT Infrastructure Engineer" [level=2] [ref=e116]:
+                        - link "IT Infrastructure Engineer" [ref=e117] [cursor=pointer]:
+                          - /url: /jobs/it-infrastructure-engineer/56732585?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e118]:
+                        - text: Yesterday by
+                        - link "Matchtech" [ref=e119] [cursor=pointer]:
+                          - /url: /jobs/matchtech-19617/p19617
+                      - list [ref=e120]:
+                        - listitem [ref=e121]:
+                          - img "Salary" [ref=e122]
+                          - text: Salary negotiable
+                        - listitem [ref=e124]:
+                          - img "Location" [ref=e125]
+                          - text: London
+                        - listitem [ref=e127]:
+                          - img "Clock" [ref=e128]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e130] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e131]
+                  - complementary [ref=e133]:
+                    - button "Easy apply" [ref=e134] [cursor=pointer]
+                  - link "Matchtech jobs" [ref=e137] [cursor=pointer]:
+                    - /url: /jobs/matchtech-19617/p19617
+                    - img "Matchtech jobs" [ref=e138]
+                  - generic [ref=e139]:
+                    - button "Shortlist job" [ref=e140] [cursor=pointer]:
+                      - img [ref=e141]
+                    - button "hide job" [ref=e143] [cursor=pointer]:
+                      - img [ref=e144]
+            - article [ref=e147]:
+              - generic [ref=e148]:
+                - button "Onsite IT Support Engineer" [ref=e149] [cursor=pointer]
+                - generic [ref=e150]:
+                  - generic [ref=e151]:
+                    - generic [ref=e152]:
+                      - generic [ref=e153]:
+                        - generic [ref=e154]: Featured
+                        - generic [ref=e155]:
+                          - img [ref=e156]
+                          - text: Easy Apply
+                      - heading "Onsite IT Support Engineer" [level=2] [ref=e158]:
+                        - link "Onsite IT Support Engineer" [ref=e159] [cursor=pointer]:
+                          - /url: /jobs/onsite-it-support-engineer/56665903?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e160]:
+                        - text: 18 March by
+                        - link "RFA" [ref=e161] [cursor=pointer]:
+                          - /url: /jobs/rfa-67921/p67921
+                      - list [ref=e162]:
+                        - listitem [ref=e163]:
+                          - img "Salary" [ref=e164]
+                          - text: Salary negotiable
+                        - listitem [ref=e166]:
+                          - img "Location" [ref=e167]
+                          - text: London
+                        - listitem [ref=e169]:
+                          - img "Clock" [ref=e170]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e172] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e173]
+                  - complementary [ref=e175]:
+                    - button "Easy apply" [ref=e176] [cursor=pointer]
+                  - link "RFA jobs" [ref=e179] [cursor=pointer]:
+                    - /url: /jobs/rfa-67921/p67921
+                    - img "RFA jobs" [ref=e180]
+                  - generic [ref=e181]:
+                    - button "Shortlist job" [ref=e182] [cursor=pointer]:
+                      - img [ref=e183]
+                    - button "hide job" [ref=e185] [cursor=pointer]:
+                      - img [ref=e186]
+            - article [ref=e189]:
+              - generic [ref=e190]:
+                - button "IT Engineer" [ref=e191] [cursor=pointer]
+                - generic [ref=e192]:
+                  - generic [ref=e193]:
+                    - generic [ref=e194]:
+                      - generic [ref=e196]:
+                        - img [ref=e197]
+                        - text: Easy Apply
+                      - heading "IT Engineer" [level=2] [ref=e199]:
+                        - link "IT Engineer" [ref=e200] [cursor=pointer]:
+                          - /url: /jobs/it-engineer/56643378?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e201]:
+                        - text: 13 March by
+                        - link "Randstad Technologies" [ref=e202] [cursor=pointer]:
+                          - /url: /jobs/randstad-technologies-101642/p101642
+                      - list [ref=e203]:
+                        - listitem [ref=e204]:
+                          - img "Salary" [ref=e205]
+                          - text: £300 - £400 per day
+                        - listitem [ref=e207]:
+                          - img "Location" [ref=e208]
+                          - text: London
+                        - listitem [ref=e210]:
+                          - img "Clock" [ref=e211]
+                          - text: Contract, full-time
+                    - button "See job description" [ref=e213] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e214]
+                  - complementary [ref=e216]:
+                    - button "Easy apply" [ref=e217] [cursor=pointer]
+                  - link "Randstad Technologies jobs" [ref=e220] [cursor=pointer]:
+                    - /url: /jobs/randstad-technologies-101642/p101642
+                    - img "Randstad Technologies jobs" [ref=e221]
+                  - generic [ref=e222]:
+                    - button "Shortlist job" [ref=e223] [cursor=pointer]:
+                      - img [ref=e224]
+                    - button "hide job" [ref=e226] [cursor=pointer]:
+                      - img [ref=e227]
+            - article [ref=e230]:
+              - generic [ref=e231]:
+                - button "IT Engineer" [ref=e232] [cursor=pointer]
+                - generic [ref=e233]:
+                  - generic [ref=e234]:
+                    - generic [ref=e235]:
+                      - generic [ref=e236]:
+                        - generic [ref=e237]: Featured
+                        - generic [ref=e238]:
+                          - img [ref=e239]
+                          - text: Easy Apply
+                      - heading "IT Engineer" [level=2] [ref=e241]:
+                        - link "IT Engineer" [ref=e242] [cursor=pointer]:
+                          - /url: /jobs/it-engineer/56687509?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e243]:
+                        - text: 23 March by
+                        - link "Ashdown Group" [ref=e244] [cursor=pointer]:
+                          - /url: /jobs/ashdown-group-ltd/p4810
+                      - list [ref=e245]:
+                        - listitem [ref=e246]:
+                          - img "Salary" [ref=e247]
+                          - text: £40,000 - £50,000 per annum
+                        - listitem [ref=e249]:
+                          - img "Location" [ref=e250]
+                          - text: London
+                        - listitem [ref=e252]:
+                          - img "Clock" [ref=e253]
+                          - text: Permanent, full-time
+                        - listitem [ref=e255]:
+                          - img "Home" [ref=e256]
+                          - text: Work from home
+                    - button "See job description" [ref=e258] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e259]
+                  - complementary [ref=e261]:
+                    - button "Easy apply" [ref=e262] [cursor=pointer]
+                  - link "Ashdown Group jobs" [ref=e265] [cursor=pointer]:
+                    - /url: /jobs/ashdown-group-ltd/p4810
+                    - img "Ashdown Group jobs" [ref=e266]
+                  - generic [ref=e267]:
+                    - button "Shortlist job" [ref=e268] [cursor=pointer]:
+                      - img [ref=e269]
+                    - button "hide job" [ref=e271] [cursor=pointer]:
+                      - img [ref=e272]
+            - article [ref=e275]:
+              - generic [ref=e276]:
+                - button "IT Support Engineer" [ref=e277] [cursor=pointer]
+                - generic [ref=e278]:
+                  - generic [ref=e279]:
+                    - generic [ref=e280]:
+                      - generic [ref=e282]:
+                        - img [ref=e283]
+                        - text: Easy Apply
+                      - heading "IT Support Engineer" [level=2] [ref=e285]:
+                        - link "IT Support Engineer" [ref=e286] [cursor=pointer]:
+                          - /url: /jobs/it-support-engineer/56690123?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e287]:
+                        - text: 23 March by
+                        - link "VIQU IT Recruitment" [ref=e288] [cursor=pointer]:
+                          - /url: /jobs/viqu-limited-86416/p86416
+                      - list [ref=e289]:
+                        - listitem [ref=e290]:
+                          - img "Salary" [ref=e291]
+                          - text: £180 - £200 per day
+                        - listitem [ref=e293]:
+                          - img "Location" [ref=e294]
+                          - text: London
+                        - listitem [ref=e296]:
+                          - img "Clock" [ref=e297]
+                          - text: Contract, full-time
+                    - button "See job description" [ref=e299] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e300]
+                  - complementary [ref=e302]:
+                    - button "Easy apply" [ref=e303] [cursor=pointer]
+                  - link "VIQU IT Recruitment jobs" [ref=e306] [cursor=pointer]:
+                    - /url: /jobs/viqu-limited-86416/p86416
+                    - img "VIQU IT Recruitment jobs" [ref=e307]
+                  - generic [ref=e308]:
+                    - button "Shortlist job" [ref=e309] [cursor=pointer]:
+                      - img [ref=e310]
+                    - button "hide job" [ref=e312] [cursor=pointer]:
+                      - img [ref=e313]
+            - article [ref=e316]:
+              - generic [ref=e317]:
+                - button "IT Support Engineer" [ref=e318] [cursor=pointer]
+                - generic [ref=e319]:
+                  - generic [ref=e320]:
+                    - generic [ref=e321]:
+                      - heading "IT Support Engineer" [level=2] [ref=e322]:
+                        - link "IT Support Engineer" [ref=e323] [cursor=pointer]:
+                          - /url: /jobs/it-support-engineer/56659220?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e324]:
+                        - text: 17 March by
+                        - link "Career Cross Ltd" [ref=e325] [cursor=pointer]:
+                          - /url: /jobs/career-cross-ltd/p22067
+                      - list [ref=e326]:
+                        - listitem [ref=e327]:
+                          - img "Salary" [ref=e328]
+                          - text: £35,000 per annum, inc benefits
+                        - listitem [ref=e330]:
+                          - img "Location" [ref=e331]
+                          - text: London Bridge, London
+                        - listitem [ref=e333]:
+                          - img "Clock" [ref=e334]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e336] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e337]
+                  - complementary [ref=e339]
+                  - generic [ref=e341]:
+                    - link "Career Cross Ltd jobs":
+                      - /url: /jobs/career-cross-ltd/p22067
+                      - img "Career Cross Ltd jobs"
+                  - generic [ref=e342]:
+                    - button "Shortlist job" [ref=e343] [cursor=pointer]:
+                      - img [ref=e344]
+                    - button "hide job" [ref=e346] [cursor=pointer]:
+                      - img [ref=e347]
+            - article [ref=e350]:
+              - generic [ref=e351]:
+                - button "IT Infrastructure Engineer" [ref=e352] [cursor=pointer]
+                - generic [ref=e353]:
+                  - generic [ref=e354]:
+                    - generic [ref=e355]:
+                      - heading "IT Infrastructure Engineer" [level=2] [ref=e356]:
+                        - link "IT Infrastructure Engineer" [ref=e357] [cursor=pointer]:
+                          - /url: /jobs/it-infrastructure-engineer/56674883?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e358]:
+                        - text: 19 March by
+                        - link "Ritz Recruitment Ltd" [ref=e359] [cursor=pointer]:
+                          - /url: /jobs/ritz-recruitment-ltd/p2917
+                      - list [ref=e360]:
+                        - listitem [ref=e361]:
+                          - img "Salary" [ref=e362]
+                          - text: £50,000 per annum
+                        - listitem [ref=e364]:
+                          - img "Location" [ref=e365]
+                          - text: Central London, London
+                        - listitem [ref=e367]:
+                          - img "Clock" [ref=e368]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e370] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e371]
+                  - complementary [ref=e373]
+                  - generic [ref=e375]:
+                    - link "Ritz Recruitment Ltd jobs":
+                      - /url: /jobs/ritz-recruitment-ltd/p2917
+                      - img "Ritz Recruitment Ltd jobs"
+                  - generic [ref=e376]:
+                    - button "Shortlist job" [ref=e377] [cursor=pointer]:
+                      - img [ref=e378]
+                    - button "hide job" [ref=e380] [cursor=pointer]:
+                      - img [ref=e381]
+            - article [ref=e384]:
+              - generic [ref=e385]:
+                - button "IT Field Engineer" [ref=e386] [cursor=pointer]
+                - generic [ref=e387]:
+                  - generic [ref=e388]:
+                    - generic [ref=e389]:
+                      - heading "IT Field Engineer" [level=2] [ref=e390]:
+                        - link "IT Field Engineer" [ref=e391] [cursor=pointer]:
+                          - /url: /jobs/it-field-engineer/56688200?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e392]:
+                        - text: 23 March by
+                        - link "Neoci Ltd" [ref=e393] [cursor=pointer]:
+                          - /url: /jobs/critical-resourcing/p17093
+                      - list [ref=e394]:
+                        - listitem [ref=e395]:
+                          - img "Salary" [ref=e396]
+                          - text: £40,000 - £45,000 per annum
+                        - listitem [ref=e398]:
+                          - img "Location" [ref=e399]
+                          - text: North London, London
+                        - listitem [ref=e401]:
+                          - img "Clock" [ref=e402]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e404] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e405]
+                  - complementary [ref=e407]
+                  - generic [ref=e409]:
+                    - link "Neoci Ltd jobs":
+                      - /url: /jobs/critical-resourcing/p17093
+                      - img "Neoci Ltd jobs"
+                  - generic [ref=e410]:
+                    - button "Shortlist job" [ref=e411] [cursor=pointer]:
+                      - img [ref=e412]
+                    - button "hide job" [ref=e414] [cursor=pointer]:
+                      - img [ref=e415]
+            - article [ref=e418]:
+              - generic [ref=e419]:
+                - button "IT Infrastructure Engineer" [ref=e420] [cursor=pointer]
+                - generic [ref=e421]:
+                  - generic [ref=e422]:
+                    - generic [ref=e423]:
+                      - generic [ref=e424]:
+                        - generic [ref=e425]: Ending soon
+                        - generic [ref=e426]:
+                          - img [ref=e427]
+                          - text: Easy Apply
+                      - heading "IT Infrastructure Engineer" [level=2] [ref=e429]:
+                        - link "IT Infrastructure Engineer" [ref=e430] [cursor=pointer]:
+                          - /url: /jobs/it-infrastructure-engineer/56046877?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e431]:
+                        - text: 19 February by
+                        - link "Arcas Technology Ltd." [ref=e432] [cursor=pointer]:
+                          - /url: /jobs/arcas-technology-ltd/o661937
+                      - list [ref=e433]:
+                        - listitem [ref=e434]:
+                          - img "Salary" [ref=e435]
+                          - text: £65,000 - £70,000 per annum
+                        - listitem [ref=e437]:
+                          - img "Location" [ref=e438]
+                          - text: London
+                        - listitem [ref=e440]:
+                          - img "Clock" [ref=e441]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e443] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e444]
+                  - complementary [ref=e446]:
+                    - button "Easy apply" [ref=e447] [cursor=pointer]
+                  - generic [ref=e450]:
+                    - text: Posted by
+                    - link "Arcas Technology Ltd." [ref=e451] [cursor=pointer]:
+                      - /url: /jobs/arcas-technology-ltd/o661937
+                  - generic [ref=e452]:
+                    - button "Shortlist job" [ref=e453] [cursor=pointer]:
+                      - img [ref=e454]
+                    - button "hide job" [ref=e456] [cursor=pointer]:
+                      - img [ref=e457]
+            - article [ref=e460]:
+              - generic [ref=e461]:
+                - button "Senior IT Engineer" [ref=e462] [cursor=pointer]
+                - generic [ref=e463]:
+                  - generic [ref=e464]:
+                    - generic [ref=e465]:
+                      - generic [ref=e466]:
+                        - generic [ref=e467]: Featured
+                        - generic [ref=e468]:
+                          - img [ref=e469]
+                          - text: Easy Apply
+                      - heading "Senior IT Engineer" [level=2] [ref=e471]:
+                        - link "Senior IT Engineer" [ref=e472] [cursor=pointer]:
+                          - /url: /jobs/senior-it-engineer/56661785?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e473]:
+                        - text: 17 March by
+                        - link "Proactive Appointments" [ref=e474] [cursor=pointer]:
+                          - /url: /jobs/proactive-appointments-72728/p72728
+                      - list [ref=e475]:
+                        - listitem [ref=e476]:
+                          - img "Salary" [ref=e477]
+                          - text: Salary negotiable
+                        - listitem [ref=e479]:
+                          - img "Location" [ref=e480]
+                          - text: London
+                        - listitem [ref=e482]:
+                          - img "Clock" [ref=e483]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e485] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e486]
+                  - complementary [ref=e488]:
+                    - button "Easy apply" [ref=e489] [cursor=pointer]
+                  - generic [ref=e491]:
+                    - link "Proactive Appointments jobs":
+                      - /url: /jobs/proactive-appointments-72728/p72728
+                      - img "Proactive Appointments jobs"
+                  - generic [ref=e492]:
+                    - button "Shortlist job" [ref=e493] [cursor=pointer]:
+                      - img [ref=e494]
+                    - button "hide job" [ref=e496] [cursor=pointer]:
+                      - img [ref=e497]
+            - article [ref=e500]:
+              - generic [ref=e501]:
+                - button "IT Security Engineer" [ref=e502] [cursor=pointer]
+                - generic [ref=e503]:
+                  - generic [ref=e504]:
+                    - generic [ref=e505]:
+                      - heading "IT Security Engineer" [level=2] [ref=e506]:
+                        - link "IT Security Engineer" [ref=e507] [cursor=pointer]:
+                          - /url: /jobs/it-security-engineer/56518189?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e508]:
+                        - text: 23 February by
+                        - link "Newto Training" [ref=e509] [cursor=pointer]:
+                          - /url: /jobs/newto-it/p90206
+                      - list [ref=e510]:
+                        - listitem [ref=e511]:
+                          - img "Salary" [ref=e512]
+                          - text: Training Course
+                        - listitem [ref=e514]:
+                          - img "Location" [ref=e515]
+                          - text: United Kingdom
+                        - listitem [ref=e517]:
+                          - img "Clock" [ref=e518]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e520] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e521]
+                  - complementary [ref=e523]
+                  - generic [ref=e525]:
+                    - link "Newto Training jobs":
+                      - /url: /jobs/newto-it/p90206
+                      - img "Newto Training jobs"
+                  - generic [ref=e526]:
+                    - button "Shortlist job" [ref=e527] [cursor=pointer]:
+                      - img [ref=e528]
+                    - button "hide job" [ref=e530] [cursor=pointer]:
+                      - img [ref=e531]
+            - article [ref=e534]:
+              - generic [ref=e535]:
+                - button "IT Support Engineer" [ref=e536] [cursor=pointer]
+                - generic [ref=e537]:
+                  - generic [ref=e538]:
+                    - generic [ref=e539]:
+                      - generic [ref=e541]:
+                        - img [ref=e542]
+                        - text: Easy Apply
+                      - heading "IT Support Engineer" [level=2] [ref=e544]:
+                        - link "IT Support Engineer" [ref=e545] [cursor=pointer]:
+                          - /url: /jobs/it-support-engineer/56487625?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e546]:
+                        - text: 2 days ago by
+                        - link "Apache Associates" [ref=e547] [cursor=pointer]:
+                          - /url: /jobs/apache-associates/p23239
+                      - list [ref=e548]:
+                        - listitem [ref=e549]:
+                          - img "Salary" [ref=e550]
+                          - text: £35,000 - £45,000 per annum
+                        - listitem [ref=e552]:
+                          - img "Location" [ref=e553]
+                          - text: St. Albans, Hertfordshire
+                        - listitem [ref=e555]:
+                          - img "Clock" [ref=e556]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e558] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e559]
+                  - complementary [ref=e561]:
+                    - button "Easy apply" [ref=e562] [cursor=pointer]
+                  - generic [ref=e564]:
+                    - link "Apache Associates jobs":
+                      - /url: /jobs/apache-associates/p23239
+                      - img "Apache Associates jobs"
+                  - generic [ref=e565]:
+                    - button "Shortlist job" [ref=e566] [cursor=pointer]:
+                      - img [ref=e567]
+                    - button "hide job" [ref=e569] [cursor=pointer]:
+                      - img [ref=e570]
+            - article [ref=e573]:
+              - generic [ref=e574]:
+                - button "IT Infrastructure Engineer" [ref=e575] [cursor=pointer]
+                - generic [ref=e576]:
+                  - generic [ref=e577]:
+                    - generic [ref=e578]:
+                      - generic [ref=e580]:
+                        - img [ref=e581]
+                        - text: Easy Apply
+                      - heading "IT Infrastructure Engineer" [level=2] [ref=e583]:
+                        - link "IT Infrastructure Engineer" [ref=e584] [cursor=pointer]:
+                          - /url: /jobs/it-infrastructure-engineer/56520961?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e585]:
+                        - text: 23 February by
+                        - link "Adecco" [ref=e586] [cursor=pointer]:
+                          - /url: /jobs/adecco-uk-limited-45420/p45420
+                      - list [ref=e587]:
+                        - listitem [ref=e588]:
+                          - img "Salary" [ref=e589]
+                          - text: £35,000 - £45,000 per annum
+                        - listitem [ref=e591]:
+                          - img "Location" [ref=e592]
+                          - text: Rainham, Essex
+                        - listitem [ref=e594]:
+                          - img "Clock" [ref=e595]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e597] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e598]
+                  - complementary [ref=e600]:
+                    - button "Easy apply" [ref=e601] [cursor=pointer]
+                  - generic [ref=e603]:
+                    - link "Adecco jobs":
+                      - /url: /jobs/adecco-uk-limited-45420/p45420
+                      - img "Adecco jobs"
+                  - generic [ref=e604]:
+                    - button "Shortlist job" [ref=e605] [cursor=pointer]:
+                      - img [ref=e606]
+                    - button "hide job" [ref=e608] [cursor=pointer]:
+                      - img [ref=e609]
+            - generic [ref=e611]:
+              - article [ref=e612]:
+                - generic [ref=e613]:
+                  - button "IT Support Engineer" [ref=e614] [cursor=pointer]
+                  - generic [ref=e615]:
+                    - generic [ref=e616]:
+                      - generic [ref=e617]:
+                        - heading "IT Support Engineer" [level=2] [ref=e618]:
+                          - link "IT Support Engineer" [ref=e619] [cursor=pointer]:
+                            - /url: /jobs/it-support-engineer/56700880?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                        - generic [ref=e620]:
+                          - text: 25 March by
+                          - link "Asset Resourcing Limited" [ref=e621] [cursor=pointer]:
+                            - /url: /jobs/asset-resourcing-limited/p3957
+                        - list [ref=e622]:
+                          - listitem [ref=e623]:
+                            - img "Salary" [ref=e624]
+                            - text: £32,000 - £35,000 per annum
+                          - listitem [ref=e626]:
+                            - img "Location" [ref=e627]
+                            - text: Uxbridge, Middlesex
+                          - listitem [ref=e629]:
+                            - img "Clock" [ref=e630]
+                            - text: Permanent, full-time
+                      - button "See job description" [ref=e632] [cursor=pointer]:
+                        - text: See more
+                        - img "Chevron" [ref=e633]
+                    - complementary [ref=e635]
+                    - generic [ref=e637]:
+                      - link "Asset Resourcing Limited jobs":
+                        - /url: /jobs/asset-resourcing-limited/p3957
+                        - img "Asset Resourcing Limited jobs"
+                    - generic [ref=e638]:
+                      - button "Shortlist job" [ref=e639] [cursor=pointer]:
+                        - img [ref=e640]
+                      - button "hide job" [ref=e642] [cursor=pointer]:
+                        - img [ref=e643]
+              - alert [ref=e645]:
+                - button "Get Job Alerts" [ref=e646] [cursor=pointer]:
+                  - img [ref=e647]
+                  - text: Get Job Alerts
+                - paragraph [ref=e650]: Get new jobs matching this search straight to your inbox.
+            - article [ref=e652]:
+              - generic [ref=e653]:
+                - button "Trainee IT Engineer" [ref=e654] [cursor=pointer]
+                - generic [ref=e655]:
+                  - generic [ref=e656]:
+                    - generic [ref=e657]:
+                      - heading "Trainee IT Engineer" [level=2] [ref=e658]:
+                        - link "Trainee IT Engineer" [ref=e659] [cursor=pointer]:
+                          - /url: /jobs/trainee-it-engineer/56518140?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e660]:
+                        - text: 23 February by
+                        - link "Newto Training" [ref=e661] [cursor=pointer]:
+                          - /url: /jobs/newto-it/p90206
+                      - list [ref=e662]:
+                        - listitem [ref=e663]:
+                          - img "Salary" [ref=e664]
+                          - text: Training Course
+                        - listitem [ref=e666]:
+                          - img "Location" [ref=e667]
+                          - text: United Kingdom
+                        - listitem [ref=e669]:
+                          - img "Clock" [ref=e670]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e672] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e673]
+                  - complementary [ref=e675]
+                  - generic [ref=e677]:
+                    - link "Newto Training jobs":
+                      - /url: /jobs/newto-it/p90206
+                      - img "Newto Training jobs"
+                  - generic [ref=e678]:
+                    - button "Shortlist job" [ref=e679] [cursor=pointer]:
+                      - img [ref=e680]
+                    - button "hide job" [ref=e682] [cursor=pointer]:
+                      - img [ref=e683]
+            - article [ref=e686]:
+              - generic [ref=e687]:
+                - button "IT Engineer - Fire & Security" [ref=e688] [cursor=pointer]
+                - generic [ref=e689]:
+                  - generic [ref=e690]:
+                    - generic [ref=e691]:
+                      - generic [ref=e693]: Ending soon
+                      - heading "IT Engineer - Fire & Security" [level=2] [ref=e694]:
+                        - link "IT Engineer - Fire & Security" [ref=e695] [cursor=pointer]:
+                          - /url: /jobs/it-engineer-fire-security/56503244?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e696]:
+                        - text: 20 February by
+                        - link "Just IT" [ref=e697] [cursor=pointer]:
+                          - /url: /jobs/just-it-recruitment-ltd/p4981
+                      - list [ref=e698]:
+                        - listitem [ref=e699]:
+                          - img "Salary" [ref=e700]
+                          - text: £35,000 - £40,000 per annum
+                        - listitem [ref=e702]:
+                          - img "Location" [ref=e703]
+                          - text: North London, London
+                        - listitem [ref=e705]:
+                          - img "Clock" [ref=e706]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e708] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e709]
+                  - complementary [ref=e711]
+                  - generic [ref=e713]:
+                    - link "Just IT jobs":
+                      - /url: /jobs/just-it-recruitment-ltd/p4981
+                      - img "Just IT jobs"
+                  - generic [ref=e714]:
+                    - button "Shortlist job" [ref=e715] [cursor=pointer]:
+                      - img [ref=e716]
+                    - button "hide job" [ref=e718] [cursor=pointer]:
+                      - img [ref=e719]
+            - article [ref=e722]:
+              - generic [ref=e723]:
+                - button "Trainee IT Support Engineer" [ref=e724] [cursor=pointer]
+                - generic [ref=e725]:
+                  - generic [ref=e726]:
+                    - generic [ref=e727]:
+                      - heading "Trainee IT Support Engineer" [level=2] [ref=e728]:
+                        - link "Trainee IT Support Engineer" [ref=e729] [cursor=pointer]:
+                          - /url: /jobs/trainee-it-support-engineer/56518238?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e730]:
+                        - text: 23 February by
+                        - link "Newto Training" [ref=e731] [cursor=pointer]:
+                          - /url: /jobs/newto-it/p90206
+                      - list [ref=e732]:
+                        - listitem [ref=e733]:
+                          - img "Salary" [ref=e734]
+                          - text: Training Course
+                        - listitem [ref=e736]:
+                          - img "Location" [ref=e737]
+                          - text: United Kingdom
+                        - listitem [ref=e739]:
+                          - img "Clock" [ref=e740]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e742] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e743]
+                  - complementary [ref=e745]
+                  - generic [ref=e747]:
+                    - link "Newto Training jobs":
+                      - /url: /jobs/newto-it/p90206
+                      - img "Newto Training jobs"
+                  - generic [ref=e748]:
+                    - button "Shortlist job" [ref=e749] [cursor=pointer]:
+                      - img [ref=e750]
+                    - button "hide job" [ref=e752] [cursor=pointer]:
+                      - img [ref=e753]
+            - article [ref=e756]:
+              - generic [ref=e757]:
+                - button "Senior IT Engineer - FTC!" [ref=e758] [cursor=pointer]
+                - generic [ref=e759]:
+                  - generic [ref=e760]:
+                    - generic [ref=e761]:
+                      - generic [ref=e763]:
+                        - img [ref=e764]
+                        - text: Easy Apply
+                      - heading "Senior IT Engineer - FTC!" [level=2] [ref=e766]:
+                        - link "Senior IT Engineer - FTC!" [ref=e767] [cursor=pointer]:
+                          - /url: /jobs/senior-it-engineer-ftc/56540025?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e768]:
+                        - text: 25 February by
+                        - link "Office Angels" [ref=e769] [cursor=pointer]:
+                          - /url: /jobs/office-angels-45417/p45417
+                      - list [ref=e770]:
+                        - listitem [ref=e771]:
+                          - img "Salary" [ref=e772]
+                          - text: £45,000 - £50,000 per annum
+                        - listitem [ref=e774]:
+                          - img "Location" [ref=e775]
+                          - text: London
+                        - listitem [ref=e777]:
+                          - img "Clock" [ref=e778]
+                          - text: Contract, full-time
+                    - button "See job description" [ref=e780] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e781]
+                  - complementary [ref=e783]:
+                    - button "Easy apply" [ref=e784] [cursor=pointer]
+                  - generic [ref=e786]:
+                    - link "Office Angels jobs":
+                      - /url: /jobs/office-angels-45417/p45417
+                      - img "Office Angels jobs"
+                  - generic [ref=e787]:
+                    - button "Shortlist job" [ref=e788] [cursor=pointer]:
+                      - img [ref=e789]
+                    - button "hide job" [ref=e791] [cursor=pointer]:
+                      - img [ref=e792]
+            - article [ref=e795]:
+              - generic [ref=e796]:
+                - button "Trainee IT Support Engineer" [ref=e797] [cursor=pointer]
+                - generic [ref=e798]:
+                  - generic [ref=e799]:
+                    - generic [ref=e800]:
+                      - generic [ref=e802]: Ending soon
+                      - heading "Trainee IT Support Engineer" [level=2] [ref=e803]:
+                        - link "Trainee IT Support Engineer" [ref=e804] [cursor=pointer]:
+                          - /url: /jobs/trainee-it-support-engineer/56493931?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e805]:
+                        - text: 19 February by
+                        - link "Newto Training" [ref=e806] [cursor=pointer]:
+                          - /url: /jobs/newto-it/p90206
+                      - list [ref=e807]:
+                        - listitem [ref=e808]:
+                          - img "Salary" [ref=e809]
+                          - text: Training Course
+                        - listitem [ref=e811]:
+                          - img "Location" [ref=e812]
+                          - text: London
+                        - listitem [ref=e814]:
+                          - img "Clock" [ref=e815]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e817] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e818]
+                  - complementary [ref=e820]
+                  - generic [ref=e822]:
+                    - link "Newto Training jobs":
+                      - /url: /jobs/newto-it/p90206
+                      - img "Newto Training jobs"
+                  - generic [ref=e823]:
+                    - button "Shortlist job" [ref=e824] [cursor=pointer]:
+                      - img [ref=e825]
+                    - button "hide job" [ref=e827] [cursor=pointer]:
+                      - img [ref=e828]
+            - article [ref=e831]:
+              - generic [ref=e832]:
+                - button "2nd Line IT Engineer" [ref=e833] [cursor=pointer]
+                - generic [ref=e834]:
+                  - generic [ref=e835]:
+                    - generic [ref=e836]:
+                      - generic [ref=e838]:
+                        - img [ref=e839]
+                        - text: Easy Apply
+                      - heading "2nd Line IT Engineer" [level=2] [ref=e841]:
+                        - link "2nd Line IT Engineer" [ref=e842] [cursor=pointer]:
+                          - /url: /jobs/2nd-line-it-engineer/56640538?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e843]:
+                        - text: 13 March by
+                        - link "Context Recruitment Limited" [ref=e844] [cursor=pointer]:
+                          - /url: /jobs/context-recruitment-limited/p39150
+                      - list [ref=e845]:
+                        - listitem [ref=e846]:
+                          - img "Salary" [ref=e847]
+                          - text: £35,000 - £38,000 per annum
+                        - listitem [ref=e849]:
+                          - img "Location" [ref=e850]
+                          - text: London
+                        - listitem [ref=e852]:
+                          - img "Clock" [ref=e853]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e855] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e856]
+                  - complementary [ref=e858]:
+                    - button "Easy apply" [ref=e859] [cursor=pointer]
+                  - generic [ref=e861]:
+                    - link "Context Recruitment Limited jobs":
+                      - /url: /jobs/context-recruitment-limited/p39150
+                      - img "Context Recruitment Limited jobs"
+                  - generic [ref=e862]:
+                    - button "Shortlist job" [ref=e863] [cursor=pointer]:
+                      - img [ref=e864]
+                    - button "hide job" [ref=e866] [cursor=pointer]:
+                      - img [ref=e867]
+            - article [ref=e870]:
+              - generic [ref=e871]:
+                - button "Trainee Associate IT Engineer" [ref=e872] [cursor=pointer]
+                - generic [ref=e873]:
+                  - generic [ref=e874]:
+                    - generic [ref=e875]:
+                      - heading "Trainee Associate IT Engineer" [level=2] [ref=e876]:
+                        - link "Trainee Associate IT Engineer" [ref=e877] [cursor=pointer]:
+                          - /url: /jobs/trainee-associate-it-engineer/56518282?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e878]:
+                        - text: 23 February by
+                        - link "Newto Training" [ref=e879] [cursor=pointer]:
+                          - /url: /jobs/newto-it/p90206
+                      - list [ref=e880]:
+                        - listitem [ref=e881]:
+                          - img "Salary" [ref=e882]
+                          - text: Training Course
+                        - listitem [ref=e884]:
+                          - img "Location" [ref=e885]
+                          - text: United Kingdom
+                        - listitem [ref=e887]:
+                          - img "Clock" [ref=e888]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e890] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e891]
+                  - complementary [ref=e893]
+                  - generic [ref=e895]:
+                    - link "Newto Training jobs":
+                      - /url: /jobs/newto-it/p90206
+                      - img "Newto Training jobs"
+                  - generic [ref=e896]:
+                    - button "Shortlist job" [ref=e897] [cursor=pointer]:
+                      - img [ref=e898]
+                    - button "hide job" [ref=e900] [cursor=pointer]:
+                      - img [ref=e901]
+            - article [ref=e904]:
+              - generic [ref=e905]:
+                - button "3rd Line IT Support Engineer" [ref=e906] [cursor=pointer]
+                - generic [ref=e907]:
+                  - generic [ref=e908]:
+                    - generic [ref=e909]:
+                      - generic [ref=e910]:
+                        - generic [ref=e911]: Ending soon
+                        - generic [ref=e912]:
+                          - img [ref=e913]
+                          - text: Easy Apply
+                      - heading "3rd Line IT Support Engineer" [level=2] [ref=e915]:
+                        - link "3rd Line IT Support Engineer" [ref=e916] [cursor=pointer]:
+                          - /url: /jobs/3rd-line-it-support-engineer/56506461?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e917]:
+                        - text: 20 February by
+                        - link "ITSS Recruitment Ltd" [ref=e918] [cursor=pointer]:
+                          - /url: /jobs/itss-recruitment-ltd/p9124
+                      - list [ref=e919]:
+                        - listitem [ref=e920]:
+                          - img "Salary" [ref=e921]
+                          - text: £45,000 - £60,000 per annum
+                        - listitem [ref=e923]:
+                          - img "Location" [ref=e924]
+                          - text: London
+                        - listitem [ref=e926]:
+                          - img "Clock" [ref=e927]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e929] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e930]
+                  - complementary [ref=e932]:
+                    - button "Easy apply" [ref=e933] [cursor=pointer]
+                  - generic [ref=e935]:
+                    - link "ITSS Recruitment Ltd jobs":
+                      - /url: /jobs/itss-recruitment-ltd/p9124
+                      - img "ITSS Recruitment Ltd jobs"
+                  - generic [ref=e936]:
+                    - button "Shortlist job" [ref=e937] [cursor=pointer]:
+                      - img [ref=e938]
+                    - button "hide job" [ref=e940] [cursor=pointer]:
+                      - img [ref=e941]
+            - article [ref=e944]:
+              - generic [ref=e945]:
+                - button "IT Infrastructure Engineer - MSP" [ref=e946] [cursor=pointer]
+                - generic [ref=e947]:
+                  - generic [ref=e948]:
+                    - generic [ref=e949]:
+                      - generic [ref=e950]:
+                        - generic [ref=e951]: Featured
+                        - generic [ref=e952]:
+                          - img [ref=e953]
+                          - text: Easy Apply
+                      - heading "IT Infrastructure Engineer - MSP" [level=2] [ref=e955]:
+                        - link "IT Infrastructure Engineer - MSP" [ref=e956] [cursor=pointer]:
+                          - /url: /jobs/it-infrastructure-engineer-msp/56721823?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e957]:
+                        - text: 2 days ago by
+                        - link "Ashdown Group" [ref=e958] [cursor=pointer]:
+                          - /url: /jobs/ashdown-group-ltd/p4810
+                      - list [ref=e959]:
+                        - listitem [ref=e960]:
+                          - img "Salary" [ref=e961]
+                          - text: £55,000 - £60,000 per annum
+                        - listitem [ref=e963]:
+                          - img "Location" [ref=e964]
+                          - text: Borehamwood, Hertfordshire
+                        - listitem [ref=e966]:
+                          - img "Clock" [ref=e967]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e969] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e970]
+                  - complementary [ref=e972]:
+                    - button "Easy apply" [ref=e973] [cursor=pointer]
+                  - link "Ashdown Group jobs" [ref=e976] [cursor=pointer]:
+                    - /url: /jobs/ashdown-group-ltd/p4810
+                    - img "Ashdown Group jobs" [ref=e977]
+                  - generic [ref=e978]:
+                    - button "Shortlist job" [ref=e979] [cursor=pointer]:
+                      - img [ref=e980]
+                    - button "hide job" [ref=e982] [cursor=pointer]:
+                      - img [ref=e983]
+            - article [ref=e986]:
+              - generic [ref=e987]:
+                - button "Graduate / Junior IT Support Engineer" [ref=e988] [cursor=pointer]
+                - generic [ref=e989]:
+                  - generic [ref=e990]:
+                    - generic [ref=e991]:
+                      - generic [ref=e992]:
+                        - generic [ref=e993]: Featured
+                        - generic [ref=e994]:
+                          - img [ref=e995]
+                          - text: Easy Apply
+                      - heading "Graduate / Junior IT Support Engineer" [level=2] [ref=e997]:
+                        - link "Graduate / Junior IT Support Engineer" [ref=e998] [cursor=pointer]:
+                          - /url: /jobs/graduate-junior-it-support-engineer/56719904?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e999]:
+                        - text: 2 days ago by
+                        - link "Ashdown Group" [ref=e1000] [cursor=pointer]:
+                          - /url: /jobs/ashdown-group-ltd/p4810
+                      - list [ref=e1001]:
+                        - listitem [ref=e1002]:
+                          - img "Salary" [ref=e1003]
+                          - text: £20,000 - £35,000 per annum
+                        - listitem [ref=e1005]:
+                          - img "Location" [ref=e1006]
+                          - text: London
+                        - listitem [ref=e1008]:
+                          - img "Clock" [ref=e1009]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e1011] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e1012]
+                  - complementary [ref=e1014]:
+                    - button "Easy apply" [ref=e1015] [cursor=pointer]
+                  - link "Ashdown Group jobs" [ref=e1018] [cursor=pointer]:
+                    - /url: /jobs/ashdown-group-ltd/p4810
+                    - img "Ashdown Group jobs" [ref=e1019]
+                  - generic [ref=e1020]:
+                    - button "Shortlist job" [ref=e1021] [cursor=pointer]:
+                      - img [ref=e1022]
+                    - button "hide job" [ref=e1024] [cursor=pointer]:
+                      - img [ref=e1025]
+            - article [ref=e1028]:
+              - generic [ref=e1029]:
+                - button "3rd Line / IT Infrastructure Engineer" [ref=e1030] [cursor=pointer]
+                - generic [ref=e1031]:
+                  - generic [ref=e1032]:
+                    - generic [ref=e1033]:
+                      - heading "3rd Line / IT Infrastructure Engineer" [level=2] [ref=e1034]:
+                        - link "3rd Line / IT Infrastructure Engineer" [ref=e1035] [cursor=pointer]:
+                          - /url: /jobs/3rd-line-it-infrastructure-engineer/56633569?source=searchResults&filter=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                      - generic [ref=e1036]:
+                        - text: 12 March by
+                        - link "SER (Staffing) Ltd" [ref=e1037] [cursor=pointer]:
+                          - /url: /jobs/solutions-engineering-recruitment/p3781
+                      - list [ref=e1038]:
+                        - listitem [ref=e1039]:
+                          - img "Salary" [ref=e1040]
+                          - text: £50,000 - £55,000 per annum
+                        - listitem [ref=e1042]:
+                          - img "Location" [ref=e1043]
+                          - text: London
+                        - listitem [ref=e1045]:
+                          - img "Clock" [ref=e1046]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e1048] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e1049]
+                  - complementary [ref=e1051]
+                  - generic [ref=e1053]:
+                    - link "SER (Staffing) Ltd jobs":
+                      - /url: /jobs/solutions-engineering-recruitment/p3781
+                      - img "SER (Staffing) Ltd jobs"
+                  - generic [ref=e1054]:
+                    - button "Shortlist job" [ref=e1055] [cursor=pointer]:
+                      - img [ref=e1056]
+                    - button "hide job" [ref=e1058] [cursor=pointer]:
+                      - img [ref=e1059]
+            - generic [ref=e1061]:
+              - generic [ref=e1062]: 1 - 25 of 7,582 jobs
+              - generic [ref=e1063]:
+                - navigation "pagination" [ref=e1064]:
+                  - list [ref=e1065]:
+                    - listitem [ref=e1066]:
+                      - link "Previous page":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000
+                        - img
+                        - text: Previous
+                    - listitem [ref=e1067]:
+                      - generic "Goto Page 1": "1"
+                    - listitem [ref=e1068]:
+                      - link "Goto Page 2" [ref=e1069] [cursor=pointer]:
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=2
+                        - text: "2"
+                    - listitem [ref=e1070]:
+                      - link "Goto Page 3" [ref=e1071] [cursor=pointer]:
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=3
+                        - text: "3"
+                    - listitem [ref=e1072]:
+                      - link "Goto Page 4" [ref=e1073] [cursor=pointer]:
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=4
+                        - text: "4"
+                    - listitem [ref=e1074]:
+                      - link "Goto Page 5" [ref=e1075] [cursor=pointer]:
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=5
+                        - text: "5"
+                    - listitem [ref=e1076]:
+                      - generic "Goto Page ...": ...
+                    - listitem [ref=e1077]:
+                      - link "Goto Page 304" [ref=e1078] [cursor=pointer]:
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=304
+                        - text: "304"
+                    - listitem [ref=e1079]:
+                      - link "Next page" [ref=e1080] [cursor=pointer]:
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=2
+                        - text: Next
+                        - img [ref=e1081]
+                - link "Apply on the go - get the app" [ref=e1083] [cursor=pointer]:
+                  - /url: https://reedcouk.onelink.me/933966585/3bf9bc3e
+            - generic [ref=e1085]:
+              - generic [ref=e1086]: Frequently Asked Questions
+              - generic [ref=e1087]:
+                - strong [ref=e1088]: How many It Engineer jobs in london are there on Reed.co.uk right now?
+                - paragraph [ref=e1090]: There are 7582 It Engineer jobs within 10 miles of London on Reed.co.uk right now.
+              - generic [ref=e1091]:
+                - strong [ref=e1092]: How can I be the first to find out when there are new It Engineer jobs london on Reed.co.uk?
+                - paragraph [ref=e1094]:
+                  - text: Creating
+                  - button "job alerts" [ref=e1095] [cursor=pointer]
+                  - text: will help you keep up-to-date with the latest It Engineer jobs in london.
+                  - link "Sign in" [ref=e1096] [cursor=pointer]:
+                    - /url: /authentication/login?returnTo=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                  - text: or
+                  - link "register" [ref=e1097] [cursor=pointer]:
+                    - /url: /authentication/register?returnTo=%2Fjobs%2Fit-engineer-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000
+                  - text: to set them up today.
+              - generic [ref=e1098]:
+                - strong [ref=e1099]: What similar jobs can I find on Reed.co.uk?
+                - paragraph [ref=e1101]:
+                  - text: Jobseekers searching for it engineer jobs also search for
+                  - generic [ref=e1102]:
+                    - link "it support jobs" [ref=e1103] [cursor=pointer]:
+                      - /url: /jobs/it-support-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1104]:
+                    - link "it manager jobs" [ref=e1105] [cursor=pointer]:
+                      - /url: /jobs/it-manager-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1106]:
+                    - link "it administrator jobs" [ref=e1107] [cursor=pointer]:
+                      - /url: /jobs/it-administrator-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1108]:
+                    - link "it technician jobs" [ref=e1109] [cursor=pointer]:
+                      - /url: /jobs/it-technician-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1110]:
+                    - text: and
+                    - link "it jobs" [ref=e1111] [cursor=pointer]:
+                      - /url: /jobs/it-jobs-in-london
+                    - text: .
+              - generic [ref=e1112]:
+                - strong [ref=e1113]: What is the average salary of It Engineer jobs in london
+                - paragraph [ref=e1115]:
+                  - text: Use Reed.co.uk's
+                  - link "average salary checker" [ref=e1116] [cursor=pointer]:
+                    - /url: /average-salary
+                  - text: to find out what you could be earning.
+            - generic [ref=e1117]:
+              - generic [ref=e1118]: Browse jobs by locations
+              - list [ref=e1120]:
+                - listitem [ref=e1121]:
+                  - link "It Engineer Jobs in East London" [ref=e1122] [cursor=pointer]:
+                    - /url: /jobs/it-engineer-jobs-in-east-london?salaryFrom=33000&salaryTo=100000
+                - listitem [ref=e1123]:
+                  - link "It Engineer Jobs in Watford" [ref=e1124] [cursor=pointer]:
+                    - /url: /jobs/it-engineer-jobs-in-watford?salaryFrom=33000&salaryTo=100000
+                - listitem [ref=e1125]:
+                  - link "It Engineer Jobs in South West London" [ref=e1126] [cursor=pointer]:
+                    - /url: /jobs/it-engineer-jobs-in-south-west-london?salaryFrom=33000&salaryTo=100000
+                - listitem [ref=e1127]:
+                  - link "It Engineer Jobs in South East London" [ref=e1128] [cursor=pointer]:
+                    - /url: /jobs/it-engineer-jobs-in-south-east-london?salaryFrom=33000&salaryTo=100000
+                - listitem [ref=e1129]:
+                  - link "It Engineer Jobs in North London" [ref=e1130] [cursor=pointer]:
+                    - /url: /jobs/it-engineer-jobs-in-north-london?salaryFrom=33000&salaryTo=100000
+                - listitem [ref=e1131]:
+                  - link "It Engineer Jobs in West London" [ref=e1132] [cursor=pointer]:
+                    - /url: /jobs/it-engineer-jobs-in-west-london?salaryFrom=33000&salaryTo=100000
+                - listitem [ref=e1133]:
+                  - link "It Engineer Jobs in Croydon" [ref=e1134] [cursor=pointer]:
+                    - /url: /jobs/it-engineer-jobs-in-croydon?salaryFrom=33000&salaryTo=100000
+          - complementary [ref=e1135]:
+            - generic [ref=e1136]:
+              - generic [ref=e1137]:
+                - generic [ref=e1138]:
+                  - paragraph [ref=e1139]:
+                    - text: Filters
+                    - generic [ref=e1140]: "3"
+                  - button "Clear all filters" [ref=e1141] [cursor=pointer]: Clear all
+                - list [ref=e1143]:
+                  - listitem [ref=e1144]:
+                    - button "it engineer" [ref=e1145] [cursor=pointer]:
+                      - generic [ref=e1146]: it engineer
+                  - listitem [ref=e1147]:
+                    - button "London (10 miles)" [ref=e1148] [cursor=pointer]:
+                      - generic [ref=e1149]: London (10 miles)
+                  - listitem [ref=e1150]:
+                    - button "£33,000 - £100,000" [ref=e1151] [cursor=pointer]:
+                      - generic [ref=e1152]: £33,000 - £100,000
+              - generic [ref=e1153]:
+                - generic [ref=e1155]:
+                  - generic [ref=e1157]: Distance
+                  - combobox "Select a proximity" [ref=e1158] [cursor=pointer]:
+                    - option "0 miles"
+                    - option "1 miles"
+                    - option "3 miles"
+                    - option "5 miles"
+                    - option "10 miles" [selected]
+                    - option "15 miles"
+                    - option "20 miles"
+                    - option "30 miles"
+                    - option "50 miles"
+                - generic [ref=e1159]:
+                  - button "Salary range" [ref=e1161] [cursor=pointer]
+                  - generic [ref=e1162]:
+                    - generic [ref=e1163]:
+                      - generic [ref=e1164]: "From:"
+                      - combobox "Select a salary from" [ref=e1165] [cursor=pointer]:
+                        - option "£ Any" [selected]
+                        - option "Up to £10,000"
+                        - option "£12,000"
+                        - option "£14,000"
+                        - option "£16,000"
+                        - option "£18,000"
+                        - option "£20,000"
+                        - option "£22,000"
+                        - option "£24,000"
+                        - option "£26,000"
+                        - option "£28,000"
+                        - option "£30,000"
+                        - option "£32,000"
+                        - option "£34,000"
+                        - option "£36,000"
+                        - option "£38,000"
+                        - option "£40,000"
+                        - option "£42,000"
+                        - option "£44,000"
+                        - option "£46,000"
+                        - option "£48,000"
+                        - option "£50,000"
+                        - option "£55,000"
+                        - option "£60,000"
+                        - option "£65,000"
+                        - option "£70,000"
+                        - option "£75,000"
+                        - option "£80,000"
+                        - option "£85,000"
+                        - option "£90,000"
+                        - option "£95,000"
+                        - option "£100,000+"
+                    - generic [ref=e1166]:
+                      - generic [ref=e1167]: "To:"
+                      - combobox "Select a salary to" [ref=e1168] [cursor=pointer]:
+                        - option "£ Any"
+                        - option "Up to £10,000"
+                        - option "£12,000"
+                        - option "£14,000"
+                        - option "£16,000"
+                        - option "£18,000"
+                        - option "£20,000"
+                        - option "£22,000"
+                        - option "£24,000"
+                        - option "£26,000"
+                        - option "£28,000"
+                        - option "£30,000"
+                        - option "£32,000"
+                        - option "£34,000"
+                        - option "£36,000"
+                        - option "£38,000"
+                        - option "£40,000"
+                        - option "£42,000"
+                        - option "£44,000"
+                        - option "£46,000"
+                        - option "£48,000"
+                        - option "£50,000"
+                        - option "£55,000"
+                        - option "£60,000"
+                        - option "£65,000"
+                        - option "£70,000"
+                        - option "£75,000"
+                        - option "£80,000"
+                        - option "£85,000"
+                        - option "£90,000"
+                        - option "£95,000"
+                        - option "£100,000+" [selected]
+                - generic [ref=e1169]:
+                  - button "Job type" [ref=e1171] [cursor=pointer]
+                  - generic [ref=e1172]:
+                    - generic [ref=e1174]:
+                      - checkbox "Permanent(6,484)" [ref=e1175]
+                      - link "Permanent(6,484)":
+                        - /url: /jobs/permanent-it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000
+                        - text: Permanent
+                        - generic: (6,484)
+                    - generic [ref=e1177]:
+                      - checkbox "Temporary(454)" [ref=e1178]
+                      - link "Temporary(454)":
+                        - /url: /jobs/temporary-it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000
+                        - text: Temporary
+                        - generic: (454)
+                    - generic [ref=e1180]:
+                      - checkbox "Contract(644)" [ref=e1181]
+                      - link "Contract(644)":
+                        - /url: /jobs/contract-it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000
+                        - text: Contract
+                        - generic: (644)
+                    - generic [ref=e1183]:
+                      - checkbox "Full-time(7,413)" [ref=e1184]
+                      - link "Full-time(7,413)":
+                        - /url: /jobs/full-time-it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000
+                        - text: Full-time
+                        - generic: (7,413)
+                    - generic [ref=e1186]:
+                      - checkbox "Part-time(391)" [ref=e1187]
+                      - link "Part-time(391)":
+                        - /url: /jobs/part-time-it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000
+                        - text: Part-time
+                        - generic: (391)
+                    - generic [ref=e1189]:
+                      - checkbox "Work from home(499)" [ref=e1190]
+                      - link "Work from home(499)":
+                        - /url: /jobs/work-from-home-it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000
+                        - text: Work from home
+                        - generic: (499)
+                - generic [ref=e1191]:
+                  - button "Posted by" [ref=e1193] [cursor=pointer]
+                  - generic [ref=e1194]:
+                    - generic [ref=e1196]:
+                      - checkbox "Agency(5,053)" [ref=e1197]
+                      - link "Agency(5,053)":
+                        - /url: /jobs/agency-it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000
+                        - text: Agency
+                        - generic: (5,053)
+                    - generic [ref=e1199]:
+                      - checkbox "Employer(2,529)" [ref=e1200]
+                      - link "Employer(2,529)":
+                        - /url: /jobs/direct-it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000
+                        - text: Employer
+                        - generic: (2,529)
+                    - generic [ref=e1202]:
+                      - checkbox "Reed(8)" [ref=e1203]
+                      - link "Reed(8)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&orgId=1
+                        - text: Reed
+                        - generic: (8)
+                - generic [ref=e1204]:
+                  - button "Hide" [ref=e1206] [cursor=pointer]
+                  - generic [ref=e1207]:
+                    - generic [ref=e1210]:
+                      - checkbox "Jobs without salary displayed" [ref=e1211]
+                      - link "Jobs without salary displayed":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&excludeSalaryDescriptions=16%2C32%2C64
+                    - generic [ref=e1213]:
+                      - generic [ref=e1214]:
+                        - checkbox "Training courses(703)" [ref=e1215]
+                        - link "Training courses(703)":
+                          - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&hideTrainingJobs=true
+                          - text: Training courses
+                          - generic: (703)
+                      - img [ref=e1217]
+                    - generic [ref=e1220]:
+                      - generic [ref=e1221]:
+                        - checkbox "Survey jobs(18)" [ref=e1222]
+                        - link "Survey jobs(18)":
+                          - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&hideSurveyJobs=true
+                          - text: Survey jobs
+                          - generic: (18)
+                      - img [ref=e1224]
+                - generic [ref=e1226]:
+                  - button "Date posted" [ref=e1228] [cursor=pointer]
+                  - combobox "Select date posted within" [ref=e1231] [cursor=pointer]:
+                    - option "Anytime" [selected]
+                    - option "Today (338)"
+                    - option "Last three days (1,674)"
+                    - option "Last week (2,070)"
+                    - option "Last two weeks (3,206)"
+                - generic [ref=e1232]:
+                  - button "Specialisms" [ref=e1234] [cursor=pointer]
+                  - generic [ref=e1235]:
+                    - generic [ref=e1237]:
+                      - checkbox "IT & Telecoms(1,956)" [ref=e1238]
+                      - link "IT & Telecoms(1,956)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=52
+                        - text: IT & Telecoms
+                        - generic: (1,956)
+                    - generic [ref=e1240]:
+                      - checkbox "Education(766)" [ref=e1241]
+                      - link "Education(766)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=68
+                        - text: Education
+                        - generic: (766)
+                    - generic [ref=e1243]:
+                      - checkbox "Strategy & Consultancy(423)" [ref=e1244]
+                      - link "Strategy & Consultancy(423)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=1755
+                        - text: Strategy & Consultancy
+                        - generic: (423)
+                    - generic [ref=e1246]:
+                      - checkbox "Accountancy (Qualified)(334)" [ref=e1247]
+                      - link "Accountancy (Qualified)(334)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=100
+                        - text: Accountancy (Qualified)
+                        - generic: (334)
+                    - generic [ref=e1249]:
+                      - checkbox "Legal(292)" [ref=e1250]
+                      - link "Legal(292)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=101
+                        - text: Legal
+                        - generic: (292)
+                    - generic [ref=e1252]:
+                      - checkbox "Admin, Secretarial & PA(284)" [ref=e1253]
+                      - link "Admin, Secretarial & PA(284)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=3
+                        - text: Admin, Secretarial & PA
+                        - generic: (284)
+                    - generic [ref=e1255]:
+                      - checkbox "Financial Services(284)" [ref=e1256]
+                      - link "Financial Services(284)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=117
+                        - text: Financial Services
+                        - generic: (284)
+                    - generic [ref=e1258]:
+                      - checkbox "Engineering(271)" [ref=e1259]
+                      - link "Engineering(271)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=12
+                        - text: Engineering
+                        - generic: (271)
+                    - generic [ref=e1261]:
+                      - checkbox "Construction & Property(244)" [ref=e1262]
+                      - link "Construction & Property(244)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=146
+                        - text: Construction & Property
+                        - generic: (244)
+                    - generic [ref=e1264]:
+                      - checkbox "Sales(213)" [ref=e1265]
+                      - link "Sales(213)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=30
+                        - text: Sales
+                        - generic: (213)
+                    - generic [ref=e1267]:
+                      - checkbox "Banking(206)" [ref=e1268]
+                      - link "Banking(206)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=5
+                        - text: Banking
+                        - generic: (206)
+                    - generic [ref=e1270]:
+                      - checkbox "Health & Medicine(195)" [ref=e1271]
+                      - link "Health & Medicine(195)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=36
+                        - text: Health & Medicine
+                        - generic: (195)
+                    - generic [ref=e1273]:
+                      - checkbox "Human Resources(188)" [ref=e1274]
+                      - link "Human Resources(188)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=24
+                        - text: Human Resources
+                        - generic: (188)
+                    - generic [ref=e1276]:
+                      - checkbox "Accountancy(177)" [ref=e1277]
+                      - link "Accountancy(177)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=2
+                        - text: Accountancy
+                        - generic: (177)
+                    - generic [ref=e1279]:
+                      - checkbox "Estate Agency(172)" [ref=e1280]
+                      - link "Estate Agency(172)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=1962
+                        - text: Estate Agency
+                        - generic: (172)
+                    - generic [ref=e1282]:
+                      - checkbox "Retail(170)" [ref=e1283]
+                      - link "Retail(170)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=90
+                        - text: Retail
+                        - generic: (170)
+                    - generic [ref=e1285]:
+                      - checkbox "Social Care(163)" [ref=e1286]
+                      - link "Social Care(163)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=34
+                        - text: Social Care
+                        - generic: (163)
+                    - generic [ref=e1288]:
+                      - checkbox "Transport & Logistics(152)" [ref=e1289]
+                      - link "Transport & Logistics(152)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=11
+                        - text: Transport & Logistics
+                        - generic: (152)
+                    - generic [ref=e1291]:
+                      - checkbox "Recruitment Consultancy(135)" [ref=e1292]
+                      - link "Recruitment Consultancy(135)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=338
+                        - text: Recruitment Consultancy
+                        - generic: (135)
+                    - generic [ref=e1294]:
+                      - checkbox "Marketing & PR(129)" [ref=e1295]
+                      - link "Marketing & PR(129)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=18
+                        - text: Marketing & PR
+                        - generic: (129)
+                    - generic [ref=e1297]:
+                      - checkbox "General Insurance(128)" [ref=e1298]
+                      - link "General Insurance(128)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=16
+                        - text: General Insurance
+                        - generic: (128)
+                    - generic [ref=e1300]:
+                      - checkbox "Hospitality & Catering(110)" [ref=e1301]
+                      - link "Hospitality & Catering(110)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=6
+                        - text: Hospitality & Catering
+                        - generic: (110)
+                    - generic [ref=e1303]:
+                      - checkbox "Customer Service(81)" [ref=e1304]
+                      - link "Customer Service(81)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=66
+                        - text: Customer Service
+                        - generic: (81)
+                    - generic [ref=e1306]:
+                      - checkbox "Motoring & Automotive(70)" [ref=e1307]
+                      - link "Motoring & Automotive(70)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=1700
+                        - text: Motoring & Automotive
+                        - generic: (70)
+                    - generic [ref=e1309]:
+                      - checkbox "Charity & Voluntary(69)" [ref=e1310]
+                      - link "Charity & Voluntary(69)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=500
+                        - text: Charity & Voluntary
+                        - generic: (69)
+                    - generic [ref=e1312]:
+                      - checkbox "Security & Safety(65)" [ref=e1313]
+                      - link "Security & Safety(65)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=1963
+                        - text: Security & Safety
+                        - generic: (65)
+                    - generic [ref=e1315]:
+                      - checkbox "FMCG(55)" [ref=e1316]
+                      - link "FMCG(55)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=1722
+                        - text: FMCG
+                        - generic: (55)
+                    - generic [ref=e1318]:
+                      - checkbox "Leisure & Tourism(52)" [ref=e1319]
+                      - link "Leisure & Tourism(52)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=92
+                        - text: Leisure & Tourism
+                        - generic: (52)
+                    - generic [ref=e1321]:
+                      - checkbox "Media, Digital & Creative(47)" [ref=e1322]
+                      - link "Media, Digital & Creative(47)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=71
+                        - text: Media, Digital & Creative
+                        - generic: (47)
+                    - generic [ref=e1324]:
+                      - checkbox "Purchasing(32)" [ref=e1325]
+                      - link "Purchasing(32)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=27
+                        - text: Purchasing
+                        - generic: (32)
+                    - generic [ref=e1327]:
+                      - checkbox "Energy(28)" [ref=e1328]
+                      - link "Energy(28)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=1961
+                        - text: Energy
+                        - generic: (28)
+                    - generic [ref=e1330]:
+                      - checkbox "Manufacturing(26)" [ref=e1331]
+                      - link "Manufacturing(26)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=168
+                        - text: Manufacturing
+                        - generic: (26)
+                    - generic [ref=e1333]:
+                      - checkbox "Training(13)" [ref=e1334]
+                      - link "Training(13)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=1909
+                        - text: Training
+                        - generic: (13)
+                    - generic [ref=e1336]:
+                      - checkbox "Graduate Training & Internships(13)" [ref=e1337]
+                      - link "Graduate Training & Internships(13)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=169
+                        - text: Graduate Training & Internships
+                        - generic: (13)
+                    - generic [ref=e1339]:
+                      - checkbox "Scientific(13)" [ref=e1340]
+                      - link "Scientific(13)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=89
+                        - text: Scientific
+                        - generic: (13)
+                    - generic [ref=e1342]:
+                      - checkbox "Other(12)" [ref=e1343]
+                      - link "Other(12)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=21
+                        - text: Other
+                        - generic: (12)
+                    - generic [ref=e1345]:
+                      - checkbox "Apprenticeships(8)" [ref=e1346]
+                      - link "Apprenticeships(8)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&multipleParentSectorIds=1964
+                        - text: Apprenticeships
+                        - generic: (8)
+                - generic [ref=e1347]:
+                  - button "Experience level" [ref=e1349] [cursor=pointer]
+                  - generic [ref=e1353]:
+                    - checkbox "Graduate" [ref=e1354]
+                    - link "Graduate":
+                      - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&graduate=true
+                - generic [ref=e1355]:
+                  - button "More options" [ref=e1357] [cursor=pointer]
+                  - generic [ref=e1358]:
+                    - generic [ref=e1361]:
+                      - checkbox "Early bird(472)" [ref=e1362]
+                      - link "Early bird(472)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&isEarlyBird=true
+                        - text: Early bird
+                        - generic: (472)
+                    - generic [ref=e1365]:
+                      - checkbox "Easy apply" [ref=e1366]
+                      - link "Easy apply":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&isEasyApply=true
+                    - generic [ref=e1369]:
+                      - checkbox "Visa sponsorship(2)" [ref=e1370]
+                      - link "Visa sponsorship(2)":
+                        - /url: /jobs/it-engineer-jobs-in-london?salaryFrom=33000&salaryTo=100000&visaSponsorship=true
+                        - text: Visa sponsorship
+                        - generic: (2)
+                - generic [ref=e1371]:
+                  - generic [ref=e1372]: Locations
+                  - list [ref=e1373]:
+                    - listitem [ref=e1374]:
+                      - link "East London (81)" [ref=e1375] [cursor=pointer]:
+                        - /url: /jobs/it-engineer-jobs-in-east-london?salaryFrom=33000&salaryTo=100000
+                        - text: East London
+                        - generic [ref=e1376]: (81)
+                    - listitem [ref=e1377]:
+                      - link "Watford (73)" [ref=e1378] [cursor=pointer]:
+                        - /url: /jobs/it-engineer-jobs-in-watford?salaryFrom=33000&salaryTo=100000
+                        - text: Watford
+                        - generic [ref=e1379]: (73)
+                    - listitem [ref=e1380]:
+                      - link "South West London (68)" [ref=e1381] [cursor=pointer]:
+                        - /url: /jobs/it-engineer-jobs-in-south-west-london?salaryFrom=33000&salaryTo=100000
+                        - text: South West London
+                        - generic [ref=e1382]: (68)
+                    - listitem [ref=e1383]:
+                      - link "South East London (61)" [ref=e1384] [cursor=pointer]:
+                        - /url: /jobs/it-engineer-jobs-in-south-east-london?salaryFrom=33000&salaryTo=100000
+                        - text: South East London
+                        - generic [ref=e1385]: (61)
+                    - listitem [ref=e1386]:
+                      - link "North London (54)" [ref=e1387] [cursor=pointer]:
+                        - /url: /jobs/it-engineer-jobs-in-north-london?salaryFrom=33000&salaryTo=100000
+                        - text: North London
+                        - generic [ref=e1388]: (54)
+                  - button "See more locations" [ref=e1389] [cursor=pointer]
+                - link "View all jobs in london Chevron" [ref=e1391] [cursor=pointer]:
+                  - /url: /jobs/jobs-in-london
+                  - text: View all jobs in london
+                  - img "Chevron" [ref=e1392]
+            - generic [ref=e1395]:
+              - heading "It Engineer courses" [level=3] [ref=e1397]
+              - generic [ref=e1398]:
+                - list [ref=e1399]:
+                  - listitem [ref=e1400]:
+                    - link "IT Network Support Engineer Online, Self-paced £100" [ref=e1401] [cursor=pointer]:
+                      - /url: /courses/it-network-support-engineer/288786?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=It_Engineer_courses_288786
+                      - heading "IT Network Support Engineer" [level=4] [ref=e1402]
+                      - paragraph [ref=e1403]: Online, Self-paced
+                      - paragraph [ref=e1404]: £100
+                  - listitem [ref=e1405]:
+                    - link "CBIT Associate Diploma in Software Engineering (Level 5) - Accredited by BCS Online, Self-paced £560" [ref=e1406] [cursor=pointer]:
+                      - /url: /courses/cbit-associate-diploma-in-software-engineering-level-5-accredited-by-bcs/513681?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=It_Engineer_courses_513681
+                      - heading "CBIT Associate Diploma in Software Engineering (Level 5) - Accredited by BCS" [level=4] [ref=e1407]
+                      - paragraph [ref=e1408]: Online, Self-paced
+                      - paragraph [ref=e1409]: £560
+                  - listitem [ref=e1410]:
+                    - link "IT Support Engineer Using SQL, Python & JavaScript - Job Ready Programme with Money Back Online, Self-paced £499" [ref=e1411] [cursor=pointer]:
+                      - /url: /courses/it-support-engineer-using-sql-python-javascript-job-ready-programme-with-money-back/282512?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=It_Engineer_courses_282512
+                      - heading "IT Support Engineer Using SQL, Python & JavaScript - Job Ready Programme with Money Back" [level=4] [ref=e1412]
+                      - paragraph [ref=e1413]: Online, Self-paced
+                      - paragraph [ref=e1414]: £499
+                - link "View Engineering courses Chevron" [ref=e1415] [cursor=pointer]:
+                  - /url: https://www.reed.co.uk/courses/engineering?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=view_It_Engineer_courses
+                  - text: View Engineering courses
+                  - img "Chevron" [ref=e1416]
+    - contentinfo [ref=e1420]:
+      - generic [ref=e1422]:
+        - navigation [ref=e1423]:
+          - button "JOBS" [ref=e1425] [cursor=pointer]
+          - list [ref=e1428]:
+            - listitem [ref=e1429]:
+              - link "Contact us" [ref=e1430] [cursor=pointer]:
+                - /url: /enquiries
+            - listitem [ref=e1431]:
+              - link "Job search" [ref=e1432] [cursor=pointer]:
+                - /url: /jobs
+            - listitem [ref=e1433]:
+              - link "Recruiter directory" [ref=e1434] [cursor=pointer]:
+                - /url: /recruiterdirectory
+            - listitem [ref=e1435]:
+              - link "Work from home" [ref=e1436] [cursor=pointer]:
+                - /url: /jobs/work-from-home-jobs
+            - listitem [ref=e1437]:
+              - link "Browse jobs" [ref=e1438] [cursor=pointer]:
+                - /url: /popularjobs
+            - listitem [ref=e1439]:
+              - link "Browse locations" [ref=e1440] [cursor=pointer]:
+                - /url: /location
+            - listitem [ref=e1441]:
+              - link "Popular searches" [ref=e1442] [cursor=pointer]:
+                - /url: /popularsearches
+            - listitem [ref=e1443]:
+              - link "Career advice" [ref=e1444] [cursor=pointer]:
+                - /url: /career-advice
+            - listitem [ref=e1445]:
+              - link "Tax calculator" [ref=e1446] [cursor=pointer]:
+                - /url: /tax-calculator
+            - listitem [ref=e1447]:
+              - link "Average salary checker" [ref=e1448] [cursor=pointer]:
+                - /url: /average-salary
+            - listitem [ref=e1449]:
+              - link "Help" [ref=e1450] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e1451]:
+              - link "Contact a REED office" [ref=e1452] [cursor=pointer]:
+                - /url: https://www.reed.com/offices
+            - listitem [ref=e1453]:
+              - link "Sitemap" [ref=e1454] [cursor=pointer]:
+                - /url: /html-sitemap
+        - navigation [ref=e1455]:
+          - button "RECRUITER" [ref=e1457] [cursor=pointer]
+          - list [ref=e1460]:
+            - listitem [ref=e1461]:
+              - link "Recruiter site" [ref=e1462] [cursor=pointer]:
+                - /url: /recruiter?directjob=recruiter
+            - listitem [ref=e1463]:
+              - link "Post a job" [ref=e1464] [cursor=pointer]:
+                - /url: /recruiter/post-a-job?directjob=recruiter
+            - listitem [ref=e1465]:
+              - link "CV Search" [ref=e1466] [cursor=pointer]:
+                - /url: /recruiter/cv-search?directjob=recruiter
+            - listitem [ref=e1467]:
+              - link "Recruitment agencies" [ref=e1468] [cursor=pointer]:
+                - /url: /recruiter/recruitment-agencies?directjob=recruiter
+            - listitem [ref=e1469]:
+              - link "Recruiter Advice" [ref=e1470] [cursor=pointer]:
+                - /url: /recruiter-advice/?directjob=recruiter
+        - navigation [ref=e1471]:
+          - button "COURSES" [ref=e1473] [cursor=pointer]
+          - list [ref=e1476]:
+            - listitem [ref=e1477]:
+              - link "Help" [ref=e1478] [cursor=pointer]:
+                - /url: /courses/help
+            - listitem [ref=e1479]:
+              - link "Contact us" [ref=e1480] [cursor=pointer]:
+                - /url: /courses/contact-us
+            - listitem [ref=e1481]:
+              - link "Find a course" [ref=e1482] [cursor=pointer]:
+                - /url: /courses/
+            - listitem [ref=e1483]:
+              - link "View all subjects" [ref=e1484] [cursor=pointer]:
+                - /url: /courses/directory
+            - listitem [ref=e1485]:
+              - link "Discount courses" [ref=e1486] [cursor=pointer]:
+                - /url: /courses/discount
+            - listitem [ref=e1487]:
+              - link "Free courses" [ref=e1488] [cursor=pointer]:
+                - /url: /courses/free
+            - listitem [ref=e1489]:
+              - link "Awarding body directory" [ref=e1490] [cursor=pointer]:
+                - /url: /courses/awarding-bodies
+            - listitem [ref=e1491]:
+              - link "Career guides" [ref=e1492] [cursor=pointer]:
+                - /url: /courses/career-guides
+            - listitem [ref=e1493]:
+              - link "Advertise a course" [ref=e1494] [cursor=pointer]:
+                - /url: /courses/providers/
+            - listitem [ref=e1495]:
+              - link "Courses sitemap" [ref=e1496] [cursor=pointer]:
+                - /url: /courses/html-sitemap
+        - navigation [ref=e1497]:
+          - button "MORE FROM Reed.co.uk" [ref=e1499] [cursor=pointer]
+          - list [ref=e1502]:
+            - listitem [ref=e1503]:
+              - link "About us" [ref=e1504] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e1505]:
+              - link "Careers at Reed.co.uk" [ref=e1506] [cursor=pointer]:
+                - /url: https://www.reed.com/careers/jobs?businessDivision=Reed.co.uk
+            - listitem [ref=e1507]:
+              - link "Press office" [ref=e1508] [cursor=pointer]:
+                - /url: /press-office
+            - listitem [ref=e1509]:
+              - link "Corporate governance" [ref=e1510] [cursor=pointer]:
+                - /url: /corporate-governance
+            - listitem [ref=e1511]:
+              - link "Modern slavery statement" [ref=e1512] [cursor=pointer]:
+                - /url: https://www.reed.co.uk/cdn/jobseeker/pdf/Reed_MSA_Statement.pdf
+        - navigation [ref=e1513]:
+          - button "REED" [ref=e1515] [cursor=pointer]
+          - list [ref=e1518]:
+            - listitem [ref=e1519]:
+              - 'link "Tempzone: timesheets & holiday" [ref=e1520] [cursor=pointer]':
+                - /url: https://candidate.reed.co.uk/candlogin.asp
+            - listitem [ref=e1521]:
+              - link "Authorise timesheets" [ref=e1522] [cursor=pointer]:
+                - /url: https://client.reed.co.uk/
+            - listitem [ref=e1523]:
+              - link "Reed Group Services" [ref=e1524] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e1525]:
+              - link "Reed Specialist Recruitment" [ref=e1526] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e1527]:
+              - link "Reed in Partnership" [ref=e1528] [cursor=pointer]:
+                - /url: https://www.reedinpartnership.co.uk/
+            - listitem [ref=e1529]:
+              - link "Careers with REED" [ref=e1530] [cursor=pointer]:
+                - /url: https://www.reed.com/careers
+            - listitem [ref=e1531]:
+              - link "James Reed - Official Site" [ref=e1532] [cursor=pointer]:
+                - /url: /james-reed/
+            - listitem [ref=e1533]:
+              - 'link "Podcast - James Reed: all about business" [ref=e1534] [cursor=pointer]':
+                - /url: https://www.reed.com/podcasts
+            - listitem [ref=e1535]:
+              - link "ESG & sustainability" [ref=e1536] [cursor=pointer]:
+                - /url: https://www.reed.com/esg-and-sustainability
+      - generic [ref=e1538]:
+        - generic [ref=e1539]:
+          - generic [ref=e1541]:
+            - link "PhilCo" [ref=e1542] [cursor=pointer]:
+              - /url: https://philco.org.uk/
+              - img "PhilCo" [ref=e1543]
+            - generic [ref=e1544]: Learn how Reed is leading the way in philanthropy
+          - img "Love Mondays" [ref=e1546]
+        - generic [ref=e1547]:
+          - generic [ref=e1548]:
+            - 'link "James Reed: all about business" [ref=e1549] [cursor=pointer]':
+              - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+              - 'img "James Reed: all about business" [ref=e1550]'
+            - generic [ref=e1551]:
+              - heading "Introducing our new podcast New" [level=3] [ref=e1552]:
+                - text: Introducing our new podcast
+                - generic [ref=e1553]: New
+              - paragraph [ref=e1554]: "James Reed: all about business"
+              - link "Listen here" [ref=e1555] [cursor=pointer]:
+                - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+          - generic [ref=e1556]:
+            - generic [ref=e1557]:
+              - generic [ref=e1558]:
+                - link "Download on the App Store" [ref=e1559] [cursor=pointer]:
+                  - /url: https://itunes.apple.com/GB/app/id1040443949?mt=8
+                  - img "Download on the App Store" [ref=e1560]
+                - link "Get it on Google Play" [ref=e1561] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.reedcouk.jobs&referrer=af_tranid%3D_HgKgkJ-aFiIn4G5iigdZQ%26pid%3DWebsite_Footer%26utm_source%3DWebsite_Footer
+                  - img "Get it on Google Play" [ref=e1562]
+              - generic [ref=e1563]:
+                - link "Facebook" [ref=e1564] [cursor=pointer]:
+                  - /url: https://www.facebook.com/reedcouk
+                  - img "Facebook" [ref=e1565]
+                - link "Instagram" [ref=e1566] [cursor=pointer]:
+                  - /url: https://www.instagram.com/reedcouk/
+                  - img "Instagram" [ref=e1567]
+                - link "Tiktok" [ref=e1568] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@reedjobs
+                  - img "Tiktok" [ref=e1569]
+            - list [ref=e1570]:
+              - listitem [ref=e1571]:
+                - button "Manage Preferences" [ref=e1572] [cursor=pointer]
+                - text: ","
+              - listitem [ref=e1573]:
+                - link "Security, Privacy, Terms & Conditions" [ref=e1574] [cursor=pointer]:
+                  - /url: /policies
+            - paragraph [ref=e1575]: COPYRIGHT © Reed.co.uk 2026
+  - alert [ref=e1576]

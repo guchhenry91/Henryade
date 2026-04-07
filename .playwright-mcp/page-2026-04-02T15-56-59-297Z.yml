@@ -1,0 +1,551 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - region "Toast message":
+      - heading "0 notifications total" [level=2] [ref=e3]
+      - alert
+  - region [ref=e4]
+  - generic [ref=e5]:
+    - generic [ref=e7]:
+      - button "Skip to search" [ref=e8] [cursor=pointer]:
+        - generic [ref=e9]: Skip to search
+      - button "Skip to main content" [ref=e10] [cursor=pointer]:
+        - generic [ref=e11]: Skip to main content
+      - button "Keyboard shortcuts" [ref=e12] [cursor=pointer]:
+        - generic [ref=e13]: Keyboard shortcuts
+      - button "Close jump menu" [ref=e14] [cursor=pointer]:
+        - img [ref=e15]
+        - generic [ref=e17]: Close jump menu
+    - banner "Global Navigation" [ref=e18]:
+      - generic [ref=e19]:
+        - link "LinkedIn" [ref=e20] [cursor=pointer]:
+          - /url: https://www.linkedin.com/feed/?nis=true
+          - img "LinkedIn" [ref=e23]:
+            - img [ref=e24]
+        - generic [ref=e28]:
+          - generic [ref=e31]:
+            - generic [ref=e32]:
+              - generic [ref=e33]: Search by title, skill, or company
+              - img [ref=e34]
+            - combobox "Search by title, skill, or company" [ref=e36]: 2nd Line Support
+            - textbox [disabled]
+          - generic [ref=e39]:
+            - generic [ref=e40]:
+              - generic [ref=e41]: City, state, or zip code
+              - img [ref=e42]
+            - combobox "City, state, or zip code" [ref=e44]: London, England, United Kingdom
+            - textbox [disabled]
+          - button "Search" [ref=e45] [cursor=pointer]
+        - navigation "Primary Navigation" [ref=e46]:
+          - list [ref=e47]:
+            - listitem [ref=e48]:
+              - link "new feed updates notifications Home" [ref=e49] [cursor=pointer]:
+                - /url: https://www.linkedin.com/feed/?nis=true&
+                - generic [ref=e50]:
+                  - generic [ref=e53]: new feed updates notifications
+                  - img [ref=e57]
+                - generic "Home" [ref=e59]
+            - listitem [ref=e60]:
+              - link "My Network" [ref=e61] [cursor=pointer]:
+                - /url: https://www.linkedin.com/mynetwork/?
+                - img [ref=e65]
+                - generic "My Network" [ref=e67]
+            - listitem [ref=e68]:
+              - link "Jobs" [ref=e69] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/?
+                - img [ref=e73]
+                - generic "Jobs" [ref=e75]
+            - listitem [ref=e76]:
+              - link "Messaging" [ref=e77] [cursor=pointer]:
+                - /url: https://www.linkedin.com/messaging/?
+                - img [ref=e81]
+                - generic "Messaging" [ref=e83]
+            - listitem [ref=e84]:
+              - link "Notifications" [ref=e85] [cursor=pointer]:
+                - /url: https://www.linkedin.com/notifications/?
+                - img [ref=e89]
+                - generic "Notifications" [ref=e91]
+            - listitem [ref=e92]:
+              - button "Adegboyega Ogidan Me" [ref=e94] [cursor=pointer]:
+                - img "Adegboyega Ogidan" [ref=e95]
+                - generic [ref=e96]:
+                  - text: Me
+                  - img [ref=e97]
+            - listitem [ref=e99]:
+              - button "For Business" [ref=e101] [cursor=pointer]:
+                - img [ref=e105]
+                - generic "For Business" [ref=e107]:
+                  - text: For Business
+                  - img [ref=e108]
+            - listitem [ref=e110]:
+              - link "Post a job" [ref=e111] [cursor=pointer]:
+                - /url: https://www.linkedin.com/talent/job-posting-redirect?trk=nav_spotlight_post_job&
+                - img [ref=e115]
+                - generic "Post a job" [ref=e120]
+    - generic [ref=e122]:
+      - region "search filters" [ref=e125]:
+        - heading "Jobs search" [level=2] [ref=e126]
+        - generic [ref=e128]:
+          - generic [ref=e129]:
+            - list [ref=e130]:
+              - listitem [ref=e131]:
+                - 'button "Filter by: Jobs" [ref=e133] [cursor=pointer]':
+                  - text: Jobs
+                  - img [ref=e134]
+              - listitem [ref=e136]
+              - listitem [ref=e137]:
+                - button "Date posted filter. Past week filter is currently applied. Clicking this button displays all Date posted filter options." [ref=e140] [cursor=pointer]:
+                  - text: Past week
+                  - img [ref=e141]
+              - listitem [ref=e143]:
+                - radio "Easy Apply filter." [checked] [ref=e145] [cursor=pointer]: Easy Apply
+              - listitem [ref=e146]:
+                - button "Distance filter. Clicking this button displays all Distance filter options." [ref=e149] [cursor=pointer]:
+                  - text: 40 km
+                  - img [ref=e150]
+              - listitem [ref=e152]:
+                - button "Experience level filter. Clicking this button displays all Experience level filter options." [ref=e155] [cursor=pointer]:
+                  - text: Experience level
+                  - img [ref=e156]
+            - generic [ref=e158]:
+              - button "Show all filters. Clicking this button displays all available filter options." [ref=e161] [cursor=pointer]: All filters
+              - button "Reset applied filters" [ref=e162] [cursor=pointer]:
+                - generic [ref=e163]: Reset
+          - button "Try the new job search" [ref=e164] [cursor=pointer]:
+            - img [ref=e165]
+            - generic [ref=e167]: Try the new job search
+      - main [ref=e170]:
+        - generic [ref=e172]:
+          - generic [ref=e173]:
+            - generic [ref=e174]:
+              - generic [ref=e175]:
+                - generic "2nd Line Support in London, England, United Kingdom" [ref=e176]
+                - generic [ref=e179]: 500+ results
+              - generic [ref=e182] [cursor=pointer]:
+                - generic [ref=e183]: Set alert
+                - generic [ref=e184]: Set job alert for 2nd Line Support in London
+                - switch "Set job alert for 2nd Line Support in London"
+            - generic [ref=e185]:
+              - button "Jump to active job details":
+                - generic [ref=e186] [cursor=pointer]: Jump to active job details
+              - button "Jump to active search result":
+                - generic [ref=e187] [cursor=pointer]: Jump to active search result
+              - list [ref=e188]:
+                - listitem [ref=e189]:
+                  - generic [ref=e191] [cursor=pointer]:
+                    - generic [ref=e192]:
+                      - generic [ref=e193]:
+                        - img "Centrii logo" [ref=e197]
+                        - generic [ref=e198]:
+                          - link "Tier 1 Technical Support Specialist" [ref=e200]:
+                            - /url: /jobs/view/4395338972/?eBP=CwEAAAGdTul53yot61xFwD41s28kMX1BB-g41Jh8RE2o0XXZY4UeANVTqiKMzCZcHBEF1C8F37RXMsoNq3ZlJbuF2yqSZaq-k4ixVemaMaIW49thcpSVPSO7_T_2J4iH9uWUXcMygyjfJVPcg-tux5s6RjcHlBxf-qcjun6luH3Qve54CepHCPaDRcN9DF7YglgOGEF4gMqUxSy3HaorD0e1ON9F2AArtIbFqyosBdmwg9BOZy4eD5ZqH_BqT8miH_57oMgdSymmCV6b8XLt8_r36SVNqHo-1u9WQ_Tc_IWO3C_msF7V4AqVKsn-3fHnRtsRpLVlZ5PCjLjb3BT2MYCquQ5K9SlI9Vv6AcxadMlIoxcx66CMYUT7q9e2-9VRoP8OsgofL5p3dAqK4TFc8S7-zawHHOvslabFrTHOumjfIlRYsxffF7XsdNnsIDZOcjNQegMopxZtn92MtrSKEPH5gAF4jNwU7azPNk3csTqakJiTZy50ScZPOxBDKAKO8hTZHn0CXHFg_vLxIDYkZdB_fXXh2A&refId=lGaJO39UT7afIwF6ZUg3Hw%3D%3D&trackingId=NM%2FJ2lp5ORROL7qs5Z9DLg%3D%3D&trk=flagship3_search_srp_jobs
+                            - strong [ref=e202]: Tier 1 Technical Support Specialist
+                            - generic [ref=e203]: Tier 1 Technical Support Specialist
+                          - generic [ref=e205]: Centrii
+                          - list [ref=e207]:
+                            - listitem [ref=e208]:
+                              - generic [ref=e209]: London Area, United Kingdom (On-site)
+                      - generic [ref=e211]:
+                        - img "Company review time is typically 1 week" [ref=e215]
+                        - generic [ref=e216]: Company review time is typically 1 week
+                      - list [ref=e217]:
+                        - listitem [ref=e218]:
+                          - generic [ref=e219]: Promoted
+                        - listitem [ref=e220]:
+                          - img [ref=e221]:
+                            - img [ref=e222]
+                          - generic [ref=e224]: Easy Apply
+                    - button "Dismiss Tier 1 Technical Support Specialist job" [ref=e228]:
+                      - img [ref=e230]
+                - listitem [ref=e233]:
+                  - generic [ref=e235] [cursor=pointer]:
+                    - generic [ref=e236]:
+                      - generic [ref=e237]:
+                        - img "Apache Associates logo" [ref=e241]
+                        - generic [ref=e242]:
+                          - link "3rd Line Support" [ref=e244]:
+                            - /url: /jobs/view/4393507357/?eBP=CwEAAAGdTul535b7Sy6F4cswN2RwE89ePc0m76mupst_gAGll_59Pki86WwZuWqPZh1r8i__8F2gHVyVK5WIWZ-LOAtHYotvVwkRbJPBiywzZBbPlZ0iTUC0i6k7kTxiUwAW0EZkrc9MZmL0z9iARn32EG9l4jzNuYzI-Tqn-5TcTFsQQdRuggEeXZoIGkfmrqwi4jerBhTyNifB5i8zavlRviii0KmfAMV83gcaEOyxtnS-MteuZiNMFeq6MWQftWfkYTiraxGtZihSNv2i_BmXcTxrySaYW33vtcAFV_JpfjdAq3EWyj3nGJVPD8lfMPwqOQxVwnGDk0z3tuUlVFo-hMmuUL7JBPj1sOjzrYrYH0TxbukdgH_v1iwwxp2Y1zqVZK3H6AT401a8VeOsYe3Sl2x3a4-ad1fTf44IbsW9Cvkgp4XUvF1CCFOxjhAWyXge-m8Q8nWZyC1AGy6GcV52sZDWtNErSayHEM5HuNkINPA_Fe2lutM8R8vQSvlGdc9tkZMbuzE0HGGyXcD1A27uR2QAjMdD7-kjYg&refId=lGaJO39UT7afIwF6ZUg3Hw%3D%3D&trackingId=BYpnj78%2Bu2VhZwZI4F2rqw%3D%3D&trk=flagship3_search_srp_jobs
+                            - strong [ref=e246]: 3rd Line Support
+                            - generic [ref=e247]: 3rd Line Support
+                          - generic [ref=e249]: Apache Associates
+                          - list [ref=e251]:
+                            - listitem [ref=e252]:
+                              - generic [ref=e253]: London Area, United Kingdom (Hybrid)
+                          - list [ref=e255]:
+                            - listitem [ref=e256]:
+                              - generic [ref=e257]: £55K/yr - £60K/yr
+                      - generic [ref=e259]:
+                        - img "Actively reviewing applicants" [ref=e263]
+                        - generic [ref=e264]: Actively reviewing applicants
+                      - list [ref=e265]:
+                        - listitem [ref=e266]:
+                          - generic [ref=e267]: Promoted
+                        - listitem [ref=e268]:
+                          - img [ref=e269]:
+                            - img [ref=e270]
+                          - generic [ref=e272]: Easy Apply
+                    - button "Dismiss 3rd Line Support job" [ref=e276]:
+                      - img [ref=e278]
+                - listitem [ref=e281]:
+                  - generic [ref=e283] [cursor=pointer]:
+                    - generic [ref=e284]:
+                      - generic [ref=e285]:
+                        - img "Methods logo" [ref=e289]
+                        - generic [ref=e290]:
+                          - link "Service Desk Analyst - Permanent with verification" [ref=e292]:
+                            - /url: /jobs/view/4357482412/?eBP=CwEAAAGdTul538siUxGb3v4Y-yOldGwChGzMXMLeOEHDe5Ti21uILrfYe7RWUYxEt2AJg_1mqXQ4XjhGrQE-cl6qQib5ozA0V6OwGPjG0_Kvnx_jnaaZcVXQTL9Q_CMFyFJSZgp67mrOKroNzm3BKk5so46XhvGY7sUSWDcuIehz3BbbuQYTiA6aywq3ZK7AcDfx5ENAB8QZEaw7nWonEAhy8o67m9VelwnRp-PVWsE8yiFl4emiWMs-u_Q-GuI1pDg_bGqOSfUvTYKF3Ymk8KzKZ8c-QzbHafSX0eRyYUhM2MT7wgwT3_Mc4jzqNg5uxvPTe6BhFbmaQixfctbv80UGyYanhN25vUl70aQuMIAHA8QupZfgZl06vAAudXXDAJ8WErW432mkvyeTd8oS1-OrAm5FTl838ejwF0imBKWXSGQ2r4L06n5oJwyBqtcvZ7i9g9MmnVuBQmZf6cHs2ctyFtL6UEHfhFg-iZlKx3gkapuvolGHrT1uKtTxVFZvnmIm_4qEewd8JApdgTuWtL-T27n0nf1k&refId=lGaJO39UT7afIwF6ZUg3Hw%3D%3D&trackingId=o43p7hf%2BpUuCAccgcwugkg%3D%3D&trk=flagship3_search_srp_jobs
+                            - generic [ref=e293]:
+                              - strong [ref=e294]: Service Desk Analyst - Permanent
+                              - img [ref=e296]
+                            - generic [ref=e298]: Service Desk Analyst - Permanent with verification
+                          - generic [ref=e300]: Methods
+                          - list [ref=e302]:
+                            - listitem [ref=e303]:
+                              - generic [ref=e304]: London, England, United Kingdom (Hybrid)
+                      - generic [ref=e306]:
+                        - img "Actively reviewing applicants" [ref=e310]
+                        - generic [ref=e311]: Actively reviewing applicants
+                      - list [ref=e312]:
+                        - listitem [ref=e313]: Viewed
+                        - listitem [ref=e314]:
+                          - generic [ref=e315]: Promoted
+                        - listitem [ref=e316]:
+                          - img [ref=e317]:
+                            - img [ref=e318]
+                          - generic [ref=e320]: Easy Apply
+                    - button "Dismiss Service Desk Analyst - Permanent job" [ref=e324]:
+                      - img [ref=e326]
+                - listitem [ref=e329]:
+                  - generic [ref=e331] [cursor=pointer]:
+                    - generic [ref=e332]:
+                      - generic [ref=e333]:
+                        - img "DGH Recruitment logo" [ref=e337]
+                        - generic [ref=e338]:
+                          - link "1st Line Support Engineer / Service Desk Analyst with verification" [ref=e340]:
+                            - /url: /jobs/view/4392189635/?eBP=CwEAAAGdTul53zUlcQle0Jmrh_ckpXs0udWYsKBLULnSfntTxr9XxZFUWCMkEIkbDix_-yKsPIMEH2yVamstwVdQN0bjWhBA5Rc_e1h1qUFR-cYKj4j4hNFYP0t4THcnboaptM0jEWW-oHzUteL-PDE2oHQecRrAOp2UnBpy0MxCWcxnt8CcD5PivjXBcIqQ1vlF2ChGa6bGHkXyhSZ2KdOnqLIp3k2JmhGIvDgqsnhOkcDYRv_prTItoaX5HeqJvNJ3BV4gNJ_QMqHahrgyJvI9rM6r6vd-tUH-vxD-f-VUaFwcqe41QUgbJ3YE4IaM2uTsFjtLZao1awulXn7CxCE_NDgRz39DUvqALlQhlcirWXtyS9aUIWgvMmsNlhTpQHV6aIsVABi00dNVh4c-9RiWJWY_9exxcWpM2qgfKXHg-d0spQdmtIIcKNmPc1PbWz66QnZfikZYfNPscdkl8gUJtgR_8f-HZAkAjZtYeRnxtE5KtGCXUa6qyIIXSoi-ijvsDhY32s5krXUut0AZsky4ws4GUvAw3Z8SsNm_&refId=lGaJO39UT7afIwF6ZUg3Hw%3D%3D&trackingId=wWqMozvUbjDvOt%2FcZ%2FIlHA%3D%3D&trk=flagship3_search_srp_jobs
+                            - generic [ref=e341]:
+                              - strong [ref=e342]: 1st Line Support Engineer / Service Desk Analyst
+                              - img [ref=e344]
+                            - generic [ref=e346]: 1st Line Support Engineer / Service Desk Analyst with verification
+                          - generic [ref=e348]: DGH Recruitment
+                          - list [ref=e350]:
+                            - listitem [ref=e351]:
+                              - generic [ref=e352]: London Area, United Kingdom (On-site)
+                          - list [ref=e354]:
+                            - listitem [ref=e355]:
+                              - generic [ref=e356]: £30K/yr - £35K/yr
+                      - generic [ref=e358]:
+                        - img "Actively reviewing applicants" [ref=e362]
+                        - generic [ref=e363]: Actively reviewing applicants
+                      - list [ref=e364]:
+                        - listitem [ref=e365]:
+                          - generic [ref=e366]: Promoted
+                        - listitem [ref=e367]:
+                          - img [ref=e368]:
+                            - img [ref=e369]
+                          - generic [ref=e371]: Easy Apply
+                    - button "Dismiss 1st Line Support Engineer / Service Desk Analyst job" [ref=e375]:
+                      - img [ref=e377]
+                - listitem [ref=e380]:
+                  - generic [ref=e382] [cursor=pointer]:
+                    - generic [ref=e383]:
+                      - generic [ref=e384]:
+                        - img "Fruition Group logo" [ref=e388]
+                        - generic [ref=e389]:
+                          - link "IT Application Analyst" [ref=e391]:
+                            - /url: /jobs/view/4390890652/?eBP=CwEAAAGdTul537ljCyBru7MM3Jwvzra0l7vLUiFq1Pn2A-h-F_Iew5DCyWY1eG9SvP8D_cjfYB7FOYisfl5dCMIjp6LbHnTpgtbtQr1alvmtpd1_c6-vwglFi9Mfu49RmSjCsmbs8Kd8VSocEU2ARli2GXzPbx7t1tQ8I0uNwV8fKH9HvnPRe-eUL0VQLR50_We1Cd9z26N41NKk_52LxFkJAsaFoDGeeurJ5c_W6ul7AEHFh4zgcEjiXfzCEoKzHp5-vTUy5iEwUCvmBO_zZbq_dOQiRkMxWT5d7afmwYIs76y7CfamIc-7yEVNEykg8aTUkMHqMY07aPe82chRsQIUc7b8MVOg989neaXEvYt54lpP7N9KkYQ3RPZIQOvBeKElKts6hJ1AZz1_8n32lFlD3j148nTqYTY_dx3hKrSYrobcSexYdMgQYtzf60-SDaJudGTA8IA1pQ1eNuv1WS4B955NbnCyRwXfHq-pjxS8f5iGxzL5R_YDhfP3C6-FMPF5zcZq&refId=lGaJO39UT7afIwF6ZUg3Hw%3D%3D&trackingId=XVYojcuoceFFoVc7fOXAqA%3D%3D&trk=flagship3_search_srp_jobs
+                            - strong [ref=e393]: IT Application Analyst
+                            - generic [ref=e394]: IT Application Analyst
+                          - generic [ref=e396]: Fruition Group
+                          - list [ref=e398]:
+                            - listitem [ref=e399]:
+                              - generic [ref=e400]: London, England, United Kingdom (Hybrid)
+                          - list [ref=e402]:
+                            - listitem [ref=e403]:
+                              - generic [ref=e404]: £50K/yr - £65K/yr
+                      - generic [ref=e406]:
+                        - img "Actively reviewing applicants" [ref=e410]
+                        - generic [ref=e411]: Actively reviewing applicants
+                      - list [ref=e412]:
+                        - listitem [ref=e413]:
+                          - generic [ref=e414]: Promoted
+                        - listitem [ref=e415]:
+                          - img [ref=e416]:
+                            - img [ref=e417]
+                          - generic [ref=e419]: Easy Apply
+                    - button "Dismiss IT Application Analyst job" [ref=e423]:
+                      - img [ref=e425]
+                - listitem [ref=e428]:
+                  - generic [ref=e430] [cursor=pointer]:
+                    - generic [ref=e431]:
+                      - generic [ref=e432]:
+                        - img "NINE by SATIGO logo" [ref=e436]
+                        - generic [ref=e437]:
+                          - link "Service Desk Analyst (1st / 2nd Line) | Onsite | Banking" [ref=e439]:
+                            - /url: /jobs/view/4394399554/?eBP=CwEAAAGdTul537S8c7-nCbBvfx_3pukaxx_wUO6FLWf_DY8LgXTgNPeCvvvzF9E82tlHLUimZx1v2amREE9Yd4YTqjCZPPnK7WPVHRCJE3psMPmpzHeaK1YJP4JSwSNeDSFnS9qArc4JDXV-RjLmaUvexUPCKIi3v3ek5mEyESixZ4gyWspMnA-mHDEi3DDXEcdNrzKjfZyY0oxDjm-Xi7g5ija5DHNUj3OT66YCa5tOpmlw-o_3Fnwg52xPZ-dkwzfdF7n31EmXysyoAF5VuEiZY8Zc9aU_bXucSGe41TRtkRE7eVwDsqGKvedvjrS55qKqidSpEzgJ5htMkgSVS3GVahsLWpUa1jmfZB1lD9-ju9dTDbDEjpQS93kT0x-Znyy8h897h44D5QxxgPyKnkShTnfnyanPNhH_U1xwq2gTVzUqibqtUNVrptRMco58-ITV6qc1K4AOvIf8rhpgbLGaau0QaIsWSlyWji9TWCLGy-954-JeDmpEilIQGfp4fLEINg9huykHgm9IBYf_xpmzPpXUsVGPvDg&refId=lGaJO39UT7afIwF6ZUg3Hw%3D%3D&trackingId=o%2FS7rLJbdzsUOu1hnZtNXQ%3D%3D&trk=flagship3_search_srp_jobs
+                            - strong [ref=e441]: Service Desk Analyst (1st / 2nd Line) | Onsite | Banking
+                            - generic [ref=e442]: Service Desk Analyst (1st / 2nd Line) | Onsite | Banking
+                          - generic [ref=e444]: NINE by SATIGO
+                          - list [ref=e446]:
+                            - listitem [ref=e447]:
+                              - generic [ref=e448]: City Of London, England, United Kingdom (On-site)
+                          - list [ref=e450]:
+                            - listitem [ref=e451]:
+                              - generic [ref=e452]: £40K/yr - £42K/yr
+                      - generic [ref=e454]:
+                        - img "Company review time is typically 1 week" [ref=e458]
+                        - generic [ref=e459]: Company review time is typically 1 week
+                      - list [ref=e460]:
+                        - listitem [ref=e461]:
+                          - generic [ref=e462]: Promoted
+                        - listitem [ref=e463]:
+                          - img [ref=e464]:
+                            - img [ref=e465]
+                          - generic [ref=e467]: Easy Apply
+                    - button "Dismiss Service Desk Analyst (1st / 2nd Line) | Onsite | Banking job" [ref=e471]:
+                      - img [ref=e473]
+                - listitem [ref=e476]:
+                  - generic [ref=e478] [cursor=pointer]:
+                    - generic [ref=e479]:
+                      - generic [ref=e480]:
+                        - img "Stanford Black Limited logo" [ref=e484]
+                        - generic [ref=e485]:
+                          - link "Application Support Engineer with verification" [ref=e487]:
+                            - /url: /jobs/view/4393653005/?eBP=CwEAAAGdTul538KwkbgpPcGEvFjEy94Dme6AK5fKth5k7QLVU9CiLK5d2ijvbXIwpvLAyzamvj292-gkIAz4Qbg4UVqyFB3ZFIQ0-xq08Pcy1I9Ryp7JZ_JUCFXf7n_GXr2Q20bqpAKCFuKCvy08DY6QIcKAqZnY2gHxydh9Ob414v_rLfPeCM3MSbSAGrbgD1UkOQKCdR0Euz7-gA_Tu0fwgq4cAkjya35BI42vo8X6yRYn2KuoTqPChxMWiBO5tB7B4ZC9b5cb4dkd1z2ZoBXdG5sdLHiK69T4083aOZKhiyEm9SQa5F7QB0fsi4J_AmCqyxXwfPuUw5uoF4OGJeAao1ESDbiZwgfLxHvZG7swWzoh8M4EEM42iXIv7vS14LZQPsFYQlQvygYA9HlefaUytVTTxPCRAhguTN9l4Pa7MO18aU2z2PU_X9LZmm47A2bouc4naiL_U9dXIxGihHQuSqv1aYSqhwXFZrHP62Z2vSyNiWvoBnkAJ9cf1SHrq4mbMdvUtNGjBOexqyV3CbDsV6ILAQ&refId=lGaJO39UT7afIwF6ZUg3Hw%3D%3D&trackingId=wwQGDxYP7gJyJdTbsCRI0Q%3D%3D&trk=flagship3_search_srp_jobs
+                            - generic [ref=e488]:
+                              - strong [ref=e489]: Application Support Engineer
+                              - img [ref=e491]
+                            - generic [ref=e493]: Application Support Engineer with verification
+                          - generic [ref=e495]: Stanford Black Limited
+                          - list [ref=e497]:
+                            - listitem [ref=e498]:
+                              - generic [ref=e499]: London Area, United Kingdom (Hybrid)
+                          - list [ref=e501]:
+                            - listitem [ref=e502]:
+                              - generic [ref=e503]: £60K/yr - £75K/yr
+                      - generic [ref=e505]:
+                        - img "Actively reviewing applicants" [ref=e509]
+                        - generic [ref=e510]: Actively reviewing applicants
+                      - list [ref=e511]:
+                        - listitem [ref=e512]:
+                          - generic [ref=e513]: Promoted
+                        - listitem [ref=e514]:
+                          - img [ref=e515]:
+                            - img [ref=e516]
+                          - generic [ref=e518]: Easy Apply
+                    - button "Dismiss Application Support Engineer job" [ref=e522]:
+                      - img [ref=e524]
+                - listitem [ref=e527]
+                - listitem [ref=e528]
+                - listitem [ref=e529]
+                - listitem [ref=e530]
+                - listitem [ref=e531]
+                - listitem [ref=e532]
+                - listitem [ref=e533]
+                - listitem [ref=e534]
+                - listitem [ref=e535]
+                - listitem [ref=e536]
+                - listitem [ref=e537]
+                - listitem [ref=e538]
+                - listitem [ref=e539]
+                - listitem [ref=e540]
+                - listitem [ref=e541]
+                - listitem [ref=e542]
+                - listitem [ref=e543]
+                - listitem [ref=e544]
+              - generic [ref=e547]:
+                - generic [ref=e548]:
+                  - heading "Are these results helpful?" [level=2] [ref=e549]
+                  - paragraph [ref=e550]: Your feedback helps us improve search results.
+                - generic [ref=e551]:
+                  - button "Are you finding what you’re looking for? No" [ref=e552] [cursor=pointer]:
+                    - img [ref=e553]
+                    - generic [ref=e554]: Are you finding what you’re looking for? No
+                  - button "Are you finding what you’re looking for? Yes" [ref=e555] [cursor=pointer]:
+                    - img [ref=e556]
+                    - generic [ref=e557]: Are you finding what you’re looking for? Yes
+              - generic [ref=e558]:
+                - generic [ref=e559]:
+                  - list [ref=e561]:
+                    - listitem [ref=e562]:
+                      - button "Page 1" [ref=e563] [cursor=pointer]: "1"
+                    - listitem [ref=e564]:
+                      - button "Page 2" [ref=e565] [cursor=pointer]: "2"
+                    - listitem [ref=e566]:
+                      - button "Page 3" [ref=e567] [cursor=pointer]: "3"
+                    - listitem [ref=e568]:
+                      - button "Page 4" [ref=e569] [cursor=pointer]: …
+                  - button "View next page" [ref=e570] [cursor=pointer]:
+                    - img [ref=e571]
+                    - generic [ref=e572]: Next
+                - generic "LinkedIn Footer Content" [ref=e573]
+          - generic "Tier 1 Technical Support Specialist" [ref=e577]:
+            - generic [ref=e581]:
+              - generic [ref=e585]:
+                - generic [ref=e586]:
+                  - generic [ref=e587]:
+                    - link "Centrii logo" [ref=e588] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/company/centrii/life
+                      - img "Centrii logo" [ref=e591]
+                    - link "Centrii" [ref=e593] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/company/centrii/life
+                  - generic [ref=e594]:
+                    - button "Share" [ref=e597] [cursor=pointer]:
+                      - img [ref=e598]
+                      - generic [ref=e600]: Share
+                    - button "Show more options" [ref=e602] [cursor=pointer]:
+                      - img [ref=e603]
+                      - generic [ref=e605]: Show more options
+                - heading "Tier 1 Technical Support Specialist" [level=1] [ref=e608]:
+                  - link "Tier 1 Technical Support Specialist" [ref=e609] [cursor=pointer]:
+                    - /url: /jobs/view/4395338972/?alternateChannel=search&refId=NotAvailable&trackingId=56RlkGylRDC90%2BF8UyI74g%3D%3D&trk=d_flagship3_search_srp_jobs
+                - generic [ref=e612]:
+                  - generic [ref=e613]: London Area, United Kingdom
+                  - generic [ref=e614]: ·
+                  - strong [ref=e616]:
+                    - generic [ref=e617]: 5 minutes ago
+                  - generic [ref=e618]: ·
+                  - generic [ref=e619]: 0 applicants
+                  - paragraph [ref=e620]:
+                    - generic [ref=e621]: Promoted by hirer
+                    - generic [ref=e622]: ·
+                    - strong [ref=e624]: Company review time is typically 1 week
+                - generic [ref=e625]:
+                  - button "Matches your job preferences, workplace type is On-site." [ref=e626] [cursor=pointer]:
+                    - strong [ref=e629]:
+                      - img [ref=e631]
+                      - text: On-site
+                    - generic [ref=e633]: Matches your job preferences, workplace type is On-site.
+                  - button "Matches your job preferences, job type is Full-time." [ref=e634] [cursor=pointer]:
+                    - strong [ref=e637]:
+                      - img [ref=e639]
+                      - text: Full-time
+                    - generic [ref=e641]: Matches your job preferences, job type is Full-time.
+                - generic [ref=e643]:
+                  - button "Easy Apply to Tier 1 Technical Support Specialist at Centrii" [ref=e646] [cursor=pointer]:
+                    - img [ref=e647]
+                    - generic [ref=e648]: Easy Apply
+                  - button "Save Tier 1 Technical Support Specialist at Centrii" [ref=e649] [cursor=pointer]:
+                    - generic [ref=e650]: Save
+                    - generic [ref=e651]: Save Tier 1 Technical Support Specialist at Centrii
+              - heading "Assessing your job match" [level=2] [ref=e654]:
+                - generic [ref=e655]: Assessing your job match
+              - generic [ref=e665]:
+                - heading "Get personalized tips to stand out to hirers" [level=3] [ref=e666]
+                - paragraph [ref=e667]: Find jobs where you’re a top applicant and tailor your resume with the help of AI.
+                - 'link "Reactivate Premium: 50% Off" [ref=e668] [cursor=pointer]':
+                  - /url: http://www.linkedin.com/premium/redeem/?_ed=0_bvLJH59RTSY-u5c6PMUa4IW0M54p9mxZpuVkfRvTl7r&upsellOrderOrigin=Tracking%3Av1%3Acoach_upsell_jdp_topcard_winback%3AJob+Seeker%3AIn-Product&referenceId=kwxvdCNJRUaNBLleKCD0PQ%3D%3D&customKey=wb_c&redeemTypeV2=DISCOUNT&destRedirectURL=https%3A%2F%2Fwww.linkedin.com%2Fjobs%2Fsearch%2F%3FcurrentJobId%3D4395338972%26f_AL%3Dtrue%26f_TPR%3Dr604800%26keywords%3D2nd%2520Line%2520Support%26location%3DLondon
+                  - generic [ref=e669]:
+                    - img [ref=e670]
+                    - generic [ref=e671]: "Reactivate Premium: 50% Off"
+              - article [ref=e682]:
+                - generic [ref=e684]:
+                  - heading "About the job" [level=2] [ref=e685]
+                  - paragraph [ref=e687]:
+                    - paragraph [ref=e689]:
+                      - text: Centrii is seeking a
+                      - strong [ref=e691]: Tier 1 Technical Support Specialist
+                      - text: to join our growing technical operations team in
+                      - strong [ref=e693]: London, England
+                      - text: . This role is ideal for someone early in their IT career who enjoys troubleshooting, working with customers, and serving as the first line of response for technical support issues.
+                    - paragraph [ref=e695]
+                    - paragraph [ref=e697]: The Tier 1 Support Specialist will monitor automated alerting platforms and service tickets, perform initial troubleshooting, and escalate issues to higher-level engineers when necessary. This position plays a critical role in ensuring timely response and effective coordination between customers and Centrii’s technical teams.
+                    - paragraph [ref=e699]
+                    - paragraph [ref=e701]:
+                      - strong [ref=e703]: Key Responsibilities
+                    - paragraph [ref=e705]
+                    - list [ref=e707]:
+                      - listitem [ref=e708]:
+                        - text: Monitor inbound alerts and notifications from automated systems and monitoring platforms (including
+                        - strong [ref=e710]: Zendesk
+                        - text: and other ticketing tools)
+                      - listitem [ref=e711]: Receive and triage incoming customer support requests
+                      - listitem [ref=e712]:
+                        - text: Perform
+                        - strong [ref=e714]: initial troubleshooting and diagnostics
+                        - text: on reported issues
+                      - listitem [ref=e715]: Document all troubleshooting steps clearly within the ticketing system
+                      - listitem [ref=e716]:
+                        - text: Escalate complex or unresolved issues to
+                        - strong [ref=e718]: Tier 2 or Tier 3 engineers
+                        - text: when appropriate
+                      - listitem [ref=e719]: Maintain clear and professional communication with customers throughout the ticket lifecycle
+                      - listitem [ref=e720]: Track and update ticket status to ensure proper resolution and follow-through
+                      - listitem [ref=e721]: Work closely with internal engineering and operations teams to ensure timely issue resolution
+                    - paragraph [ref=e723]
+                    - paragraph [ref=e725]:
+                      - strong [ref=e727]: Required Qualifications
+                    - paragraph [ref=e729]
+                    - list [ref=e731]:
+                      - listitem [ref=e732]:
+                        - strong [ref=e734]: 1–3 years of verifiable experience
+                        - text: in a technical support, helpdesk, networking, or MSP environment
+                      - listitem [ref=e735]:
+                        - text: Experience
+                        - strong [ref=e737]: triaging inbound support tickets
+                        - text: and working within a structured ticketing system
+                      - listitem [ref=e738]:
+                        - text: Hands-on experience using
+                        - strong [ref=e740]: Zendesk or a similar service desk platform
+                      - listitem [ref=e741]: Basic understanding of networking concepts
+                      - listitem [ref=e742]: Strong troubleshooting mindset and ability to gather key diagnostic information
+                      - listitem [ref=e743]: Excellent written and verbal communication skills
+                      - listitem [ref=e744]: Ability to work collaboratively in a fast-paced technical environment
+                    - paragraph [ref=e746]
+                    - paragraph [ref=e748]:
+                      - strong [ref=e750]: Preferred Experience
+                    - paragraph [ref=e752]
+                    - list [ref=e754]:
+                      - listitem [ref=e755]: "Familiarity with networking platforms such as:"
+                      - listitem [ref=e756]:
+                        - strong [ref=e758]: Cisco
+                      - listitem [ref=e759]:
+                        - strong [ref=e761]: Fortinet
+                      - listitem [ref=e762]:
+                        - strong [ref=e764]: Cradlepoint
+                      - listitem [ref=e765]: Experience working with monitoring platforms or automated alerting systems
+                      - listitem [ref=e766]:
+                        - strong [ref=e768]: Entry-level industry or vendor certifications are strongly preferred
+                        - text: ", such as:"
+                      - listitem [ref=e769]:
+                        - strong [ref=e771]: CompTIA Network+
+                      - listitem [ref=e772]:
+                        - strong [ref=e774]: Cisco CCNA
+                      - listitem [ref=e775]:
+                        - strong [ref=e777]: Fortinet NSE
+                    - paragraph [ref=e779]
+                    - paragraph [ref=e781]:
+                      - strong [ref=e783]: Why Join Centrii
+                    - paragraph [ref=e785]
+                    - paragraph [ref=e787]:
+                      - text: You’ll be helping deliver the infrastructure behind
+                      - strong [ref=e789]: modern energy systems
+                      - text: ", supporting secure and reliable operations across renewable energy environments."
+                    - paragraph [ref=e791]
+                    - paragraph [ref=e793]:
+                      - text: Our team is building the next generation of
+                      - strong [ref=e795]: operational technology visibility and cybersecurity for the global energy market
+                      - text: ", and our Project Managers are critical to ensuring successful execution at scale."
+                    - paragraph [ref=e797]
+                    - paragraph [ref=e799]: If you're interested in managing projects that directly impact critical infrastructure and the future of energy, we’d like to hear from you.
+    - generic:
+      - generic:
+        - complementary:
+          - generic [ref=e801]:
+            - generic [ref=e803] [cursor=pointer]:
+              - generic [ref=e804]:
+                - img "Adegboyega Ogidan" [ref=e805]
+                - generic [ref=e807]: Status is online
+              - button "You are on the messaging overlay. Press enter to open the list of conversations." [ref=e808]:
+                - generic [ref=e809]:
+                  - generic [ref=e810]: Messaging
+                  - generic [ref=e811]: You are on the messaging overlay. Press enter to open the list of conversations.
+            - generic [ref=e812]:
+              - button "Open messenger dropdown menu" [ref=e814] [cursor=pointer]:
+                - img "Open messenger dropdown menu" [ref=e815]
+              - button "Compose message" [ref=e818] [cursor=pointer]:
+                - img [ref=e819]
+                - generic [ref=e821]: Compose message
+              - button "You are on the messaging overlay. Press enter to open the list of conversations." [ref=e822] [cursor=pointer]:
+                - img [ref=e823]
+                - generic [ref=e825]: You are on the messaging overlay. Press enter to open the list of conversations.
+        - complementary "AI-powered assistant to get help with your career, jobs etc"

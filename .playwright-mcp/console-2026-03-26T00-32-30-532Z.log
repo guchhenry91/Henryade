@@ -1,0 +1,31 @@
+[    1488ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T00:32:32.019Z Invalid eventBatchSize undefined, defaulting to 10 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-23:1
+[    1489ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T00:32:32.020Z Invalid eventFlushInterval undefined, defaulting to 1000 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-23:1
+[    1661ms] [WARNING] Disabling this snippet because Optimizely has already initialized on this page load. Are there multiple snippets on the page? @ https://www.totaljobs.com/optimizely-edge/20561852190.js:2
+[    2855ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T00:32:33.386Z Invalid eventBatchSize undefined, defaulting to 10 @ https://www.totaljobs.com/viewlets/searchbarrenderer/search-bar-renderer/uk/1_71_0__d3c02e3/vendors.af106491529af76777df.js:1
+[    2856ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T00:32:33.387Z Invalid eventFlushInterval undefined, defaulting to 1000 @ https://www.totaljobs.com/viewlets/searchbarrenderer/search-bar-renderer/uk/1_71_0__d3c02e3/vendors.af106491529af76777df.js:1
+[    3175ms] [WARNING] Datadog Browser SDK: SDK is loaded more than once. This is unsupported and might have unexpected behavior. @ https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:1
+[    5335ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at ui (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:494595)
+    at wl (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:567403)
+    at bc (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:554965)
+    at yc (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:554893)
+    at vc (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:554756)
+    at ic (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:549921)
+    at C (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:584732)
+    at F (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:585264)
+    at e.exports (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:19882)
+    at g.<computed> (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:35098)
+[    5337ms] Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wl (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:567089)
+    at bc (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:554965)
+    at yc (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:554893)
+    at vc (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:554756)
+    at ac (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:551591)
+    at ic (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:550147)
+    at C (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:584732)
+    at F (https://www.totaljobs.com/viewlets/res/resultlist-renderer/uk/1_383_0__4fbd6f501/unifiedResultlist.js:2:585264)
+    at e.exports (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:19882)
+    at g.<computed> (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:35098)
+[   11148ms] [WARNING] [Meta Pixel] - Duplicate Pixel ID: 665267016975562. @ https://connect.facebook.net/en_US/fbevents.js:175
+[   11710ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/jobs/it-support/in-london?action=facet_selected%3Bage%3B1&postedWithin=1&contract=permanent:0
+[   11710ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/jobs/it-support/in-london?action=facet_selected%3Bage%3B1&postedWithin=1&contract=permanent:0

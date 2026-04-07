@@ -1,0 +1,75 @@
+[     446ms] [WARNING] <link rel=preload> must have a valid `as` value @ https://www.linkedin.com/login:99
+[     446ms] [WARNING] <link rel=preload> must have a valid `as` value @ https://www.linkedin.com/login:100
+[     446ms] [WARNING] <link rel=preload> must have a valid `as` value @ https://www.linkedin.com/login:101
+[     446ms] [WARNING] <link rel=preload> must have a valid `as` value @ https://www.linkedin.com/login:102
+[     446ms] [WARNING] <link rel=preload> must have a valid `as` value @ https://www.linkedin.com/login:105
+[     446ms] [WARNING] <link rel=preload> must have a valid `as` value @ https://www.linkedin.com/login:106
+[    4428ms] [WARNING] [GSI_LOGGER]: Your client application may not display the Google One Tap in its default position. When FedCM becomes mandatory, One Tap only displays in the default position. Refer to the migration guide to update your code accordingly and opt-in to FedCM to test your changes. Learn more: https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#layout @ https://static.licdn.com/sc/h/aofke6z5sqc44bjlvj6yr05c8:168
+[    4429ms] [WARNING] [GSI_LOGGER]: Your client application uses one of the Google One Tap prompt UI status methods that may stop functioning when FedCM becomes mandatory. Refer to the migration guide to update your code accordingly and opt-in to FedCM to test your changes. Learn more: https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#display_moment and https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#skipped_moment @ https://static.licdn.com/sc/h/aofke6z5sqc44bjlvj6yr05c8:168
+[    4431ms] [WARNING] [GSI_LOGGER]: Currently, you disable FedCM on Google One Tap. FedCM for One Tap will become mandatory starting Oct 2024, and you won’t be able to disable it. Refer to the migration guide to update your code accordingly to ensure users will not be blocked from logging in. Learn more: https://developers.google.com/identity/gsi/web/guides/fedcm-migration @ https://static.licdn.com/sc/h/aofke6z5sqc44bjlvj6yr05c8:168
+[   87580ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   87685ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   87799ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   87909ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   88014ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   88127ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   88239ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   88346ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   88466ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   88590ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   88705ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   88828ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   88949ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   89065ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   89188ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   89306ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   89427ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   89545ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   89666ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   89816ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   90007ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   90189ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   90313ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   90776ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   90894ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   91343ms] [ERROR] Connecting to 'https://www.google.co.uk/pagead/1p-conversion/867846157/?random=1324702320&cv=11&fst=1774481855422&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45be63p0h2v880450157za200zd880450157xec&gcs=G110&gcd=13r3q3X3r7l1&dma=0&tag_exp=103116026~103200004~115938465~115938469~116024733~117484252~118199987&u_w=1280&u_h=800&url=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F&ref=https%3A%2F%2Fwww.linkedin.com%2Flogin&label=jVDACOjG770BEI2Q6Z0D&capi=1&gtm_ee=1&frm=0&tiba=(1)%20Feed%20%7C%20LinkedIn&did=dYmQxMT&gdid=dYmQxMT&hn=www...a_poCy69A-zxxhbBfdwoDQT8EfAvrcWRNUysS8bYJdA77ZX5HV5g&random=1353247200&ipr=y&pscrd=IhMIyIKghZy8kwMVjFakBB124CbDMgwIA2IICAAQABgAIAAyDAgEYggIABAAGAAgADIMCAdiCAgAEAAYACAAMgwICGIICAAQABgAIAAyDAgJYggIABAAGAAgADIMCApiCAgAEAAYACAAMgwIAmIICAAQABgAIAAyDAgLYggIABAAGAAgADIMCBViCAgAEAAYACAAMgwIH2IICAAQABgAIAAyDAgTYggIABAAGAAgADIMCBJiCAgAEAAYACAAOhlodHRwczovL3d3dy5saW5rZWRpbi5jb20vQlhDaEVJOEktT3pnWVEwLW1rdFBEZTVhYUFBUkl0QU5HaEJNdFV4UHZwWDcxdFFCdGgtS0VHbERqWTVydE8wMnBCdl9TYTEtSDlRODVwS1BDRElDemxGeHE0egwICWIICAAQABgAIAA' violates the following Content Security Policy directive: "connect-src 'self' blob: wss: *.licdn.com *.linkedin.com *.lynda.com linkedin.sc.omtrdc.net/b/ss/ cdn.linkedin.oribi.io *.data.digitalassistant.oci.oraclecloud.com/chat/ *.tealiumiq.com *.microsoft.com *.office.com *.skype.com *.skype.net *.sd-rtn.com:* *.qualtrics.com *.trouter.io dpm.demdex.net/id lnkd.demdex.net analytics-ingress-global.bitmovin.com *.xlgmedia.com www.googleadservices.com www.google.com google.com adservice.google.com td.doubleclick.net pagead2.googlesyndication.com www.googletagmanager.com ad.doubleclick.net *.ai.azure.com *.openai.azure.com bat.bing.com googleads.g.doubleclick.net". The action has been blocked. @ https://www.linkedin.com/feed/:0
+[   91348ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   91392ms] [ERROR] Connecting to 'https://www.google.co.uk/pagead/1p-conversion/867846157/?random=1324702320&cv=11&fst=1774481855422&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45be63p0h2v880450157za200zd880450157xec&gcs=G110&gcd=13r3q3X3r7l1&dma=0&tag_exp=103116026~103200004~115938465~115938469~116024733~117484252~118199987&u_w=1280&u_h=800&url=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F&ref=https%3A%2F%2Fwww.linkedin.com%2Flogin&label=jVDACOjG770BEI2Q6Z0D&capi=1&gtm_ee=1&frm=0&tiba=(1)%20Feed%20%7C%20LinkedIn&did=dYmQxMT&gdid=dYmQxMT&hn=www...A8vno0F2PkWyi8Xx7C5LgsDK2ixf1oIazXYwjiYf2DCeGALgNY5WR1_bgXBoCwms&gcp=3&ipr=y&pscrd=IhMIyIKghZy8kwMVjFakBB124CbDMgwIA2IICAAQABgAIAAyDAgEYggIABAAGAAgADIMCAdiCAgAEAAYACAAMgwICGIICAAQABgAIAAyDAgJYggIABAAGAAgADIMCApiCAgAEAAYACAAMgwIAmIICAAQABgAIAAyDAgLYggIABAAGAAgADIMCBViCAgAEAAYACAAMgwIH2IICAAQABgAIAAyDAgTYggIABAAGAAgADIMCBJiCAgAEAAYACAAOhlodHRwczovL3d3dy5saW5rZWRpbi5jb20vQlhDaEVJOEktT3pnWVEwLW1rdFBEZTVhYUFBUkl0QU5HaEJNdFV4UHZwWDcxdFFCdGgtS0VHbERqWTVydE8wMnBCdl9TYTEtSDlRODVwS1BDRElDemxGeHE0egwICWIICAAQABgAIAA' violates the following Content Security Policy directive: "connect-src 'self' blob: wss: *.licdn.com *.linkedin.com *.lynda.com linkedin.sc.omtrdc.net/b/ss/ cdn.linkedin.oribi.io *.data.digitalassistant.oci.oraclecloud.com/chat/ *.tealiumiq.com *.microsoft.com *.office.com *.skype.com *.skype.net *.sd-rtn.com:* *.qualtrics.com *.trouter.io dpm.demdex.net/id lnkd.demdex.net analytics-ingress-global.bitmovin.com *.xlgmedia.com www.googleadservices.com www.google.com google.com adservice.google.com td.doubleclick.net pagead2.googlesyndication.com www.googletagmanager.com ad.doubleclick.net *.ai.azure.com *.openai.azure.com bat.bing.com googleads.g.doubleclick.net". The action has been blocked. @ https://www.linkedin.com/feed/:0
+[   91436ms] [ERROR] Connecting to 'https://www.google.co.uk/pagead/1p-conversion/851212376/?random=1819050030&cv=11&fst=1774481855947&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45be63p0h2v9174922687za200zb880450157zd880450157xec&gcs=G110&gcd=13r3q3X3r7l1&dma=0&tag_exp=103116026~103200004~115938465~115938469~116024733~117484252~118128923&u_w=1280&u_h=800&url=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F&ref=https%3A%2F%2Fwww.linkedin.com%2Flogin&label=6PyMCP6clYcbENjw8ZUD&capi=1&gtm_ee=1&frm=0&tiba=(1)%20Feed%20%7C%20LinkedIn&did=dYmQxMT&gdid=dY...Q2VaQGNozGGmb_cBR8P9Iafr-gPRPL9jBN96lUbJMgMqvMISZ0Bg&random=2447743252&ipr=y&pscrd=IhMIz-W7hZy8kwMVi5YnAh1U6A3LMgwIA2IICAAQABgAIAAyDAgEYggIABAAGAAgADIMCAdiCAgAEAAYACAAMgwICGIICAAQABgAIAAyDAgJYggIABAAGAAgADIMCApiCAgAEAAYACAAMgwIAmIICAAQABgAIAAyDAgLYggIABAAGAAgADIMCBViCAgAEAAYACAAMgwIH2IICAAQABgAIAAyDAgTYggIABAAGAAgADIMCBJiCAgAEAAYACAAOhlodHRwczovL3d3dy5saW5rZWRpbi5jb20vQlhDaEVJOEktT3pnWVEwLW1rdFBEZTVhYUFBUkl0QU5HaEJNdHhmOXNscjJIRE03alU2T0dEVE9SUmJEX1l0S3plZWNYX3d2Ml9jb3RjS2EzNkRrMkFlVVM4egwICWIICAAQABgAIAA' violates the following Content Security Policy directive: "connect-src 'self' blob: wss: *.licdn.com *.linkedin.com *.lynda.com linkedin.sc.omtrdc.net/b/ss/ cdn.linkedin.oribi.io *.data.digitalassistant.oci.oraclecloud.com/chat/ *.tealiumiq.com *.microsoft.com *.office.com *.skype.com *.skype.net *.sd-rtn.com:* *.qualtrics.com *.trouter.io dpm.demdex.net/id lnkd.demdex.net analytics-ingress-global.bitmovin.com *.xlgmedia.com www.googleadservices.com www.google.com google.com adservice.google.com td.doubleclick.net pagead2.googlesyndication.com www.googletagmanager.com ad.doubleclick.net *.ai.azure.com *.openai.azure.com bat.bing.com googleads.g.doubleclick.net". The action has been blocked. @ https://www.linkedin.com/feed/:0
+[   91465ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   91472ms] [ERROR] Connecting to 'https://www.google.co.uk/pagead/1p-conversion/851212376/?random=1819050030&cv=11&fst=1774481855947&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45be63p0h2v9174922687za200zb880450157zd880450157xec&gcs=G110&gcd=13r3q3X3r7l1&dma=0&tag_exp=103116026~103200004~115938465~115938469~116024733~117484252~118128923&u_w=1280&u_h=800&url=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F&ref=https%3A%2F%2Fwww.linkedin.com%2Flogin&label=6PyMCP6clYcbENjw8ZUD&capi=1&gtm_ee=1&frm=0&tiba=(1)%20Feed%20%7C%20LinkedIn&did=dYmQxMT&gdid=dY...A8vno0Op886Q6Q-bJiiXX-sPhKNvDizrsPvn2_9e0d6jjM4hkyJQRrfiZWBoClmA&gcp=3&ipr=y&pscrd=IhMIz-W7hZy8kwMVi5YnAh1U6A3LMgwIA2IICAAQABgAIAAyDAgEYggIABAAGAAgADIMCAdiCAgAEAAYACAAMgwICGIICAAQABgAIAAyDAgJYggIABAAGAAgADIMCApiCAgAEAAYACAAMgwIAmIICAAQABgAIAAyDAgLYggIABAAGAAgADIMCBViCAgAEAAYACAAMgwIH2IICAAQABgAIAAyDAgTYggIABAAGAAgADIMCBJiCAgAEAAYACAAOhlodHRwczovL3d3dy5saW5rZWRpbi5jb20vQlhDaEVJOEktT3pnWVEwLW1rdFBEZTVhYUFBUkl0QU5HaEJNdHhmOXNscjJIRE03alU2T0dEVE9SUmJEX1l0S3plZWNYX3d2Ml9jb3RjS2EzNkRrMkFlVVM4egwICWIICAAQABgAIAA' violates the following Content Security Policy directive: "connect-src 'self' blob: wss: *.licdn.com *.linkedin.com *.lynda.com linkedin.sc.omtrdc.net/b/ss/ cdn.linkedin.oribi.io *.data.digitalassistant.oci.oraclecloud.com/chat/ *.tealiumiq.com *.microsoft.com *.office.com *.skype.com *.skype.net *.sd-rtn.com:* *.qualtrics.com *.trouter.io dpm.demdex.net/id lnkd.demdex.net analytics-ingress-global.bitmovin.com *.xlgmedia.com www.googleadservices.com www.google.com google.com adservice.google.com td.doubleclick.net pagead2.googlesyndication.com www.googletagmanager.com ad.doubleclick.net *.ai.azure.com *.openai.azure.com bat.bing.com googleads.g.doubleclick.net". The action has been blocked. @ https://www.linkedin.com/feed/:0
+[   91568ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   91793ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   91902ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   92006ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   92127ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   92245ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   92375ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   92484ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   92586ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   92735ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   92844ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   92962ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   93074ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   93180ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   93295ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   93414ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   93525ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   93628ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   93745ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   93864ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   93973ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   94077ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   94195ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   94302ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   94406ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   94527ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   94647ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   94766ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   94885ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   94993ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   95097ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   95215ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   95335ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   95454ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   95564ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0

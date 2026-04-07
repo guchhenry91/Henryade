@@ -1,0 +1,1757 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - heading "⚡ BETTING MODEL DASHBOARD" [level=1] [ref=e3]
+    - generic [ref=e4]:
+      - generic [ref=e5]: "Tokens Left: 14176"
+      - generic [ref=e6]: "Used: 5824"
+      - generic [ref=e7]: "Cache: 5m ago (58) · 14176 tokens left"
+      - button "↻ Cache" [ref=e8] [cursor=pointer]
+      - button "⚡ Refresh" [ref=e9] [cursor=pointer]
+  - generic [ref=e10]:
+    - generic [ref=e11] [cursor=pointer]: All Value Bets
+    - generic [ref=e12] [cursor=pointer]: 💰 Safe Bets
+    - generic [ref=e13] [cursor=pointer]: ⚽ Soccer
+    - generic [ref=e14] [cursor=pointer]: 🏀 NBA
+    - generic [ref=e15] [cursor=pointer]: 🏈 NFL
+    - generic [ref=e16] [cursor=pointer]: 🏒 NHL
+    - generic [ref=e17] [cursor=pointer]: ⚾ MLB
+    - generic [ref=e18] [cursor=pointer]: 📊 History
+  - generic [ref=e51]:
+    - generic [ref=e52]:
+      - text: 🏀 NBA — 14 games
+      - generic [ref=e53]: Updated just now
+    - generic [ref=e54]:
+      - button "Sort by Edge ↓" [ref=e55] [cursor=pointer]
+      - button "Sort by Score ↓" [ref=e56] [cursor=pointer]
+      - button "OVERs only" [ref=e57] [cursor=pointer]
+      - button "UNDERs only" [ref=e58] [cursor=pointer]
+      - button "All" [ref=e59] [cursor=pointer]
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - generic [ref=e62]: Boston Celtics vs Toronto Raptors
+        - generic [ref=e63]: Sun 5 Apr, 15:40 ET
+      - generic [ref=e64]:
+        - generic [ref=e65]: 🏆 WINNER PREDICTION
+        - generic [ref=e66]:
+          - generic [ref=e67]: Boston Celtics
+          - generic [ref=e70]: 78.0%
+        - generic [ref=e71]:
+          - generic [ref=e72]: Toronto Raptors
+          - generic [ref=e75]: 22.0%
+        - generic [ref=e76]:
+          - text: "Pick:"
+          - strong [ref=e77]: Boston Celtics
+          - generic [ref=e78]: HIGH
+          - text: "78.0% confidence · Odds: 1.24"
+      - generic [ref=e79]: 🎯 TOP PICKS — Boston Celtics vs Toronto Raptors
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - generic [ref=e82]:
+            - generic [ref=e83]: A★
+            - generic [ref=e84]: HIGH
+          - generic [ref=e85]: R.J. Barrett
+          - generic [ref=e86]: POINTS
+          - generic [ref=e87]: "18.5"
+          - generic [ref=e88]:
+            - generic [ref=e89]: OVER
+            - generic [ref=e90]: 74.5% stats override
+            - generic [ref=e91]: ⚡ FLIPPED
+          - generic [ref=e92]:
+            - generic [ref=e93]:
+              - text: "Model: 74% / Book: 49% →"
+              - strong [ref=e94]: +25.8% edge
+            - generic [ref=e95]: 5.0% stake
+          - generic [ref=e96]: ⚠️ Edge +26% is unusually high — verify line is current
+          - generic [ref=e97]: 📊 74% OVER / 26% UNDER (L15 distribution)
+          - generic [ref=e98]: "🎲 Hit prob: 74%"
+          - generic [ref=e99]: "📈 L5: 22.2 avg (hit 80% of L5)"
+          - generic [ref=e100]: 📅 Stats from Apr 2 (2d ago)
+          - generic [ref=e101]:
+            - text: 74.5% market edge · 7 books aligned · fair line
+            - generic [ref=e102]: score 0.43
+          - generic [ref=e104]: Generated 3:25 PM ET
+          - generic [ref=e105]:
+            - button "OVER" [ref=e106] [cursor=pointer]
+            - button "UNDER" [ref=e107] [cursor=pointer]
+        - generic [ref=e108]:
+          - generic [ref=e109]:
+            - generic [ref=e110]: A
+            - generic [ref=e111]: HIGH
+          - generic [ref=e112]: Derrick White
+          - generic [ref=e113]: POINTS
+          - generic [ref=e114]: "15.5"
+          - generic [ref=e115]:
+            - generic [ref=e116]: UNDER
+            - generic [ref=e117]: 78.5% stats override
+            - generic [ref=e118]: ⚡ FLIPPED
+          - generic [ref=e119]:
+            - generic [ref=e120]:
+              - text: "Model: 79% / Book: 50% →"
+              - strong [ref=e121]: +28.5% edge
+            - generic [ref=e122]: 5.0% stake
+          - generic [ref=e123]: ⚠️ Edge +29% is unusually high — verify line is current
+          - generic [ref=e124]: 📊 21% OVER / 79% UNDER (L15 distribution)
+          - generic [ref=e125]: "🎲 Hit prob: 79% 🎲 Volatile"
+          - generic [ref=e126]: "📈 L5: 10.4 avg 🎲 Volatile (hit 20% of L5)"
+          - generic [ref=e127]: "🥶 COLD: L5 10.4 vs L15 15.7"
+          - generic [ref=e128]: 📅 Stats from Apr 2 (2d ago)
+          - generic [ref=e129]:
+            - text: 78.5% market edge · 7 books aligned · fair line
+            - generic [ref=e130]: score 0.38
+          - generic [ref=e132]: Generated 3:25 PM ET
+          - generic [ref=e133]:
+            - button "OVER" [ref=e134] [cursor=pointer]
+            - button "UNDER" [ref=e135] [cursor=pointer]
+        - generic [ref=e136]:
+          - generic [ref=e137]:
+            - generic [ref=e138]: B
+            - generic [ref=e139]: HIGH
+          - generic [ref=e140]: Sandro Mamukelashvili
+          - generic [ref=e141]: POINTS
+          - generic [ref=e142]: "9.5"
+          - generic [ref=e143]:
+            - generic [ref=e144]: OVER
+            - generic [ref=e145]: 54.3% implied
+          - generic [ref=e146]:
+            - generic [ref=e147]:
+              - text: "Model: 89% / Book: 54% →"
+              - strong [ref=e148]: +34.3% edge
+            - generic [ref=e149]: 5.0% stake
+          - generic [ref=e150]: ⚠️ Edge +34% is unusually high — verify line is current
+          - generic [ref=e151]: 📊 89% OVER / 11% UNDER (L15 distribution)
+          - generic [ref=e152]: "🎲 Hit prob: 89%"
+          - generic [ref=e153]: "📈 L5: 16.0 avg (hit 100% of L5)"
+          - generic [ref=e154]: "🔥 HOT: L5 16.0 vs L15 12.5"
+          - generic [ref=e155]: 📅 Stats from Apr 2 (2d ago)
+          - generic [ref=e156]:
+            - text: 6 books aligned · fair line
+            - generic [ref=e157]: score 0.37
+          - generic [ref=e159]: Generated 3:25 PM ET
+          - generic [ref=e160]:
+            - button "OVER" [ref=e161] [cursor=pointer]
+            - button "UNDER" [ref=e162] [cursor=pointer]
+        - generic [ref=e163]:
+          - generic [ref=e164]:
+            - generic [ref=e165]: B
+            - generic [ref=e166]: HIGH
+          - generic [ref=e167]: Ja'Kobe Walter
+          - generic [ref=e168]: POINTS
+          - generic [ref=e169]: "9.5"
+          - generic [ref=e170]:
+            - generic [ref=e171]: UNDER
+            - generic [ref=e172]: 58.3% stats override
+            - generic [ref=e173]: ⚡ FLIPPED
+          - generic [ref=e174]:
+            - generic [ref=e175]:
+              - text: "Model: 58% / Book: 49% →"
+              - strong [ref=e176]: +9.6% edge
+            - generic [ref=e177]: 5.0% stake
+          - generic [ref=e178]: ✅ Data verified
+          - generic [ref=e179]: 📊 42% OVER / 58% UNDER (L15 distribution)
+          - generic [ref=e180]: "🎲 Hit prob: 58% 🎲 Volatile"
+          - generic [ref=e181]: "📈 L5: 9.4 avg 🎲 Volatile (hit 40% of L5)"
+          - generic [ref=e182]: 📅 Stats from Apr 2 (2d ago)
+          - generic [ref=e183]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e184]: score 0.35
+          - generic [ref=e186]: Generated 3:25 PM ET
+          - generic [ref=e187]:
+            - button "OVER" [ref=e188] [cursor=pointer]
+            - button "UNDER" [ref=e189] [cursor=pointer]
+        - generic [ref=e190]:
+          - generic [ref=e191]:
+            - generic [ref=e192]: B
+            - generic [ref=e193]: MED
+          - generic [ref=e194]: Scottie Barnes
+          - generic [ref=e195]: POINTS
+          - generic [ref=e196]: "16.5"
+          - generic [ref=e197]:
+            - generic [ref=e198]: UNDER
+            - generic [ref=e199]: 50.8% implied
+          - generic [ref=e200]:
+            - generic [ref=e201]:
+              - text: "Model: 56% / Book: 51% →"
+              - strong [ref=e202]: +5.1% edge
+            - generic [ref=e203]: 5.0% stake
+          - generic [ref=e204]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e205]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e206]: score 0.34
+          - generic [ref=e208]: Generated 3:25 PM ET
+          - generic [ref=e209]:
+            - button "OVER" [ref=e210] [cursor=pointer]
+            - button "UNDER" [ref=e211] [cursor=pointer]
+    - generic [ref=e212]:
+      - generic [ref=e213]:
+        - generic [ref=e214]: Brooklyn Nets vs Washington Wizards
+        - generic [ref=e215]: Sun 5 Apr, 15:40 ET
+      - generic [ref=e216]:
+        - generic [ref=e217]: 🏆 WINNER PREDICTION
+        - generic [ref=e218]:
+          - generic [ref=e219]: Brooklyn Nets
+          - generic [ref=e222]: 58.8%
+        - generic [ref=e223]:
+          - generic [ref=e224]: Washington Wizards
+          - generic [ref=e227]: 41.2%
+        - generic [ref=e228]:
+          - text: "Pick:"
+          - strong [ref=e229]: Brooklyn Nets
+          - generic [ref=e230]: MED
+          - text: "58.8% confidence · Odds: 1.68"
+      - generic [ref=e231]: 🎯 TOP PICKS — Brooklyn Nets vs Washington Wizards
+      - generic [ref=e232]:
+        - generic [ref=e233]:
+          - generic [ref=e234]:
+            - generic [ref=e235]: A★
+            - generic [ref=e236]: HIGH
+          - generic [ref=e237]: Jalen Wilson
+          - generic [ref=e238]: POINTS
+          - generic [ref=e239]: "13.5"
+          - generic [ref=e240]:
+            - generic [ref=e241]: UNDER
+            - generic [ref=e242]: 72.9% stats override
+            - generic [ref=e243]: ⚡ FLIPPED
+          - generic [ref=e244]:
+            - generic [ref=e245]:
+              - text: "Model: 73% / Book: 49% →"
+              - strong [ref=e246]: +23.7% edge
+            - generic [ref=e247]: 5.0% stake
+          - generic [ref=e248]:
+            - text: ⚠️ Stats data 5d old
+            - text: ⚠️ Edge +24% is unusually high — verify line is current
+          - generic [ref=e249]: 📊 27% OVER / 73% UNDER (L15 distribution)
+          - generic [ref=e250]: "🎲 Hit prob: 73% 🎲 Volatile"
+          - generic [ref=e251]: "📈 L5: 10.8 avg 🎲 Volatile (hit 40% of L5)"
+          - generic [ref=e252]: "🔥 HOT: L5 10.8 vs L15 6.6"
+          - generic [ref=e253]: 📅 Stats from Mar 30 (5d ago ⚠️ STALE)
+          - generic [ref=e254]: "🎯 Weak defense: 124.7 OppPPG (8% above avg)"
+          - generic [ref=e255]:
+            - text: 72.9% market edge · 4 books · fair line
+            - generic [ref=e256]: score 0.53
+          - generic [ref=e258]: Generated 3:25 PM ET
+          - generic [ref=e259]:
+            - button "OVER" [ref=e260] [cursor=pointer]
+            - button "UNDER" [ref=e261] [cursor=pointer]
+        - generic [ref=e262]:
+          - generic [ref=e263]:
+            - generic [ref=e264]: A
+            - generic [ref=e265]: HIGH
+          - generic [ref=e266]: Jalen Wilson
+          - generic [ref=e267]: THREES
+          - generic [ref=e268]: "2.5"
+          - generic [ref=e269]:
+            - generic [ref=e270]: UNDER
+            - generic [ref=e271]: 52.5% implied
+          - generic [ref=e272]:
+            - generic [ref=e273]:
+              - text: "Model: 58% / Book: 53% →"
+              - strong [ref=e274]: +5.6% edge
+            - generic [ref=e275]: 5.0% stake
+          - generic [ref=e276]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e277]: "🎯 Weak defense: 124.7 OppPPG (8% above avg)"
+          - generic [ref=e278]:
+            - text: 4 books · fair line
+            - generic [ref=e279]: score 0.37
+          - generic [ref=e281]: Generated 3:25 PM ET
+          - generic [ref=e282]:
+            - button "OVER" [ref=e283] [cursor=pointer]
+            - button "UNDER" [ref=e284] [cursor=pointer]
+        - generic [ref=e285]:
+          - generic [ref=e286]:
+            - generic [ref=e287]: B
+            - generic [ref=e288]: MED
+          - generic [ref=e289]: Anthony Gill
+          - generic [ref=e290]: POINTS
+          - generic [ref=e291]: "10.5"
+          - generic [ref=e292]:
+            - generic [ref=e293]: OVER
+            - generic [ref=e294]: 51.8% implied
+          - generic [ref=e295]:
+            - generic [ref=e296]:
+              - text: "Model: 54% / Book: 52% →"
+              - strong [ref=e297]: +2.1% edge
+            - generic [ref=e298]: 5.0% stake
+          - generic [ref=e299]: ✅ Data verified
+          - generic [ref=e300]: 📊 54% OVER / 46% UNDER (L15 distribution)
+          - generic [ref=e301]: "🎲 Hit prob: 54% 🎲 Volatile"
+          - generic [ref=e302]: "📈 L5: 12.0 avg 🎲 Volatile (hit 60% of L5)"
+          - generic [ref=e303]: "🔥 HOT: L5 12.0 vs L15 8.4"
+          - generic [ref=e304]: 😴 Back-to-back (1.0 days rest)
+          - generic [ref=e305]: "🎯 Weak defense: 124.7 OppPPG (8% above avg)"
+          - generic [ref=e306]: 🤝 Signals aligned (100%)
+          - generic [ref=e307]:
+            - text: 5 books aligned · fair line
+            - generic [ref=e308]: score 0.32
+          - generic [ref=e310]: Generated 3:25 PM ET
+          - generic [ref=e311]:
+            - button "OVER" [ref=e312] [cursor=pointer]
+            - button "UNDER" [ref=e313] [cursor=pointer]
+        - generic [ref=e314]:
+          - generic [ref=e315]:
+            - generic [ref=e316]: B
+            - generic [ref=e317]: MED
+          - generic [ref=e318]: Jaden Hardy
+          - generic [ref=e319]: POINTS
+          - generic [ref=e320]: "21.5"
+          - generic [ref=e321]:
+            - generic [ref=e322]: OVER
+            - generic [ref=e323]: 50.0% implied
+          - generic [ref=e324]:
+            - generic [ref=e325]:
+              - text: "Model: 55% / Book: 50% →"
+              - strong [ref=e326]: +4.8% edge
+            - generic [ref=e327]: 5.0% stake
+          - generic [ref=e328]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e329]: 😴 Back-to-back (1.0 days rest)
+          - generic [ref=e330]: "🎯 Weak defense: 124.7 OppPPG (8% above avg)"
+          - generic [ref=e331]:
+            - text: 5 books aligned · fair line
+            - generic [ref=e332]: score 0.32
+          - generic [ref=e334]: Generated 3:25 PM ET
+          - generic [ref=e335]:
+            - button "OVER" [ref=e336] [cursor=pointer]
+            - button "UNDER" [ref=e337] [cursor=pointer]
+        - generic [ref=e338]:
+          - generic [ref=e339]:
+            - generic [ref=e340]: B
+            - generic [ref=e341]: MED
+          - generic [ref=e342]: Will Riley
+          - generic [ref=e343]: POINTS
+          - generic [ref=e344]: "19.5"
+          - generic [ref=e345]:
+            - generic [ref=e346]: OVER
+            - generic [ref=e347]: 55.7% stats override
+            - generic [ref=e348]: ⚡ FLIPPED
+          - generic [ref=e349]:
+            - generic [ref=e350]:
+              - text: "Model: 56% / Book: 50% →"
+              - strong [ref=e351]: +6.1% edge
+            - generic [ref=e352]: 5.0% stake
+          - generic [ref=e353]: ✅ Data verified
+          - generic [ref=e354]: 📊 56% OVER / 44% UNDER (L15 distribution)
+          - generic [ref=e355]: "🎲 Hit prob: 56% 🎲 Volatile"
+          - generic [ref=e356]: "📈 L5: 21.0 avg 🎲 Volatile (hit 60% of L5)"
+          - generic [ref=e357]: "↗ Trending up: L5 21.0 vs L15 17.0"
+          - generic [ref=e358]: 😴 Back-to-back (1.0 days rest)
+          - generic [ref=e359]: "🎯 Weak defense: 124.7 OppPPG (8% above avg)"
+          - generic [ref=e360]:
+            - text: 5 books aligned · fair line
+            - generic [ref=e361]: score 0.32
+          - generic [ref=e363]: Generated 3:25 PM ET
+          - generic [ref=e364]:
+            - button "OVER" [ref=e365] [cursor=pointer]
+            - button "UNDER" [ref=e366] [cursor=pointer]
+    - generic [ref=e367]:
+      - generic [ref=e368]:
+        - generic [ref=e369]: Chicago Bulls vs Phoenix Suns
+        - generic [ref=e370]: Sun 5 Apr, 15:40 ET
+      - generic [ref=e371]:
+        - generic [ref=e372]: 🏆 WINNER PREDICTION
+        - generic [ref=e373]:
+          - generic [ref=e374]: Chicago Bulls
+          - generic [ref=e377]: 17.0%
+        - generic [ref=e378]:
+          - generic [ref=e379]: Phoenix Suns
+          - generic [ref=e382]: 83.0%
+        - generic [ref=e383]:
+          - text: "Pick:"
+          - strong [ref=e384]: Phoenix Suns
+          - generic [ref=e385]: HIGH
+          - text: "83.0% confidence · Odds: 1.18"
+      - generic [ref=e386]: 🎯 TOP PICKS — Chicago Bulls vs Phoenix Suns
+      - generic [ref=e387]:
+        - generic [ref=e388]:
+          - generic [ref=e389]:
+            - generic [ref=e390]: A★
+            - generic [ref=e391]: HIGH
+          - generic [ref=e392]: Devin Booker
+          - generic [ref=e393]: POINTS
+          - generic [ref=e394]: "26.5"
+          - generic [ref=e395]:
+            - generic [ref=e396]: UNDER
+            - generic [ref=e397]: 50.4% implied
+          - generic [ref=e398]:
+            - generic [ref=e399]:
+              - text: "Model: 58% / Book: 50% →"
+              - strong [ref=e400]: +7.2% edge
+            - generic [ref=e401]: 5.0% stake
+          - generic [ref=e402]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e403]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e404]: score 0.48
+          - generic [ref=e406]: Generated 3:25 PM ET
+          - generic [ref=e407]:
+            - button "OVER" [ref=e408] [cursor=pointer]
+            - button "UNDER" [ref=e409] [cursor=pointer]
+        - generic [ref=e410]:
+          - generic [ref=e411]:
+            - generic [ref=e412]: A
+            - generic [ref=e413]: HIGH
+          - generic [ref=e414]: Oso Ighodaro
+          - generic [ref=e415]: POINTS
+          - generic [ref=e416]: "6.5"
+          - generic [ref=e417]:
+            - generic [ref=e418]: OVER
+            - generic [ref=e419]: 76.3% stats override
+            - generic [ref=e420]: ⚡ FLIPPED
+          - generic [ref=e421]:
+            - generic [ref=e422]:
+              - text: "Model: 76% / Book: 49% →"
+              - strong [ref=e423]: +27.3% edge
+            - generic [ref=e424]: 5.0% stake
+          - generic [ref=e425]: ⚠️ Edge +27% is unusually high — verify line is current
+          - generic [ref=e426]: 📊 76% OVER / 24% UNDER (L15 distribution)
+          - generic [ref=e427]: "🎲 Hit prob: 76% 🎲 Volatile"
+          - generic [ref=e428]: "📈 L5: 10.0 avg 🎲 Volatile (hit 60% of L5)"
+          - generic [ref=e429]: 📅 Stats from Apr 1 (3d ago)
+          - generic [ref=e430]:
+            - text: 76.3% market edge · 5 books aligned · fair line
+            - generic [ref=e431]: score 0.47
+          - generic [ref=e433]: Generated 3:25 PM ET
+          - generic [ref=e434]:
+            - button "OVER" [ref=e435] [cursor=pointer]
+            - button "UNDER" [ref=e436] [cursor=pointer]
+        - generic [ref=e437]:
+          - generic [ref=e438]:
+            - generic [ref=e439]: B
+            - generic [ref=e440]: HIGH
+          - generic [ref=e441]: Grayson Allen
+          - generic [ref=e442]: POINTS
+          - generic [ref=e443]: "14.5"
+          - generic [ref=e444]:
+            - generic [ref=e445]: UNDER
+            - generic [ref=e446]: 52.6% implied
+          - generic [ref=e447]:
+            - generic [ref=e448]:
+              - text: "Model: 59% / Book: 53% →"
+              - strong [ref=e449]: +6.9% edge
+            - generic [ref=e450]: 5.0% stake
+          - generic [ref=e451]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e452]:
+            - text: 6 books aligned · fair line
+            - generic [ref=e453]: score 0.46
+          - generic [ref=e455]: Generated 3:25 PM ET
+          - generic [ref=e456]:
+            - button "OVER" [ref=e457] [cursor=pointer]
+            - button "UNDER" [ref=e458] [cursor=pointer]
+        - generic [ref=e459]:
+          - generic [ref=e460]:
+            - generic [ref=e461]: B
+            - generic [ref=e462]: HIGH
+          - generic [ref=e463]: Dillon Brooks
+          - generic [ref=e464]: REBOUNDS
+          - generic [ref=e465]: "3.5"
+          - generic [ref=e466]:
+            - generic [ref=e467]: OVER
+            - generic [ref=e468]: 52.2% implied
+          - generic [ref=e469]:
+            - generic [ref=e470]:
+              - text: "Model: 59% / Book: 52% →"
+              - strong [ref=e471]: +6.8% edge
+            - generic [ref=e472]: 5.0% stake
+          - generic [ref=e473]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e474]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e475]: score 0.45
+          - generic [ref=e477]: Generated 3:25 PM ET
+          - generic [ref=e478]:
+            - button "OVER" [ref=e479] [cursor=pointer]
+            - button "UNDER" [ref=e480] [cursor=pointer]
+        - generic [ref=e481]:
+          - generic [ref=e482]:
+            - generic [ref=e483]: B
+            - generic [ref=e484]: HIGH
+          - generic [ref=e485]: Royce O'Neale
+          - generic [ref=e486]: POINTS
+          - generic [ref=e487]: "7.5"
+          - generic [ref=e488]:
+            - generic [ref=e489]: OVER
+            - generic [ref=e490]: 52.7% implied
+          - generic [ref=e491]:
+            - generic [ref=e492]:
+              - text: "Model: 61% / Book: 53% →"
+              - strong [ref=e493]: +8.4% edge
+            - generic [ref=e494]: 5.0% stake
+          - generic [ref=e495]: ✅ Data verified
+          - generic [ref=e496]: 📊 61% OVER / 39% UNDER (L15 distribution)
+          - generic [ref=e497]: "🎲 Hit prob: 61% 🎲 Volatile"
+          - generic [ref=e498]: "📈 L5: 9.8 avg 🎲 Volatile (hit 60% of L5)"
+          - generic [ref=e499]: 📅 Stats from Apr 1 (3d ago)
+          - generic [ref=e500]:
+            - text: 6 books aligned · fair line
+            - generic [ref=e501]: score 0.44
+          - generic [ref=e503]: Generated 3:25 PM ET
+          - generic [ref=e504]:
+            - button "OVER" [ref=e505] [cursor=pointer]
+            - button "UNDER" [ref=e506] [cursor=pointer]
+    - generic [ref=e507]:
+      - generic [ref=e508]:
+        - generic [ref=e509]: Milwaukee Bucks vs Memphis Grizzlies
+        - generic [ref=e510]: Sun 5 Apr, 15:40 ET
+      - generic [ref=e511]:
+        - generic [ref=e512]: 🏆 WINNER PREDICTION
+        - generic [ref=e513]:
+          - generic [ref=e514]: Milwaukee Bucks
+          - generic [ref=e517]: 70.7%
+        - generic [ref=e518]:
+          - generic [ref=e519]: Memphis Grizzlies
+          - generic [ref=e522]: 29.3%
+        - generic [ref=e523]:
+          - text: "Pick:"
+          - strong [ref=e524]: Milwaukee Bucks
+          - generic [ref=e525]: HIGH
+          - text: "70.7% confidence · Odds: 1.37"
+      - generic [ref=e526]: 🎯 TOP PICKS — Milwaukee Bucks vs Memphis Grizzlies
+      - generic [ref=e527]:
+        - generic [ref=e528]:
+          - generic [ref=e529]:
+            - generic [ref=e530]: A★
+            - generic [ref=e531]: HIGH
+          - generic [ref=e532]: Walter Clayton Jr.
+          - generic [ref=e533]: POINTS
+          - generic [ref=e534]: "13.5"
+          - generic [ref=e535]:
+            - generic [ref=e536]: OVER
+            - generic [ref=e537]: 52.1% implied
+          - generic [ref=e538]:
+            - generic [ref=e539]:
+              - text: "Model: 60% / Book: 52% →"
+              - strong [ref=e540]: +7.8% edge
+            - generic [ref=e541]: 5.0% stake
+          - generic [ref=e542]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e543]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e544]: score 0.52
+          - generic [ref=e546]: Generated 3:25 PM ET
+          - generic [ref=e547]:
+            - button "OVER" [ref=e548] [cursor=pointer]
+            - button "UNDER" [ref=e549] [cursor=pointer]
+        - generic [ref=e550]:
+          - generic [ref=e551]:
+            - generic [ref=e552]: A
+            - generic [ref=e553]: HIGH
+          - generic [ref=e554]: Ryan Rollins
+          - generic [ref=e555]: POINTS
+          - generic [ref=e556]: "22.5"
+          - generic [ref=e557]:
+            - generic [ref=e558]: UNDER
+            - generic [ref=e559]: 51.7% implied
+          - generic [ref=e560]:
+            - generic [ref=e561]:
+              - text: "Model: 59% / Book: 52% →"
+              - strong [ref=e562]: +7.7% edge
+            - generic [ref=e563]: 5.0% stake
+          - generic [ref=e564]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e565]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e566]: score 0.51
+          - generic [ref=e568]: Generated 3:25 PM ET
+          - generic [ref=e569]:
+            - button "OVER" [ref=e570] [cursor=pointer]
+            - button "UNDER" [ref=e571] [cursor=pointer]
+        - generic [ref=e572]:
+          - generic [ref=e573]:
+            - generic [ref=e574]: B
+            - generic [ref=e575]: HIGH
+          - generic [ref=e576]: Ryan Rollins
+          - generic [ref=e577]: REBOUNDS
+          - generic [ref=e578]: "4.5"
+          - generic [ref=e579]:
+            - generic [ref=e580]: OVER
+            - generic [ref=e581]: 55.5% implied
+          - generic [ref=e582]:
+            - generic [ref=e583]:
+              - text: "Model: 63% / Book: 56% →"
+              - strong [ref=e584]: +7.3% edge
+            - generic [ref=e585]: 5.0% stake
+          - generic [ref=e586]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e587]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e588]: score 0.48
+          - generic [ref=e590]: Generated 3:25 PM ET
+          - generic [ref=e591]:
+            - button "OVER" [ref=e592] [cursor=pointer]
+            - button "UNDER" [ref=e593] [cursor=pointer]
+        - generic [ref=e594]:
+          - generic [ref=e595]:
+            - generic [ref=e596]: B
+            - generic [ref=e597]: HIGH
+          - generic [ref=e598]: Ryan Rollins
+          - generic [ref=e599]: ASSISTS
+          - generic [ref=e600]: "6.5"
+          - generic [ref=e601]:
+            - generic [ref=e602]: UNDER
+            - generic [ref=e603]: 58.1% stats override
+            - generic [ref=e604]: ⚡ FLIPPED
+          - generic [ref=e605]:
+            - generic [ref=e606]:
+              - text: "Model: 58% / Book: 45% →"
+              - strong [ref=e607]: +12.9% edge
+            - generic [ref=e608]: 5.0% stake
+          - generic [ref=e609]: ⚠️ Stats data 5d old
+          - generic [ref=e610]: 📊 42% OVER / 58% UNDER (L15 distribution)
+          - generic [ref=e611]: "🎲 Hit prob: 58%"
+          - generic [ref=e612]: "📈 L5: 6.2 avg (hit 60% of L5)"
+          - generic [ref=e613]: 📅 Stats from Mar 30 (5d ago ⚠️ STALE)
+          - generic [ref=e614]:
+            - text: 8 books aligned · fair line
+            - generic [ref=e615]: score 0.45
+          - generic [ref=e617]: Generated 3:25 PM ET
+          - generic [ref=e618]:
+            - button "OVER" [ref=e619] [cursor=pointer]
+            - button "UNDER" [ref=e620] [cursor=pointer]
+        - generic [ref=e621]:
+          - generic [ref=e622]:
+            - generic [ref=e623]: B
+            - generic [ref=e624]: HIGH
+          - generic [ref=e625]: Olivier-Maxence Prosper
+          - generic [ref=e626]: POINTS
+          - generic [ref=e627]: "16.5"
+          - generic [ref=e628]:
+            - generic [ref=e629]: UNDER
+            - generic [ref=e630]: 52.1% implied
+          - generic [ref=e631]:
+            - generic [ref=e632]:
+              - text: "Model: 50% / Book: 52% →"
+              - strong [ref=e633]: "-2.4% edge"
+            - generic [ref=e634]: No bet
+          - generic [ref=e635]: ⚠️ Stats data 4d old
+          - generic [ref=e636]: 📊 50% OVER / 50% UNDER (L15 distribution)
+          - generic [ref=e637]: "🎲 Hit prob: 50%"
+          - generic [ref=e638]: "📈 L5: 17.0 avg (hit 60% of L5)"
+          - generic [ref=e639]: "↗ Trending up: L5 17.0 vs L15 14.7"
+          - generic [ref=e640]: 📅 Stats from Mar 31 (4d ago ⚠️ STALE)
+          - generic [ref=e641]: ⚔️ Signals conflict (33%)
+          - generic [ref=e642]:
+            - text: 6 books aligned · fair line
+            - generic [ref=e643]: score 0.45
+          - generic [ref=e645]: Generated 3:25 PM ET
+          - generic [ref=e646]:
+            - button "OVER" [ref=e647] [cursor=pointer]
+            - button "UNDER" [ref=e648] [cursor=pointer]
+    - generic [ref=e649]:
+      - generic [ref=e650]:
+        - generic [ref=e651]: Cleveland Cavaliers vs Indiana Pacers
+        - generic [ref=e652]: Sun 5 Apr, 18:10 ET
+      - generic [ref=e653]:
+        - generic [ref=e654]: 🏆 WINNER PREDICTION
+        - generic [ref=e655]:
+          - generic [ref=e656]: Cleveland Cavaliers
+          - generic [ref=e659]: 90.6%
+        - generic [ref=e660]:
+          - generic [ref=e661]: Indiana Pacers
+          - generic [ref=e664]: 9.4%
+        - generic [ref=e665]:
+          - text: "Pick:"
+          - strong [ref=e666]: Cleveland Cavaliers
+          - generic [ref=e667]: HIGH
+          - text: "90.6% confidence · Odds: 1.07"
+      - generic [ref=e668]: 🎯 TOP PICKS — Cleveland Cavaliers vs Indiana Pacers
+      - generic [ref=e669]:
+        - generic [ref=e670]:
+          - generic [ref=e671]:
+            - generic [ref=e672]: A★
+            - generic [ref=e673]: HIGH
+          - generic [ref=e674]: Dennis Schroder
+          - generic [ref=e675]: POINTS
+          - generic [ref=e676]: "9.5"
+          - generic [ref=e677]:
+            - generic [ref=e678]: UNDER
+            - generic [ref=e679]: 74.5% stats override
+            - generic [ref=e680]: ⚡ FLIPPED
+          - generic [ref=e681]:
+            - generic [ref=e682]:
+              - text: "Model: 74% / Book: 47% →"
+              - strong [ref=e683]: +27.4% edge
+            - generic [ref=e684]: 5.0% stake
+          - generic [ref=e685]: ⚠️ Edge +27% is unusually high — verify line is current
+          - generic [ref=e686]: 📊 26% OVER / 74% UNDER (L15 distribution)
+          - generic [ref=e687]: "🎲 Hit prob: 74% 🎲 Volatile"
+          - generic [ref=e688]: "📈 L5: 7.2 avg 🎲 Volatile (hit 20% of L5)"
+          - generic [ref=e689]: "↗ Trending up: L5 7.2 vs L15 6.1"
+          - generic [ref=e690]: 📅 Stats from Apr 1 (3d ago)
+          - generic [ref=e691]:
+            - text: 74.5% market edge · 6 books aligned · fair line
+            - generic [ref=e692]: score 0.54
+          - generic [ref=e694]: Generated 3:25 PM ET
+          - generic [ref=e695]:
+            - button "OVER" [ref=e696] [cursor=pointer]
+            - button "UNDER" [ref=e697] [cursor=pointer]
+        - generic [ref=e698]:
+          - generic [ref=e699]:
+            - generic [ref=e700]: A
+            - generic [ref=e701]: HIGH
+          - generic [ref=e702]: Max Strus
+          - generic [ref=e703]: POINTS
+          - generic [ref=e704]: "13.5"
+          - generic [ref=e705]:
+            - generic [ref=e706]: OVER
+            - generic [ref=e707]: 52.1% implied
+          - generic [ref=e708]:
+            - generic [ref=e709]:
+              - text: "Model: 52% / Book: 52% →"
+              - strong [ref=e710]: "-0.5% edge"
+            - generic [ref=e711]: No bet
+          - generic [ref=e712]: ✅ Data verified
+          - generic [ref=e713]: 📊 52% OVER / 48% UNDER (L8 distribution)
+          - generic [ref=e714]: "🎲 Hit prob: 52% 🎲 Volatile"
+          - generic [ref=e715]: "📈 L5: 16.0 avg 🎲 Volatile (hit 40% of L5)"
+          - generic [ref=e716]: "↗ Trending up: L5 16.0 vs L15 13.8"
+          - generic [ref=e717]: 📅 Stats from Apr 1 (3d ago)
+          - generic [ref=e718]: 🤝 Signals aligned (100%)
+          - generic [ref=e719]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e720]: score 0.53
+          - generic [ref=e722]: Generated 3:25 PM ET
+          - generic [ref=e723]:
+            - button "OVER" [ref=e724] [cursor=pointer]
+            - button "UNDER" [ref=e725] [cursor=pointer]
+        - generic [ref=e726]:
+          - generic [ref=e727]:
+            - generic [ref=e728]: B
+            - generic [ref=e729]: HIGH
+          - generic [ref=e730]: Jarace Walker
+          - generic [ref=e731]: ASSISTS
+          - generic [ref=e732]: "3.5"
+          - generic [ref=e733]:
+            - generic [ref=e734]: UNDER
+            - generic [ref=e735]: 51.3% implied
+          - generic [ref=e736]:
+            - generic [ref=e737]:
+              - text: "Model: 73% / Book: 51% →"
+              - strong [ref=e738]: +21.9% edge
+            - generic [ref=e739]: 5.0% stake
+          - generic [ref=e740]:
+            - text: ⚠️ Stats data 9d old
+            - text: ⚠️ Edge +22% is unusually high — verify line is current
+          - generic [ref=e741]: 📊 27% OVER / 73% UNDER (L15 distribution)
+          - generic [ref=e742]: "🎲 Hit prob: 73%"
+          - generic [ref=e743]: "📈 L5: 2.6 avg (hit 40% of L5)"
+          - generic [ref=e744]: "↘ Trending down: L5 2.6 vs L15 3.0"
+          - generic [ref=e745]: 📅 Stats from Mar 26 (9d ago ⚠️ STALE)
+          - generic [ref=e746]:
+            - text: 6 books aligned · fair line
+            - generic [ref=e747]: score 0.48
+          - generic [ref=e749]: Generated 3:25 PM ET
+          - generic [ref=e750]:
+            - button "OVER" [ref=e751] [cursor=pointer]
+            - button "UNDER" [ref=e752] [cursor=pointer]
+        - generic [ref=e753]:
+          - generic [ref=e754]:
+            - generic [ref=e755]: B
+            - generic [ref=e756]: HIGH
+          - generic [ref=e757]: Jarace Walker
+          - generic [ref=e758]: POINTS
+          - generic [ref=e759]: "15.5"
+          - generic [ref=e760]:
+            - generic [ref=e761]: UNDER
+            - generic [ref=e762]: 51.8% implied
+          - generic [ref=e763]:
+            - generic [ref=e764]:
+              - text: "Model: 59% / Book: 52% →"
+              - strong [ref=e765]: +7.2% edge
+            - generic [ref=e766]: 5.0% stake
+          - generic [ref=e767]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e768]:
+            - text: 6 books aligned · fair line
+            - generic [ref=e769]: score 0.48
+          - generic [ref=e771]: Generated 3:25 PM ET
+          - generic [ref=e772]:
+            - button "OVER" [ref=e773] [cursor=pointer]
+            - button "UNDER" [ref=e774] [cursor=pointer]
+        - generic [ref=e775]:
+          - generic [ref=e776]:
+            - generic [ref=e777]: B
+            - generic [ref=e778]: HIGH
+          - generic [ref=e779]: James Harden
+          - generic [ref=e780]: POINTS
+          - generic [ref=e781]: "21.5"
+          - generic [ref=e782]:
+            - generic [ref=e783]: OVER
+            - generic [ref=e784]: 50.0% implied
+          - generic [ref=e785]:
+            - generic [ref=e786]:
+              - text: "Model: 57% / Book: 50% →"
+              - strong [ref=e787]: +7.1% edge
+            - generic [ref=e788]: 5.0% stake
+          - generic [ref=e789]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e790]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e791]: score 0.47
+          - generic [ref=e793]: Generated 3:25 PM ET
+          - generic [ref=e794]:
+            - button "OVER" [ref=e795] [cursor=pointer]
+            - button "UNDER" [ref=e796] [cursor=pointer]
+    - generic [ref=e797]:
+      - generic [ref=e798]:
+        - generic [ref=e799]: Minnesota Timberwolves vs Charlotte Hornets
+        - generic [ref=e800]: Sun 5 Apr, 19:10 ET
+      - generic [ref=e801]:
+        - generic [ref=e802]: 🏆 WINNER PREDICTION
+        - generic [ref=e803]:
+          - generic [ref=e804]: Minnesota Timberwolves
+          - generic [ref=e807]: 40.5%
+        - generic [ref=e808]:
+          - generic [ref=e809]: Charlotte Hornets
+          - generic [ref=e812]: 59.5%
+        - generic [ref=e813]:
+          - text: "Pick:"
+          - strong [ref=e814]: Charlotte Hornets
+          - generic [ref=e815]: MED
+          - text: "59.5% confidence · Odds: 1.64"
+      - generic [ref=e816]: 🎯 TOP PICKS — Minnesota Timberwolves vs Charlotte Hornets
+      - generic [ref=e817]:
+        - generic [ref=e818]:
+          - generic [ref=e819]:
+            - generic [ref=e820]: A★
+            - generic [ref=e821]: HIGH
+          - generic [ref=e822]: Moussa Diabate
+          - generic [ref=e823]: POINTS
+          - generic [ref=e824]: "7.5"
+          - generic [ref=e825]:
+            - generic [ref=e826]: UNDER
+            - generic [ref=e827]: 70.1% stats override
+            - generic [ref=e828]: ⚡ FLIPPED
+          - generic [ref=e829]:
+            - generic [ref=e830]:
+              - text: "Model: 70% / Book: 47% →"
+              - strong [ref=e831]: +22.8% edge
+            - generic [ref=e832]: 5.0% stake
+          - generic [ref=e833]: ⚠️ Edge +23% is unusually high — verify line is current
+          - generic [ref=e834]: 📊 30% OVER / 70% UNDER (L15 distribution)
+          - generic [ref=e835]: "🎲 Hit prob: 70% 🎲 Volatile"
+          - generic [ref=e836]: "📈 L5: 6.0 avg 🎲 Volatile (hit 40% of L5)"
+          - generic [ref=e837]: 📅 Stats from Apr 1 (3d ago)
+          - generic [ref=e838]:
+            - text: 70.1% market edge · 7 books aligned · fair line
+            - generic [ref=e839]: score 0.53
+          - generic [ref=e841]: Generated 3:25 PM ET
+          - generic [ref=e842]:
+            - button "OVER" [ref=e843] [cursor=pointer]
+            - button "UNDER" [ref=e844] [cursor=pointer]
+        - generic [ref=e845]:
+          - generic [ref=e846]:
+            - generic [ref=e847]: A
+            - generic [ref=e848]: HIGH
+          - generic [ref=e849]: Grant Williams
+          - generic [ref=e850]: POINTS
+          - generic [ref=e851]: "5.5"
+          - generic [ref=e852]:
+            - generic [ref=e853]: OVER
+            - generic [ref=e854]: 55.8% stats override
+            - generic [ref=e855]: ⚡ FLIPPED
+          - generic [ref=e856]:
+            - generic [ref=e857]:
+              - text: "Model: 56% / Book: 47% →"
+              - strong [ref=e858]: +9.3% edge
+            - generic [ref=e859]: 5.0% stake
+          - generic [ref=e860]: ✅ Data verified
+          - generic [ref=e861]: 📊 56% OVER / 44% UNDER (L15 distribution)
+          - generic [ref=e862]: "🎲 Hit prob: 56% 🎲 Volatile"
+          - generic [ref=e863]: "📈 L5: 6.8 avg 🎲 Volatile (hit 60% of L5)"
+          - generic [ref=e864]: 📅 Stats from Apr 1 (3d ago)
+          - generic [ref=e865]:
+            - text: 6 books aligned · fair line
+            - generic [ref=e866]: score 0.51
+          - generic [ref=e868]: Generated 3:25 PM ET
+          - generic [ref=e869]:
+            - button "OVER" [ref=e870] [cursor=pointer]
+            - button "UNDER" [ref=e871] [cursor=pointer]
+        - generic [ref=e872]:
+          - generic [ref=e873]:
+            - generic [ref=e874]: B
+            - generic [ref=e875]: HIGH
+          - generic [ref=e876]: Grant Williams
+          - generic [ref=e877]: THREES
+          - generic [ref=e878]: "1.5"
+          - generic [ref=e879]:
+            - generic [ref=e880]: OVER
+            - generic [ref=e881]: 54.0% implied
+          - generic [ref=e882]:
+            - generic [ref=e883]:
+              - text: "Model: 62% / Book: 54% →"
+              - strong [ref=e884]: +7.6% edge
+            - generic [ref=e885]: 5.0% stake
+          - generic [ref=e886]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e887]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e888]: score 0.51
+          - generic [ref=e890]: Generated 3:25 PM ET
+          - generic [ref=e891]:
+            - button "OVER" [ref=e892] [cursor=pointer]
+            - button "UNDER" [ref=e893] [cursor=pointer]
+        - generic [ref=e894]:
+          - generic [ref=e895]:
+            - generic [ref=e896]: B
+            - generic [ref=e897]: HIGH
+          - generic [ref=e898]: Julius Randle
+          - generic [ref=e899]: ASSISTS
+          - generic [ref=e900]: "4.5"
+          - generic [ref=e901]:
+            - generic [ref=e902]: UNDER
+            - generic [ref=e903]: 54.9% implied
+          - generic [ref=e904]:
+            - generic [ref=e905]:
+              - text: "Model: 51% / Book: 55% →"
+              - strong [ref=e906]: "-3.6% edge"
+            - generic [ref=e907]: No bet
+          - generic [ref=e908]: ✅ Data verified
+          - generic [ref=e909]: 📊 49% OVER / 51% UNDER (L15 distribution)
+          - generic [ref=e910]: "🎲 Hit prob: 51% 🎯 Consistent"
+          - generic [ref=e911]: "📈 L5: 4.6 avg 🎯 Consistent (hit 40% of L5)"
+          - generic [ref=e912]: "↗ Trending up: L5 4.6 vs L15 3.9"
+          - generic [ref=e913]: 📅 Stats from Apr 2 (2d ago)
+          - generic [ref=e914]: 🤝 Signals aligned (100%)
+          - generic [ref=e915]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e916]: score 0.50
+          - generic [ref=e918]: Generated 3:25 PM ET
+          - generic [ref=e919]:
+            - button "OVER" [ref=e920] [cursor=pointer]
+            - button "UNDER" [ref=e921] [cursor=pointer]
+        - generic [ref=e922]:
+          - generic [ref=e923]:
+            - generic [ref=e924]: B
+            - generic [ref=e925]: HIGH
+          - generic [ref=e926]: Moussa Diabate
+          - generic [ref=e927]: REBOUNDS
+          - generic [ref=e928]: "9.5"
+          - generic [ref=e929]:
+            - generic [ref=e930]: OVER
+            - generic [ref=e931]: 55.8% implied
+          - generic [ref=e932]:
+            - generic [ref=e933]:
+              - text: "Model: 63% / Book: 56% →"
+              - strong [ref=e934]: +7.4% edge
+            - generic [ref=e935]: 5.0% stake
+          - generic [ref=e936]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e937]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e938]: score 0.49
+          - generic [ref=e940]: Generated 3:25 PM ET
+          - generic [ref=e941]:
+            - button "OVER" [ref=e942] [cursor=pointer]
+            - button "UNDER" [ref=e943] [cursor=pointer]
+    - generic [ref=e944]:
+      - generic [ref=e945]:
+        - generic [ref=e946]: New Orleans Pelicans vs Orlando Magic
+        - generic [ref=e947]: Sun 5 Apr, 19:10 ET
+      - generic [ref=e948]:
+        - generic [ref=e949]: 🏆 WINNER PREDICTION
+        - generic [ref=e950]:
+          - generic [ref=e951]: New Orleans Pelicans
+          - generic [ref=e954]: 33.1%
+        - generic [ref=e955]:
+          - generic [ref=e956]: Orlando Magic
+          - generic [ref=e959]: 66.9%
+        - generic [ref=e960]:
+          - text: "Pick:"
+          - strong [ref=e961]: Orlando Magic
+          - generic [ref=e962]: HIGH
+          - text: "66.9% confidence · Odds: 1.46"
+      - generic [ref=e963]: 🎯 TOP PICKS — New Orleans Pelicans vs Orlando Magic
+      - generic [ref=e964]:
+        - generic [ref=e965]:
+          - generic [ref=e966]:
+            - generic [ref=e967]: A★
+            - generic [ref=e968]: HIGH
+          - generic [ref=e969]: Herb Jones
+          - generic [ref=e970]: REBOUNDS
+          - generic [ref=e971]: "3.5"
+          - generic [ref=e972]:
+            - generic [ref=e973]: UNDER
+            - generic [ref=e974]: 54.3% implied
+          - generic [ref=e975]:
+            - generic [ref=e976]:
+              - text: "Model: 61% / Book: 54% →"
+              - strong [ref=e977]: +6.9% edge
+            - generic [ref=e978]: 5.0% stake
+          - generic [ref=e979]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e980]:
+            - text: 6 books aligned · fair line
+            - generic [ref=e981]: score 0.46
+          - generic [ref=e983]: Generated 3:25 PM ET
+          - generic [ref=e984]:
+            - button "OVER" [ref=e985] [cursor=pointer]
+            - button "UNDER" [ref=e986] [cursor=pointer]
+        - generic [ref=e987]:
+          - generic [ref=e988]:
+            - generic [ref=e989]: A
+            - generic [ref=e990]: HIGH
+          - generic [ref=e991]: Herb Jones
+          - generic [ref=e992]: POINTS
+          - generic [ref=e993]: "9.5"
+          - generic [ref=e994]:
+            - generic [ref=e995]: UNDER
+            - generic [ref=e996]: 51.4% implied
+          - generic [ref=e997]:
+            - generic [ref=e998]:
+              - text: "Model: 99% / Book: 51% →"
+              - strong [ref=e999]: +47.6% edge
+            - generic [ref=e1000]: 5.0% stake
+          - generic [ref=e1001]:
+            - text: ⚠️ Stats data 160d old
+            - text: ⚠️ Only 1 games of data — low sample
+            - text: ⚠️ Edge +48% is unusually high — verify line is current
+          - generic [ref=e1002]: 📊 0% OVER / 100% UNDER (L1 distribution)
+          - generic [ref=e1003]: "🎲 Hit prob: 100%"
+          - generic [ref=e1004]: "📈 L5: 2.0 avg (hit 0% of L5)"
+          - generic [ref=e1005]: 📅 Stats from Oct 26 (160d ago ⚠️ STALE)
+          - generic [ref=e1006]: 🤝 Signals aligned (100%)
+          - generic [ref=e1007]:
+            - text: 6 books aligned · fair line
+            - generic [ref=e1008]: score 0.39
+          - generic [ref=e1010]: Generated 3:25 PM ET
+          - generic [ref=e1011]:
+            - button "OVER" [ref=e1012] [cursor=pointer]
+            - button "UNDER" [ref=e1013] [cursor=pointer]
+        - generic [ref=e1014]:
+          - generic [ref=e1015]:
+            - generic [ref=e1016]: B
+            - generic [ref=e1017]: HIGH
+          - generic [ref=e1018]: Jevon Carter
+          - generic [ref=e1019]: POINTS
+          - generic [ref=e1020]: "6.5"
+          - generic [ref=e1021]:
+            - generic [ref=e1022]: UNDER
+            - generic [ref=e1023]: 76.3% stats override
+            - generic [ref=e1024]: ⚡ FLIPPED
+          - generic [ref=e1025]:
+            - generic [ref=e1026]:
+              - text: "Model: 76% / Book: 47% →"
+              - strong [ref=e1027]: +29.8% edge
+            - generic [ref=e1028]: 5.0% stake
+          - generic [ref=e1029]: ⚠️ Edge +30% is unusually high — verify line is current
+          - generic [ref=e1030]: 📊 24% OVER / 76% UNDER (L15 distribution)
+          - generic [ref=e1031]: "🎲 Hit prob: 76% 🎲 Volatile"
+          - generic [ref=e1032]: "📈 L5: 4.4 avg 🎲 Volatile (hit 40% of L5)"
+          - generic [ref=e1033]: "🥶 COLD: L5 4.4 vs L15 7.6"
+          - generic [ref=e1034]: 📅 Stats from Apr 2 (2d ago)
+          - generic [ref=e1035]:
+            - text: 76.3% market edge · 6 books aligned · fair line
+            - generic [ref=e1036]: score 0.37
+          - generic [ref=e1038]: Generated 3:25 PM ET
+          - generic [ref=e1039]:
+            - button "OVER" [ref=e1040] [cursor=pointer]
+            - button "UNDER" [ref=e1041] [cursor=pointer]
+        - generic [ref=e1042]:
+          - generic [ref=e1043]:
+            - generic [ref=e1044]: B
+            - generic [ref=e1045]: MED
+          - generic [ref=e1046]: Zion Williamson
+          - generic [ref=e1047]: POINTS
+          - generic [ref=e1048]: "22.5"
+          - generic [ref=e1049]:
+            - generic [ref=e1050]: OVER
+            - generic [ref=e1051]: 50.0% implied
+          - generic [ref=e1052]:
+            - generic [ref=e1053]:
+              - text: "Model: 55% / Book: 50% →"
+              - strong [ref=e1054]: +4.9% edge
+            - generic [ref=e1055]: 5.0% stake
+          - generic [ref=e1056]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e1057]:
+            - text: 6 books aligned · fair line
+            - generic [ref=e1058]: score 0.33
+          - generic [ref=e1060]: Generated 3:25 PM ET
+          - generic [ref=e1061]:
+            - button "OVER" [ref=e1062] [cursor=pointer]
+            - button "UNDER" [ref=e1063] [cursor=pointer]
+        - generic [ref=e1064]:
+          - generic [ref=e1065]:
+            - generic [ref=e1066]: B
+            - generic [ref=e1067]: MED
+          - generic [ref=e1068]: Tristan da Silva
+          - generic [ref=e1069]: POINTS
+          - generic [ref=e1070]: "9.5"
+          - generic [ref=e1071]:
+            - generic [ref=e1072]: OVER
+            - generic [ref=e1073]: 50.9% implied
+          - generic [ref=e1074]:
+            - generic [ref=e1075]:
+              - text: "Model: 69% / Book: 51% →"
+              - strong [ref=e1076]: +18.0% edge
+            - generic [ref=e1077]: 5.0% stake
+          - generic [ref=e1078]: ✅ Data verified
+          - generic [ref=e1079]: 📊 69% OVER / 31% UNDER (L15 distribution)
+          - generic [ref=e1080]: "🎲 Hit prob: 69% 🎲 Volatile"
+          - generic [ref=e1081]: "📈 L5: 13.4 avg 🎲 Volatile (hit 60% of L5)"
+          - generic [ref=e1082]: 📅 Stats from Apr 2 (2d ago)
+          - generic [ref=e1083]:
+            - text: 6 books aligned · fair line
+            - generic [ref=e1084]: score 0.33
+          - generic [ref=e1086]: Generated 3:25 PM ET
+          - generic [ref=e1087]:
+            - button "OVER" [ref=e1088] [cursor=pointer]
+            - button "UNDER" [ref=e1089] [cursor=pointer]
+    - generic [ref=e1090]:
+      - generic [ref=e1091]:
+        - generic [ref=e1092]: Oklahoma City Thunder vs Utah Jazz
+        - generic [ref=e1093]: Sun 5 Apr, 19:10 ET
+      - generic [ref=e1094]:
+        - generic [ref=e1095]: 🏆 WINNER PREDICTION
+        - generic [ref=e1096]:
+          - generic [ref=e1097]: Oklahoma City Thunder
+          - generic [ref=e1100]: 95.8%
+        - generic [ref=e1101]:
+          - generic [ref=e1102]: Utah Jazz
+          - generic [ref=e1105]: 4.2%
+        - generic [ref=e1106]:
+          - text: "Pick:"
+          - strong [ref=e1107]: Oklahoma City Thunder
+          - generic [ref=e1108]: HIGH
+          - text: "95.8% confidence · Odds: 1.02"
+      - generic [ref=e1109]: 🎯 TOP PICKS — Oklahoma City Thunder vs Utah Jazz
+      - generic [ref=e1110]:
+        - generic [ref=e1111]:
+          - generic [ref=e1112]:
+            - generic [ref=e1113]: A★
+            - generic [ref=e1114]: HIGH
+          - generic [ref=e1115]: Luguentz Dort
+          - generic [ref=e1116]: POINTS
+          - generic [ref=e1117]: "7.5"
+          - generic [ref=e1118]:
+            - generic [ref=e1119]: OVER
+            - generic [ref=e1120]: 53.5% implied
+          - generic [ref=e1121]:
+            - generic [ref=e1122]:
+              - text: "Model: 58% / Book: 54% →"
+              - strong [ref=e1123]: +4.2% edge
+            - generic [ref=e1124]: 5.0% stake
+          - generic [ref=e1125]: ✅ Data verified
+          - generic [ref=e1126]: 📊 58% OVER / 42% UNDER (L15 distribution)
+          - generic [ref=e1127]: "🎲 Hit prob: 58% 🎲 Volatile"
+          - generic [ref=e1128]: "📈 L5: 9.0 avg 🎲 Volatile (hit 60% of L5)"
+          - generic [ref=e1129]: "🔥 HOT: L5 9.0 vs L15 7.2"
+          - generic [ref=e1130]: 📅 Stats from Apr 1 (3d ago)
+          - generic [ref=e1131]: "🎯 Weak defense: 125.6 OppPPG (9% above avg)"
+          - generic [ref=e1132]: 🤝 Signals aligned (100%)
+          - generic [ref=e1133]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e1134]: score 0.52
+          - generic [ref=e1136]: Generated 3:25 PM ET
+          - generic [ref=e1137]:
+            - button "OVER" [ref=e1138] [cursor=pointer]
+            - button "UNDER" [ref=e1139] [cursor=pointer]
+        - generic [ref=e1140]:
+          - generic [ref=e1141]:
+            - generic [ref=e1142]: A
+            - generic [ref=e1143]: HIGH
+          - generic [ref=e1144]: Jalen Williams
+          - generic [ref=e1145]: ASSISTS
+          - generic [ref=e1146]: "4.5"
+          - generic [ref=e1147]:
+            - generic [ref=e1148]: OVER
+            - generic [ref=e1149]: 52.3% implied
+          - generic [ref=e1150]:
+            - generic [ref=e1151]:
+              - text: "Model: 58% / Book: 52% →"
+              - strong [ref=e1152]: +5.5% edge
+            - generic [ref=e1153]: 5.0% stake
+          - generic [ref=e1154]: ✅ Data verified
+          - generic [ref=e1155]: 📊 58% OVER / 42% UNDER (L15 distribution)
+          - generic [ref=e1156]: "🎲 Hit prob: 58%"
+          - generic [ref=e1157]: "📈 L5: 5.4 avg (hit 60% of L5)"
+          - generic [ref=e1158]: 📅 Stats from Apr 1 (3d ago)
+          - generic [ref=e1159]: "🎯 Weak defense: 125.6 OppPPG (9% above avg)"
+          - generic [ref=e1160]: 🤝 Signals aligned (100%)
+          - generic [ref=e1161]:
+            - text: 8 books aligned · fair line
+            - generic [ref=e1162]: score 0.49
+          - generic [ref=e1164]: Generated 3:25 PM ET
+          - generic [ref=e1165]:
+            - button "OVER" [ref=e1166] [cursor=pointer]
+            - button "UNDER" [ref=e1167] [cursor=pointer]
+        - generic [ref=e1168]:
+          - generic [ref=e1169]:
+            - generic [ref=e1170]: B
+            - generic [ref=e1171]: HIGH
+          - generic [ref=e1172]: Shai Gilgeous-Alexander
+          - generic [ref=e1173]: POINTS
+          - generic [ref=e1174]: "29.5"
+          - generic [ref=e1175]:
+            - generic [ref=e1176]: UNDER
+            - generic [ref=e1177]: 52.1% implied
+          - generic [ref=e1178]:
+            - generic [ref=e1179]:
+              - text: "Model: 59% / Book: 52% →"
+              - strong [ref=e1180]: +7.0% edge
+            - generic [ref=e1181]: 5.0% stake
+          - generic [ref=e1182]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e1183]: "🎯 Weak defense: 125.6 OppPPG (9% above avg)"
+          - generic [ref=e1184]:
+            - text: 8 books aligned · fair line
+            - generic [ref=e1185]: score 0.46
+          - generic [ref=e1187]: Generated 3:25 PM ET
+          - generic [ref=e1188]:
+            - button "OVER" [ref=e1189] [cursor=pointer]
+            - button "UNDER" [ref=e1190] [cursor=pointer]
+        - generic [ref=e1191]:
+          - generic [ref=e1192]:
+            - generic [ref=e1193]: B
+            - generic [ref=e1194]: HIGH
+          - generic [ref=e1195]: Chet Holmgren
+          - generic [ref=e1196]: POINTS
+          - generic [ref=e1197]: "14.5"
+          - generic [ref=e1198]:
+            - generic [ref=e1199]: UNDER
+            - generic [ref=e1200]: 52.6% implied
+          - generic [ref=e1201]:
+            - generic [ref=e1202]:
+              - text: "Model: 59% / Book: 53% →"
+              - strong [ref=e1203]: +6.8% edge
+            - generic [ref=e1204]: 5.0% stake
+          - generic [ref=e1205]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e1206]: "🎯 Weak defense: 125.6 OppPPG (9% above avg)"
+          - generic [ref=e1207]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e1208]: score 0.45
+          - generic [ref=e1210]: Generated 3:25 PM ET
+          - generic [ref=e1211]:
+            - button "OVER" [ref=e1212] [cursor=pointer]
+            - button "UNDER" [ref=e1213] [cursor=pointer]
+        - generic [ref=e1214]:
+          - generic [ref=e1215]:
+            - generic [ref=e1216]: B
+            - generic [ref=e1217]: HIGH
+          - generic [ref=e1218]: Chet Holmgren
+          - generic [ref=e1219]: THREES
+          - generic [ref=e1220]: "1.5"
+          - generic [ref=e1221]:
+            - generic [ref=e1222]: OVER
+            - generic [ref=e1223]: 50.9% implied
+          - generic [ref=e1224]:
+            - generic [ref=e1225]:
+              - text: "Model: 58% / Book: 51% →"
+              - strong [ref=e1226]: +6.7% edge
+            - generic [ref=e1227]: 5.0% stake
+          - generic [ref=e1228]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e1229]: "🎯 Weak defense: 125.6 OppPPG (9% above avg)"
+          - generic [ref=e1230]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e1231]: score 0.45
+          - generic [ref=e1233]: Generated 3:25 PM ET
+          - generic [ref=e1234]:
+            - button "OVER" [ref=e1235] [cursor=pointer]
+            - button "UNDER" [ref=e1236] [cursor=pointer]
+    - generic [ref=e1237]:
+      - generic [ref=e1238]:
+        - generic [ref=e1239]: Dallas Mavericks vs Los Angeles Lakers
+        - generic [ref=e1240]: Sun 5 Apr, 19:40 ET
+      - generic [ref=e1241]:
+        - generic [ref=e1242]: 🏆 WINNER PREDICTION
+        - generic [ref=e1243]:
+          - generic [ref=e1244]: Dallas Mavericks
+          - generic [ref=e1247]: 47.3%
+        - generic [ref=e1248]:
+          - generic [ref=e1249]: Los Angeles Lakers
+          - generic [ref=e1252]: 52.7%
+        - generic [ref=e1253]:
+          - text: "Pick:"
+          - strong [ref=e1254]: Los Angeles Lakers
+          - generic [ref=e1255]: LOW
+          - text: "52.7% confidence · Odds: 1.87"
+      - generic [ref=e1256]: 🎯 TOP PICKS — Dallas Mavericks vs Los Angeles Lakers
+      - generic [ref=e1257]:
+        - generic [ref=e1258]:
+          - generic [ref=e1259]:
+            - generic [ref=e1260]: A★
+            - generic [ref=e1261]: HIGH
+          - generic [ref=e1262]: P.J. Washington
+          - generic [ref=e1263]: POINTS
+          - generic [ref=e1264]: "13.5"
+          - generic [ref=e1265]:
+            - generic [ref=e1266]: OVER
+            - generic [ref=e1267]: 57.7% stats override
+            - generic [ref=e1268]: ⚡ FLIPPED
+          - generic [ref=e1269]:
+            - generic [ref=e1270]:
+              - text: "Model: 58% / Book: 48% →"
+              - strong [ref=e1271]: +10.2% edge
+            - generic [ref=e1272]: 5.0% stake
+          - generic [ref=e1273]: ⚠️ Stats data 9d old
+          - generic [ref=e1274]: 📊 58% OVER / 42% UNDER (L15 distribution)
+          - generic [ref=e1275]: "🎲 Hit prob: 58% 🎲 Volatile"
+          - generic [ref=e1276]: "📈 L5: 15.4 avg 🎲 Volatile (hit 60% of L5)"
+          - generic [ref=e1277]: 📅 Stats from Mar 26 (9d ago ⚠️ STALE)
+          - generic [ref=e1278]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e1279]: score 0.54
+          - generic [ref=e1281]: Generated 3:25 PM ET
+          - generic [ref=e1282]:
+            - button "OVER" [ref=e1283] [cursor=pointer]
+            - button "UNDER" [ref=e1284] [cursor=pointer]
+        - generic [ref=e1285]:
+          - generic [ref=e1286]:
+            - generic [ref=e1287]: A
+            - generic [ref=e1288]: HIGH
+          - generic [ref=e1289]: Bronny James
+          - generic [ref=e1290]: POINTS
+          - generic [ref=e1291]: "5.5"
+          - generic [ref=e1292]:
+            - generic [ref=e1293]: UNDER
+            - generic [ref=e1294]: 52.6% implied
+          - generic [ref=e1295]:
+            - generic [ref=e1296]:
+              - text: "Model: 68% / Book: 53% →"
+              - strong [ref=e1297]: +15.1% edge
+            - generic [ref=e1298]: 5.0% stake
+          - generic [ref=e1299]: ✅ Data verified
+          - generic [ref=e1300]: 📊 32% OVER / 68% UNDER (L15 distribution)
+          - generic [ref=e1301]: "🎲 Hit prob: 68% 🎲 Volatile"
+          - generic [ref=e1302]: "📈 L5: 4.6 avg 🎲 Volatile (hit 40% of L5)"
+          - generic [ref=e1303]: "🔥 HOT: L5 4.6 vs L15 3.6"
+          - generic [ref=e1304]: 📅 Stats from Apr 1 (3d ago)
+          - generic [ref=e1305]: 🤝 Signals aligned (100%)
+          - generic [ref=e1306]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e1307]: score 0.49
+          - generic [ref=e1309]: Generated 3:25 PM ET
+          - generic [ref=e1310]:
+            - button "OVER" [ref=e1311] [cursor=pointer]
+            - button "UNDER" [ref=e1312] [cursor=pointer]
+        - generic [ref=e1313]:
+          - generic [ref=e1314]:
+            - generic [ref=e1315]: B
+            - generic [ref=e1316]: HIGH
+          - generic [ref=e1317]: Deandre Ayton
+          - generic [ref=e1318]: POINTS
+          - generic [ref=e1319]: "15.5"
+          - generic [ref=e1320]:
+            - generic [ref=e1321]: UNDER
+            - generic [ref=e1322]: 53.9% implied
+          - generic [ref=e1323]:
+            - generic [ref=e1324]:
+              - text: "Model: 76% / Book: 54% →"
+              - strong [ref=e1325]: +22.0% edge
+            - generic [ref=e1326]: 5.0% stake
+          - generic [ref=e1327]: ⚠️ Edge +22% is unusually high — verify line is current
+          - generic [ref=e1328]: 📊 24% OVER / 76% UNDER (L15 distribution)
+          - generic [ref=e1329]: "🎲 Hit prob: 76% 🎲 Volatile"
+          - generic [ref=e1330]: "📈 L5: 12.0 avg 🎲 Volatile (hit 20% of L5)"
+          - generic [ref=e1331]: "↗ Trending up: L5 12.0 vs L15 10.9"
+          - generic [ref=e1332]: 📅 Stats from Apr 1 (3d ago)
+          - generic [ref=e1333]: 🤝 Signals aligned (100%)
+          - generic [ref=e1334]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e1335]: score 0.48
+          - generic [ref=e1337]: Generated 3:25 PM ET
+          - generic [ref=e1338]:
+            - button "OVER" [ref=e1339] [cursor=pointer]
+            - button "UNDER" [ref=e1340] [cursor=pointer]
+        - generic [ref=e1341]:
+          - generic [ref=e1342]:
+            - generic [ref=e1343]: B
+            - generic [ref=e1344]: HIGH
+          - generic [ref=e1345]: LeBron James
+          - generic [ref=e1346]: POINTS
+          - generic [ref=e1347]: "25.5"
+          - generic [ref=e1348]:
+            - generic [ref=e1349]: OVER
+            - generic [ref=e1350]: 51.3% implied
+          - generic [ref=e1351]:
+            - generic [ref=e1352]:
+              - text: "Model: 58% / Book: 51% →"
+              - strong [ref=e1353]: +6.9% edge
+            - generic [ref=e1354]: 5.0% stake
+          - generic [ref=e1355]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e1356]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e1357]: score 0.46
+          - generic [ref=e1359]: Generated 3:25 PM ET
+          - generic [ref=e1360]:
+            - button "OVER" [ref=e1361] [cursor=pointer]
+            - button "UNDER" [ref=e1362] [cursor=pointer]
+        - generic [ref=e1363]:
+          - generic [ref=e1364]:
+            - generic [ref=e1365]: B
+            - generic [ref=e1366]: HIGH
+          - generic [ref=e1367]: Jake LaRavia
+          - generic [ref=e1368]: THREES
+          - generic [ref=e1369]: "1.5"
+          - generic [ref=e1370]:
+            - generic [ref=e1371]: OVER
+            - generic [ref=e1372]: 51.3% implied
+          - generic [ref=e1373]:
+            - generic [ref=e1374]:
+              - text: "Model: 58% / Book: 51% →"
+              - strong [ref=e1375]: +6.9% edge
+            - generic [ref=e1376]: 5.0% stake
+          - generic [ref=e1377]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e1378]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e1379]: score 0.46
+          - generic [ref=e1381]: Generated 3:25 PM ET
+          - generic [ref=e1382]:
+            - button "OVER" [ref=e1383] [cursor=pointer]
+            - button "UNDER" [ref=e1384] [cursor=pointer]
+    - generic [ref=e1385]:
+      - generic [ref=e1386]:
+        - generic [ref=e1387]: Sacramento Kings vs Los Angeles Clippers
+        - generic [ref=e1388]: Sun 5 Apr, 21:10 ET
+      - generic [ref=e1389]:
+        - generic [ref=e1390]: 🏆 WINNER PREDICTION
+        - generic [ref=e1391]:
+          - generic [ref=e1392]: Sacramento Kings
+          - generic [ref=e1395]: 13.6%
+        - generic [ref=e1396]:
+          - generic [ref=e1397]: Los Angeles Clippers
+          - generic [ref=e1400]: 86.4%
+        - generic [ref=e1401]:
+          - text: "Pick:"
+          - strong [ref=e1402]: Los Angeles Clippers
+          - generic [ref=e1403]: HIGH
+          - text: "86.4% confidence · Odds: 1.12"
+      - generic [ref=e1404]: 🎯 TOP PICKS — Sacramento Kings vs Los Angeles Clippers
+      - generic [ref=e1405]:
+        - generic [ref=e1406]:
+          - generic [ref=e1407]:
+            - generic [ref=e1408]: A★
+            - generic [ref=e1409]: HIGH
+          - generic [ref=e1410]: Kawhi Leonard
+          - generic [ref=e1411]: ASSISTS
+          - generic [ref=e1412]: "3.5"
+          - generic [ref=e1413]:
+            - generic [ref=e1414]: OVER
+            - generic [ref=e1415]: 50.0% implied
+          - generic [ref=e1416]:
+            - generic [ref=e1417]:
+              - text: "Model: 57% / Book: 50% →"
+              - strong [ref=e1418]: +7.0% edge
+            - generic [ref=e1419]: 5.0% stake
+          - generic [ref=e1420]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e1421]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e1422]: score 0.47
+          - generic [ref=e1424]: Generated 3:25 PM ET
+          - generic [ref=e1425]:
+            - button "OVER" [ref=e1426] [cursor=pointer]
+            - button "UNDER" [ref=e1427] [cursor=pointer]
+        - generic [ref=e1428]:
+          - generic [ref=e1429]:
+            - generic [ref=e1430]: A
+            - generic [ref=e1431]: HIGH
+          - generic [ref=e1432]: Darius Garland
+          - generic [ref=e1433]: POINTS
+          - generic [ref=e1434]: "19.5"
+          - generic [ref=e1435]:
+            - generic [ref=e1436]: OVER
+            - generic [ref=e1437]: 52.1% implied
+          - generic [ref=e1438]:
+            - generic [ref=e1439]:
+              - text: "Model: 59% / Book: 52% →"
+              - strong [ref=e1440]: +6.9% edge
+            - generic [ref=e1441]: 5.0% stake
+          - generic [ref=e1442]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e1443]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e1444]: score 0.46
+          - generic [ref=e1446]: Generated 3:25 PM ET
+          - generic [ref=e1447]:
+            - button "OVER" [ref=e1448] [cursor=pointer]
+            - button "UNDER" [ref=e1449] [cursor=pointer]
+        - generic [ref=e1450]:
+          - generic [ref=e1451]:
+            - generic [ref=e1452]: B
+            - generic [ref=e1453]: HIGH
+          - generic [ref=e1454]: Derrick Jones
+          - generic [ref=e1455]: REBOUNDS
+          - generic [ref=e1456]: "3.5"
+          - generic [ref=e1457]:
+            - generic [ref=e1458]: UNDER
+            - generic [ref=e1459]: 51.7% implied
+          - generic [ref=e1460]:
+            - generic [ref=e1461]:
+              - text: "Model: 58% / Book: 52% →"
+              - strong [ref=e1462]: +6.8% edge
+            - generic [ref=e1463]: 5.0% stake
+          - generic [ref=e1464]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e1465]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e1466]: score 0.45
+          - generic [ref=e1468]: Generated 3:25 PM ET
+          - generic [ref=e1469]:
+            - button "OVER" [ref=e1470] [cursor=pointer]
+            - button "UNDER" [ref=e1471] [cursor=pointer]
+        - generic [ref=e1472]:
+          - generic [ref=e1473]:
+            - generic [ref=e1474]: B
+            - generic [ref=e1475]: HIGH
+          - generic [ref=e1476]: John Collins
+          - generic [ref=e1477]: THREES
+          - generic [ref=e1478]: "1.5"
+          - generic [ref=e1479]:
+            - generic [ref=e1480]: OVER
+            - generic [ref=e1481]: 50.7% implied
+          - generic [ref=e1482]:
+            - generic [ref=e1483]:
+              - text: "Model: 57% / Book: 51% →"
+              - strong [ref=e1484]: +6.7% edge
+            - generic [ref=e1485]: 5.0% stake
+          - generic [ref=e1486]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e1487]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e1488]: score 0.45
+          - generic [ref=e1490]: Generated 3:25 PM ET
+          - generic [ref=e1491]:
+            - button "OVER" [ref=e1492] [cursor=pointer]
+            - button "UNDER" [ref=e1493] [cursor=pointer]
+        - generic [ref=e1494]:
+          - generic [ref=e1495]:
+            - generic [ref=e1496]: B
+            - generic [ref=e1497]: HIGH
+          - generic [ref=e1498]: Kawhi Leonard
+          - generic [ref=e1499]: POINTS
+          - generic [ref=e1500]: "27.5"
+          - generic [ref=e1501]:
+            - generic [ref=e1502]: UNDER
+            - generic [ref=e1503]: 50.4% implied
+          - generic [ref=e1504]:
+            - generic [ref=e1505]:
+              - text: "Model: 57% / Book: 50% →"
+              - strong [ref=e1506]: +6.7% edge
+            - generic [ref=e1507]: 5.0% stake
+          - generic [ref=e1508]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e1509]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e1510]: score 0.44
+          - generic [ref=e1512]: Generated 3:25 PM ET
+          - generic [ref=e1513]:
+            - button "OVER" [ref=e1514] [cursor=pointer]
+            - button "UNDER" [ref=e1515] [cursor=pointer]
+    - generic [ref=e1516]:
+      - generic [ref=e1517]:
+        - generic [ref=e1518]: Golden State Warriors vs Houston Rockets
+        - generic [ref=e1519]: Sun 5 Apr, 22:10 ET
+      - generic [ref=e1520]:
+        - generic [ref=e1521]: 🏆 WINNER PREDICTION
+        - generic [ref=e1522]:
+          - generic [ref=e1523]: Golden State Warriors
+          - generic [ref=e1526]: 40.7%
+        - generic [ref=e1527]:
+          - generic [ref=e1528]: Houston Rockets
+          - generic [ref=e1531]: 59.3%
+        - generic [ref=e1532]:
+          - text: "Pick:"
+          - strong [ref=e1533]: Houston Rockets
+          - generic [ref=e1534]: MED
+          - text: "59.3% confidence · Odds: 1.65"
+      - generic [ref=e1535]: 🎯 TOP PICKS — Golden State Warriors vs Houston Rockets
+      - generic [ref=e1536]:
+        - generic [ref=e1537]:
+          - generic [ref=e1538]:
+            - generic [ref=e1539]: A★
+            - generic [ref=e1540]: HIGH
+          - generic [ref=e1541]: Gary Payton II
+          - generic [ref=e1542]: POINTS
+          - generic [ref=e1543]: "7.5"
+          - generic [ref=e1544]:
+            - generic [ref=e1545]: OVER
+            - generic [ref=e1546]: 51.2% implied
+          - generic [ref=e1547]:
+            - generic [ref=e1548]:
+              - text: "Model: 59% / Book: 51% →"
+              - strong [ref=e1549]: +7.9% edge
+            - generic [ref=e1550]: 5.0% stake
+          - generic [ref=e1551]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e1552]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e1553]: score 0.52
+          - generic [ref=e1555]: Generated 3:25 PM ET
+          - generic [ref=e1556]:
+            - button "OVER" [ref=e1557] [cursor=pointer]
+            - button "UNDER" [ref=e1558] [cursor=pointer]
+        - generic [ref=e1559]:
+          - generic [ref=e1560]:
+            - generic [ref=e1561]: A
+            - generic [ref=e1562]: HIGH
+          - generic [ref=e1563]: De'Anthony Melton
+          - generic [ref=e1564]: POINTS
+          - generic [ref=e1565]: "12.5"
+          - generic [ref=e1566]:
+            - generic [ref=e1567]: OVER
+            - generic [ref=e1568]: 50.4% implied
+          - generic [ref=e1569]:
+            - generic [ref=e1570]:
+              - text: "Model: 58% / Book: 50% →"
+              - strong [ref=e1571]: +7.7% edge
+            - generic [ref=e1572]: 5.0% stake
+          - generic [ref=e1573]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e1574]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e1575]: score 0.51
+          - generic [ref=e1577]: Generated 3:25 PM ET
+          - generic [ref=e1578]:
+            - button "OVER" [ref=e1579] [cursor=pointer]
+            - button "UNDER" [ref=e1580] [cursor=pointer]
+        - generic [ref=e1581]:
+          - generic [ref=e1582]:
+            - generic [ref=e1583]: B
+            - generic [ref=e1584]: HIGH
+          - generic [ref=e1585]: Kristaps Porzingis
+          - generic [ref=e1586]: POINTS
+          - generic [ref=e1587]: "17.5"
+          - generic [ref=e1588]:
+            - generic [ref=e1589]: OVER
+            - generic [ref=e1590]: 52.1% implied
+          - generic [ref=e1591]:
+            - generic [ref=e1592]:
+              - text: "Model: 60% / Book: 52% →"
+              - strong [ref=e1593]: +7.7% edge
+            - generic [ref=e1594]: 5.0% stake
+          - generic [ref=e1595]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e1596]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e1597]: score 0.51
+          - generic [ref=e1599]: Generated 3:25 PM ET
+          - generic [ref=e1600]:
+            - button "OVER" [ref=e1601] [cursor=pointer]
+            - button "UNDER" [ref=e1602] [cursor=pointer]
+        - generic [ref=e1603]:
+          - generic [ref=e1604]:
+            - generic [ref=e1605]: B
+            - generic [ref=e1606]: HIGH
+          - generic [ref=e1607]: Draymond Green
+          - generic [ref=e1608]: POINTS
+          - generic [ref=e1609]: "8.5"
+          - generic [ref=e1610]:
+            - generic [ref=e1611]: UNDER
+            - generic [ref=e1612]: 51.7% implied
+          - generic [ref=e1613]:
+            - generic [ref=e1614]:
+              - text: "Model: 59% / Book: 52% →"
+              - strong [ref=e1615]: +7.7% edge
+            - generic [ref=e1616]: 5.0% stake
+          - generic [ref=e1617]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e1618]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e1619]: score 0.51
+          - generic [ref=e1621]: Generated 3:25 PM ET
+          - generic [ref=e1622]:
+            - button "OVER" [ref=e1623] [cursor=pointer]
+            - button "UNDER" [ref=e1624] [cursor=pointer]
+        - generic [ref=e1625]:
+          - generic [ref=e1626]:
+            - generic [ref=e1627]: B
+            - generic [ref=e1628]: HIGH
+          - generic [ref=e1629]: Stephen Curry
+          - generic [ref=e1630]: POINTS
+          - generic [ref=e1631]: "19.5"
+          - generic [ref=e1632]:
+            - generic [ref=e1633]: UNDER
+            - generic [ref=e1634]: 53.4% implied
+          - generic [ref=e1635]:
+            - generic [ref=e1636]:
+              - text: "Model: 61% / Book: 53% →"
+              - strong [ref=e1637]: +7.6% edge
+            - generic [ref=e1638]: 5.0% stake
+          - generic [ref=e1639]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e1640]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e1641]: score 0.51
+          - generic [ref=e1643]: Generated 3:25 PM ET
+          - generic [ref=e1644]:
+            - button "OVER" [ref=e1645] [cursor=pointer]
+            - button "UNDER" [ref=e1646] [cursor=pointer]
+    - generic [ref=e1647]:
+      - generic [ref=e1648]:
+        - generic [ref=e1649]: Atlanta Hawks vs New York Knicks
+        - generic [ref=e1650]: Mon 6 Apr, 19:10 ET
+      - generic [ref=e1651]:
+        - generic [ref=e1652]: 🏆 WINNER PREDICTION
+        - generic [ref=e1653]:
+          - generic [ref=e1654]: Atlanta Hawks
+          - generic [ref=e1657]: 50.6%
+        - generic [ref=e1658]:
+          - generic [ref=e1659]: New York Knicks
+          - generic [ref=e1662]: 49.4%
+        - generic [ref=e1663]:
+          - text: "Pick:"
+          - strong [ref=e1664]: Atlanta Hawks
+          - generic [ref=e1665]: LOW
+          - text: "50.6% confidence · Odds: 1.91"
+      - generic [ref=e1666]: No qualifying player props.
+    - generic [ref=e1667]:
+      - generic [ref=e1668]:
+        - generic [ref=e1669]: San Antonio Spurs vs Philadelphia 76ers
+        - generic [ref=e1670]: Mon 6 Apr, 20:10 ET
+      - generic [ref=e1671]:
+        - generic [ref=e1672]: 🏆 WINNER PREDICTION
+        - generic [ref=e1673]:
+          - generic [ref=e1674]: San Antonio Spurs
+          - generic [ref=e1677]: 74.6%
+        - generic [ref=e1678]:
+          - generic [ref=e1679]: Philadelphia 76ers
+          - generic [ref=e1682]: 25.4%
+        - generic [ref=e1683]:
+          - text: "Pick:"
+          - strong [ref=e1684]: San Antonio Spurs
+          - generic [ref=e1685]: HIGH
+          - text: "74.6% confidence · Odds: 1.31"
+      - generic [ref=e1686]: No qualifying player props.
+    - generic [ref=e1687]:
+      - generic [ref=e1688]:
+        - generic [ref=e1689]: Denver Nuggets vs Portland Trail Blazers
+        - generic [ref=e1690]: Mon 6 Apr, 21:10 ET
+      - generic [ref=e1691]:
+        - generic [ref=e1692]: 🏆 WINNER PREDICTION
+        - generic [ref=e1693]:
+          - generic [ref=e1694]: Denver Nuggets
+          - generic [ref=e1697]: 75.2%
+        - generic [ref=e1698]:
+          - generic [ref=e1699]: Portland Trail Blazers
+          - generic [ref=e1702]: 24.8%
+        - generic [ref=e1703]:
+          - text: "Pick:"
+          - strong [ref=e1704]: Denver Nuggets
+          - generic [ref=e1705]: HIGH
+          - text: "75.2% confidence · Odds: 1.3"
+      - generic [ref=e1706]: 🎯 TOP PICKS — Denver Nuggets vs Portland Trail Blazers
+      - generic [ref=e1707]:
+        - generic [ref=e1708]:
+          - generic [ref=e1709]:
+            - generic [ref=e1710]: A★
+            - generic [ref=e1711]: MED
+          - generic [ref=e1712]: Scoot Henderson
+          - generic [ref=e1713]: THREES
+          - generic [ref=e1714]: "2.5"
+          - generic [ref=e1715]:
+            - generic [ref=e1716]: UNDER
+            - generic [ref=e1717]: 50.3% implied
+          - generic [ref=e1718]:
+            - generic [ref=e1719]:
+              - text: "Model: 55% / Book: 50% →"
+              - strong [ref=e1720]: +4.5% edge
+            - generic [ref=e1721]: 5.0% stake
+          - generic [ref=e1722]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e1723]:
+            - text: fair line
+            - generic [ref=e1724]: score 0.30
+          - generic [ref=e1726]: Generated 3:25 PM ET
+          - generic [ref=e1727]:
+            - button "OVER" [ref=e1728] [cursor=pointer]
+            - button "UNDER" [ref=e1729] [cursor=pointer]
+        - generic [ref=e1730]:
+          - generic [ref=e1731]:
+            - generic [ref=e1732]: A
+            - generic [ref=e1733]: MED
+          - generic [ref=e1734]: Donovan Clingan
+          - generic [ref=e1735]: ASSISTS
+          - generic [ref=e1736]: "2.5"
+          - generic [ref=e1737]:
+            - generic [ref=e1738]: UNDER
+            - generic [ref=e1739]: 50.6% implied
+          - generic [ref=e1740]:
+            - generic [ref=e1741]:
+              - text: "Model: 55% / Book: 51% →"
+              - strong [ref=e1742]: +4.1% edge
+            - generic [ref=e1743]: 5.0% stake
+          - generic [ref=e1744]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e1745]:
+            - text: fair line
+            - generic [ref=e1746]: score 0.28
+          - generic [ref=e1748]: Generated 3:25 PM ET
+          - generic [ref=e1749]:
+            - button "OVER" [ref=e1750] [cursor=pointer]
+            - button "UNDER" [ref=e1751] [cursor=pointer]
+  - button "📋 My Picks" [ref=e21] [cursor=pointer]

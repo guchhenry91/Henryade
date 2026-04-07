@@ -1,0 +1,642 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e6]:
+          - link "Reed.co.uk" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Reed.co.uk" [ref=e8]
+          - list [ref=e9]:
+            - listitem [ref=e10]:
+              - link "Jobs" [ref=e11] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e12]: Jobs
+            - listitem [ref=e13]:
+              - link "Courses" [ref=e14] [cursor=pointer]:
+                - /url: /courses/?itm_source=js_navigation&itm_medium=jobseeker&itm_campaign=courses_tab&itm_content=standard_version
+                - generic [ref=e15]: Courses
+            - listitem [ref=e16]:
+              - link "Career advice" [ref=e17] [cursor=pointer]:
+                - /url: /career-advice/
+                - generic [ref=e18]: Career advice
+            - listitem [ref=e19]:
+              - link "Recruiting? Post a job" [ref=e20] [cursor=pointer]:
+                - /url: /recruiter/
+                - generic [ref=e21]:
+                  - text: Recruiting?
+                  - strong [ref=e22]: Post a job
+          - generic [ref=e23]:
+            - link "Register CV" [ref=e24] [cursor=pointer]:
+              - /url: /authentication/register?returnTo=%2Fjobs%2Fsenior-service-desk-analyst%2F56720917
+            - list [ref=e25]:
+              - listitem [ref=e26]:
+                - link "Saved jobs" [ref=e27] [cursor=pointer]:
+                  - /url: /account/jobs/shortlisted-jobs
+                  - img [ref=e29]
+                  - generic [ref=e31]: Saved jobs
+              - listitem [ref=e32]:
+                - status [ref=e33]:
+                  - img "Loading" [ref=e34]
+      - search [ref=e38]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: What
+            - textbox "e.g. \"office assistant\"" [ref=e44]
+          - generic [ref=e45]:
+            - generic [ref=e46]: Where
+            - generic [ref=e47]:
+              - textbox "town or postcode" [ref=e48]
+              - button "Get current location" [ref=e49] [cursor=pointer]:
+                - img [ref=e50]
+          - button "Search jobs" [ref=e54] [cursor=pointer]
+          - link "Browse jobs" [ref=e56] [cursor=pointer]:
+            - /url: /popularjobs
+            - text: Browse jobs
+            - img [ref=e57]
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - link "ArrowSearch results" [ref=e64] [cursor=pointer]:
+            - /url: /jobs/senior-service-desk-analyst-jobs-in-central-london?jobId=56720917
+            - img "Arrow"
+            - text: Search results
+          - list [ref=e66]:
+            - listitem [ref=e67]:
+              - link "Home" [ref=e68] [cursor=pointer]:
+                - /url: /
+            - text: /
+            - listitem [ref=e69]:
+              - text: /
+              - link "Information Technology" [ref=e70] [cursor=pointer]:
+                - /url: /jobs/information-technology-jobs
+            - listitem [ref=e71]:
+              - text: /
+              - link "Analyst" [ref=e72] [cursor=pointer]:
+                - /url: /jobs/analyst-jobs
+            - listitem [ref=e73]:
+              - text: /
+              - link "Service Analyst" [ref=e74] [cursor=pointer]:
+                - /url: /jobs/service-analyst-jobs
+            - listitem [ref=e75]: /Job details
+        - generic [ref=e76]:
+          - generic [ref=e78]:
+            - generic [ref=e79]:
+              - generic [ref=e80]: Featured
+              - generic [ref=e81]:
+                - img [ref=e82]
+                - text: Easy Apply
+            - generic [ref=e84]:
+              - generic [ref=e85]:
+                - heading "Senior Service Desk Analyst" [level=1] [ref=e86]
+                - generic [ref=e87]:
+                  - text: 2 days ago by
+                  - link "Reed" [ref=e88] [cursor=pointer]:
+                    - /url: /company-profile/Reed-462
+              - link "Reed jobs" [ref=e90] [cursor=pointer]:
+                - /url: /company-profile/Reed-462
+                - img "Reed jobs" [ref=e91]
+            - list [ref=e92]:
+              - listitem [ref=e93]:
+                - img "Salary" [ref=e94]
+                - text: £40,000 - £50,000 per annum, inc benefits
+              - listitem [ref=e96]:
+                - img "Location" [ref=e97]
+                - text: Central London, London
+              - listitem [ref=e99]:
+                - img "Clock" [ref=e100]
+                - text: Permanent, full-time
+            - generic [ref=e103]:
+              - button "Apply now" [disabled]
+              - button "Shortlist job" [disabled]:
+                - img
+                - text: Save
+            - generic [ref=e105]:
+              - paragraph [ref=e106]:
+                - strong [ref=e107]: Senior Service Desk Engineer – London Based | £40,000–£50,000
+              - paragraph [ref=e108]: Location & Hours
+              - list [ref=e109]:
+                - listitem [ref=e110]:
+                  - strong [ref=e111]: "Location:"
+                  - text: Central London
+                - listitem [ref=e112]:
+                  - strong [ref=e113]: "Hybrid Working:"
+                  - text: 3 days in the office (Mon, Wed, Fri) and 2 days working from home (Tues, Thurs)
+                - listitem [ref=e114]:
+                  - strong [ref=e115]: "Hours:"
+                  - text: Full-time, 37.5 hours/week (Monday to Friday)
+              - paragraph [ref=e116]:
+                - text: Are you a tech-savvy problem solver with a passion for delivering outstanding customer service? Do you thrive in dynamic environments where no two days are the same? If so,
+                - strong [ref=e117]: my client
+                - text: is looking for you!
+              - paragraph [ref=e118]:
+                - text: We’re excited to offer a fantastic opportunity to join my client's
+                - strong [ref=e119]: Information Systems (IS) Operations team
+                - text: as a
+                - strong [ref=e120]: Service Desk Engineer
+                - text: . Based at their modern offices in
+                - strong [ref=e121]: Central London
+                - text: ", you’ll play a key role in supporting their internal users, ensuring seamless IT service delivery and contributing to the continuous improvement of their systems."
+              - paragraph [ref=e122]:
+                - strong [ref=e123]: The Role
+              - paragraph [ref=e124]:
+                - text: As a
+                - strong [ref=e125]: Service Desk Engineer
+                - text: ", you’ll be the first point of contact for technical support, providing both remote and desk-side assistance. You’ll troubleshoot issues, escalate where necessary, and help maintain a high standard of service across the IT infrastructure."
+              - paragraph [ref=e126]:
+                - strong [ref=e127]: Key Responsibilities
+              - list [ref=e128]:
+                - listitem [ref=e129]: Resolve Service Desk tickets within SLA targets, ensuring excellent customer service.
+                - listitem [ref=e130]:
+                  - text: Provide expert support for
+                  - strong [ref=e131]: Windows 10/11
+                  - text: ","
+                  - strong [ref=e132]: Office 365
+                  - text: ", and a range of desktop and mobile applications."
+                - listitem [ref=e133]: Escalate complex issues to internal teams or third-party providers.
+                - listitem [ref=e134]: Create technical documentation and user guides.
+                - listitem [ref=e135]:
+                  - text: Support a wide range of systems including
+                  - strong [ref=e136]: Microsoft Office
+                  - text: ","
+                  - strong [ref=e137]: MS Teams Phones
+                  - text: ","
+                  - strong [ref=e138]: VPN
+                  - text: ","
+                  - strong [ref=e139]: MFA
+                  - text: ","
+                  - strong [ref=e140]: Exchange Email
+                  - text: ", and more."
+                - listitem [ref=e141]: Participate in out-of-hours support and contribute to ongoing service improvements (1 week out of hours support every 10 weeks)
+              - paragraph [ref=e142]:
+                - strong [ref=e143]: What We’re Looking For
+              - paragraph [ref=e144]:
+                - strong [ref=e145]: "Essential:"
+              - list [ref=e146]:
+                - listitem [ref=e147]: Proven experience in a Service Desk or IT support role.
+                - listitem [ref=e148]: Strong troubleshooting skills in Microsoft environments.
+                - listitem [ref=e149]: Excellent communication and interpersonal skills.
+                - listitem [ref=e150]: Ability to prioritise tasks and manage workloads effectively.
+                - listitem [ref=e151]: A customer-first mindset with a calm, empathetic approach.
+              - paragraph [ref=e152]:
+                - strong [ref=e153]: "Desirable:"
+              - list [ref=e154]:
+                - listitem [ref=e155]:
+                  - text: Familiarity with
+                  - strong [ref=e156]: ITIL
+                  - text: ","
+                  - strong [ref=e157]: Prince2
+                  - text: ", or"
+                  - strong [ref=e158]: Agile
+                  - text: methodologies.
+                - listitem [ref=e159]:
+                  - text: Experience with
+                  - strong [ref=e160]: Ivanti
+                  - text: or
+                  - strong [ref=e161]: ServiceNow
+                  - text: .
+                - listitem [ref=e162]: Knowledge of server technologies (e.g., Microsoft Server 2016/2019).
+                - listitem [ref=e163]: Relevant certifications (e.g., MCSE, MCSA, MCITP, CCNA).
+              - paragraph [ref=e164]:
+                - strong [ref=e165]: Why Join My Client?
+              - paragraph [ref=e166]: "They offer a competitive salary and a comprehensive benefits package designed to support your wellbeing and professional growth:"
+              - list [ref=e167]:
+                - listitem [ref=e168]:
+                  - strong [ref=e169]: 30 days annual leave
+                  - text: + buy/sell options
+                - listitem [ref=e170]:
+                  - strong [ref=e171]: 15% employer pension contribution
+                - listitem [ref=e172]:
+                  - strong [ref=e173]: Private medical insurance
+                  - text: with Vitality Health
+                - listitem [ref=e174]:
+                  - strong [ref=e175]: Flexible and hybrid working arrangements
+                - listitem [ref=e176]:
+                  - strong [ref=e177]: Learning & development
+                  - text: opportunities
+                - listitem [ref=e178]:
+                  - strong [ref=e179]: Cycle to work scheme
+                  - text: ", season ticket loans, and more!"
+              - paragraph [ref=e180]
+            - group [ref=e181]:
+              - button "shareShare" [ref=e184] [cursor=pointer]:
+                - img "share" [ref=e185]
+                - text: Share
+              - generic [ref=e187]:
+                - button "EyeHide" [disabled]:
+                  - img "Eye"
+                  - text: Hide
+          - generic [ref=e188]:
+            - banner [ref=e189]:
+              - heading "Create alerts for similar jobs" [level=2] [ref=e190]
+            - generic [ref=e192]:
+              - generic [ref=e193]:
+                - generic [ref=e194]:
+                  - generic [ref=e195]:
+                    - generic [ref=e197]: Senior Service Desk Analyst
+                    - generic [ref=e198]: Central London
+                  - button "Edit" [ref=e199] [cursor=pointer]
+                - generic [ref=e200]:
+                  - generic [ref=e201]: Email address
+                  - textbox "Email address" [ref=e203]
+              - generic [ref=e204]:
+                - button "Create alert" [disabled]:
+                  - generic:
+                    - img
+                  - text: Create alert
+              - generic [ref=e205]:
+                - text: By creating an alert, you agree to the
+                - link "Terms and conditions" [ref=e206] [cursor=pointer]:
+                  - /url: /policies
+                - text: applicable to our service and acknowledge that your personal data will be used in accordance with our
+                - link "Privacy policy" [ref=e207] [cursor=pointer]:
+                  - /url: /policies
+                - text: and you will receive emails and communications about jobs and career related topics.
+          - generic [ref=e208]:
+            - heading "Similar Jobs" [level=3] [ref=e210]
+            - generic [ref=e211]:
+              - link "Shortlist job Field Support Analyst 27 March by Willmott Dixon SalarySalary negotiable LocationLondon ClockPermanent, full-time" [ref=e212] [cursor=pointer]:
+                - /url: /jobs/field-support-analyst/56707551?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e213]:
+                      - img [ref=e214]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Field Support Analyst
+                          - generic: 27 March by Willmott Dixon
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Salary negotiable
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Promoted Application Support Analyst 23 March by FDM Group Salary£60,000 - £70,000 per annum LocationLondon ClockContract, full-time" [ref=e216] [cursor=pointer]:
+                - /url: /jobs/application-support-analyst/56669299?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e217]:
+                      - img [ref=e218]
+                    - generic:
+                      - generic: Promoted
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Application Support Analyst
+                          - generic: 23 March by FDM Group
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £60,000 - £70,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Contract, full-time
+              - link "Shortlist job Senior IT Manager 12 March by For Recruitment Salary£35,000 - £50,000 per annum LocationLondon ClockPermanent, full-time" [ref=e220] [cursor=pointer]:
+                - /url: /jobs/senior-it-manager/56635605?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e221]:
+                      - img [ref=e222]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Senior IT Manager
+                          - generic: 12 March by For Recruitment
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £35,000 - £50,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Promoted Easy Apply Onsite IT Support Engineer 18 March by RFA SalarySalary negotiable LocationLondon ClockPermanent, full-time" [ref=e224] [cursor=pointer]:
+                - /url: /jobs/onsite-it-support-engineer/56665903?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e225]:
+                      - img [ref=e226]
+                    - generic:
+                      - generic: Promoted
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Onsite IT Support Engineer
+                          - generic: 18 March by RFA
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Salary negotiable
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Promoted Senior SOC Analyst - London 25 February by Accenture SalaryCompetitive salary LocationLondon ClockPermanent, full-time" [ref=e228] [cursor=pointer]:
+                - /url: /jobs/senior-soc-analyst-london/56323733?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e229]:
+                      - img [ref=e230]
+                    - generic:
+                      - generic: Promoted
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Senior SOC Analyst - London
+                          - generic: 25 February by Accenture
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Competitive salary
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Promoted Ending soon Systems Analyst 23 March by FDM Group SalarySalary negotiable LocationLondon ClockContract, full-time" [ref=e232] [cursor=pointer]:
+                - /url: /jobs/systems-analyst/56506595?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e233]:
+                      - img [ref=e234]
+                    - generic:
+                      - generic: Promoted
+                      - generic: Ending soon
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Systems Analyst
+                          - generic: 23 March by FDM Group
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Salary negotiable
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Contract, full-time
+            - link "See more jobs like this" [ref=e237] [cursor=pointer]:
+              - /url: /jobs/service-analyst-jobs
+          - generic [ref=e238]:
+            - generic [ref=e240]: Recommended courses
+            - generic [ref=e241]:
+              - link "MCSE Server 2012 Bundle Online, Self-paced £395" [ref=e242] [cursor=pointer]:
+                - /url: /courses/mcse-server-2012-bundle/56069?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=office%20skills_courses_56069
+                - generic: MCSE Server 2012 Bundle
+                - generic: Online, Self-paced
+                - generic: £395
+              - link "CompTIA IT Support Technician Job Programme Online, Self-paced £799" [ref=e243] [cursor=pointer]:
+                - /url: /courses/comptia-it-support-technician-job-programme/247829?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=office%20skills_courses_247829
+                - generic: CompTIA IT Support Technician Job Programme
+                - generic: Online, Self-paced
+                - generic: £799
+              - link "Learning247 140+ Courses Mega Bundle Online, Self-paced £697" [ref=e244] [cursor=pointer]:
+                - /url: /courses/learning247-140-courses-mega-bundle/126346?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=office%20skills_courses_126346
+                - generic: Learning247 140+ Courses Mega Bundle
+                - generic: Online, Self-paced
+                - generic: £697
+            - link "View Office skills courses" [ref=e246] [cursor=pointer]:
+              - /url: https://www.reed.co.uk/courses/all?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=view_office%20skills_courses
+          - generic [ref=e248]:
+            - generic [ref=e249]: Posted by Reed
+            - link "View all jobs and profile Chevron" [ref=e250] [cursor=pointer]:
+              - /url: /jobs/reed/p1342
+              - generic [ref=e251]: View all jobs and profile
+              - img "Chevron" [ref=e252]
+          - generic [ref=e257]:
+            - generic [ref=e258]: Not what you are looking for?
+            - list [ref=e259]:
+              - listitem [ref=e260]:
+                - link "Business Development Manager jobs" [ref=e261] [cursor=pointer]:
+                  - /url: /jobs/business-development-manager-jobs-in-central-london
+              - listitem [ref=e262]:
+                - link "Risk Compliance jobs" [ref=e263] [cursor=pointer]:
+                  - /url: /jobs/risk-compliance-jobs-in-central-london
+              - listitem [ref=e264]:
+                - link "Desktop Support jobs" [ref=e265] [cursor=pointer]:
+                  - /url: /jobs/desktop-support-jobs-in-central-london
+              - listitem [ref=e266]:
+                - link "Civil Engineer jobs" [ref=e267] [cursor=pointer]:
+                  - /url: /jobs/civil-engineer-jobs-in-central-london
+              - listitem [ref=e268]:
+                - link "Civil Design Engineer jobs" [ref=e269] [cursor=pointer]:
+                  - /url: /jobs/civil-design-engineer-jobs-in-central-london
+          - generic [ref=e270]:
+            - generic [ref=e271]: "Reference: 56720917"
+            - generic [ref=e272]:
+              - text: Please note that
+              - link "Reed.co.uk" [ref=e273] [cursor=pointer]:
+                - /url: https://reed.co.uk
+              - text: will never ask you to provide your bank, passport or driving licence details during the application process.
+            - link "Report this job Open in new tab" [ref=e275] [cursor=pointer]:
+              - /url: /enquiries?reportJobRef=56720917
+              - text: Report this job
+              - img "Open in new tab"
+        - complementary [ref=e276]
+    - contentinfo [ref=e277]:
+      - generic [ref=e279]:
+        - navigation [ref=e280]:
+          - button "JOBS" [ref=e282] [cursor=pointer]
+          - list [ref=e285]:
+            - listitem [ref=e286]:
+              - link "Contact us" [ref=e287] [cursor=pointer]:
+                - /url: /enquiries
+            - listitem [ref=e288]:
+              - link "Job search" [ref=e289] [cursor=pointer]:
+                - /url: /jobs
+            - listitem [ref=e290]:
+              - link "Recruiter directory" [ref=e291] [cursor=pointer]:
+                - /url: /recruiterdirectory
+            - listitem [ref=e292]:
+              - link "Work from home" [ref=e293] [cursor=pointer]:
+                - /url: /jobs/work-from-home-jobs
+            - listitem [ref=e294]:
+              - link "Browse jobs" [ref=e295] [cursor=pointer]:
+                - /url: /popularjobs
+            - listitem [ref=e296]:
+              - link "Browse locations" [ref=e297] [cursor=pointer]:
+                - /url: /location
+            - listitem [ref=e298]:
+              - link "Popular searches" [ref=e299] [cursor=pointer]:
+                - /url: /popularsearches
+            - listitem [ref=e300]:
+              - link "Career advice" [ref=e301] [cursor=pointer]:
+                - /url: /career-advice
+            - listitem [ref=e302]:
+              - link "Tax calculator" [ref=e303] [cursor=pointer]:
+                - /url: /tax-calculator
+            - listitem [ref=e304]:
+              - link "Average salary checker" [ref=e305] [cursor=pointer]:
+                - /url: /average-salary
+            - listitem [ref=e306]:
+              - link "Help" [ref=e307] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e308]:
+              - link "Contact a REED office" [ref=e309] [cursor=pointer]:
+                - /url: https://www.reed.com/offices
+            - listitem [ref=e310]:
+              - link "Sitemap" [ref=e311] [cursor=pointer]:
+                - /url: /html-sitemap
+        - navigation [ref=e312]:
+          - button "RECRUITER" [ref=e314] [cursor=pointer]
+          - list [ref=e317]:
+            - listitem [ref=e318]:
+              - link "Recruiter site" [ref=e319] [cursor=pointer]:
+                - /url: /recruiter?directjob=recruiter
+            - listitem [ref=e320]:
+              - link "Post a job" [ref=e321] [cursor=pointer]:
+                - /url: /recruiter/post-a-job?directjob=recruiter
+            - listitem [ref=e322]:
+              - link "CV Search" [ref=e323] [cursor=pointer]:
+                - /url: /recruiter/cv-search?directjob=recruiter
+            - listitem [ref=e324]:
+              - link "Recruitment agencies" [ref=e325] [cursor=pointer]:
+                - /url: /recruiter/recruitment-agencies?directjob=recruiter
+            - listitem [ref=e326]:
+              - link "Recruiter Advice" [ref=e327] [cursor=pointer]:
+                - /url: /recruiter-advice/?directjob=recruiter
+        - navigation [ref=e328]:
+          - button "COURSES" [ref=e330] [cursor=pointer]
+          - list [ref=e333]:
+            - listitem [ref=e334]:
+              - link "Help" [ref=e335] [cursor=pointer]:
+                - /url: /courses/help
+            - listitem [ref=e336]:
+              - link "Contact us" [ref=e337] [cursor=pointer]:
+                - /url: /courses/contact-us
+            - listitem [ref=e338]:
+              - link "Find a course" [ref=e339] [cursor=pointer]:
+                - /url: /courses/
+            - listitem [ref=e340]:
+              - link "View all subjects" [ref=e341] [cursor=pointer]:
+                - /url: /courses/directory
+            - listitem [ref=e342]:
+              - link "Discount courses" [ref=e343] [cursor=pointer]:
+                - /url: /courses/discount
+            - listitem [ref=e344]:
+              - link "Free courses" [ref=e345] [cursor=pointer]:
+                - /url: /courses/free
+            - listitem [ref=e346]:
+              - link "Awarding body directory" [ref=e347] [cursor=pointer]:
+                - /url: /courses/awarding-bodies
+            - listitem [ref=e348]:
+              - link "Career guides" [ref=e349] [cursor=pointer]:
+                - /url: /courses/career-guides
+            - listitem [ref=e350]:
+              - link "Advertise a course" [ref=e351] [cursor=pointer]:
+                - /url: /courses/providers/
+            - listitem [ref=e352]:
+              - link "Courses sitemap" [ref=e353] [cursor=pointer]:
+                - /url: /courses/html-sitemap
+        - navigation [ref=e354]:
+          - button "MORE FROM Reed.co.uk" [ref=e356] [cursor=pointer]
+          - list [ref=e359]:
+            - listitem [ref=e360]:
+              - link "About us" [ref=e361] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e362]:
+              - link "Careers at Reed.co.uk" [ref=e363] [cursor=pointer]:
+                - /url: https://www.reed.com/careers/jobs?businessDivision=Reed.co.uk
+            - listitem [ref=e364]:
+              - link "Press office" [ref=e365] [cursor=pointer]:
+                - /url: /press-office
+            - listitem [ref=e366]:
+              - link "Corporate governance" [ref=e367] [cursor=pointer]:
+                - /url: /corporate-governance
+            - listitem [ref=e368]:
+              - link "Modern slavery statement" [ref=e369] [cursor=pointer]:
+                - /url: https://www.reed.co.uk/cdn/jobseeker/pdf/Reed_MSA_Statement.pdf
+        - navigation [ref=e370]:
+          - button "REED" [ref=e372] [cursor=pointer]
+          - list [ref=e375]:
+            - listitem [ref=e376]:
+              - 'link "Tempzone: timesheets & holiday" [ref=e377] [cursor=pointer]':
+                - /url: https://candidate.reed.co.uk/candlogin.asp
+            - listitem [ref=e378]:
+              - link "Authorise timesheets" [ref=e379] [cursor=pointer]:
+                - /url: https://client.reed.co.uk/
+            - listitem [ref=e380]:
+              - link "Reed Group Services" [ref=e381] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e382]:
+              - link "Reed Specialist Recruitment" [ref=e383] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e384]:
+              - link "Reed in Partnership" [ref=e385] [cursor=pointer]:
+                - /url: https://www.reedinpartnership.co.uk/
+            - listitem [ref=e386]:
+              - link "Careers with REED" [ref=e387] [cursor=pointer]:
+                - /url: https://www.reed.com/careers
+            - listitem [ref=e388]:
+              - link "James Reed - Official Site" [ref=e389] [cursor=pointer]:
+                - /url: /james-reed/
+            - listitem [ref=e390]:
+              - 'link "Podcast - James Reed: all about business" [ref=e391] [cursor=pointer]':
+                - /url: https://www.reed.com/podcasts
+            - listitem [ref=e392]:
+              - link "ESG & sustainability" [ref=e393] [cursor=pointer]:
+                - /url: https://www.reed.com/esg-and-sustainability
+      - generic [ref=e395]:
+        - generic [ref=e396]:
+          - generic [ref=e398]:
+            - link "PhilCo" [ref=e399] [cursor=pointer]:
+              - /url: https://philco.org.uk/
+              - img "PhilCo" [ref=e400]
+            - generic [ref=e401]: Learn how Reed is leading the way in philanthropy
+          - img "Love Mondays" [ref=e403]
+        - generic [ref=e404]:
+          - generic [ref=e405]:
+            - 'link "James Reed: all about business" [ref=e406] [cursor=pointer]':
+              - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+              - 'img "James Reed: all about business" [ref=e407]'
+            - generic [ref=e408]:
+              - heading "Introducing our new podcast New" [level=3] [ref=e409]:
+                - text: Introducing our new podcast
+                - generic [ref=e410]: New
+              - paragraph [ref=e411]: "James Reed: all about business"
+              - link "Listen here" [ref=e412] [cursor=pointer]:
+                - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+          - generic [ref=e413]:
+            - generic [ref=e414]:
+              - generic [ref=e415]:
+                - link "Download on the App Store" [ref=e416] [cursor=pointer]:
+                  - /url: https://itunes.apple.com/GB/app/id1040443949?mt=8
+                  - img "Download on the App Store" [ref=e417]
+                - link "Get it on Google Play" [ref=e418] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.reedcouk.jobs&referrer=af_tranid%3D_HgKgkJ-aFiIn4G5iigdZQ%26pid%3DWebsite_Footer%26utm_source%3DWebsite_Footer
+                  - img "Get it on Google Play" [ref=e419]
+              - generic [ref=e420]:
+                - link "Facebook" [ref=e421] [cursor=pointer]:
+                  - /url: https://www.facebook.com/reedcouk
+                  - img "Facebook" [ref=e422]
+                - link "Instagram" [ref=e423] [cursor=pointer]:
+                  - /url: https://www.instagram.com/reedcouk/
+                  - img "Instagram" [ref=e424]
+                - link "Tiktok" [ref=e425] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@reedjobs
+                  - img "Tiktok" [ref=e426]
+            - list [ref=e427]:
+              - listitem [ref=e428]:
+                - button "Manage Preferences" [ref=e429] [cursor=pointer]
+                - text: ","
+              - listitem [ref=e430]:
+                - link "Security, Privacy, Terms & Conditions" [ref=e431] [cursor=pointer]:
+                  - /url: /policies
+            - paragraph [ref=e432]: COPYRIGHT © Reed.co.uk 2026
+  - alert [ref=e433]

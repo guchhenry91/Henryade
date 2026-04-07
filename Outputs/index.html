@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Betting Model Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#080808;color:#bbb;min-height:100vh}
+
+  /* ── Header ── */
+  header{background:#0d0d0d;border-bottom:1px solid #161616;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  header h1{color:#00ff88;font-size:0.95em;letter-spacing:2px;font-weight:700}
+  .token-bar{display:flex;gap:8px;align-items:center;font-size:0.75em;flex-wrap:wrap}
+  .token-info{background:#111;padding:4px 10px;border-radius:20px;border:1px solid #1e1e1e;color:#444}
+  .token-info span{color:#ffcc00;font-weight:700}
+  .cache-info{color:#333;font-size:0.73em}
+  .btn{background:transparent;color:#00ff88;border:1px solid #00ff8840;padding:5px 14px;border-radius:20px;cursor:pointer;font-size:0.75em;transition:all .2s;font-weight:600}
+  .btn:hover{background:#00ff8812;border-color:#00ff88}
+  .btn-danger{border-color:#ff444440;color:#ff4444}
+  .btn-danger:hover{background:#ff444412;border-color:#ff4444}
+
+  /* ── Tabs ── */
+  .tabs{display:flex;padding:0 16px;background:#0d0d0d;border-bottom:1px solid #161616;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{padding:12px 16px;cursor:pointer;font-size:0.82em;color:#444;border-bottom:2px solid transparent;transition:all .2s;font-weight:500;user-select:none;flex-shrink:0}
+  .tab:hover{color:#888}
+  .tab.active{color:#00ff88;border-bottom-color:#00ff88}
+
+  /* ── Layout ── */
+  .tab-content{display:none;padding:20px;max-width:1100px;margin:0 auto}
+  .tab-content.active{display:block}
+  .sport-section{margin-bottom:32px}
+  .sport-title{color:#00ccff;font-size:0.78em;font-weight:700;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid #111;display:flex;align-items:center;gap:8px;letter-spacing:1.5px;text-transform:uppercase}
+  .match-card{background:#0d0d0d;border:1px solid #181818;border-radius:10px;padding:16px;margin-bottom:14px;transition:border-color .2s}
+  .match-card:hover{border-color:#222}
+  .match-title{color:#fff;font-weight:600;font-size:0.93em;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+  .match-time{color:#333;font-size:0.73em;font-weight:normal;white-space:nowrap}
+
+  /* ── Odds table ── */
+  .odds-table{width:100%;border-collapse:collapse;font-size:0.78em;margin-bottom:12px;overflow-x:auto;display:block}
+  .odds-table th{background:#111;color:#444;text-align:left;padding:6px 8px;font-weight:500;white-space:nowrap}
+  .odds-table td{padding:5px 8px;border-bottom:1px solid #101010;white-space:nowrap}
+  .pos{color:#00ff88;font-weight:700}
+  .neg{color:#ff4444}
+  .neutral{color:#444}
+
+  /* ── Score chips ── */
+  .score-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .score-chip{background:#111;border:1px solid #1e1e1e;border-radius:6px;padding:5px 12px;font-size:0.75em;white-space:nowrap}
+  .score-chip.top{border-color:#00ff8850;color:#00ff88;background:#00ff8808}
+  .score-chip.second{border-color:#88ff0035;color:#88ff00}
+  .score-chip.third{border-color:#ccff0025;color:#ccff00}
+  .label{color:#333;font-size:0.7em;margin-bottom:6px;margin-top:10px;text-transform:uppercase;letter-spacing:0.5px}
+
+  /* ── Value box ── */
+  .value-box{background:#0a0a0a;border:1px solid #181818;border-radius:10px;padding:18px;margin-top:16px}
+  .value-box h3{color:#00ff88;margin-bottom:12px;font-size:0.82em;letter-spacing:1.5px;text-transform:uppercase}
+  .value-item{padding:7px 0;border-bottom:1px solid #101010;font-size:0.81em;color:#00ff88}
+  .value-item .match-ref{color:#444;font-size:0.9em}
+
+  /* ── Tier badges ── */
+  .tier-a{background:#00ff8815;color:#00ff88;padding:2px 9px;border-radius:12px;font-size:0.7em;font-weight:700;border:1px solid #00ff8840;display:inline-block}
+  .tier-b{background:#ffcc0012;color:#ffcc00;padding:2px 9px;border-radius:12px;font-size:0.7em;font-weight:700;border:1px solid #ffcc0030;display:inline-block}
+
+  /* ── Confidence badges ── */
+  .badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:20px;font-size:0.68em;font-weight:700;letter-spacing:0.5px;white-space:nowrap}
+  .badge-high{background:#00ff8812;color:#00ff88;border:1px solid #00ff8845;box-shadow:0 0 10px #00ff8815}
+  .badge-med{background:#ffcc0012;color:#ffcc00;border:1px solid #ffcc0040}
+  .badge-low{background:#ffffff06;color:#383838;border:1px solid #222}
+
+  /* ── Pick cards ── */
+  .section-hdr{color:#00ccff;font-size:0.72em;font-weight:700;margin:14px 0 10px;padding-bottom:6px;border-bottom:1px solid #111;letter-spacing:1.5px;text-transform:uppercase}
+  .pick-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:6px}
+  .pick-card{background:#101010;border:1px solid #1a1a1a;border-radius:8px;padding:14px;position:relative;transition:border-color .2s}
+  .pick-card:hover{border-color:#252525}
+  .pick-card.best-pick{border-color:#00ff8828;background:#0a110a}
+  .pick-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .pick-card-player{font-size:0.9em;font-weight:600;color:#ddd;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pick-card.best-pick .pick-card-player{color:#fff}
+  .pick-card-stat{font-size:0.68em;color:#383838;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px}
+  .pick-card-line{font-size:1.6em;font-weight:700;color:#ffcc00;line-height:1;margin-bottom:6px}
+  .pick-card-direction{font-size:0.88em;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+  .pick-card-pct{font-size:0.75em;color:#333;font-weight:400}
+  .pick-card-reason{font-size:0.7em;color:#383838;border-top:1px solid #181818;padding-top:8px;margin-top:4px;line-height:1.5}
+  .pick-over{color:#00ff88;font-weight:700}
+  .pick-under{color:#ff9944;font-weight:700}
+
+  /* ── Hero section ── */
+  .hero-section{background:linear-gradient(160deg,#0a120a 0%,#0d0d0d 60%);border:1px solid #00ff8820;border-radius:12px;padding:20px;margin-bottom:20px}
+  .hero-title{color:#00ff88;font-size:0.78em;font-weight:700;margin-bottom:16px;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+  .hero-pick{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #0f0f0f;flex-wrap:wrap}
+  .hero-pick:last-child{border-bottom:none}
+  .hero-rank{font-size:0.9em;color:#252525;min-width:22px;font-weight:700;text-align:center}
+  .hero-pick.rank-1 .hero-rank{color:#00ff88}
+  .hero-pick.rank-2 .hero-rank{color:#00cc66}
+  .hero-player{font-weight:600;color:#ccc;font-size:0.88em}
+  .hero-detail{color:#383838;font-size:0.75em;margin-top:2px}
+
+  /* ── Record bar ── */
+  .record-bar{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+  .record-stat{background:#0f0f0f;border:1px solid #181818;border-radius:8px;padding:12px 18px;text-align:center;min-width:72px}
+  .record-num{font-size:1.5em;font-weight:700;line-height:1}
+  .record-label{font-size:0.62em;color:#383838;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+  .streak-chip{background:#0f0f0f;border:1px solid #181818;border-radius:8px;padding:12px 18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+  .streak-val{font-size:0.9em;font-weight:700}
+  .streak-w{color:#00ff88}
+  .streak-l{color:#ff4444}
+
+  /* ── History table ── */
+  .ptable{width:100%;border-collapse:collapse;font-size:0.78em}
+  .ptable th{background:#0f0f0f;color:#383838;text-align:left;padding:7px 8px;font-weight:500;font-size:0.82em;border-bottom:1px solid #181818}
+  .ptable td{padding:6px 8px;border-bottom:1px solid #0d0d0d;vertical-align:middle}
+  .ptable tr:hover td{background:#0c0c0c}
+  .mark-btn{padding:3px 10px;border-radius:12px;cursor:pointer;font-size:0.72em;font-weight:600;border:1px solid transparent;transition:all .15s}
+  .mark-w{background:#00ff8812;color:#00ff88;border-color:#00ff8840}
+  .mark-w:hover{background:#00ff8825}
+  .mark-l{background:#ff444412;color:#ff4444;border-color:#ff444440}
+  .mark-l:hover{background:#ff444425}
+  .mark-v{background:#ffffff06;color:#383838;border-color:#1e1e1e}
+  .mark-v:hover{background:#151515}
+
+  /* ── State ── */
+  .loading{color:#282828;font-style:italic;padding:40px;text-align:center;font-size:0.88em}
+  .error{color:#ff4444;padding:12px 16px;background:#110000;border-radius:8px;margin:10px 0;font-size:0.82em;border:1px solid #ff444428}
+  .no-games{color:#2a2a2a;font-size:0.82em;padding:12px 0;font-style:italic}
+
+  /* ── Winner box ── */
+  .winner-box{background:#0a0f0a;border:1px solid #161c16;border-radius:8px;padding:14px;margin-bottom:14px}
+  .winner-box-title{color:#00ff88;font-size:0.7em;font-weight:700;letter-spacing:1.5px;margin-bottom:10px;text-transform:uppercase}
+  .winner-row{display:flex;align-items:center;gap:10px;padding:4px 0;font-size:0.82em}
+  .winner-name{min-width:130px;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .winner-name.pick{color:#fff;font-weight:600}
+  .bar-wrap{flex:1;background:#111;border-radius:4px;height:4px}
+  .bar-fill{height:4px;border-radius:4px;background:#00ff88;transition:width .5s}
+  .bar-fill.draw{background:#444}
+  .bar-fill.away{background:#00ccff}
+  .pct-label{min-width:38px;text-align:right;color:#444;font-size:0.78em}
+  .winner-summary{margin-top:10px;font-size:0.78em;color:#666;border-top:1px solid #111;padding-top:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+
+  /* ── Mobile ── */
+  @media(max-width:640px){
+    .pick-cards{grid-template-columns:1fr 1fr}
+    .winner-name{min-width:90px}
+    .tab{padding:10px 10px;font-size:0.76em}
+    .record-stat,.streak-chip{padding:10px 12px}
+    .record-num{font-size:1.2em}
+    .hero-pick{gap:8px}
+    header{padding:10px 14px}
+  }
+  @media(max-width:380px){
+    .pick-cards{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>⚡ BETTING MODEL DASHBOARD</h1>
+  <div class="token-bar">
+    <div class="token-info">Tokens Left: <span id="tokensLeft">—</span></div>
+    <div class="token-info">Used: <span id="tokensUsed">—</span></div>
+    <div class="cache-info" id="cacheStatus">Cache: checking...</div>
+    <button class="btn" onclick="refreshAll(false)">↻ Cache</button>
+    <button class="btn btn-danger" onclick="refreshAll(true)">⚡ Refresh</button>
+  </div>
+</header>
+
+<div class="tabs">
+  <div class="tab active" onclick="showTab('all',event)">All Value Bets</div>
+  <div class="tab" onclick="showTab('soccer',event)">⚽ Soccer</div>
+  <div class="tab" onclick="showTab('nba',event)">🏀 NBA</div>
+  <div class="tab" onclick="showTab('nfl',event)">🏈 NFL</div>
+  <div class="tab" onclick="showTab('nhl',event)">🏒 NHL</div>
+  <div class="tab" onclick="showTab('mlb',event)">⚾ MLB</div>
+  <div class="tab" onclick="showTab('history',event)">📊 History</div>
+</div>
+
+<div id="tab-all"    class="tab-content active"><div class="loading" id="all-loading">Loading...</div></div>
+<div id="tab-soccer" class="tab-content"><div class="loading">Click Soccer tab to load</div></div>
+<div id="tab-nba"    class="tab-content"><div class="loading">Click NBA tab to load</div></div>
+<div id="tab-nfl"    class="tab-content"><div class="loading">Click NFL tab to load</div></div>
+<div id="tab-nhl"    class="tab-content"><div class="loading">Click NHL tab to load</div></div>
+<div id="tab-mlb"     class="tab-content"><div class="loading">Click MLB tab to load</div></div>
+<div id="tab-history" class="tab-content"><div class="loading">Click History tab to load</div></div>
+
+<script>
+const API_KEY = '17b4d42651ab4e81ef298300544f5a21';
+const BASE    = 'https://api.the-odds-api.com/v4';
+const CACHE_TTL = 6 * 60 * 60 * 1000;
+const allValueBets = [];
+const allPropBets  = [];   // slate-wide best prop pick per game, all sports
+const loadedTabs = new Set();
+
+const SPORT_TABS = {
+  nba: {
+    key: 'basketball_nba', label: '🏀 NBA', region: 'us',
+    props: 'player_points,player_rebounds,player_assists,player_threes'
+  },
+  nfl: {
+    key: 'americanfootball_nfl', label: '🏈 NFL', region: 'us',
+    props: 'player_pass_yds,player_rush_yds,player_receiving_yds,player_pass_tds,player_receptions'
+  },
+  nhl: {
+    key: 'icehockey_nhl', label: '🏒 NHL', region: 'us',
+    props: 'player_shots_on_goal,player_points,player_assists,player_goals'
+  },
+  mlb: {
+    key: 'baseball_mlb', label: '⚾ MLB', region: 'us',
+    props: 'batter_home_runs,batter_hits,batter_rbis,batter_runs_scored,batter_total_bases'
+  },
+};
+
+// ── Prop scoring constants ────────────────────────────────────────────────────
+// Market keys to exclude — these are specialty/novelty bets with no real edge signal
+const SPECIALTY_MARKETS = new Set([
+  'player_first_basket','player_last_basket',
+  'player_double_double','player_triple_double',
+  'player_first_goalscorer','player_last_goalscorer',
+  'player_anytime_goalscorer',
+  'player_to_score_2_or_more_goals',
+  'player_grand_slam','player_cycle',
+]);
+const MAX_VIG   = 0.15;  // lines with vig above this are too juiced to trust
+const FAIR_VIG  = 0.08;  // "fair" line benchmark — vig at or below this gets no penalty
+
+// Vig = total over-round — 0.10 means 10% baked into the line
+function calcVig(overOdds, underOdds) {
+  return (1 / overOdds + 1 / underOdds) - 1;
+}
+
+// Composite score — only uses signals derivable from Odds API market data:
+//   edge       0.40 — vig-removed pick probability above 50%
+//   consensus  0.30 — how many distinct bookmakers offer both sides of this line
+//   fair_price 0.20 — how close to a fair (low-vig) line
+//   vig_penalty 0.10 — subtracted when vig exceeds FAIR_VIG
+// calib: object from getCalibration() — applies directional win-rate multiplier
+function propScore(pct, bookCount, vig, direction, calib) {
+  const dirCalib        = (calib && calib[direction]) || 1.0;
+  const edgeFactor      = (pct - 50) / 50;
+  const consensusFactor = Math.min(bookCount / 6, 1);
+  const fairFactor      = Math.max(0, 1 - vig / MAX_VIG);
+  const vigPenalty      = Math.max(0, (vig - FAIR_VIG) / (MAX_VIG - FAIR_VIG));
+  return (edgeFactor * 0.40 + consensusFactor * 0.30 + fairFactor * 0.20 - vigPenalty * 0.10) * dirCalib;
+}
+
+// ── Self-improvement: pick history & calibration ─────────────────────────────
+const HISTORY_KEY   = 'bm_picks_v1';
+const MIN_CALIBRATE = 10;  // picks with results needed before calibration kicks in
+
+function getHistory() {
+  try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; } catch { return []; }
+}
+
+// Save top pick per game — deduped by same-day player+market key
+function savePickToHistory(pick) {
+  const h = getHistory();
+  if (h.find(x => x.id === pick.id)) return;  // already saved today
+  h.unshift(pick);
+  try { localStorage.setItem(HISTORY_KEY, JSON.stringify(h.slice(0, 300))); } catch {}
+}
+
+// Mark a pick as Won, Lost, or Void then rebuild the History tab
+function markResult(id, result) {
+  const h = getHistory();
+  const p = h.find(x => x.id === id);
+  if (p) { p.result = result; p.autoGraded = false; try { localStorage.setItem(HISTORY_KEY, JSON.stringify(h)); } catch {} }
+  buildHistoryTab();
+}
+
+// ── AUTO-GRADING ENGINE ───────────────────────────────────────────────────────
+// Uses ESPN's free public API to fetch completed game box scores and auto-mark
+// pending picks as W / L / V the next morning on page load.
+
+const ESPN_CFG = {
+  'NBA': { sport: 'basketball',       league: 'nba' },
+  'NFL': { sport: 'americanfootball', league: 'nfl' },
+  'NHL': { sport: 'hockey',           league: 'nhl' },
+  'MLB': { sport: 'baseball',         league: 'mlb' },
+};
+
+// Map Odds API market keys → ESPN boxscore stat keys (league-scoped where needed)
+const MARKET_STAT_KEY = {
+  player_points:        { nba: 'points',                      nhl: 'points'        },
+  player_rebounds:      { nba: 'rebounds'                                           },
+  player_assists:       { nba: 'assists',                     nhl: 'assists'        },
+  player_threes:        { nba: 'threePointFieldGoalsMade'                           },
+  player_pass_yds:      { nfl: 'passingYards'                                       },
+  player_rush_yds:      { nfl: 'rushingYards'                                       },
+  player_receiving_yds: { nfl: 'receivingYards'                                     },
+  player_pass_tds:      { nfl: 'passingTouchdowns'                                  },
+  player_receptions:    { nfl: 'receptions'                                         },
+  player_shots_on_goal: { nhl: 'shots'                                              },
+  player_goals:         { nhl: 'goals'                                              },
+  batter_home_runs:     { mlb: 'homeRuns'                                           },
+  batter_hits:          { mlb: 'hits'                                               },
+  batter_rbis:          { mlb: 'rbi'                                                },
+  batter_runs_scored:   { mlb: 'runs'                                               },
+  batter_total_bases:   { mlb: 'totalBases'                                         },
+};
+
+// Fuzzy name match on last name (handles minor ESPN vs Odds API name variations)
+function nameMatch(a, b) {
+  const n = s => s.toLowerCase().replace(/[^a-z\s]/g, '').trim();
+  const [na, nb] = [n(a), n(b)];
+  if (na === nb) return true;
+  return na.split(' ').pop() === nb.split(' ').pop();
+}
+
+// Format a date string to YYYYMMDD for ESPN scoreboard endpoint
+function espnDateStr(iso) {
+  const d = new Date(iso);
+  return `${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}`;
+}
+
+// Extract a player's stat value from an ESPN game summary boxscore
+function playerStatFromSummary(summary, playerName, statKey) {
+  for (const team of (summary?.boxscore?.players || [])) {
+    for (const grp of (team.statistics || [])) {
+      const idx = (grp.keys || []).indexOf(statKey);
+      if (idx === -1) continue;
+      for (const ath of (grp.athletes || [])) {
+        if (nameMatch(playerName, ath.athlete?.displayName || '')) {
+          const v = parseFloat(ath.stats?.[idx]);
+          if (!isNaN(v)) return v;
+        }
+      }
+    }
+  }
+  return null;
+}
+
+// Show a brief toast notification in the bottom-right corner
+function showToast(msg, color) {
+  const c = color || '#00ff88';
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.style.cssText = `position:fixed;bottom:20px;right:20px;background:${c}15;color:${c};border:1px solid ${c}40;padding:10px 18px;border-radius:8px;font-size:0.82em;font-weight:600;z-index:9999;transition:opacity .5s`;
+  document.body.appendChild(t);
+  setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 500); }, 3500);
+}
+
+// Auto-grade all pending picks from before today using ESPN API
+async function autoGrade() {
+  const history = getHistory();
+  const today   = new Date().toDateString();
+  const pending = history.filter(p => !p.result && new Date(p.date).toDateString() !== today);
+  if (!pending.length) return 0;
+
+  let graded = 0;
+
+  // Group pending picks by sport + date to minimise ESPN API calls
+  const groups = {};
+  pending.forEach(pick => {
+    const raw      = pick.sport.replace(/\p{Emoji}/gu, '').trim().toUpperCase();
+    const sportKey = Object.keys(ESPN_CFG).find(k => raw.includes(k));
+    if (!sportKey) return;
+    const gk = `${sportKey}__${espnDateStr(pick.date)}`;
+    if (!groups[gk]) groups[gk] = {
+      cfg:     ESPN_CFG[sportKey],
+      league:  sportKey.toLowerCase(),
+      dateStr: espnDateStr(pick.date),
+      picks:   [],
+    };
+    groups[gk].picks.push(pick);
+  });
+
+  for (const grp of Object.values(groups)) {
+    try {
+      const boardRes = await fetch(
+        `https://site.api.espn.com/apis/site/v2/sports/${grp.cfg.sport}/${grp.cfg.league}/scoreboard?dates=${grp.dateStr}&limit=50`
+      );
+      if (!boardRes.ok) continue;
+      const board  = await boardRes.json();
+      const events = board.events || [];
+
+      for (const pick of grp.picks) {
+        try {
+          // Find the ESPN event matching this pick's game
+          const [partA, partB] = (pick.match || '').split(/\s+vs\.?\s+/i).map(s => s.trim().toLowerCase());
+          const matchEv = events.find(ev => {
+            const names = (ev.competitions?.[0]?.competitors || [])
+              .map(c => (c.team?.displayName || c.team?.name || '').toLowerCase());
+            return names.some(n => partA && n.includes(partA.split(' ').pop())) ||
+                   names.some(n => partB && n.includes(partB.split(' ').pop()));
+          });
+          if (!matchEv) continue;
+
+          // Only grade completed games
+          if (!matchEv.competitions?.[0]?.status?.type?.completed) continue;
+
+          if (pick.market === 'match_winner') {
+            // Grade from scoreboard competitor data — no summary fetch needed
+            const comp        = matchEv.competitions?.[0]?.competitors || [];
+            const winnerComp  = comp.find(c => c.winner === true);
+            const actualWinner = winnerComp ? (winnerComp.team?.displayName || '') : 'Draw';
+            const result = nameMatch(pick.pick, actualWinner) ? 'W' : 'L';
+            const hp = history.find(x => x.id === pick.id);
+            if (hp) { hp.result = result; hp.autoGraded = true; graded++; }
+          } else {
+            // Grade player prop from box score summary
+            const statKey = (MARKET_STAT_KEY[pick.market] || {})[grp.league];
+            if (!statKey) continue;
+
+            const sumRes = await fetch(
+              `https://site.api.espn.com/apis/site/v2/sports/${grp.cfg.sport}/${grp.cfg.league}/summary?event=${matchEv.id}`
+            );
+            if (!sumRes.ok) continue;
+            const summary    = await sumRes.json();
+            const actualStat = playerStatFromSummary(summary, pick.player, statKey);
+            if (actualStat === null) continue;
+
+            const result = actualStat === pick.line ? 'V'
+              : pick.pick === 'OVER' ? (actualStat > pick.line ? 'W' : 'L')
+              : (actualStat < pick.line ? 'W' : 'L');
+
+            const hp = history.find(x => x.id === pick.id);
+            if (hp) { hp.result = result; hp.autoGraded = true; graded++; }
+          }
+        } catch { /* skip individual pick on error */ }
+      }
+    } catch { /* skip sport/date group on error */ }
+  }
+
+  if (graded > 0) {
+    try { localStorage.setItem(HISTORY_KEY, JSON.stringify(history)); } catch {}
+    showToast(`✓ Auto-graded ${graded} pick${graded > 1 ? 's' : ''}`);
+  }
+  return graded;
+}
+
+// Returns calibration multipliers for OVER and UNDER based on historical win rates.
+// At 50% win rate (random) → 1.0×, range capped at [0.80, 1.20].
+// Only active once MIN_CALIBRATE picks have settled.
+function getCalibration() {
+  const settled = getHistory().filter(p => p.result === 'W' || p.result === 'L');
+  const base = { OVER: 1.0, UNDER: 1.0, settled: settled.length, ready: false };
+  if (settled.length < MIN_CALIBRATE) return base;
+
+  const wr = arr => arr.length ? arr.filter(x => x.result === 'W').length / arr.length : 0.5;
+  const factor = w => Math.max(0.80, Math.min(1.20, 1.0 + (w - 0.5) * 0.5));
+
+  const overPicks  = settled.filter(p => p.pick === 'OVER');
+  const underPicks = settled.filter(p => p.pick === 'UNDER');
+  return {
+    OVER:       factor(wr(overPicks)),
+    UNDER:      factor(wr(underPicks)),
+    overWR:     (wr(overPicks)  * 100).toFixed(0),
+    underWR:    (wr(underPicks) * 100).toFixed(0),
+    overCount:  overPicks.length,
+    underCount: underPicks.length,
+    settled:    settled.length,
+    ready:      true,
+  };
+}
+
+// Short reason string — only references real signals
+function propReason(pct, bookCount, vig) {
+  const parts = [];
+  if      (pct >= 68) parts.push(`${pct}% market edge`);
+  else if (pct >= 60) parts.push(`${pct}% implied`);
+  if      (bookCount >= 5) parts.push(`${bookCount} books aligned`);
+  else if (bookCount >= 3) parts.push(`${bookCount} books`);
+  if      (vig <= FAIR_VIG) parts.push('fair line');
+  else if (vig >= 0.12)     parts.push('juiced');
+  return parts.join(' · ') || 'model pick';
+}
+
+// ── Tab navigation ────────────────────────────────────────────────────────────
+function showTab(name, e) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  if (e && e.target) e.target.classList.add('active');
+  document.getElementById('tab-' + name).classList.add('active');
+
+  if (!loadedTabs.has(name)) {
+    loadedTabs.add(name);
+    if (name === 'soccer') buildSoccer(false);
+    else if (name === 'history') buildHistoryTab();
+    else if (SPORT_TABS[name]) buildSportTab(name, false);
+  }
+}
+
+// ── Cache ─────────────────────────────────────────────────────────────────────
+function cacheKey(k)   { return 'bm_' + k + '_' + new Date().toDateString(); }
+function getCache(k)   {
+  try { const r = localStorage.getItem(cacheKey(k)); if (!r) return null;
+    const {ts,data} = JSON.parse(r); return Date.now()-ts > CACHE_TTL ? null : data;
+  } catch { return null; }
+}
+function setCache(k,d) { try { localStorage.setItem(cacheKey(k), JSON.stringify({ts:Date.now(),data:d})); } catch {} }
+function clearAllCache(){ Object.keys(localStorage).filter(k=>k.startsWith('bm_')).forEach(k=>localStorage.removeItem(k)); }
+function updateCacheStatus(){
+  const keys = Object.keys(localStorage).filter(k=>k.startsWith('bm_'));
+  if (!keys.length) { document.getElementById('cacheStatus').textContent='Cache: empty'; return; }
+  try { const ts=JSON.parse(localStorage.getItem(keys[0])).ts; const ago=Math.round((Date.now()-ts)/60000);
+    document.getElementById('cacheStatus').textContent=`Cache: ${ago}m ago (${keys.length})`; }
+  catch { document.getElementById('cacheStatus').textContent=`Cache: ${keys.length} stored`; }
+}
+
+// ── API fetch helpers ─────────────────────────────────────────────────────────
+function updateTokens(res) {
+  const rem = res.headers.get('x-requests-remaining');
+  const used = res.headers.get('x-requests-used');
+  if (rem)  document.getElementById('tokensLeft').textContent = rem;
+  if (used) document.getElementById('tokensUsed').textContent = used;
+}
+
+async function apiFetch(sport, markets, region='uk', force=false) {
+  const ck = `${sport}_${markets}`;
+  if (!force) { const c = getCache(ck); if (c) return c; }
+  const url = `${BASE}/sports/${sport}/odds/?apiKey=${API_KEY}&regions=${region}&markets=${markets}&oddsFormat=decimal`;
+  const res = await fetch(url);
+  updateTokens(res);
+  if (!res.ok) throw new Error(`API ${res.status}: ${sport}`);
+  const data = await res.json();
+  setCache(ck, data);
+  return data;
+}
+
+async function fetchEvents(sport, force=false) {
+  const ck = `events_${sport}`;
+  if (!force) { const c = getCache(ck); if (c) return c; }
+  const res = await fetch(`${BASE}/sports/${sport}/events?apiKey=${API_KEY}&dateFormat=iso`);
+  updateTokens(res);
+  if (!res.ok) throw new Error(`API ${res.status}: events`);
+  const data = await res.json();
+  setCache(ck, data);
+  return data;
+}
+
+async function fetchEventProps(sport, eventId, markets, region, force=false) {
+  const ck = `props_${eventId}_${markets}`;
+  if (!force) { const c = getCache(ck); if (c) return c; }
+  const url = `${BASE}/sports/${sport}/events/${eventId}/odds?apiKey=${API_KEY}&regions=${region}&markets=${markets}&oddsFormat=decimal`;
+  const res = await fetch(url);
+  updateTokens(res);
+  if (!res.ok) throw new Error(`API ${res.status}`);
+  const data = await res.json();
+  setCache(ck, data);
+  return data;
+}
+
+// ── Poisson model ─────────────────────────────────────────────────────────────
+function poisson(lam, k) { let r=Math.exp(-lam); for(let i=1;i<=k;i++) r*=lam/i; return r; }
+function correctScores(hXG, aXG, max=6) {
+  const s=[];
+  for(let h=0;h<=max;h++) for(let a=0;a<=max;a++) s.push({h,a,p:poisson(hXG,h)*poisson(aXG,a)});
+  s.sort((a,b)=>b.p-a.p); return s;
+}
+function impliedProb(o) { return 1/o; }
+function edge(mP, o)    { return ((mP-impliedProb(o))*100).toFixed(1); }
+function edgeHtml(e) {
+  const n=parseFloat(e);
+  if (n>3)  return `<span class="pos">+${e}%</span>`;
+  if (n<-3) return `<span class="neg">${e}%</span>`;
+  return `<span class="neutral">${e}%</span>`;
+}
+
+// ── Confidence helpers ────────────────────────────────────────────────────────
+function propConf(overOdds, underOdds) {
+  if (!overOdds || !underOdds) return null;
+  const oi=1/overOdds, ui=1/underOdds, tot=oi+ui;
+  const op=(oi/tot)*100, up=(ui/tot)*100;
+  const pick = op>=up ? 'OVER' : 'UNDER';
+  const pct  = Math.max(op, up);
+  const conf = pct>=68 ? 'HIGH' : pct>=58 ? 'MED' : 'LOW';
+  return { pick, pct: pct.toFixed(1), conf, op: op.toFixed(1), up: up.toFixed(1) };
+}
+
+function badge(conf) {
+  if (conf==='HIGH') return '<span class="badge badge-high">HIGH</span>';
+  if (conf==='MED')  return '<span class="badge badge-med">MED</span>';
+  return '<span class="badge badge-low">LOW</span>';
+}
+
+function pickHtml(pick) {
+  return pick==='OVER'
+    ? '<span class="pick-over">OVER</span>'
+    : '<span class="pick-under">UNDER</span>';
+}
+
+// ── Winner prediction box ─────────────────────────────────────────────────────
+// eventDate + sportLabel: when provided, the pick is saved to grading history
+function winnerBox(home, away, homeOdds, awayOdds, drawOdds, eventDate, sportLabel) {
+  if (!homeOdds || !awayOdds) return '';
+  const hi=1/homeOdds, ai=1/awayOdds, di=drawOdds?1/drawOdds:0;
+  const tot=hi+ai+di;
+  const hp=(hi/tot)*100, ap=(ai/tot)*100, dp=(di/tot)*100;
+
+  let winnerName, winnerPct;
+  if (hp>=ap && hp>=dp) { winnerName=home; winnerPct=hp; }
+  else if (ap>=hp && ap>=dp) { winnerName=away; winnerPct=ap; }
+  else { winnerName='Draw'; winnerPct=dp; }
+
+  const conf = winnerPct>=65 ? 'HIGH' : winnerPct>=55 ? 'MED' : 'LOW';
+
+  // Save this pick to the grading history so it can be auto-graded tomorrow
+  if (sportLabel && eventDate) {
+    savePickToHistory({
+      id:     `${new Date(eventDate).toDateString()}_match_${home}_${away}`.replace(/\W+/g, '_'),
+      date:   eventDate,
+      sport:  sportLabel,
+      match:  `${home} vs ${away}`,
+      type:   'match_winner',
+      player: winnerName,
+      market: 'match_winner',
+      line:   null,
+      pick:   winnerName,
+      pct:    winnerPct.toFixed(1),
+      conf:   conf,
+      result: null,
+    });
+  }
+
+  const row = (name, pct, cls) => `
+    <div class="winner-row">
+      <span class="winner-name ${name===winnerName?'pick':''}">${name}</span>
+      <div class="bar-wrap"><div class="bar-fill ${cls}" style="width:${Math.min(pct,100).toFixed(0)}%"></div></div>
+      <span class="pct-label">${pct.toFixed(1)}%</span>
+    </div>`;
+
+  return `<div class="winner-box">
+    <div class="winner-box-title">🏆 WINNER PREDICTION</div>
+    ${row(home, hp, '')}
+    ${drawOdds ? row('Draw', dp, 'draw') : ''}
+    ${row(away, ap, 'away')}
+    <div class="winner-summary">
+      Pick: <strong style="color:${winnerName!=='Draw'?'#00ff88':'#aaa'}">${winnerName}</strong>
+      &nbsp;${badge(conf)}&nbsp;${winnerPct.toFixed(1)}% confidence
+      &nbsp;·&nbsp; Odds: ${winnerName===home?homeOdds:winnerName===away?awayOdds:drawOdds}
+    </div>
+  </div>`;
+}
+
+// ── Best odds helpers ─────────────────────────────────────────────────────────
+function bestOdds(ev, mktKey) {
+  const best={};
+  (ev.bookmakers||[]).forEach(bk=>{
+    const m=(bk.markets||[]).find(m=>m.key===mktKey);
+    if(!m) return;
+    (m.outcomes||[]).forEach(o=>{if(!best[o.name]||o.price>best[o.name]) best[o.name]=o.price;});
+  });
+  return best;
+}
+function bestTotal(ev, line=2.5) {
+  let ov=0,un=0;
+  (ev.bookmakers||[]).forEach(bk=>{
+    const m=(bk.markets||[]).find(m=>m.key==='totals'); if(!m) return;
+    (m.outcomes||[]).forEach(o=>{
+      if(Math.abs((o.point||2.5)-line)<0.3){
+        if(o.name==='Over'&&o.price>ov) ov=o.price;
+        if(o.name==='Under'&&o.price>un) un=o.price;
+      }
+    });
+  });
+  return {over:ov||null,under:un||null};
+}
+function estimateXG(hO,aO,dO,tot=2.5) {
+  const hi=impliedProb(hO),ai=impliedProb(aO);
+  return { homeXG: tot*(hi/(hi+ai)), awayXG: tot*(ai/(hi+ai)) };
+}
+function gameDate(iso) {
+  return new Date(iso).toLocaleString('en-GB',{weekday:'short',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+}
+
+// ── Player props table renderer ───────────────────────────────────────────────
+// sportLabel: passed in so top picks can be collected for the slate-wide All tab
+function renderProps(propData, matchLabel, sportLabel) {
+  const calib = getCalibration();  // computed once — applied to every pick's score
+  const lines = {};
+
+  // Aggregate across bookmakers — track bestOver, bestUnder, and how many books
+  // offer BOTH sides (bookCount = consensus signal)
+  (propData.bookmakers||[]).forEach(bk=>{
+    (bk.markets||[]).forEach(mkt=>{
+      if (SPECIALTY_MARKETS.has(mkt.key)) return;   // skip specialty/novelty markets
+
+      // Collect this bookmaker's prices for this market first
+      const bkSide = {};
+      (mkt.outcomes||[]).forEach(o=>{
+        const key = `${o.description||o.name}__${mkt.key}`;
+        if (!bkSide[key]) bkSide[key] = { over:0, under:0, point: o.point };
+        if (o.name==='Over'  && o.price > bkSide[key].over)  bkSide[key].over  = o.price;
+        if (o.name==='Under' && o.price > bkSide[key].under) bkSide[key].under = o.price;
+      });
+
+      // Merge into global lines
+      Object.entries(bkSide).forEach(([key, d])=>{
+        const player = key.split('__')[0];
+        if (!lines[key]) lines[key] = {
+          player, market: mkt.key, line: d.point,
+          bestOver: 0, bestUnder: 0, bookCount: 0
+        };
+        if (d.over  > lines[key].bestOver)  lines[key].bestOver  = d.over;
+        if (d.under > lines[key].bestUnder) lines[key].bestUnder = d.under;
+        if (d.over && d.under) lines[key].bookCount++;  // both sides = this book agrees
+      });
+    });
+  });
+
+  // Score every candidate using composite formula
+  const scored = Object.values(lines)
+    .filter(p => p.bestOver > 0 && p.bestUnder > 0 && p.line != null)
+    .map(p => {
+      const c = propConf(p.bestOver, p.bestUnder);
+      if (!c) return null;
+      const vig   = calcVig(p.bestOver, p.bestUnder);
+      const score = propScore(parseFloat(c.pct), p.bookCount, vig, c.pick, calib);
+      // Derive confidence from composite score (not raw pct) so OVER picks aren't
+      // permanently penalised just because books shade lines toward UNDER.
+      const conf  = score >= 0.35 ? 'HIGH' : score >= 0.18 ? 'MED' : 'LOW';
+      return { ...p, c: {...c, conf}, vig, score };
+    })
+    .filter(p => p !== null)
+    .filter(p => !(p.c.pick === 'UNDER' && p.line <= 0.5))  // trivial near-certainty lines
+    .filter(p => p.vig <= MAX_VIG)                           // drop heavily juiced lines
+    .sort((a, b) => b.score - a.score);
+
+  // Take up to 5, max 3 per direction so OVER and UNDER both appear when both exist.
+  // If only one direction qualifies (e.g. truly lopsided market), fill remaining slots anyway.
+  const dirCount = {};
+  const props = [];
+  for (const p of scored) {
+    if (props.length >= 5) break;
+    const cnt = dirCount[p.c.pick] || 0;
+    if (cnt < 3) { props.push(p); dirCount[p.c.pick] = cnt + 1; }
+  }
+  // Second pass: fill any gaps if one direction was absent entirely
+  if (props.length < 5) {
+    for (const p of scored) {
+      if (props.length >= 5) break;
+      if (!props.includes(p)) props.push(p);
+    }
+  }
+
+  if (!props.length) return `<div class="no-games">No qualifying player props.</div>`;
+
+  // Push top pick to slate-wide collection + persist to history for self-improvement
+  if (sportLabel && props[0]) {
+    const topPick = {
+      // Dedup key: same player+market on same calendar day = same pick, don't double-save
+      id:         `${new Date().toDateString()}_${props[0].player}_${props[0].market}`,
+      date:       new Date().toISOString(),
+      sport:      sportLabel, match: matchLabel,
+      player:     props[0].player, market: props[0].market,
+      line:       props[0].line,   pick:  props[0].c.pick,
+      pct:        props[0].c.pct,  conf:  props[0].c.conf,
+      score:      props[0].score,  bookCount: props[0].bookCount, vig: props[0].vig,
+      result:     null,  // user marks W / L / V in the History tab
+    };
+    allPropBets.push(topPick);
+    savePickToHistory(topPick);
+  }
+
+  let html = `<div class="section-hdr">🎯 TOP PICKS — ${matchLabel}</div>
+    <div class="pick-cards">`;
+
+  props.forEach((p, i) => {
+    const tierHtml = i === 0
+      ? '<span class="tier-a">A★</span>'
+      : i === 1
+      ? '<span class="tier-a">A</span>'
+      : '<span class="tier-b">B</span>';
+    const stat   = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+    const reason = propReason(parseFloat(p.c.pct), p.bookCount, p.vig);
+    html += `<div class="pick-card${i === 0 ? ' best-pick' : ''}">
+      <div class="pick-card-header">
+        ${tierHtml}
+        ${badge(p.c.conf)}
+      </div>
+      <div class="pick-card-player">${p.player}</div>
+      <div class="pick-card-stat">${stat}</div>
+      <div class="pick-card-line">${p.line}</div>
+      <div class="pick-card-direction">${pickHtml(p.c.pick)} <span class="pick-card-pct">${p.c.pct}% implied</span></div>
+      <div class="pick-card-reason">${reason}</div>
+    </div>`;
+  });
+  html += '</div>';
+  return html;
+}
+
+// ── Soccer goal scorer renderer ───────────────────────────────────────────────
+function renderGoalScorers(propData) {
+  const scorers = {};
+  (propData.bookmakers||[]).forEach(bk=>{
+    (bk.markets||[]).forEach(mkt=>{
+      if (mkt.key !== 'player_goal_scorer_anytime') return;
+      (mkt.outcomes||[]).forEach(o=>{
+        if (!scorers[o.name] || o.price < scorers[o.name]) scorers[o.name]=o.price;
+      });
+    });
+  });
+
+  const list = Object.entries(scorers)
+    .map(([name,odds])=>({name, odds, prob:(1/odds*100)}))
+    .sort((a,b)=>b.prob-a.prob)
+    .slice(0,10);
+
+  if (!list.length) return '';
+
+  let html = `<div class="section-hdr">⚽ TOP 10 LIKELY GOAL SCORERS</div>
+    <table class="ptable">
+      <tr><th>#</th><th>Player</th><th>Odds</th><th>Probability</th><th>Confidence</th></tr>`;
+
+  list.forEach((s,i)=>{
+    const conf = s.prob>=35?'HIGH':s.prob>=20?'MED':'LOW';
+    html += `<tr>
+      <td style="color:#555">${i+1}</td>
+      <td style="color:#fff;font-weight:bold">${s.name}</td>
+      <td style="color:#ffcc00">${s.odds}</td>
+      <td style="color:#aaa">${s.prob.toFixed(1)}%</td>
+      <td>${badge(conf)}</td>
+    </tr>`;
+  });
+  html += '</table>';
+  return html;
+}
+
+// ── SOCCER tab ────────────────────────────────────────────────────────────────
+async function buildSoccer(force) {
+  const container = document.getElementById('tab-soccer');
+  container.innerHTML = '<div class="loading">Loading soccer...</div>';
+
+  const leagues = [
+    { key:'soccer_epl',                           label:'🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League',    props:true  },
+    { key:'soccer_uefa_champs_league',            label:'🌍 Champions League',            props:false },
+    { key:'soccer_spain_la_liga',                 label:'🇪🇸 La Liga',                    props:false },
+    { key:'soccer_fifa_world_cup_qualifiers_europe', label:'🌐 WC Qualifiers',            props:false },
+  ];
+
+  let html = '';
+  for (const lg of leagues) {
+    try {
+      const events = await apiFetch(lg.key, 'h2h,totals', 'uk', force);
+      const now = new Date();
+      const today = events.filter(e=>{
+        const d=new Date(e.commence_time);
+        return d>=now && d<=new Date(now.getTime()+4*24*60*60*1000);
+      });
+
+      html += `<div class="sport-section"><div class="sport-title">${lg.label} <span style="color:#555;font-size:0.8em">(${today.length} upcoming)</span></div>`;
+      if (!today.length) { html+='<div class="no-games">No matches in next 4 days.</div></div>'; continue; }
+
+      for (const ev of today) {
+        const h2h = bestOdds(ev,'h2h');
+        const home=ev.home_team, away=ev.away_team;
+        const hO=h2h[home], aO=h2h[away], dO=h2h['Draw'];
+        if (!hO||!aO) continue;
+
+        const tot = bestTotal(ev,2.5);
+        const {homeXG,awayXG} = estimateXG(hO,aO,dO||4,2.5);
+        const scores = correctScores(homeXG,awayXG);
+        let hw=0,dr=0,aw=0,ov=0,un=0,btts=0;
+        scores.forEach(s=>{
+          if(s.h>s.a) hw+=s.p; else if(s.h===s.a) dr+=s.p; else aw+=s.p;
+          if(s.h+s.a>2.5) ov+=s.p; else un+=s.p;
+          if(s.h>0&&s.a>0) btts+=s.p;
+        });
+        const hwE=parseFloat(edge(hw,hO)),drE=parseFloat(edge(dr,dO||99));
+        const awE=parseFloat(edge(aw,aO));
+        const ovE=tot.over?parseFloat(edge(ov,tot.over)):null;
+        const unE=tot.under?parseFloat(edge(un,tot.under)):null;
+        if(hwE>3) allValueBets.push({sport:lg.label,match:`${home} vs ${away}`,bet:`${home} Win`,e:hwE});
+        if(drE>3) allValueBets.push({sport:lg.label,match:`${home} vs ${away}`,bet:'Draw',e:drE});
+        if(awE>3) allValueBets.push({sport:lg.label,match:`${home} vs ${away}`,bet:`${away} Win`,e:awE});
+        if(ovE&&ovE>3) allValueBets.push({sport:lg.label,match:`${home} vs ${away}`,bet:'Over 2.5',e:ovE});
+        if(unE&&unE>3) allValueBets.push({sport:lg.label,match:`${home} vs ${away}`,bet:'Under 2.5',e:unE});
+
+        const top5 = scores.slice(0,5);
+
+        html += `<div class="match-card">
+          <div class="match-title"><span>${home} vs ${away}</span><span class="match-time">${gameDate(ev.commence_time)}</span></div>
+          ${winnerBox(home,away,hO,aO,dO,ev.commence_time,lg.label)}
+          <table class="odds-table">
+            <tr><th>Outcome</th><th>Model%</th><th>Odds</th><th>Imp%</th><th>Edge</th></tr>
+            <tr><td>${home}</td><td>${(hw*100).toFixed(1)}%</td><td>${hO}</td><td>${(impliedProb(hO)*100).toFixed(1)}%</td><td>${edgeHtml(hwE.toFixed(1))}</td></tr>
+            ${dO?`<tr><td>Draw</td><td>${(dr*100).toFixed(1)}%</td><td>${dO}</td><td>${(impliedProb(dO)*100).toFixed(1)}%</td><td>${edgeHtml(drE.toFixed(1))}</td></tr>`:''}
+            <tr><td>${away}</td><td>${(aw*100).toFixed(1)}%</td><td>${aO}</td><td>${(impliedProb(aO)*100).toFixed(1)}%</td><td>${edgeHtml(awE.toFixed(1))}</td></tr>
+            ${tot.over?`<tr><td>Over 2.5</td><td>${(ov*100).toFixed(1)}%</td><td>${tot.over}</td><td>${(impliedProb(tot.over)*100).toFixed(1)}%</td><td>${edgeHtml(ovE.toFixed(1))}</td></tr>`:''}
+            ${tot.under?`<tr><td>Under 2.5</td><td>${(un*100).toFixed(1)}%</td><td>${tot.under}</td><td>${(impliedProb(tot.under)*100).toFixed(1)}%</td><td>${edgeHtml(unE.toFixed(1))}</td></tr>`:''}
+            <tr><td>BTTS</td><td>${(btts*100).toFixed(1)}%</td><td colspan="3" style="color:${btts>0.5?'#00ff88':'#ff6666'}">${btts>0.5?'YES — likely':'NO — unlikely'}</td></tr>
+          </table>
+          <div class="label">TOP 5 CORRECT SCORES (Poisson)</div>
+          <div class="score-grid">
+            ${top5.map((s,i)=>`<div class="score-chip ${i===0?'top':i===1?'second':i===2?'third':''}">${home.split(' ').pop()} ${s.h}–${s.a} ${away.split(' ').pop()} <span style="color:#555">${(s.p*100).toFixed(2)}%</span></div>`).join('')}
+          </div>`;
+
+        // EPL goal scorers
+        if (lg.props) {
+          try {
+            const propData = await fetchEventProps(lg.key, ev.id, 'player_goal_scorer_anytime', 'uk', force);
+            html += renderGoalScorers(propData);
+          } catch(e) {
+            html += `<div class="no-games" style="margin-top:8px">Goal scorer odds unavailable</div>`;
+          }
+        }
+
+        html += '</div>';
+      }
+      html += '</div>';
+    } catch(e) {
+      html += `<div class="sport-section"><div class="sport-title">${lg.label}</div><div class="error">⚠ ${e.message}</div></div>`;
+    }
+  }
+  container.innerHTML = html || '<div class="no-games">No soccer data.</div>';
+}
+
+// ── SPORT TAB builder (NBA/NFL/NHL/MLB) ───────────────────────────────────────
+async function buildSportTab(name, force) {
+  const s = SPORT_TABS[name];
+  const container = document.getElementById('tab-' + name);
+  container.innerHTML = `<div class="loading">Loading ${s.label}...</div>`;
+
+  try {
+    // 1. h2h bulk for winner predictions
+    const h2hBulk = await apiFetch(s.key, 'h2h', s.region, force);
+
+    // 2. events list for IDs
+    const events = await fetchEvents(s.key, force);
+
+    const now = new Date();
+    const cutoff = new Date(now.getTime() + 48*60*60*1000);
+    const upcoming = (events||[])
+      .filter(e=>{ const d=new Date(e.commence_time); return d>=now && d<=cutoff; })
+      .slice(0, 5); // top 5 upcoming games
+
+    if (!upcoming.length) {
+      container.innerHTML = `<div class="sport-section"><div class="sport-title">${s.label}</div><div class="no-games">No games in next 48 hours.</div></div>`;
+      return;
+    }
+
+    let html = `<div class="sport-section"><div class="sport-title">${s.label} — ${upcoming.length} games</div>`;
+
+    for (const ev of upcoming) {
+      const home=ev.home_team, away=ev.away_team;
+
+      // Get h2h odds from bulk data
+      const h2hEv = (h2hBulk||[]).find(e=>e.id===ev.id);
+      const h2h   = h2hEv ? bestOdds(h2hEv,'h2h') : {};
+      const hO=h2h[home], aO=h2h[away];
+
+      html += `<div class="match-card">
+        <div class="match-title">
+          <span>${home} vs ${away}</span>
+          <span class="match-time">${gameDate(ev.commence_time)}</span>
+        </div>`;
+
+      // Winner box
+      if (hO && aO) html += winnerBox(home, away, hO, aO, null, ev.commence_time, s.label);
+
+      // Player props
+      try {
+        const propData = await fetchEventProps(s.key, ev.id, s.props, s.region, force);
+        html += renderProps(propData, `${home} vs ${away}`, s.label);
+      } catch(propErr) {
+        html += `<div class="error">⚠ Props: ${propErr.message}</div>`;
+      }
+
+      html += '</div>';
+    }
+
+    html += '</div>';
+    container.innerHTML = html;
+  } catch(e) {
+    container.innerHTML = `<div class="error">⚠ ${s.label} error: ${e.message}</div>`;
+  }
+}
+
+// ── HISTORY & CALIBRATION TAB ─────────────────────────────────────────────────
+function buildHistoryTab() {
+  const container = document.getElementById('tab-history');
+  const history   = getHistory();
+  const calib     = getCalibration();
+  let html = '';
+
+  // ── Calibration panel ──────────────────────────────────────────────────────
+  html += `<div class="value-box"><h3>🧠 MODEL CALIBRATION`;
+  if (calib.ready) {
+    html += ` — ${calib.settled} settled picks</h3>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;margin-top:8px;font-size:0.85em">
+      <div>OVER win rate: <strong style="color:${calib.overWR>=50?'#00ff88':'#ff4444'}">${calib.overWR}%</strong>
+        &nbsp;(${calib.overCount} picks) &nbsp;·&nbsp; multiplier: <strong>${calib.OVER.toFixed(2)}×</strong></div>
+      <div>UNDER win rate: <strong style="color:${calib.underWR>=50?'#00ff88':'#ff4444'}">${calib.underWR}%</strong>
+        &nbsp;(${calib.underCount} picks) &nbsp;·&nbsp; multiplier: <strong>${calib.UNDER.toFixed(2)}×</strong></div>
+    </div>
+    <p style="color:#555;font-size:0.75em;margin-top:8px">
+      Multiplier applied to composite score. Range 0.80×–1.20×. Formula: 1.0 + (win_rate − 0.50) × 0.5</p>`;
+  } else {
+    html += `</h3>
+    <p style="color:#888;font-size:0.85em">Calibration activates after ${MIN_CALIBRATE} settled picks.
+      &nbsp;Currently: <strong>${calib.settled} / ${MIN_CALIBRATE}</strong></p>
+    <p style="color:#555;font-size:0.75em">Mark results below — the model will adjust OVER/UNDER weights automatically.</p>`;
+  }
+  html += '</div>';
+
+  // ── Record bar ─────────────────────────────────────────────────────────────
+  const pending = history.filter(p => !p.result);
+  const settled = history.filter(p => p.result);
+  const wins    = settled.filter(p => p.result === 'W').length;
+  const losses  = settled.filter(p => p.result === 'L').length;
+  const voids   = settled.filter(p => p.result === 'V').length;
+  const wl      = wins + losses;
+  const wr      = wl ? (wins / wl * 100).toFixed(1) : null;
+
+  // Current streak (W or L run from most recent settled pick)
+  const streak = (() => {
+    const s = settled.slice();  // newest first
+    if (!s.length) return null;
+    const last = s[0].result;
+    if (last === 'V') return null;
+    let n = 0;
+    for (const p of s) { if (p.result !== last) break; n++; }
+    return { r: last, n };
+  })();
+
+  if (wl > 0 || pending.length) {
+    html += `<div class="record-bar">
+      <div class="record-stat">
+        <div class="record-num" style="color:#00ff88">${wins}</div>
+        <div class="record-label">Wins</div>
+      </div>
+      <div class="record-stat">
+        <div class="record-num" style="color:#ff4444">${losses}</div>
+        <div class="record-label">Losses</div>
+      </div>
+      <div class="record-stat">
+        <div class="record-num" style="color:#333">${voids}</div>
+        <div class="record-label">Voids</div>
+      </div>
+      <div class="record-stat">
+        <div class="record-num" style="color:${wr && parseFloat(wr)>=50?'#00ff88':'#ff4444'}">${wr ? wr+'%' : '—'}</div>
+        <div class="record-label">Win Rate</div>
+      </div>
+      <div class="record-stat">
+        <div class="record-num" style="color:#444">${pending.length}</div>
+        <div class="record-label">Pending</div>
+      </div>
+      ${streak ? `<div class="streak-chip">
+        <div class="streak-val ${streak.r==='W'?'streak-w':'streak-l'}">${streak.n}× ${streak.r==='W'?'WIN':'LOSS'}</div>
+        <div class="record-label">Current streak</div>
+      </div>` : ''}
+    </div>`;
+  }
+
+  // ── Pending picks ──────────────────────────────────────────────────────────
+  if (pending.length) {
+    html += `<div style="margin-top:16px">
+      <div class="section-hdr" style="display:flex;justify-content:space-between;align-items:center">
+        <span>⏳ Pending (${pending.length}) — auto-grades next morning</span>
+        <button class="btn" onclick="autoGrade().then(n=>{if(n>0){buildHistoryTab();}else{showToast('No completed games found yet','#ffcc00');}})">🤖 Auto-Grade Now</button>
+      </div>
+      <table class="ptable">
+        <tr><th>Date</th><th>Sport</th><th>Pick Info</th><th>Pick</th><th>Conf</th><th>Mark</th></tr>`;
+    pending.slice(0, 40).forEach(p => {
+      const isMatch  = p.type === 'match_winner';
+      const stat     = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+      const d        = new Date(p.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+      const infoCell = isMatch
+        ? `<span style="color:#bbb">${p.match}</span> <span style="color:#333;font-size:0.8em">Winner</span>`
+        : `${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>`;
+      const pickCell = isMatch
+        ? `<span style="color:#00ccff;font-weight:700">${p.pick}</span>`
+        : pickHtml(p.pick);
+      html += `<tr>
+        <td style="color:#333;font-size:0.8em">${d}</td>
+        <td style="color:#444;font-size:0.8em">${p.sport.replace(/\p{Emoji}/gu,'').trim()}</td>
+        <td style="color:#bbb">${infoCell}</td>
+        <td>${pickCell}</td>
+        <td>${badge(p.conf)}</td>
+        <td style="white-space:nowrap;display:flex;gap:4px">
+          <button class="mark-btn mark-w" onclick="markResult('${p.id}','W')">✓ W</button>
+          <button class="mark-btn mark-l" onclick="markResult('${p.id}','L')">✗ L</button>
+          <button class="mark-btn mark-v" onclick="markResult('${p.id}','V')">— V</button>
+        </td>
+      </tr>`;
+    });
+    html += '</table></div>';
+  }
+
+  // ── Settled picks ──────────────────────────────────────────────────────────
+  if (settled.length) {
+    html += `<div style="margin-top:20px">
+      <div class="section-hdr">📋 Settled — ${wins}W / ${losses}L / ${voids}V</div>
+      <table class="ptable">
+        <tr><th>Date</th><th>Sport</th><th>Pick Info</th><th>Pick</th><th>Result</th></tr>`;
+    settled.slice(0, 60).forEach(p => {
+      const isMatch  = p.type === 'match_winner';
+      const stat     = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+      const d        = new Date(p.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+      const infoCell = isMatch
+        ? `<span style="color:#bbb">${p.match}</span> <span style="color:#333;font-size:0.8em">Winner</span>`
+        : `${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>`;
+      const pickCell = isMatch
+        ? `<span style="color:#00ccff;font-weight:700">${p.pick}</span>`
+        : pickHtml(p.pick);
+      const autoTag  = p.autoGraded ? ' <span style="color:#333;font-size:0.72em;font-weight:400">auto</span>' : '';
+      const resHtml  = p.result==='W'
+        ? `<span style="color:#00ff88;font-weight:700">WIN${autoTag}</span>`
+        : p.result==='L'
+        ? `<span style="color:#ff4444;font-weight:700">LOSS${autoTag}</span>`
+        : `<span style="color:#333">VOID${autoTag}</span>`;
+      html += `<tr>
+        <td style="color:#333;font-size:0.8em">${d}</td>
+        <td style="color:#444;font-size:0.8em">${p.sport.replace(/\p{Emoji}/gu,'').trim()}</td>
+        <td style="color:#bbb">${infoCell}</td>
+        <td>${pickCell}</td>
+        <td>${resHtml}</td>
+      </tr>`;
+    });
+    html += '</table></div>';
+  }
+
+  if (!pending.length && !settled.length) {
+    html += `<div class="no-games" style="margin-top:20px">No picks saved yet — load a sport tab to generate picks.</div>`;
+  }
+
+  container.innerHTML = html;
+}
+
+// ── ALL VALUE BETS ────────────────────────────────────────────────────────────
+function buildAllTab() {
+  const container = document.getElementById('tab-all');
+  let html = '';
+
+  // ── Soccer value bets (edge-based, Poisson model) ──────────────────────────
+  if (allValueBets.length) {
+    allValueBets.sort((a,b)=>b.e-a.e);
+    const tier = v => v.e >= 8
+      ? '<span class="tier-a">A</span>'
+      : '<span class="tier-b">B</span>';
+    html += `<div class="value-box"><h3>✅ SOCCER VALUE BETS — Edge > +3% (${allValueBets.length} found)</h3>`;
+    allValueBets.forEach(v=>{
+      html += `<div class="value-item">${tier(v)} +${v.e}% &nbsp;|&nbsp; <strong>${v.bet}</strong> &nbsp;|&nbsp; <span class="match-ref">${v.match} (${v.sport})</span></div>`;
+    });
+    html += `<p style="color:#555;font-size:0.75em;margin-top:8px">Edge = Poisson model probability minus bookmaker implied probability. Load individual sport tabs to populate player prop picks below.</p></div>`;
+  }
+
+  // ── Slate-wide top 10 player props (best bet per game, all sports) ─────────
+  if (allPropBets.length) {
+    allPropBets.sort((a, b) => b.score - a.score);
+    const top10 = allPropBets.slice(0, 10);
+    html += `<div class="hero-section" style="margin-top:${allValueBets.length?'16px':'0'}">
+      <div class="hero-title">🎯 Today's Best Prop Picks &nbsp;<span style="color:#1a3a1a;font-size:0.85em">${top10.length} games loaded</span></div>`;
+    top10.forEach((v, i) => {
+      const tierHtml = i < 2 ? '<span class="tier-a">A★</span>' : '<span class="tier-b">B</span>';
+      const stat = v.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+      html += `<div class="hero-pick rank-${i+1}">
+        <div class="hero-rank">${i+1}</div>
+        ${tierHtml}
+        <div style="flex:1;min-width:0">
+          <div class="hero-player">${v.player} &nbsp;${pickHtml(v.pick)} <span style="color:#ffcc00">${v.line}</span> <span style="color:#444;font-weight:400">${stat}</span></div>
+          <div class="hero-detail">${v.match} &nbsp;·&nbsp; ${v.sport} &nbsp;·&nbsp; ${v.bookCount} books &nbsp;·&nbsp; ${v.pct}% implied</div>
+        </div>
+        <div style="flex-shrink:0">${badge(v.conf)}</div>
+      </div>`;
+    });
+    html += `<p style="color:#1e2e1e;font-size:0.7em;margin-top:14px">Ranked by: edge × consensus × vig fairness. No stats API — market signals only.</p></div>`;
+  }
+
+  if (!html) {
+    html = `<div class="no-games">No data yet. Soccer loads automatically — click NBA, NFL, NHL, or MLB tabs to populate player prop picks here.</div>`;
+  }
+  container.innerHTML = html;
+}
+
+// ── Master refresh ────────────────────────────────────────────────────────────
+async function refreshAll(force=false) {
+  if (force) {
+    clearAllCache();
+    loadedTabs.clear();
+    Object.keys(SPORT_TABS).forEach(k=>{
+      document.getElementById('tab-'+k).innerHTML=`<div class="loading">Click the tab to load ${SPORT_TABS[k].label}</div>`;
+    });
+    document.getElementById('tab-soccer').innerHTML='<div class="loading">Click Soccer tab to reload</div>';
+  }
+  allValueBets.length = 0;
+  allPropBets.length  = 0;
+  loadedTabs.delete('history');  // force History to re-render with fresh calibration on next visit
+  document.getElementById('all-loading') && (document.getElementById('all-loading').style.display='block');
+
+  loadedTabs.add('soccer');
+  await buildSoccer(force);
+  buildAllTab();
+  updateCacheStatus();
+  document.getElementById('all-loading') && (document.getElementById('all-loading').style.display='none');
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+window.addEventListener('load', () => {
+  refreshAll(false);
+  // Run auto-grading silently in the background — toasts if any picks are graded
+  autoGrade().catch(() => {});
+});
+</script>
+</body>
+</html>

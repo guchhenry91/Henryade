@@ -1,0 +1,145 @@
+[      68ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[     177ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[     286ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[     401ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[     517ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[     632ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[     740ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[     856ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[     972ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[    3797ms] [LOG] Influent Media script loaded @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[    3887ms] [LOG] Influent Media script initialized @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[    4109ms] [INFO] [REFRESH PATCH] pubads.refresh patched @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[    4785ms] [LOG] Visibility threshold pct=50, Visibility threshold ms = 0 @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[    5015ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[    5019ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[    5020ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15
+[    5617ms] [INFO] [REFRESH PATCH] Injecting targeting {key: AnonymisedSignalLift, value: 0} @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[   25087ms] [LOG] Visibility threshold pct=50, Visibility threshold ms = 0 @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[   25209ms] [LOG] Influent Media script loaded @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[   25253ms] [LOG] Influent Media script initialized @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[   25370ms] [INFO] [REFRESH PATCH] pubads.refresh patched @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[   25707ms] [INFO] [REFRESH PATCH] Injecting targeting {key: AnonymisedSignalLift, value: 0} @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[   25740ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-engineer/56643378:0
+[   25813ms] [WARNING] The following CSA option(s) were ignored due to being overridden by native style controls: fontFamily @ https://www.google.com/adsense/search/async-ads.js:218
+[   25814ms] [WARNING] The following CSA option(s) are unsupported: longerHeadlines, fontSizeTitle, fontSizeDescription, fontSizeDomainLink, colorTitleLink, colorDomainLink @ https://www.google.com/adsense/search/async-ads.js:218
+[   25978ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[   25980ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[   25980ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15
+[   26489ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-engineer/56643378:0
+[   29402ms] [WARNING] [TikTok Pixel] - Missing email and phone number
+Issue: Email and phone number info isn't being received. This information is required for Complete Payment events.
+Suggestion: Improve your email and phone coverage. This allows you to attribute more conversions and reach more people with your ads. See https://ads.tiktok.com/marketing_api/docs?rid=5ipocbxyw8v&id=1701890972946433 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   29403ms] [WARNING] [TikTok Pixel] - Missing 'content_id' paramter
+Issue: The 'content_id' parameter isn't being received. This is required for Video Shopping Ads (VSA).
+Suggestion: Include the 'content_id' parameter in your source code. This is required for Video Shopping Ads (VSA). See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   29403ms] [WARNING] [TikTok Pixel] - Missing "value" parameter
+Issue: Events shared are missing a 'value' parameter'. This is used calculate ROAS for people and the bid for your highest value customers. 
+Suggestion: Go to your source code and include the "value" parameter. See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   29404ms] [WARNING] [TikTok Pixel] - Missing "currency" parameter
+Issue: Events shared are missing a 'currency' parameter. This impacts our ability to receive the value amount correctly, which can affect the accuracy of reporting for your return on ad spend.
+Suggestion: Go to your source code and include the "currency" parameter. You can check supported currency codes. See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   29628ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-engineer/56643378:0
+[   32412ms] [LOG] Visibility threshold pct=50, Visibility threshold ms = 0 @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[   32473ms] [INFO] [REFRESH PATCH] pubads.refresh patched @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[   32493ms] [LOG] Influent Media script loaded @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[   32532ms] [LOG] Influent Media script initialized @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[   32972ms] [INFO] [REFRESH PATCH] Injecting targeting {key: AnonymisedSignalLift, value: 0} @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[   33089ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-engineer/56687509:0
+[   33203ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[   33206ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[   33207ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15
+[   33966ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-engineer/56687509:0
+[   36575ms] [WARNING] [TikTok Pixel] - Missing email and phone number
+Issue: Email and phone number info isn't being received. This information is required for Complete Payment events.
+Suggestion: Improve your email and phone coverage. This allows you to attribute more conversions and reach more people with your ads. See https://ads.tiktok.com/marketing_api/docs?rid=5ipocbxyw8v&id=1701890972946433 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   36576ms] [WARNING] [TikTok Pixel] - Missing 'content_id' paramter
+Issue: The 'content_id' parameter isn't being received. This is required for Video Shopping Ads (VSA).
+Suggestion: Include the 'content_id' parameter in your source code. This is required for Video Shopping Ads (VSA). See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   36576ms] [WARNING] [TikTok Pixel] - Missing "value" parameter
+Issue: Events shared are missing a 'value' parameter'. This is used calculate ROAS for people and the bid for your highest value customers. 
+Suggestion: Go to your source code and include the "value" parameter. See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   36577ms] [WARNING] [TikTok Pixel] - Missing "currency" parameter
+Issue: Events shared are missing a 'currency' parameter. This impacts our ability to receive the value amount correctly, which can affect the accuracy of reporting for your return on ad spend.
+Suggestion: Go to your source code and include the "currency" parameter. You can check supported currency codes. See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   36796ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-engineer/56687509:0
+[   39878ms] [LOG] Visibility threshold pct=50, Visibility threshold ms = 0 @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[   40103ms] [INFO] [REFRESH PATCH] pubads.refresh patched @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[   40121ms] [LOG] Influent Media script loaded @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[   40157ms] [LOG] Influent Media script initialized @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[   40517ms] [INFO] [REFRESH PATCH] Injecting targeting {key: AnonymisedSignalLift, value: 0} @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[   40586ms] [WARNING] The following CSA option(s) were ignored due to being overridden by native style controls: fontFamily @ https://www.google.com/adsense/search/async-ads.js:218
+[   40586ms] [WARNING] The following CSA option(s) are unsupported: longerHeadlines, fontSizeTitle, fontSizeDescription, fontSizeDomainLink, colorTitleLink, colorDomainLink @ https://www.google.com/adsense/search/async-ads.js:218
+[   40695ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-engineer/56690123:0
+[   40723ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[   40727ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[   40727ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15
+[   41119ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-engineer/56690123:0
+[   43729ms] [WARNING] [TikTok Pixel] - Missing email and phone number
+Issue: Email and phone number info isn't being received. This information is required for Complete Payment events.
+Suggestion: Improve your email and phone coverage. This allows you to attribute more conversions and reach more people with your ads. See https://ads.tiktok.com/marketing_api/docs?rid=5ipocbxyw8v&id=1701890972946433 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   43730ms] [WARNING] [TikTok Pixel] - Missing 'content_id' paramter
+Issue: The 'content_id' parameter isn't being received. This is required for Video Shopping Ads (VSA).
+Suggestion: Include the 'content_id' parameter in your source code. This is required for Video Shopping Ads (VSA). See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   43730ms] [WARNING] [TikTok Pixel] - Missing "value" parameter
+Issue: Events shared are missing a 'value' parameter'. This is used calculate ROAS for people and the bid for your highest value customers. 
+Suggestion: Go to your source code and include the "value" parameter. See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   43731ms] [WARNING] [TikTok Pixel] - Missing "currency" parameter
+Issue: Events shared are missing a 'currency' parameter. This impacts our ability to receive the value amount correctly, which can affect the accuracy of reporting for your return on ad spend.
+Suggestion: Go to your source code and include the "currency" parameter. You can check supported currency codes. See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   43937ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-engineer/56690123:0
+[   47066ms] [LOG] Visibility threshold pct=50, Visibility threshold ms = 0 @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[   47142ms] [INFO] [REFRESH PATCH] pubads.refresh patched @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[   47163ms] [LOG] Influent Media script loaded @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[   47209ms] [LOG] Influent Media script initialized @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[   47587ms] [INFO] [REFRESH PATCH] Injecting targeting {key: AnonymisedSignalLift, value: 0} @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[   47699ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-engineer/56659220:0
+[   47709ms] [WARNING] The following CSA option(s) were ignored due to being overridden by native style controls: fontFamily @ https://www.google.com/adsense/search/async-ads.js:218
+[   47709ms] [WARNING] The following CSA option(s) are unsupported: longerHeadlines, fontSizeTitle, fontSizeDescription, fontSizeDomainLink, colorTitleLink, colorDomainLink @ https://www.google.com/adsense/search/async-ads.js:218
+[   47870ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[   47872ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[   47872ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15
+[   48479ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-engineer/56659220:0
+[   52291ms] [LOG] Visibility threshold pct=50, Visibility threshold ms = 0 @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[   52303ms] [LOG] Influent Media script loaded @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[   52345ms] [LOG] Influent Media script initialized @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[   52508ms] [INFO] [REFRESH PATCH] pubads.refresh patched @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[   52838ms] [INFO] [REFRESH PATCH] Injecting targeting {key: AnonymisedSignalLift, value: 0} @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[   52960ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-engineer/56688200:0
+[   52984ms] [WARNING] The following CSA option(s) were ignored due to being overridden by native style controls: fontFamily @ https://www.google.com/adsense/search/async-ads.js:218
+[   52984ms] [WARNING] The following CSA option(s) are unsupported: longerHeadlines, fontSizeTitle, fontSizeDescription, fontSizeDomainLink, colorTitleLink, colorDomainLink @ https://www.google.com/adsense/search/async-ads.js:218
+[   53110ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[   53112ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[   53112ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15
+[   53707ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-engineer/56688200:0
+[   57515ms] [LOG] Visibility threshold pct=50, Visibility threshold ms = 0 @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[   57552ms] [LOG] Influent Media script loaded @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[   57669ms] [LOG] Influent Media script initialized @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[   57840ms] [INFO] [REFRESH PATCH] pubads.refresh patched @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[   58109ms] [INFO] [REFRESH PATCH] Injecting targeting {key: AnonymisedSignalLift, value: 0} @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[   58274ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-engineer/56661785:0
+[   58670ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[   58673ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[   58674ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15
+[   59442ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-engineer/56661785:0
+[   62068ms] [WARNING] [TikTok Pixel] - Missing email and phone number
+Issue: Email and phone number info isn't being received. This information is required for Complete Payment events.
+Suggestion: Improve your email and phone coverage. This allows you to attribute more conversions and reach more people with your ads. See https://ads.tiktok.com/marketing_api/docs?rid=5ipocbxyw8v&id=1701890972946433 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   62069ms] [WARNING] [TikTok Pixel] - Missing 'content_id' paramter
+Issue: The 'content_id' parameter isn't being received. This is required for Video Shopping Ads (VSA).
+Suggestion: Include the 'content_id' parameter in your source code. This is required for Video Shopping Ads (VSA). See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   62070ms] [WARNING] [TikTok Pixel] - Missing "value" parameter
+Issue: Events shared are missing a 'value' parameter'. This is used calculate ROAS for people and the bid for your highest value customers. 
+Suggestion: Go to your source code and include the "value" parameter. See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   62070ms] [WARNING] [TikTok Pixel] - Missing "currency" parameter
+Issue: Events shared are missing a 'currency' parameter. This impacts our ability to receive the value amount correctly, which can affect the accuracy of reporting for your return on ad spend.
+Suggestion: Go to your source code and include the "currency" parameter. You can check supported currency codes. See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   62302ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-engineer/56661785:0
+[   64949ms] [LOG] Visibility threshold pct=50, Visibility threshold ms = 0 @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[   64964ms] [LOG] Influent Media script loaded @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[   65023ms] [LOG] Influent Media script initialized @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[   65159ms] [INFO] [REFRESH PATCH] pubads.refresh patched @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[   65787ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[   65790ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[   65792ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15
+[   65993ms] [INFO] [REFRESH PATCH] Injecting targeting {key: AnonymisedSignalLift, value: 0} @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0

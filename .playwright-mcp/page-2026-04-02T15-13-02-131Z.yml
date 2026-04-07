@@ -1,0 +1,466 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e6]:
+          - link "Reed.co.uk" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Reed.co.uk" [ref=e8]
+          - list [ref=e9]:
+            - listitem [ref=e10]:
+              - link "Jobs" [ref=e11] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e12]: Jobs
+            - listitem [ref=e13]:
+              - link "Courses" [ref=e14] [cursor=pointer]:
+                - /url: /courses/?itm_source=js_navigation&itm_medium=jobseeker&itm_campaign=courses_tab&itm_content=standard_version
+                - generic [ref=e15]: Courses
+            - listitem [ref=e16]:
+              - link "Career advice" [ref=e17] [cursor=pointer]:
+                - /url: /career-advice/
+                - generic [ref=e18]: Career advice
+            - listitem [ref=e19]:
+              - link "Recruiting? Post a job" [ref=e20] [cursor=pointer]:
+                - /url: /recruiter/
+                - generic [ref=e21]:
+                  - text: Recruiting?
+                  - strong [ref=e22]: Post a job
+          - generic [ref=e23]:
+            - link "Register CV" [ref=e24] [cursor=pointer]:
+              - /url: /authentication/register?returnTo=%2Fjobs%2Ftrading-floor-desktop-support-engineer-huxley%2F56730486
+            - list [ref=e25]:
+              - listitem [ref=e26]:
+                - link "Saved jobs" [ref=e27] [cursor=pointer]:
+                  - /url: /account/jobs/shortlisted-jobs
+                  - img [ref=e29]
+                  - generic [ref=e31]: Saved jobs
+              - listitem [ref=e32]:
+                - status [ref=e33]:
+                  - img "Loading" [ref=e34]
+      - search [ref=e38]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: What
+            - textbox "e.g. \"accounts assistant\"" [ref=e44]
+          - generic [ref=e45]:
+            - generic [ref=e46]: Where
+            - generic [ref=e47]:
+              - textbox "town or postcode" [ref=e48]
+              - button "Get current location" [ref=e49] [cursor=pointer]:
+                - img [ref=e50]
+          - button "Search jobs" [ref=e54] [cursor=pointer]
+          - link "Browse jobs" [ref=e56] [cursor=pointer]:
+            - /url: /popularjobs
+            - text: Browse jobs
+            - img [ref=e57]
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - link "ArrowSearch results" [ref=e64] [cursor=pointer]:
+            - /url: /jobs/trading-floor-desktop-support-engineer---huxley-jobs-in-london?jobId=56730486
+            - img "Arrow"
+            - text: Search results
+          - list [ref=e66]:
+            - listitem [ref=e67]:
+              - link "Home" [ref=e68] [cursor=pointer]:
+                - /url: /
+            - text: /
+            - listitem [ref=e69]:
+              - text: /
+              - link "Information Technology" [ref=e70] [cursor=pointer]:
+                - /url: /jobs/information-technology-jobs
+            - listitem [ref=e71]:
+              - text: /
+              - link "Engineer" [ref=e72] [cursor=pointer]:
+                - /url: /jobs/engineering-jobs
+            - listitem [ref=e73]:
+              - text: /
+              - link "Support Engineer" [ref=e74] [cursor=pointer]:
+                - /url: /jobs/support-engineer-jobs
+            - listitem [ref=e75]: /Job details
+        - generic [ref=e76]:
+          - generic [ref=e78]:
+            - generic [ref=e80]: New
+            - generic [ref=e81]:
+              - generic [ref=e82]:
+                - heading "Trading Floor Desktop Support Engineer - Huxley" [level=1] [ref=e83]
+                - generic [ref=e84]: Yesterday by eFinancialCareers
+              - img "eFinancialCareers jobs" [ref=e86]
+            - list [ref=e87]:
+              - listitem [ref=e88]:
+                - img "Salary" [ref=e89]
+                - text: Competitive salary
+              - listitem [ref=e91]:
+                - img "Location" [ref=e92]
+                - text: London
+              - listitem [ref=e94]:
+                - img "Clock" [ref=e95]
+                - text: Permanent, full-time
+            - generic [ref=e98]:
+              - button "Open in new tabApply now" [disabled]:
+                - img "Open in new tab"
+                - text: Apply now
+              - button "Shortlist job" [disabled]:
+                - img
+                - text: Save
+            - generic [ref=e100]:
+              - paragraph [ref=e101]: We have a current opportunity for a Trading Floor Desktop Support Engineer on a permanent basis. The position will be based in London. For further information about this position please apply.
+              - paragraph [ref=e102]:
+                - strong [ref=e103]: Key Responsibilities
+              - list [ref=e104]:
+                - listitem [ref=e105]: Provide L1/L2 desktop and application support to traders and other front-office users
+                - listitem [ref=e106]: Troubleshoot issues related to Windows 11, O365, Outlook, network connectivity and hardware
+                - listitem [ref=e107]: Support and maintain trading turrets, dealer boards, and voice systems
+                - listitem [ref=e108]: Rapidly troubleshoot Excel pricing sheets, including broken formulas, incorrect references, or data link issues
+                - listitem [ref=e109]: Assist with market data add-ins (Bloomberg API, ICE, CME add-ins)
+                - listitem [ref=e110]: Manage incident tickets and escalate where appropriate
+                - listitem [ref=e111]: Perform desktop builds, upgrades, and deployments using enterprise tools
+                - listitem [ref=e112]: Support trading floor moves, device rollout projects, and hardware refresh plans
+                - listitem [ref=e113]: Work closely with infrastructure, network, app support, and dev engineering teams
+                - listitem [ref=e114]: Participate in shift patterns or on-call rotations as needed
+                - listitem [ref=e115]: Ability to create clear KB documentation
+              - paragraph [ref=e116]:
+                - strong [ref=e117]: Required Skills & Experience
+              - list [ref=e118]:
+                - listitem [ref=e119]: 2-5+ years' desktop or trade-floor support experience
+                - listitem [ref=e120]: Strong understanding of Windows OS, Active Directory, Microsoft 365
+                - listitem [ref=e121]: Advanced Excel debugging including formula tracing, named ranges, dependency checking
+                - listitem [ref=e122]: Ability to communicate effectively with front-office users
+                - listitem [ref=e123]: Experience in a financial services or fast-paced trading environment
+                - listitem [ref=e124]: Basic understanding of ITIL processes
+              - paragraph [ref=e125]:
+                - strong [ref=e126]: Desirable Skills
+              - list [ref=e127]:
+                - listitem [ref=e128]: Familiarity with Excel-based pricing models used in front-office teams
+                - listitem [ref=e129]: Turret / voice trading systems (Cloud9)
+                - listitem [ref=e130]: SCCM/Intune
+                - listitem [ref=e131]: PowerShell scripting
+                - listitem [ref=e132]: Basic networking (DHCP, DNS, VLANs)
+                - listitem [ref=e133]: Understanding of equities, FX, fixed income, or derivatives workflows
+                - listitem [ref=e134]: ITIL Foundation
+                - listitem [ref=e135]: SQL query building basic level
+              - paragraph [ref=e136]:
+                - strong [ref=e137]: Personal Attributes
+              - list [ref=e138]:
+                - listitem [ref=e139]: Calm, confident, and solution-driven
+                - listitem [ref=e140]: Strong attention to detail
+                - listitem [ref=e141]: Excellent communicator, especially under pressure
+                - listitem [ref=e142]: Proactive, resourceful, and able to prioritise effectively
+                - listitem [ref=e143]: Comfortable supporting demanding front-office stakeholders
+              - paragraph [ref=e144]:
+                - strong [ref=e145]: To find out more about Huxley, please visit
+                - strong [ref=e146]: www.huxley.com
+              - paragraph [ref=e147]: Huxley, a trading division of SThree Partnership LLP is acting as an Employment Business in relation to this vacancy | Registered office | 8 Bishopsgate, London, EC2N 4BQ, United Kingdom | Partnership Number | OC387148 England and Wales
+            - group [ref=e148]:
+              - button "shareShare" [ref=e151] [cursor=pointer]:
+                - img "share" [ref=e152]
+                - text: Share
+              - generic [ref=e154]:
+                - button "EyeHide" [disabled]:
+                  - img "Eye"
+                  - text: Hide
+          - generic [ref=e155]:
+            - banner [ref=e156]:
+              - heading "Create alerts for similar jobs" [level=2] [ref=e157]
+            - generic [ref=e159]:
+              - generic [ref=e160]:
+                - generic [ref=e161]:
+                  - generic [ref=e162]:
+                    - generic [ref=e164]: Trading Floor Desktop Support Engineer - Huxley
+                    - generic [ref=e165]: London
+                  - button "Edit" [ref=e166] [cursor=pointer]
+                - generic [ref=e167]:
+                  - generic [ref=e168]: Email address
+                  - textbox "Email address" [ref=e170]
+              - generic [ref=e171]:
+                - button "Create alert" [disabled]:
+                  - generic:
+                    - img
+                  - text: Create alert
+              - generic [ref=e172]:
+                - text: By creating an alert, you agree to the
+                - link "Terms and conditions" [ref=e173] [cursor=pointer]:
+                  - /url: /policies
+                - text: applicable to our service and acknowledge that your personal data will be used in accordance with our
+                - link "Privacy policy" [ref=e174] [cursor=pointer]:
+                  - /url: /policies
+                - text: and you will receive emails and communications about jobs and career related topics.
+          - generic [ref=e175]:
+            - heading "Similar Jobs" [level=3] [ref=e177]
+            - generic [ref=e178]:
+              - link "Shortlist job New Trading Floor Desktop Support Engineer - Huxley Yesterday by eFinancialCareers SalaryCompetitive salary LocationLondon ClockPermanent, full-time" [ref=e179] [cursor=pointer]:
+                - /url: /jobs/trading-floor-desktop-support-engineer-huxley/56734878?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e180]:
+                      - img [ref=e181]
+                    - generic:
+                      - generic: New
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Trading Floor Desktop Support Engineer - Huxley
+                          - generic: Yesterday by eFinancialCareers
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Competitive salary
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job New Trading Floor Desktop Support Engineer - Huxley Yesterday by eFinancialCareers SalaryCompetitive salary LocationLondon ClockPermanent, full-time" [ref=e183] [cursor=pointer]:
+                - /url: /jobs/trading-floor-desktop-support-engineer-huxley/56731358?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e184]:
+                      - img [ref=e185]
+                    - generic:
+                      - generic: New
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Trading Floor Desktop Support Engineer - Huxley
+                          - generic: Yesterday by eFinancialCareers
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Competitive salary
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+            - link "See more jobs like this" [ref=e188] [cursor=pointer]:
+              - /url: /jobs/support-engineer-jobs
+          - generic [ref=e189]:
+            - generic [ref=e191]: Recommended courses
+            - generic [ref=e192]:
+              - 'link "IT Technican : IT Technician Course Online, Self-paced £799" [ref=e193] [cursor=pointer]':
+                - /url: /courses/it-technican--it-technician-course/338316?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=computer%20science_courses_338316
+                - generic: "IT Technican : IT Technician Course"
+                - generic: Online, Self-paced
+                - generic: £799
+              - link "CompTIA IT Support Technician Job Programme Online, Self-paced £799" [ref=e194] [cursor=pointer]:
+                - /url: /courses/comptia-it-support-technician-job-programme/247829?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=computer%20science_courses_247829
+                - generic: CompTIA IT Support Technician Job Programme
+                - generic: Online, Self-paced
+                - generic: £799
+              - link "IT Support Technician Online, Self-paced £799" [ref=e195] [cursor=pointer]:
+                - /url: /courses/it-support-technician/473420?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=computer%20science_courses_473420
+                - generic: IT Support Technician
+                - generic: Online, Self-paced
+                - generic: £799
+            - link "View Computer science courses" [ref=e197] [cursor=pointer]:
+              - /url: https://www.reed.co.uk/courses/all?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=view_computer%20science_courses
+          - generic [ref=e199]:
+            - generic [ref=e200]: Posted by eFinancialCareers
+            - link "View all jobs and profile Chevron" [ref=e201] [cursor=pointer]:
+              - /url: /jobs/efinancial-careers/p74850
+              - generic [ref=e202]: View all jobs and profile
+              - img "Chevron" [ref=e203]
+          - generic [ref=e208]:
+            - generic [ref=e209]: "Reference: 56730486"
+            - generic [ref=e210]:
+              - text: Please note that
+              - link "Reed.co.uk" [ref=e211] [cursor=pointer]:
+                - /url: https://reed.co.uk
+              - text: will never ask you to provide your bank, passport or driving licence details during the application process.
+            - link "Report this job Open in new tab" [ref=e213] [cursor=pointer]:
+              - /url: /enquiries?reportJobRef=56730486
+              - text: Report this job
+              - img "Open in new tab"
+        - complementary [ref=e214]
+    - contentinfo [ref=e215]:
+      - generic [ref=e217]:
+        - navigation [ref=e218]:
+          - button "JOBS" [ref=e220] [cursor=pointer]
+          - list [ref=e223]:
+            - listitem [ref=e224]:
+              - link "Contact us" [ref=e225] [cursor=pointer]:
+                - /url: /enquiries
+            - listitem [ref=e226]:
+              - link "Job search" [ref=e227] [cursor=pointer]:
+                - /url: /jobs
+            - listitem [ref=e228]:
+              - link "Recruiter directory" [ref=e229] [cursor=pointer]:
+                - /url: /recruiterdirectory
+            - listitem [ref=e230]:
+              - link "Work from home" [ref=e231] [cursor=pointer]:
+                - /url: /jobs/work-from-home-jobs
+            - listitem [ref=e232]:
+              - link "Browse jobs" [ref=e233] [cursor=pointer]:
+                - /url: /popularjobs
+            - listitem [ref=e234]:
+              - link "Browse locations" [ref=e235] [cursor=pointer]:
+                - /url: /location
+            - listitem [ref=e236]:
+              - link "Popular searches" [ref=e237] [cursor=pointer]:
+                - /url: /popularsearches
+            - listitem [ref=e238]:
+              - link "Career advice" [ref=e239] [cursor=pointer]:
+                - /url: /career-advice
+            - listitem [ref=e240]:
+              - link "Tax calculator" [ref=e241] [cursor=pointer]:
+                - /url: /tax-calculator
+            - listitem [ref=e242]:
+              - link "Average salary checker" [ref=e243] [cursor=pointer]:
+                - /url: /average-salary
+            - listitem [ref=e244]:
+              - link "Help" [ref=e245] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e246]:
+              - link "Contact a REED office" [ref=e247] [cursor=pointer]:
+                - /url: https://www.reed.com/offices
+            - listitem [ref=e248]:
+              - link "Sitemap" [ref=e249] [cursor=pointer]:
+                - /url: /html-sitemap
+        - navigation [ref=e250]:
+          - button "RECRUITER" [ref=e252] [cursor=pointer]
+          - list [ref=e255]:
+            - listitem [ref=e256]:
+              - link "Recruiter site" [ref=e257] [cursor=pointer]:
+                - /url: /recruiter?directjob=recruiter
+            - listitem [ref=e258]:
+              - link "Post a job" [ref=e259] [cursor=pointer]:
+                - /url: /recruiter/post-a-job?directjob=recruiter
+            - listitem [ref=e260]:
+              - link "CV Search" [ref=e261] [cursor=pointer]:
+                - /url: /recruiter/cv-search?directjob=recruiter
+            - listitem [ref=e262]:
+              - link "Recruitment agencies" [ref=e263] [cursor=pointer]:
+                - /url: /recruiter/recruitment-agencies?directjob=recruiter
+            - listitem [ref=e264]:
+              - link "Recruiter Advice" [ref=e265] [cursor=pointer]:
+                - /url: /recruiter-advice/?directjob=recruiter
+        - navigation [ref=e266]:
+          - button "COURSES" [ref=e268] [cursor=pointer]
+          - list [ref=e271]:
+            - listitem [ref=e272]:
+              - link "Help" [ref=e273] [cursor=pointer]:
+                - /url: /courses/help
+            - listitem [ref=e274]:
+              - link "Contact us" [ref=e275] [cursor=pointer]:
+                - /url: /courses/contact-us
+            - listitem [ref=e276]:
+              - link "Find a course" [ref=e277] [cursor=pointer]:
+                - /url: /courses/
+            - listitem [ref=e278]:
+              - link "View all subjects" [ref=e279] [cursor=pointer]:
+                - /url: /courses/directory
+            - listitem [ref=e280]:
+              - link "Discount courses" [ref=e281] [cursor=pointer]:
+                - /url: /courses/discount
+            - listitem [ref=e282]:
+              - link "Free courses" [ref=e283] [cursor=pointer]:
+                - /url: /courses/free
+            - listitem [ref=e284]:
+              - link "Awarding body directory" [ref=e285] [cursor=pointer]:
+                - /url: /courses/awarding-bodies
+            - listitem [ref=e286]:
+              - link "Career guides" [ref=e287] [cursor=pointer]:
+                - /url: /courses/career-guides
+            - listitem [ref=e288]:
+              - link "Advertise a course" [ref=e289] [cursor=pointer]:
+                - /url: /courses/providers/
+            - listitem [ref=e290]:
+              - link "Courses sitemap" [ref=e291] [cursor=pointer]:
+                - /url: /courses/html-sitemap
+        - navigation [ref=e292]:
+          - button "MORE FROM Reed.co.uk" [ref=e294] [cursor=pointer]
+          - list [ref=e297]:
+            - listitem [ref=e298]:
+              - link "About us" [ref=e299] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e300]:
+              - link "Careers at Reed.co.uk" [ref=e301] [cursor=pointer]:
+                - /url: https://www.reed.com/careers/jobs?businessDivision=Reed.co.uk
+            - listitem [ref=e302]:
+              - link "Press office" [ref=e303] [cursor=pointer]:
+                - /url: /press-office
+            - listitem [ref=e304]:
+              - link "Corporate governance" [ref=e305] [cursor=pointer]:
+                - /url: /corporate-governance
+            - listitem [ref=e306]:
+              - link "Modern slavery statement" [ref=e307] [cursor=pointer]:
+                - /url: https://www.reed.co.uk/cdn/jobseeker/pdf/Reed_MSA_Statement.pdf
+        - navigation [ref=e308]:
+          - button "REED" [ref=e310] [cursor=pointer]
+          - list [ref=e313]:
+            - listitem [ref=e314]:
+              - 'link "Tempzone: timesheets & holiday" [ref=e315] [cursor=pointer]':
+                - /url: https://candidate.reed.co.uk/candlogin.asp
+            - listitem [ref=e316]:
+              - link "Authorise timesheets" [ref=e317] [cursor=pointer]:
+                - /url: https://client.reed.co.uk/
+            - listitem [ref=e318]:
+              - link "Reed Group Services" [ref=e319] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e320]:
+              - link "Reed Specialist Recruitment" [ref=e321] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e322]:
+              - link "Reed in Partnership" [ref=e323] [cursor=pointer]:
+                - /url: https://www.reedinpartnership.co.uk/
+            - listitem [ref=e324]:
+              - link "Careers with REED" [ref=e325] [cursor=pointer]:
+                - /url: https://www.reed.com/careers
+            - listitem [ref=e326]:
+              - link "James Reed - Official Site" [ref=e327] [cursor=pointer]:
+                - /url: /james-reed/
+            - listitem [ref=e328]:
+              - 'link "Podcast - James Reed: all about business" [ref=e329] [cursor=pointer]':
+                - /url: https://www.reed.com/podcasts
+            - listitem [ref=e330]:
+              - link "ESG & sustainability" [ref=e331] [cursor=pointer]:
+                - /url: https://www.reed.com/esg-and-sustainability
+      - generic [ref=e333]:
+        - generic [ref=e334]:
+          - generic [ref=e336]:
+            - link "PhilCo" [ref=e337] [cursor=pointer]:
+              - /url: https://philco.org.uk/
+              - img "PhilCo" [ref=e338]
+            - generic [ref=e339]: Learn how Reed is leading the way in philanthropy
+          - img "Love Mondays" [ref=e341]
+        - generic [ref=e342]:
+          - generic [ref=e343]:
+            - 'link "James Reed: all about business" [ref=e344] [cursor=pointer]':
+              - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+              - 'img "James Reed: all about business" [ref=e345]'
+            - generic [ref=e346]:
+              - heading "Introducing our new podcast New" [level=3] [ref=e347]:
+                - text: Introducing our new podcast
+                - generic [ref=e348]: New
+              - paragraph [ref=e349]: "James Reed: all about business"
+              - link "Listen here" [ref=e350] [cursor=pointer]:
+                - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+          - generic [ref=e351]:
+            - generic [ref=e352]:
+              - generic [ref=e353]:
+                - link "Download on the App Store" [ref=e354] [cursor=pointer]:
+                  - /url: https://itunes.apple.com/GB/app/id1040443949?mt=8
+                  - img "Download on the App Store" [ref=e355]
+                - link "Get it on Google Play" [ref=e356] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.reedcouk.jobs&referrer=af_tranid%3D_HgKgkJ-aFiIn4G5iigdZQ%26pid%3DWebsite_Footer%26utm_source%3DWebsite_Footer
+                  - img "Get it on Google Play" [ref=e357]
+              - generic [ref=e358]:
+                - link "Facebook" [ref=e359] [cursor=pointer]:
+                  - /url: https://www.facebook.com/reedcouk
+                  - img "Facebook" [ref=e360]
+                - link "Instagram" [ref=e361] [cursor=pointer]:
+                  - /url: https://www.instagram.com/reedcouk/
+                  - img "Instagram" [ref=e362]
+                - link "Tiktok" [ref=e363] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@reedjobs
+                  - img "Tiktok" [ref=e364]
+            - list [ref=e365]:
+              - listitem [ref=e366]:
+                - button "Manage Preferences" [ref=e367] [cursor=pointer]
+                - text: ","
+              - listitem [ref=e368]:
+                - link "Security, Privacy, Terms & Conditions" [ref=e369] [cursor=pointer]:
+                  - /url: /policies
+            - paragraph [ref=e370]: COPYRIGHT © Reed.co.uk 2026
+  - alert [ref=e371]

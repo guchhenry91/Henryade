@@ -1,0 +1,79 @@
+[    1099ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:26:41.620Z Invalid eventBatchSize undefined, defaulting to 10 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-26:1
+[    1100ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:26:41.621Z Invalid eventFlushInterval undefined, defaulting to 1000 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-26:1
+[    1303ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://www.totaljobs.com/CompanyLogos/?im=Resize=(40,40):0
+[    1392ms] [WARNING] Disabling this snippet because Optimizely has already initialized on this page load. Are there multiple snippets on the page? @ https://www.totaljobs.com/optimizely-edge/20561852190.js:2
+[    1748ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.totaljobs.com/branded-assets/:0
+[    2464ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:26:42.984Z Invalid eventBatchSize undefined, defaulting to 10 @ https://www.totaljobs.com/viewlets/searchbarrenderer/search-bar-renderer/uk/1_71_0__d3c02e3/vendors.af106491529af76777df.js:1
+[    2465ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:26:42.986Z Invalid eventFlushInterval undefined, defaulting to 1000 @ https://www.totaljobs.com/viewlets/searchbarrenderer/search-bar-renderer/uk/1_71_0__d3c02e3/vendors.af106491529af76777df.js:1
+[    2783ms] [WARNING] Datadog Browser SDK: SDK is loaded more than once. This is unsupported and might have unexpected behavior. @ https://www.totaljobs.com/static/ld/job-ad-display/732-5b534f846661efa34dd3.js?a530840429f56731c414:1
+[    2902ms] [ERROR] Datadog Browser SDK: DD_LOGS is already initialized. @ https://www.totaljobs.com/static/ld/job-ad-display/732-5b534f846661efa34dd3.js?a530840429f56731c414:1
+[    2971ms] [WARNING] Datadog Browser SDK: SDK is loaded more than once. This is unsupported and might have unexpected behavior. @ https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:1
+[    4132ms] Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at Qr (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:184594)
+    at Xs (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:225824)
+    at Su (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249971)
+    at wu (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249711)
+    at bu (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249578)
+    at vu (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249441)
+    at au (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:244606)
+    at E (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:621416)
+    at O (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:621948)
+    at e.exports (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:19882)
+[    4133ms] Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at kl (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:261774)
+    at wu (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249650)
+    at bu (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249578)
+    at vu (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249441)
+    at su (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:246276)
+    at au (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:244832)
+    at E (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:621416)
+    at O (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:621948)
+    at e.exports (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:19882)
+    at g.<computed> (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:35098)
+[    4310ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://www.totaljobs.com/CompanyLogos/?im=Resize=(40,40):0
+[    4429ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://www.totaljobs.com/CompanyLogos/?im=Resize=(56,56):0
+[    4532ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.totaljobs.com/premium/api/v1/candidate/subscription/status:0
+[    8232ms] Uncaught The pagetype parameter is required when you include the prodid parameter.
+    at UET.throwError (https://bat.bing.com/bat.js:0:26126)
+    at UET.validateDataObjectNew (https://bat.bing.com/bat.js:0:31565)
+    at UET.evt (https://bat.bing.com/bat.js:0:35110)
+    at UET._push (https://bat.bing.com/bat.js:0:16964)
+    at UET.checkuetHostdocumentload (https://bat.bing.com/bat.js:0:7903)
+    at UET.containerCheckLoad (https://bat.bing.com/bat.js:0:54229)
+    at UET.containerOnLoad (https://bat.bing.com/bat.js:0:53968)
+[    8435ms] [WARNING] [Meta Pixel] - Duplicate Pixel ID: 665267016975562. @ https://connect.facebook.net/en_US/fbevents.js:175
+[    9505ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/ashdown-group-job106982205:0
+[    9506ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/ashdown-group-job106982205:0
+[    9506ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/ashdown-group-job106982205:0
+[    9506ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/ashdown-group-job106982205:0
+[    9506ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/ashdown-group-job106982205:0
+[   21554ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:27:02.075Z Invalid eventBatchSize undefined, defaulting to 10 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-23:1
+[   21555ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:27:02.076Z Invalid eventFlushInterval undefined, defaulting to 1000 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-23:1
+[   22672ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://local.amplitude.com:3010') does not match the recipient window's origin ('https://www.totaljobs.com'). @ https://www.totaljobs.com/sharedassets/@stepstone/amplitude-wrapper-sap/latest/main.js:0
+[   22672ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://apps.stag2.amplitude.com') does not match the recipient window's origin ('https://www.totaljobs.com'). @ https://www.totaljobs.com/sharedassets/@stepstone/amplitude-wrapper-sap/latest/main.js:0
+[   22672ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://app.amplitude.com') does not match the recipient window's origin ('https://www.totaljobs.com'). @ https://www.totaljobs.com/sharedassets/@stepstone/amplitude-wrapper-sap/latest/main.js:0
+[   22673ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://app.eu.amplitude.com') does not match the recipient window's origin ('https://www.totaljobs.com'). @ https://www.totaljobs.com/sharedassets/@stepstone/amplitude-wrapper-sap/latest/main.js:0
+[   22893ms] [WARNING] Datadog Browser SDK: SDK is loaded more than once. This is unsupported and might have unexpected behavior. @ https://www.totaljobs.com/application/process-renderer/assets/confirmation.1014290052c280cc8044.js:1
+[   24875ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://local.amplitude.com:3010') does not match the recipient window's origin ('https://www.totaljobs.com'). @ https://cdn.eu.amplitude.com/engagement-browser/prod/split/0802b9c2eb855ea2b6569f8c8d215f17d6d664fb-chunk-EL57N5GK.js:0
+[   24875ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://apps.stag2.amplitude.com') does not match the recipient window's origin ('https://www.totaljobs.com'). @ https://cdn.eu.amplitude.com/engagement-browser/prod/split/0802b9c2eb855ea2b6569f8c8d215f17d6d664fb-chunk-EL57N5GK.js:0
+[   24875ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://app.amplitude.com') does not match the recipient window's origin ('https://www.totaljobs.com'). @ https://cdn.eu.amplitude.com/engagement-browser/prod/split/0802b9c2eb855ea2b6569f8c8d215f17d6d664fb-chunk-EL57N5GK.js:0
+[   24875ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://app.eu.amplitude.com') does not match the recipient window's origin ('https://www.totaljobs.com'). @ https://cdn.eu.amplitude.com/engagement-browser/prod/split/0802b9c2eb855ea2b6569f8c8d215f17d6d664fb-chunk-EL57N5GK.js:0
+[   25225ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://local.amplitude.com:3010') does not match the recipient window's origin ('https://www.totaljobs.com'). @ https://cdn.eu.amplitude.com/engagement-browser/prod/split/0802b9c2eb855ea2b6569f8c8d215f17d6d664fb-chunk-EL57N5GK.js:0
+[   25225ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://apps.stag2.amplitude.com') does not match the recipient window's origin ('https://www.totaljobs.com'). @ https://cdn.eu.amplitude.com/engagement-browser/prod/split/0802b9c2eb855ea2b6569f8c8d215f17d6d664fb-chunk-EL57N5GK.js:0
+[   25225ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://app.amplitude.com') does not match the recipient window's origin ('https://www.totaljobs.com'). @ https://cdn.eu.amplitude.com/engagement-browser/prod/split/0802b9c2eb855ea2b6569f8c8d215f17d6d664fb-chunk-EL57N5GK.js:0
+[   25226ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://app.eu.amplitude.com') does not match the recipient window's origin ('https://www.totaljobs.com'). @ https://cdn.eu.amplitude.com/engagement-browser/prod/split/0802b9c2eb855ea2b6569f8c8d215f17d6d664fb-chunk-EL57N5GK.js:0
+[   26611ms] [WARNING] [Meta Pixel] - Duplicate Pixel ID: 665267016975562. @ https://connect.facebook.net/en_US/fbevents.js:175
+[   26656ms] Uncaught The pagetype parameter is required when you include the prodid parameter.
+    at UET.throwError (https://bat.bing.com/bat.js:0:26126)
+    at UET.validateDataObjectNew (https://bat.bing.com/bat.js:0:31565)
+    at UET.evt (https://bat.bing.com/bat.js:0:35110)
+    at UET._push (https://bat.bing.com/bat.js:0:16964)
+    at UET.checkuetHostdocumentload (https://bat.bing.com/bat.js:0:7903)
+    at <anonymous> (https://bat.bing.com/bat.js:0:8194)
+[   27822ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/c55ca2d8-cb36-4eb9-aaca-9b1cce8c40c2/application/confirmation/success?locale=en_GB:0
+[   27822ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/c55ca2d8-cb36-4eb9-aaca-9b1cce8c40c2/application/confirmation/success?locale=en_GB:0
+[   29519ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://www.google.com') does not match the recipient window's origin ('https://www.totaljobs.com'). @ https://www.googletagmanager.com/gtag/js?id=AW-1036593523:761
+[   29520ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://www.youtube.com') does not match the recipient window's origin ('https://www.totaljobs.com'). @ https://www.googletagmanager.com/gtag/js?id=AW-1036593523:761
+[   29520ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://m.youtube.com') does not match the recipient window's origin ('https://www.totaljobs.com'). @ https://www.googletagmanager.com/gtag/js?id=AW-1036593523:761
+[   29834ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://insights.hotjar.com') does not match the recipient window's origin ('https://www.totaljobs.com'). @ https://script.hotjar.com/modules.6a0f3932cb1341a35c18.js:3
+[   33736ms] [WARNING] The resource https://www.totaljobs.com/sharedassets/@stepstone-genesis/fonts/core/fonts.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://www.totaljobs.com/job/c55ca2d8-cb36-4eb9-aaca-9b1cce8c40c2/application/confirmation/success?locale=en_GB:0

@@ -1,0 +1,25 @@
+[    2228ms] [LOG] Visibility threshold pct=50, Visibility threshold ms = 0 @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[    2409ms] [INFO] [REFRESH PATCH] pubads.refresh patched @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[    2426ms] [LOG] Influent Media script loaded @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[    2459ms] [LOG] Influent Media script initialized @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[    2769ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/first-line-support-engineer-it-service-desk-technician/56504326:0
+[    2784ms] [WARNING] The following CSA option(s) were ignored due to being overridden by native style controls: fontFamily @ https://www.google.com/adsense/search/async-ads.js:218
+[    2784ms] [WARNING] The following CSA option(s) are unsupported: longerHeadlines, fontSizeTitle, fontSizeDescription, fontSizeDomainLink, colorTitleLink, colorDomainLink @ https://www.google.com/adsense/search/async-ads.js:218
+[    2953ms] [INFO] [REFRESH PATCH] Injecting targeting {key: AnonymisedSignalLift, value: 0} @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[    2969ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[    2970ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[    2970ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15
+[    7551ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/first-line-support-engineer-it-service-desk-technician/56504326:0
+[   22929ms] [WARNING] [TikTok Pixel] - Missing email and phone number
+Issue: Email and phone number info isn't being received. This information is required for Complete Payment events.
+Suggestion: Improve your email and phone coverage. This allows you to attribute more conversions and reach more people with your ads. See https://ads.tiktok.com/marketing_api/docs?rid=5ipocbxyw8v&id=1701890972946433 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   22929ms] [WARNING] [TikTok Pixel] - Missing 'content_id' paramter
+Issue: The 'content_id' parameter isn't being received. This is required for Video Shopping Ads (VSA).
+Suggestion: Include the 'content_id' parameter in your source code. This is required for Video Shopping Ads (VSA). See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   22930ms] [WARNING] [TikTok Pixel] - Missing "value" parameter
+Issue: Events shared are missing a 'value' parameter'. This is used calculate ROAS for people and the bid for your highest value customers. 
+Suggestion: Go to your source code and include the "value" parameter. See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   22930ms] [WARNING] [TikTok Pixel] - Missing "currency" parameter
+Issue: Events shared are missing a 'currency' parameter. This impacts our ability to receive the value amount correctly, which can affect the accuracy of reporting for your return on ad spend.
+Suggestion: Go to your source code and include the "currency" parameter. You can check supported currency codes. See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MWE0ZWQ3ZWQwMQ.js:0
+[   23125ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/first-line-support-engineer-it-service-desk-technician/56504326:0

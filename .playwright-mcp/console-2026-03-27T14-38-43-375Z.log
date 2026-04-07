@@ -1,0 +1,117 @@
+[      68ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[     182ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[     292ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[     399ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[     508ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[     616ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[     725ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[    1159ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.totaljobs.com/en-GB/candidate/@stepstone/amplitude-wrapper-sap/latest/main.js:0
+[    1752ms] Error: Minified React error #418; visit https://react.dev/errors/418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at t5 (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:24673)
+    at iZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:120538)
+    at ia (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:95165)
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91091
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91098
+    at oZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91203)
+    at MessagePort.T (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/3323-933e7aa7c9a2c821.js:1:84307)
+[    1754ms] Error: Minified React error #418; visit https://react.dev/errors/418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at t5 (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:24673)
+    at iZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:120538)
+    at ia (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:95165)
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91091
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91098
+    at oZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91203)
+    at MessagePort.T (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/3323-933e7aa7c9a2c821.js:1:84307)
+[    1755ms] Error: Minified React error #418; visit https://react.dev/errors/418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at t5 (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:24673)
+    at iZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:120538)
+    at ia (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:95165)
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91091
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91098
+    at oZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91203)
+    at MessagePort.T (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/3323-933e7aa7c9a2c821.js:1:84307)
+[    1756ms] Error: Minified React error #418; visit https://react.dev/errors/418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at t5 (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:24673)
+    at iZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:120538)
+    at ia (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:95165)
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91091
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91098
+    at oZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91203)
+    at MessagePort.T (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/3323-933e7aa7c9a2c821.js:1:84307)
+[    1757ms] Error: Minified React error #418; visit https://react.dev/errors/418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at t5 (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:24673)
+    at iZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:120538)
+    at ia (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:95165)
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91091
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91098
+    at oZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91203)
+    at MessagePort.T (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/3323-933e7aa7c9a2c821.js:1:84307)
+[    1757ms] Error: Minified React error #418; visit https://react.dev/errors/418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at t5 (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:24673)
+    at iZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:120538)
+    at ia (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:95165)
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91091
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91098
+    at oZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91203)
+    at MessagePort.T (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/3323-933e7aa7c9a2c821.js:1:84307)
+[    1758ms] Error: Minified React error #418; visit https://react.dev/errors/418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at t5 (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:24673)
+    at iZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:120538)
+    at ia (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:95165)
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91091
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91098
+    at oZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91203)
+    at MessagePort.T (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/3323-933e7aa7c9a2c821.js:1:84307)
+[    1759ms] Error: Minified React error #418; visit https://react.dev/errors/418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at t5 (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:24673)
+    at iZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:120538)
+    at ia (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:95165)
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91091
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91098
+    at oZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91203)
+    at MessagePort.T (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/3323-933e7aa7c9a2c821.js:1:84307)
+[    1760ms] Error: Minified React error #418; visit https://react.dev/errors/418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at t5 (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:24673)
+    at iZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:120538)
+    at ia (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:95165)
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91091
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91098
+    at oZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91203)
+    at MessagePort.T (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/3323-933e7aa7c9a2c821.js:1:84307)
+[    1761ms] Error: Minified React error #418; visit https://react.dev/errors/418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at t5 (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:24673)
+    at iZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:120614)
+    at ia (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:95165)
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91091
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91098
+    at oZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91203)
+    at MessagePort.T (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/3323-933e7aa7c9a2c821.js:1:84307)
+[    1763ms] Error: Minified React error #423; visit https://react.dev/errors/423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at iZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:118352)
+    at ia (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:95165)
+    at https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:94987
+    at il (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:94994)
+    at oJ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:92350)
+    at oZ (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/fac1b33e-335bb7522c96b925.js:1:91769)
+    at MessagePort.T (https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/3323-933e7aa7c9a2c821.js:1:84307)
+[    2760ms] [WARNING] This error hasn't been sent to DataDog: Global_Tracking_Error: TimestampError: SPP response is missing Date header; cannot capture sppTimestamp {dateHeader: null} @ https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:0
+[    2761ms] [WARNING] This error hasn't been sent to DataDog: Global_Tracking_Error: Call to "/analytics/api/v2/tracking" has failed: SyntaxError: Failed to execute 'json' on 'Response': Unexpected end of JSON input
+    at ct (https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:1:73523)
+    at async https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:1:159555
+    at async https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:1:159462 @ https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:0
+[   75386ms] [WARNING] [redirect] Reloading same URL @ https://www.totaljobs.com/static/gfp/canvas-monorepo/_next/static/chunks/8811-d9f509b5aa1f914b.js:0
+[   76026ms] [ERROR] Executing inline script violates the following Content Security Policy directive 'script-src 'nonce-LJuABmnf5srLOYQx+4ARzw==' 'strict-dynamic''. Either the 'unsafe-inline' keyword, a hash ('sha256-mPTI/XzN3GIWe1mpVXsHM1cHyOoLofNvjtfs9MWGL40='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked. @ https://www.totaljobs.com/profile:60
+[   76026ms] [ERROR] Executing inline script violates the following Content Security Policy directive 'script-src 'nonce-LJuABmnf5srLOYQx+4ARzw==' 'strict-dynamic''. Either the 'unsafe-inline' keyword, a hash ('sha256-HCwYSjczP4VfffWEMZugawnAw6PY82TozwYUNx4tPX8='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked. @ https://www.totaljobs.com/profile:61
+[   76040ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-27T14:39:59.409Z Invalid eventBatchSize undefined, defaulting to 10 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-23:1
+[   76040ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-27T14:39:59.414Z Invalid eventFlushInterval undefined, defaulting to 1000 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-23:1
+[   76067ms] [ERROR] Executing inline script violates the following Content Security Policy directive 'script-src 'nonce-LJuABmnf5srLOYQx+4ARzw==' 'strict-dynamic''. Either the 'unsafe-inline' keyword, a hash ('sha256-mPTI/XzN3GIWe1mpVXsHM1cHyOoLofNvjtfs9MWGL40='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked. @ https://www.totaljobs.com/profile:177
+[   76067ms] [ERROR] Executing inline script violates the following Content Security Policy directive 'script-src 'nonce-LJuABmnf5srLOYQx+4ARzw==' 'strict-dynamic''. Either the 'unsafe-inline' keyword, a hash ('sha256-HCwYSjczP4VfffWEMZugawnAw6PY82TozwYUNx4tPX8='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked. @ https://www.totaljobs.com/profile:178
+[   76440ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-27T14:39:59.814Z Invalid eventBatchSize undefined, defaulting to 10 @ https://www.totaljobs.com/viewlets/searchbarrenderer/search-bar-renderer/uk/1_71_0__d3c02e3/vendors.af106491529af76777df.js:1
+[   76441ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-27T14:39:59.815Z Invalid eventFlushInterval undefined, defaulting to 1000 @ https://www.totaljobs.com/viewlets/searchbarrenderer/search-bar-renderer/uk/1_71_0__d3c02e3/vendors.af106491529af76777df.js:1
+[   76513ms] [WARNING] Datadog Browser SDK: SDK is loaded more than once. This is unsupported and might have unexpected behavior. @ https://www.totaljobs.com/viewlets/spac/candidate-profile-client-side/379.df8a63a5c2a77a5c6f67.js:1
+[   77020ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.totaljobs.com/external-data-provider/api/v1/linkedin/import-status:0
+[   77968ms] [WARNING] This error hasn't been sent to DataDog: Global_Tracking_Error: TimestampError: SPP response is missing Date header; cannot capture sppTimestamp {dateHeader: null} @ https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:0
+[   77969ms] [WARNING] This error hasn't been sent to DataDog: Global_Tracking_Error: Call to "/analytics/api/v2/tracking" has failed: SyntaxError: Failed to execute 'json' on 'Response': Unexpected end of JSON input
+    at ct (https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:1:73523)
+    at async https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:1:159555
+    at async https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:1:159462 @ https://www.totaljobs.com/sharedassets/@stepstone/global-tracking-frontend-sap/1.21.0/main.js:0

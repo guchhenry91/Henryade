@@ -1,0 +1,4 @@
+[    7163ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://bat.bing.com/bat.js:0
+[    7820ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[    7947ms] [WARNING] Anonymised tag: Unset or used incorrect value of the cmp-provider:'undefined'. 
+        The default TCFv2 API will be used @ https://cdn1.anonymised.io/light/bundle.js?v=1.8.51:0

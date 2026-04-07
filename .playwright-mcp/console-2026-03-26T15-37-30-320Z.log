@@ -1,0 +1,3 @@
+[     566ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://github.com/github-copilot/chat/entitlement:0
+[   56162ms] [WARNING] [Intercom] The App ID in your code snippet has not been set. Set it to your App ID found in settings to complete installation: https://app.intercom.com/a/apps/_/settings/web @ https://js.intercomcdn.com/frame-modern.54b70d79.js:0
+[   63471ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://en.gravatar.com/avatar/284115b115e5969a82834142db256eaf92186997ff29148f18d4010015c1d99b?s=20&r=x&d=404:0

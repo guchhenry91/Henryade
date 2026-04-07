@@ -1,0 +1,629 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e6]:
+          - link "Reed.co.uk" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Reed.co.uk" [ref=e8]
+          - list [ref=e9]:
+            - listitem [ref=e10]:
+              - link "Jobs" [ref=e11] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e12]: Jobs
+            - listitem [ref=e13]:
+              - link "Courses" [ref=e14] [cursor=pointer]:
+                - /url: /courses/?itm_source=js_navigation&itm_medium=jobseeker&itm_campaign=courses_tab&itm_content=standard_version
+                - generic [ref=e15]: Courses
+            - listitem [ref=e16]:
+              - link "Career advice" [ref=e17] [cursor=pointer]:
+                - /url: /career-advice/
+                - generic [ref=e18]: Career advice
+            - listitem [ref=e19]:
+              - link "Recruiting? Post a job" [ref=e20] [cursor=pointer]:
+                - /url: /recruiter/
+                - generic [ref=e21]:
+                  - text: Recruiting?
+                  - strong [ref=e22]: Post a job
+          - generic [ref=e23]:
+            - link "Register CV" [ref=e24] [cursor=pointer]:
+              - /url: /authentication/register?returnTo=%2Fjobs%2F2nd-line-service-desk-support-engineer%2F56579502
+            - list [ref=e25]:
+              - listitem [ref=e26]:
+                - link "Saved jobs" [ref=e27] [cursor=pointer]:
+                  - /url: /account/jobs/shortlisted-jobs
+                  - img [ref=e29]
+                  - generic [ref=e31]: Saved jobs
+              - listitem [ref=e32]:
+                - status [ref=e33]:
+                  - img "Loading" [ref=e34]
+      - search [ref=e38]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: What
+            - textbox "e.g. \"finance manager\"" [ref=e44]
+          - generic [ref=e45]:
+            - generic [ref=e46]: Where
+            - generic [ref=e47]:
+              - textbox "town or postcode" [ref=e48]
+              - button "Get current location" [ref=e49] [cursor=pointer]:
+                - img [ref=e50]
+          - button "Search jobs" [ref=e54] [cursor=pointer]
+          - link "Browse jobs" [ref=e56] [cursor=pointer]:
+            - /url: /popularjobs
+            - text: Browse jobs
+            - img [ref=e57]
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - link "ArrowSearch results" [ref=e64] [cursor=pointer]:
+            - /url: /jobs/2nd-line-service-desk-support-engineer-jobs-in-london?jobId=56579502
+            - img "Arrow"
+            - text: Search results
+          - list [ref=e66]:
+            - listitem [ref=e67]:
+              - link "Home" [ref=e68] [cursor=pointer]:
+                - /url: /
+            - text: /
+            - listitem [ref=e69]:
+              - text: /
+              - link "Information Technology" [ref=e70] [cursor=pointer]:
+                - /url: /jobs/information-technology-jobs
+            - listitem [ref=e71]:
+              - text: /
+              - link "Engineer" [ref=e72] [cursor=pointer]:
+                - /url: /jobs/engineering-jobs
+            - listitem [ref=e73]:
+              - text: /
+              - link "Support Engineer" [ref=e74] [cursor=pointer]:
+                - /url: /jobs/support-engineer-jobs
+            - listitem [ref=e75]: /Job details
+        - generic [ref=e76]:
+          - generic [ref=e78]:
+            - generic [ref=e80]:
+              - img [ref=e81]
+              - text: Easy Apply
+            - generic [ref=e83]:
+              - generic [ref=e84]:
+                - heading "2nd Line Service Desk Support Engineer" [level=1] [ref=e85]
+                - generic [ref=e86]:
+                  - text: 4 March by
+                  - link "Mexa Solutions LTD" [ref=e87] [cursor=pointer]:
+                    - /url: /company-profile/Mexa-Solutions-LTD-52593
+              - link "Mexa Solutions LTD jobs" [ref=e89] [cursor=pointer]:
+                - /url: /company-profile/Mexa-Solutions-LTD-52593
+                - img "Mexa Solutions LTD jobs" [ref=e90]
+            - list [ref=e91]:
+              - listitem [ref=e92]:
+                - img "Salary" [ref=e93]
+                - text: £38,000 - £42,200 per annum
+              - listitem [ref=e95]:
+                - img "Location" [ref=e96]
+                - text: London
+              - listitem [ref=e98]:
+                - img "Clock" [ref=e99]
+                - text: Permanent, full-time
+              - listitem [ref=e101]:
+                - generic [ref=e102]:
+                  - img "Check Mark" [ref=e103]
+                  - 'link "Skills: M365, Helpdesk + 4 more" [ref=e105] [cursor=pointer]':
+                    - /url: "#skills"
+                    - generic [ref=e106]: "Skills:"
+                    - generic [ref=e107]:
+                      - generic [ref=e108]: M365, Helpdesk
+                      - generic [ref=e109]: + 4 more
+            - generic [ref=e111]:
+              - button "Apply now" [disabled]
+              - button "Shortlist job" [disabled]:
+                - img
+                - text: Save
+            - generic [ref=e113]:
+              - paragraph [ref=e114]:
+                - strong [ref=e115]: 2nd Line Support Engineer – Solve the problems others can’t.
+              - paragraph [ref=e116]:
+                - strong [ref=e117]: £38,000 – £42,200 | Paddington, London (Hybrid – 3 days onsite)
+              - paragraph [ref=e118]
+              - paragraph [ref=e119]: Some engineers enjoy closing tickets.
+              - paragraph [ref=e120]
+              - paragraph [ref=e121]: Others enjoy figuring things out.
+              - paragraph [ref=e122]
+              - paragraph [ref=e123]: You’re the person people turn to when the problem hasn’t been solved the first time. When the issue needs deeper troubleshooting. When the fix isn’t obvious.
+              - paragraph [ref=e124]
+              - paragraph [ref=e125]: This role is built for that kind of engineer.
+              - paragraph [ref=e126]
+              - paragraph [ref=e127]: You’ll step in where 1st line leaves off, working across Microsoft technologies and infrastructure to resolve the more complex issues, the ones that require curiosity, persistence, and a proper technical mindset.
+              - paragraph [ref=e128]
+              - paragraph [ref=e129]:
+                - strong [ref=e130]: What’s in it for you?
+              - list [ref=e131]:
+                - listitem [ref=e132]:
+                  - strong [ref=e133]: "Salary:"
+                  - text: £38,000 – £42,200
+                - listitem [ref=e134]:
+                  - strong [ref=e135]: "Location:"
+                  - text: Paddington, London (3 days in the office, 2 from home)
+                - listitem [ref=e136]:
+                  - strong [ref=e137]: "Role:"
+                  - text: Genuine 2nd line support with real technical depth
+                - listitem [ref=e138]:
+                  - strong [ref=e139]: "Environment:"
+                  - text: Microsoft 365, Windows Server and modern endpoint technologies
+                - listitem [ref=e140]:
+                  - strong [ref=e141]: "Impact:"
+                  - text: You’ll be the escalation point when problems need solving properly
+                - listitem [ref=e142]:
+                  - strong [ref=e143]: "Team:"
+                  - text: Collaborative IT function where knowledge-sharing is encouraged
+              - paragraph [ref=e144]
+              - paragraph [ref=e145]:
+                - strong [ref=e146]: What you’ll be doing
+              - list [ref=e147]:
+                - listitem [ref=e148]: Taking ownership of technical issues escalated from the 1st line team
+                - listitem [ref=e149]: Troubleshooting more complex problems across Microsoft environments
+                - listitem [ref=e150]: Investigating root causes rather than applying quick fixes
+                - listitem [ref=e151]: Supporting users across desktop, infrastructure and cloud technologies
+                - listitem [ref=e152]: Working closely with colleagues across the wider IT team to resolve issues efficiently
+                - listitem [ref=e153]: Documenting solutions and helping improve knowledge across the support function
+                - listitem [ref=e154]: Getting involved in wider technical initiatives and improvement projects
+              - paragraph [ref=e155]
+              - paragraph [ref=e156]:
+                - strong [ref=e157]: What you’ll bring
+              - list [ref=e158]:
+                - listitem [ref=e159]:
+                  - text: Experience in a
+                  - strong [ref=e160]: 1st / 2nd line IT support role
+                  - text: ", ideally in a Microsoft environment"
+                - listitem [ref=e161]:
+                  - text: Strong troubleshooting skills across
+                  - strong [ref=e162]: M365, Windows Server and desktop technologies
+                - listitem [ref=e163]: The ability to dig into problems and see them through to resolution
+                - listitem [ref=e164]: Confidence explaining technical issues to non-technical users
+                - listitem [ref=e165]: A collaborative approach to working with colleagues across IT
+                - listitem [ref=e166]: Someone who enjoys learning and improving how things work
+              - paragraph [ref=e167]
+              - paragraph [ref=e168]: This role suits someone who enjoys getting stuck into technical problems and being the person who turns frustration into solutions.
+              - paragraph [ref=e169]
+              - paragraph [ref=e170]:
+                - text: If you like understanding
+                - emphasis [ref=e171]: why
+                - text: something broke, not just
+                - emphasis [ref=e172]: that
+                - text: it broke, you’ll feel right at home here.
+              - paragraph [ref=e173]
+              - paragraph [ref=e174]:
+                - strong [ref=e175]: Interested?
+              - paragraph [ref=e176]:
+                - text: Send your CV to
+                - strong [ref=e177]: bob . bath@ mexasolutions . com
+                - text: and let’s have a confidential chat.
+              - paragraph [ref=e178]
+            - generic [ref=e179]:
+              - generic [ref=e180]: Skills
+              - list [ref=e181]:
+                - listitem [ref=e182]: Helpdesk
+                - listitem [ref=e183]: Service Desk
+                - listitem [ref=e184]: 2nd Line Support
+                - listitem [ref=e185]: M365
+                - listitem [ref=e186]: Infrastructure Support
+                - listitem [ref=e187]: Windows Server
+            - group [ref=e188]:
+              - button "shareShare" [ref=e191] [cursor=pointer]:
+                - img "share" [ref=e192]
+                - text: Share
+              - generic [ref=e194]:
+                - button "EyeHide" [disabled]:
+                  - img "Eye"
+                  - text: Hide
+          - generic [ref=e195]:
+            - banner [ref=e196]:
+              - heading "Create alerts for similar jobs" [level=2] [ref=e197]
+            - generic [ref=e199]:
+              - generic [ref=e200]:
+                - generic [ref=e201]:
+                  - generic [ref=e202]:
+                    - generic [ref=e204]: 2nd Line Service Desk Support Engineer
+                    - generic [ref=e205]: London
+                  - button "Edit" [ref=e206] [cursor=pointer]
+                - generic [ref=e207]:
+                  - generic [ref=e208]: Email address
+                  - textbox "Email address" [ref=e210]
+              - generic [ref=e211]:
+                - button "Create alert" [disabled]:
+                  - generic:
+                    - img
+                  - text: Create alert
+              - generic [ref=e212]:
+                - text: By creating an alert, you agree to the
+                - link "Terms and conditions" [ref=e213] [cursor=pointer]:
+                  - /url: /policies
+                - text: applicable to our service and acknowledge that your personal data will be used in accordance with our
+                - link "Privacy policy" [ref=e214] [cursor=pointer]:
+                  - /url: /policies
+                - text: and you will receive emails and communications about jobs and career related topics.
+          - generic [ref=e215]:
+            - heading "Similar Jobs" [level=3] [ref=e217]
+            - generic [ref=e218]:
+              - link "Shortlist job Featured Easy Apply 2nd Line Service Desk Engineer 18 March by vertex-it-solutions Salary£36,000 - £38,000 per annum LocationLondon ClockPermanent, full-time" [ref=e219] [cursor=pointer]:
+                - /url: /jobs/2nd-line-service-desk-engineer/56671276?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e220]:
+                      - img [ref=e221]
+                    - generic:
+                      - generic: Featured
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: 2nd Line Service Desk Engineer
+                          - generic: 18 March by vertex-it-solutions
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £36,000 - £38,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Featured Easy Apply 2nd Line Service Desk Engineer 27 February by Integral Recruitment Ltd Salary£35,000 - £40,000 per annum, negotiable LocationEpsom, Surrey ClockPermanent, full-time" [ref=e223] [cursor=pointer]:
+                - /url: /jobs/2nd-line-service-desk-engineer/56345769?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e224]:
+                      - img [ref=e225]
+                    - generic:
+                      - generic: Featured
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: 2nd Line Service Desk Engineer
+                          - generic: 27 February by Integral Recruitment Ltd
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £35,000 - £40,000 per annum, negotiable
+                      - listitem:
+                        - img "Location"
+                        - text: Epsom, Surrey
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Featured New Easy Apply IT Infrastructure Engineer Yesterday by Matchtech SalarySalary negotiable LocationLondon ClockPermanent, full-time" [ref=e227] [cursor=pointer]:
+                - /url: /jobs/it-infrastructure-engineer/56732585?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e228]:
+                      - img [ref=e229]
+                    - generic:
+                      - generic: Featured
+                      - generic: New
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: IT Infrastructure Engineer
+                          - generic: Yesterday by Matchtech
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Salary negotiable
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Easy Apply 2nd Line IT Engineer 13 March by Context Recruitment Limited Salary£35,000 - £38,000 per annum LocationLondon ClockPermanent, full-time" [ref=e231] [cursor=pointer]:
+                - /url: /jobs/2nd-line-it-engineer/56640538?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e232]:
+                      - img [ref=e233]
+                    - generic:
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: 2nd Line IT Engineer
+                          - generic: 13 March by Context Recruitment Limited
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £35,000 - £38,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Easy Apply 2nd Line Support 4 March by Network IT Salary£38,000 - £42,000 per annum LocationLondon ClockPermanent, full-time" [ref=e235] [cursor=pointer]:
+                - /url: /jobs/2nd-line-support/56579872?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e236]:
+                      - img [ref=e237]
+                    - generic:
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: 2nd Line Support
+                          - generic: 4 March by Network IT
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £38,000 - £42,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Easy Apply 1st - 2nd Line IT Support Engineer 17 March by Red King Resourcing Salary£32,000 - £37,000 per annum LocationWest London, London ClockPermanent, full-time" [ref=e239] [cursor=pointer]:
+                - /url: /jobs/1st-2nd-line-it-support-engineer/56660581?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e240]:
+                      - img [ref=e241]
+                    - generic:
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: 1st - 2nd Line IT Support Engineer
+                          - generic: 17 March by Red King Resourcing
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £32,000 - £37,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: West London, London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+            - link "See more jobs like this" [ref=e244] [cursor=pointer]:
+              - /url: /jobs/support-engineer-jobs
+          - generic [ref=e245]:
+            - generic [ref=e247]: Recommended courses
+            - generic [ref=e248]:
+              - link "1st Line Support/Helpdesk | Complete IT Career Package 2025 Online, Self-paced £799" [ref=e249] [cursor=pointer]:
+                - /url: /courses/1st-line-support-helpdesk--complete-it-career-package-2025/247779?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it%20support_courses_247779
+                - generic: 1st Line Support/Helpdesk | Complete IT Career Package 2025
+                - generic: Online, Self-paced
+                - generic: £799
+              - link "MCSA Server 2016 Classroom based Training Classroom Enquire to get more info on pricing" [ref=e250] [cursor=pointer]:
+                - /url: /courses/mcsa-server-2016-classroom-based-training/71362?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it%20support_courses_71362
+                - generic: MCSA Server 2016 Classroom based Training
+                - generic: Classroom
+                - generic: Enquire to get more info on pricing
+              - link "Service Helpdesk & Technical Support Online, Self-paced £799" [ref=e251] [cursor=pointer]:
+                - /url: /courses/service-helpdesk-technical-support/247835?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it%20support_courses_247835
+                - generic: Service Helpdesk & Technical Support
+                - generic: Online, Self-paced
+                - generic: £799
+            - link "View IT support courses" [ref=e253] [cursor=pointer]:
+              - /url: https://www.reed.co.uk/courses/all?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=view_it%20support_courses
+          - generic [ref=e255]:
+            - generic [ref=e256]: Posted by Mexa Solutions LTD
+            - link "View all jobs and profile Chevron" [ref=e257] [cursor=pointer]:
+              - /url: /jobs/mexa-solutions-ltd/p58291
+              - generic [ref=e258]: View all jobs and profile
+              - img "Chevron" [ref=e259]
+          - generic [ref=e264]:
+            - generic [ref=e265]: "Reference: 56579502"
+            - generic [ref=e266]:
+              - text: Please note that
+              - link "Reed.co.uk" [ref=e267] [cursor=pointer]:
+                - /url: https://reed.co.uk
+              - text: will never ask you to provide your bank, passport or driving licence details during the application process.
+            - link "Report this job Open in new tab" [ref=e269] [cursor=pointer]:
+              - /url: /enquiries?reportJobRef=56579502
+              - text: Report this job
+              - img "Open in new tab"
+        - complementary [ref=e270]
+    - contentinfo [ref=e271]:
+      - generic [ref=e273]:
+        - navigation [ref=e274]:
+          - button "JOBS" [ref=e276] [cursor=pointer]
+          - list [ref=e279]:
+            - listitem [ref=e280]:
+              - link "Contact us" [ref=e281] [cursor=pointer]:
+                - /url: /enquiries
+            - listitem [ref=e282]:
+              - link "Job search" [ref=e283] [cursor=pointer]:
+                - /url: /jobs
+            - listitem [ref=e284]:
+              - link "Recruiter directory" [ref=e285] [cursor=pointer]:
+                - /url: /recruiterdirectory
+            - listitem [ref=e286]:
+              - link "Work from home" [ref=e287] [cursor=pointer]:
+                - /url: /jobs/work-from-home-jobs
+            - listitem [ref=e288]:
+              - link "Browse jobs" [ref=e289] [cursor=pointer]:
+                - /url: /popularjobs
+            - listitem [ref=e290]:
+              - link "Browse locations" [ref=e291] [cursor=pointer]:
+                - /url: /location
+            - listitem [ref=e292]:
+              - link "Popular searches" [ref=e293] [cursor=pointer]:
+                - /url: /popularsearches
+            - listitem [ref=e294]:
+              - link "Career advice" [ref=e295] [cursor=pointer]:
+                - /url: /career-advice
+            - listitem [ref=e296]:
+              - link "Tax calculator" [ref=e297] [cursor=pointer]:
+                - /url: /tax-calculator
+            - listitem [ref=e298]:
+              - link "Average salary checker" [ref=e299] [cursor=pointer]:
+                - /url: /average-salary
+            - listitem [ref=e300]:
+              - link "Help" [ref=e301] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e302]:
+              - link "Contact a REED office" [ref=e303] [cursor=pointer]:
+                - /url: https://www.reed.com/offices
+            - listitem [ref=e304]:
+              - link "Sitemap" [ref=e305] [cursor=pointer]:
+                - /url: /html-sitemap
+        - navigation [ref=e306]:
+          - button "RECRUITER" [ref=e308] [cursor=pointer]
+          - list [ref=e311]:
+            - listitem [ref=e312]:
+              - link "Recruiter site" [ref=e313] [cursor=pointer]:
+                - /url: /recruiter?directjob=recruiter
+            - listitem [ref=e314]:
+              - link "Post a job" [ref=e315] [cursor=pointer]:
+                - /url: /recruiter/post-a-job?directjob=recruiter
+            - listitem [ref=e316]:
+              - link "CV Search" [ref=e317] [cursor=pointer]:
+                - /url: /recruiter/cv-search?directjob=recruiter
+            - listitem [ref=e318]:
+              - link "Recruitment agencies" [ref=e319] [cursor=pointer]:
+                - /url: /recruiter/recruitment-agencies?directjob=recruiter
+            - listitem [ref=e320]:
+              - link "Recruiter Advice" [ref=e321] [cursor=pointer]:
+                - /url: /recruiter-advice/?directjob=recruiter
+        - navigation [ref=e322]:
+          - button "COURSES" [ref=e324] [cursor=pointer]
+          - list [ref=e327]:
+            - listitem [ref=e328]:
+              - link "Help" [ref=e329] [cursor=pointer]:
+                - /url: /courses/help
+            - listitem [ref=e330]:
+              - link "Contact us" [ref=e331] [cursor=pointer]:
+                - /url: /courses/contact-us
+            - listitem [ref=e332]:
+              - link "Find a course" [ref=e333] [cursor=pointer]:
+                - /url: /courses/
+            - listitem [ref=e334]:
+              - link "View all subjects" [ref=e335] [cursor=pointer]:
+                - /url: /courses/directory
+            - listitem [ref=e336]:
+              - link "Discount courses" [ref=e337] [cursor=pointer]:
+                - /url: /courses/discount
+            - listitem [ref=e338]:
+              - link "Free courses" [ref=e339] [cursor=pointer]:
+                - /url: /courses/free
+            - listitem [ref=e340]:
+              - link "Awarding body directory" [ref=e341] [cursor=pointer]:
+                - /url: /courses/awarding-bodies
+            - listitem [ref=e342]:
+              - link "Career guides" [ref=e343] [cursor=pointer]:
+                - /url: /courses/career-guides
+            - listitem [ref=e344]:
+              - link "Advertise a course" [ref=e345] [cursor=pointer]:
+                - /url: /courses/providers/
+            - listitem [ref=e346]:
+              - link "Courses sitemap" [ref=e347] [cursor=pointer]:
+                - /url: /courses/html-sitemap
+        - navigation [ref=e348]:
+          - button "MORE FROM Reed.co.uk" [ref=e350] [cursor=pointer]
+          - list [ref=e353]:
+            - listitem [ref=e354]:
+              - link "About us" [ref=e355] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e356]:
+              - link "Careers at Reed.co.uk" [ref=e357] [cursor=pointer]:
+                - /url: https://www.reed.com/careers/jobs?businessDivision=Reed.co.uk
+            - listitem [ref=e358]:
+              - link "Press office" [ref=e359] [cursor=pointer]:
+                - /url: /press-office
+            - listitem [ref=e360]:
+              - link "Corporate governance" [ref=e361] [cursor=pointer]:
+                - /url: /corporate-governance
+            - listitem [ref=e362]:
+              - link "Modern slavery statement" [ref=e363] [cursor=pointer]:
+                - /url: https://www.reed.co.uk/cdn/jobseeker/pdf/Reed_MSA_Statement.pdf
+        - navigation [ref=e364]:
+          - button "REED" [ref=e366] [cursor=pointer]
+          - list [ref=e369]:
+            - listitem [ref=e370]:
+              - 'link "Tempzone: timesheets & holiday" [ref=e371] [cursor=pointer]':
+                - /url: https://candidate.reed.co.uk/candlogin.asp
+            - listitem [ref=e372]:
+              - link "Authorise timesheets" [ref=e373] [cursor=pointer]:
+                - /url: https://client.reed.co.uk/
+            - listitem [ref=e374]:
+              - link "Reed Group Services" [ref=e375] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e376]:
+              - link "Reed Specialist Recruitment" [ref=e377] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e378]:
+              - link "Reed in Partnership" [ref=e379] [cursor=pointer]:
+                - /url: https://www.reedinpartnership.co.uk/
+            - listitem [ref=e380]:
+              - link "Careers with REED" [ref=e381] [cursor=pointer]:
+                - /url: https://www.reed.com/careers
+            - listitem [ref=e382]:
+              - link "James Reed - Official Site" [ref=e383] [cursor=pointer]:
+                - /url: /james-reed/
+            - listitem [ref=e384]:
+              - 'link "Podcast - James Reed: all about business" [ref=e385] [cursor=pointer]':
+                - /url: https://www.reed.com/podcasts
+            - listitem [ref=e386]:
+              - link "ESG & sustainability" [ref=e387] [cursor=pointer]:
+                - /url: https://www.reed.com/esg-and-sustainability
+      - generic [ref=e389]:
+        - generic [ref=e390]:
+          - generic [ref=e392]:
+            - link "PhilCo" [ref=e393] [cursor=pointer]:
+              - /url: https://philco.org.uk/
+              - img "PhilCo" [ref=e394]
+            - generic [ref=e395]: Learn how Reed is leading the way in philanthropy
+          - img "Love Mondays" [ref=e397]
+        - generic [ref=e398]:
+          - generic [ref=e399]:
+            - 'link "James Reed: all about business" [ref=e400] [cursor=pointer]':
+              - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+              - 'img "James Reed: all about business" [ref=e401]'
+            - generic [ref=e402]:
+              - heading "Introducing our new podcast New" [level=3] [ref=e403]:
+                - text: Introducing our new podcast
+                - generic [ref=e404]: New
+              - paragraph [ref=e405]: "James Reed: all about business"
+              - link "Listen here" [ref=e406] [cursor=pointer]:
+                - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+          - generic [ref=e407]:
+            - generic [ref=e408]:
+              - generic [ref=e409]:
+                - link "Download on the App Store" [ref=e410] [cursor=pointer]:
+                  - /url: https://itunes.apple.com/GB/app/id1040443949?mt=8
+                  - img "Download on the App Store" [ref=e411]
+                - link "Get it on Google Play" [ref=e412] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.reedcouk.jobs&referrer=af_tranid%3D_HgKgkJ-aFiIn4G5iigdZQ%26pid%3DWebsite_Footer%26utm_source%3DWebsite_Footer
+                  - img "Get it on Google Play" [ref=e413]
+              - generic [ref=e414]:
+                - link "Facebook" [ref=e415] [cursor=pointer]:
+                  - /url: https://www.facebook.com/reedcouk
+                  - img "Facebook" [ref=e416]
+                - link "Instagram" [ref=e417] [cursor=pointer]:
+                  - /url: https://www.instagram.com/reedcouk/
+                  - img "Instagram" [ref=e418]
+                - link "Tiktok" [ref=e419] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@reedjobs
+                  - img "Tiktok" [ref=e420]
+            - list [ref=e421]:
+              - listitem [ref=e422]:
+                - button "Manage Preferences" [ref=e423] [cursor=pointer]
+                - text: ","
+              - listitem [ref=e424]:
+                - link "Security, Privacy, Terms & Conditions" [ref=e425] [cursor=pointer]:
+                  - /url: /policies
+            - paragraph [ref=e426]: COPYRIGHT © Reed.co.uk 2026
+  - alert [ref=e427]

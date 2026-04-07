@@ -1,0 +1,597 @@
+- generic [ref=e1]:
+  - generic:
+    - region "Toast message":
+      - heading "0 notifications total" [level=2] [ref=e3]
+      - alert
+  - dialog "Apply to Centre People Appointments" [ref=e963]:
+    - generic [ref=e964]: Dialog content start.
+    - button "Dismiss" [ref=e965] [cursor=pointer]:
+      - img [ref=e966]
+    - heading "Apply to Centre People Appointments" [level=2] [ref=e970]
+    - region "Your job application progress is at 33 percent." [ref=e1384]:
+      - generic [ref=e973]:
+        - progressbar [ref=e976]: "Current value: 33"
+        - note "Your job application progress is at 33 percent." [ref=e1385]: 33%
+      - generic [ref=e979]:
+        - generic [ref=e1386]:
+          - heading "Resume" [level=3] [ref=e1387]
+          - generic [ref=e1388]:
+            - generic [ref=e1389]: Be sure to include an updated resume *
+            - generic [ref=e1390]:
+              - generic "Selected" [ref=e1391] [cursor=pointer]:
+                - text: PDF
+                - paragraph [ref=e1392]:
+                  - heading "ADE_IT_Black.pdf" [level=3] [ref=e1427]
+                  - paragraph [ref=e1394]: 6 KB · Uploaded on 4/2/2026
+                - generic [ref=e1428]:
+                  - button "Download resume ADE_IT_Black.pdf" [ref=e1429]:
+                    - img [ref=e1430]
+                  - radio "Deselect resume ADE_IT_Black.pdf" [checked]
+                  - generic [ref=e1435]: Deselect resume ADE_IT_Black.pdf
+              - generic "Select this resume" [ref=e1403] [cursor=pointer]:
+                - text: PDF
+                - paragraph [ref=e1404]:
+                  - heading "AdE (2).pdf" [level=3] [ref=e1436]
+                  - paragraph [ref=e1406]: 106 KB · Last used on 3/27/2026
+                - generic [ref=e1407]:
+                  - button "Download resume AdE (2).pdf" [ref=e1437]:
+                    - img [ref=e1409]
+                  - radio "Select resume AdE (2).pdf"
+                  - generic [ref=e1414]: Select resume AdE (2).pdf
+            - generic [ref=e1415]:
+              - generic [active] [ref=e1416]:
+                - button "Upload resume button. Only, DOC, DOCX, PDF formats are supported. Max file size is (2 MB)." [ref=e1418] [cursor=pointer]: Upload resume
+                - paragraph [ref=e1419]: DOC, DOCX, PDF (2 MB)
+              - button "Show 4 more resumes" [ref=e1438] [cursor=pointer]:
+                - img [ref=e1422]
+                - generic [ref=e1424]: Show 4 more resumes
+        - generic [ref=e1013]:
+          - paragraph [ref=e1014]: Submitting this application won’t change your LinkedIn profile.
+          - paragraph [ref=e1015]:
+            - text: Application powered by LinkedIn.
+            - link "Visit help center to know more" [ref=e1016] [cursor=pointer]:
+              - /url: /help/linkedin/answer/71792?lang=en_US
+              - text: Help Center
+        - generic [ref=e1017]:
+          - button "Back to previous step" [ref=e1425] [cursor=pointer]:
+            - generic [ref=e1426]: Back
+          - button "Continue to next step" [ref=e1018] [cursor=pointer]:
+            - generic [ref=e1019]: Next
+    - generic [ref=e1020]: Dialog content end.
+  - generic [ref=e4]:
+    - generic [ref=e6]:
+      - button [ref=e1021] [cursor=pointer]:
+        - generic [ref=e8]: Skip to search
+      - button [ref=e1022] [cursor=pointer]:
+        - generic [ref=e10]: Skip to main content
+      - button [ref=e1023] [cursor=pointer]:
+        - generic [ref=e12]: Keyboard shortcuts
+      - button [ref=e1024] [cursor=pointer]:
+        - img [ref=e14]
+        - generic [ref=e16]: Close jump menu
+    - banner [ref=e1025]:
+      - generic [ref=e18]:
+        - link [ref=e1026] [cursor=pointer]:
+          - /url: https://www.linkedin.com/feed/?nis=true
+          - img [ref=e1027]:
+            - img [ref=e23]
+        - generic [ref=e319]:
+          - generic [ref=e322]:
+            - generic [ref=e323]:
+              - generic [ref=e324]: Search by title, skill, or company
+              - img [ref=e325]
+            - combobox [ref=e1028]: Service Desk
+            - textbox [disabled]
+          - generic [ref=e330]:
+            - generic [ref=e331]:
+              - generic [ref=e332]: City, state, or zip code
+              - img [ref=e333]
+            - combobox [ref=e1029]: London, England, United Kingdom
+            - textbox [disabled]
+          - button [ref=e1030] [cursor=pointer]: Search
+        - navigation [ref=e1031]:
+          - list [ref=e26]:
+            - listitem [ref=e27]:
+              - link [ref=e1032] [cursor=pointer]:
+                - /url: https://www.linkedin.com/feed/?nis=true&
+                - generic [ref=e29]:
+                  - generic [ref=e32]: new feed updates notifications
+                  - img [ref=e1034]
+                - generic [ref=e1036]: Home
+            - listitem [ref=e39]:
+              - link [ref=e1037] [cursor=pointer]:
+                - /url: https://www.linkedin.com/mynetwork/?
+                - img [ref=e1039]
+                - generic [ref=e1041]: My Network
+            - listitem [ref=e47]:
+              - link [ref=e1042] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/?
+                - img [ref=e1044]
+                - generic [ref=e1046]: Jobs
+            - listitem [ref=e55]:
+              - link [ref=e1047] [cursor=pointer]:
+                - /url: https://www.linkedin.com/messaging/?
+                - img [ref=e1049]
+                - generic [ref=e1051]: Messaging
+            - listitem [ref=e63]:
+              - link [ref=e1052] [cursor=pointer]:
+                - /url: https://www.linkedin.com/notifications/?
+                - img [ref=e1054]
+                - generic [ref=e1056]: Notifications
+            - listitem [ref=e71]:
+              - button [ref=e1057] [cursor=pointer]:
+                - img [ref=e1058]
+                - generic [ref=e75]:
+                  - text: Me
+                  - img [ref=e76]
+            - listitem [ref=e78]:
+              - button [ref=e1059] [cursor=pointer]:
+                - img [ref=e84]
+                - generic [ref=e1060]:
+                  - text: For Business
+                  - img [ref=e87]
+            - listitem [ref=e89]:
+              - link [ref=e1061] [cursor=pointer]:
+                - /url: https://www.linkedin.com/talent/job-posting-redirect?trk=nav_spotlight_post_job&
+                - img [ref=e1063]
+                - generic [ref=e1068]: Post a job
+    - generic [ref=e101]:
+      - region [ref=e1069]:
+        - heading [level=2] [ref=e1070]: Jobs search
+        - generic [ref=e107]:
+          - generic [ref=e358]:
+            - list [ref=e359]:
+              - listitem [ref=e360]:
+                - button [ref=e1071] [cursor=pointer]:
+                  - text: Jobs
+                  - img [ref=e363]
+              - listitem [ref=e365]
+              - listitem [ref=e366]:
+                - button [ref=e1072] [cursor=pointer]:
+                  - text: Past week
+                  - img [ref=e370]
+              - listitem [ref=e372]:
+                - radio [checked] [ref=e1073] [cursor=pointer]: Easy Apply
+              - listitem [ref=e375]:
+                - button [ref=e1074] [cursor=pointer]:
+                  - text: 40 km
+                  - img [ref=e379]
+              - listitem [ref=e381]:
+                - button [ref=e1075] [cursor=pointer]:
+                  - text: Experience level
+                  - img [ref=e385]
+            - generic [ref=e387]:
+              - button [ref=e1076] [cursor=pointer]: All filters
+              - button [ref=e1077] [cursor=pointer]:
+                - generic [ref=e392]: Reset
+          - button [ref=e1078] [cursor=pointer]:
+            - img [ref=e394]
+            - generic [ref=e396]: Try the new job search
+      - main [ref=e116]:
+        - generic [ref=e118]:
+          - generic [ref=e119]:
+            - generic [ref=e120]:
+              - generic [ref=e121]:
+                - generic [ref=e1079]: Service Desk in London, England, United Kingdom
+                - generic [ref=e125]: 6 results
+              - generic [ref=e128] [cursor=pointer]:
+                - generic [ref=e129]: Set alert
+                - generic [ref=e130]: Set job alert for Service Desk in London
+                - switch
+            - generic [ref=e131]:
+              - generic [ref=e132] [cursor=pointer]: Jump to active job details
+              - generic [ref=e133] [cursor=pointer]: Jump to active search result
+              - list [ref=e134]:
+                - listitem [ref=e397]:
+                  - generic [ref=e399] [cursor=pointer]:
+                    - generic [ref=e400]:
+                      - generic [ref=e401]:
+                        - img [ref=e1080]
+                        - generic [ref=e406]:
+                          - link [ref=e1081]:
+                            - /url: /jobs/view/4384881350/?eBP=CwEAAAGdTtixHli0Llq94L_ti14eT20YnLur_Q9p7iNZEklJfA2AvqGdZFxDjbsfe6-YJjenAd-4KotRBsYlxsKBU37WhKyeir4lgrDXdfI1nw0MYtuy3teWVQ0cv5gizFjDxILX5gdOP73al5BIll6dwcL7V25NFLTLHFUkrRtGjGluZ2SjlDZfmSw__6DkkHQ0-VJKS49UVxKivE2d4SgKFhxHl4YblCrXptRyXxPpmsYY9CLuSgrJ2_RrxhBtvuJ1oFtGvOFfBEUvSac64P3p0mX_oFxpj416iY1n8RXqoQGQ1AARjYjIhYp8DX3kzygJCmOzm6fmmX59q2VmNY7SrocCFrWLXigsbvoC_de7M2XfcwQ09pn6HdVSXAFcWLdt-SgFzosjBsmeEAj175fd0vrNmRKREWw0Qr1uckXLtOWUoJ8NcATKcWYdggHURUArBV4cvhxpS5pe4RYo0BcY6C7eTa2bdcgSRHHxQseDtyhegdQeM6n97NRAsEAD8lbB1oI48wEuikmbpeQq84nq93MrTVcy361dw0Gen-CUon9UWDXJD_vahzRncn4&refId=Ec7j%2FWmUZnrt0Jp1hdXhNA%3D%3D&trackingId=6RUR9NiiQufTD0hZDUHtXA%3D%3D&trk=flagship3_search_srp_jobs
+                            - strong [ref=e410]: IT Desktop Helpdesk
+                            - generic [ref=e411]: IT Desktop Helpdesk
+                          - generic [ref=e413]: Centre People Appointments
+                          - list [ref=e415]:
+                            - listitem [ref=e416]:
+                              - generic [ref=e417]: London Area, United Kingdom (Hybrid)
+                      - generic [ref=e419]:
+                        - img [ref=e1082]
+                        - generic [ref=e425]: Actively reviewing applicants
+                      - list [ref=e426]:
+                        - listitem [ref=e427]: Viewed
+                        - listitem [ref=e428]:
+                          - generic [ref=e429]: Promoted
+                        - listitem [ref=e430]:
+                          - img [ref=e431]:
+                            - img [ref=e432]
+                          - generic [ref=e434]: Easy Apply
+                    - button [ref=e1083]:
+                      - img [ref=e440]
+                - listitem [ref=e443]:
+                  - generic [ref=e445] [cursor=pointer]:
+                    - generic [ref=e446]:
+                      - generic [ref=e447]:
+                        - img [ref=e1084]
+                        - generic [ref=e452]:
+                          - link [ref=e1085]:
+                            - /url: /jobs/view/4392890761/?eBP=CwEAAAGdTtixHhx95Ao5Wtd1vP1QYTWKVhnkkrcXHab3ET2MXANGfYz1ZewnVnb61T2lfFcClFnJVz2wl30g8Rx1RAfLugYh0oIgf41FRYoux2slpr4oxomOmfuEaxSIcMEnIlDXKilh_m8iuVXvWi72QA-xH16weRoexx3N7RWnNfz7HEKjALx5TQX2FzgRk50aKckvSXfnRDz1SVFnD4IxZiYqOiTU4-7vGVGXfXrP0pDEhRpHpWaQVxJyl4dfyh141SiAfis6Qb3JmVmEu9F4bE8Pl2wfSxNyUXF4UbnsGfm-IymXPSXJSuQ0J-guCiRkRRjJdwFnNA9xP4yh2XE7vHB6HPVGfv0_0OEwMqt2y5LLESjzc6p8LrnM5lZbATfbAyfFQXIOgN6Pcj6a-SURgMvLcKEaWNFLaOnNe_90ftmGklr7Dnrz68bKNEvg66QtP2QaZ74ybRmn8Bv--lB104OcFsUQGeT2HvdRvwh5s6y7XyF4Q7FzthYXuTt6r5dPdXoTSlc&refId=Ec7j%2FWmUZnrt0Jp1hdXhNA%3D%3D&trackingId=jCnFEsZPPygJ6CwuO%2BRh1g%3D%3D&trk=flagship3_search_srp_jobs
+                            - strong [ref=e456]: Helpdesk Support Specialist
+                            - generic [ref=e457]: Helpdesk Support Specialist
+                          - generic [ref=e459]: Escalent
+                          - list [ref=e461]:
+                            - listitem [ref=e462]:
+                              - generic [ref=e463]: London Area, United Kingdom (Hybrid)
+                      - list [ref=e464]:
+                        - listitem [ref=e465]: Viewed
+                        - listitem [ref=e466]:
+                          - generic [ref=e467]: Promoted
+                        - listitem [ref=e468]:
+                          - img [ref=e469]:
+                            - img [ref=e470]
+                          - generic [ref=e472]: Easy Apply
+                    - button [ref=e1086]:
+                      - img [ref=e478]
+                - listitem [ref=e481]:
+                  - generic [ref=e483] [cursor=pointer]:
+                    - generic [ref=e484]:
+                      - generic [ref=e485]:
+                        - img [ref=e1087]
+                        - generic [ref=e490]:
+                          - link [ref=e1088]:
+                            - /url: /jobs/view/4396937822/?eBP=CwEAAAGdTtixHh8TH1zBZlXRzq59OKUWgmaMR8EAxtLux3JuGPvbHc1dv41DOqJ0hxW56E4-8mkoCsotABulrnmIteSHGkHEoeZOu_1FB6jxkTKp9ECuyXKiidgqApCX9u8e_j6eC4NMltP-ZiNXwc9Jg9EHXxu85wsOudh9VBwREstQmekodxqwVKgExBLfMJsOao54iyA1hW2LGmWez55ZxjiV7gpZsVBrIZM6qNg4T6L5nHTevcKBNiHF_KPb9MPD_WMiBFQZBp71P30a2axwQIWHKAYOuPQqDDZVYZFtnZL8-UdmPez-bX2NE73KOGsuLSEew0LBjyk4Sderl2mBnba4fdCoFB1PfKl5Vgb2hu-ej-jtl8EXWzQU-lOiZd1z3hFFFvmbFncnje85fRsJwTYcENEyRsr1s0jLy5ne6USRrL6lHhFFL0_b3QFdiu6I5KHAeZIne9CPwps7FOeGEr22l2U6cV3BhwFeZKHwI7JnHeKXhTu4N-iznZWulcn2uxvy&refId=Ec7j%2FWmUZnrt0Jp1hdXhNA%3D%3D&trackingId=9VWttGU99FuVHyZ%2B0mfkuw%3D%3D&trk=flagship3_search_srp_jobs
+                            - generic [ref=e493]:
+                              - strong [ref=e494]: End User Support Lead
+                              - img [ref=e496]
+                            - generic [ref=e498]: End User Support Lead with verification
+                          - generic [ref=e500]: Clarksons
+                          - list [ref=e502]:
+                            - listitem [ref=e503]:
+                              - generic [ref=e504]: London Area, United Kingdom (On-site)
+                      - generic [ref=e510]:
+                        - generic [ref=e511]: 3 company alumni work here
+                        - generic [ref=e512]: 3 Sky company alumni work here
+                      - list [ref=e513]:
+                        - listitem [ref=e514]: Viewed
+                        - listitem [ref=e515]:
+                          - generic [ref=e516]: Promoted
+                        - listitem [ref=e517]:
+                          - img [ref=e518]:
+                            - img [ref=e519]
+                          - generic [ref=e521]: Easy Apply
+                    - button [ref=e1089]:
+                      - img [ref=e527]
+                - listitem [ref=e530]:
+                  - generic [ref=e532] [cursor=pointer]:
+                    - generic [ref=e533]:
+                      - generic [ref=e534]:
+                        - img [ref=e1090]
+                        - generic [ref=e539]:
+                          - link [ref=e1091]:
+                            - /url: /jobs/view/4395331934/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=Ec7j%2FWmUZnrt0Jp1hdXhNA%3D%3D&trackingId=VLxsi19kj%2BigDnz1S1bt%2Fg%3D%3D&trk=flagship3_search_srp_jobs
+                            - strong [ref=e543]: IT Support & ERP Systems Developer (Odoo)
+                            - generic [ref=e544]: IT Support & ERP Systems Developer (Odoo)
+                          - generic [ref=e546]: Cyclops Excess
+                          - list [ref=e548]:
+                            - listitem [ref=e549]:
+                              - generic [ref=e550]: United Kingdom (Remote)
+                      - list [ref=e551]:
+                        - listitem [ref=e552]: Viewed
+                        - listitem [ref=e553]:
+                          - img [ref=e554]:
+                            - img [ref=e555]
+                          - generic [ref=e557]: Easy Apply
+                    - button [ref=e1092]:
+                      - img [ref=e563]
+                - listitem [ref=e566]:
+                  - generic [ref=e568] [cursor=pointer]:
+                    - generic [ref=e569]:
+                      - generic [ref=e570]:
+                        - img [ref=e1093]
+                        - generic [ref=e575]:
+                          - link [ref=e1094]:
+                            - /url: /jobs/view/4391711012/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=Ec7j%2FWmUZnrt0Jp1hdXhNA%3D%3D&trackingId=Tdz1%2FCf%2Bds260dHnbpAfCA%3D%3D&trk=flagship3_search_srp_jobs
+                            - strong [ref=e579]: Technical and Product Support - Panalux London
+                            - generic [ref=e580]: Technical and Product Support - Panalux London
+                          - generic [ref=e582]: Panavision
+                          - list [ref=e584]:
+                            - listitem [ref=e585]:
+                              - generic [ref=e586]: London, England, United Kingdom (On-site)
+                      - generic [ref=e592]:
+                        - generic [ref=e593]: 3 company alumni work here
+                        - generic [ref=e594]: 3 Sky company alumni work here
+                      - list [ref=e595]:
+                        - listitem [ref=e596]: Viewed
+                        - listitem [ref=e597]:
+                          - strong [ref=e599]:
+                            - generic [ref=e600]: Be an early applicant
+                        - listitem [ref=e601]:
+                          - img [ref=e602]:
+                            - img [ref=e603]
+                          - generic [ref=e605]: Easy Apply
+                    - button [ref=e1095]:
+                      - img [ref=e611]
+                - listitem [ref=e614]:
+                  - generic [ref=e616] [cursor=pointer]:
+                    - generic [ref=e617]:
+                      - generic [ref=e618]:
+                        - img [ref=e1096]
+                        - generic [ref=e623]:
+                          - link [ref=e1097]:
+                            - /url: /jobs/view/4396958197/?eBP=CwEAAAGdTtixHkAntxybfGy517fmB_QbfUP7UyhyU2-qP1v_ARNsZxdQ5eGuBwE7f6iydYcQOyZDLH1GF0LKiHdgCDw_K8Suj1mgoKS3MpRwe-NpNb0zysxEGtH2jb7pyMr2eMBBVIjH4agT695T4KG32LoAsS85VXy_HZ_sn1Xz0WJC8Co7hb3w1NF5DgFumjYiQajryrwAGdmhnuVFGH49vwcE4MIlUyZL7s3ewKdiUXqOngOpPHm8bJJXTmbt6gnFfl5Q5JMv3KSvvGhRy7s8Xneyp6t-oiTdtK6XfgNvLITwsSTqSSRULFCcBEsiEfRNcDe7l2wX5Df44uusjdSs-SnIjbeV1NQCy0Hi5OgzrqSrxPlSxD7DJNA8WCrfX0e6hRl9bfzUVUEphhL9UWkkFFyHMoYmDRJ27cHnktOsWx1DM3WULxhl7x3HeYdv4fdX9PEA8eJnXfL7tYYS6hM11C-LAT_rpUMXWtr4CJlbhzHoT0RT8cUB-c-i2YnhcAe4orFSCYSwsFUHKFPxG1bB64v-pNAh0JM9-xj2aWx8CC3nw4-_Lg&refId=Ec7j%2FWmUZnrt0Jp1hdXhNA%3D%3D&trackingId=nzx0FBt%2B9QG8Vmf%2BvE%2FkTA%3D%3D&trk=flagship3_search_srp_jobs
+                            - generic [ref=e626]:
+                              - strong [ref=e627]: Tech Support Developer
+                              - img [ref=e629]
+                            - generic [ref=e631]: Tech Support Developer with verification
+                          - generic [ref=e633]: rmg digital
+                          - list [ref=e635]:
+                            - listitem [ref=e636]:
+                              - generic [ref=e637]: London Area, United Kingdom (On-site)
+                          - list [ref=e639]:
+                            - listitem [ref=e640]:
+                              - generic [ref=e641]: £50K/yr
+                      - generic [ref=e643]:
+                        - img [ref=e1098]
+                        - generic [ref=e649]: Company review time is typically 1 week
+                      - list [ref=e650]:
+                        - listitem [ref=e651]:
+                          - generic [ref=e652]: Promoted
+                        - listitem [ref=e653]:
+                          - img [ref=e654]:
+                            - img [ref=e655]
+                          - generic [ref=e657]: Easy Apply
+                    - button [ref=e1099]:
+                      - img [ref=e663]
+              - generic [ref=e668]:
+                - generic [ref=e669]:
+                  - heading [level=2] [ref=e1100]: Are these results helpful?
+                  - paragraph [ref=e671]: Your feedback helps us improve search results.
+                - generic [ref=e672]:
+                  - button [ref=e1101] [cursor=pointer]:
+                    - img [ref=e674]
+                    - generic [ref=e676]: Are you finding what you’re looking for? No
+                  - button [ref=e1102] [cursor=pointer]:
+                    - img [ref=e678]
+                    - generic [ref=e680]: Are you finding what you’re looking for? Yes
+              - list [ref=e294]:
+                - listitem [ref=e681]:
+                  - button [ref=e1103] [cursor=pointer]: "1"
+          - generic [ref=e687]:
+            - generic [ref=e691]:
+              - generic [ref=e692]:
+                - generic [ref=e693]:
+                  - link [ref=e1106] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/company/centre-people-appointments/life
+                    - img [ref=e1107]
+                  - link [ref=e1108] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/company/centre-people-appointments/life
+                    - text: Centre People Appointments
+                - generic [ref=e700]:
+                  - button [ref=e1109] [cursor=pointer]:
+                    - img [ref=e704]
+                    - generic [ref=e706]: Share
+                  - button [ref=e1110] [cursor=pointer]:
+                    - img [ref=e709]
+                    - generic [ref=e711]: Show more options
+              - heading [level=1] [ref=e1111]:
+                - link [ref=e1112] [cursor=pointer]:
+                  - /url: /jobs/view/4384881350/?alternateChannel=search&eBP=CwEAAAGdTtixHli0Llq94L_ti14eT20YnLur_Q9p7iNZEklJfA2AvqGdZFxDjbsfe6-YJjenAd-4KotRBsYlxsKBU37WhKyeir4lgrDXdfI1nw0MYtuy3teWVQ0cv5gizFjDxILX5gdOP73al5BIll6dwcL7V25NFLTLHFUkrRtGjGluZ2SjlDZfmSw__6DkkHQ0-VJKS49UVxKivE2d4SgKFhxHl4YblCrXptRyXxPpmsYY9CLuSgrJ2_RrxhBtvuJ1oFtGvOFfBEUvSac64P3p0mX_oFxpj416iY1n8RXqoQGQ1AARjYjIhYp8DX3kzygJCmOzm6fmmX59q2VmNY7SrocCFrWLXigsbvoC_de7M2XfcwQ09pn6HdVSXAFcWLdt-SgFzosjBsmeEAj175fd0vrNmRKREWw0Qr1uckXLtOWUoJ8NcATKcWYdggHURUArBV4cvhxpS5pe4RYo0BcY6C7eTa2bdcgSRHHxQseDtyhegdQeM6n97NRAsEAD8lbB1oI48wEuikmbpeQq84nq93MrTVcy361dw0Gen-CUon9UWDXJD_vahzRncn4&refId=Ec7j%2FWmUZnrt0Jp1hdXhNA%3D%3D&trackingId=6RUR9NiiQufTD0hZDUHtXA%3D%3D&trk=d_flagship3_search_srp_jobs
+                  - text: IT Desktop Helpdesk
+              - generic [ref=e718]:
+                - generic [ref=e1113]: London Area, United Kingdom
+                - generic [ref=e1114]: ·
+                - strong [ref=e1116]:
+                  - text: Reposted
+                  - generic [ref=e1117]: 3 hours ago
+                - generic [ref=e1118]: ·
+                - generic [ref=e1119]: Over 100 applicants
+                - paragraph [ref=e1120]:
+                  - generic [ref=e1121]: Promoted by hirer
+                  - generic [ref=e1122]: ·
+                  - strong [ref=e1124]: Actively reviewing applicants
+              - generic [ref=e728]:
+                - button [ref=e1125] [cursor=pointer]:
+                  - strong [ref=e1128]:
+                    - img [ref=e1130]
+                    - text: Hybrid
+                  - generic [ref=e1132]: Matches your job preferences, workplace type is Hybrid.
+                - button [ref=e1133] [cursor=pointer]:
+                  - strong [ref=e1135]: Temporary
+              - generic [ref=e746]:
+                - button [ref=e1136] [cursor=pointer]:
+                  - img [ref=e750]
+                  - generic [ref=e752]: Easy Apply
+                - button [ref=e1137] [cursor=pointer]:
+                  - generic [ref=e1138]: Save
+                  - generic [ref=e1139]: Save IT Desktop Helpdesk at Centre People Appointments
+            - generic [ref=e1140]:
+              - generic [ref=e1141]:
+                - generic [ref=e1142]:
+                  - heading [level=2] [ref=e1145]:
+                    - strong [ref=e1146]:
+                      - text: Your profile is
+                      - generic [ref=e1147]: missing
+                      - text: required qualifications
+                  - list [ref=e1153]:
+                    - listitem [ref=e1154]:
+                      - button [ref=e1155] [cursor=pointer]:
+                        - img [ref=e1156]
+                        - generic [ref=e1158]: Show match details
+                - generic [ref=e1159]:
+                  - img [ref=e1160]
+                  - img [ref=e1161]
+              - generic [ref=e1162]:
+                - generic [ref=e1163]:
+                  - paragraph [ref=e1164]: BETA·
+                  - paragraph [ref=e1165]: Is this information helpful?
+                - generic [ref=e1166]:
+                  - button [ref=e1168] [cursor=pointer]:
+                    - img [ref=e1169]
+                  - button [ref=e1173] [cursor=pointer]:
+                    - img [ref=e1174]
+            - generic [ref=e1181]:
+              - heading [level=3] [ref=e1182]: Get personalized tips to stand out to hirers
+              - paragraph [ref=e1183]: Find jobs where you’re a top applicant and tailor your resume with the help of AI.
+              - link [ref=e1184] [cursor=pointer]:
+                - /url: http://www.linkedin.com/premium/redeem/?_ed=0_bvLJH59RTSY-u5c6PMUa4IW0M54p9mxZpuVkfRvTl7r&upsellOrderOrigin=Tracking%3Av1%3Acoach_upsell_jdp_topcard_winback%3AJob+Seeker%3AIn-Product&referenceId=UmwllTMSSUq26Q1e2HGKqg%3D%3D&customKey=wb_c&redeemTypeV2=DISCOUNT&destRedirectURL=https%3A%2F%2Fwww.linkedin.com%2Fjobs%2Fsearch%2F%3FcurrentJobId%3D4384881350%26f_AL%3Dtrue%26f_TPR%3Dr604800%26keywords%3DService%2520Desk%26location%3DLondon
+                - generic [ref=e1185]:
+                  - img [ref=e1186]
+                  - generic [ref=e1188]: "Reactivate Premium: 50% Off"
+            - article [ref=e843]:
+              - generic [ref=e845]:
+                - heading [level=2] [ref=e1189]: About the job
+                - paragraph [ref=e848]:
+                  - paragraph [ref=e1191]:
+                    - strong [ref=e1193]: "IT Helpdesk Desktop Specialist in Finance and Banking (Ref: YC47221)"
+                  - paragraph [ref=e1195]
+                  - paragraph [ref=e1197]: A global Japanese financial institution is seeking an IT Helpdesk Engineer in London.
+                  - paragraph [ref=e1199]: In this role, you will be responsible for providing high-quality 1st and 2nd line technical support to employees across EMEA region, ensuring a smooth and reliable digital experience.
+                  - paragraph [ref=e1201]: The ideal candidate should have experience in desktop support or IT helpdesk within the financial industry.
+                  - paragraph [ref=e1203]
+                  - paragraph [ref=e1205]: "--------------------------------------"
+                  - paragraph [ref=e1207]:
+                    - strong [ref=e1209]: "ELIGIBLE APPLICANTS:"
+                  - list [ref=e1211]:
+                    - listitem [ref=e1212]: "(O) Eligible visa: Permanent residence, Spouse, Partner, Working holiday, Graduate, Freelance"
+                    - listitem [ref=e1213]: "(X) NOT eligible: Student visa, Requiring visa sponsorship"
+                  - paragraph [ref=e1215]:
+                    - strong [ref=e1217]: "WORK TYPE:"
+                    - text: hybrid (1day WHF)
+                  - paragraph [ref=e1219]:
+                    - strong [ref=e1221]: "VISA SUPPORT:"
+                    - text: "No"
+                  - paragraph [ref=e1223]: "--------------------------------------"
+                  - paragraph [ref=e1225]
+                  - paragraph [ref=e1227]:
+                    - strong [ref=e1229]: "TYPE:"
+                    - text: Temp (Potential for permanent)
+                  - paragraph [ref=e1231]:
+                    - strong [ref=e1233]: "WORKING HOURS:"
+                    - text: Shift, 35hours per week (within 07:00 - 18:00), Monday to Friday
+                  - paragraph [ref=e1235]:
+                    - strong [ref=e1237]: "SALARY:"
+                    - text: £39 level annual leave
+                  - paragraph [ref=e1239]:
+                    - strong [ref=e1241]: "START:"
+                    - text: ASAP
+                  - paragraph [ref=e1243]:
+                    - strong [ref=e1245]: "LOCATION:"
+                    - text: London
+                  - paragraph [ref=e1247]
+                  - paragraph [ref=e1249]:
+                    - strong [ref=e1251]: "IT Helpdesk Main Responsibilities:"
+                  - list [ref=e1253]:
+                    - listitem [ref=e1254]: Provide 1st and 2nd line IT support to end users across EMEA for Windows devices, mobile devices (iOS/Android), VDI (Citrix), applications and peripherals via onsite and remote support
+                    - listitem [ref=e1255]: Perform device management and IT operations including imaging, workstation setup, patching, application deployment and hardware refresh
+                    - listitem [ref=e1256]: Monitor and maintain laptops, printers and other critical devices, logging and escalating issues where necessary
+                    - listitem [ref=e1257]: Manage endpoint patching and configuration via SCCM or equivalent tools while maintaining IT asset records and ensuring security compliance
+                    - listitem [ref=e1258]: Act as a point of contact via Tech Bar and remote support channels, managing incidents and service requests through the ITSM platform
+                    - listitem [ref=e1259]: Collaborate with internal teams and vendors to troubleshoot and resolve technical issues
+                    - listitem [ref=e1260]: Support IT projects and contribute to documentation, knowledge articles, training and continuous service improvement
+                  - paragraph [ref=e1262]
+                  - paragraph [ref=e1264]:
+                    - strong [ref=e1266]: "IT Helpdesk Ideal Candidate:"
+                  - list [ref=e1268]:
+                    - listitem [ref=e1269]: Experience in desktop support or IT helpdesk within the financial industry
+                    - listitem [ref=e1270]: Business level fluency in English
+                    - listitem [ref=e1271]: Some understanding of Japanese culture and Japanese language would be advantageous
+                  - paragraph [ref=e1273]
+                  - paragraph [ref=e1275]:
+                    - strong [ref=e1277]: "** All applicants for the IT Helpdesk must have the right to work in the country as the Company is not able to offer visa support."
+                  - paragraph [ref=e1279]:
+                    - emphasis [ref=e1281]: If your application is successful, you will be contacted within two business days. We regret that due to the high volume of applications we receive we cannot provide feedback on individual CVs.
+                  - paragraph [ref=e1283]:
+                    - strong [ref=e1285]: "*When contacting us, please include the job reference number (Ref: YC47221) at the top of your message."
+            - generic [ref=e1291]:
+              - heading [level=3] [ref=e1292]: Job search faster with Premium
+              - paragraph [ref=e1293]: Access company insights like strategic priorities, headcount trends, and more
+              - generic [ref=e1294]:
+                - list [ref=e1296]:
+                  - listitem [ref=e1297]
+                  - listitem [ref=e1299]
+                  - listitem [ref=e1301]
+                - paragraph [ref=e1303]: Phibian Nosa and millions of other members use Premium
+              - link [ref=e1304] [cursor=pointer]:
+                - /url: http://www.linkedin.com/premium/redeem/?_ed=0_bvLJH59RTSY-u5c6PMUa4IW0M54p9mxZpuVkfRvTl7r&upsellOrderOrigin=Tracking%3Av1%3Apremium_job_details_how_you_match_upsell_winback%3AJob+Seeker%3AIn-Product&referenceId=wpeHAuRCSD%2B6td70vIPs0w%3D%3D&customKey=wb_c&redeemTypeV2=DISCOUNT&destRedirectURL=https%3A%2F%2Fwww.linkedin.com%2Fjobs%2Fsearch%2F%3FcurrentJobId%3D4384881350%26f_AL%3Dtrue%26f_TPR%3Dr604800%26keywords%3DService%2520Desk%26location%3DLondon
+                - text: "Reactivate Premium: 50% Off"
+              - paragraph [ref=e1305]: Cancel anytime. No hidden fees.
+            - generic [ref=e1307]:
+              - generic [ref=e1308]:
+                - heading [level=2] [ref=e1309]: About the company
+                - generic [ref=e1310]:
+                  - generic [ref=e1311]:
+                    - link [ref=e1313] [cursor=pointer]:
+                      - /url: /company/centre-people-appointments/life/
+                      - img [ref=e1314]
+                    - generic [ref=e1315]:
+                      - link [ref=e1317] [cursor=pointer]:
+                        - /url: /company/centre-people-appointments/life/
+                        - text: Centre People Appointments
+                      - generic [ref=e1318]: 79,779 followers
+                  - button [ref=e1319] [cursor=pointer]:
+                    - img [ref=e1320]
+                    - generic [ref=e1322]: Follow
+                - generic [ref=e1323]:
+                  - text: Staffing and Recruiting
+                  - generic [ref=e1324]: • 11-50 employees
+                  - generic [ref=e1325]: • 33 on LinkedIn
+                - paragraph [ref=e1326]:
+                  - generic [ref=e1327]:
+                    - text: "Founded in 𝟭𝟵𝟴𝟲 and based in the City of London, Centre People Appointments is a proud subsidiary of QUICK Co. Ltd, Japan. Our core philosophy is simple and straightforward: \"Making everyone involved happy\". We connect exceptional talent with permanent, contract, and temporary opportunities. We are dedicated to delivering a professional, friendly, and quality service called \"Japan Standard Service\" to both job seekers and clients. Our Expertise: - Supporting the Japanese Business Community in the UK & Europe - Centre People Appointments focuses on serving the Japanese business community in the UK and throughout Europe, assisting over 4,000 businesses across various industries and sectors. We help these companies find the right talent to thrive in the global marketplace and connect job seekers with new opportunities in Europe. Why Choose Us? • Quality Placements: We are committed to matching the right candidates with the right roles. • Professional Service: Our approach is both professional and personable, ensuring a positive experience for all. • Specialized Divisions: Our divisions are tailored to meet the unique needs of different business environments. • Cultural Expertise: We bring a deep understanding of Japanese and European business cultures, enhancing our recruitment effectiveness. Partner with Centre People Appointments and experience a recruitment service that goes beyond the ordinary. Whether you are a business seeking exceptional talent or a job seeker looking for the perfect role, we are here to support you every step of the way."
+                    - generic [ref=e1328]:
+                      - generic [ref=e1329]: …
+                      - button [ref=e1330] [cursor=pointer]: show more
+                - generic [ref=e1334]:
+                  - heading [level=3] [ref=e1335]: Interested in working with us in the future?
+                  - paragraph [ref=e1336]:
+                    - generic [ref=e1337]:
+                      - text: Members who share that they’re interested in a company may be 2x as likely to get a message from a recruiter than those who don’t.
+                      - link [ref=e1338] [cursor=pointer]:
+                        - /url: https://www.linkedin.com/help/linkedin/answer/a1380509
+                        - text: Learn more
+                    - generic [ref=e1339]: Learn more about Interested in working for our company
+                  - button [ref=e1340] [cursor=pointer]:
+                    - generic [ref=e1341]: I’m interested
+                - generic [ref=e1344]:
+                  - generic [ref=e1345]:
+                    - heading [level=3] [ref=e1347]: Company photos
+                    - generic [ref=e1349]:
+                      - generic [ref=e1350]: Page 1 of 2
+                      - button [disabled] [ref=e1351]:
+                        - img
+                        - generic: Previous
+                      - button [ref=e1352] [cursor=pointer]:
+                        - img [ref=e1353]
+                        - generic [ref=e1355]: Next
+                  - generic [ref=e1356]:
+                    - button [ref=e1358] [cursor=pointer]:
+                      - generic [ref=e1359]:
+                        - img [ref=e1362]
+                        - paragraph [ref=e1365]: March 24, 2025
+                    - button [ref=e1367] [cursor=pointer]:
+                      - generic [ref=e1368]:
+                        - img [ref=e1371]
+                        - paragraph [ref=e1374]: March 24, 2025
+              - link [ref=e1377] [cursor=pointer]:
+                - /url: /company/centre-people-appointments/life/
+                - text: Show more
+    - generic [ref=e937]:
+      - generic [ref=e939] [cursor=pointer]:
+        - generic [ref=e940]:
+          - img [ref=e1378]
+          - generic [ref=e943]: Status is online
+        - button [ref=e1379]:
+          - generic [ref=e945]:
+            - generic [ref=e946]: Messaging
+            - generic [ref=e947]: You are on the messaging overlay. Press enter to open the list of conversations.
+      - generic [ref=e948]:
+        - button [ref=e1380] [cursor=pointer]:
+          - img [ref=e1381]
+        - button [ref=e1382] [cursor=pointer]:
+          - img [ref=e955]
+          - generic [ref=e957]: Compose message
+        - button [ref=e1383] [cursor=pointer]:
+          - img [ref=e959]
+          - generic [ref=e961]: You are on the messaging overlay. Press enter to open the list of conversations.
+  - region [ref=e316]

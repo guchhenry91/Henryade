@@ -1,0 +1,1870 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e6]:
+          - link "Reed.co.uk" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Reed.co.uk" [ref=e8]
+          - list [ref=e9]:
+            - listitem [ref=e10]:
+              - link "Jobs" [ref=e11] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e12]: Jobs
+            - listitem [ref=e13]:
+              - link "Courses" [ref=e14] [cursor=pointer]:
+                - /url: /courses/?itm_source=js_navigation&itm_medium=jobseeker&itm_campaign=courses_tab&itm_content=standard_version
+                - generic [ref=e15]: Courses
+            - listitem [ref=e16]:
+              - link "Career advice" [ref=e17] [cursor=pointer]:
+                - /url: /career-advice/
+                - generic [ref=e18]: Career advice
+            - listitem [ref=e19]:
+              - link "Recruiting? Post a job" [ref=e20] [cursor=pointer]:
+                - /url: /recruiter/
+                - generic [ref=e21]:
+                  - text: Recruiting?
+                  - strong [ref=e22]: Post a job
+          - generic [ref=e23]:
+            - link "Register CV" [ref=e24] [cursor=pointer]:
+              - /url: /authentication/register?returnTo=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays%26salaryfrom%3D33000%26salaryto%3D100000
+            - list [ref=e25]:
+              - listitem [ref=e26]:
+                - link "Saved jobs" [ref=e27] [cursor=pointer]:
+                  - /url: /account/jobs/shortlisted-jobs
+                  - img [ref=e29]
+                  - generic [ref=e31]: Saved jobs
+              - listitem [ref=e32]:
+                - status [ref=e33]:
+                  - img "Loading" [ref=e34]
+      - search [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]:
+            - generic [ref=e41]:
+              - generic [ref=e42]: What
+              - generic [ref=e43]:
+                - textbox "e.g. \"office manager\"" [ref=e44]: it technician
+                - button "clear keywords" [ref=e45] [cursor=pointer]:
+                  - img [ref=e46]
+            - generic [ref=e49]:
+              - generic [ref=e50]: Where
+              - generic [ref=e51]:
+                - textbox "town or postcode" [ref=e52]: london
+                - button "clear location" [ref=e53] [cursor=pointer]:
+                  - img [ref=e54]
+            - button "Search jobs" [ref=e58] [cursor=pointer]
+            - link "Browse jobs" [ref=e60] [cursor=pointer]:
+              - /url: /popularjobs
+              - text: Browse jobs
+              - img [ref=e61]
+          - generic [ref=e63]:
+            - generic [ref=e64]: "Similar searches:"
+            - list [ref=e65]:
+              - listitem [ref=e66]:
+                - link "It Support jobs" [ref=e67] [cursor=pointer]:
+                  - /url: /jobs/it-support-jobs-in-london
+              - listitem [ref=e68]:
+                - link "It Engineer jobs" [ref=e69] [cursor=pointer]:
+                  - /url: /jobs/it-engineer-jobs-in-london
+              - listitem [ref=e70]:
+                - link "It jobs" [ref=e71] [cursor=pointer]:
+                  - /url: /jobs/it-jobs-in-london
+              - listitem [ref=e72]:
+                - link "Network Engineer jobs" [ref=e73] [cursor=pointer]:
+                  - /url: /jobs/network-engineer-jobs-in-london
+              - listitem [ref=e74]:
+                - link "Cyber Security jobs" [ref=e75] [cursor=pointer]:
+                  - /url: /jobs/cyber-security-jobs-in-london
+              - listitem [ref=e76]:
+                - link "It Technician Jobs in South West London" [ref=e77] [cursor=pointer]:
+                  - /url: /jobs/it-technician-jobs-in-south-west-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+              - listitem [ref=e78]:
+                - link "It Technician Jobs in SunburyonThames" [ref=e79] [cursor=pointer]:
+                  - /url: /jobs/it-technician-jobs-in-sunburyonthames?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+              - listitem [ref=e80]:
+                - link "It Technician Jobs in East London" [ref=e81] [cursor=pointer]:
+                  - /url: /jobs/it-technician-jobs-in-east-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+      - generic [ref=e83]:
+        - generic [ref=e86]:
+          - heading "1,623 It Technician Jobs in London" [level=1] [ref=e88]:
+            - text: 1,623
+            - link "It Technician" [ref=e89] [cursor=pointer]:
+              - /url: /jobs/it-technician-jobs
+            - text: Jobs in
+            - link "London" [ref=e90] [cursor=pointer]:
+              - /url: /jobs/jobs-in-london
+          - button "Get Job Alerts" [ref=e97] [cursor=pointer]:
+            - img [ref=e98]
+            - text: Get job alerts
+        - generic [ref=e101]:
+          - main [ref=e102]:
+            - article [ref=e104]:
+              - generic [ref=e105]:
+                - button "IT Support Technician" [ref=e106] [cursor=pointer]
+                - generic [ref=e107]:
+                  - generic [ref=e108]:
+                    - generic [ref=e109]:
+                      - generic [ref=e110]:
+                        - generic [ref=e111]: Featured
+                        - generic [ref=e112]: New
+                        - generic [ref=e113]:
+                          - img [ref=e114]
+                          - text: Easy Apply
+                      - heading "IT Support Technician" [level=2] [ref=e116]:
+                        - link "IT Support Technician" [ref=e117] [cursor=pointer]:
+                          - /url: /jobs/it-support-technician/56739090?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e118]:
+                        - text: 2 hrs ago by
+                        - link "Armstrong Knight" [ref=e119] [cursor=pointer]:
+                          - /url: /jobs/armstrong/p18273
+                      - list [ref=e120]:
+                        - listitem [ref=e121]:
+                          - img "Salary" [ref=e122]
+                          - text: £38,000 - £42,000 per annum
+                        - listitem [ref=e124]:
+                          - img "Location" [ref=e125]
+                          - text: London
+                        - listitem [ref=e127]:
+                          - img "Clock" [ref=e128]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e130] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e131]
+                  - complementary [ref=e133]:
+                    - button "Easy apply" [ref=e134] [cursor=pointer]
+                  - link "Armstrong Knight jobs" [ref=e137] [cursor=pointer]:
+                    - /url: /jobs/armstrong/p18273
+                    - img "Armstrong Knight jobs" [ref=e138]
+                  - generic [ref=e139]:
+                    - button "Shortlist job" [ref=e140] [cursor=pointer]:
+                      - img [ref=e141]
+                    - button "hide job" [ref=e143] [cursor=pointer]:
+                      - img [ref=e144]
+            - article [ref=e147]:
+              - generic [ref=e148]:
+                - button "IT Support Analyst" [ref=e149] [cursor=pointer]
+                - generic [ref=e150]:
+                  - generic [ref=e151]:
+                    - generic [ref=e152]:
+                      - heading "IT Support Analyst" [level=2] [ref=e153]:
+                        - link "IT Support Analyst" [ref=e154] [cursor=pointer]:
+                          - /url: /jobs/it-support-analyst/56715966?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e155]:
+                        - text: 3 days ago by
+                        - link "Sussum Consulting LTD" [ref=e156] [cursor=pointer]:
+                          - /url: /jobs/sussum-consulting-ltd-106593/p106593
+                      - list [ref=e157]:
+                        - listitem [ref=e158]:
+                          - img "Salary" [ref=e159]
+                          - text: £30,000 - £35,000 per annum
+                        - listitem [ref=e161]:
+                          - img "Location" [ref=e162]
+                          - text: Borehamwood, Hertfordshire
+                        - listitem [ref=e164]:
+                          - img "Clock" [ref=e165]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e167] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e168]
+                  - complementary [ref=e170]
+                  - link "Sussum Consulting LTD jobs" [ref=e173] [cursor=pointer]:
+                    - /url: /jobs/sussum-consulting-ltd-106593/p106593
+                    - img "Sussum Consulting LTD jobs" [ref=e174]
+                  - generic [ref=e175]:
+                    - button "Shortlist job" [ref=e176] [cursor=pointer]:
+                      - img [ref=e177]
+                    - button "hide job" [ref=e179] [cursor=pointer]:
+                      - img [ref=e180]
+            - article [ref=e183]:
+              - generic [ref=e184]:
+                - button "Trainee Cyber Security" [ref=e185] [cursor=pointer]
+                - generic [ref=e186]:
+                  - generic [ref=e187]:
+                    - generic [ref=e188]:
+                      - generic [ref=e189]:
+                        - generic [ref=e190]: Featured
+                        - generic [ref=e191]: New
+                      - heading "Trainee Cyber Security" [level=2] [ref=e192]:
+                        - link "Trainee Cyber Security" [ref=e193] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56737248?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e194]:
+                        - text: 5 hrs ago by
+                        - link "ITOL Recruit" [ref=e195] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e196]:
+                        - listitem [ref=e197]:
+                          - img "Salary" [ref=e198]
+                          - text: Training Course
+                        - listitem [ref=e200]:
+                          - img "Location" [ref=e201]
+                          - text: United Kingdom
+                        - listitem [ref=e203]:
+                          - img "Clock" [ref=e204]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e206] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e207]
+                  - complementary [ref=e209]
+                  - link "ITOL Recruit jobs" [ref=e212] [cursor=pointer]:
+                    - /url: /jobs/itonlinelearning-0/p57826
+                    - img "ITOL Recruit jobs" [ref=e213]
+                  - generic [ref=e214]:
+                    - button "Shortlist job" [ref=e215] [cursor=pointer]:
+                      - img [ref=e216]
+                    - button "hide job" [ref=e218] [cursor=pointer]:
+                      - img [ref=e219]
+            - article [ref=e222]:
+              - generic [ref=e223]:
+                - button "Trainee Cyber Security" [ref=e224] [cursor=pointer]
+                - generic [ref=e225]:
+                  - generic [ref=e226]:
+                    - generic [ref=e227]:
+                      - generic [ref=e229]: New
+                      - heading "Trainee Cyber Security" [level=2] [ref=e230]:
+                        - link "Trainee Cyber Security" [ref=e231] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56726428?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e232]:
+                        - text: Yesterday by
+                        - link "ITOL Recruit" [ref=e233] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e234]:
+                        - listitem [ref=e235]:
+                          - img "Salary" [ref=e236]
+                          - text: Training Course
+                        - listitem [ref=e238]:
+                          - img "Location" [ref=e239]
+                          - text: London
+                        - listitem [ref=e241]:
+                          - img "Clock" [ref=e242]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e244] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e245]
+                  - complementary [ref=e247]
+                  - link "ITOL Recruit jobs" [ref=e250] [cursor=pointer]:
+                    - /url: /jobs/itonlinelearning-0/p57826
+                    - img "ITOL Recruit jobs" [ref=e251]
+                  - generic [ref=e252]:
+                    - button "Shortlist job" [ref=e253] [cursor=pointer]:
+                      - img [ref=e254]
+                    - button "hide job" [ref=e256] [cursor=pointer]:
+                      - img [ref=e257]
+            - article [ref=e260]:
+              - generic [ref=e261]:
+                - button "Cyber Security Trainee" [ref=e262] [cursor=pointer]
+                - generic [ref=e263]:
+                  - generic [ref=e264]:
+                    - generic [ref=e265]:
+                      - heading "Cyber Security Trainee" [level=2] [ref=e266]:
+                        - link "Cyber Security Trainee" [ref=e267] [cursor=pointer]:
+                          - /url: /jobs/cyber-security-trainee/56713522?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e268]:
+                        - text: 3 days ago by
+                        - link "ITOL Recruit" [ref=e269] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e270]:
+                        - listitem [ref=e271]:
+                          - img "Salary" [ref=e272]
+                          - text: Training Course
+                        - listitem [ref=e274]:
+                          - img "Location" [ref=e275]
+                          - text: North West London, London
+                        - listitem [ref=e277]:
+                          - img "Clock" [ref=e278]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e280] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e281]
+                  - complementary [ref=e283]
+                  - link "ITOL Recruit jobs" [ref=e286] [cursor=pointer]:
+                    - /url: /jobs/itonlinelearning-0/p57826
+                    - img "ITOL Recruit jobs" [ref=e287]
+                  - generic [ref=e288]:
+                    - button "Shortlist job" [ref=e289] [cursor=pointer]:
+                      - img [ref=e290]
+                    - button "hide job" [ref=e292] [cursor=pointer]:
+                      - img [ref=e293]
+            - article [ref=e296]:
+              - generic [ref=e297]:
+                - button "Trainee Cyber Security" [ref=e298] [cursor=pointer]
+                - generic [ref=e299]:
+                  - generic [ref=e300]:
+                    - generic [ref=e301]:
+                      - generic [ref=e303]: Featured
+                      - heading "Trainee Cyber Security" [level=2] [ref=e304]:
+                        - link "Trainee Cyber Security" [ref=e305] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56721082?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e306]:
+                        - text: 2 days ago by
+                        - link "ITOL Recruit" [ref=e307] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e308]:
+                        - listitem [ref=e309]:
+                          - img "Salary" [ref=e310]
+                          - text: Training Course
+                        - listitem [ref=e312]:
+                          - img "Location" [ref=e313]
+                          - text: United Kingdom
+                        - listitem [ref=e315]:
+                          - img "Clock" [ref=e316]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e318] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e319]
+                  - complementary [ref=e321]
+                  - link "ITOL Recruit jobs" [ref=e324] [cursor=pointer]:
+                    - /url: /jobs/itonlinelearning-0/p57826
+                    - img "ITOL Recruit jobs" [ref=e325]
+                  - generic [ref=e326]:
+                    - button "Shortlist job" [ref=e327] [cursor=pointer]:
+                      - img [ref=e328]
+                    - button "hide job" [ref=e330] [cursor=pointer]:
+                      - img [ref=e331]
+            - article [ref=e334]:
+              - generic [ref=e335]:
+                - button "Trainee Cyber Security" [ref=e336] [cursor=pointer]
+                - generic [ref=e337]:
+                  - generic [ref=e338]:
+                    - generic [ref=e339]:
+                      - generic [ref=e341]: Featured
+                      - heading "Trainee Cyber Security" [level=2] [ref=e342]:
+                        - link "Trainee Cyber Security" [ref=e343] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56721075?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e344]:
+                        - text: 2 days ago by
+                        - link "ITOL Recruit" [ref=e345] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e346]:
+                        - listitem [ref=e347]:
+                          - img "Salary" [ref=e348]
+                          - text: Training Course
+                        - listitem [ref=e350]:
+                          - img "Location" [ref=e351]
+                          - text: United Kingdom
+                        - listitem [ref=e353]:
+                          - img "Clock" [ref=e354]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e356] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e357]
+                  - complementary [ref=e359]
+                  - link "ITOL Recruit jobs" [ref=e362] [cursor=pointer]:
+                    - /url: /jobs/itonlinelearning-0/p57826
+                    - img "ITOL Recruit jobs" [ref=e363]
+                  - generic [ref=e364]:
+                    - button "Shortlist job" [ref=e365] [cursor=pointer]:
+                      - img [ref=e366]
+                    - button "hide job" [ref=e368] [cursor=pointer]:
+                      - img [ref=e369]
+            - article [ref=e372]:
+              - generic [ref=e373]:
+                - button "Diagnostic Technician (Mon-Fri Late Shift)" [ref=e374] [cursor=pointer]
+                - generic [ref=e375]:
+                  - generic [ref=e376]:
+                    - generic [ref=e377]:
+                      - generic [ref=e378]:
+                        - generic [ref=e379]: Featured
+                        - generic [ref=e380]:
+                          - img "EarlyBird" [ref=e381]
+                          - text: Early bird
+                      - heading "Diagnostic Technician (Mon-Fri Late Shift)" [level=2] [ref=e383]:
+                        - link "Diagnostic Technician (Mon-Fri Late Shift)" [ref=e384] [cursor=pointer]:
+                          - /url: /jobs/diagnostic-technician-mon-fri-late-shift/56720824?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e385]:
+                        - text: 2 days ago by
+                        - link "Stellantis &You" [ref=e386] [cursor=pointer]:
+                          - /url: /jobs/stellantis-brentford/p76194
+                      - list [ref=e387]:
+                        - listitem [ref=e388]:
+                          - img "Salary" [ref=e389]
+                          - text: £45,000 per annum, OTE
+                        - listitem [ref=e391]:
+                          - img "Location" [ref=e392]
+                          - text: Croydon, Surrey
+                        - listitem [ref=e394]:
+                          - img "Clock" [ref=e395]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e397] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e398]
+                  - complementary [ref=e400]
+                  - generic [ref=e402]:
+                    - link "Stellantis &You jobs":
+                      - /url: /jobs/stellantis-brentford/p76194
+                      - img "Stellantis &You jobs"
+                  - generic [ref=e403]:
+                    - button "Shortlist job" [ref=e404] [cursor=pointer]:
+                      - img [ref=e405]
+                    - button "hide job" [ref=e407] [cursor=pointer]:
+                      - img [ref=e408]
+            - article [ref=e411]:
+              - generic [ref=e412]:
+                - button "Cyber Security Trainee" [ref=e413] [cursor=pointer]
+                - generic [ref=e414]:
+                  - generic [ref=e415]:
+                    - generic [ref=e416]:
+                      - generic [ref=e417]:
+                        - generic [ref=e418]: Featured
+                        - generic [ref=e419]: New
+                      - heading "Cyber Security Trainee" [level=2] [ref=e420]:
+                        - link "Cyber Security Trainee" [ref=e421] [cursor=pointer]:
+                          - /url: /jobs/cyber-security-trainee/56737241?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e422]:
+                        - text: 5 hrs ago by
+                        - link "ITOL Recruit" [ref=e423] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e424]:
+                        - listitem [ref=e425]:
+                          - img "Salary" [ref=e426]
+                          - text: Training Course
+                        - listitem [ref=e428]:
+                          - img "Location" [ref=e429]
+                          - text: United Kingdom
+                        - listitem [ref=e431]:
+                          - img "Clock" [ref=e432]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e434] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e435]
+                  - complementary [ref=e437]
+                  - link "ITOL Recruit jobs" [ref=e440] [cursor=pointer]:
+                    - /url: /jobs/itonlinelearning-0/p57826
+                    - img "ITOL Recruit jobs" [ref=e441]
+                  - generic [ref=e442]:
+                    - button "Shortlist job" [ref=e443] [cursor=pointer]:
+                      - img [ref=e444]
+                    - button "hide job" [ref=e446] [cursor=pointer]:
+                      - img [ref=e447]
+            - article [ref=e450]:
+              - generic [ref=e451]:
+                - button "Trainee Cyber Security Analyst" [ref=e452] [cursor=pointer]
+                - generic [ref=e453]:
+                  - generic [ref=e454]:
+                    - generic [ref=e455]:
+                      - generic [ref=e457]: New
+                      - heading "Trainee Cyber Security Analyst" [level=2] [ref=e458]:
+                        - link "Trainee Cyber Security Analyst" [ref=e459] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security-analyst/56726503?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e460]:
+                        - text: Yesterday by
+                        - link "ITOL Recruit" [ref=e461] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e462]:
+                        - listitem [ref=e463]:
+                          - img "Salary" [ref=e464]
+                          - text: Training Course
+                        - listitem [ref=e466]:
+                          - img "Location" [ref=e467]
+                          - text: North London, London
+                        - listitem [ref=e469]:
+                          - img "Clock" [ref=e470]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e472] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e473]
+                  - complementary [ref=e475]
+                  - link "ITOL Recruit jobs" [ref=e478] [cursor=pointer]:
+                    - /url: /jobs/itonlinelearning-0/p57826
+                    - img "ITOL Recruit jobs" [ref=e479]
+                  - generic [ref=e480]:
+                    - button "Shortlist job" [ref=e481] [cursor=pointer]:
+                      - img [ref=e482]
+                    - button "hide job" [ref=e484] [cursor=pointer]:
+                      - img [ref=e485]
+            - article [ref=e488]:
+              - generic [ref=e489]:
+                - button "Trainee Cyber Security" [ref=e490] [cursor=pointer]
+                - generic [ref=e491]:
+                  - generic [ref=e492]:
+                    - generic [ref=e493]:
+                      - heading "Trainee Cyber Security" [level=2] [ref=e494]:
+                        - link "Trainee Cyber Security" [ref=e495] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56713449?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e496]:
+                        - text: 3 days ago by
+                        - link "ITOL Recruit" [ref=e497] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e498]:
+                        - listitem [ref=e499]:
+                          - img "Salary" [ref=e500]
+                          - text: Training Course
+                        - listitem [ref=e502]:
+                          - img "Location" [ref=e503]
+                          - text: North West London, London
+                        - listitem [ref=e505]:
+                          - img "Clock" [ref=e506]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e508] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e509]
+                  - complementary [ref=e511]
+                  - link "ITOL Recruit jobs" [ref=e514] [cursor=pointer]:
+                    - /url: /jobs/itonlinelearning-0/p57826
+                    - img "ITOL Recruit jobs" [ref=e515]
+                  - generic [ref=e516]:
+                    - button "Shortlist job" [ref=e517] [cursor=pointer]:
+                      - img [ref=e518]
+                    - button "hide job" [ref=e520] [cursor=pointer]:
+                      - img [ref=e521]
+            - article [ref=e524]:
+              - generic [ref=e525]:
+                - button "Trainee Cyber Security Analyst" [ref=e526] [cursor=pointer]
+                - generic [ref=e527]:
+                  - generic [ref=e528]:
+                    - generic [ref=e529]:
+                      - generic [ref=e531]: New
+                      - heading "Trainee Cyber Security Analyst" [level=2] [ref=e532]:
+                        - link "Trainee Cyber Security Analyst" [ref=e533] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security-analyst/56726504?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e534]:
+                        - text: Yesterday by
+                        - link "ITOL Recruit" [ref=e535] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e536]:
+                        - listitem [ref=e537]:
+                          - img "Salary" [ref=e538]
+                          - text: Training Course
+                        - listitem [ref=e540]:
+                          - img "Location" [ref=e541]
+                          - text: North London, London
+                        - listitem [ref=e543]:
+                          - img "Clock" [ref=e544]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e546] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e547]
+                  - complementary [ref=e549]
+                  - link "ITOL Recruit jobs" [ref=e552] [cursor=pointer]:
+                    - /url: /jobs/itonlinelearning-0/p57826
+                    - img "ITOL Recruit jobs" [ref=e553]
+                  - generic [ref=e554]:
+                    - button "Shortlist job" [ref=e555] [cursor=pointer]:
+                      - img [ref=e556]
+                    - button "hide job" [ref=e558] [cursor=pointer]:
+                      - img [ref=e559]
+            - article [ref=e562]:
+              - generic [ref=e563]:
+                - button "Cyber Security Trainee" [ref=e564] [cursor=pointer]
+                - generic [ref=e565]:
+                  - generic [ref=e566]:
+                    - generic [ref=e567]:
+                      - generic [ref=e569]: New
+                      - heading "Cyber Security Trainee" [level=2] [ref=e570]:
+                        - link "Cyber Security Trainee" [ref=e571] [cursor=pointer]:
+                          - /url: /jobs/cyber-security-trainee/56726314?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e572]:
+                        - text: Yesterday by
+                        - link "ITOL Recruit" [ref=e573] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e574]:
+                        - listitem [ref=e575]:
+                          - img "Salary" [ref=e576]
+                          - text: Training Course
+                        - listitem [ref=e578]:
+                          - img "Location" [ref=e579]
+                          - text: East London, London
+                        - listitem [ref=e581]:
+                          - img "Clock" [ref=e582]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e584] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e585]
+                  - complementary [ref=e587]
+                  - link "ITOL Recruit jobs" [ref=e590] [cursor=pointer]:
+                    - /url: /jobs/itonlinelearning-0/p57826
+                    - img "ITOL Recruit jobs" [ref=e591]
+                  - generic [ref=e592]:
+                    - button "Shortlist job" [ref=e593] [cursor=pointer]:
+                      - img [ref=e594]
+                    - button "hide job" [ref=e596] [cursor=pointer]:
+                      - img [ref=e597]
+            - generic [ref=e599]:
+              - article [ref=e600]:
+                - generic [ref=e601]:
+                  - button "Trainee Cyber Security" [ref=e602] [cursor=pointer]
+                  - generic [ref=e603]:
+                    - generic [ref=e604]:
+                      - generic [ref=e605]:
+                        - generic [ref=e606]:
+                          - generic [ref=e607]: Featured
+                          - generic [ref=e608]: New
+                        - heading "Trainee Cyber Security" [level=2] [ref=e609]:
+                          - link "Trainee Cyber Security" [ref=e610] [cursor=pointer]:
+                            - /url: /jobs/trainee-cyber-security/56737047?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                        - generic [ref=e611]:
+                          - text: 6 hrs ago by
+                          - link "ITOL Recruit" [ref=e612] [cursor=pointer]:
+                            - /url: /jobs/itonlinelearning-0/p57826
+                        - list [ref=e613]:
+                          - listitem [ref=e614]:
+                            - img "Salary" [ref=e615]
+                            - text: Training Course
+                          - listitem [ref=e617]:
+                            - img "Location" [ref=e618]
+                            - text: London
+                          - listitem [ref=e620]:
+                            - img "Clock" [ref=e621]
+                            - text: Permanent, full-time
+                      - button "See job description" [ref=e623] [cursor=pointer]:
+                        - text: See more
+                        - img "Chevron" [ref=e624]
+                    - complementary [ref=e626]
+                    - link "ITOL Recruit jobs" [ref=e629] [cursor=pointer]:
+                      - /url: /jobs/itonlinelearning-0/p57826
+                      - img "ITOL Recruit jobs" [ref=e630]
+                    - generic [ref=e631]:
+                      - button "Shortlist job" [ref=e632] [cursor=pointer]:
+                        - img [ref=e633]
+                      - button "hide job" [ref=e635] [cursor=pointer]:
+                        - img [ref=e636]
+              - alert [ref=e638]:
+                - button "Get Job Alerts" [ref=e639] [cursor=pointer]:
+                  - img [ref=e640]
+                  - text: Get Job Alerts
+                - paragraph [ref=e643]: Get new jobs matching this search straight to your inbox.
+            - article [ref=e645]:
+              - generic [ref=e646]:
+                - button "Trainee Cyber Security" [ref=e647] [cursor=pointer]
+                - generic [ref=e648]:
+                  - generic [ref=e649]:
+                    - generic [ref=e650]:
+                      - generic [ref=e651]:
+                        - generic [ref=e652]: Featured
+                        - generic [ref=e653]: New
+                      - heading "Trainee Cyber Security" [level=2] [ref=e654]:
+                        - link "Trainee Cyber Security" [ref=e655] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56737032?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e656]:
+                        - text: 6 hrs ago by
+                        - link "ITOL Recruit" [ref=e657] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e658]:
+                        - listitem [ref=e659]:
+                          - img "Salary" [ref=e660]
+                          - text: Training Course
+                        - listitem [ref=e662]:
+                          - img "Location" [ref=e663]
+                          - text: London
+                        - listitem [ref=e665]:
+                          - img "Clock" [ref=e666]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e668] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e669]
+                  - complementary [ref=e671]
+                  - link "ITOL Recruit jobs" [ref=e674] [cursor=pointer]:
+                    - /url: /jobs/itonlinelearning-0/p57826
+                    - img "ITOL Recruit jobs" [ref=e675]
+                  - generic [ref=e676]:
+                    - button "Shortlist job" [ref=e677] [cursor=pointer]:
+                      - img [ref=e678]
+                    - button "hide job" [ref=e680] [cursor=pointer]:
+                      - img [ref=e681]
+            - article [ref=e684]:
+              - generic [ref=e685]:
+                - button "Trainee Cyber Security" [ref=e686] [cursor=pointer]
+                - generic [ref=e687]:
+                  - generic [ref=e688]:
+                    - generic [ref=e689]:
+                      - generic [ref=e691]: Featured
+                      - heading "Trainee Cyber Security" [level=2] [ref=e692]:
+                        - link "Trainee Cyber Security" [ref=e693] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56721072?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e694]:
+                        - text: 2 days ago by
+                        - link "ITOL Recruit" [ref=e695] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e696]:
+                        - listitem [ref=e697]:
+                          - img "Salary" [ref=e698]
+                          - text: Training Course
+                        - listitem [ref=e700]:
+                          - img "Location" [ref=e701]
+                          - text: United Kingdom
+                        - listitem [ref=e703]:
+                          - img "Clock" [ref=e704]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e706] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e707]
+                  - complementary [ref=e709]
+                  - link "ITOL Recruit jobs" [ref=e712] [cursor=pointer]:
+                    - /url: /jobs/itonlinelearning-0/p57826
+                    - img "ITOL Recruit jobs" [ref=e713]
+                  - generic [ref=e714]:
+                    - button "Shortlist job" [ref=e715] [cursor=pointer]:
+                      - img [ref=e716]
+                    - button "hide job" [ref=e718] [cursor=pointer]:
+                      - img [ref=e719]
+            - article [ref=e722]:
+              - generic [ref=e723]:
+                - button "Field Service Technician (Hardware Break/Fix) – London SE" [ref=e724] [cursor=pointer]
+                - generic [ref=e725]:
+                  - generic [ref=e726]:
+                    - generic [ref=e727]:
+                      - generic [ref=e728]:
+                        - generic [ref=e729]: Featured
+                        - generic [ref=e730]: New
+                        - generic [ref=e731]:
+                          - img [ref=e732]
+                          - text: Easy Apply
+                      - heading "Field Service Technician (Hardware Break/Fix) – London SE" [level=2] [ref=e734]:
+                        - link "Field Service Technician (Hardware Break/Fix) – London SE" [ref=e735] [cursor=pointer]:
+                          - /url: /jobs/field-service-technician-hardware-break-fix--london-se/56728741?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e736]:
+                        - text: Yesterday by
+                        - link "Global Technology Solutions Ltd" [ref=e737] [cursor=pointer]:
+                          - /url: /jobs/global-technology-solutions/p2937
+                      - list [ref=e738]:
+                        - listitem [ref=e739]:
+                          - img "Salary" [ref=e740]
+                          - text: £150 - £165 per day
+                        - listitem [ref=e742]:
+                          - img "Location" [ref=e743]
+                          - text: London
+                        - listitem [ref=e745]:
+                          - img "Clock" [ref=e746]
+                          - text: Contract, full-time
+                    - button "See job description" [ref=e748] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e749]
+                  - complementary [ref=e751]:
+                    - button "Easy apply" [ref=e752] [cursor=pointer]
+                  - generic [ref=e754]:
+                    - link "Global Technology Solutions Ltd jobs":
+                      - /url: /jobs/global-technology-solutions/p2937
+                      - img "Global Technology Solutions Ltd jobs"
+                  - generic [ref=e755]:
+                    - button "Shortlist job" [ref=e756] [cursor=pointer]:
+                      - img [ref=e757]
+                    - button "hide job" [ref=e759] [cursor=pointer]:
+                      - img [ref=e760]
+            - article [ref=e763]:
+              - generic [ref=e764]:
+                - button "Technician 1" [ref=e765] [cursor=pointer]
+                - generic [ref=e766]:
+                  - generic [ref=e767]:
+                    - generic [ref=e768]:
+                      - generic [ref=e770]:
+                        - img [ref=e771]
+                        - text: Easy Apply
+                      - heading "Technician 1" [level=2] [ref=e773]:
+                        - link "Technician 1" [ref=e774] [cursor=pointer]:
+                          - /url: /jobs/technician-1/56718175?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e775]:
+                        - text: 2 days ago by
+                        - link "Hays Specialist Recruitment Limited" [ref=e776] [cursor=pointer]:
+                          - /url: /jobs/hays-specialist-recruitment-limited/p36210
+                      - list [ref=e777]:
+                        - listitem [ref=e778]:
+                          - img "Salary" [ref=e779]
+                          - text: £14.20 - £18.42 per hour
+                        - listitem [ref=e781]:
+                          - img "Location" [ref=e782]
+                          - text: London
+                        - listitem [ref=e784]:
+                          - img "Clock" [ref=e785]
+                          - text: Contract, full-time
+                    - button "See job description" [ref=e787] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e788]
+                  - complementary [ref=e790]:
+                    - button "Easy apply" [ref=e791] [cursor=pointer]
+                  - generic [ref=e793]:
+                    - link "Hays Specialist Recruitment Limited jobs":
+                      - /url: /jobs/hays-specialist-recruitment-limited/p36210
+                      - img "Hays Specialist Recruitment Limited jobs"
+                  - generic [ref=e794]:
+                    - button "Shortlist job" [ref=e795] [cursor=pointer]:
+                      - img [ref=e796]
+                    - button "hide job" [ref=e798] [cursor=pointer]:
+                      - img [ref=e799]
+            - article [ref=e802]:
+              - generic [ref=e803]:
+                - button "Trainee Cyber Security" [ref=e804] [cursor=pointer]
+                - generic [ref=e805]:
+                  - generic [ref=e806]:
+                    - generic [ref=e807]:
+                      - heading "Trainee Cyber Security" [level=2] [ref=e808]:
+                        - link "Trainee Cyber Security" [ref=e809] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56713542?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e810]:
+                        - text: 3 days ago by
+                        - link "ITOL Recruit" [ref=e811] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e812]:
+                        - listitem [ref=e813]:
+                          - img "Salary" [ref=e814]
+                          - text: Training Course
+                        - listitem [ref=e816]:
+                          - img "Location" [ref=e817]
+                          - text: Uxbridge, Middlesex
+                        - listitem [ref=e819]:
+                          - img "Clock" [ref=e820]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e822] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e823]
+                  - complementary [ref=e825]
+                  - link "ITOL Recruit jobs" [ref=e828] [cursor=pointer]:
+                    - /url: /jobs/itonlinelearning-0/p57826
+                    - img "ITOL Recruit jobs" [ref=e829]
+                  - generic [ref=e830]:
+                    - button "Shortlist job" [ref=e831] [cursor=pointer]:
+                      - img [ref=e832]
+                    - button "hide job" [ref=e834] [cursor=pointer]:
+                      - img [ref=e835]
+            - article [ref=e838]:
+              - generic [ref=e839]:
+                - button "2nd Line IT Support" [ref=e840] [cursor=pointer]
+                - generic [ref=e841]:
+                  - generic [ref=e842]:
+                    - generic [ref=e843]:
+                      - generic [ref=e844]:
+                        - generic [ref=e845]: Featured
+                        - generic [ref=e846]: New
+                        - generic [ref=e847]:
+                          - img [ref=e848]
+                          - text: Easy Apply
+                      - heading "2nd Line IT Support" [level=2] [ref=e850]:
+                        - link "2nd Line IT Support" [ref=e851] [cursor=pointer]:
+                          - /url: /jobs/2nd-line-it-support/56729948?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e852]:
+                        - text: Yesterday by
+                        - link "Michael Page Technology" [ref=e853] [cursor=pointer]:
+                          - /url: /jobs/michael-page-technology-59782/p59782
+                      - list [ref=e854]:
+                        - listitem [ref=e855]:
+                          - img "Salary" [ref=e856]
+                          - text: £200 - £250 per day
+                        - listitem [ref=e858]:
+                          - img "Location" [ref=e859]
+                          - text: London
+                        - listitem [ref=e861]:
+                          - img "Clock" [ref=e862]
+                          - text: Temporary, full-time
+                    - button "See job description" [ref=e864] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e865]
+                  - complementary [ref=e867]:
+                    - button "Easy apply" [ref=e868] [cursor=pointer]
+                  - generic [ref=e870]:
+                    - link "Michael Page Technology jobs":
+                      - /url: /jobs/michael-page-technology-59782/p59782
+                      - img "Michael Page Technology jobs"
+                  - generic [ref=e871]:
+                    - button "Shortlist job" [ref=e872] [cursor=pointer]:
+                      - img [ref=e873]
+                    - button "hide job" [ref=e875] [cursor=pointer]:
+                      - img [ref=e876]
+            - article [ref=e879]:
+              - generic [ref=e880]:
+                - button "High School Science Lab Technician" [ref=e881] [cursor=pointer]
+                - generic [ref=e882]:
+                  - generic [ref=e883]:
+                    - generic [ref=e884]:
+                      - generic [ref=e885]:
+                        - generic [ref=e886]: Featured
+                        - generic [ref=e887]:
+                          - img [ref=e888]
+                          - text: Easy Apply
+                      - heading "High School Science Lab Technician" [level=2] [ref=e890]:
+                        - link "High School Science Lab Technician" [ref=e891] [cursor=pointer]:
+                          - /url: /jobs/high-school-science-lab-technician/56713903?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e892]:
+                        - text: 3 days ago by
+                        - link "The American School in London" [ref=e893] [cursor=pointer]:
+                          - /url: /jobs/the-american-school-in-london-92377/p92377
+                      - list [ref=e894]:
+                        - listitem [ref=e895]:
+                          - img "Salary" [ref=e896]
+                          - text: £36,000 - £38,000 per annum
+                        - listitem [ref=e898]:
+                          - img "Location" [ref=e899]
+                          - text: London
+                        - listitem [ref=e901]:
+                          - img "Clock" [ref=e902]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e904] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e905]
+                  - complementary [ref=e907]:
+                    - button "Easy apply" [ref=e908] [cursor=pointer]
+                  - generic [ref=e910]:
+                    - link "The American School in London jobs":
+                      - /url: /jobs/the-american-school-in-london-92377/p92377
+                      - img "The American School in London jobs"
+                  - generic [ref=e911]:
+                    - button "Shortlist job" [ref=e912] [cursor=pointer]:
+                      - img [ref=e913]
+                    - button "hide job" [ref=e915] [cursor=pointer]:
+                      - img [ref=e916]
+            - article [ref=e919]:
+              - generic [ref=e920]:
+                - button "Customer Advisor" [ref=e921] [cursor=pointer]
+                - generic [ref=e922]:
+                  - generic [ref=e923]:
+                    - generic [ref=e924]:
+                      - generic [ref=e925]:
+                        - generic [ref=e926]: Featured
+                        - generic [ref=e927]:
+                          - img "EarlyBird" [ref=e928]
+                          - text: Early bird
+                      - heading "Customer Advisor" [level=2] [ref=e930]:
+                        - link "Customer Advisor" [ref=e931] [cursor=pointer]:
+                          - /url: /jobs/customer-advisor/56719191?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e932]:
+                        - text: 2 days ago by
+                        - link "Stellantis &You" [ref=e933] [cursor=pointer]:
+                          - /url: /jobs/stellantis-brentford/p76194
+                      - list [ref=e934]:
+                        - listitem [ref=e935]:
+                          - img "Salary" [ref=e936]
+                          - text: Competitive salary
+                        - listitem [ref=e938]:
+                          - img "Location" [ref=e939]
+                          - text: Brentford, Middlesex
+                        - listitem [ref=e941]:
+                          - img "Clock" [ref=e942]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e944] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e945]
+                  - complementary [ref=e947]
+                  - generic [ref=e949]:
+                    - link "Stellantis &You jobs":
+                      - /url: /jobs/stellantis-brentford/p76194
+                      - img "Stellantis &You jobs"
+                  - generic [ref=e950]:
+                    - button "Shortlist job" [ref=e951] [cursor=pointer]:
+                      - img [ref=e952]
+                    - button "hide job" [ref=e954] [cursor=pointer]:
+                      - img [ref=e955]
+            - article [ref=e958]:
+              - generic [ref=e959]:
+                - button "Aftersales Manager" [ref=e960] [cursor=pointer]
+                - generic [ref=e961]:
+                  - generic [ref=e962]:
+                    - generic [ref=e963]:
+                      - generic [ref=e964]:
+                        - generic [ref=e965]: Featured
+                        - generic [ref=e966]:
+                          - img "EarlyBird" [ref=e967]
+                          - text: Early bird
+                      - heading "Aftersales Manager" [level=2] [ref=e969]:
+                        - link "Aftersales Manager" [ref=e970] [cursor=pointer]:
+                          - /url: /jobs/aftersales-manager/56719230?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e971]:
+                        - text: 2 days ago by
+                        - link "Stellantis &You" [ref=e972] [cursor=pointer]:
+                          - /url: /jobs/stellantis-brentford/p76194
+                      - list [ref=e973]:
+                        - listitem [ref=e974]:
+                          - img "Salary" [ref=e975]
+                          - text: Competitive salary
+                        - listitem [ref=e977]:
+                          - img "Location" [ref=e978]
+                          - text: London
+                        - listitem [ref=e980]:
+                          - img "Clock" [ref=e981]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e983] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e984]
+                  - complementary [ref=e986]
+                  - generic [ref=e988]:
+                    - link "Stellantis &You jobs":
+                      - /url: /jobs/stellantis-brentford/p76194
+                      - img "Stellantis &You jobs"
+                  - generic [ref=e989]:
+                    - button "Shortlist job" [ref=e990] [cursor=pointer]:
+                      - img [ref=e991]
+                    - button "hide job" [ref=e993] [cursor=pointer]:
+                      - img [ref=e994]
+            - article [ref=e997]:
+              - generic [ref=e998]:
+                - button "Maintenance Technician" [ref=e999] [cursor=pointer]
+                - generic [ref=e1000]:
+                  - generic [ref=e1001]:
+                    - generic [ref=e1002]:
+                      - generic [ref=e1003]:
+                        - generic [ref=e1004]: New
+                        - generic [ref=e1005]:
+                          - img [ref=e1006]
+                          - text: Easy Apply
+                      - heading "Maintenance Technician" [level=2] [ref=e1008]:
+                        - link "Maintenance Technician" [ref=e1009] [cursor=pointer]:
+                          - /url: /jobs/maintenance-technician/56739325?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e1010]:
+                        - text: 2 hrs ago by
+                        - link "Thefutureworks" [ref=e1011] [cursor=pointer]:
+                          - /url: /jobs/the-future-works/p11095
+                      - list [ref=e1012]:
+                        - listitem [ref=e1013]:
+                          - img "Salary" [ref=e1014]
+                          - text: £31,573 - £40,395 per annum
+                        - listitem [ref=e1016]:
+                          - img "Location" [ref=e1017]
+                          - text: Dagenham, Essex
+                        - listitem [ref=e1019]:
+                          - img "Clock" [ref=e1020]
+                          - text: Temporary, full-time
+                    - button "See job description" [ref=e1022] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e1023]
+                  - complementary [ref=e1025]:
+                    - button "Easy apply" [ref=e1026] [cursor=pointer]
+                  - generic [ref=e1028]:
+                    - link "Thefutureworks jobs":
+                      - /url: /jobs/the-future-works/p11095
+                      - img "Thefutureworks jobs"
+                  - generic [ref=e1029]:
+                    - button "Shortlist job" [ref=e1030] [cursor=pointer]:
+                      - img [ref=e1031]
+                    - button "hide job" [ref=e1033] [cursor=pointer]:
+                      - img [ref=e1034]
+            - article [ref=e1037]:
+              - generic [ref=e1038]:
+                - button "Diagnostic Technician" [ref=e1039] [cursor=pointer]
+                - generic [ref=e1040]:
+                  - generic [ref=e1041]:
+                    - generic [ref=e1042]:
+                      - generic [ref=e1043]:
+                        - generic [ref=e1044]: New
+                        - generic [ref=e1045]:
+                          - img [ref=e1046]
+                          - text: Easy Apply
+                      - heading "Diagnostic Technician" [level=2] [ref=e1048]:
+                        - link "Diagnostic Technician" [ref=e1049] [cursor=pointer]:
+                          - /url: /jobs/diagnostic-technician/56736845?source=searchResults&filter=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e1050]:
+                        - text: 6 hrs ago by
+                        - link "KPI People" [ref=e1051] [cursor=pointer]:
+                          - /url: /jobs/kpi-people/p19436
+                      - list [ref=e1052]:
+                        - listitem [ref=e1053]:
+                          - img "Salary" [ref=e1054]
+                          - text: £50,000 - £55,000 per annum
+                        - listitem [ref=e1056]:
+                          - img "Location" [ref=e1057]
+                          - text: Croydon, Surrey
+                        - listitem [ref=e1059]:
+                          - img "Clock" [ref=e1060]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e1062] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e1063]
+                  - complementary [ref=e1065]:
+                    - button "Easy apply" [ref=e1066] [cursor=pointer]
+                  - generic [ref=e1068]:
+                    - link "KPI People jobs":
+                      - /url: /jobs/kpi-people/p19436
+                      - img "KPI People jobs"
+                  - generic [ref=e1069]:
+                    - button "Shortlist job" [ref=e1070] [cursor=pointer]:
+                      - img [ref=e1071]
+                    - button "hide job" [ref=e1073] [cursor=pointer]:
+                      - img [ref=e1074]
+            - generic [ref=e1076]:
+              - generic [ref=e1077]: 1 - 25 of 1,623 jobs
+              - generic [ref=e1078]:
+                - navigation "pagination" [ref=e1079]:
+                  - list [ref=e1080]:
+                    - listitem [ref=e1081]:
+                      - link "Previous page":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - img
+                        - text: Previous
+                    - listitem [ref=e1082]:
+                      - generic "Goto Page 1": "1"
+                    - listitem [ref=e1083]:
+                      - link "Goto Page 2" [ref=e1084] [cursor=pointer]:
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=2&dateCreatedOffSet=lastthreedays
+                        - text: "2"
+                    - listitem [ref=e1085]:
+                      - link "Goto Page 3" [ref=e1086] [cursor=pointer]:
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=3&dateCreatedOffSet=lastthreedays
+                        - text: "3"
+                    - listitem [ref=e1087]:
+                      - link "Goto Page 4" [ref=e1088] [cursor=pointer]:
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=4&dateCreatedOffSet=lastthreedays
+                        - text: "4"
+                    - listitem [ref=e1089]:
+                      - link "Goto Page 5" [ref=e1090] [cursor=pointer]:
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=5&dateCreatedOffSet=lastthreedays
+                        - text: "5"
+                    - listitem [ref=e1091]:
+                      - generic "Goto Page ...": ...
+                    - listitem [ref=e1092]:
+                      - link "Goto Page 65" [ref=e1093] [cursor=pointer]:
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=65&dateCreatedOffSet=lastthreedays
+                        - text: "65"
+                    - listitem [ref=e1094]:
+                      - link "Next page" [ref=e1095] [cursor=pointer]:
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=2&dateCreatedOffSet=lastthreedays
+                        - text: Next
+                        - img [ref=e1096]
+                - link "Apply on the go - get the app" [ref=e1098] [cursor=pointer]:
+                  - /url: https://reedcouk.onelink.me/933966585/3bf9bc3e
+            - generic [ref=e1100]:
+              - generic [ref=e1101]: Frequently Asked Questions
+              - generic [ref=e1102]:
+                - strong [ref=e1103]: How many It Technician jobs in london are there on Reed.co.uk right now?
+                - paragraph [ref=e1105]: There are 1623 It Technician jobs within 10 miles of London on Reed.co.uk right now.
+              - generic [ref=e1106]:
+                - strong [ref=e1107]: How can I be the first to find out when there are new It Technician jobs london on Reed.co.uk?
+                - paragraph [ref=e1109]:
+                  - text: Creating
+                  - button "job alerts" [ref=e1110] [cursor=pointer]
+                  - text: will help you keep up-to-date with the latest It Technician jobs in london.
+                  - link "Sign in" [ref=e1111] [cursor=pointer]:
+                    - /url: /authentication/login?returnTo=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                  - text: or
+                  - link "register" [ref=e1112] [cursor=pointer]:
+                    - /url: /authentication/register?returnTo=%2Fjobs%2Fit-technician-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                  - text: to set them up today.
+              - generic [ref=e1113]:
+                - strong [ref=e1114]: What similar jobs can I find on Reed.co.uk?
+                - paragraph [ref=e1116]:
+                  - text: Jobseekers searching for it technician jobs also search for
+                  - generic [ref=e1117]:
+                    - link "it support jobs" [ref=e1118] [cursor=pointer]:
+                      - /url: /jobs/it-support-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1119]:
+                    - link "it engineer jobs" [ref=e1120] [cursor=pointer]:
+                      - /url: /jobs/it-engineer-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1121]:
+                    - link "it jobs" [ref=e1122] [cursor=pointer]:
+                      - /url: /jobs/it-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1123]:
+                    - link "network engineer jobs" [ref=e1124] [cursor=pointer]:
+                      - /url: /jobs/network-engineer-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1125]:
+                    - text: and
+                    - link "cyber security jobs" [ref=e1126] [cursor=pointer]:
+                      - /url: /jobs/cyber-security-jobs-in-london
+                    - text: .
+              - generic [ref=e1127]:
+                - strong [ref=e1128]: What is the average salary of It Technician jobs in london
+                - paragraph [ref=e1130]:
+                  - text: Use Reed.co.uk's
+                  - link "average salary checker" [ref=e1131] [cursor=pointer]:
+                    - /url: /average-salary
+                  - text: to find out what you could be earning.
+            - generic [ref=e1132]:
+              - generic [ref=e1133]: Browse jobs by locations
+              - list [ref=e1135]:
+                - listitem [ref=e1136]:
+                  - link "It Technician Jobs in South West London" [ref=e1137] [cursor=pointer]:
+                    - /url: /jobs/it-technician-jobs-in-south-west-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                - listitem [ref=e1138]:
+                  - link "It Technician Jobs in SunburyonThames" [ref=e1139] [cursor=pointer]:
+                    - /url: /jobs/it-technician-jobs-in-sunburyonthames?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                - listitem [ref=e1140]:
+                  - link "It Technician Jobs in East London" [ref=e1141] [cursor=pointer]:
+                    - /url: /jobs/it-technician-jobs-in-east-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                - listitem [ref=e1142]:
+                  - link "It Technician Jobs in Watford" [ref=e1143] [cursor=pointer]:
+                    - /url: /jobs/it-technician-jobs-in-watford?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                - listitem [ref=e1144]:
+                  - link "It Technician Jobs in Harlow" [ref=e1145] [cursor=pointer]:
+                    - /url: /jobs/it-technician-jobs-in-harlow?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                - listitem [ref=e1146]:
+                  - link "It Technician Jobs in City Of London" [ref=e1147] [cursor=pointer]:
+                    - /url: /jobs/it-technician-jobs-in-city-of-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+          - complementary [ref=e1148]:
+            - generic [ref=e1149]:
+              - generic [ref=e1150]:
+                - generic [ref=e1151]:
+                  - paragraph [ref=e1152]:
+                    - text: Filters
+                    - generic [ref=e1153]: "4"
+                  - button "Clear all filters" [ref=e1154] [cursor=pointer]: Clear all
+                - list [ref=e1156]:
+                  - listitem [ref=e1157]:
+                    - button "it technician" [ref=e1158] [cursor=pointer]:
+                      - generic [ref=e1159]: it technician
+                  - listitem [ref=e1160]:
+                    - button "Last three days" [ref=e1161] [cursor=pointer]:
+                      - generic [ref=e1162]: Last three days
+                  - listitem [ref=e1163]:
+                    - button "London (10 miles)" [ref=e1164] [cursor=pointer]:
+                      - generic [ref=e1165]: London (10 miles)
+                  - listitem [ref=e1166]:
+                    - button "£33,000 - £100,000" [ref=e1167] [cursor=pointer]:
+                      - generic [ref=e1168]: £33,000 - £100,000
+              - generic [ref=e1169]:
+                - generic [ref=e1171]:
+                  - generic [ref=e1173]: Distance
+                  - combobox "Select a proximity" [ref=e1174] [cursor=pointer]:
+                    - option "0 miles"
+                    - option "1 miles"
+                    - option "3 miles"
+                    - option "5 miles"
+                    - option "10 miles" [selected]
+                    - option "15 miles"
+                    - option "20 miles"
+                    - option "30 miles"
+                    - option "50 miles"
+                - generic [ref=e1175]:
+                  - button "Salary range" [ref=e1177] [cursor=pointer]
+                  - generic [ref=e1178]:
+                    - generic [ref=e1179]:
+                      - generic [ref=e1180]: "From:"
+                      - combobox "Select a salary from" [ref=e1181] [cursor=pointer]:
+                        - option "£ Any" [selected]
+                        - option "Up to £10,000"
+                        - option "£12,000"
+                        - option "£14,000"
+                        - option "£16,000"
+                        - option "£18,000"
+                        - option "£20,000"
+                        - option "£22,000"
+                        - option "£24,000"
+                        - option "£26,000"
+                        - option "£28,000"
+                        - option "£30,000"
+                        - option "£32,000"
+                        - option "£34,000"
+                        - option "£36,000"
+                        - option "£38,000"
+                        - option "£40,000"
+                        - option "£42,000"
+                        - option "£44,000"
+                        - option "£46,000"
+                        - option "£48,000"
+                        - option "£50,000"
+                        - option "£55,000"
+                        - option "£60,000"
+                        - option "£65,000"
+                        - option "£70,000"
+                        - option "£75,000"
+                        - option "£80,000"
+                        - option "£85,000"
+                        - option "£90,000"
+                        - option "£95,000"
+                        - option "£100,000+"
+                    - generic [ref=e1182]:
+                      - generic [ref=e1183]: "To:"
+                      - combobox "Select a salary to" [ref=e1184] [cursor=pointer]:
+                        - option "£ Any"
+                        - option "Up to £10,000"
+                        - option "£12,000"
+                        - option "£14,000"
+                        - option "£16,000"
+                        - option "£18,000"
+                        - option "£20,000"
+                        - option "£22,000"
+                        - option "£24,000"
+                        - option "£26,000"
+                        - option "£28,000"
+                        - option "£30,000"
+                        - option "£32,000"
+                        - option "£34,000"
+                        - option "£36,000"
+                        - option "£38,000"
+                        - option "£40,000"
+                        - option "£42,000"
+                        - option "£44,000"
+                        - option "£46,000"
+                        - option "£48,000"
+                        - option "£50,000"
+                        - option "£55,000"
+                        - option "£60,000"
+                        - option "£65,000"
+                        - option "£70,000"
+                        - option "£75,000"
+                        - option "£80,000"
+                        - option "£85,000"
+                        - option "£90,000"
+                        - option "£95,000"
+                        - option "£100,000+" [selected]
+                - generic [ref=e1185]:
+                  - button "Job type" [ref=e1187] [cursor=pointer]
+                  - generic [ref=e1188]:
+                    - generic [ref=e1190]:
+                      - checkbox "Permanent(1,470)" [ref=e1191]
+                      - link "Permanent(1,470)":
+                        - /url: /jobs/permanent-it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Permanent
+                        - generic: (1,470)
+                    - generic [ref=e1193]:
+                      - checkbox "Temporary(55)" [ref=e1194]
+                      - link "Temporary(55)":
+                        - /url: /jobs/temporary-it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Temporary
+                        - generic: (55)
+                    - generic [ref=e1196]:
+                      - checkbox "Contract(98)" [ref=e1197]
+                      - link "Contract(98)":
+                        - /url: /jobs/contract-it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Contract
+                        - generic: (98)
+                    - generic [ref=e1199]:
+                      - checkbox "Full-time(1,585)" [ref=e1200]
+                      - link "Full-time(1,585)":
+                        - /url: /jobs/full-time-it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Full-time
+                        - generic: (1,585)
+                    - generic [ref=e1202]:
+                      - checkbox "Part-time(78)" [ref=e1203]
+                      - link "Part-time(78)":
+                        - /url: /jobs/part-time-it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Part-time
+                        - generic: (78)
+                    - generic [ref=e1205]:
+                      - checkbox "Work from home(132)" [ref=e1206]
+                      - link "Work from home(132)":
+                        - /url: /jobs/work-from-home-it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Work from home
+                        - generic: (132)
+                - generic [ref=e1207]:
+                  - button "Posted by" [ref=e1209] [cursor=pointer]
+                  - generic [ref=e1210]:
+                    - generic [ref=e1212]:
+                      - checkbox "Agency(772)" [ref=e1213]
+                      - link "Agency(772)":
+                        - /url: /jobs/agency-it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Agency
+                        - generic: (772)
+                    - generic [ref=e1215]:
+                      - checkbox "Employer(851)" [ref=e1216]
+                      - link "Employer(851)":
+                        - /url: /jobs/direct-it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Employer
+                        - generic: (851)
+                    - generic [ref=e1218]:
+                      - checkbox "Reed" [disabled]
+                      - link "Reed":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&orgId=1
+                - generic [ref=e1219]:
+                  - button "Hide" [ref=e1221] [cursor=pointer]
+                  - generic [ref=e1222]:
+                    - generic [ref=e1225]:
+                      - checkbox "Jobs without salary displayed" [ref=e1226]
+                      - link "Jobs without salary displayed":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&excludeSalaryDescriptions=16%2C32%2C64
+                    - generic [ref=e1228]:
+                      - generic [ref=e1229]:
+                        - checkbox "Training courses(119)" [ref=e1230]
+                        - link "Training courses(119)":
+                          - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&hideTrainingJobs=true&dateCreatedOffSet=lastthreedays
+                          - text: Training courses
+                          - generic: (119)
+                      - img [ref=e1232]
+                    - generic [ref=e1235]:
+                      - generic [ref=e1236]:
+                        - checkbox "Survey jobs" [ref=e1237]
+                        - link "Survey jobs":
+                          - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&hideSurveyJobs=true&dateCreatedOffSet=lastthreedays
+                      - img [ref=e1239]
+                - generic [ref=e1241]:
+                  - button "Date posted" [ref=e1243] [cursor=pointer]
+                  - combobox "Select date posted within" [ref=e1246] [cursor=pointer]:
+                    - option "Anytime"
+                    - option "Today (301)"
+                    - option "Last three days (1,623)" [selected]
+                    - option "Last week (2,017)"
+                    - option "Last two weeks (3,154)"
+                - generic [ref=e1247]:
+                  - button "Specialisms" [ref=e1249] [cursor=pointer]
+                  - generic [ref=e1250]:
+                    - generic [ref=e1252]:
+                      - checkbox "IT & Telecoms(504)" [ref=e1253]
+                      - link "IT & Telecoms(504)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=52
+                        - text: IT & Telecoms
+                        - generic: (504)
+                    - generic [ref=e1255]:
+                      - checkbox "Strategy & Consultancy(131)" [ref=e1256]
+                      - link "Strategy & Consultancy(131)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1755
+                        - text: Strategy & Consultancy
+                        - generic: (131)
+                    - generic [ref=e1258]:
+                      - checkbox "Banking(122)" [ref=e1259]
+                      - link "Banking(122)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=5
+                        - text: Banking
+                        - generic: (122)
+                    - generic [ref=e1261]:
+                      - checkbox "Education(106)" [ref=e1262]
+                      - link "Education(106)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=68
+                        - text: Education
+                        - generic: (106)
+                    - generic [ref=e1264]:
+                      - checkbox "Accountancy (Qualified)(64)" [ref=e1265]
+                      - link "Accountancy (Qualified)(64)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=100
+                        - text: Accountancy (Qualified)
+                        - generic: (64)
+                    - generic [ref=e1267]:
+                      - checkbox "Retail(55)" [ref=e1268]
+                      - link "Retail(55)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=90
+                        - text: Retail
+                        - generic: (55)
+                    - generic [ref=e1270]:
+                      - checkbox "Admin, Secretarial & PA(48)" [ref=e1271]
+                      - link "Admin, Secretarial & PA(48)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=3
+                        - text: Admin, Secretarial & PA
+                        - generic: (48)
+                    - generic [ref=e1273]:
+                      - checkbox "Transport & Logistics(42)" [ref=e1274]
+                      - link "Transport & Logistics(42)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=11
+                        - text: Transport & Logistics
+                        - generic: (42)
+                    - generic [ref=e1276]:
+                      - checkbox "Human Resources(42)" [ref=e1277]
+                      - link "Human Resources(42)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=24
+                        - text: Human Resources
+                        - generic: (42)
+                    - generic [ref=e1279]:
+                      - checkbox "Sales(42)" [ref=e1280]
+                      - link "Sales(42)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=30
+                        - text: Sales
+                        - generic: (42)
+                    - generic [ref=e1282]:
+                      - checkbox "Financial Services(41)" [ref=e1283]
+                      - link "Financial Services(41)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=117
+                        - text: Financial Services
+                        - generic: (41)
+                    - generic [ref=e1285]:
+                      - checkbox "Construction & Property(39)" [ref=e1286]
+                      - link "Construction & Property(39)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=146
+                        - text: Construction & Property
+                        - generic: (39)
+                    - generic [ref=e1288]:
+                      - checkbox "Hospitality & Catering(32)" [ref=e1289]
+                      - link "Hospitality & Catering(32)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=6
+                        - text: Hospitality & Catering
+                        - generic: (32)
+                    - generic [ref=e1291]:
+                      - checkbox "Engineering(31)" [ref=e1292]
+                      - link "Engineering(31)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=12
+                        - text: Engineering
+                        - generic: (31)
+                    - generic [ref=e1294]:
+                      - checkbox "Estate Agency(31)" [ref=e1295]
+                      - link "Estate Agency(31)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1962
+                        - text: Estate Agency
+                        - generic: (31)
+                    - generic [ref=e1297]:
+                      - checkbox "Legal(28)" [ref=e1298]
+                      - link "Legal(28)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=101
+                        - text: Legal
+                        - generic: (28)
+                    - generic [ref=e1300]:
+                      - checkbox "Marketing & PR(27)" [ref=e1301]
+                      - link "Marketing & PR(27)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=18
+                        - text: Marketing & PR
+                        - generic: (27)
+                    - generic [ref=e1303]:
+                      - checkbox "Health & Medicine(26)" [ref=e1304]
+                      - link "Health & Medicine(26)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=36
+                        - text: Health & Medicine
+                        - generic: (26)
+                    - generic [ref=e1306]:
+                      - checkbox "Accountancy(25)" [ref=e1307]
+                      - link "Accountancy(25)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=2
+                        - text: Accountancy
+                        - generic: (25)
+                    - generic [ref=e1309]:
+                      - checkbox "Customer Service(25)" [ref=e1310]
+                      - link "Customer Service(25)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=66
+                        - text: Customer Service
+                        - generic: (25)
+                    - generic [ref=e1312]:
+                      - checkbox "General Insurance(22)" [ref=e1313]
+                      - link "General Insurance(22)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=16
+                        - text: General Insurance
+                        - generic: (22)
+                    - generic [ref=e1315]:
+                      - checkbox "Social Care(21)" [ref=e1316]
+                      - link "Social Care(21)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=34
+                        - text: Social Care
+                        - generic: (21)
+                    - generic [ref=e1318]:
+                      - checkbox "Recruitment Consultancy(18)" [ref=e1319]
+                      - link "Recruitment Consultancy(18)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=338
+                        - text: Recruitment Consultancy
+                        - generic: (18)
+                    - generic [ref=e1321]:
+                      - checkbox "Security & Safety(14)" [ref=e1322]
+                      - link "Security & Safety(14)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1963
+                        - text: Security & Safety
+                        - generic: (14)
+                    - generic [ref=e1324]:
+                      - checkbox "Charity & Voluntary(14)" [ref=e1325]
+                      - link "Charity & Voluntary(14)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=500
+                        - text: Charity & Voluntary
+                        - generic: (14)
+                    - generic [ref=e1327]:
+                      - checkbox "Media, Digital & Creative(14)" [ref=e1328]
+                      - link "Media, Digital & Creative(14)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=71
+                        - text: Media, Digital & Creative
+                        - generic: (14)
+                    - generic [ref=e1330]:
+                      - checkbox "FMCG(11)" [ref=e1331]
+                      - link "FMCG(11)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1722
+                        - text: FMCG
+                        - generic: (11)
+                    - generic [ref=e1333]:
+                      - checkbox "Leisure & Tourism(10)" [ref=e1334]
+                      - link "Leisure & Tourism(10)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=92
+                        - text: Leisure & Tourism
+                        - generic: (10)
+                    - generic [ref=e1336]:
+                      - checkbox "Purchasing(9)" [ref=e1337]
+                      - link "Purchasing(9)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=27
+                        - text: Purchasing
+                        - generic: (9)
+                    - generic [ref=e1339]:
+                      - checkbox "Energy(9)" [ref=e1340]
+                      - link "Energy(9)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1961
+                        - text: Energy
+                        - generic: (9)
+                    - generic [ref=e1342]:
+                      - checkbox "Motoring & Automotive(6)" [ref=e1343]
+                      - link "Motoring & Automotive(6)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1700
+                        - text: Motoring & Automotive
+                        - generic: (6)
+                    - generic [ref=e1345]:
+                      - checkbox "Manufacturing(4)" [ref=e1346]
+                      - link "Manufacturing(4)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=168
+                        - text: Manufacturing
+                        - generic: (4)
+                    - generic [ref=e1348]:
+                      - checkbox "Other(3)" [ref=e1349]
+                      - link "Other(3)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=21
+                        - text: Other
+                        - generic: (3)
+                    - generic [ref=e1351]:
+                      - checkbox "Graduate Training & Internships(3)" [ref=e1352]
+                      - link "Graduate Training & Internships(3)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=169
+                        - text: Graduate Training & Internships
+                        - generic: (3)
+                    - generic [ref=e1354]:
+                      - checkbox "Scientific(2)" [ref=e1355]
+                      - link "Scientific(2)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=89
+                        - text: Scientific
+                        - generic: (2)
+                    - generic [ref=e1357]:
+                      - checkbox "Training(1)" [ref=e1358]
+                      - link "Training(1)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1909
+                        - text: Training
+                        - generic: (1)
+                    - generic [ref=e1360]:
+                      - checkbox "Apprenticeships(1)" [ref=e1361]
+                      - link "Apprenticeships(1)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1964
+                        - text: Apprenticeships
+                        - generic: (1)
+                - generic [ref=e1362]:
+                  - button "Experience level" [ref=e1364] [cursor=pointer]
+                  - generic [ref=e1368]:
+                    - checkbox "Graduate" [ref=e1369]
+                    - link "Graduate":
+                      - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&graduate=true&dateCreatedOffSet=lastthreedays
+                - generic [ref=e1370]:
+                  - button "More options" [ref=e1372] [cursor=pointer]
+                  - generic [ref=e1373]:
+                    - generic [ref=e1376]:
+                      - checkbox "Early bird(153)" [ref=e1377]
+                      - link "Early bird(153)":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&isEarlyBird=true
+                        - text: Early bird
+                        - generic: (153)
+                    - generic [ref=e1380]:
+                      - checkbox "Easy apply" [ref=e1381]
+                      - link "Easy apply":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&isEasyApply=true
+                    - generic [ref=e1384]:
+                      - checkbox "Visa sponsorship" [disabled]
+                      - link "Visa sponsorship":
+                        - /url: /jobs/it-technician-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&visaSponsorship=true
+                - generic [ref=e1385]:
+                  - generic [ref=e1386]: Locations
+                  - list [ref=e1387]:
+                    - listitem [ref=e1388]:
+                      - link "South West London (19)" [ref=e1389] [cursor=pointer]:
+                        - /url: /jobs/it-technician-jobs-in-south-west-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: South West London
+                        - generic [ref=e1390]: (19)
+                    - listitem [ref=e1391]:
+                      - link "SunburyonThames (18)" [ref=e1392] [cursor=pointer]:
+                        - /url: /jobs/it-technician-jobs-in-sunburyonthames?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: SunburyonThames
+                        - generic [ref=e1393]: (18)
+                    - listitem [ref=e1394]:
+                      - link "East London (14)" [ref=e1395] [cursor=pointer]:
+                        - /url: /jobs/it-technician-jobs-in-east-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: East London
+                        - generic [ref=e1396]: (14)
+                    - listitem [ref=e1397]:
+                      - link "Watford (9)" [ref=e1398] [cursor=pointer]:
+                        - /url: /jobs/it-technician-jobs-in-watford?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Watford
+                        - generic [ref=e1399]: (9)
+                    - listitem [ref=e1400]:
+                      - link "Harlow (8)" [ref=e1401] [cursor=pointer]:
+                        - /url: /jobs/it-technician-jobs-in-harlow?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Harlow
+                        - generic [ref=e1402]: (8)
+                  - button "See more locations" [ref=e1403] [cursor=pointer]
+                - link "View all jobs in london Chevron" [ref=e1405] [cursor=pointer]:
+                  - /url: /jobs/jobs-in-london
+                  - text: View all jobs in london
+                  - img "Chevron" [ref=e1406]
+            - generic [ref=e1409]:
+              - heading "It Technician courses" [level=3] [ref=e1411]
+              - generic [ref=e1412]:
+                - list [ref=e1413]:
+                  - listitem [ref=e1414]:
+                    - link "Data Analytics Training Online, Self-paced £19" [ref=e1415] [cursor=pointer]:
+                      - /url: /courses/data-analytics-training/348807?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=It_Technician_courses_348807
+                      - heading "Data Analytics Training" [level=4] [ref=e1416]
+                      - paragraph [ref=e1417]: Online, Self-paced
+                      - paragraph [ref=e1418]: £19
+                  - listitem [ref=e1419]:
+                    - link "BTEC ICT Specialist Diploma Level 3 - No Attendance Required Online, Self-paced £649 - £995" [ref=e1420] [cursor=pointer]:
+                      - /url: /courses/btec-ict-specialist-diploma-level-3-no-attendance-required/213469?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=It_Technician_courses_213469
+                      - heading "BTEC ICT Specialist Diploma Level 3 - No Attendance Required" [level=4] [ref=e1421]
+                      - paragraph [ref=e1422]: Online, Self-paced
+                      - paragraph [ref=e1423]: £649 - £995
+                  - listitem [ref=e1424]:
+                    - link "IT Support Technician - CPD Certified Online, Self-paced £39" [ref=e1425] [cursor=pointer]:
+                      - /url: /courses/it-support-technician-cpd-certified/299961?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=It_Technician_courses_299961
+                      - heading "IT Support Technician - CPD Certified" [level=4] [ref=e1426]
+                      - paragraph [ref=e1427]: Online, Self-paced
+                      - paragraph [ref=e1428]: £39
+                - link "View Microsoft Excel courses Chevron" [ref=e1429] [cursor=pointer]:
+                  - /url: https://www.reed.co.uk/courses/all?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=view_It_Technician_courses
+                  - text: View Microsoft Excel courses
+                  - img "Chevron" [ref=e1430]
+    - contentinfo [ref=e1434]:
+      - generic [ref=e1436]:
+        - navigation [ref=e1437]:
+          - button "JOBS" [ref=e1439] [cursor=pointer]
+          - list [ref=e1442]:
+            - listitem [ref=e1443]:
+              - link "Contact us" [ref=e1444] [cursor=pointer]:
+                - /url: /enquiries
+            - listitem [ref=e1445]:
+              - link "Job search" [ref=e1446] [cursor=pointer]:
+                - /url: /jobs
+            - listitem [ref=e1447]:
+              - link "Recruiter directory" [ref=e1448] [cursor=pointer]:
+                - /url: /recruiterdirectory
+            - listitem [ref=e1449]:
+              - link "Work from home" [ref=e1450] [cursor=pointer]:
+                - /url: /jobs/work-from-home-jobs
+            - listitem [ref=e1451]:
+              - link "Browse jobs" [ref=e1452] [cursor=pointer]:
+                - /url: /popularjobs
+            - listitem [ref=e1453]:
+              - link "Browse locations" [ref=e1454] [cursor=pointer]:
+                - /url: /location
+            - listitem [ref=e1455]:
+              - link "Popular searches" [ref=e1456] [cursor=pointer]:
+                - /url: /popularsearches
+            - listitem [ref=e1457]:
+              - link "Career advice" [ref=e1458] [cursor=pointer]:
+                - /url: /career-advice
+            - listitem [ref=e1459]:
+              - link "Tax calculator" [ref=e1460] [cursor=pointer]:
+                - /url: /tax-calculator
+            - listitem [ref=e1461]:
+              - link "Average salary checker" [ref=e1462] [cursor=pointer]:
+                - /url: /average-salary
+            - listitem [ref=e1463]:
+              - link "Help" [ref=e1464] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e1465]:
+              - link "Contact a REED office" [ref=e1466] [cursor=pointer]:
+                - /url: https://www.reed.com/offices
+            - listitem [ref=e1467]:
+              - link "Sitemap" [ref=e1468] [cursor=pointer]:
+                - /url: /html-sitemap
+        - navigation [ref=e1469]:
+          - button "RECRUITER" [ref=e1471] [cursor=pointer]
+          - list [ref=e1474]:
+            - listitem [ref=e1475]:
+              - link "Recruiter site" [ref=e1476] [cursor=pointer]:
+                - /url: /recruiter?directjob=recruiter
+            - listitem [ref=e1477]:
+              - link "Post a job" [ref=e1478] [cursor=pointer]:
+                - /url: /recruiter/post-a-job?directjob=recruiter
+            - listitem [ref=e1479]:
+              - link "CV Search" [ref=e1480] [cursor=pointer]:
+                - /url: /recruiter/cv-search?directjob=recruiter
+            - listitem [ref=e1481]:
+              - link "Recruitment agencies" [ref=e1482] [cursor=pointer]:
+                - /url: /recruiter/recruitment-agencies?directjob=recruiter
+            - listitem [ref=e1483]:
+              - link "Recruiter Advice" [ref=e1484] [cursor=pointer]:
+                - /url: /recruiter-advice/?directjob=recruiter
+        - navigation [ref=e1485]:
+          - button "COURSES" [ref=e1487] [cursor=pointer]
+          - list [ref=e1490]:
+            - listitem [ref=e1491]:
+              - link "Help" [ref=e1492] [cursor=pointer]:
+                - /url: /courses/help
+            - listitem [ref=e1493]:
+              - link "Contact us" [ref=e1494] [cursor=pointer]:
+                - /url: /courses/contact-us
+            - listitem [ref=e1495]:
+              - link "Find a course" [ref=e1496] [cursor=pointer]:
+                - /url: /courses/
+            - listitem [ref=e1497]:
+              - link "View all subjects" [ref=e1498] [cursor=pointer]:
+                - /url: /courses/directory
+            - listitem [ref=e1499]:
+              - link "Discount courses" [ref=e1500] [cursor=pointer]:
+                - /url: /courses/discount
+            - listitem [ref=e1501]:
+              - link "Free courses" [ref=e1502] [cursor=pointer]:
+                - /url: /courses/free
+            - listitem [ref=e1503]:
+              - link "Awarding body directory" [ref=e1504] [cursor=pointer]:
+                - /url: /courses/awarding-bodies
+            - listitem [ref=e1505]:
+              - link "Career guides" [ref=e1506] [cursor=pointer]:
+                - /url: /courses/career-guides
+            - listitem [ref=e1507]:
+              - link "Advertise a course" [ref=e1508] [cursor=pointer]:
+                - /url: /courses/providers/
+            - listitem [ref=e1509]:
+              - link "Courses sitemap" [ref=e1510] [cursor=pointer]:
+                - /url: /courses/html-sitemap
+        - navigation [ref=e1511]:
+          - button "MORE FROM Reed.co.uk" [ref=e1513] [cursor=pointer]
+          - list [ref=e1516]:
+            - listitem [ref=e1517]:
+              - link "About us" [ref=e1518] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e1519]:
+              - link "Careers at Reed.co.uk" [ref=e1520] [cursor=pointer]:
+                - /url: https://www.reed.com/careers/jobs?businessDivision=Reed.co.uk
+            - listitem [ref=e1521]:
+              - link "Press office" [ref=e1522] [cursor=pointer]:
+                - /url: /press-office
+            - listitem [ref=e1523]:
+              - link "Corporate governance" [ref=e1524] [cursor=pointer]:
+                - /url: /corporate-governance
+            - listitem [ref=e1525]:
+              - link "Modern slavery statement" [ref=e1526] [cursor=pointer]:
+                - /url: https://www.reed.co.uk/cdn/jobseeker/pdf/Reed_MSA_Statement.pdf
+        - navigation [ref=e1527]:
+          - button "REED" [ref=e1529] [cursor=pointer]
+          - list [ref=e1532]:
+            - listitem [ref=e1533]:
+              - 'link "Tempzone: timesheets & holiday" [ref=e1534] [cursor=pointer]':
+                - /url: https://candidate.reed.co.uk/candlogin.asp
+            - listitem [ref=e1535]:
+              - link "Authorise timesheets" [ref=e1536] [cursor=pointer]:
+                - /url: https://client.reed.co.uk/
+            - listitem [ref=e1537]:
+              - link "Reed Group Services" [ref=e1538] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e1539]:
+              - link "Reed Specialist Recruitment" [ref=e1540] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e1541]:
+              - link "Reed in Partnership" [ref=e1542] [cursor=pointer]:
+                - /url: https://www.reedinpartnership.co.uk/
+            - listitem [ref=e1543]:
+              - link "Careers with REED" [ref=e1544] [cursor=pointer]:
+                - /url: https://www.reed.com/careers
+            - listitem [ref=e1545]:
+              - link "James Reed - Official Site" [ref=e1546] [cursor=pointer]:
+                - /url: /james-reed/
+            - listitem [ref=e1547]:
+              - 'link "Podcast - James Reed: all about business" [ref=e1548] [cursor=pointer]':
+                - /url: https://www.reed.com/podcasts
+            - listitem [ref=e1549]:
+              - link "ESG & sustainability" [ref=e1550] [cursor=pointer]:
+                - /url: https://www.reed.com/esg-and-sustainability
+      - generic [ref=e1552]:
+        - generic [ref=e1553]:
+          - generic [ref=e1555]:
+            - link "PhilCo" [ref=e1556] [cursor=pointer]:
+              - /url: https://philco.org.uk/
+              - img "PhilCo" [ref=e1557]
+            - generic [ref=e1558]: Learn how Reed is leading the way in philanthropy
+          - img "Love Mondays" [ref=e1560]
+        - generic [ref=e1561]:
+          - generic [ref=e1562]:
+            - 'link "James Reed: all about business" [ref=e1563] [cursor=pointer]':
+              - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+              - 'img "James Reed: all about business" [ref=e1564]'
+            - generic [ref=e1565]:
+              - heading "Introducing our new podcast New" [level=3] [ref=e1566]:
+                - text: Introducing our new podcast
+                - generic [ref=e1567]: New
+              - paragraph [ref=e1568]: "James Reed: all about business"
+              - link "Listen here" [ref=e1569] [cursor=pointer]:
+                - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+          - generic [ref=e1570]:
+            - generic [ref=e1571]:
+              - generic [ref=e1572]:
+                - link "Download on the App Store" [ref=e1573] [cursor=pointer]:
+                  - /url: https://itunes.apple.com/GB/app/id1040443949?mt=8
+                  - img "Download on the App Store" [ref=e1574]
+                - link "Get it on Google Play" [ref=e1575] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.reedcouk.jobs&referrer=af_tranid%3D_HgKgkJ-aFiIn4G5iigdZQ%26pid%3DWebsite_Footer%26utm_source%3DWebsite_Footer
+                  - img "Get it on Google Play" [ref=e1576]
+              - generic [ref=e1577]:
+                - link "Facebook" [ref=e1578] [cursor=pointer]:
+                  - /url: https://www.facebook.com/reedcouk
+                  - img "Facebook" [ref=e1579]
+                - link "Instagram" [ref=e1580] [cursor=pointer]:
+                  - /url: https://www.instagram.com/reedcouk/
+                  - img "Instagram" [ref=e1581]
+                - link "Tiktok" [ref=e1582] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@reedjobs
+                  - img "Tiktok" [ref=e1583]
+            - list [ref=e1584]:
+              - listitem [ref=e1585]:
+                - button "Manage Preferences" [ref=e1586] [cursor=pointer]
+                - text: ","
+              - listitem [ref=e1587]:
+                - link "Security, Privacy, Terms & Conditions" [ref=e1588] [cursor=pointer]:
+                  - /url: /policies
+            - paragraph [ref=e1589]: COPYRIGHT © Reed.co.uk 2026
+  - alert [ref=e1590]

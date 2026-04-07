@@ -1,0 +1,3 @@
+[    9480ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://henryade.onrender.com/favicon.ico:0
+[   16250ms] TypeError: Cannot read properties of null (reading 'style')
+    at refreshAll (https://henryade.onrender.com/:445:41)

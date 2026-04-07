@@ -1,0 +1,36 @@
+[     816ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:14:38.280Z Invalid eventBatchSize undefined, defaulting to 10 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-23:1
+[     816ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:14:38.280Z Invalid eventFlushInterval undefined, defaulting to 1000 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-23:1
+[     887ms] [WARNING] Datadog Browser SDK: SDK is loaded more than once. This is unsupported and might have unexpected behavior. @ https://www.totaljobs.com/application/process-renderer/assets/main.e8011ca9474037069869.js:1
+[    1952ms] SyntaxError: Failed to execute 'json' on 'Response': Unexpected end of JSON input
+    at s (https://www.totaljobs.com/application/process-renderer/assets/main.e8011ca9474037069869.js:2:231989)
+[    2117ms] Uncaught The pagetype parameter is required when you include the prodid parameter.
+    at UET.throwError (https://bat.bing.com/bat.js:0:26126)
+    at UET.validateDataObjectNew (https://bat.bing.com/bat.js:0:31565)
+    at UET.evt (https://bat.bing.com/bat.js:0:35110)
+    at UET._push (https://bat.bing.com/bat.js:0:16964)
+    at UET.checkuetHostdocumentload (https://bat.bing.com/bat.js:0:7903)
+    at UET.containerCheckLoad (https://bat.bing.com/bat.js:0:54229)
+    at UET.containerOnLoad (https://bat.bing.com/bat.js:0:53968)
+[    2220ms] [WARNING] [Meta Pixel] - Duplicate Pixel ID: 665267016975562. @ https://connect.facebook.net/en_US/fbevents.js:175
+[    2369ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/c0f3d7ac-b816-48ca-b3ee-e86ae4fb6eff/application/dynamic-apply?workflow=SingleApply&locale=en_GB:0
+[    2369ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/c0f3d7ac-b816-48ca-b3ee-e86ae4fb6eff/application/dynamic-apply?workflow=SingleApply&locale=en_GB:0
+[    2370ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/c0f3d7ac-b816-48ca-b3ee-e86ae4fb6eff/application/dynamic-apply?workflow=SingleApply&locale=en_GB:0
+[    2370ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/c0f3d7ac-b816-48ca-b3ee-e86ae4fb6eff/application/dynamic-apply?workflow=SingleApply&locale=en_GB:0
+[   20243ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:14:57.708Z Invalid eventBatchSize undefined, defaulting to 10 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-23:1
+[   20244ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:14:57.708Z Invalid eventFlushInterval undefined, defaulting to 1000 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-23:1
+[   20482ms] [WARNING] Datadog Browser SDK: SDK is loaded more than once. This is unsupported and might have unexpected behavior. @ https://www.totaljobs.com/application/process-renderer/assets/confirmation.1014290052c280cc8044.js:1
+[   21624ms] Uncaught The pagetype parameter is required when you include the prodid parameter.
+    at UET.throwError (https://bat.bing.com/bat.js:0:26126)
+    at UET.validateDataObjectNew (https://bat.bing.com/bat.js:0:31565)
+    at UET.evt (https://bat.bing.com/bat.js:0:35110)
+    at UET._push (https://bat.bing.com/bat.js:0:16964)
+    at UET.checkuetHostdocumentload (https://bat.bing.com/bat.js:0:7903)
+    at UET.containerCheckLoad (https://bat.bing.com/bat.js:0:54229)
+    at UET.containerOnLoad (https://bat.bing.com/bat.js:0:53968)
+[   21652ms] [WARNING] [Meta Pixel] - Duplicate Pixel ID: 665267016975562. @ https://connect.facebook.net/en_US/fbevents.js:175
+[   21814ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/c0f3d7ac-b816-48ca-b3ee-e86ae4fb6eff/application/confirmation/success?userFlow=Single&locale=en_GB&applicationId=df123f53-af83-4361-9428-6806dfa8587f:0
+[   21814ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/c0f3d7ac-b816-48ca-b3ee-e86ae4fb6eff/application/confirmation/success?userFlow=Single&locale=en_GB&applicationId=df123f53-af83-4361-9428-6806dfa8587f:0
+[   29321ms] [WARNING] The resource https://www.totaljobs.com/sharedassets/@stepstone-genesis/fonts/core/Relative-Bold-Pro.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://www.totaljobs.com/job/c0f3d7ac-b816-48ca-b3ee-e86ae4fb6eff/application/confirmation/success?userFlow=Single&locale=en_GB&applicationId=df123f53-af83-4361-9428-6806dfa8587f:0
+[   29321ms] [WARNING] The resource https://www.totaljobs.com/sharedassets/@stepstone-genesis/fonts/core/Relative-Medium-Pro.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://www.totaljobs.com/job/c0f3d7ac-b816-48ca-b3ee-e86ae4fb6eff/application/confirmation/success?userFlow=Single&locale=en_GB&applicationId=df123f53-af83-4361-9428-6806dfa8587f:0
+[   29322ms] [WARNING] The resource https://www.totaljobs.com/sharedassets/@stepstone-genesis/fonts/core/Relative-Book-Pro.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://www.totaljobs.com/job/c0f3d7ac-b816-48ca-b3ee-e86ae4fb6eff/application/confirmation/success?userFlow=Single&locale=en_GB&applicationId=df123f53-af83-4361-9428-6806dfa8587f:0
+[   29322ms] [WARNING] The resource https://www.totaljobs.com/sharedassets/@stepstone-genesis/fonts/core/fonts.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://www.totaljobs.com/job/c0f3d7ac-b816-48ca-b3ee-e86ae4fb6eff/application/confirmation/success?userFlow=Single&locale=en_GB&applicationId=df123f53-af83-4361-9428-6806dfa8587f:0

@@ -1,0 +1,80 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - heading "⚡ BETTING MODEL DASHBOARD" [level=1] [ref=e3]
+    - generic [ref=e4]:
+      - generic [ref=e5]: "Tokens Left: 14283"
+      - generic [ref=e6]: "Used: 5717"
+      - generic [ref=e7]: "Cache: NaNm ago (30) · 14283 tokens left"
+      - button "↻ Cache" [ref=e8] [cursor=pointer]
+      - button "⚡ Refresh" [ref=e9] [cursor=pointer]
+  - generic [ref=e10]:
+    - generic [ref=e11] [cursor=pointer]: All Value Bets
+    - generic [ref=e12] [cursor=pointer]: 💰 Safe Bets
+    - generic [ref=e13] [cursor=pointer]: ⚽ Soccer
+    - generic [ref=e14] [cursor=pointer]: 🏀 NBA
+    - generic [ref=e15] [cursor=pointer]: 🏈 NFL
+    - generic [ref=e16] [cursor=pointer]: 🏒 NHL
+    - generic [ref=e17] [cursor=pointer]: ⚾ MLB
+    - generic [ref=e18] [cursor=pointer]: 📊 History
+  - generic [ref=e1855]:
+    - generic [ref=e1856]: 💰 SAFE BETS — All Sports (3 picks)
+    - paragraph [ref=e1857]: Stats + odds + history all agree. These are the most winnable props across all loaded sports.
+    - generic [ref=e1858]:
+      - generic [ref=e1859]:
+        - generic [ref=e1860]:
+          - generic [ref=e1861]: 💰 SAFE
+          - generic [ref=e1862]: 🏀 NBA
+        - generic [ref=e1863]: P.J. Washington
+        - generic [ref=e1864]: THREES · Dallas Mavericks vs Los Angeles Lakers
+        - generic [ref=e1865]: "1.5"
+        - generic [ref=e1866]:
+          - generic [ref=e1867]: UNDER
+          - generic [ref=e1868]: 63.2%
+        - generic [ref=e1869]:
+          - generic [ref=e1870]:
+            - text: "Model: 60% / Book: 63% →"
+            - strong [ref=e1871]: "-3.3% edge"
+          - generic [ref=e1872]: No bet
+        - generic [ref=e1873]:
+          - generic [ref=e1874]: 🎲 60% model probability
+          - generic [ref=e1875]: ✅ Hit in 60% of last 5 games
+          - generic [ref=e1876]: 7 books ·
+      - generic [ref=e1877]:
+        - generic [ref=e1878]:
+          - generic [ref=e1879]: 💰 SAFE
+          - generic [ref=e1880]: 🏀 NBA
+        - generic [ref=e1881]: Draymond Green
+        - generic [ref=e1882]: THREES · Golden State Warriors vs Houston Rockets
+        - generic [ref=e1883]: "1.5"
+        - generic [ref=e1884]:
+          - generic [ref=e1885]: OVER
+          - generic [ref=e1886]: 59.4%
+        - generic [ref=e1887]:
+          - generic [ref=e1888]:
+            - text: "Model: 59% / Book: 44% →"
+            - strong [ref=e1889]: +15.7% edge
+          - generic [ref=e1890]: 5.0%
+        - generic [ref=e1891]:
+          - generic [ref=e1892]: 🎲 59% model probability
+          - generic [ref=e1893]: ✅ Hit in 60% of last 5 games
+          - generic [ref=e1894]: 7 books · 🎯 Consistent
+      - generic [ref=e1895]:
+        - generic [ref=e1896]:
+          - generic [ref=e1897]: 💰 SAFE
+          - generic [ref=e1898]: 🏀 NBA
+        - generic [ref=e1899]: Gui Santos
+        - generic [ref=e1900]: THREES · Golden State Warriors vs Houston Rockets
+        - generic [ref=e1901]: "1.5"
+        - generic [ref=e1902]:
+          - generic [ref=e1903]: OVER
+          - generic [ref=e1904]: 59.0%
+        - generic [ref=e1905]:
+          - generic [ref=e1906]:
+            - text: "Model: 59% / Book: 46% →"
+            - strong [ref=e1907]: +13.4% edge
+          - generic [ref=e1908]: 5.0%
+        - generic [ref=e1909]:
+          - generic [ref=e1910]: 🎲 59% model probability
+          - generic [ref=e1911]: ✅ Hit in 60% of last 5 games
+          - generic [ref=e1912]: 7 books ·
+  - button "📋 My Picks" [ref=e21] [cursor=pointer]

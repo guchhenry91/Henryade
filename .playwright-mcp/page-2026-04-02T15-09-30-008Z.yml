@@ -1,0 +1,511 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e6]:
+          - link "Reed.co.uk" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Reed.co.uk" [ref=e8]
+          - list [ref=e9]:
+            - listitem [ref=e10]:
+              - link "Jobs" [ref=e11] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e12]: Jobs
+            - listitem [ref=e13]:
+              - link "Courses" [ref=e14] [cursor=pointer]:
+                - /url: /courses/?itm_source=js_navigation&itm_medium=jobseeker&itm_campaign=courses_tab&itm_content=standard_version
+                - generic [ref=e15]: Courses
+            - listitem [ref=e16]:
+              - link "Career advice" [ref=e17] [cursor=pointer]:
+                - /url: /career-advice/
+                - generic [ref=e18]: Career advice
+            - listitem [ref=e19]:
+              - link "Recruiting? Post a job" [ref=e20] [cursor=pointer]:
+                - /url: /recruiter/
+                - generic [ref=e21]:
+                  - text: Recruiting?
+                  - strong [ref=e22]: Post a job
+          - generic [ref=e23]:
+            - link "Register CV" [ref=e24] [cursor=pointer]:
+              - /url: /authentication/register?returnTo=%2Fjobs%2Fit-support-engineer-in-house-efinancialcareers%2F56731197
+            - list [ref=e25]:
+              - listitem [ref=e26]:
+                - link "Saved jobs" [ref=e27] [cursor=pointer]:
+                  - /url: /account/jobs/shortlisted-jobs
+                  - img [ref=e29]
+                  - generic [ref=e31]: Saved jobs
+              - listitem [ref=e32]:
+                - status [ref=e33]:
+                  - img "Loading" [ref=e34]
+      - search [ref=e38]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: What
+            - textbox "e.g. \"sales manager\"" [ref=e44]
+          - generic [ref=e45]:
+            - generic [ref=e46]: Where
+            - generic [ref=e47]:
+              - textbox "town or postcode" [ref=e48]
+              - button "Get current location" [ref=e49] [cursor=pointer]:
+                - img [ref=e50]
+          - button "Search jobs" [ref=e54] [cursor=pointer]
+          - link "Browse jobs" [ref=e56] [cursor=pointer]:
+            - /url: /popularjobs
+            - text: Browse jobs
+            - img [ref=e57]
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - link "ArrowSearch results" [ref=e64] [cursor=pointer]:
+            - /url: /jobs/it-support-engineer-in-house---efinancialcareers-jobs-in-london?jobId=56731197
+            - img "Arrow"
+            - text: Search results
+          - list [ref=e66]:
+            - listitem [ref=e67]:
+              - link "Home" [ref=e68] [cursor=pointer]:
+                - /url: /
+            - text: /
+            - listitem [ref=e69]:
+              - text: /
+              - link "Information Technology" [ref=e70] [cursor=pointer]:
+                - /url: /jobs/information-technology-jobs
+            - listitem [ref=e71]:
+              - text: /
+              - link "Engineer" [ref=e72] [cursor=pointer]:
+                - /url: /jobs/engineering-jobs
+            - listitem [ref=e73]:
+              - text: /
+              - link "Support Engineer" [ref=e74] [cursor=pointer]:
+                - /url: /jobs/support-engineer-jobs
+            - listitem [ref=e75]: /Job details
+        - generic [ref=e76]:
+          - generic [ref=e78]:
+            - generic [ref=e80]: New
+            - generic [ref=e81]:
+              - generic [ref=e82]:
+                - heading "IT Support Engineer In-House - eFinancialCareers" [level=1] [ref=e83]
+                - generic [ref=e84]: Yesterday by eFinancialCareers
+              - img "eFinancialCareers jobs" [ref=e86]
+            - list [ref=e87]:
+              - listitem [ref=e88]:
+                - img "Salary" [ref=e89]
+                - text: Competitive salary
+              - listitem [ref=e91]:
+                - img "Location" [ref=e92]
+                - text: London
+              - listitem [ref=e94]:
+                - img "Clock" [ref=e95]
+                - text: Permanent, full-time
+            - generic [ref=e98]:
+              - button "Open in new tabApply now" [disabled]:
+                - img "Open in new tab"
+                - text: Apply now
+              - button "Shortlist job" [disabled]:
+                - img
+                - text: Save
+            - generic [ref=e100]:
+              - paragraph [ref=e101]:
+                - strong [ref=e102]: "Job Title: IT Support Engineer (In-House)"
+              - paragraph [ref=e103]:
+                - strong [ref=e104]: "Location:"
+                - text: Central London (Office-based, Monday–Friday, 9:00–18:00)
+              - paragraph [ref=e105]:
+                - strong [ref=e106]: About Us
+              - paragraph [ref=e107]: We are a dynamic and rapidly growing financial brokerage based in the heart of London. Our mission is to provide exceptional financial services and solutions to our clients, ensuring their financial goals are met and exceeded. As part of our commitment to excellence, we are seeking a motivated and skilled IT Support Engineer to join our team.
+              - paragraph [ref=e108]:
+                - strong [ref=e109]: The Role
+              - paragraph [ref=e110]: You will be responsible for managing and supporting our internal IT environment, acting as the primary point of contact for approximately 20 users. This is a hands-on, in-house role offering a high level of ownership across desktop support, networking, and cloud-based systems.
+              - paragraph [ref=e111]:
+                - strong [ref=e112]: Environment
+              - list [ref=e113]:
+                - listitem [ref=e114]: Cloud-first setup (Microsoft 365, AWS)
+                - listitem [ref=e115]: Hybrid environment (Microsoft 365, AWS, plus some on-premises servers)
+                - listitem [ref=e116]: Office network and firewall infrastructure
+              - paragraph [ref=e117]:
+                - strong [ref=e118]: Key Responsibilities
+              - list [ref=e119]:
+                - listitem [ref=e120]: Provide day-to-day desktop support (Windows / macOS)
+                - listitem [ref=e121]: Set up and configure new starters (devices, accounts, access)
+                - listitem [ref=e122]: Manage onboarding and offboarding processes
+                - listitem [ref=e123]: Provide remote support for users working from home (VPN, connectivity, device issues)
+                - listitem [ref=e124]: Troubleshoot hardware, software, and connectivity issues
+                - listitem [ref=e125]: Build, upgrade, and replace PCs and laptops
+                - listitem [ref=e126]: Manage and support office network and firewall
+                - listitem [ref=e127]: Administer Microsoft 365 (Outlook, Teams, user accounts)
+                - listitem [ref=e128]: Assist with AWS cloud environment (basic administration)
+                - listitem [ref=e129]: Manage user accounts (Azure AD / Entra ID)
+                - listitem [ref=e130]: Maintain IT security processes (MFA, access control, device compliance)
+                - listitem [ref=e131]: Maintain asset inventory and device tracking
+                - listitem [ref=e132]: Install, update, and patch software and systems
+                - listitem [ref=e133]: Support printers, meeting rooms, and office technology
+                - listitem [ref=e134]: Document systems and internal processes
+                - listitem [ref=e135]: Work with third-party suppliers (telephony, internet, hardware vendors)
+              - paragraph [ref=e136]:
+                - strong [ref=e137]: Requirements
+              - list [ref=e138]:
+                - listitem [ref=e139]: 2–5 years’ experience in IT support or similar role
+                - listitem [ref=e140]: Strong troubleshooting skills across hardware and software
+                - listitem [ref=e141]: Experience with Microsoft 365 and Outlook
+                - listitem [ref=e142]: Good understanding of networking and firewalls
+                - listitem [ref=e143]: Exposure to cloud platforms (AWS or similar)
+                - listitem [ref=e144]: Understanding of IT security fundamentals
+                - listitem [ref=e145]: Strong communication skills and user-focused approach
+                - listitem [ref=e146]: Comfortable working independently in a small environment
+              - paragraph [ref=e147]: If you are looking for a hands-on role where you can take ownership of IT and make a real impact within a growing business, we would love to hear from you.
+            - group [ref=e148]:
+              - button "shareShare" [ref=e151] [cursor=pointer]:
+                - img "share" [ref=e152]
+                - text: Share
+              - generic [ref=e154]:
+                - button "EyeHide" [disabled]:
+                  - img "Eye"
+                  - text: Hide
+          - generic [ref=e155]:
+            - banner [ref=e156]:
+              - heading "Create alerts for similar jobs" [level=2] [ref=e157]
+            - generic [ref=e159]:
+              - generic [ref=e160]:
+                - generic [ref=e161]:
+                  - generic [ref=e162]:
+                    - generic [ref=e164]: IT Support Engineer In-House - eFinancialCareers
+                    - generic [ref=e165]: London
+                  - button "Edit" [ref=e166] [cursor=pointer]
+                - generic [ref=e167]:
+                  - generic [ref=e168]: Email address
+                  - textbox "Email address" [ref=e170]
+              - generic [ref=e171]:
+                - button "Create alert" [disabled]:
+                  - generic:
+                    - img
+                  - text: Create alert
+              - generic [ref=e172]:
+                - text: By creating an alert, you agree to the
+                - link "Terms and conditions" [ref=e173] [cursor=pointer]:
+                  - /url: /policies
+                - text: applicable to our service and acknowledge that your personal data will be used in accordance with our
+                - link "Privacy policy" [ref=e174] [cursor=pointer]:
+                  - /url: /policies
+                - text: and you will receive emails and communications about jobs and career related topics.
+          - generic [ref=e175]:
+            - heading "Similar Jobs" [level=3] [ref=e177]
+            - generic [ref=e178]:
+              - link "Shortlist job New Senior Data Analyst - eFinancialCareers Global Yesterday by eFinancialCareers SalaryCompetitive salary LocationLondon ClockPermanent, full-time" [ref=e179] [cursor=pointer]:
+                - /url: /jobs/senior-data-analyst-efinancialcareers-global/56731691?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e180]:
+                      - img [ref=e181]
+                    - generic:
+                      - generic: New
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Senior Data Analyst - eFinancialCareers Global
+                          - generic: Yesterday by eFinancialCareers
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Competitive salary
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job New Linux Operations Engineer - Paris - eFinancialCareers Yesterday by eFinancialCareers SalaryCompetitive salary LocationLondon ClockPermanent, full-time" [ref=e183] [cursor=pointer]:
+                - /url: /jobs/linux-operations-engineer-paris-efinancialcareers/56731135?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e184]:
+                      - img [ref=e185]
+                    - generic:
+                      - generic: New
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Linux Operations Engineer - Paris - eFinancialCareers
+                          - generic: Yesterday by eFinancialCareers
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Competitive salary
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job New C# Developer - Front Office Engineering Hedge Fund - London - eFinancialCareers Yesterday by eFinancialCareers SalaryCompetitive salary LocationLondon ClockPermanent, full-time" [ref=e187] [cursor=pointer]:
+                - /url: /jobs/c-developer-front-office-engineering-hedge-fund-london-efinancialcareers/56733654?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e188]:
+                      - img [ref=e189]
+                    - generic:
+                      - generic: New
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: C# Developer - Front Office Engineering Hedge Fund - London - eFinancialCareers
+                          - generic: Yesterday by eFinancialCareers
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Competitive salary
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Linux Administrator - eFinancialCareers Yesterday by eFinancialCareers SalaryCompetitive salary LocationLondon ClockPermanent, full-time" [ref=e191] [cursor=pointer]:
+                - /url: /jobs/linux-administrator-efinancialcareers/56272368?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e192]:
+                      - img [ref=e193]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Linux Administrator - eFinancialCareers
+                          - generic: Yesterday by eFinancialCareers
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Competitive salary
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+            - link "See more jobs like this" [ref=e196] [cursor=pointer]:
+              - /url: /jobs/support-engineer-jobs
+          - generic [ref=e197]:
+            - generic [ref=e199]: Recommended courses
+            - generic [ref=e200]:
+              - 'link "IT Security: Cyber Security & CompTIA Network+ (AWS, Cisco ASA Firewall) - CPD Certified Online, Self-paced £119" [ref=e201] [cursor=pointer]':
+                - /url: /courses/it-security-cyber-security-comptia-network-aws-cisco-asa-firewall-cpd-certified/332607?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it%20security_courses_332607
+                - generic: "IT Security: Cyber Security & CompTIA Network+ (AWS, Cisco ASA Firewall) - CPD Certified"
+                - generic: Online, Self-paced
+                - generic: £119
+              - link "AWS Cloud Practitioner Essentials Distance Learning with live classes £800" [ref=e202] [cursor=pointer]:
+                - /url: /courses/aws-cloud-practitioner-essentials/541277?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it%20security_courses_541277
+                - generic: AWS Cloud Practitioner Essentials
+                - generic: Distance Learning with live classes
+                - generic: £800
+              - 'link "Cloud : Cloud Computing Online, Self-paced £899" [ref=e203] [cursor=pointer]':
+                - /url: /courses/cloud--cloud-computing/247785?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it%20security_courses_247785
+                - generic: "Cloud : Cloud Computing"
+                - generic: Online, Self-paced
+                - generic: £899
+            - link "View IT security courses" [ref=e205] [cursor=pointer]:
+              - /url: https://www.reed.co.uk/courses/all?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=view_it%20security_courses
+          - generic [ref=e207]:
+            - generic [ref=e208]: Posted by eFinancialCareers
+            - link "View all jobs and profile Chevron" [ref=e209] [cursor=pointer]:
+              - /url: /jobs/efinancial-careers/p74850
+              - generic [ref=e210]: View all jobs and profile
+              - img "Chevron" [ref=e211]
+          - generic [ref=e216]:
+            - generic [ref=e217]: "Reference: 56731197"
+            - generic [ref=e218]:
+              - text: Please note that
+              - link "Reed.co.uk" [ref=e219] [cursor=pointer]:
+                - /url: https://reed.co.uk
+              - text: will never ask you to provide your bank, passport or driving licence details during the application process.
+            - link "Report this job Open in new tab" [ref=e221] [cursor=pointer]:
+              - /url: /enquiries?reportJobRef=56731197
+              - text: Report this job
+              - img "Open in new tab"
+        - complementary [ref=e222]
+    - contentinfo [ref=e223]:
+      - generic [ref=e225]:
+        - navigation [ref=e226]:
+          - button "JOBS" [ref=e228] [cursor=pointer]
+          - list [ref=e231]:
+            - listitem [ref=e232]:
+              - link "Contact us" [ref=e233] [cursor=pointer]:
+                - /url: /enquiries
+            - listitem [ref=e234]:
+              - link "Job search" [ref=e235] [cursor=pointer]:
+                - /url: /jobs
+            - listitem [ref=e236]:
+              - link "Recruiter directory" [ref=e237] [cursor=pointer]:
+                - /url: /recruiterdirectory
+            - listitem [ref=e238]:
+              - link "Work from home" [ref=e239] [cursor=pointer]:
+                - /url: /jobs/work-from-home-jobs
+            - listitem [ref=e240]:
+              - link "Browse jobs" [ref=e241] [cursor=pointer]:
+                - /url: /popularjobs
+            - listitem [ref=e242]:
+              - link "Browse locations" [ref=e243] [cursor=pointer]:
+                - /url: /location
+            - listitem [ref=e244]:
+              - link "Popular searches" [ref=e245] [cursor=pointer]:
+                - /url: /popularsearches
+            - listitem [ref=e246]:
+              - link "Career advice" [ref=e247] [cursor=pointer]:
+                - /url: /career-advice
+            - listitem [ref=e248]:
+              - link "Tax calculator" [ref=e249] [cursor=pointer]:
+                - /url: /tax-calculator
+            - listitem [ref=e250]:
+              - link "Average salary checker" [ref=e251] [cursor=pointer]:
+                - /url: /average-salary
+            - listitem [ref=e252]:
+              - link "Help" [ref=e253] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e254]:
+              - link "Contact a REED office" [ref=e255] [cursor=pointer]:
+                - /url: https://www.reed.com/offices
+            - listitem [ref=e256]:
+              - link "Sitemap" [ref=e257] [cursor=pointer]:
+                - /url: /html-sitemap
+        - navigation [ref=e258]:
+          - button "RECRUITER" [ref=e260] [cursor=pointer]
+          - list [ref=e263]:
+            - listitem [ref=e264]:
+              - link "Recruiter site" [ref=e265] [cursor=pointer]:
+                - /url: /recruiter?directjob=recruiter
+            - listitem [ref=e266]:
+              - link "Post a job" [ref=e267] [cursor=pointer]:
+                - /url: /recruiter/post-a-job?directjob=recruiter
+            - listitem [ref=e268]:
+              - link "CV Search" [ref=e269] [cursor=pointer]:
+                - /url: /recruiter/cv-search?directjob=recruiter
+            - listitem [ref=e270]:
+              - link "Recruitment agencies" [ref=e271] [cursor=pointer]:
+                - /url: /recruiter/recruitment-agencies?directjob=recruiter
+            - listitem [ref=e272]:
+              - link "Recruiter Advice" [ref=e273] [cursor=pointer]:
+                - /url: /recruiter-advice/?directjob=recruiter
+        - navigation [ref=e274]:
+          - button "COURSES" [ref=e276] [cursor=pointer]
+          - list [ref=e279]:
+            - listitem [ref=e280]:
+              - link "Help" [ref=e281] [cursor=pointer]:
+                - /url: /courses/help
+            - listitem [ref=e282]:
+              - link "Contact us" [ref=e283] [cursor=pointer]:
+                - /url: /courses/contact-us
+            - listitem [ref=e284]:
+              - link "Find a course" [ref=e285] [cursor=pointer]:
+                - /url: /courses/
+            - listitem [ref=e286]:
+              - link "View all subjects" [ref=e287] [cursor=pointer]:
+                - /url: /courses/directory
+            - listitem [ref=e288]:
+              - link "Discount courses" [ref=e289] [cursor=pointer]:
+                - /url: /courses/discount
+            - listitem [ref=e290]:
+              - link "Free courses" [ref=e291] [cursor=pointer]:
+                - /url: /courses/free
+            - listitem [ref=e292]:
+              - link "Awarding body directory" [ref=e293] [cursor=pointer]:
+                - /url: /courses/awarding-bodies
+            - listitem [ref=e294]:
+              - link "Career guides" [ref=e295] [cursor=pointer]:
+                - /url: /courses/career-guides
+            - listitem [ref=e296]:
+              - link "Advertise a course" [ref=e297] [cursor=pointer]:
+                - /url: /courses/providers/
+            - listitem [ref=e298]:
+              - link "Courses sitemap" [ref=e299] [cursor=pointer]:
+                - /url: /courses/html-sitemap
+        - navigation [ref=e300]:
+          - button "MORE FROM Reed.co.uk" [ref=e302] [cursor=pointer]
+          - list [ref=e305]:
+            - listitem [ref=e306]:
+              - link "About us" [ref=e307] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e308]:
+              - link "Careers at Reed.co.uk" [ref=e309] [cursor=pointer]:
+                - /url: https://www.reed.com/careers/jobs?businessDivision=Reed.co.uk
+            - listitem [ref=e310]:
+              - link "Press office" [ref=e311] [cursor=pointer]:
+                - /url: /press-office
+            - listitem [ref=e312]:
+              - link "Corporate governance" [ref=e313] [cursor=pointer]:
+                - /url: /corporate-governance
+            - listitem [ref=e314]:
+              - link "Modern slavery statement" [ref=e315] [cursor=pointer]:
+                - /url: https://www.reed.co.uk/cdn/jobseeker/pdf/Reed_MSA_Statement.pdf
+        - navigation [ref=e316]:
+          - button "REED" [ref=e318] [cursor=pointer]
+          - list [ref=e321]:
+            - listitem [ref=e322]:
+              - 'link "Tempzone: timesheets & holiday" [ref=e323] [cursor=pointer]':
+                - /url: https://candidate.reed.co.uk/candlogin.asp
+            - listitem [ref=e324]:
+              - link "Authorise timesheets" [ref=e325] [cursor=pointer]:
+                - /url: https://client.reed.co.uk/
+            - listitem [ref=e326]:
+              - link "Reed Group Services" [ref=e327] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e328]:
+              - link "Reed Specialist Recruitment" [ref=e329] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e330]:
+              - link "Reed in Partnership" [ref=e331] [cursor=pointer]:
+                - /url: https://www.reedinpartnership.co.uk/
+            - listitem [ref=e332]:
+              - link "Careers with REED" [ref=e333] [cursor=pointer]:
+                - /url: https://www.reed.com/careers
+            - listitem [ref=e334]:
+              - link "James Reed - Official Site" [ref=e335] [cursor=pointer]:
+                - /url: /james-reed/
+            - listitem [ref=e336]:
+              - 'link "Podcast - James Reed: all about business" [ref=e337] [cursor=pointer]':
+                - /url: https://www.reed.com/podcasts
+            - listitem [ref=e338]:
+              - link "ESG & sustainability" [ref=e339] [cursor=pointer]:
+                - /url: https://www.reed.com/esg-and-sustainability
+      - generic [ref=e341]:
+        - generic [ref=e342]:
+          - generic [ref=e344]:
+            - link "PhilCo" [ref=e345] [cursor=pointer]:
+              - /url: https://philco.org.uk/
+              - img "PhilCo" [ref=e346]
+            - generic [ref=e347]: Learn how Reed is leading the way in philanthropy
+          - img "Love Mondays" [ref=e349]
+        - generic [ref=e350]:
+          - generic [ref=e351]:
+            - 'link "James Reed: all about business" [ref=e352] [cursor=pointer]':
+              - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+              - 'img "James Reed: all about business" [ref=e353]'
+            - generic [ref=e354]:
+              - heading "Introducing our new podcast New" [level=3] [ref=e355]:
+                - text: Introducing our new podcast
+                - generic [ref=e356]: New
+              - paragraph [ref=e357]: "James Reed: all about business"
+              - link "Listen here" [ref=e358] [cursor=pointer]:
+                - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+          - generic [ref=e359]:
+            - generic [ref=e360]:
+              - generic [ref=e361]:
+                - link "Download on the App Store" [ref=e362] [cursor=pointer]:
+                  - /url: https://itunes.apple.com/GB/app/id1040443949?mt=8
+                  - img "Download on the App Store" [ref=e363]
+                - link "Get it on Google Play" [ref=e364] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.reedcouk.jobs&referrer=af_tranid%3D_HgKgkJ-aFiIn4G5iigdZQ%26pid%3DWebsite_Footer%26utm_source%3DWebsite_Footer
+                  - img "Get it on Google Play" [ref=e365]
+              - generic [ref=e366]:
+                - link "Facebook" [ref=e367] [cursor=pointer]:
+                  - /url: https://www.facebook.com/reedcouk
+                  - img "Facebook" [ref=e368]
+                - link "Instagram" [ref=e369] [cursor=pointer]:
+                  - /url: https://www.instagram.com/reedcouk/
+                  - img "Instagram" [ref=e370]
+                - link "Tiktok" [ref=e371] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@reedjobs
+                  - img "Tiktok" [ref=e372]
+            - list [ref=e373]:
+              - listitem [ref=e374]:
+                - button "Manage Preferences" [ref=e375] [cursor=pointer]
+                - text: ","
+              - listitem [ref=e376]:
+                - link "Security, Privacy, Terms & Conditions" [ref=e377] [cursor=pointer]:
+                  - /url: /policies
+            - paragraph [ref=e378]: COPYRIGHT © Reed.co.uk 2026
+  - alert [ref=e379]

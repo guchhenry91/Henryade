@@ -1,0 +1,595 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e6]:
+          - link "Reed.co.uk" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Reed.co.uk" [ref=e8]
+          - list [ref=e9]:
+            - listitem [ref=e10]:
+              - link "Jobs" [ref=e11] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e12]: Jobs
+            - listitem [ref=e13]:
+              - link "Courses" [ref=e14] [cursor=pointer]:
+                - /url: /courses/?itm_source=js_navigation&itm_medium=jobseeker&itm_campaign=courses_tab&itm_content=standard_version
+                - generic [ref=e15]: Courses
+            - listitem [ref=e16]:
+              - link "Career advice" [ref=e17] [cursor=pointer]:
+                - /url: /career-advice/
+                - generic [ref=e18]: Career advice
+            - listitem [ref=e19]:
+              - link "Recruiting? Post a job" [ref=e20] [cursor=pointer]:
+                - /url: /recruiter/
+                - generic [ref=e21]:
+                  - text: Recruiting?
+                  - strong [ref=e22]: Post a job
+          - generic [ref=e23]:
+            - link "Register CV" [ref=e24] [cursor=pointer]:
+              - /url: /authentication/register?returnTo=%2Fjobs%2Fsenior-it-support%2F56718938
+            - list [ref=e25]:
+              - listitem [ref=e26]:
+                - link "Saved jobs" [ref=e27] [cursor=pointer]:
+                  - /url: /account/jobs/shortlisted-jobs
+                  - img [ref=e29]
+                  - generic [ref=e31]: Saved jobs
+              - listitem [ref=e32]:
+                - status [ref=e33]:
+                  - img "Loading" [ref=e34]
+      - search [ref=e38]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: What
+            - textbox "e.g. \"project manager\"" [ref=e44]
+          - generic [ref=e45]:
+            - generic [ref=e46]: Where
+            - generic [ref=e47]:
+              - textbox "town or postcode" [ref=e48]
+              - button "Get current location" [ref=e49] [cursor=pointer]:
+                - img [ref=e50]
+          - button "Search jobs" [ref=e54] [cursor=pointer]
+          - link "Browse jobs" [ref=e56] [cursor=pointer]:
+            - /url: /popularjobs
+            - text: Browse jobs
+            - img [ref=e57]
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - link "ArrowSearch results" [ref=e64] [cursor=pointer]:
+            - /url: /jobs/senior-it-support-jobs-in-city-of-london?jobId=56718938
+            - img "Arrow"
+            - text: Search results
+          - list [ref=e66]:
+            - listitem [ref=e67]:
+              - link "Home" [ref=e68] [cursor=pointer]:
+                - /url: /
+            - text: /
+            - listitem [ref=e69]:
+              - text: /
+              - link "Information Technology" [ref=e70] [cursor=pointer]:
+                - /url: /jobs/information-technology-jobs
+            - listitem [ref=e71]:
+              - text: /
+              - link "Support" [ref=e72] [cursor=pointer]:
+                - /url: /jobs/support-jobs
+            - listitem [ref=e73]:
+              - text: /
+              - link "Information Support" [ref=e74] [cursor=pointer]:
+                - /url: /jobs/information-support-jobs
+            - listitem [ref=e75]: /Job details
+        - generic [ref=e76]:
+          - generic [ref=e78]:
+            - generic [ref=e80]:
+              - img [ref=e81]
+              - text: Easy Apply
+            - generic [ref=e83]:
+              - generic [ref=e84]:
+                - heading "Senior IT Support" [level=1] [ref=e85]
+                - generic [ref=e86]:
+                  - text: 2 days ago by
+                  - link "Eligo Recruitment" [ref=e87] [cursor=pointer]:
+                    - /url: /company-profile/Eligo-Recruitment-46585
+              - link "Eligo Recruitment jobs" [ref=e89] [cursor=pointer]:
+                - /url: /company-profile/Eligo-Recruitment-46585
+                - img "Eligo Recruitment jobs" [ref=e90]
+            - list [ref=e91]:
+              - listitem [ref=e92]:
+                - img "Salary" [ref=e93]
+                - text: £40,000 - £43,000 per annum
+              - listitem [ref=e95]:
+                - img "Location" [ref=e96]
+                - text: City of London, London
+              - listitem [ref=e98]:
+                - img "Clock" [ref=e99]
+                - text: Permanent, full-time
+            - generic [ref=e102]:
+              - button "Apply now" [disabled]
+              - button "Shortlist job" [disabled]:
+                - img
+                - text: Save
+            - generic [ref=e104]:
+              - text: Senior IT Support Engineer London (Office-Based)
+              - text: Monday–Friday, 9:30am–6:00pm
+              - text: A globally established media agency with 1,000+ employees across international offices is seeking a macOS focused Senior IT Support Engineer with Jamf, Okta and Google Workspace experience to join its London team. The company is recognised for award-winning campaigns delivered to major global brands.
+              - text: This is an excellent opportunity for an experienced macOS and Jamf IT support professional who thrives in a creative, fast-paced environment and wants to further develop their expertise within an Apple-centric infrastructure using Jamf.
+              - text: The Role Working within a small IT team, you will provide high-quality end-user support across the London office and remote global users. The environment is predominantly Mac-based, and the role requires strong macOS expertise along with exposure to modern identity, security, and networking platforms such as Google Workspace and Okta.
+              - text: This is a fully office-based position to ensure consistent on-site support coverage.
+              - text: Key Responsibilities
+              - list [ref=e105]:
+                - listitem [ref=e106]: Provide 1st/2nd line technical support to internal users
+                - listitem [ref=e107]: Configure and deploy hardware for employees and freelancers
+                - listitem [ref=e108]: Administer user accounts and access permissions
+                - listitem [ref=e109]: Support Apple devices (macOS, iOS, tvOS)
+                - listitem [ref=e110]: Manage and maintain Google Workspace environment
+                - listitem [ref=e111]: Deliver remote support to UK and international teams
+                - listitem [ref=e112]: Maintain accurate documentation and improve support processes
+                - listitem [ref=e113]: Assist a sister company based within the same London office
+              - text: Technical Environment
+              - list [ref=e114]:
+                - listitem [ref=e115]: Apple macOS & hardware
+                - listitem [ref=e116]: JAMF (100 certified minimum; exposure to 200 level desirable)
+                - listitem [ref=e117]: Google Workspace (Gmail, Drive, Groups, Calendar)
+                - listitem [ref=e118]: Okta (or similar identity management tools)
+                - listitem [ref=e119]: CrowdStrike Falcon
+                - listitem [ref=e120]: Juniper switching & SonicWall firewalls
+                - listitem [ref=e121]: Cisco Meraki access points
+                - listitem [ref=e122]: Adobe Creative Cloud
+                - listitem [ref=e123]: Video conferencing platforms (Google Meet, Zoom, Microsoft Teams)
+                - listitem [ref=e124]: Basic Windows support
+              - text: Required Experience
+              - list [ref=e125]:
+                - listitem [ref=e126]: Minimum 2+ years in an IT Support role
+                - listitem [ref=e127]: Strong macOS troubleshooting (GUI & terminal)
+                - listitem [ref=e128]: Experience in fast-paced environments (agency/creative sector advantageous)
+                - listitem [ref=e129]: Helpdesk/ticketing system experience
+                - listitem [ref=e130]: Excellent communication and customer service skills
+                - listitem [ref=e131]: Strong organisational and time management abilities
+              - text: Desirable Skills
+              - list [ref=e132]:
+                - listitem [ref=e133]: Advanced JAMF or macOS MDM knowledge
+                - listitem [ref=e134]: Shell scripting or automation experience
+                - listitem [ref=e135]: Understanding of ISO 27001, SOC II, or similar security frameworks
+                - listitem [ref=e136]: Familiarity with ITIL v4 practices
+              - text: Personal Attributes
+              - list [ref=e137]:
+                - listitem [ref=e138]: Proactive and solutions-focused
+                - listitem [ref=e139]: Strong sense of ownership and accountability
+                - listitem [ref=e140]: Confident communicator with internal stakeholders
+                - listitem [ref=e141]: Eager to learn and develop technical skills
+              - text: Benefits
+              - list [ref=e142]:
+                - listitem [ref=e143]: 25 days annual leave
+                - listitem [ref=e144]: Pension scheme
+                - listitem [ref=e145]: Life assurance
+                - listitem [ref=e146]: Supportive leadership and collaborative culture
+                - listitem [ref=e147]: Friendly, social working environment
+                - listitem [ref=e148]: Trusted to work autonomously without micromanagement
+              - emphasis [ref=e149]: Eligo Recruitment is acting as an Employment Business in relation to this vacancy. Eligo is proud to be an equal opportunity employer dedicated to fostering diversity and creating an inclusive and equitable environment for employees and applicants. We actively celebrate and embrace differences, including but not limited to race, colour, religion, sex, sexual orientation, gender identity, national origin, veteran status, and disability. We encourage applications from individuals of all backgrounds and experiences and all will be considered for employment without discrimination. At Eligo Recruitment diversity, equity and inclusion is integral to achieving our mission to ensure every workplace reflects the richness of human diversity.
+            - group [ref=e150]:
+              - button "shareShare" [ref=e153] [cursor=pointer]:
+                - img "share" [ref=e154]
+                - text: Share
+              - generic [ref=e156]:
+                - button "EyeHide" [disabled]:
+                  - img "Eye"
+                  - text: Hide
+          - generic [ref=e157]:
+            - banner [ref=e158]:
+              - heading "Create alerts for similar jobs" [level=2] [ref=e159]
+            - generic [ref=e161]:
+              - generic [ref=e162]:
+                - generic [ref=e163]:
+                  - generic [ref=e164]:
+                    - generic [ref=e166]: Senior IT Support
+                    - generic [ref=e167]: City of London
+                  - button "Edit" [ref=e168] [cursor=pointer]
+                - generic [ref=e169]:
+                  - generic [ref=e170]: Email address
+                  - textbox "Email address" [ref=e172]
+              - generic [ref=e173]:
+                - button "Create alert" [disabled]:
+                  - generic:
+                    - img
+                  - text: Create alert
+              - generic [ref=e174]:
+                - text: By creating an alert, you agree to the
+                - link "Terms and conditions" [ref=e175] [cursor=pointer]:
+                  - /url: /policies
+                - text: applicable to our service and acknowledge that your personal data will be used in accordance with our
+                - link "Privacy policy" [ref=e176] [cursor=pointer]:
+                  - /url: /policies
+                - text: and you will receive emails and communications about jobs and career related topics.
+          - generic [ref=e177]:
+            - heading "Similar Jobs" [level=3] [ref=e179]
+            - generic [ref=e180]:
+              - link "Shortlist job Easy Apply Senior IT Support 24 March by Eligo Recruitment Salary£40,000 - £43,000 per annum LocationCity of London, London ClockPermanent, full-time" [ref=e181] [cursor=pointer]:
+                - /url: /jobs/senior-it-support/56692503?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e182]:
+                      - img [ref=e183]
+                    - generic:
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Senior IT Support
+                          - generic: 24 March by Eligo Recruitment
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £40,000 - £43,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: City of London, London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Easy Apply Senior IT Support 16 March by Eligo Recruitment Salary£40,000 - £43,000 per annum LocationCity of London, London ClockPermanent, full-time" [ref=e185] [cursor=pointer]:
+                - /url: /jobs/senior-it-support/56653506?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e186]:
+                      - img [ref=e187]
+                    - generic:
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Senior IT Support
+                          - generic: 16 March by Eligo Recruitment
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £40,000 - £43,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: City of London, London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Easy Apply Senior IT Support 26 February by Eligo Recruitment Salary£40,000 - £43,000 per annum LocationCity of London, London ClockPermanent, full-time" [ref=e189] [cursor=pointer]:
+                - /url: /jobs/senior-it-support/56545788?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e190]:
+                      - img [ref=e191]
+                    - generic:
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Senior IT Support
+                          - generic: 26 February by Eligo Recruitment
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £40,000 - £43,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: City of London, London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Promoted Infrastructure Support 5 days ago by UBL UK (United National Bank Limited) SalarySalary negotiable LocationLondon ClockPermanent, full-time" [ref=e193] [cursor=pointer]:
+                - /url: /jobs/infrastructure-support/56669365?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e194]:
+                      - img [ref=e195]
+                    - generic:
+                      - generic: Promoted
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Infrastructure Support
+                          - generic: 5 days ago by UBL UK (United National Bank Limited)
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Salary negotiable
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job IT Operations Associate 11 March by General Pharmaceutical Council Salary£39,554 - £45,732 per annum LocationCanary Wharf, London ClockContract, full-time" [ref=e197] [cursor=pointer]:
+                - /url: /jobs/it-operations-associate/56629335?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e198]:
+                      - img [ref=e199]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: IT Operations Associate
+                          - generic: 11 March by General Pharmaceutical Council
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £39,554 - £45,732 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: Canary Wharf, London
+                      - listitem:
+                        - img "Clock"
+                        - text: Contract, full-time
+              - link "Shortlist job Promoted Senior Cloud Engineer 2 March by Exponential-e SalarySalary negotiable LocationLondon ClockPermanent, full-time or part-time" [ref=e201] [cursor=pointer]:
+                - /url: /jobs/senior-cloud-engineer/56565763?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e202]:
+                      - img [ref=e203]
+                    - generic:
+                      - generic: Promoted
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Senior Cloud Engineer
+                          - generic: 2 March by Exponential-e
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Salary negotiable
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time or part-time
+            - link "See more jobs like this" [ref=e206] [cursor=pointer]:
+              - /url: /jobs/information-support-jobs
+          - generic [ref=e207]:
+            - generic [ref=e209]: Recommended courses
+            - generic [ref=e210]:
+              - link "Google Workspace Support Specialist Online, Self-paced £21.99" [ref=e211] [cursor=pointer]:
+                - /url: /courses/google-workspace-support-specialist/450778?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it%20support_courses_450778
+                - generic: Google Workspace Support Specialist
+                - generic: Online, Self-paced
+                - generic: £21.99
+              - link "IT Support Technician Training Online, Self-paced £21" [ref=e212] [cursor=pointer]:
+                - /url: /courses/it-support-technician-training/538948?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it%20support_courses_538948
+                - generic: IT Support Technician Training
+                - generic: Online, Self-paced
+                - generic: £21
+              - link "CompTIA IT Support Technician Job Programme Online, Self-paced £799" [ref=e213] [cursor=pointer]:
+                - /url: /courses/comptia-it-support-technician-job-programme/247829?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it%20support_courses_247829
+                - generic: CompTIA IT Support Technician Job Programme
+                - generic: Online, Self-paced
+                - generic: £799
+            - link "View IT support courses" [ref=e215] [cursor=pointer]:
+              - /url: https://www.reed.co.uk/courses/all?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=view_it%20support_courses
+          - generic [ref=e217]:
+            - generic [ref=e218]: Posted by Eligo Recruitment
+            - link "View all jobs and profile Chevron" [ref=e219] [cursor=pointer]:
+              - /url: /jobs/eligo-recruitment/p13082
+              - generic [ref=e220]: View all jobs and profile
+              - img "Chevron" [ref=e221]
+          - generic [ref=e226]:
+            - generic [ref=e227]: Not what you are looking for?
+            - list [ref=e228]:
+              - listitem [ref=e229]:
+                - link "It Support jobs" [ref=e230] [cursor=pointer]:
+                  - /url: /jobs/it-support-jobs-in-city-of-london
+              - listitem [ref=e231]:
+                - link "It Helpdesk jobs" [ref=e232] [cursor=pointer]:
+                  - /url: /jobs/it-helpdesk-jobs-in-city-of-london
+              - listitem [ref=e233]:
+                - link "2Nd Line Support jobs" [ref=e234] [cursor=pointer]:
+                  - /url: /jobs/2nd-line-support-jobs-in-city-of-london
+              - listitem [ref=e235]:
+                - link "Infrastructure Engineer jobs" [ref=e236] [cursor=pointer]:
+                  - /url: /jobs/infrastructure-engineer-jobs-in-city-of-london
+              - listitem [ref=e237]:
+                - link "1St Line Support jobs" [ref=e238] [cursor=pointer]:
+                  - /url: /jobs/1st-line-support-jobs-in-city-of-london
+          - generic [ref=e239]:
+            - generic [ref=e240]: "Reference: 56718938"
+            - generic [ref=e241]:
+              - text: Please note that
+              - link "Reed.co.uk" [ref=e242] [cursor=pointer]:
+                - /url: https://reed.co.uk
+              - text: will never ask you to provide your bank, passport or driving licence details during the application process.
+            - link "Report this job Open in new tab" [ref=e244] [cursor=pointer]:
+              - /url: /enquiries?reportJobRef=56718938
+              - text: Report this job
+              - img "Open in new tab"
+        - complementary [ref=e245]
+    - contentinfo [ref=e246]:
+      - generic [ref=e248]:
+        - navigation [ref=e249]:
+          - button "JOBS" [ref=e251] [cursor=pointer]
+          - list [ref=e254]:
+            - listitem [ref=e255]:
+              - link "Contact us" [ref=e256] [cursor=pointer]:
+                - /url: /enquiries
+            - listitem [ref=e257]:
+              - link "Job search" [ref=e258] [cursor=pointer]:
+                - /url: /jobs
+            - listitem [ref=e259]:
+              - link "Recruiter directory" [ref=e260] [cursor=pointer]:
+                - /url: /recruiterdirectory
+            - listitem [ref=e261]:
+              - link "Work from home" [ref=e262] [cursor=pointer]:
+                - /url: /jobs/work-from-home-jobs
+            - listitem [ref=e263]:
+              - link "Browse jobs" [ref=e264] [cursor=pointer]:
+                - /url: /popularjobs
+            - listitem [ref=e265]:
+              - link "Browse locations" [ref=e266] [cursor=pointer]:
+                - /url: /location
+            - listitem [ref=e267]:
+              - link "Popular searches" [ref=e268] [cursor=pointer]:
+                - /url: /popularsearches
+            - listitem [ref=e269]:
+              - link "Career advice" [ref=e270] [cursor=pointer]:
+                - /url: /career-advice
+            - listitem [ref=e271]:
+              - link "Tax calculator" [ref=e272] [cursor=pointer]:
+                - /url: /tax-calculator
+            - listitem [ref=e273]:
+              - link "Average salary checker" [ref=e274] [cursor=pointer]:
+                - /url: /average-salary
+            - listitem [ref=e275]:
+              - link "Help" [ref=e276] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e277]:
+              - link "Contact a REED office" [ref=e278] [cursor=pointer]:
+                - /url: https://www.reed.com/offices
+            - listitem [ref=e279]:
+              - link "Sitemap" [ref=e280] [cursor=pointer]:
+                - /url: /html-sitemap
+        - navigation [ref=e281]:
+          - button "RECRUITER" [ref=e283] [cursor=pointer]
+          - list [ref=e286]:
+            - listitem [ref=e287]:
+              - link "Recruiter site" [ref=e288] [cursor=pointer]:
+                - /url: /recruiter?directjob=recruiter
+            - listitem [ref=e289]:
+              - link "Post a job" [ref=e290] [cursor=pointer]:
+                - /url: /recruiter/post-a-job?directjob=recruiter
+            - listitem [ref=e291]:
+              - link "CV Search" [ref=e292] [cursor=pointer]:
+                - /url: /recruiter/cv-search?directjob=recruiter
+            - listitem [ref=e293]:
+              - link "Recruitment agencies" [ref=e294] [cursor=pointer]:
+                - /url: /recruiter/recruitment-agencies?directjob=recruiter
+            - listitem [ref=e295]:
+              - link "Recruiter Advice" [ref=e296] [cursor=pointer]:
+                - /url: /recruiter-advice/?directjob=recruiter
+        - navigation [ref=e297]:
+          - button "COURSES" [ref=e299] [cursor=pointer]
+          - list [ref=e302]:
+            - listitem [ref=e303]:
+              - link "Help" [ref=e304] [cursor=pointer]:
+                - /url: /courses/help
+            - listitem [ref=e305]:
+              - link "Contact us" [ref=e306] [cursor=pointer]:
+                - /url: /courses/contact-us
+            - listitem [ref=e307]:
+              - link "Find a course" [ref=e308] [cursor=pointer]:
+                - /url: /courses/
+            - listitem [ref=e309]:
+              - link "View all subjects" [ref=e310] [cursor=pointer]:
+                - /url: /courses/directory
+            - listitem [ref=e311]:
+              - link "Discount courses" [ref=e312] [cursor=pointer]:
+                - /url: /courses/discount
+            - listitem [ref=e313]:
+              - link "Free courses" [ref=e314] [cursor=pointer]:
+                - /url: /courses/free
+            - listitem [ref=e315]:
+              - link "Awarding body directory" [ref=e316] [cursor=pointer]:
+                - /url: /courses/awarding-bodies
+            - listitem [ref=e317]:
+              - link "Career guides" [ref=e318] [cursor=pointer]:
+                - /url: /courses/career-guides
+            - listitem [ref=e319]:
+              - link "Advertise a course" [ref=e320] [cursor=pointer]:
+                - /url: /courses/providers/
+            - listitem [ref=e321]:
+              - link "Courses sitemap" [ref=e322] [cursor=pointer]:
+                - /url: /courses/html-sitemap
+        - navigation [ref=e323]:
+          - button "MORE FROM Reed.co.uk" [ref=e325] [cursor=pointer]
+          - list [ref=e328]:
+            - listitem [ref=e329]:
+              - link "About us" [ref=e330] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e331]:
+              - link "Careers at Reed.co.uk" [ref=e332] [cursor=pointer]:
+                - /url: https://www.reed.com/careers/jobs?businessDivision=Reed.co.uk
+            - listitem [ref=e333]:
+              - link "Press office" [ref=e334] [cursor=pointer]:
+                - /url: /press-office
+            - listitem [ref=e335]:
+              - link "Corporate governance" [ref=e336] [cursor=pointer]:
+                - /url: /corporate-governance
+            - listitem [ref=e337]:
+              - link "Modern slavery statement" [ref=e338] [cursor=pointer]:
+                - /url: https://www.reed.co.uk/cdn/jobseeker/pdf/Reed_MSA_Statement.pdf
+        - navigation [ref=e339]:
+          - button "REED" [ref=e341] [cursor=pointer]
+          - list [ref=e344]:
+            - listitem [ref=e345]:
+              - 'link "Tempzone: timesheets & holiday" [ref=e346] [cursor=pointer]':
+                - /url: https://candidate.reed.co.uk/candlogin.asp
+            - listitem [ref=e347]:
+              - link "Authorise timesheets" [ref=e348] [cursor=pointer]:
+                - /url: https://client.reed.co.uk/
+            - listitem [ref=e349]:
+              - link "Reed Group Services" [ref=e350] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e351]:
+              - link "Reed Specialist Recruitment" [ref=e352] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e353]:
+              - link "Reed in Partnership" [ref=e354] [cursor=pointer]:
+                - /url: https://www.reedinpartnership.co.uk/
+            - listitem [ref=e355]:
+              - link "Careers with REED" [ref=e356] [cursor=pointer]:
+                - /url: https://www.reed.com/careers
+            - listitem [ref=e357]:
+              - link "James Reed - Official Site" [ref=e358] [cursor=pointer]:
+                - /url: /james-reed/
+            - listitem [ref=e359]:
+              - 'link "Podcast - James Reed: all about business" [ref=e360] [cursor=pointer]':
+                - /url: https://www.reed.com/podcasts
+            - listitem [ref=e361]:
+              - link "ESG & sustainability" [ref=e362] [cursor=pointer]:
+                - /url: https://www.reed.com/esg-and-sustainability
+      - generic [ref=e364]:
+        - generic [ref=e365]:
+          - generic [ref=e367]:
+            - link "PhilCo" [ref=e368] [cursor=pointer]:
+              - /url: https://philco.org.uk/
+              - img "PhilCo" [ref=e369]
+            - generic [ref=e370]: Learn how Reed is leading the way in philanthropy
+          - img "Love Mondays" [ref=e372]
+        - generic [ref=e373]:
+          - generic [ref=e374]:
+            - 'link "James Reed: all about business" [ref=e375] [cursor=pointer]':
+              - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+              - 'img "James Reed: all about business" [ref=e376]'
+            - generic [ref=e377]:
+              - heading "Introducing our new podcast New" [level=3] [ref=e378]:
+                - text: Introducing our new podcast
+                - generic [ref=e379]: New
+              - paragraph [ref=e380]: "James Reed: all about business"
+              - link "Listen here" [ref=e381] [cursor=pointer]:
+                - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+          - generic [ref=e382]:
+            - generic [ref=e383]:
+              - generic [ref=e384]:
+                - link "Download on the App Store" [ref=e385] [cursor=pointer]:
+                  - /url: https://itunes.apple.com/GB/app/id1040443949?mt=8
+                  - img "Download on the App Store" [ref=e386]
+                - link "Get it on Google Play" [ref=e387] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.reedcouk.jobs&referrer=af_tranid%3D_HgKgkJ-aFiIn4G5iigdZQ%26pid%3DWebsite_Footer%26utm_source%3DWebsite_Footer
+                  - img "Get it on Google Play" [ref=e388]
+              - generic [ref=e389]:
+                - link "Facebook" [ref=e390] [cursor=pointer]:
+                  - /url: https://www.facebook.com/reedcouk
+                  - img "Facebook" [ref=e391]
+                - link "Instagram" [ref=e392] [cursor=pointer]:
+                  - /url: https://www.instagram.com/reedcouk/
+                  - img "Instagram" [ref=e393]
+                - link "Tiktok" [ref=e394] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@reedjobs
+                  - img "Tiktok" [ref=e395]
+            - list [ref=e396]:
+              - listitem [ref=e397]:
+                - button "Manage Preferences" [ref=e398] [cursor=pointer]
+                - text: ","
+              - listitem [ref=e399]:
+                - link "Security, Privacy, Terms & Conditions" [ref=e400] [cursor=pointer]:
+                  - /url: /policies
+            - paragraph [ref=e401]: COPYRIGHT © Reed.co.uk 2026
+  - alert [ref=e402]

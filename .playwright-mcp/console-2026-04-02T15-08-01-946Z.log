@@ -1,0 +1,11 @@
+[    1568ms] [LOG] Visibility threshold pct=50, Visibility threshold ms = 0 @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[    1625ms] [INFO] [REFRESH PATCH] pubads.refresh patched @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[    1643ms] [LOG] Influent Media script loaded @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[    1656ms] [LOG] Influent Media script initialized @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[    1798ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-support-analyst/56715966:0
+[    2105ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[    2109ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[    2109ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15
+[    2257ms] [INFO] [REFRESH PATCH] Injecting targeting {key: AnonymisedSignalLift, value: 0} @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[    2568ms] [WARNING] The following CSA option(s) were ignored due to being overridden by native style controls: fontFamily @ https://www.google.com/adsense/search/async-ads.js:218
+[    2568ms] [WARNING] The following CSA option(s) are unsupported: longerHeadlines, fontSizeTitle, fontSizeDescription, fontSizeDomainLink, colorTitleLink, colorDomainLink @ https://www.google.com/adsense/search/async-ads.js:218

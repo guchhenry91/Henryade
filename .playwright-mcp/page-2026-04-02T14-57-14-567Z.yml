@@ -1,0 +1,1940 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e1605]:
+          - link "Reed.co.uk" [ref=e1606] [cursor=pointer]:
+            - /url: /
+            - img "Reed.co.uk" [ref=e1607]
+          - list [ref=e1608]:
+            - listitem [ref=e1609]:
+              - link "Jobs" [ref=e1610] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e1611]: Jobs
+            - listitem [ref=e1612]:
+              - link "Courses" [ref=e1613] [cursor=pointer]:
+                - /url: /courses/?itm_source=js_navigation&itm_medium=jobseeker&itm_campaign=courses_tab&itm_content=standard_version
+                - generic [ref=e1614]: Courses
+            - listitem [ref=e1615]:
+              - link "Career advice" [ref=e1616] [cursor=pointer]:
+                - /url: /career-advice/
+                - generic [ref=e1617]: Career advice
+            - listitem [ref=e1618]:
+              - link "Recruiting? Post a job" [ref=e1619] [cursor=pointer]:
+                - /url: /recruiter/
+                - generic [ref=e1620]:
+                  - text: Recruiting?
+                  - strong [ref=e1621]: Post a job
+          - generic [ref=e1622]:
+            - link "Register CV" [ref=e1623] [cursor=pointer]:
+              - /url: /authentication/register?returnTo=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays%26salaryfrom%3D33000%26salaryto%3D100000
+            - list [ref=e1624]:
+              - listitem [ref=e1625]:
+                - link "Saved jobs" [ref=e1626] [cursor=pointer]:
+                  - /url: /account/jobs/shortlisted-jobs
+                  - img [ref=e1628]
+                  - generic [ref=e1630]: Saved jobs
+              - listitem [ref=e1631]:
+                - link "Sign in" [ref=e1632] [cursor=pointer]:
+                  - /url: /authentication/login?returnTo=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays%26salaryfrom%3D33000%26salaryto%3D100000
+      - search [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]:
+            - generic [ref=e41]:
+              - generic [ref=e42]: What
+              - generic [ref=e43]:
+                - textbox "e.g. \"finance manager\"" [ref=e44]: it support
+                - button "clear keywords" [ref=e45] [cursor=pointer]:
+                  - img [ref=e46]
+            - generic [ref=e49]:
+              - generic [ref=e50]: Where
+              - generic [ref=e51]:
+                - textbox "town or postcode" [ref=e52]: london
+                - button "clear location" [ref=e53] [cursor=pointer]:
+                  - img [ref=e54]
+            - button "Search jobs" [ref=e58] [cursor=pointer]
+            - link "Browse jobs" [ref=e60] [cursor=pointer]:
+              - /url: /popularjobs
+              - text: Browse jobs
+              - img [ref=e61]
+          - generic [ref=e63]:
+            - generic [ref=e64]: "Similar searches:"
+            - list [ref=e65]:
+              - listitem [ref=e66]:
+                - link "It Technician jobs" [ref=e67] [cursor=pointer]:
+                  - /url: /jobs/it-technician-jobs-in-london
+              - listitem [ref=e68]:
+                - link "It jobs" [ref=e69] [cursor=pointer]:
+                  - /url: /jobs/it-jobs-in-london
+              - listitem [ref=e70]:
+                - link "It Support Analyst jobs" [ref=e71] [cursor=pointer]:
+                  - /url: /jobs/it-support-analyst-jobs-in-london
+              - listitem [ref=e72]:
+                - link "Work From Home It Support jobs" [ref=e73] [cursor=pointer]:
+                  - /url: /jobs/work-from-home-it-support-jobs-in-london
+              - listitem [ref=e74]:
+                - link "Service Desk jobs" [ref=e75] [cursor=pointer]:
+                  - /url: /jobs/service-desk-jobs-in-london
+              - listitem [ref=e76]:
+                - link "It Support Jobs in East London" [ref=e77] [cursor=pointer]:
+                  - /url: /jobs/it-support-jobs-in-east-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+              - listitem [ref=e78]:
+                - link "It Support Jobs in SunburyonThames" [ref=e79] [cursor=pointer]:
+                  - /url: /jobs/it-support-jobs-in-sunburyonthames?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+              - listitem [ref=e80]:
+                - link "It Support Jobs in South West London" [ref=e81] [cursor=pointer]:
+                  - /url: /jobs/it-support-jobs-in-south-west-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+      - generic [ref=e83]:
+        - generic [ref=e86]:
+          - heading "1,935 It Support Jobs in London" [level=1] [ref=e88]:
+            - text: 1,935
+            - link "It Support" [ref=e89] [cursor=pointer]:
+              - /url: /jobs/it-support-jobs
+            - text: Jobs in
+            - link "London" [ref=e90] [cursor=pointer]:
+              - /url: /jobs/jobs-in-london
+          - button "Get Job Alerts" [ref=e97] [cursor=pointer]:
+            - img [ref=e98]
+            - text: Get job alerts
+        - generic [ref=e101]:
+          - main [ref=e102]:
+            - article [ref=e104]:
+              - generic [ref=e105]:
+                - button "IT Support Technician" [ref=e106] [cursor=pointer]
+                - generic [ref=e107]:
+                  - generic [ref=e108]:
+                    - generic [ref=e109]:
+                      - generic [ref=e110]:
+                        - generic [ref=e111]: Featured
+                        - generic [ref=e112]: New
+                        - generic [ref=e113]:
+                          - img [ref=e114]
+                          - text: Easy Apply
+                      - heading "IT Support Technician" [level=2] [ref=e116]:
+                        - link "IT Support Technician" [ref=e117] [cursor=pointer]:
+                          - /url: /jobs/it-support-technician/56739090?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e118]:
+                        - text: 1 hr ago by
+                        - link "Armstrong Knight" [ref=e119] [cursor=pointer]:
+                          - /url: /jobs/armstrong/p18273
+                      - list [ref=e120]:
+                        - listitem [ref=e121]:
+                          - img "Salary" [ref=e122]
+                          - text: £38,000 - £42,000 per annum
+                        - listitem [ref=e124]:
+                          - img "Location" [ref=e125]
+                          - text: London
+                        - listitem [ref=e127]:
+                          - img "Clock" [ref=e128]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e130] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e131]
+                  - complementary [ref=e133]:
+                    - button "Easy apply" [ref=e134] [cursor=pointer]
+                  - link "Armstrong Knight jobs" [ref=e137] [cursor=pointer]:
+                    - /url: /jobs/armstrong/p18273
+                    - img "Armstrong Knight jobs" [ref=e138]
+                  - generic [ref=e139]:
+                    - button "Shortlist job" [ref=e140] [cursor=pointer]:
+                      - img [ref=e141]
+                    - button "hide job" [ref=e143] [cursor=pointer]:
+                      - img [ref=e144]
+            - article [ref=e147]:
+              - generic [ref=e148]:
+                - button "Senior IT Support" [ref=e149] [cursor=pointer]
+                - generic [ref=e150]:
+                  - generic [ref=e151]:
+                    - generic [ref=e152]:
+                      - generic [ref=e154]:
+                        - img [ref=e155]
+                        - text: Easy Apply
+                      - heading "Senior IT Support" [level=2] [ref=e157]:
+                        - link "Senior IT Support" [ref=e158] [cursor=pointer]:
+                          - /url: /jobs/senior-it-support/56718938?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e159]:
+                        - text: 2 days ago by
+                        - link "Eligo Recruitment" [ref=e160] [cursor=pointer]:
+                          - /url: /jobs/eligo-recruitment/p13082
+                      - list [ref=e161]:
+                        - listitem [ref=e162]:
+                          - img "Salary" [ref=e163]
+                          - text: £40,000 - £43,000 per annum
+                        - listitem [ref=e165]:
+                          - img "Location" [ref=e166]
+                          - text: City of London, London
+                        - listitem [ref=e168]:
+                          - img "Clock" [ref=e169]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e171] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e172]
+                  - complementary [ref=e174]:
+                    - button "Easy apply" [ref=e175] [cursor=pointer]
+                  - link "Eligo Recruitment jobs" [ref=e178] [cursor=pointer]:
+                    - /url: /jobs/eligo-recruitment/p13082
+                    - img "Eligo Recruitment jobs" [ref=e179]
+                  - generic [ref=e180]:
+                    - button "Shortlist job" [ref=e181] [cursor=pointer]:
+                      - img [ref=e182]
+                    - button "hide job" [ref=e184] [cursor=pointer]:
+                      - img [ref=e185]
+            - article [ref=e188]:
+              - generic [ref=e189]:
+                - button "IT Support Analyst" [ref=e190] [cursor=pointer]
+                - generic [ref=e191]:
+                  - generic [ref=e192]:
+                    - generic [ref=e193]:
+                      - heading "IT Support Analyst" [level=2] [ref=e194]:
+                        - link "IT Support Analyst" [ref=e195] [cursor=pointer]:
+                          - /url: /jobs/it-support-analyst/56715966?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e196]:
+                        - text: 3 days ago by
+                        - link "Sussum Consulting LTD" [ref=e197] [cursor=pointer]:
+                          - /url: /jobs/sussum-consulting-ltd-106593/p106593
+                      - list [ref=e198]:
+                        - listitem [ref=e199]:
+                          - img "Salary" [ref=e200]
+                          - text: £30,000 - £35,000 per annum
+                        - listitem [ref=e202]:
+                          - img "Location" [ref=e203]
+                          - text: Borehamwood, Hertfordshire
+                        - listitem [ref=e205]:
+                          - img "Clock" [ref=e206]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e208] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e209]
+                  - complementary [ref=e211]
+                  - generic [ref=e1633]:
+                    - text: Posted by
+                    - link "Sussum Consulting LTD" [ref=e1634] [cursor=pointer]:
+                      - /url: /jobs/sussum-consulting-ltd-106593/p106593
+                  - generic [ref=e214]:
+                    - button "Shortlist job" [ref=e215] [cursor=pointer]:
+                      - img [ref=e216]
+                    - button "hide job" [ref=e218] [cursor=pointer]:
+                      - img [ref=e219]
+            - article [ref=e222]:
+              - generic [ref=e223]:
+                - button "2nd Line IT Support" [ref=e224] [cursor=pointer]
+                - generic [ref=e225]:
+                  - generic [ref=e226]:
+                    - generic [ref=e227]:
+                      - generic [ref=e228]:
+                        - generic [ref=e229]: Featured
+                        - generic [ref=e230]: New
+                        - generic [ref=e231]:
+                          - img [ref=e232]
+                          - text: Easy Apply
+                      - heading "2nd Line IT Support" [level=2] [ref=e234]:
+                        - link "2nd Line IT Support" [ref=e235] [cursor=pointer]:
+                          - /url: /jobs/2nd-line-it-support/56729948?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e236]:
+                        - text: Yesterday by
+                        - link "Michael Page Technology" [ref=e237] [cursor=pointer]:
+                          - /url: /jobs/michael-page-technology-59782/p59782
+                      - list [ref=e238]:
+                        - listitem [ref=e239]:
+                          - img "Salary" [ref=e240]
+                          - text: £200 - £250 per day
+                        - listitem [ref=e242]:
+                          - img "Location" [ref=e243]
+                          - text: London
+                        - listitem [ref=e245]:
+                          - img "Clock" [ref=e246]
+                          - text: Temporary, full-time
+                    - button "See job description" [ref=e248] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e249]
+                  - complementary [ref=e251]:
+                    - button "Easy apply" [ref=e252] [cursor=pointer]
+                  - link "Michael Page Technology jobs" [ref=e255] [cursor=pointer]:
+                    - /url: /jobs/michael-page-technology-59782/p59782
+                    - img "Michael Page Technology jobs" [ref=e256]
+                  - generic [ref=e257]:
+                    - button "Shortlist job" [ref=e258] [cursor=pointer]:
+                      - img [ref=e259]
+                    - button "hide job" [ref=e261] [cursor=pointer]:
+                      - img [ref=e262]
+            - article [ref=e265]:
+              - generic [ref=e266]:
+                - button "Graduate / Junior IT Support Engineer" [ref=e267] [cursor=pointer]
+                - generic [ref=e268]:
+                  - generic [ref=e269]:
+                    - generic [ref=e270]:
+                      - generic [ref=e271]:
+                        - generic [ref=e272]: Featured
+                        - generic [ref=e273]:
+                          - img [ref=e274]
+                          - text: Easy Apply
+                      - heading "Graduate / Junior IT Support Engineer" [level=2] [ref=e276]:
+                        - link "Graduate / Junior IT Support Engineer" [ref=e277] [cursor=pointer]:
+                          - /url: /jobs/graduate-junior-it-support-engineer/56719904?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e278]:
+                        - text: 2 days ago by
+                        - link "Ashdown Group" [ref=e279] [cursor=pointer]:
+                          - /url: /jobs/ashdown-group-ltd/p4810
+                      - list [ref=e280]:
+                        - listitem [ref=e281]:
+                          - img "Salary" [ref=e282]
+                          - text: £20,000 - £35,000 per annum
+                        - listitem [ref=e284]:
+                          - img "Location" [ref=e285]
+                          - text: London
+                        - listitem [ref=e287]:
+                          - img "Clock" [ref=e288]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e290] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e291]
+                  - complementary [ref=e293]:
+                    - button "Easy apply" [ref=e294] [cursor=pointer]
+                  - link "Ashdown Group jobs" [ref=e297] [cursor=pointer]:
+                    - /url: /jobs/ashdown-group-ltd/p4810
+                    - img "Ashdown Group jobs" [ref=e298]
+                  - generic [ref=e299]:
+                    - button "Shortlist job" [ref=e300] [cursor=pointer]:
+                      - img [ref=e301]
+                    - button "hide job" [ref=e303] [cursor=pointer]:
+                      - img [ref=e304]
+            - article [ref=e307]:
+              - generic [ref=e308]:
+                - button "IT Infrastructure Engineer" [ref=e309] [cursor=pointer]
+                - generic [ref=e310]:
+                  - generic [ref=e311]:
+                    - generic [ref=e312]:
+                      - generic [ref=e313]:
+                        - generic [ref=e314]: Featured
+                        - generic [ref=e315]: New
+                        - generic [ref=e316]:
+                          - img [ref=e317]
+                          - text: Easy Apply
+                      - heading "IT Infrastructure Engineer" [level=2] [ref=e319]:
+                        - link "IT Infrastructure Engineer" [ref=e320] [cursor=pointer]:
+                          - /url: /jobs/it-infrastructure-engineer/56732585?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e321]:
+                        - text: Yesterday by
+                        - link "Matchtech" [ref=e322] [cursor=pointer]:
+                          - /url: /jobs/matchtech-19617/p19617
+                      - list [ref=e323]:
+                        - listitem [ref=e324]:
+                          - img "Salary" [ref=e325]
+                          - text: Salary negotiable
+                        - listitem [ref=e327]:
+                          - img "Location" [ref=e328]
+                          - text: London
+                        - listitem [ref=e330]:
+                          - img "Clock" [ref=e331]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e333] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e334]
+                  - complementary [ref=e336]:
+                    - button "Easy apply" [ref=e337] [cursor=pointer]
+                  - generic [ref=e339]:
+                    - link "Matchtech jobs":
+                      - /url: /jobs/matchtech-19617/p19617
+                      - img "Matchtech jobs"
+                  - generic [ref=e340]:
+                    - button "Shortlist job" [ref=e341] [cursor=pointer]:
+                      - img [ref=e342]
+                    - button "hide job" [ref=e344] [cursor=pointer]:
+                      - img [ref=e345]
+            - article [ref=e348]:
+              - generic [ref=e349]:
+                - button "Applications Support Engineer" [ref=e350] [cursor=pointer]
+                - generic [ref=e351]:
+                  - generic [ref=e352]:
+                    - generic [ref=e353]:
+                      - generic [ref=e354]:
+                        - generic [ref=e355]: Featured
+                        - generic [ref=e356]: New
+                        - generic [ref=e357]:
+                          - img "EarlyBird" [ref=e358]
+                          - text: Early bird
+                      - heading "Applications Support Engineer" [level=2] [ref=e360]:
+                        - link "Applications Support Engineer" [ref=e361] [cursor=pointer]:
+                          - /url: /jobs/applications-support-engineer/56728367?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e362]:
+                        - text: Yesterday by
+                        - link "Matchtech" [ref=e363] [cursor=pointer]:
+                          - /url: /jobs/matchtech-19617/p19617
+                      - list [ref=e364]:
+                        - listitem [ref=e365]:
+                          - img "Salary" [ref=e366]
+                          - text: Salary negotiable
+                        - listitem [ref=e368]:
+                          - img "Location" [ref=e369]
+                          - text: Harlow, Essex
+                        - listitem [ref=e371]:
+                          - img "Clock" [ref=e372]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e374] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e375]
+                  - complementary [ref=e377]
+                  - generic [ref=e379]:
+                    - link "Matchtech jobs":
+                      - /url: /jobs/matchtech-19617/p19617
+                      - img "Matchtech jobs"
+                  - generic [ref=e380]:
+                    - button "Shortlist job" [ref=e381] [cursor=pointer]:
+                      - img [ref=e382]
+                    - button "hide job" [ref=e384] [cursor=pointer]:
+                      - img [ref=e385]
+            - article [ref=e388]:
+              - generic [ref=e389]:
+                - button "Desktop Support Analyst - London" [ref=e390] [cursor=pointer]
+                - generic [ref=e391]:
+                  - generic [ref=e392]:
+                    - generic [ref=e393]:
+                      - generic [ref=e394]:
+                        - generic [ref=e395]: New
+                        - generic [ref=e396]:
+                          - img [ref=e397]
+                          - text: Easy Apply
+                      - heading "Desktop Support Analyst - London" [level=2] [ref=e399]:
+                        - link "Desktop Support Analyst - London" [ref=e400] [cursor=pointer]:
+                          - /url: /jobs/desktop-support-analyst-london/56736600?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e401]:
+                        - text: 6 hrs ago by
+                        - link "Noir" [ref=e402] [cursor=pointer]:
+                          - /url: /jobs/noir/p10319
+                      - list [ref=e403]:
+                        - listitem [ref=e404]:
+                          - img "Salary" [ref=e405]
+                          - text: £30,000 - £35,000 per annum
+                        - listitem [ref=e407]:
+                          - img "Location" [ref=e408]
+                          - text: London
+                        - listitem [ref=e410]:
+                          - img "Clock" [ref=e411]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e413] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e414]
+                  - complementary [ref=e416]:
+                    - button "Easy apply" [ref=e417] [cursor=pointer]
+                  - generic [ref=e419]:
+                    - link "Noir jobs":
+                      - /url: /jobs/noir/p10319
+                      - img "Noir jobs"
+                  - generic [ref=e420]:
+                    - button "Shortlist job" [ref=e421] [cursor=pointer]:
+                      - img [ref=e422]
+                    - button "hide job" [ref=e424] [cursor=pointer]:
+                      - img [ref=e425]
+            - article [ref=e428]:
+              - generic [ref=e429]:
+                - button "IT Manager" [ref=e430] [cursor=pointer]
+                - generic [ref=e431]:
+                  - generic [ref=e432]:
+                    - generic [ref=e433]:
+                      - generic [ref=e434]:
+                        - generic [ref=e435]: Featured
+                        - generic [ref=e436]: New
+                        - generic [ref=e437]:
+                          - img [ref=e438]
+                          - text: Easy Apply
+                      - heading "IT Manager" [level=2] [ref=e440]:
+                        - link "IT Manager" [ref=e441] [cursor=pointer]:
+                          - /url: /jobs/it-manager/56722370?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e442]:
+                        - text: Yesterday by
+                        - link "Antella Travel Recruitment" [ref=e443] [cursor=pointer]:
+                          - /url: /jobs/antella-recruitment-78658/p78658
+                      - list [ref=e444]:
+                        - listitem [ref=e445]:
+                          - img "Salary" [ref=e446]
+                          - text: £40,000 - £55,000 per annum
+                        - listitem [ref=e448]:
+                          - img "Location" [ref=e449]
+                          - text: London
+                        - listitem [ref=e451]:
+                          - img "Clock" [ref=e452]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e454] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e455]
+                  - complementary [ref=e457]:
+                    - button "Easy apply" [ref=e458] [cursor=pointer]
+                  - generic [ref=e460]:
+                    - link "Antella Travel Recruitment jobs":
+                      - /url: /jobs/antella-recruitment-78658/p78658
+                      - img "Antella Travel Recruitment jobs"
+                  - generic [ref=e461]:
+                    - button "Shortlist job" [ref=e462] [cursor=pointer]:
+                      - img [ref=e463]
+                    - button "hide job" [ref=e465] [cursor=pointer]:
+                      - img [ref=e466]
+            - article [ref=e469]:
+              - generic [ref=e470]:
+                - button "Senior Service Desk Analyst" [ref=e471] [cursor=pointer]
+                - generic [ref=e472]:
+                  - generic [ref=e473]:
+                    - generic [ref=e474]:
+                      - generic [ref=e475]:
+                        - generic [ref=e476]: Featured
+                        - generic [ref=e477]:
+                          - img [ref=e478]
+                          - text: Easy Apply
+                      - heading "Senior Service Desk Analyst" [level=2] [ref=e480]:
+                        - link "Senior Service Desk Analyst" [ref=e481] [cursor=pointer]:
+                          - /url: /jobs/senior-service-desk-analyst/56720917?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e482]:
+                        - text: 2 days ago by
+                        - link "Reed" [ref=e483] [cursor=pointer]:
+                          - /url: /jobs/reed/p1342
+                      - list [ref=e484]:
+                        - listitem [ref=e485]:
+                          - img "Salary" [ref=e486]
+                          - text: £40,000 - £50,000 per annum, inc benefits
+                        - listitem [ref=e488]:
+                          - img "Location" [ref=e489]
+                          - text: Central London, London
+                        - listitem [ref=e491]:
+                          - img "Clock" [ref=e492]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e494] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e495]
+                  - complementary [ref=e497]:
+                    - button "Easy apply" [ref=e498] [cursor=pointer]
+                  - generic [ref=e500]:
+                    - link "Reed jobs":
+                      - /url: /jobs/reed/p1342
+                      - img "Reed jobs"
+                  - generic [ref=e501]:
+                    - button "Shortlist job" [ref=e502] [cursor=pointer]:
+                      - img [ref=e503]
+                    - button "hide job" [ref=e505] [cursor=pointer]:
+                      - img [ref=e506]
+            - article [ref=e509]:
+              - generic [ref=e510]:
+                - button "Trainee Cyber Security" [ref=e511] [cursor=pointer]
+                - generic [ref=e512]:
+                  - generic [ref=e513]:
+                    - generic [ref=e514]:
+                      - generic [ref=e516]: Featured
+                      - heading "Trainee Cyber Security" [level=2] [ref=e517]:
+                        - link "Trainee Cyber Security" [ref=e518] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56721075?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e519]:
+                        - text: 2 days ago by
+                        - link "ITOL Recruit" [ref=e520] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e521]:
+                        - listitem [ref=e522]:
+                          - img "Salary" [ref=e523]
+                          - text: Training Course
+                        - listitem [ref=e525]:
+                          - img "Location" [ref=e526]
+                          - text: United Kingdom
+                        - listitem [ref=e528]:
+                          - img "Clock" [ref=e529]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e531] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e532]
+                  - complementary [ref=e534]
+                  - generic [ref=e536]:
+                    - link "ITOL Recruit jobs":
+                      - /url: /jobs/itonlinelearning-0/p57826
+                      - img "ITOL Recruit jobs"
+                  - generic [ref=e537]:
+                    - button "Shortlist job" [ref=e538] [cursor=pointer]:
+                      - img [ref=e539]
+                    - button "hide job" [ref=e541] [cursor=pointer]:
+                      - img [ref=e542]
+            - article [ref=e545]:
+              - generic [ref=e546]:
+                - button "IT Infrastructure Engineer - MSP" [ref=e547] [cursor=pointer]
+                - generic [ref=e548]:
+                  - generic [ref=e549]:
+                    - generic [ref=e550]:
+                      - generic [ref=e551]:
+                        - generic [ref=e552]: Featured
+                        - generic [ref=e553]:
+                          - img [ref=e554]
+                          - text: Easy Apply
+                      - heading "IT Infrastructure Engineer - MSP" [level=2] [ref=e556]:
+                        - link "IT Infrastructure Engineer - MSP" [ref=e557] [cursor=pointer]:
+                          - /url: /jobs/it-infrastructure-engineer-msp/56721823?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e558]:
+                        - text: 2 days ago by
+                        - link "Ashdown Group" [ref=e559] [cursor=pointer]:
+                          - /url: /jobs/ashdown-group-ltd/p4810
+                      - list [ref=e560]:
+                        - listitem [ref=e561]:
+                          - img "Salary" [ref=e562]
+                          - text: £55,000 - £60,000 per annum
+                        - listitem [ref=e564]:
+                          - img "Location" [ref=e565]
+                          - text: Borehamwood, Hertfordshire
+                        - listitem [ref=e567]:
+                          - img "Clock" [ref=e568]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e570] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e571]
+                  - complementary [ref=e573]:
+                    - button "Easy apply" [ref=e574] [cursor=pointer]
+                  - link "Ashdown Group jobs" [ref=e577] [cursor=pointer]:
+                    - /url: /jobs/ashdown-group-ltd/p4810
+                    - img "Ashdown Group jobs" [ref=e578]
+                  - generic [ref=e579]:
+                    - button "Shortlist job" [ref=e580] [cursor=pointer]:
+                      - img [ref=e581]
+                    - button "hide job" [ref=e583] [cursor=pointer]:
+                      - img [ref=e584]
+            - article [ref=e587]:
+              - generic [ref=e588]:
+                - button "IT Manager" [ref=e589] [cursor=pointer]
+                - generic [ref=e590]:
+                  - generic [ref=e591]:
+                    - generic [ref=e592]:
+                      - generic [ref=e594]:
+                        - img [ref=e595]
+                        - text: Easy Apply
+                      - heading "IT Manager" [level=2] [ref=e597]:
+                        - link "IT Manager" [ref=e598] [cursor=pointer]:
+                          - /url: /jobs/it-manager/56715300?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e599]:
+                        - text: 3 days ago by
+                        - link "VIQU IT Recruitment" [ref=e600] [cursor=pointer]:
+                          - /url: /jobs/viqu-limited-86416/p86416
+                      - list [ref=e601]:
+                        - listitem [ref=e602]:
+                          - img "Salary" [ref=e603]
+                          - text: £300 - £400 per day
+                        - listitem [ref=e605]:
+                          - img "Location" [ref=e606]
+                          - text: London
+                        - listitem [ref=e608]:
+                          - img "Clock" [ref=e609]
+                          - text: Contract, full-time
+                    - button "See job description" [ref=e611] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e612]
+                  - complementary [ref=e614]:
+                    - button "Easy apply" [ref=e615] [cursor=pointer]
+                  - generic [ref=e617]:
+                    - link "VIQU IT Recruitment jobs":
+                      - /url: /jobs/viqu-limited-86416/p86416
+                      - img "VIQU IT Recruitment jobs"
+                  - generic [ref=e618]:
+                    - button "Shortlist job" [ref=e619] [cursor=pointer]:
+                      - img [ref=e620]
+                    - button "hide job" [ref=e622] [cursor=pointer]:
+                      - img [ref=e623]
+            - generic [ref=e625]:
+              - article [ref=e626]:
+                - generic [ref=e627]:
+                  - button "IT Support Engineer In-House - eFinancialCareers" [ref=e628] [cursor=pointer]
+                  - generic [ref=e629]:
+                    - generic [ref=e630]:
+                      - generic [ref=e631]:
+                        - generic [ref=e633]: New
+                        - heading "IT Support Engineer In-House - eFinancialCareers" [level=2] [ref=e634]:
+                          - link "IT Support Engineer In-House - eFinancialCareers" [ref=e635] [cursor=pointer]:
+                            - /url: /jobs/it-support-engineer-in-house-efinancialcareers/56731197?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                        - generic [ref=e636]:
+                          - text: Yesterday by
+                          - link "eFinancialCareers" [ref=e637] [cursor=pointer]:
+                            - /url: /jobs/efinancial-careers/p74850
+                        - list [ref=e638]:
+                          - listitem [ref=e639]:
+                            - img "Salary" [ref=e640]
+                            - text: Competitive salary
+                          - listitem [ref=e642]:
+                            - img "Location" [ref=e643]
+                            - text: London
+                          - listitem [ref=e645]:
+                            - img "Clock" [ref=e646]
+                            - text: Permanent, full-time
+                      - button "See job description" [ref=e648] [cursor=pointer]:
+                        - text: See more
+                        - img "Chevron" [ref=e649]
+                    - complementary [ref=e651]
+                    - generic [ref=e653]:
+                      - link "eFinancialCareers jobs":
+                        - /url: /jobs/efinancial-careers/p74850
+                        - img "eFinancialCareers jobs"
+                    - generic [ref=e654]:
+                      - button "Shortlist job" [ref=e655] [cursor=pointer]:
+                        - img [ref=e656]
+                      - button "hide job" [ref=e658] [cursor=pointer]:
+                        - img [ref=e659]
+              - alert [ref=e661]:
+                - button "Get Job Alerts" [ref=e662] [cursor=pointer]:
+                  - img [ref=e663]
+                  - text: Get Job Alerts
+                - paragraph [ref=e666]: Get new jobs matching this search straight to your inbox.
+            - article [ref=e668]:
+              - generic [ref=e669]:
+                - button "Administrative Assistant (Work From Home, UK)" [ref=e670] [cursor=pointer]
+                - generic [ref=e671]:
+                  - generic [ref=e672]:
+                    - generic [ref=e673]:
+                      - heading "Administrative Assistant (Work From Home, UK)" [level=2] [ref=e674]:
+                        - link "Administrative Assistant (Work From Home, UK)" [ref=e675] [cursor=pointer]:
+                          - /url: /jobs/administrative-assistant-work-from-home-uk/56714261?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e676]:
+                        - text: 3 days ago by
+                        - link "My VA business" [ref=e677] [cursor=pointer]:
+                          - /url: /jobs/my-va-business/p63099
+                      - list [ref=e678]:
+                        - listitem [ref=e679]:
+                          - img "Salary" [ref=e680]
+                          - text: Training Course
+                        - listitem [ref=e682]:
+                          - img "Location" [ref=e683]
+                          - text: South London, London
+                        - listitem [ref=e685]:
+                          - img "Clock" [ref=e686]
+                          - text: Permanent, full-time or part-time
+                        - listitem [ref=e688]:
+                          - img "Home" [ref=e689]
+                          - text: Work from home
+                    - button "See job description" [ref=e691] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e692]
+                  - complementary [ref=e694]
+                  - generic [ref=e696]:
+                    - link "My VA business jobs":
+                      - /url: /jobs/my-va-business/p63099
+                      - img "My VA business jobs"
+                  - generic [ref=e697]:
+                    - button "Shortlist job" [ref=e698] [cursor=pointer]:
+                      - img [ref=e699]
+                    - button "hide job" [ref=e701] [cursor=pointer]:
+                      - img [ref=e702]
+            - article [ref=e705]:
+              - generic [ref=e706]:
+                - button "Operations & Admin Assistant (Remote, UK-Based)" [ref=e707] [cursor=pointer]
+                - generic [ref=e708]:
+                  - generic [ref=e709]:
+                    - generic [ref=e710]:
+                      - heading "Operations & Admin Assistant (Remote, UK-Based)" [level=2] [ref=e711]:
+                        - link "Operations & Admin Assistant (Remote, UK-Based)" [ref=e712] [cursor=pointer]:
+                          - /url: /jobs/operations-admin-assistant-remote-uk-based/56714250?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e713]:
+                        - text: 3 days ago by
+                        - link "My VA business" [ref=e714] [cursor=pointer]:
+                          - /url: /jobs/my-va-business/p63099
+                      - list [ref=e715]:
+                        - listitem [ref=e716]:
+                          - img "Salary" [ref=e717]
+                          - text: Training Course
+                        - listitem [ref=e719]:
+                          - img "Location" [ref=e720]
+                          - text: West London, London
+                        - listitem [ref=e722]:
+                          - img "Clock" [ref=e723]
+                          - text: Permanent, full-time or part-time
+                        - listitem [ref=e725]:
+                          - img "Home" [ref=e726]
+                          - text: Work from home
+                    - button "See job description" [ref=e728] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e729]
+                  - complementary [ref=e731]
+                  - generic [ref=e733]:
+                    - link "My VA business jobs":
+                      - /url: /jobs/my-va-business/p63099
+                      - img "My VA business jobs"
+                  - generic [ref=e734]:
+                    - button "Shortlist job" [ref=e735] [cursor=pointer]:
+                      - img [ref=e736]
+                    - button "hide job" [ref=e738] [cursor=pointer]:
+                      - img [ref=e739]
+            - article [ref=e742]:
+              - generic [ref=e743]:
+                - button "Data Engineer" [ref=e744] [cursor=pointer]
+                - generic [ref=e745]:
+                  - generic [ref=e746]:
+                    - generic [ref=e747]:
+                      - generic [ref=e749]: Featured
+                      - heading "Data Engineer" [level=2] [ref=e750]:
+                        - link "Data Engineer" [ref=e751] [cursor=pointer]:
+                          - /url: /jobs/data-engineer/56716910?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e752]:
+                        - text: 2 days ago by
+                        - link "Vitality" [ref=e753] [cursor=pointer]:
+                          - /url: /jobs/vitality-31167/p31167
+                      - list [ref=e754]:
+                        - listitem [ref=e755]:
+                          - img "Salary" [ref=e756]
+                          - text: Competitive salary
+                        - listitem [ref=e758]:
+                          - img "Location" [ref=e759]
+                          - text: London
+                        - listitem [ref=e761]:
+                          - img "Clock" [ref=e762]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e764] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e765]
+                  - complementary [ref=e767]
+                  - generic [ref=e769]:
+                    - link "Vitality jobs":
+                      - /url: /jobs/vitality-31167/p31167
+                      - img "Vitality jobs"
+                  - generic [ref=e770]:
+                    - button "Shortlist job" [ref=e771] [cursor=pointer]:
+                      - img [ref=e772]
+                    - button "hide job" [ref=e774] [cursor=pointer]:
+                      - img [ref=e775]
+            - article [ref=e778]:
+              - generic [ref=e779]:
+                - button "Optical Assistant Apprentice" [ref=e780] [cursor=pointer]
+                - generic [ref=e781]:
+                  - generic [ref=e782]:
+                    - generic [ref=e783]:
+                      - generic [ref=e784]:
+                        - generic [ref=e785]: Featured
+                        - generic [ref=e786]:
+                          - img "EarlyBird" [ref=e787]
+                          - text: Early bird
+                      - heading "Optical Assistant Apprentice" [level=2] [ref=e789]:
+                        - link "Optical Assistant Apprentice" [ref=e790] [cursor=pointer]:
+                          - /url: /jobs/optical-assistant-apprentice/56718828?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e791]:
+                        - text: 2 days ago by
+                        - link "Specsavers" [ref=e792] [cursor=pointer]:
+                          - /url: /jobs/specsavers/p11993
+                      - list [ref=e793]:
+                        - listitem [ref=e794]:
+                          - img "Salary" [ref=e795]
+                          - text: Competitive salary
+                        - listitem [ref=e797]:
+                          - img "Location" [ref=e798]
+                          - text: London
+                        - listitem [ref=e800]:
+                          - img "Clock" [ref=e801]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e803] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e804]
+                  - complementary [ref=e806]
+                  - generic [ref=e808]:
+                    - link "Specsavers jobs":
+                      - /url: /jobs/specsavers/p11993
+                      - img "Specsavers jobs"
+                  - generic [ref=e809]:
+                    - button "Shortlist job" [ref=e810] [cursor=pointer]:
+                      - img [ref=e811]
+                    - button "hide job" [ref=e813] [cursor=pointer]:
+                      - img [ref=e814]
+            - article [ref=e817]:
+              - generic [ref=e818]:
+                - button "Pre-reg 2026" [ref=e819] [cursor=pointer]
+                - generic [ref=e820]:
+                  - generic [ref=e821]:
+                    - generic [ref=e822]:
+                      - generic [ref=e823]:
+                        - generic [ref=e824]: Featured
+                        - generic [ref=e825]: New
+                        - generic [ref=e826]:
+                          - img "EarlyBird" [ref=e827]
+                          - text: Early bird
+                      - heading "Pre-reg 2026" [level=2] [ref=e829]:
+                        - link "Pre-reg 2026" [ref=e830] [cursor=pointer]:
+                          - /url: /jobs/pre-reg-2026/56739192?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e831]:
+                        - text: 1 hr ago by
+                        - link "Vision Express" [ref=e832] [cursor=pointer]:
+                          - /url: /jobs/vision-express-31013/p31013
+                      - list [ref=e833]:
+                        - listitem [ref=e834]:
+                          - img "Salary" [ref=e835]
+                          - text: Competitive salary
+                        - listitem [ref=e837]:
+                          - img "Location" [ref=e838]
+                          - text: London
+                        - listitem [ref=e840]:
+                          - img "Clock" [ref=e841]
+                          - text: Contract, full-time
+                    - button "See job description" [ref=e843] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e844]
+                  - complementary [ref=e846]
+                  - generic [ref=e848]:
+                    - link "Vision Express jobs":
+                      - /url: /jobs/vision-express-31013/p31013
+                      - img "Vision Express jobs"
+                  - generic [ref=e849]:
+                    - button "Shortlist job" [ref=e850] [cursor=pointer]:
+                      - img [ref=e851]
+                    - button "hide job" [ref=e853] [cursor=pointer]:
+                      - img [ref=e854]
+            - article [ref=e857]:
+              - generic [ref=e858]:
+                - button "Virtual Assistant (Remote, UK-Based)" [ref=e859] [cursor=pointer]
+                - generic [ref=e860]:
+                  - generic [ref=e861]:
+                    - generic [ref=e862]:
+                      - heading "Virtual Assistant (Remote, UK-Based)" [level=2] [ref=e863]:
+                        - link "Virtual Assistant (Remote, UK-Based)" [ref=e864] [cursor=pointer]:
+                          - /url: /jobs/virtual-assistant-remote-uk-based/56714255?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e865]:
+                        - text: 3 days ago by
+                        - link "My VA business" [ref=e866] [cursor=pointer]:
+                          - /url: /jobs/my-va-business/p63099
+                      - list [ref=e867]:
+                        - listitem [ref=e868]:
+                          - img "Salary" [ref=e869]
+                          - text: Training Course
+                        - listitem [ref=e871]:
+                          - img "Location" [ref=e872]
+                          - text: East London, London
+                        - listitem [ref=e874]:
+                          - img "Clock" [ref=e875]
+                          - text: Permanent, full-time or part-time
+                        - listitem [ref=e877]:
+                          - img "Home" [ref=e878]
+                          - text: Work from home
+                    - button "See job description" [ref=e880] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e881]
+                  - complementary [ref=e883]
+                  - generic [ref=e885]:
+                    - link "My VA business jobs":
+                      - /url: /jobs/my-va-business/p63099
+                      - img "My VA business jobs"
+                  - generic [ref=e886]:
+                    - button "Shortlist job" [ref=e887] [cursor=pointer]:
+                      - img [ref=e888]
+                    - button "hide job" [ref=e890] [cursor=pointer]:
+                      - img [ref=e891]
+            - article [ref=e894]:
+              - generic [ref=e895]:
+                - button "Remote Executive Assistant (UK-Based)" [ref=e896] [cursor=pointer]
+                - generic [ref=e897]:
+                  - generic [ref=e898]:
+                    - generic [ref=e899]:
+                      - heading "Remote Executive Assistant (UK-Based)" [level=2] [ref=e900]:
+                        - link "Remote Executive Assistant (UK-Based)" [ref=e901] [cursor=pointer]:
+                          - /url: /jobs/remote-executive-assistant-uk-based/56714237?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e902]:
+                        - text: 3 days ago by
+                        - link "My VA business" [ref=e903] [cursor=pointer]:
+                          - /url: /jobs/my-va-business/p63099
+                      - list [ref=e904]:
+                        - listitem [ref=e905]:
+                          - img "Salary" [ref=e906]
+                          - text: Training Course
+                        - listitem [ref=e908]:
+                          - img "Location" [ref=e909]
+                          - text: North East London, London
+                        - listitem [ref=e911]:
+                          - img "Clock" [ref=e912]
+                          - text: Permanent, full-time or part-time
+                        - listitem [ref=e914]:
+                          - img "Home" [ref=e915]
+                          - text: Work from home
+                    - button "See job description" [ref=e917] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e918]
+                  - complementary [ref=e920]
+                  - generic [ref=e922]:
+                    - link "My VA business jobs":
+                      - /url: /jobs/my-va-business/p63099
+                      - img "My VA business jobs"
+                  - generic [ref=e923]:
+                    - button "Shortlist job" [ref=e924] [cursor=pointer]:
+                      - img [ref=e925]
+                    - button "hide job" [ref=e927] [cursor=pointer]:
+                      - img [ref=e928]
+            - article [ref=e931]:
+              - generic [ref=e932]:
+                - button "Insurance Account Executive - Private Clients" [ref=e933] [cursor=pointer]
+                - generic [ref=e934]:
+                  - generic [ref=e935]:
+                    - generic [ref=e936]:
+                      - generic [ref=e937]:
+                        - generic [ref=e938]: Featured
+                        - generic [ref=e939]: New
+                        - generic [ref=e940]:
+                          - img "EarlyBird" [ref=e941]
+                          - text: Early bird
+                      - heading "Insurance Account Executive - Private Clients" [level=2] [ref=e943]:
+                        - link "Insurance Account Executive - Private Clients" [ref=e944] [cursor=pointer]:
+                          - /url: /jobs/insurance-account-executive-private-clients/56735917?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e945]:
+                        - text: 7 hrs ago by
+                        - link "Everywhen, part of the Ardonagh Group" [ref=e946] [cursor=pointer]:
+                          - /url: /jobs/towergate-underwriting-group-limited-ta-towergate-insurance-brokers/p44287
+                      - list [ref=e947]:
+                        - listitem [ref=e948]:
+                          - img "Salary" [ref=e949]
+                          - text: Competitive salary
+                        - listitem [ref=e951]:
+                          - img "Location" [ref=e952]
+                          - text: London
+                        - listitem [ref=e954]:
+                          - img "Clock" [ref=e955]
+                          - text: Permanent, full-time or part-time
+                    - button "See job description" [ref=e957] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e958]
+                  - complementary [ref=e960]
+                  - generic [ref=e962]:
+                    - link "Everywhen, part of the Ardonagh Group jobs":
+                      - /url: /jobs/towergate-underwriting-group-limited-ta-towergate-insurance-brokers/p44287
+                      - img "Everywhen, part of the Ardonagh Group jobs"
+                  - generic [ref=e963]:
+                    - button "Shortlist job" [ref=e964] [cursor=pointer]:
+                      - img [ref=e965]
+                    - button "hide job" [ref=e967] [cursor=pointer]:
+                      - img [ref=e968]
+            - article [ref=e971]:
+              - generic [ref=e972]:
+                - button "Dispensing Optician Manager" [ref=e973] [cursor=pointer]
+                - generic [ref=e974]:
+                  - generic [ref=e975]:
+                    - generic [ref=e976]:
+                      - generic [ref=e977]:
+                        - generic [ref=e978]: Featured
+                        - generic [ref=e979]: New
+                        - generic [ref=e980]:
+                          - img "EarlyBird" [ref=e981]
+                          - text: Early bird
+                      - heading "Dispensing Optician Manager" [level=2] [ref=e983]:
+                        - link "Dispensing Optician Manager" [ref=e984] [cursor=pointer]:
+                          - /url: /jobs/dispensing-optician-manager/56735064?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e985]:
+                        - text: Yesterday by
+                        - link "Specsavers" [ref=e986] [cursor=pointer]:
+                          - /url: /jobs/specsavers/p11993
+                      - list [ref=e987]:
+                        - listitem [ref=e988]:
+                          - img "Salary" [ref=e989]
+                          - text: £40,000 per annum
+                        - listitem [ref=e991]:
+                          - img "Location" [ref=e992]
+                          - text: Woolwich, London
+                        - listitem [ref=e994]:
+                          - img "Clock" [ref=e995]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e997] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e998]
+                  - complementary [ref=e1000]
+                  - generic [ref=e1002]:
+                    - link "Specsavers jobs":
+                      - /url: /jobs/specsavers/p11993
+                      - img "Specsavers jobs"
+                  - generic [ref=e1003]:
+                    - button "Shortlist job" [ref=e1004] [cursor=pointer]:
+                      - img [ref=e1005]
+                    - button "hide job" [ref=e1007] [cursor=pointer]:
+                      - img [ref=e1008]
+            - article [ref=e1011]:
+              - generic [ref=e1012]:
+                - button "Optical Assistant Apprentice" [ref=e1013] [cursor=pointer]
+                - generic [ref=e1014]:
+                  - generic [ref=e1015]:
+                    - generic [ref=e1016]:
+                      - generic [ref=e1017]:
+                        - generic [ref=e1018]: Featured
+                        - generic [ref=e1019]: New
+                        - generic [ref=e1020]:
+                          - img "EarlyBird" [ref=e1021]
+                          - text: Early bird
+                      - heading "Optical Assistant Apprentice" [level=2] [ref=e1023]:
+                        - link "Optical Assistant Apprentice" [ref=e1024] [cursor=pointer]:
+                          - /url: /jobs/optical-assistant-apprentice/56722674?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e1025]:
+                        - text: Yesterday by
+                        - link "Specsavers" [ref=e1026] [cursor=pointer]:
+                          - /url: /jobs/specsavers/p11993
+                      - list [ref=e1027]:
+                        - listitem [ref=e1028]:
+                          - img "Salary" [ref=e1029]
+                          - text: Competitive salary
+                        - listitem [ref=e1031]:
+                          - img "Location" [ref=e1032]
+                          - text: Wood Green, London, London
+                        - listitem [ref=e1034]:
+                          - img "Clock" [ref=e1035]
+                          - text: Contract, full-time
+                    - button "See job description" [ref=e1037] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e1038]
+                  - complementary [ref=e1040]
+                  - generic [ref=e1042]:
+                    - link "Specsavers jobs":
+                      - /url: /jobs/specsavers/p11993
+                      - img "Specsavers jobs"
+                  - generic [ref=e1043]:
+                    - button "Shortlist job" [ref=e1044] [cursor=pointer]:
+                      - img [ref=e1045]
+                    - button "hide job" [ref=e1047] [cursor=pointer]:
+                      - img [ref=e1048]
+            - article [ref=e1051]:
+              - generic [ref=e1052]:
+                - button "Grants Officer" [ref=e1053] [cursor=pointer]
+                - generic [ref=e1054]:
+                  - generic [ref=e1055]:
+                    - generic [ref=e1056]:
+                      - generic [ref=e1057]:
+                        - generic [ref=e1058]: New
+                        - generic [ref=e1059]:
+                          - img "EarlyBird" [ref=e1060]
+                          - text: Early bird
+                      - heading "Grants Officer" [level=2] [ref=e1062]:
+                        - link "Grants Officer" [ref=e1063] [cursor=pointer]:
+                          - /url: /jobs/grants-officer/56729961?source=searchResults&filter=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e1064]:
+                        - text: Yesterday by
+                        - link "Royal Variety Charity" [ref=e1065] [cursor=pointer]:
+                          - /url: /jobs/royal-variety-charity/p111532
+                      - list [ref=e1066]:
+                        - listitem [ref=e1067]:
+                          - img "Salary" [ref=e1068]
+                          - text: £35,000 - £40,000 per annum
+                        - listitem [ref=e1070]:
+                          - img "Location" [ref=e1071]
+                          - text: Twickenham, Middlesex
+                        - listitem [ref=e1073]:
+                          - img "Clock" [ref=e1074]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e1076] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e1077]
+                  - complementary [ref=e1079]
+                  - generic [ref=e1081]:
+                    - link "Royal Variety Charity jobs":
+                      - /url: /jobs/royal-variety-charity/p111532
+                      - img "Royal Variety Charity jobs"
+                  - generic [ref=e1082]:
+                    - button "Shortlist job" [ref=e1083] [cursor=pointer]:
+                      - img [ref=e1084]
+                    - button "hide job" [ref=e1086] [cursor=pointer]:
+                      - img [ref=e1087]
+            - generic [ref=e1089]:
+              - generic [ref=e1090]: 1 - 25 of 1,935 jobs
+              - generic [ref=e1091]:
+                - navigation "pagination" [ref=e1092]:
+                  - list [ref=e1093]:
+                    - listitem [ref=e1094]:
+                      - link "Previous page":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - img
+                        - text: Previous
+                    - listitem [ref=e1095]:
+                      - generic "Goto Page 1": "1"
+                    - listitem [ref=e1096]:
+                      - link "Goto Page 2" [ref=e1097] [cursor=pointer]:
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=2&dateCreatedOffSet=lastthreedays
+                        - text: "2"
+                    - listitem [ref=e1098]:
+                      - link "Goto Page 3" [ref=e1099] [cursor=pointer]:
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=3&dateCreatedOffSet=lastthreedays
+                        - text: "3"
+                    - listitem [ref=e1100]:
+                      - link "Goto Page 4" [ref=e1101] [cursor=pointer]:
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=4&dateCreatedOffSet=lastthreedays
+                        - text: "4"
+                    - listitem [ref=e1102]:
+                      - link "Goto Page 5" [ref=e1103] [cursor=pointer]:
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=5&dateCreatedOffSet=lastthreedays
+                        - text: "5"
+                    - listitem [ref=e1104]:
+                      - generic "Goto Page ...": ...
+                    - listitem [ref=e1105]:
+                      - link "Goto Page 78" [ref=e1106] [cursor=pointer]:
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=78&dateCreatedOffSet=lastthreedays
+                        - text: "78"
+                    - listitem [ref=e1107]:
+                      - link "Next page" [ref=e1108] [cursor=pointer]:
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=2&dateCreatedOffSet=lastthreedays
+                        - text: Next
+                        - img [ref=e1109]
+                - link "Apply on the go - get the app" [ref=e1111] [cursor=pointer]:
+                  - /url: https://reedcouk.onelink.me/933966585/3bf9bc3e
+            - generic [ref=e1113]:
+              - generic [ref=e1114]: Frequently Asked Questions
+              - generic [ref=e1115]:
+                - strong [ref=e1116]: How many It Support jobs in london are there on Reed.co.uk right now?
+                - paragraph [ref=e1118]: There are 1935 It Support jobs within 10 miles of London on Reed.co.uk right now.
+              - generic [ref=e1119]:
+                - strong [ref=e1120]: How can I be the first to find out when there are new It Support jobs london on Reed.co.uk?
+                - paragraph [ref=e1122]:
+                  - text: Creating
+                  - button "job alerts" [ref=e1123] [cursor=pointer]
+                  - text: will help you keep up-to-date with the latest It Support jobs in london.
+                  - link "Sign in" [ref=e1124] [cursor=pointer]:
+                    - /url: /authentication/login?returnTo=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                  - text: or
+                  - link "register" [ref=e1125] [cursor=pointer]:
+                    - /url: /authentication/register?returnTo=%2Fjobs%2Fit-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                  - text: to set them up today.
+              - generic [ref=e1126]:
+                - strong [ref=e1127]: What similar jobs can I find on Reed.co.uk?
+                - paragraph [ref=e1129]:
+                  - text: Jobseekers searching for it support jobs also search for
+                  - generic [ref=e1130]:
+                    - link "it technician jobs" [ref=e1131] [cursor=pointer]:
+                      - /url: /jobs/it-technician-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1132]:
+                    - link "it jobs" [ref=e1133] [cursor=pointer]:
+                      - /url: /jobs/it-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1134]:
+                    - link "it support analyst jobs" [ref=e1135] [cursor=pointer]:
+                      - /url: /jobs/it-support-analyst-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1136]:
+                    - link "work from home it support jobs" [ref=e1137] [cursor=pointer]:
+                      - /url: /jobs/work-from-home-it-support-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1138]:
+                    - text: and
+                    - link "service desk jobs" [ref=e1139] [cursor=pointer]:
+                      - /url: /jobs/service-desk-jobs-in-london
+                    - text: .
+              - generic [ref=e1140]:
+                - strong [ref=e1141]: What is the average salary of It Support jobs in london
+                - paragraph [ref=e1143]:
+                  - text: Use Reed.co.uk's
+                  - link "average salary checker" [ref=e1144] [cursor=pointer]:
+                    - /url: /average-salary
+                  - text: to find out what you could be earning.
+            - generic [ref=e1145]:
+              - generic [ref=e1146]: Browse jobs by locations
+              - list [ref=e1148]:
+                - listitem [ref=e1149]:
+                  - link "It Support Jobs in East London" [ref=e1150] [cursor=pointer]:
+                    - /url: /jobs/it-support-jobs-in-east-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                - listitem [ref=e1151]:
+                  - link "It Support Jobs in SunburyonThames" [ref=e1152] [cursor=pointer]:
+                    - /url: /jobs/it-support-jobs-in-sunburyonthames?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                - listitem [ref=e1153]:
+                  - link "It Support Jobs in South West London" [ref=e1154] [cursor=pointer]:
+                    - /url: /jobs/it-support-jobs-in-south-west-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                - listitem [ref=e1155]:
+                  - link "It Support Jobs in West London" [ref=e1156] [cursor=pointer]:
+                    - /url: /jobs/it-support-jobs-in-west-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                - listitem [ref=e1157]:
+                  - link "It Support Jobs in Watford" [ref=e1158] [cursor=pointer]:
+                    - /url: /jobs/it-support-jobs-in-watford?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                - listitem [ref=e1159]:
+                  - link "It Support Jobs in Harlow" [ref=e1160] [cursor=pointer]:
+                    - /url: /jobs/it-support-jobs-in-harlow?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+          - complementary [ref=e1161]:
+            - generic [ref=e1162]:
+              - generic [ref=e1163]:
+                - generic [ref=e1164]:
+                  - paragraph [ref=e1165]:
+                    - text: Filters
+                    - generic [ref=e1166]: "4"
+                  - button "Clear all filters" [ref=e1167] [cursor=pointer]: Clear all
+                - list [ref=e1169]:
+                  - listitem [ref=e1170]:
+                    - button "it support" [ref=e1171] [cursor=pointer]:
+                      - generic [ref=e1172]: it support
+                  - listitem [ref=e1173]:
+                    - button "Last three days" [ref=e1174] [cursor=pointer]:
+                      - generic [ref=e1175]: Last three days
+                  - listitem [ref=e1176]:
+                    - button "London (10 miles)" [ref=e1177] [cursor=pointer]:
+                      - generic [ref=e1178]: London (10 miles)
+                  - listitem [ref=e1179]:
+                    - button "£33,000 - £100,000" [ref=e1180] [cursor=pointer]:
+                      - generic [ref=e1181]: £33,000 - £100,000
+              - generic [ref=e1182]:
+                - generic [ref=e1184]:
+                  - generic [ref=e1186]: Distance
+                  - combobox "Select a proximity" [ref=e1187] [cursor=pointer]:
+                    - option "0 miles"
+                    - option "1 miles"
+                    - option "3 miles"
+                    - option "5 miles"
+                    - option "10 miles" [selected]
+                    - option "15 miles"
+                    - option "20 miles"
+                    - option "30 miles"
+                    - option "50 miles"
+                - generic [ref=e1188]:
+                  - button "Salary range" [ref=e1190] [cursor=pointer]
+                  - generic [ref=e1191]:
+                    - generic [ref=e1192]:
+                      - generic [ref=e1193]: "From:"
+                      - combobox "Select a salary from" [ref=e1194] [cursor=pointer]:
+                        - option "£ Any" [selected]
+                        - option "Up to £10,000"
+                        - option "£12,000"
+                        - option "£14,000"
+                        - option "£16,000"
+                        - option "£18,000"
+                        - option "£20,000"
+                        - option "£22,000"
+                        - option "£24,000"
+                        - option "£26,000"
+                        - option "£28,000"
+                        - option "£30,000"
+                        - option "£32,000"
+                        - option "£34,000"
+                        - option "£36,000"
+                        - option "£38,000"
+                        - option "£40,000"
+                        - option "£42,000"
+                        - option "£44,000"
+                        - option "£46,000"
+                        - option "£48,000"
+                        - option "£50,000"
+                        - option "£55,000"
+                        - option "£60,000"
+                        - option "£65,000"
+                        - option "£70,000"
+                        - option "£75,000"
+                        - option "£80,000"
+                        - option "£85,000"
+                        - option "£90,000"
+                        - option "£95,000"
+                        - option "£100,000+"
+                    - generic [ref=e1195]:
+                      - generic [ref=e1196]: "To:"
+                      - combobox "Select a salary to" [ref=e1197] [cursor=pointer]:
+                        - option "£ Any"
+                        - option "Up to £10,000"
+                        - option "£12,000"
+                        - option "£14,000"
+                        - option "£16,000"
+                        - option "£18,000"
+                        - option "£20,000"
+                        - option "£22,000"
+                        - option "£24,000"
+                        - option "£26,000"
+                        - option "£28,000"
+                        - option "£30,000"
+                        - option "£32,000"
+                        - option "£34,000"
+                        - option "£36,000"
+                        - option "£38,000"
+                        - option "£40,000"
+                        - option "£42,000"
+                        - option "£44,000"
+                        - option "£46,000"
+                        - option "£48,000"
+                        - option "£50,000"
+                        - option "£55,000"
+                        - option "£60,000"
+                        - option "£65,000"
+                        - option "£70,000"
+                        - option "£75,000"
+                        - option "£80,000"
+                        - option "£85,000"
+                        - option "£90,000"
+                        - option "£95,000"
+                        - option "£100,000+" [selected]
+                - generic [ref=e1198]:
+                  - button "Job type" [ref=e1200] [cursor=pointer]
+                  - generic [ref=e1201]:
+                    - generic [ref=e1203]:
+                      - checkbox "Permanent(1,728)" [ref=e1204]
+                      - link "Permanent(1,728)":
+                        - /url: /jobs/permanent-it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Permanent
+                        - generic: (1,728)
+                    - generic [ref=e1206]:
+                      - checkbox "Temporary(87)" [ref=e1207]
+                      - link "Temporary(87)":
+                        - /url: /jobs/temporary-it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Temporary
+                        - generic: (87)
+                    - generic [ref=e1209]:
+                      - checkbox "Contract(120)" [ref=e1210]
+                      - link "Contract(120)":
+                        - /url: /jobs/contract-it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Contract
+                        - generic: (120)
+                    - generic [ref=e1212]:
+                      - checkbox "Full-time(1,888)" [ref=e1213]
+                      - link "Full-time(1,888)":
+                        - /url: /jobs/full-time-it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Full-time
+                        - generic: (1,888)
+                    - generic [ref=e1215]:
+                      - checkbox "Part-time(90)" [ref=e1216]
+                      - link "Part-time(90)":
+                        - /url: /jobs/part-time-it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Part-time
+                        - generic: (90)
+                    - generic [ref=e1218]:
+                      - checkbox "Work from home(138)" [ref=e1219]
+                      - link "Work from home(138)":
+                        - /url: /jobs/work-from-home-it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Work from home
+                        - generic: (138)
+                - generic [ref=e1220]:
+                  - button "Posted by" [ref=e1222] [cursor=pointer]
+                  - generic [ref=e1223]:
+                    - generic [ref=e1225]:
+                      - checkbox "Agency(955)" [ref=e1226]
+                      - link "Agency(955)":
+                        - /url: /jobs/agency-it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Agency
+                        - generic: (955)
+                    - generic [ref=e1228]:
+                      - checkbox "Employer(980)" [ref=e1229]
+                      - link "Employer(980)":
+                        - /url: /jobs/direct-it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Employer
+                        - generic: (980)
+                    - generic [ref=e1231]:
+                      - checkbox "Reed" [disabled]
+                      - link "Reed":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&orgId=1
+                - generic [ref=e1232]:
+                  - button "Hide" [ref=e1234] [cursor=pointer]
+                  - generic [ref=e1235]:
+                    - generic [ref=e1238]:
+                      - checkbox "Jobs without salary displayed" [ref=e1239]
+                      - link "Jobs without salary displayed":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&excludeSalaryDescriptions=16%2C32%2C64
+                    - generic [ref=e1241]:
+                      - generic [ref=e1242]:
+                        - checkbox "Training courses(125)" [ref=e1243]
+                        - link "Training courses(125)":
+                          - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&hideTrainingJobs=true&dateCreatedOffSet=lastthreedays
+                          - text: Training courses
+                          - generic: (125)
+                      - img [ref=e1245]
+                    - generic [ref=e1248]:
+                      - generic [ref=e1249]:
+                        - checkbox "Survey jobs" [ref=e1250]
+                        - link "Survey jobs":
+                          - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&hideSurveyJobs=true&dateCreatedOffSet=lastthreedays
+                      - img [ref=e1252]
+                - generic [ref=e1254]:
+                  - button "Date posted" [ref=e1256] [cursor=pointer]
+                  - combobox "Select date posted within" [ref=e1259] [cursor=pointer]:
+                    - option "Anytime"
+                    - option "Today (336)"
+                    - option "Last three days (1,935)" [selected]
+                    - option "Last week (2,440)"
+                    - option "Last two weeks (3,905)"
+                - generic [ref=e1260]:
+                  - button "Specialisms" [ref=e1262] [cursor=pointer]
+                  - generic [ref=e1263]:
+                    - generic [ref=e1265]:
+                      - checkbox "IT & Telecoms(502)" [ref=e1266]
+                      - link "IT & Telecoms(502)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=52
+                        - text: IT & Telecoms
+                        - generic: (502)
+                    - generic [ref=e1268]:
+                      - checkbox "Strategy & Consultancy(170)" [ref=e1269]
+                      - link "Strategy & Consultancy(170)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1755
+                        - text: Strategy & Consultancy
+                        - generic: (170)
+                    - generic [ref=e1271]:
+                      - checkbox "Education(158)" [ref=e1272]
+                      - link "Education(158)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=68
+                        - text: Education
+                        - generic: (158)
+                    - generic [ref=e1274]:
+                      - checkbox "Banking(146)" [ref=e1275]
+                      - link "Banking(146)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=5
+                        - text: Banking
+                        - generic: (146)
+                    - generic [ref=e1277]:
+                      - checkbox "Accountancy (Qualified)(102)" [ref=e1278]
+                      - link "Accountancy (Qualified)(102)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=100
+                        - text: Accountancy (Qualified)
+                        - generic: (102)
+                    - generic [ref=e1280]:
+                      - checkbox "Admin, Secretarial & PA(76)" [ref=e1281]
+                      - link "Admin, Secretarial & PA(76)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=3
+                        - text: Admin, Secretarial & PA
+                        - generic: (76)
+                    - generic [ref=e1283]:
+                      - checkbox "Retail(61)" [ref=e1284]
+                      - link "Retail(61)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=90
+                        - text: Retail
+                        - generic: (61)
+                    - generic [ref=e1286]:
+                      - checkbox "Construction & Property(53)" [ref=e1287]
+                      - link "Construction & Property(53)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=146
+                        - text: Construction & Property
+                        - generic: (53)
+                    - generic [ref=e1289]:
+                      - checkbox "Financial Services(52)" [ref=e1290]
+                      - link "Financial Services(52)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=117
+                        - text: Financial Services
+                        - generic: (52)
+                    - generic [ref=e1292]:
+                      - checkbox "Human Resources(50)" [ref=e1293]
+                      - link "Human Resources(50)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=24
+                        - text: Human Resources
+                        - generic: (50)
+                    - generic [ref=e1295]:
+                      - checkbox "Sales(45)" [ref=e1296]
+                      - link "Sales(45)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=30
+                        - text: Sales
+                        - generic: (45)
+                    - generic [ref=e1298]:
+                      - checkbox "Transport & Logistics(45)" [ref=e1299]
+                      - link "Transport & Logistics(45)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=11
+                        - text: Transport & Logistics
+                        - generic: (45)
+                    - generic [ref=e1301]:
+                      - checkbox "Legal(43)" [ref=e1302]
+                      - link "Legal(43)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=101
+                        - text: Legal
+                        - generic: (43)
+                    - generic [ref=e1304]:
+                      - checkbox "Accountancy(41)" [ref=e1305]
+                      - link "Accountancy(41)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=2
+                        - text: Accountancy
+                        - generic: (41)
+                    - generic [ref=e1307]:
+                      - checkbox "Engineering(37)" [ref=e1308]
+                      - link "Engineering(37)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=12
+                        - text: Engineering
+                        - generic: (37)
+                    - generic [ref=e1310]:
+                      - checkbox "Marketing & PR(33)" [ref=e1311]
+                      - link "Marketing & PR(33)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=18
+                        - text: Marketing & PR
+                        - generic: (33)
+                    - generic [ref=e1313]:
+                      - checkbox "Hospitality & Catering(31)" [ref=e1314]
+                      - link "Hospitality & Catering(31)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=6
+                        - text: Hospitality & Catering
+                        - generic: (31)
+                    - generic [ref=e1316]:
+                      - checkbox "Health & Medicine(30)" [ref=e1317]
+                      - link "Health & Medicine(30)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=36
+                        - text: Health & Medicine
+                        - generic: (30)
+                    - generic [ref=e1319]:
+                      - checkbox "Estate Agency(30)" [ref=e1320]
+                      - link "Estate Agency(30)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1962
+                        - text: Estate Agency
+                        - generic: (30)
+                    - generic [ref=e1322]:
+                      - checkbox "General Insurance(30)" [ref=e1323]
+                      - link "General Insurance(30)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=16
+                        - text: General Insurance
+                        - generic: (30)
+                    - generic [ref=e1325]:
+                      - checkbox "Social Care(29)" [ref=e1326]
+                      - link "Social Care(29)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=34
+                        - text: Social Care
+                        - generic: (29)
+                    - generic [ref=e1328]:
+                      - checkbox "Customer Service(26)" [ref=e1329]
+                      - link "Customer Service(26)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=66
+                        - text: Customer Service
+                        - generic: (26)
+                    - generic [ref=e1331]:
+                      - checkbox "Charity & Voluntary(20)" [ref=e1332]
+                      - link "Charity & Voluntary(20)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=500
+                        - text: Charity & Voluntary
+                        - generic: (20)
+                    - generic [ref=e1334]:
+                      - checkbox "Recruitment Consultancy(18)" [ref=e1335]
+                      - link "Recruitment Consultancy(18)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=338
+                        - text: Recruitment Consultancy
+                        - generic: (18)
+                    - generic [ref=e1337]:
+                      - checkbox "Media, Digital & Creative(16)" [ref=e1338]
+                      - link "Media, Digital & Creative(16)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=71
+                        - text: Media, Digital & Creative
+                        - generic: (16)
+                    - generic [ref=e1340]:
+                      - checkbox "Security & Safety(15)" [ref=e1341]
+                      - link "Security & Safety(15)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1963
+                        - text: Security & Safety
+                        - generic: (15)
+                    - generic [ref=e1343]:
+                      - checkbox "FMCG(13)" [ref=e1344]
+                      - link "FMCG(13)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1722
+                        - text: FMCG
+                        - generic: (13)
+                    - generic [ref=e1346]:
+                      - checkbox "Leisure & Tourism(13)" [ref=e1347]
+                      - link "Leisure & Tourism(13)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=92
+                        - text: Leisure & Tourism
+                        - generic: (13)
+                    - generic [ref=e1349]:
+                      - checkbox "Purchasing(12)" [ref=e1350]
+                      - link "Purchasing(12)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=27
+                        - text: Purchasing
+                        - generic: (12)
+                    - generic [ref=e1352]:
+                      - checkbox "Energy(12)" [ref=e1353]
+                      - link "Energy(12)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1961
+                        - text: Energy
+                        - generic: (12)
+                    - generic [ref=e1355]:
+                      - checkbox "Manufacturing(6)" [ref=e1356]
+                      - link "Manufacturing(6)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=168
+                        - text: Manufacturing
+                        - generic: (6)
+                    - generic [ref=e1358]:
+                      - checkbox "Motoring & Automotive(5)" [ref=e1359]
+                      - link "Motoring & Automotive(5)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1700
+                        - text: Motoring & Automotive
+                        - generic: (5)
+                    - generic [ref=e1361]:
+                      - checkbox "Other(5)" [ref=e1362]
+                      - link "Other(5)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=21
+                        - text: Other
+                        - generic: (5)
+                    - generic [ref=e1364]:
+                      - checkbox "Graduate Training & Internships(4)" [ref=e1365]
+                      - link "Graduate Training & Internships(4)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=169
+                        - text: Graduate Training & Internships
+                        - generic: (4)
+                    - generic [ref=e1367]:
+                      - checkbox "Scientific(3)" [ref=e1368]
+                      - link "Scientific(3)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=89
+                        - text: Scientific
+                        - generic: (3)
+                    - generic [ref=e1370]:
+                      - checkbox "Training(1)" [ref=e1371]
+                      - link "Training(1)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1909
+                        - text: Training
+                        - generic: (1)
+                    - generic [ref=e1373]:
+                      - checkbox "Apprenticeships(1)" [ref=e1374]
+                      - link "Apprenticeships(1)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1964
+                        - text: Apprenticeships
+                        - generic: (1)
+                - generic [ref=e1375]:
+                  - button "Experience level" [ref=e1377] [cursor=pointer]
+                  - generic [ref=e1381]:
+                    - checkbox "Graduate" [ref=e1382]
+                    - link "Graduate":
+                      - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&graduate=true&dateCreatedOffSet=lastthreedays
+                - generic [ref=e1383]:
+                  - button "More options" [ref=e1385] [cursor=pointer]
+                  - generic [ref=e1386]:
+                    - generic [ref=e1389]:
+                      - checkbox "Early bird(168)" [ref=e1390]
+                      - link "Early bird(168)":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&isEarlyBird=true
+                        - text: Early bird
+                        - generic: (168)
+                    - generic [ref=e1393]:
+                      - checkbox "Easy apply" [ref=e1394]
+                      - link "Easy apply":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&isEasyApply=true
+                    - generic [ref=e1397]:
+                      - checkbox "Visa sponsorship" [disabled]
+                      - link "Visa sponsorship":
+                        - /url: /jobs/it-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&visaSponsorship=true
+                - generic [ref=e1398]:
+                  - generic [ref=e1399]: Locations
+                  - list [ref=e1400]:
+                    - listitem [ref=e1401]:
+                      - link "East London (23)" [ref=e1402] [cursor=pointer]:
+                        - /url: /jobs/it-support-jobs-in-east-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: East London
+                        - generic [ref=e1403]: (23)
+                    - listitem [ref=e1404]:
+                      - link "SunburyonThames (22)" [ref=e1405] [cursor=pointer]:
+                        - /url: /jobs/it-support-jobs-in-sunburyonthames?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: SunburyonThames
+                        - generic [ref=e1406]: (22)
+                    - listitem [ref=e1407]:
+                      - link "South West London (21)" [ref=e1408] [cursor=pointer]:
+                        - /url: /jobs/it-support-jobs-in-south-west-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: South West London
+                        - generic [ref=e1409]: (21)
+                    - listitem [ref=e1410]:
+                      - link "West London (12)" [ref=e1411] [cursor=pointer]:
+                        - /url: /jobs/it-support-jobs-in-west-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: West London
+                        - generic [ref=e1412]: (12)
+                    - listitem [ref=e1413]:
+                      - link "Watford (11)" [ref=e1414] [cursor=pointer]:
+                        - /url: /jobs/it-support-jobs-in-watford?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Watford
+                        - generic [ref=e1415]: (11)
+                  - button "See more locations" [ref=e1416] [cursor=pointer]
+                - link "View all jobs in london Chevron" [ref=e1418] [cursor=pointer]:
+                  - /url: /jobs/jobs-in-london
+                  - text: View all jobs in london
+                  - img "Chevron" [ref=e1419]
+            - generic [ref=e1422]:
+              - heading "It Support courses" [level=3] [ref=e1424]
+              - generic [ref=e1425]:
+                - list [ref=e1426]:
+                  - listitem [ref=e1427]:
+                    - link "BTEC ICT Specialist Certificate Level 2 - No Attendance Required Online, Self-paced £378 - £483" [ref=e1428] [cursor=pointer]:
+                      - /url: /courses/btec-ict-specialist-certificate-level-2-no-attendance-required/213451?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=It_Support_courses_213451
+                      - heading "BTEC ICT Specialist Certificate Level 2 - No Attendance Required" [level=4] [ref=e1429]
+                      - paragraph [ref=e1430]: Online, Self-paced
+                      - paragraph [ref=e1431]: £378 - £483
+                  - listitem [ref=e1432]:
+                    - link "CompTIA A+ (New Version) Online, Self-paced £295" [ref=e1433] [cursor=pointer]:
+                      - /url: /courses/comptia-a-new-version/478800?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=It_Support_courses_478800
+                      - heading "CompTIA A+ (New Version)" [level=4] [ref=e1434]
+                      - paragraph [ref=e1435]: Online, Self-paced
+                      - paragraph [ref=e1436]: £295
+                  - listitem [ref=e1437]:
+                    - link "IT Support Technician - CPD Certified Online, Self-paced £39" [ref=e1438] [cursor=pointer]:
+                      - /url: /courses/it-support-technician-cpd-certified/299961?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=It_Support_courses_299961
+                      - heading "IT Support Technician - CPD Certified" [level=4] [ref=e1439]
+                      - paragraph [ref=e1440]: Online, Self-paced
+                      - paragraph [ref=e1441]: £39
+                - link "View IT support courses Chevron" [ref=e1442] [cursor=pointer]:
+                  - /url: https://www.reed.co.uk/courses/all?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=view_It_Support_courses
+                  - text: View IT support courses
+                  - img "Chevron" [ref=e1443]
+    - contentinfo [ref=e1447]:
+      - generic [ref=e1449]:
+        - navigation [ref=e1450]:
+          - button "JOBS" [ref=e1452] [cursor=pointer]
+          - list [ref=e1455]:
+            - listitem [ref=e1456]:
+              - link "Contact us" [ref=e1457] [cursor=pointer]:
+                - /url: /enquiries
+            - listitem [ref=e1458]:
+              - link "Job search" [ref=e1459] [cursor=pointer]:
+                - /url: /jobs
+            - listitem [ref=e1460]:
+              - link "Recruiter directory" [ref=e1461] [cursor=pointer]:
+                - /url: /recruiterdirectory
+            - listitem [ref=e1462]:
+              - link "Work from home" [ref=e1463] [cursor=pointer]:
+                - /url: /jobs/work-from-home-jobs
+            - listitem [ref=e1464]:
+              - link "Browse jobs" [ref=e1465] [cursor=pointer]:
+                - /url: /popularjobs
+            - listitem [ref=e1466]:
+              - link "Browse locations" [ref=e1467] [cursor=pointer]:
+                - /url: /location
+            - listitem [ref=e1468]:
+              - link "Popular searches" [ref=e1469] [cursor=pointer]:
+                - /url: /popularsearches
+            - listitem [ref=e1470]:
+              - link "Career advice" [ref=e1471] [cursor=pointer]:
+                - /url: /career-advice
+            - listitem [ref=e1472]:
+              - link "Tax calculator" [ref=e1473] [cursor=pointer]:
+                - /url: /tax-calculator
+            - listitem [ref=e1474]:
+              - link "Average salary checker" [ref=e1475] [cursor=pointer]:
+                - /url: /average-salary
+            - listitem [ref=e1476]:
+              - link "Help" [ref=e1477] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e1478]:
+              - link "Contact a REED office" [ref=e1479] [cursor=pointer]:
+                - /url: https://www.reed.com/offices
+            - listitem [ref=e1480]:
+              - link "Sitemap" [ref=e1481] [cursor=pointer]:
+                - /url: /html-sitemap
+        - navigation [ref=e1482]:
+          - button "RECRUITER" [ref=e1484] [cursor=pointer]
+          - list [ref=e1487]:
+            - listitem [ref=e1488]:
+              - link "Recruiter site" [ref=e1489] [cursor=pointer]:
+                - /url: /recruiter?directjob=recruiter
+            - listitem [ref=e1490]:
+              - link "Post a job" [ref=e1491] [cursor=pointer]:
+                - /url: /recruiter/post-a-job?directjob=recruiter
+            - listitem [ref=e1492]:
+              - link "CV Search" [ref=e1493] [cursor=pointer]:
+                - /url: /recruiter/cv-search?directjob=recruiter
+            - listitem [ref=e1494]:
+              - link "Recruitment agencies" [ref=e1495] [cursor=pointer]:
+                - /url: /recruiter/recruitment-agencies?directjob=recruiter
+            - listitem [ref=e1496]:
+              - link "Recruiter Advice" [ref=e1497] [cursor=pointer]:
+                - /url: /recruiter-advice/?directjob=recruiter
+        - navigation [ref=e1498]:
+          - button "COURSES" [ref=e1500] [cursor=pointer]
+          - list [ref=e1503]:
+            - listitem [ref=e1504]:
+              - link "Help" [ref=e1505] [cursor=pointer]:
+                - /url: /courses/help
+            - listitem [ref=e1506]:
+              - link "Contact us" [ref=e1507] [cursor=pointer]:
+                - /url: /courses/contact-us
+            - listitem [ref=e1508]:
+              - link "Find a course" [ref=e1509] [cursor=pointer]:
+                - /url: /courses/
+            - listitem [ref=e1510]:
+              - link "View all subjects" [ref=e1511] [cursor=pointer]:
+                - /url: /courses/directory
+            - listitem [ref=e1512]:
+              - link "Discount courses" [ref=e1513] [cursor=pointer]:
+                - /url: /courses/discount
+            - listitem [ref=e1514]:
+              - link "Free courses" [ref=e1515] [cursor=pointer]:
+                - /url: /courses/free
+            - listitem [ref=e1516]:
+              - link "Awarding body directory" [ref=e1517] [cursor=pointer]:
+                - /url: /courses/awarding-bodies
+            - listitem [ref=e1518]:
+              - link "Career guides" [ref=e1519] [cursor=pointer]:
+                - /url: /courses/career-guides
+            - listitem [ref=e1520]:
+              - link "Advertise a course" [ref=e1521] [cursor=pointer]:
+                - /url: /courses/providers/
+            - listitem [ref=e1522]:
+              - link "Courses sitemap" [ref=e1523] [cursor=pointer]:
+                - /url: /courses/html-sitemap
+        - navigation [ref=e1524]:
+          - button "MORE FROM Reed.co.uk" [ref=e1526] [cursor=pointer]
+          - list [ref=e1529]:
+            - listitem [ref=e1530]:
+              - link "About us" [ref=e1531] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e1532]:
+              - link "Careers at Reed.co.uk" [ref=e1533] [cursor=pointer]:
+                - /url: https://www.reed.com/careers/jobs?businessDivision=Reed.co.uk
+            - listitem [ref=e1534]:
+              - link "Press office" [ref=e1535] [cursor=pointer]:
+                - /url: /press-office
+            - listitem [ref=e1536]:
+              - link "Corporate governance" [ref=e1537] [cursor=pointer]:
+                - /url: /corporate-governance
+            - listitem [ref=e1538]:
+              - link "Modern slavery statement" [ref=e1539] [cursor=pointer]:
+                - /url: https://www.reed.co.uk/cdn/jobseeker/pdf/Reed_MSA_Statement.pdf
+        - navigation [ref=e1540]:
+          - button "REED" [ref=e1542] [cursor=pointer]
+          - list [ref=e1545]:
+            - listitem [ref=e1546]:
+              - 'link "Tempzone: timesheets & holiday" [ref=e1547] [cursor=pointer]':
+                - /url: https://candidate.reed.co.uk/candlogin.asp
+            - listitem [ref=e1548]:
+              - link "Authorise timesheets" [ref=e1549] [cursor=pointer]:
+                - /url: https://client.reed.co.uk/
+            - listitem [ref=e1550]:
+              - link "Reed Group Services" [ref=e1551] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e1552]:
+              - link "Reed Specialist Recruitment" [ref=e1553] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e1554]:
+              - link "Reed in Partnership" [ref=e1555] [cursor=pointer]:
+                - /url: https://www.reedinpartnership.co.uk/
+            - listitem [ref=e1556]:
+              - link "Careers with REED" [ref=e1557] [cursor=pointer]:
+                - /url: https://www.reed.com/careers
+            - listitem [ref=e1558]:
+              - link "James Reed - Official Site" [ref=e1559] [cursor=pointer]:
+                - /url: /james-reed/
+            - listitem [ref=e1560]:
+              - 'link "Podcast - James Reed: all about business" [ref=e1561] [cursor=pointer]':
+                - /url: https://www.reed.com/podcasts
+            - listitem [ref=e1562]:
+              - link "ESG & sustainability" [ref=e1563] [cursor=pointer]:
+                - /url: https://www.reed.com/esg-and-sustainability
+      - generic [ref=e1565]:
+        - generic [ref=e1566]:
+          - generic [ref=e1568]:
+            - link "PhilCo" [ref=e1569] [cursor=pointer]:
+              - /url: https://philco.org.uk/
+              - img "PhilCo" [ref=e1570]
+            - generic [ref=e1571]: Learn how Reed is leading the way in philanthropy
+          - img "Love Mondays" [ref=e1573]
+        - generic [ref=e1574]:
+          - generic [ref=e1575]:
+            - 'link "James Reed: all about business" [ref=e1576] [cursor=pointer]':
+              - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+              - 'img "James Reed: all about business" [ref=e1577]'
+            - generic [ref=e1578]:
+              - heading "Introducing our new podcast New" [level=3] [ref=e1579]:
+                - text: Introducing our new podcast
+                - generic [ref=e1580]: New
+              - paragraph [ref=e1581]: "James Reed: all about business"
+              - link "Listen here" [ref=e1582] [cursor=pointer]:
+                - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+          - generic [ref=e1583]:
+            - generic [ref=e1584]:
+              - generic [ref=e1585]:
+                - link "Download on the App Store" [ref=e1586] [cursor=pointer]:
+                  - /url: https://itunes.apple.com/GB/app/id1040443949?mt=8
+                  - img "Download on the App Store" [ref=e1587]
+                - link "Get it on Google Play" [ref=e1588] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.reedcouk.jobs&referrer=af_tranid%3D_HgKgkJ-aFiIn4G5iigdZQ%26pid%3DWebsite_Footer%26utm_source%3DWebsite_Footer
+                  - img "Get it on Google Play" [ref=e1589]
+              - generic [ref=e1590]:
+                - link "Facebook" [ref=e1591] [cursor=pointer]:
+                  - /url: https://www.facebook.com/reedcouk
+                  - img "Facebook" [ref=e1592]
+                - link "Instagram" [ref=e1593] [cursor=pointer]:
+                  - /url: https://www.instagram.com/reedcouk/
+                  - img "Instagram" [ref=e1594]
+                - link "Tiktok" [ref=e1595] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@reedjobs
+                  - img "Tiktok" [ref=e1596]
+            - list [ref=e1597]:
+              - listitem [ref=e1598]:
+                - button "Manage Preferences" [ref=e1599] [cursor=pointer]
+                - text: ","
+              - listitem [ref=e1600]:
+                - link "Security, Privacy, Terms & Conditions" [ref=e1601] [cursor=pointer]:
+                  - /url: /policies
+            - paragraph [ref=e1602]: COPYRIGHT © Reed.co.uk 2026
+  - alert [ref=e1603]
+  - region "Cookie banner" [active] [ref=e1635]:
+    - dialog "We Care About Your Privacy" [ref=e1636]:
+      - generic [ref=e1637]:
+        - generic [ref=e1638]:
+          - generic:
+            - heading "We Care About Your Privacy" [level=2] [ref=e1639]
+            - generic [ref=e1640]:
+              - text: We and our 987 partners store and access personal data, like browsing data or unique identifiers, on your device. Selecting Accept All enables tracking technologies to support the purposes shown under we and our partners process data to provide. Selecting Reject All or withdrawing your consent will disable them. If trackers are disabled, some content and ads you see may not be as relevant to you. You can resurface this menu to change your choices or withdraw consent at any time by clicking the Manage Preferences link on the bottom of the webpage. Your choices will have effect within our Website. For more details, refer to our Privacy Policy.
+              - link "More information about your privacy, opens in a new tab" [ref=e1641] [cursor=pointer]:
+                - /url: https://www.reed.co.uk/policies
+                - text: You can view our privacy policy page for more information.
+            - generic [ref=e1642]:
+              - heading "We and our partners process data to provide:" [level=3] [ref=e1643]
+              - paragraph [ref=e1645]:
+                - text: Use precise geolocation data. Actively scan device characteristics for identification. Store and/or access information on a device. Personalised advertising and content, advertising and content measurement, audience research and services development.
+                - button "List of Partners (vendors)" [ref=e1646] [cursor=pointer]
+        - generic [ref=e1648]:
+          - button "Show Purposes, Opens the preference center dialog" [ref=e1649] [cursor=pointer]: Show Purposes
+          - generic [ref=e1650]:
+            - button "Reject All" [ref=e1651] [cursor=pointer]
+            - button "Accept All" [ref=e1652] [cursor=pointer]

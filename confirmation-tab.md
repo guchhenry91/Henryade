@@ -1,0 +1,175 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e6]:
+    - link "core-logo" [ref=e10] [cursor=pointer]:
+      - /url: /
+    - menubar [ref=e13]:
+      - generic [ref=e16]:
+        - menuitem "A Adegboyega" [ref=e18] [cursor=pointer]:
+          - generic [ref=e20]:
+            - generic [ref=e23]: A
+            - generic [ref=e24]: Adegboyega
+        - menuitem "Menu" [ref=e26] [cursor=pointer]:
+          - generic [ref=e32]: Menu
+  - main [ref=e33]:
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - heading "Did all go well with your application?" [level=1] [ref=e38]
+        - article [ref=e39]:
+          - generic [ref=e41]:
+            - heading "If not, you can still submit your application on the company website." [level=2] [ref=e43]
+            - button "Company website" [ref=e45] [cursor=pointer]:
+              - generic [ref=e47]: Company website
+      - article [ref=e50]:
+        - heading "Application summary" [level=2] [ref=e55]
+        - generic [ref=e57]:
+          - img "Single Homeless Project logo" [ref=e61]
+          - generic [ref=e63]:
+            - link "IT Helpdesk Officer" [ref=e67] [cursor=pointer]:
+              - /url: https://www.totaljobs.com/job/it-helpdesk-officer/single-homeless-project-job107003902
+              - generic [ref=e68]: IT Helpdesk Officer
+            - generic [ref=e73]: Single Homeless Project
+            - generic [ref=e75]:
+              - generic [ref=e77]: Central London (WC1H), WC1X 8QY
+              - generic [ref=e84]:
+                - text: "Application period ends:"
+                - generic [ref=e85]: 08/05/2026
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - heading "This job also looks like a great match" [level=3] [ref=e88]
+          - paragraph [ref=e89]: Sounds good? Then why not apply right away to boost your chances of getting an interview.
+        - article [ref=e90]:
+          - generic [ref=e91]:
+            - generic [ref=e92]:
+              - generic [ref=e94]:
+                - status [ref=e95]:
+                  - generic [ref=e96]: Great match
+                - button "off" [ref=e97] [cursor=pointer]
+              - generic [ref=e103]:
+                - img "logo" [ref=e107]
+                - generic [ref=e109]:
+                  - heading "IT Support Engineer (Urgent)" [level=2] [ref=e112]
+                  - generic [ref=e118]: Morson Edge
+                  - generic [ref=e125]: Bush Hill Park, Enfield (EN1), EN1 1AA
+            - generic [ref=e126]:
+              - button "Apply" [ref=e128] [cursor=pointer]:
+                - generic [ref=e130]: Apply
+              - article [ref=e134]:
+                - generic [ref=e135]:
+                  - paragraph [ref=e136]: Join a large UK organisation with 4,000 staff and take your IT career to the next level! This field and office-based role is customer-facing and involves travel between sites, so a full driving licence is essential. You’ll provide 2nd line support while gaining hands-on experience across projects that can lead to a 3rd line support or infrastructure role.
+                  - paragraph [ref=e137]:
+                    - strong [ref=e138]: "What You’ll Do:"
+                  - list [ref=e139]:
+                    - listitem [ref=e140]:
+                      - paragraph [ref=e141]: Deliver 1st & 2nd line IT support on desktops, laptops, mobile devices, and more
+                    - listitem [ref=e142]:
+                      - paragraph [ref=e143]: Troubleshoot hardware, software, and network issues
+                    - listitem [ref=e144]:
+                      - paragraph [ref=e145]: Support VPN, wireless, and WAN environments
+                    - listitem [ref=e146]:
+                      - paragraph [ref=e147]: Install and configure systems and applications
+                    - listitem [ref=e148]:
+                      - paragraph [ref=e149]: Manage user accounts in Active Directory
+                    - listitem [ref=e150]:
+                      - paragraph [ref=e151]: Maintain IT asset records and assist with deployments
+                    - listitem [ref=e152]:
+                      - paragraph [ref=e153]: Create documentation and share knowledge
+                    - listitem [ref=e154]:
+                      - paragraph [ref=e155]: Provide excellent customer service
+                  - paragraph [ref=e156]:
+                    - strong [ref=e157]: "What We’re Looking For:"
+                  - list [ref=e158]:
+                    - listitem [ref=e159]:
+                      - paragraph [ref=e160]: A-Level or equivalent with networking experience
+                    - listitem [ref=e161]:
+                      - paragraph [ref=e162]: Experience in site setups, hardware repairs, and troubleshooting
+                    - listitem [ref=e163]:
+                      - paragraph [ref=e164]: Skilled in Microsoft Office 365 and Windows 10/11
+                    - listitem [ref=e165]:
+                      - paragraph [ref=e166]: Knowledge of Active Directory and device provisioning (Autopilot)
+                    - listitem [ref=e167]: Networking
+                  - paragraph [ref=e168]: InterQuest Group is acting as an employment agency for this vacancy. InterQuest Group is an equal opportunities employer and we welcome applications from all suitably qualified persons regardless of age, disability, gender, religion/belief, race, marriage, civil partnership, pregnancy, maternity, sex or sexual orientation. Please make us aware if you require any reasonable adjustments throughout the recruitment process.
+              - button "Apply" [ref=e170] [cursor=pointer]:
+                - generic [ref=e172]: Apply
+        - article [ref=e175]:
+          - generic [ref=e185]:
+            - heading "Your applications at a glance" [level=3] [ref=e186]
+            - paragraph [ref=e187]: Keep track of the status of all your applications and never miss any important updates.
+            - link "Go to my applications" [ref=e188] [cursor=pointer]:
+              - /url: /membersarea#applications
+  - contentinfo [ref=e190]:
+    - generic [ref=e191]:
+      - generic [ref=e192]:
+        - generic [ref=e193]:
+          - button "Totaljobs" [disabled] [expanded] [ref=e194]:
+            - heading "Totaljobs" [level=4] [ref=e196]
+          - generic [ref=e200]:
+            - link "About us" [ref=e201] [cursor=pointer]:
+              - /url: /about/about-us
+            - link "Work for us" [ref=e202] [cursor=pointer]:
+              - /url: https://careers.smartrecruiters.com/StepStoneGroup/totaljobs-group
+            - link "Media centre" [ref=e203] [cursor=pointer]:
+              - /url: /media-centre/press-releases
+            - link "Partners" [ref=e204] [cursor=pointer]:
+              - /url: /about/partners
+        - generic [ref=e205]:
+          - button "Jobseeker" [disabled] [expanded] [ref=e206]:
+            - heading "Jobseeker" [level=4] [ref=e208]
+          - generic [ref=e212]:
+            - link "Jobs" [ref=e213] [cursor=pointer]:
+              - /url: /browse-jobs
+            - link "Jobseeker login" [ref=e214] [cursor=pointer]:
+              - /url: /account/signin?ReturnUrl=/
+            - link "Salary Planner" [ref=e215] [cursor=pointer]:
+              - /url: /salary-planner
+            - link "Jobseeker help centre" [ref=e216] [cursor=pointer]:
+              - /url: https://help.totaljobs.com/s/
+            - link "Career advice" [ref=e217] [cursor=pointer]:
+              - /url: /advice/career-advice
+        - generic [ref=e218]:
+          - button "Recruiter" [disabled] [expanded] [ref=e219]:
+            - heading "Recruiter" [level=4] [ref=e221]
+          - generic [ref=e225]:
+            - link "Courses" [ref=e226] [cursor=pointer]:
+              - /url: /advice/advertise-your-career-course-with-us
+            - link "Advertise a job" [ref=e227] [cursor=pointer]:
+              - /url: /recruiters
+            - link "Recruiter login" [ref=e228] [cursor=pointer]:
+              - /url: /recruiters/login
+            - link "Contact us – recruiters" [ref=e229] [cursor=pointer]:
+              - /url: /recruiters/contact-customer-services
+            - link "Recruiter advice" [ref=e230] [cursor=pointer]:
+              - /url: /recruiter-advice/hiring-people
+            - link "Recruit internationally" [ref=e231] [cursor=pointer]:
+              - /url: /recruiters/recruit-internationally
+        - generic [ref=e232]:
+          - heading "Let's connect" [level=4] [ref=e233]
+          - generic [ref=e234]:
+            - link "Follow us on X" [ref=e235] [cursor=pointer]:
+              - /url: https://twitter.com/totaljobsUK
+            - link "Follow us on Facebook" [ref=e239] [cursor=pointer]:
+              - /url: https://www.facebook.com/Totaljobs
+            - link "Visit our YouTube page" [ref=e242] [cursor=pointer]:
+              - /url: https://www.youtube.com/user/Totaljobs
+      - generic [ref=e245]:
+        - heading "Apps" [level=4] [ref=e247]
+        - generic [ref=e249]:
+          - link "Download our app on the Apple Store" [ref=e251] [cursor=pointer]:
+            - /url: https://itunes.apple.com/gb/app/totaljobs-job-search/id924927935
+            - img [ref=e253]
+          - link "Download our app on Google Play" [ref=e267] [cursor=pointer]:
+            - /url: https://play.google.com/store/apps/details?id=com.stepstone.totaljobs&hl=en_GB
+            - img [ref=e269]
+    - generic [ref=e283]:
+      - generic [ref=e284]:
+        - link "Privacy policy" [ref=e286] [cursor=pointer]:
+          - /url: /about/privacy-policy
+        - link "Terms and conditions" [ref=e288] [cursor=pointer]:
+          - /url: /about/terms-and-conditions
+        - link "Cookies" [ref=e290] [cursor=pointer]:
+          - /url: /about/cookies
+        - link "Compliance" [ref=e292] [cursor=pointer]:
+          - /url: /about/compliance
+        - link "Accessibility" [ref=e294] [cursor=pointer]:
+          - /url: https://www.thestepstonegroup.com/english/compliance/accessibility-statement/
+      - separator [ref=e297]
+      - heading "The Stepstone Group UK Ltd © 2026" [level=4] [ref=e301]

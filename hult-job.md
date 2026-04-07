@@ -1,0 +1,626 @@
+- generic [active] [ref=e13]:
+  - generic:
+    - region "Toast message":
+      - heading "0 notifications total" [level=2] [ref=e15]
+      - alert
+  - region [ref=e12]
+  - generic [ref=e16]:
+    - generic [ref=e18]:
+      - button "Skip to search" [ref=e19] [cursor=pointer]:
+        - generic [ref=e20]: Skip to search
+      - button "Skip to main content" [ref=e21] [cursor=pointer]:
+        - generic [ref=e22]: Skip to main content
+      - button "Keyboard shortcuts" [ref=e23] [cursor=pointer]:
+        - generic [ref=e24]: Keyboard shortcuts
+      - button "Close jump menu" [ref=e25] [cursor=pointer]:
+        - img [ref=e26]
+        - generic [ref=e28]: Close jump menu
+    - banner "Global Navigation" [ref=e29]:
+      - generic [ref=e30]:
+        - link "LinkedIn" [ref=e31] [cursor=pointer]:
+          - /url: https://www.linkedin.com/feed/?nis=true
+          - img "LinkedIn" [ref=e34]:
+            - img [ref=e35]
+        - generic [ref=e39]:
+          - combobox "Search" [ref=e40]
+          - generic:
+            - img
+        - navigation "Primary Navigation" [ref=e41]:
+          - list [ref=e42]:
+            - listitem [ref=e43]:
+              - link "new feed updates notifications Home" [ref=e44] [cursor=pointer]:
+                - /url: https://www.linkedin.com/feed/?nis=true&
+                - generic [ref=e45]:
+                  - generic [ref=e48]: new feed updates notifications
+                  - img [ref=e52]
+                - generic "Home" [ref=e54]
+            - listitem [ref=e55]:
+              - link "1 new network update notification My Network" [ref=e56] [cursor=pointer]:
+                - /url: https://www.linkedin.com/mynetwork/?
+                - generic [ref=e57]:
+                  - generic [ref=e58]:
+                    - generic [ref=e59]: "1"
+                    - generic [ref=e60]: 1 new network update notification
+                  - img [ref=e64]
+                - generic "My Network" [ref=e66]
+            - listitem [ref=e67]:
+              - link "Jobs" [ref=e68] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/?
+                - img [ref=e72]
+                - generic "Jobs" [ref=e74]
+            - listitem [ref=e75]:
+              - link "Messaging" [ref=e76] [cursor=pointer]:
+                - /url: https://www.linkedin.com/messaging/?
+                - img [ref=e80]
+                - generic "Messaging" [ref=e82]
+            - listitem [ref=e83]:
+              - link "Notifications" [ref=e84] [cursor=pointer]:
+                - /url: https://www.linkedin.com/notifications/?
+                - img [ref=e88]
+                - generic "Notifications" [ref=e90]
+            - listitem [ref=e91]:
+              - button "Adegboyega Ogidan Me" [ref=e93] [cursor=pointer]:
+                - img "Adegboyega Ogidan" [ref=e94]
+                - generic [ref=e95]:
+                  - text: Me
+                  - img [ref=e96]
+            - listitem [ref=e98]:
+              - button "For Business" [ref=e100] [cursor=pointer]:
+                - img [ref=e104]
+                - generic "For Business" [ref=e106]:
+                  - text: For Business
+                  - img [ref=e107]
+            - listitem [ref=e109]:
+              - link "Post a job" [ref=e110] [cursor=pointer]:
+                - /url: https://www.linkedin.com/talent/job-posting-redirect?trk=nav_spotlight_post_job&
+                - img [ref=e114]
+                - generic "Post a job" [ref=e119]
+    - generic [ref=e123]:
+      - main [ref=e124]:
+        - generic [ref=e127]:
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - generic [ref=e133]:
+                - link "Hult International Business School logo" [ref=e134] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/company/hult/life
+                  - img "Hult International Business School logo" [ref=e137]
+                - link "Hult International Business School" [ref=e139] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/company/hult/life
+              - generic [ref=e140]:
+                - button "Share" [ref=e143] [cursor=pointer]:
+                  - img [ref=e144]
+                  - generic [ref=e146]: Share
+                - button "Show more options" [ref=e148] [cursor=pointer]:
+                  - img [ref=e149]
+                  - generic [ref=e151]: Show more options
+            - generic [ref=e153]:
+              - heading "Junior Service Desk Analyst" [level=1] [ref=e154]
+              - button "View verified hiring modal" [ref=e156] [cursor=pointer]:
+                - img [ref=e159]
+            - generic [ref=e163]:
+              - generic [ref=e164]: London, England, United Kingdom
+              - generic [ref=e165]: ·
+              - strong [ref=e167]:
+                - generic [ref=e168]: 19 hours ago
+              - generic [ref=e169]: ·
+              - generic [ref=e170]: 41 people clicked apply
+              - paragraph [ref=e171]:
+                - generic [ref=e172]: Promoted by hirer
+                - generic [ref=e173]: ·
+                - generic [ref=e174]: Responses managed off LinkedIn
+            - button "Matches your job preferences, job type is Full-time." [ref=e176] [cursor=pointer]:
+              - strong [ref=e179]:
+                - img [ref=e181]
+                - text: Full-time
+              - generic [ref=e183]: Matches your job preferences, job type is Full-time.
+            - generic [ref=e185]:
+              - link "Apply to Junior Service Desk Analyst on company website" [ref=e188] [cursor=pointer]:
+                - img [ref=e189]
+                - generic [ref=e191]: Apply
+              - button "Save Junior Service Desk Analyst at Hult International Business School" [ref=e192] [cursor=pointer]:
+                - generic [ref=e193]: Save
+                - generic [ref=e194]: Save Junior Service Desk Analyst at Hult International Business School
+          - generic [ref=e195]:
+            - heading "How your profile and resume fit this job" [level=2] [ref=e196]
+            - paragraph [ref=e197]:
+              - text: Get AI-powered advice on this job and more exclusive features with Premium.
+              - link "Reactivate Premium" [ref=e198] [cursor=pointer]:
+                - /url: http://www.linkedin.com/premium/products/?upsellOrderOrigin=Tracking%3Av1%3Apremium_job_details_how_you_fit_upsell%3AJob+Seeker%3AIn-Product&utype=coach_job&referenceId=8QvK%2FrpFSM%2BMu25PnG5Dzw%3D%3D&isSS=false
+            - list [ref=e203]:
+              - listitem [ref=e204]:
+                - button "Show match details" [ref=e205] [cursor=pointer]:
+                  - img [ref=e206]
+                  - generic [ref=e208]: Show match details
+              - listitem [ref=e209]:
+                - button "Tailor my resume" [ref=e210] [cursor=pointer]:
+                  - img [ref=e211]
+                  - generic [ref=e213]: Tailor my resume
+              - listitem [ref=e214]:
+                - button "Help me stand out" [ref=e215] [cursor=pointer]:
+                  - img [ref=e216]
+                  - generic [ref=e218]: Help me stand out
+          - generic [ref=e219]:
+            - heading "People you can reach out to" [level=2] [ref=e220]
+            - generic [ref=e224]:
+              - link "Michael profile photo Michael profile photo" [ref=e226] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/michael-stone-91a81a261
+                - generic [ref=e227]:
+                  - list [ref=e228]:
+                    - listitem [ref=e229]:
+                      - img "Michael profile photo" [ref=e231]
+                  - generic [ref=e232]: Michael profile photo
+              - link "Michael Stone · 3rd Marketing and Entrepreneurship School alum from Broward College" [ref=e234] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/michael-stone-91a81a261
+                - strong [ref=e236]: Michael Stone
+                - generic [ref=e238]: · 3rd
+                - generic [ref=e239]: Marketing and Entrepreneurship
+                - generic [ref=e241]: School alum from Broward College
+              - 'button "Message {:familiarName}" [ref=e244] [cursor=pointer]':
+                - generic [ref=e245]: Message
+          - generic [ref=e246]:
+            - article [ref=e247]:
+              - generic [ref=e249]:
+                - heading "About the job" [level=2] [ref=e250]
+                - paragraph [ref=e252]:
+                  - strong [ref=e254]: The Opportunity
+                  - text: Are you the kind of person who loves solving everyday tech puzzles and helping people get the most from their devices? We are looking for a Junior Service Desk Analyst to be the friendly first point of contact for technology support at Hult International Business School’s London Postgraduate Campus.
+                  - text: You will join an international support team and provide front‑line assistance to a campus community of 800 plus students, faculty, and staff.
+                  - text: The ideal candidate will bring a winning combination of knowledge and passion for technology, software, and exemplary customer service. You will have a solid technical foundation and the ability to translate complex tech issues into user-friendly support. You will play a key role in triaging and resolving technology-related issues, ensuring that day-to-day support is delivered effectively and with empathy. You will collaborate closely with the wider IT team and vendors to resolve issues promptly and keep our community running smoothly. We’d also like to see an interest in how emerging technologies like AI are shaping both IT support and learning environments.
+                  - text: The role reports to the London Campus Technology Manager with support from the Global IT Service Manager.
+                  - text: This opportunity represents a unique chance to work for a global business school while enjoying the atmosphere of a small team in an environment that thrives on innovation and collaboration. It also offers the chance to influence standards and procedures while breaking down technical barriers for the wider London campus community. We actively encourage process improvement, automation, and personal development as part of the role. Ultimately, it’s a meaningful way to support others and directly contribute to an exceptional student experience.
+                  - strong [ref=e256]: Primary Roles & Responsibilities (not Exhaustive)
+                  - list [ref=e258]:
+                    - listitem [ref=e259]: Provide first‑line (1st Tier) technical support for students, staff, and faculty, logging all work in our service management platform (Salesforce ServiceCloud).
+                    - listitem [ref=e260]: Triage, resolve, or escalate incidents and service requests to Global technology teams or our external AV/infrastructure vendor in line with defined SLAs.
+                    - listitem [ref=e261]: Support campus learning‑space technology at an operational level (e.g., routine projector checks and basic troubleshooting). Escalation support for complex AV faults and infrastructure issues will be provided through a local partner.
+                    - listitem [ref=e262]: Install, configure, and support end‑user devices (Windows, macOS, iOS, Android, printers, peripherals).
+                    - listitem [ref=e263]: Supporting core software solutions (Canvas, Salesforce, Office 365, Dialpad, and more).
+                    - listitem [ref=e264]: Create and maintain knowledge‑base articles, FAQs, and how‑to documents to encourage self‑service.
+                    - listitem [ref=e265]: Be visible, flexible, and accountable while providing excellent customer service.
+                    - listitem [ref=e266]: Be available to work on weekends or in an on‑call rota during peak academic periods.
+                    - listitem [ref=e267]: Promote digital literacy by delivering short orientations and ad‑hoc training sessions for faculty, students, and staff.
+                    - listitem [ref=e268]: Interest in staying current with technology trends, including the impact of AI, and a willingness to grow technical knowledge over time.
+                    - listitem [ref=e269]: Track loaner equipment and coordinate warranty repairs with suppliers.
+                  - strong [ref=e271]: Values & Skills
+                  - list [ref=e273]:
+                    - listitem [ref=e274]: You believe in a global education and embrace cultural diversity in your school.
+                    - listitem [ref=e275]: Insist on the highest service standards in order to provide students with a transformational business education.
+                    - listitem [ref=e276]: Your key stakeholders trust and respect you.
+                    - listitem [ref=e277]: You are a team player and can work cross‑functionally and collaboratively.
+                    - listitem [ref=e278]: You are results‑driven and hands‑on. You believe nothing is impossible with the right attitude and a little entrepreneurial spirit.
+                    - listitem [ref=e279]: You thrive under pressure and enjoy a fast‑paced work environment.
+                    - listitem [ref=e280]: You embrace a “customer first” mindset and communicate technical information in plain language.
+                    - listitem [ref=e281]: You are flexible to work on weekends as needed.
+                  - strong [ref=e283]: Candidate Profile
+                  - list [ref=e285]:
+                    - listitem [ref=e286]: Diploma or Bachelor’s degree in IT related field (or equivalent experience) and/or 1‑3 years in a service desk or desktop support role.
+                    - listitem [ref=e287]: Extensive hands‑on knowledge of Windows, macOS, Chromebook, and mobile (iOS, Android) operating systems.
+                    - listitem [ref=e288]: Clear, concise communication and excellent interpersonal skills.
+                    - listitem [ref=e289]: Native English speaker or fluency in written and spoken English.
+                    - listitem [ref=e290]: High level of energy and enthusiasm to perform under pressure, prioritising tasks in a demanding environment.
+                    - listitem [ref=e291]: Good issue management, troubleshooting, and problem‑solving experience.
+                    - listitem [ref=e292]: Experience with Office 365 is desirable. Familiarity with Salesforce or an interest in learning how it supports service operations is a plus.
+                    - listitem [ref=e293]: ITIL Foundation certification or equivalent framework knowledge is a plus.
+                  - strong [ref=e295]: About Us
+                  - text: Hult is a new kind of non-profit business school that constantly innovates to meet the needs of students, employers, and society in a world that is changing faster than ever before. More than a business school, Hult is a dynamic and multicultural community that educates, inspires, and connects some of the most forward-thinking business talent from around the world.
+                  - strong [ref=e297]: What We Do
+                  - text: Hult International Business School is a non-profit educational pioneer and the first triple accredited US business school. Ranked by the Financial Times, The Economist, Forbes, and Bloomberg Businessweek, Hult offers undergraduate, graduate, and executive education programs across its global campuses in Boston, San Francisco, London, Dubai, Shanghai, and New York. The school’s philosophy is that business skills can only truly be learned by doing. By immersing students from all over the world in practical, hands-on experiences from day one, this fresh approach to education is creating a global community of confident, entrepreneurially minded graduates, ready to tackle the challenges of tomorrow.
+                  - text: "Solving problems and overcoming challenges is what our students do: all year, every year. We bring together creative, open-minded people from all over the world to find solutions to the world’s most pressing issues by doing business, not just studying it. So they graduate with the skills and the mindset to be ready for anything. And now we’re looking for a talented workforce that thinks the same way. We seek to promote an environment for our students, faculty, and staff that welcomes people from all backgrounds, ethnicities, races, religions, genders, sexual identities, abilities, and personal circumstances in a spirit of inclusivity and belonging."
+                  - text: At Hult, we believe that it’s through our diversity that we find our strength. Mission statement We strive to be the most relevant business school in the world. By using our global reach and always being creative, entrepreneurial, and on the cutting edge, our aim is to have a positive impact on individuals and organizations by transforming their management practices. In so doing, we hope to be the business school of choice for existing and aspiring leaders. We will contribute to sustainable growth, helping leaders to integrate commercial success and societal well-being.
+                  - strong [ref=e299]: Equal opportunities at Hult
+                  - text: Hult is dedicated to actively creating a diverse and inclusive environment and is proud to be an equal opportunity employer. We are committed to providing opportunity regardless of gender, religion, race, color, sexual identity, disability, ethnicity, age, and all the individual identities that make us unique. If you require any accommodation to assist you in the interview process, please submit this with your inquiry.
+                  - text: Hult offers competitive salaries and benefits in a global, empathetic, and highly multicultural working environment. If you are motivated by the prospect of an international career with a dynamic and forward-thinking school, we’d love to hear from you. Legal Hult International Business School is a 501©(3) non-profit educational organization registered in the Commonwealth of Massachusetts, accredited by the New England Association of Schools and Colleges (NEASC) to award U.S. degrees. Students are awarded a joint U.S. and U.K. degree on successful completion of the program. The U.K. degree is awarded by the Ashridge (Bonar Law Memorial) Trust, known as Ashridge, with which Hult has a strategic alliance.
+            - button "Click to see more description" [ref=e301] [cursor=pointer]:
+              - img [ref=e302]
+              - generic [ref=e304]: See more
+          - generic [ref=e306]:
+            - generic [ref=e307]:
+              - heading "Set alert for similar jobs" [level=2] [ref=e308]
+              - generic [ref=e310]: Service Desk Analyst, London, England, United Kingdom
+            - generic [ref=e312] [cursor=pointer]:
+              - generic [ref=e313]: "Off"
+              - generic [ref=e314]: Set alert
+              - switch "Set alert"
+          - generic [ref=e320]:
+            - heading "Job search faster with Premium" [level=3] [ref=e321]
+            - paragraph [ref=e322]: Access company insights like strategic priorities, headcount trends, and more
+            - generic [ref=e323]:
+              - list [ref=e325]:
+                - listitem [ref=e326]
+                - listitem [ref=e328]
+                - listitem [ref=e330]
+              - paragraph [ref=e332]: Phibian Nosa and millions of other members use Premium
+            - link "Reactivate Premium" [ref=e333] [cursor=pointer]:
+              - /url: http://www.linkedin.com/premium/products/?upsellOrderOrigin=Tracking%3Av1%3Apremium_job_details_how_you_match_upsell%3AJob+Seeker%3AIn-Product&utype=job&referenceId=xzk3ibD%2BTCaMw4oThIfLLQ%3D%3D&isSS=false&destRedirectURL=https%3A%2F%2Fwww.linkedin.com%2Fjobs%2Fview%2Fjunior-service-desk-analyst-at-hult-international-business-school-4390772248%2F%3ForiginalSubdomain%3Duk
+            - paragraph [ref=e334]: Cancel anytime. No hidden fees.
+          - generic [ref=e336]:
+            - generic [ref=e337]:
+              - heading "About the company" [level=2] [ref=e338]
+              - generic [ref=e339]:
+                - generic [ref=e340]:
+                  - link "Hult International Business School company logo" [ref=e342] [cursor=pointer]:
+                    - /url: /company/hult/life/
+                    - img "Hult International Business School company logo" [ref=e343]
+                  - generic [ref=e344]:
+                    - link "Hult International Business School" [ref=e346] [cursor=pointer]:
+                      - /url: /company/hult/life/
+                    - generic [ref=e347]: 164,071 followers
+                - button "Follow" [ref=e348] [cursor=pointer]:
+                  - img [ref=e349]
+                  - generic [ref=e351]: Follow
+              - generic [ref=e352]:
+                - text: Higher Education
+                - generic [ref=e353]: • 1,001-5,000 employees
+                - generic [ref=e354]: • 1,814 on LinkedIn
+              - paragraph [ref=e355]:
+                - generic [ref=e356]:
+                  - text: We exist to create a better future for all by challenging our community to make an impact that matters.
+                  - text: That's our mission at Hult International Business School. Whether you're looking to transform your career through education or join our team in shaping the next generation of global leaders, we're here to help you dare mighty things.
+                  - text: Gain human skills
+                  - text: Our students tackle actual challenges from real companies while developing the human skills—communication, collaboration, creativity, critical thinking, and curiosity—that set great colleagues and leaders apart in an AI-driven economy.
+                  - text: Join a global classroom
+                  - text: With campuses in Boston, London, Dubai, San Francisco, Singapore, and New York, we bring together diverse perspectives from every corner of the world. Our faculty, staff, and students form a community that spans continents and industries.
+                  - text: Connect to the real world
+                  - text: From day one, everything we do prepares people for the real world of business. Our industry-experienced faculty, corporate partnerships, and practical approach via real-life business challenges ensure graduates don't just learn business—they do business.
+                  - text: "Programs: Bachelor's | Master's | MBA | Executive MBA | Doctorate"
+                  - text: "Accredited by: AACSB, AMBA, EQUIS"
+                  - text: Join a community that's creating tomorrow's business leaders and making an impact that matters.
+                  - generic [ref=e358]:
+                    - generic [ref=e359]: …
+                    - button "show more" [ref=e360] [cursor=pointer]
+              - generic [ref=e364]:
+                - heading "Interested in working with us in the future?" [level=3] [ref=e365]
+                - paragraph [ref=e366]:
+                  - generic [ref=e367]:
+                    - text: Members who share that they’re interested in a company may be 2x as likely to get a message from a recruiter than those who don’t.
+                    - link [ref=e368] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/help/linkedin/answer/a1380509
+                      - text: Learn more
+                  - generic [ref=e369]: Learn more about Interested in working for our company
+                - button "I’m interested" [ref=e370] [cursor=pointer]:
+                  - generic [ref=e371]: I’m interested
+            - link "Show more about the company" [ref=e373] [cursor=pointer]:
+              - /url: /company/hult/life/
+              - text: Show more
+          - heading "More jobs" [level=2] [ref=e375]
+          - list [ref=e377]:
+            - listitem [ref=e378]:
+              - link "Tata Consultancy Services logo Service Desk Analyst with verification Tata Consultancy Services Crawley, England, United Kingdom (On-site) Actively reviewing applicants Actively reviewing applicants 2 weeks ago Easy Apply" [ref=e380] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4382078037&referenceJobId=4390772248&originToLandingJobPostings=4382078037&trackingId=jXsN0n0GMd5kuOaAAXGafw%3D%3D&refId=vc4k%2B3rnuqj4kSbM0M0sKg%3D%3D&eBP=CwEAAAGdL80O7fWl4qm4lvhZcbavhN3EKiKTBbJ_LYyC9Qp5yNoJzjyuNwXOrrTQNRfAqub_D-boKHA-29ALEb6oYKZ3w5e11BC9YmoiiMcI274lF2-MaxIYoDnfMAqcNl6hwPiW4cPHIMONE_zieZF0wESAYWf1ZfN0hiiVAZp0BaFofPJ6jsudVISQfv5lV41Z3SYVrHj41JTZt2E0deB4dbq5x3Vo4uzW99RYIpqLIE3FqyXTjBkZ_ebXdQvt-B3PViNEkmGacvj8ogx7HmxmR1ciufNkvfa0A3QHLyWe9QmRXtRGjtDtvZOERIQX6elBjKijO5IGJOC86q7hKTPkvq-q1t76GEnox8QZraPWGRexA7VAilDgHJgiAf50X1TLb4jtgR2xRYKret1nWjqqQkWDkjRjTCK6M97fjC0zVE9a6Due-EctJEiOGEpdBWDZV6AFFimtZja-uWjQ_vyPVHgVc_syKv5nngvCcFZFAf4zOxtn4n_IvT_Cox3M5NehX6Q9DPTNogfOcxE9n49zGzTzZy3xaq-V
+                - generic [ref=e382]:
+                  - img "Tata Consultancy Services logo" [ref=e387]
+                  - generic [ref=e388]:
+                    - generic [ref=e389]:
+                      - generic [ref=e390]:
+                        - generic [ref=e391]:
+                          - strong [ref=e392]: Service Desk Analyst
+                          - img [ref=e394]
+                        - generic [ref=e395]: Service Desk Analyst with verification
+                      - generic [ref=e397]: Tata Consultancy Services
+                      - generic [ref=e399]: Crawley, England, United Kingdom (On-site)
+                      - list [ref=e401]:
+                        - listitem [ref=e402]:
+                          - img "Actively reviewing applicants" [ref=e405]
+                          - generic [ref=e406]: Actively reviewing applicants
+                    - list [ref=e408]:
+                      - listitem [ref=e409]:
+                        - time [ref=e410]: 2 weeks ago
+                      - listitem [ref=e411]:
+                        - img [ref=e412]:
+                          - img [ref=e413]
+                        - generic [ref=e415]: Easy Apply
+            - listitem [ref=e416]:
+              - link "Scotiabank logo Desktop Support Analyst with verification Scotiabank London, England, United Kingdom 1 Broward College school alum works here 6 days ago" [ref=e418] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4386117018&referenceJobId=4390772248&originToLandingJobPostings=4386117018&trackingId=Uy48KKYb4P8WiE%2Fs8jaYcw%3D%3D&refId=vc4k%2B3rnuqj4kSbM0M0sKg%3D%3D&eBP=CwEAAAGdL80O7tzRWViRMEW2jQPAbTsjYlxbCcrsouOEH_Wgrv32Pw9RQBZ0EwYtsNKW6Tgqv71U47kw0MjauJfIKtkgz5kggXKa0f6RrUYTuSeQe7C0eovlFaMcSMskCPUrqmz8uQB1wo8bsoJctpHEqEtLzBJ5p421nzhWBwRq2YoYR2-LebCnkkn1f3qOGtPUwtPt0r0kTtlH1a8dVtAWBEp83Q5jOIS81QHq66OyuLVvfxT-c592GwjP5JHodNRT0LwbasfxBg6u_BdaGwxG2VSGbLGWzZBp3ueP9KJlh5M8ghNKegIUrmvjc6fhngzmNFiqLsl5Wv9STJwv3XuwccQLTBJqj2Ge85Eae47ouP_9YCOSgw2W317IcIO6Wo2vrQrOAIbjIktCTyFnMR1Yp-zZ0yRwXC_yOtKmbIjX__31pedxhCgfdEYzUUIsILsRR6rysLVU_70dqrIuSCsMEDJQNNRxcO04mU9rDMXmR7vdxQ9uHJM1MpKv7Q8d-idEW1rs9693x5s0JFnbkY81eVIYrjD0nuhWbt4
+                - generic [ref=e420]:
+                  - img "Scotiabank logo" [ref=e425]
+                  - generic [ref=e426]:
+                    - generic [ref=e427]:
+                      - generic [ref=e428]:
+                        - generic [ref=e429]:
+                          - strong [ref=e430]: Desktop Support Analyst
+                          - img [ref=e432]
+                        - generic [ref=e433]: Desktop Support Analyst with verification
+                      - generic [ref=e435]: Scotiabank
+                      - generic [ref=e437]: London, England, United Kingdom
+                      - list [ref=e439]:
+                        - listitem [ref=e440]:
+                          - generic [ref=e443]:
+                            - generic [ref=e444]: 1 school alum works here
+                            - generic [ref=e445]: 1 Broward College school alum works here
+                    - list [ref=e447]:
+                      - listitem [ref=e448]:
+                        - time [ref=e449]: 6 days ago
+            - listitem [ref=e450]:
+              - link "NINE by SATIGO logo 1st & 2nd Line Service Desk Analyst – Financial Services NINE by SATIGO City Of London, England, United Kingdom (On-site) £40K/yr - £42K/yr Actively reviewing applicants Actively reviewing applicants 1 week ago Easy Apply" [ref=e452] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4386919871&referenceJobId=4390772248&originToLandingJobPostings=4386919871&trackingId=Iy%2BuFhe2FhgBQUL2SOdZ4g%3D%3D&refId=vc4k%2B3rnuqj4kSbM0M0sKg%3D%3D&eBP=CwEAAAGdL80O7nHIIgCF3IkwxYZ4SWFhOR9j1Wli-9toYUgs2LMjewjU7MDYuJVGmUCAZZX-NUTxcDNIPJDpGv0Z2QqEdMeCRdHzXNAdHKEkLGpj53RY82qC79RqJhXpIZIgnDT72mBRFchpt2usuYRu7dfYt8ty92aA4sey55gzd77gu9SyqxJxYQYTqUgYQ5_30fezbqDd4hwbxdLIbNVOln09yoDb_m5mw9rq9If2d6yB54bEI1mj1SPvJ4_t-0FB92cnrDx44BQi9TtOiFe27StqEJb457WNh94yFLcTzRxhMU2-D5UpPG0dTW9ZWRET-6JW6dhM9p7lHdCWClSlwod8abcGODsjb6lynp7gVv31qmG7ByUMBNuM06i3mN62JXDDl-O77uIvBYiJnQHqzBoRCo4DnwANcZnqW5rAJdCh2Z3_SCVtLekn0VI8w-YpGtKDjephoDmWUlJXivdNJzPRf5schFoEbYQqefU7laJLhBpXkg8nx0P5wuVfX_MlIW47bydmN2NIwVZa1G-3HfP3kgtKvQ
+                - generic [ref=e454]:
+                  - img "NINE by SATIGO logo" [ref=e459]
+                  - generic [ref=e460]:
+                    - generic [ref=e461]:
+                      - generic [ref=e462]:
+                        - strong [ref=e464]: 1st & 2nd Line Service Desk Analyst – Financial Services
+                        - generic [ref=e465]: 1st & 2nd Line Service Desk Analyst – Financial Services
+                      - generic [ref=e467]: NINE by SATIGO
+                      - generic [ref=e469]: City Of London, England, United Kingdom (On-site)
+                      - generic [ref=e470]:
+                        - generic [ref=e471]: £40K/yr - £42K/yr
+                        - list [ref=e472]:
+                          - listitem [ref=e473]:
+                            - img "Actively reviewing applicants" [ref=e476]
+                            - generic [ref=e477]: Actively reviewing applicants
+                    - list [ref=e479]:
+                      - listitem [ref=e480]:
+                        - time [ref=e481]: 1 week ago
+                      - listitem [ref=e482]:
+                        - img [ref=e483]:
+                          - img [ref=e484]
+                        - generic [ref=e486]: Easy Apply
+            - listitem [ref=e487]:
+              - link "E-Frontiers logo IT Helpdesk Analyst contract with verification E-Frontiers London, England, United Kingdom (On-site) Actively reviewing applicants Actively reviewing applicants 2 weeks ago Easy Apply" [ref=e489] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4385333882&referenceJobId=4390772248&originToLandingJobPostings=4385333882&trackingId=VUpWdziIO7aM48cAZcsx1g%3D%3D&refId=vc4k%2B3rnuqj4kSbM0M0sKg%3D%3D&eBP=CwEAAAGdL80O7hVwpFyX_ew0KRw-oBJdubozklvfopW4Wu6JTQK6gDp_eClrDrK90oqfn0UqxVkPXCD_el7dwzHW5BmEuQOJnMwxIqZlv4oxjyqDapuRcxw1_N7xrv4jUqRgCFiu1C1YxDyGPMe7pkxUX0B0TSDebQBzFYZcp_jbmYSmI9VVgOWjzL_T5pdCd2_cV1Bk2tnzvg2hy7IBPB_T_V3EPYg_OeKsbyCRdS1ltScZNV8yFCQFNMDpRyiQSd0hWzQ7M4GcdYwt2Oxli69K8owpeJ3s_Q0bmeBjZWbAUdr0hQ3gau9hTzQKxkSsC1U0W018LW6Lpne4qWJs-CL_sdfPNz1CIGeA1Fm-BSD0j5BcB20SpFYRLKQ2QugVO32z3hcs6aU6sTBKSeG2FwxFLE9oZHWpFQ3eIkYS7a4IFlbBWSlTcixeO4IsYZraQrj1tEfoOYs74x-oDQSFYZNEiJONQ5ehcVBXnTBMHs6V56Ebu6p-Qn2OKPpm6EhkFYDIucg748HIlz8FaJ3euJrF0reDD1kZbg
+                - generic [ref=e491]:
+                  - img "E-Frontiers logo" [ref=e496]
+                  - generic [ref=e497]:
+                    - generic [ref=e498]:
+                      - generic [ref=e499]:
+                        - generic [ref=e500]:
+                          - strong [ref=e501]: IT Helpdesk Analyst contract
+                          - img [ref=e503]
+                        - generic [ref=e504]: IT Helpdesk Analyst contract with verification
+                      - generic [ref=e506]: E-Frontiers
+                      - generic [ref=e508]: London, England, United Kingdom (On-site)
+                      - list [ref=e510]:
+                        - listitem [ref=e511]:
+                          - img "Actively reviewing applicants" [ref=e514]
+                          - generic [ref=e515]: Actively reviewing applicants
+                    - list [ref=e517]:
+                      - listitem [ref=e518]:
+                        - time [ref=e519]: 2 weeks ago
+                      - listitem [ref=e520]:
+                        - img [ref=e521]:
+                          - img [ref=e522]
+                        - generic [ref=e524]: Easy Apply
+            - listitem [ref=e525]:
+              - link "Mayer Brown logo Service Desk Technician / Analyst with verification Mayer Brown London, England, United Kingdom (On-site) 1 Sky company alum works here 2 days ago" [ref=e527] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4362257431&referenceJobId=4390772248&originToLandingJobPostings=4362257431&trackingId=FEs8PtkyU626n43V1fqekA%3D%3D&refId=vc4k%2B3rnuqj4kSbM0M0sKg%3D%3D&eBP=CwEAAAGdL80O7ncR8XDlmno0_YxZ-lthLuwvj1b80gOzMDacSjpRNajzOXm24RK7sdkRIgKFY0uWOuXKN-DBxFB7zo9jLOjRJk9pv0bOAdzskm18HGAIYF2jf1VxIzRiGSN5u1zkTfwIHWF28gp5HtwOLFwmZwNswgl8XNemQGpWuclYJcI6yxFRjUlSdJF3-Oa2VBMgfQ-IE_2iIytdDb2eMKUT3YxLpzfazGwUBGJACXvmCTChKNc4LSHEpNzIFW06bpR9yl8RH1mFOEXWi0V5dYyzlqveUVxr74u1fa0Es12t7PU_xcSIWuHHDWUctJnbkfe_BFkZYyN-4hvEIeG6iholGOuE6DJySuhYs5DG1Af97qnFuFPzC_V7jNtZxD8opCAjUk8rgwszhZAH_Y1xbfWtqJuQZ2TnguMN31qaEgSOXKsZsGaSYwYjUY8eBPsRFfO5cC2Bjmvrp0dAisFZunEwFXCL4UctjyR_4qM4p5p3yy3zj7mHfmqMrMy9J5VBoosq4H4vK4AJHEq4Iar4KFY6ZhNsgenX
+                - generic [ref=e529]:
+                  - img "Mayer Brown logo" [ref=e534]
+                  - generic [ref=e535]:
+                    - generic [ref=e536]:
+                      - generic [ref=e537]:
+                        - generic [ref=e538]:
+                          - strong [ref=e539]: Service Desk Technician / Analyst
+                          - img [ref=e541]
+                        - generic [ref=e542]: Service Desk Technician / Analyst with verification
+                      - generic [ref=e544]: Mayer Brown
+                      - generic [ref=e546]: London, England, United Kingdom (On-site)
+                      - list [ref=e548]:
+                        - listitem [ref=e549]:
+                          - generic [ref=e552]:
+                            - generic [ref=e553]: 1 company alum works here
+                            - generic [ref=e554]: 1 Sky company alum works here
+                    - list [ref=e556]:
+                      - listitem [ref=e557]:
+                        - time [ref=e558]: 2 days ago
+            - listitem [ref=e559]:
+              - link "La Fosse logo Information Technology Support Analyst with verification La Fosse London Area, United Kingdom (Hybrid) £1,000/month - £2,000/month Actively reviewing applicants Actively reviewing applicants 1 week ago Easy Apply" [ref=e561] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4386848590&referenceJobId=4390772248&originToLandingJobPostings=4386848590&trackingId=JIaWOjw7vzRKYEe%2Fi4janA%3D%3D&refId=vc4k%2B3rnuqj4kSbM0M0sKg%3D%3D&eBP=CwEAAAGdL80O7oL37T37DlMH8zKmiRytjzIizwKhHnw2QVPxSK4ScUJ-FbFXAYvNqNcUCdTlNQJdrS7J-bfi9QmpceQVfov3TdyFxVUp7DYONUV0Zx4bSBeLkHFu6woSRjvBwpvU_JYjp1d5Vvtjk9rdIJiCmMLaFJbGdSdI2LAXbkv5Hsemw1IfmLOGg7KrfRSHC1sDBuCpnwx85u2JDz6a0qyLnHkZ1ky7z5s2z9d79phEoLUb9psrKJ1NestLyQ-M-2VuonXNgvPY-56wg10V5vNZ8tt1GX5YvOEenW1wnIo7_jUwddqJw63ZAz2ea-8hPcTvzucFI9e4gSV1AxY6ngkqX8cstRDiAz-xQvtlHVLgICytG3rE3uonFFe6K8VPe6nJIbe8l8Raac3KrYIfWs2nfoEzLhveX3RUX8mwa55qX4MAuSy9X7X7294Dh_4aOX3L50YIeSoqNaT-kD1QtBow9ypAibj3MF_1qhl13mhgJsb8IWacUCSWKTdDoOSqDtDg0PcoeGMbqtNzkCj0H1FvLsBdcGPz
+                - generic [ref=e563]:
+                  - img "La Fosse logo" [ref=e568]
+                  - generic [ref=e569]:
+                    - generic [ref=e570]:
+                      - generic [ref=e571]:
+                        - generic [ref=e572]:
+                          - strong [ref=e573]: Information Technology Support Analyst
+                          - img [ref=e575]
+                        - generic [ref=e576]: Information Technology Support Analyst with verification
+                      - generic [ref=e578]: La Fosse
+                      - generic [ref=e580]: London Area, United Kingdom (Hybrid)
+                      - generic [ref=e581]:
+                        - generic [ref=e582]: £1,000/month - £2,000/month
+                        - list [ref=e583]:
+                          - listitem [ref=e584]:
+                            - img "Actively reviewing applicants" [ref=e587]
+                            - generic [ref=e588]: Actively reviewing applicants
+                    - list [ref=e590]:
+                      - listitem [ref=e591]:
+                        - time [ref=e592]: 1 week ago
+                      - listitem [ref=e593]:
+                        - img [ref=e594]:
+                          - img [ref=e595]
+                        - generic [ref=e597]: Easy Apply
+            - listitem [ref=e598]:
+              - link "Gelfand, Rennert & Feldman, LLC logo Junior Service Desk Analyst with verification Gelfand, Rennert & Feldman, LLC London, England, United Kingdom (On-site) 1 day ago" [ref=e600] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4390047668&referenceJobId=4390772248&originToLandingJobPostings=4390047668&trackingId=FS3cCGL6J9gnVrs5xfPdvw%3D%3D&refId=vc4k%2B3rnuqj4kSbM0M0sKg%3D%3D&eBP=CwEAAAGdL80O7iiEP3eSSlfSCYeOzV90VhuXUJk0x17d_mB5RpQ6Nfg7GV7nmNrboOFieuyRnQ8lPIyQOq_lGLYHYCiZd8AuMRCA6VqCMTK4W9evAgCpp6im_5BC6Na8zJ2P2Q01-YArcYomDsaSTuzePKBOHZ8YO6Tds7GxuXJH9-iWU7iDJlYa1OiYpxR65jRMm1Moez8EbaseQ0FJalJcaIDBxVfIh5XTRPkrlr6FUhCWeK5ke1TXBRRq6r6w15WPCqIaf2l7Fsl9u6Fo6jzGQ2kqT131dVkuLhqaRGMHWZMON9zNHQtaS3iBQ_EtH3o21bc2RlPMVu9zQZfAbhoFUZpUHXRsVexMrgHGtig10vuzDKUffz6kY8PCDp5m6i-P5-o6qXymD1CqGLKHlbARfnAcaqYiiPKqy-n5RU3hCBj6YS36LvEippl8Oe4Lf7msZ1T0t-Tstwpa78S9s7mr9PqKef4OWXfEH37A8BPIDueRANQzyhze7Vmqlf7GoD4NLoPfsuTrGl3AptSQDB21iE_2rPmf8g
+                - generic [ref=e602]:
+                  - img "Gelfand, Rennert & Feldman, LLC logo" [ref=e607]
+                  - generic [ref=e608]:
+                    - generic [ref=e609]:
+                      - generic [ref=e610]:
+                        - generic [ref=e611]:
+                          - strong [ref=e612]: Junior Service Desk Analyst
+                          - img [ref=e614]
+                        - generic [ref=e615]: Junior Service Desk Analyst with verification
+                      - generic [ref=e617]: Gelfand, Rennert & Feldman, LLC
+                      - generic [ref=e619]: London, England, United Kingdom (On-site)
+                    - list [ref=e621]:
+                      - listitem [ref=e622]:
+                        - time [ref=e623]: 1 day ago
+            - listitem [ref=e624]:
+              - link "Langley James HR & IT Recruitment logo Service Desk Analyst, O365 Admin, Entra, MDM, London £40k with verification Langley James HR & IT Recruitment City Of London, England, United Kingdom (Hybrid) £35K/yr - £40K/yr 4 hours ago" [ref=e626] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4390939110&referenceJobId=4390772248&originToLandingJobPostings=4390939110&trackingId=QG%2BefiD%2FyYIslKzOkzCnXw%3D%3D&refId=vc4k%2B3rnuqj4kSbM0M0sKg%3D%3D&eBP=CwEAAAGdL80O7vH8iKCoizum8e3TqIiO2JiA0m-mTddhzHfKZJH-9L99Q04fbGs1fGenyAoifFOrIz1B83LUCn9L3TyKT4GU-5kvblIDrpdLth0iRpnvplqMy2tRILWhoc9bNUJwuKx_nX_NN_fVlipEQBZVVNkMCELT1cL30n1o_sbBUEIL-qjTnFTf9edmctVbo6sZn76lFTPgNvceGt7HUke2uCU7IId4EgN2jXmgRIbDewDl2KyeF-KZsSu34r1-2UNEEmw7qfL7zb8jj5zuJvpxXLJ5ndTirWUX_6iz1DYHYL3ZHlCehsWLkNZ1szRI7v-x4D_U4EadekQJJmWBtLeXy-mOZHgKLJTNfTwF1hSfJoydzPMv94hyroJiVc3c9XPxnEKcmQevij69YeGJMGI5_BSvjEt7OD1hUOC8tYAv0Kf18Nnk4Z6i1D-mNZNXAgq3toJkjbjJ7O_yeheokF9ohAtJspzzzuuH4qbl6mbLkSu7FaCJ7Z6qhFzBSdjN12nUmxzReTKsxsV6YZPkC4MM253wUV07SyM
+                - generic [ref=e628]:
+                  - img "Langley James HR & IT Recruitment logo" [ref=e633]
+                  - generic [ref=e634]:
+                    - generic [ref=e635]:
+                      - generic [ref=e636]:
+                        - generic [ref=e637]:
+                          - strong [ref=e638]: Service Desk Analyst, O365 Admin, Entra, MDM, London £40k
+                          - img [ref=e640]
+                        - generic [ref=e641]: Service Desk Analyst, O365 Admin, Entra, MDM, London £40k with verification
+                      - generic [ref=e643]: Langley James HR & IT Recruitment
+                      - generic [ref=e645]: City Of London, England, United Kingdom (Hybrid)
+                      - generic [ref=e647]: £35K/yr - £40K/yr
+                    - list [ref=e649]:
+                      - listitem [ref=e650]:
+                        - time [ref=e651]: 4 hours ago
+            - listitem [ref=e652]:
+              - link "Medical Protection Society logo Service Desk Analyst with verification Medical Protection Society Greater London, England, United Kingdom (Hybrid) £27K/yr - £30K/yr 6 Sky company alumni work here 2 weeks ago" [ref=e654] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4382407308&referenceJobId=4390772248&originToLandingJobPostings=4382407308&trackingId=d7SGN9lNYEtbxgO47aVGbw%3D%3D&refId=vc4k%2B3rnuqj4kSbM0M0sKg%3D%3D&eBP=CwEAAAGdL80O7t7JnZvnZRTmlQfNow6IJTPiimpgvpjrJ1pc3a89SV4fGcBV0gHBt-G0-SLfVnUqmLy4ip9XOcRuRV_QzF-C4LD5puOPgp3K-XI7Y8dQv8VXnloZpAzybRM5zRLMgfBQs0Gyag4r6njt2gXXj6DYFIeJnaH338NBxuvDDZbFP9QVlurP4W2FjzNJ84PnWQM0AVqirjuZUHxSoA5_rWUApaEERNe8m6GmzcIKUtg3zun5Ki9S_-7Ufn0xAsbPm7G2uI4mqfyKYj-Y73n_lS6GJYAzVuhrzGX7vvf1wshevKjPyWHegtUwEk1OcU9u8DcW2D1owO_mh7Itvk6xIaoRYMfRI7pfaj47XesdhO1Q5T13QTTdK8vGU41QXk1ZCscI9Pt7WdNc6nKKsYprhIxwWosAYEJhFoibiwDsAGEDfJ3uxcyXkqIu34SMo-Nbdwq7IQn4-SR5w4_w9CgD7n3RrNxUu8PGG7yCmzAwYmLEC6x2psAacCt_p7su0PA63HWO9EROZds1gjiqwhy221MT5P_D
+                - generic [ref=e656]:
+                  - img "Medical Protection Society logo" [ref=e661]
+                  - generic [ref=e662]:
+                    - generic [ref=e663]:
+                      - generic [ref=e664]:
+                        - generic [ref=e665]:
+                          - strong [ref=e666]: Service Desk Analyst
+                          - img [ref=e668]
+                        - generic [ref=e669]: Service Desk Analyst with verification
+                      - generic [ref=e671]: Medical Protection Society
+                      - generic [ref=e673]: Greater London, England, United Kingdom (Hybrid)
+                      - generic [ref=e674]:
+                        - generic [ref=e675]: £27K/yr - £30K/yr
+                        - list [ref=e676]:
+                          - listitem [ref=e677]:
+                            - generic [ref=e680]:
+                              - generic [ref=e681]: 6 company alumni work here
+                              - generic [ref=e682]: 6 Sky company alumni work here
+                    - list [ref=e684]:
+                      - listitem [ref=e685]:
+                        - time [ref=e686]: 2 weeks ago
+            - listitem [ref=e687]:
+              - link "FluidOne logo Service Desk Analyst (2nd Line) with verification FluidOne Chorley, England, United Kingdom (On-site) £27K/yr - £30K/yr Actively reviewing applicants Actively reviewing applicants 1 week ago Easy Apply" [ref=e689] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4386778455&referenceJobId=4390772248&originToLandingJobPostings=4386778455&trackingId=MroNBhwplxZNw0ACaH8t1g%3D%3D&refId=vc4k%2B3rnuqj4kSbM0M0sKg%3D%3D&eBP=CwEAAAGdL80O7p4pU284Q49VcrQM6WsekV7wNAC2Bxa0L0wBvjRbUejrezEu184DXv74z0AGayfh85C6_w_m1grdgoI5wEbGt9qEG0qFYFRve_0hCkxx6Wv3sf1jfV5_ABSsCUwtZYAdRcHqtMuna0yikQ4EMKYX40k-mOMOnpu09US3pFIt1ZRZnNkuwJXW3PaRZhgHMqG3nLhfqDqDDdP2cGN0UuY9d13Dv4a_qkJLPB6SV6zas2wKcNN2hB2OHb4lC_aLXSvkHxYtSux_m1kyLdn-fcQSdX-2NUFRs1lQs8LohtFuAuvWZjmmEPTsJVVReVSaGZ09eqosE6ouB9eviUMkMHrdNTsZli5L6efry-AQUi_kYJi1FlB0lLFXNkIVm4b9CFE0qIhh1IcaAxkGN3Wk9WMvQ4ytncpudgIGIrMfXxFKSwJHPodnabup3Vw4XQ-LgtJIwtvmlynxGMF2fBlBFJK1oUN3_q9R7LO3ACp5rk1siE_RUm-oOuYH5IddFhvWT6stn3TaX1GbVBxThiP-LA0
+                - generic [ref=e691]:
+                  - img "FluidOne logo" [ref=e696]
+                  - generic [ref=e697]:
+                    - generic [ref=e698]:
+                      - generic [ref=e699]:
+                        - generic [ref=e700]:
+                          - strong [ref=e701]: Service Desk Analyst (2nd Line)
+                          - img [ref=e703]
+                        - generic [ref=e704]: Service Desk Analyst (2nd Line) with verification
+                      - generic [ref=e706]: FluidOne
+                      - generic [ref=e708]: Chorley, England, United Kingdom (On-site)
+                      - generic [ref=e709]:
+                        - generic [ref=e710]: £27K/yr - £30K/yr
+                        - list [ref=e711]:
+                          - listitem [ref=e712]:
+                            - img "Actively reviewing applicants" [ref=e715]
+                            - generic [ref=e716]: Actively reviewing applicants
+                    - list [ref=e718]:
+                      - listitem [ref=e719]:
+                        - time [ref=e720]: 1 week ago
+                      - listitem [ref=e721]:
+                        - img [ref=e722]:
+                          - img [ref=e723]
+                        - generic [ref=e725]: Easy Apply
+            - listitem [ref=e726]:
+              - link "Methods logo Service Desk Analyst - Permanent with verification Methods London, England, United Kingdom (Hybrid) Actively reviewing applicants Actively reviewing applicants 1 week ago Easy Apply" [ref=e728] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4357482412&referenceJobId=4390772248&originToLandingJobPostings=4357482412&trackingId=wSdueHW6J1bWrbl8eyzrbQ%3D%3D&refId=vc4k%2B3rnuqj4kSbM0M0sKg%3D%3D&eBP=CwEAAAGdL80O7uVDHlaWwY2-gm08AqtxlLKOZpw-qS6tPJa9GucmYcdk_PvdBXaEtDo2RCin6pFkkP6Wv-szmHk7kT6Dr-2hr3zx_jklY4h0AzhwfnkztET02rwNdZTJz_oOv1_-zlb7KOi7EWi-6J74bLyjMj3LI5vkcnBLEd3dvLZwjppnHx0CeuWfnrVssQGXTQ-7C_Dn7Eg6xZ6IHiB5wek6oGW7JPsLyhWcXU182t8Wzhl0fnRVS80A__-tdcUO98Glnh9iYRvrI1VxO8HjcXMEpnh7oFKMdeFZtzuM5w7rroYajbL5w_mb1dArBQBE0uDMJ8OTBJt_eOhpRDcp4gY-QUCdcU_FcDw3kyQytEwGmud8vh258tRJ2287jC3dOfpOjKYsIQD0LjiFUTFwKuGRz2JjfmhYqyu9gvbhaGtgHG7HDUYAeKx5O2e4oWQz0CMvuWkkSC67G-IaNpAVQNIghbhM-wjCpb3JvD5HY1of0pwBKN_GUJ7ks9yLNlKiPGnNfNX6gJLDVFf1QGWzGpF4bNvI_0Lw
+                - generic [ref=e730]:
+                  - img "Methods logo" [ref=e735]
+                  - generic [ref=e736]:
+                    - generic [ref=e737]:
+                      - generic [ref=e738]:
+                        - generic [ref=e739]:
+                          - strong [ref=e740]: Service Desk Analyst - Permanent
+                          - img [ref=e742]
+                        - generic [ref=e743]: Service Desk Analyst - Permanent with verification
+                      - generic [ref=e745]: Methods
+                      - generic [ref=e747]: London, England, United Kingdom (Hybrid)
+                      - list [ref=e749]:
+                        - listitem [ref=e750]:
+                          - img "Actively reviewing applicants" [ref=e753]
+                          - generic [ref=e754]: Actively reviewing applicants
+                    - list [ref=e756]:
+                      - listitem [ref=e757]:
+                        - time [ref=e758]: 1 week ago
+                      - listitem [ref=e759]:
+                        - img [ref=e760]:
+                          - img [ref=e761]
+                        - generic [ref=e763]: Easy Apply
+            - listitem [ref=e764]:
+              - link "Premier Group logo IT Service Desk Analyst with verification Premier Group City Of London, England, United Kingdom (Hybrid) Actively reviewing applicants Actively reviewing applicants 2 weeks ago Easy Apply" [ref=e766] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4382116523&referenceJobId=4390772248&originToLandingJobPostings=4382116523&trackingId=tnRvgb2jTd6RTxr2zPS1Zw%3D%3D&refId=vc4k%2B3rnuqj4kSbM0M0sKg%3D%3D&eBP=CwEAAAGdL80O7uvZVd9YLhz5qNXhKK2kImTi0mWjNu3BRBlIBmocQNW1AxdG_XF2Yc7s0y4SPk8VA_8RRDpulgHBeIZOIJSZAEHno-M7umGnqnFa0OkS96E3Nn0iulGHy6hTDS0kTvqEKduBvMSY09sDFE1mV4lt67n8DnalwWOs9jQ5gwM30qWIlSw8axV-stVYLraOzlMT026cPV0hHqStziqlkKXCeKCS--9pZyestOyazb4j5ID4HHE4rXpIrxr0umQDOP7z4OjUsDNROyKSfNnwK8fKxmqVMZ4KIQ4WrVGMOrBTf6lNVhQ7jVDOn4kmCw0j8OHaKTsGismq0Onex9ecTBtiP2FA1j7S5u4jfhlLEah8qpZY-GrHmRv2pa7Es2t_gIsc4LPQ2kZT6G293lu6ezzL1LS-cFRw_qLGf1QBEkxskVijJVPC11cpK-o2RYibIaHKDMGFAvICqNbGA5DmeE2PcN4r4x6znwQsuc0c6SvDGom2vCYUVu7R2dhITUC2OUueMrpLZOfwGYZAEz-85Kjn5w
+                - generic [ref=e768]:
+                  - img "Premier Group logo" [ref=e773]
+                  - generic [ref=e774]:
+                    - generic [ref=e775]:
+                      - generic [ref=e776]:
+                        - generic [ref=e777]:
+                          - strong [ref=e778]: IT Service Desk Analyst
+                          - img [ref=e780]
+                        - generic [ref=e781]: IT Service Desk Analyst with verification
+                      - generic [ref=e783]: Premier Group
+                      - generic [ref=e785]: City Of London, England, United Kingdom (Hybrid)
+                      - list [ref=e787]:
+                        - listitem [ref=e788]:
+                          - img "Actively reviewing applicants" [ref=e791]
+                          - generic [ref=e792]: Actively reviewing applicants
+                    - list [ref=e794]:
+                      - listitem [ref=e795]:
+                        - time [ref=e796]: 2 weeks ago
+                      - listitem [ref=e797]:
+                        - img [ref=e798]:
+                          - img [ref=e799]
+                        - generic [ref=e801]: Easy Apply
+          - link "See more jobs like this" [ref=e803] [cursor=pointer]:
+            - /url: https://www.linkedin.com/jobs/collections/similar-jobs?referenceJobId=4390772248
+      - complementary [ref=e804]:
+        - generic [ref=e805]:
+          - generic [ref=e806]:
+            - generic [ref=e808]:
+              - heading "Job search smarter with Premium" [level=3] [ref=e809]
+              - list [ref=e810]:
+                - listitem [ref=e811]:
+                  - img [ref=e815]
+                  - generic [ref=e818]: See jobs where you’d be a top applicant
+                - listitem [ref=e819]:
+                  - img [ref=e823]
+                  - generic [ref=e826]: Message hiring managers with InMail
+                - listitem [ref=e827]:
+                  - img [ref=e831]
+                  - generic [ref=e834]: Get personalized cover letter and resume tips
+                - listitem [ref=e835]:
+                  - img [ref=e839]
+                  - generic [ref=e842]: Plus! Get insider access to live talks with industry leaders.
+              - generic [ref=e843]:
+                - list [ref=e845]:
+                  - listitem [ref=e846]
+                  - listitem [ref=e848]
+                  - listitem [ref=e850]
+                - paragraph [ref=e852]: Phibian Nosa and millions of other members use Premium
+              - link "Reactivate Premium" [ref=e853] [cursor=pointer]:
+                - /url: http://www.linkedin.com/premium/products/?upsellOrderOrigin=Tracking%3Av1%3Ajob_right_rail_upsell%3AJob+Seeker%3AIn-Product&utype=job&referenceId=KYOO5yduTwq34fHVxMA34g%3D%3D&isSS=false&destRedirectURL=https%3A%2F%2Fwww.linkedin.com%2Fjobs%2Fview%2Fjunior-service-desk-analyst-at-hult-international-business-school-4390772248%2F%3ForiginalSubdomain%3Duk
+              - paragraph [ref=e854]: Cancel anytime. No hidden fees.
+            - button "Dismiss premium promotion" [ref=e855] [cursor=pointer]:
+              - img [ref=e856]
+              - generic [ref=e858]: Dismiss premium promotion
+          - generic [ref=e859]:
+            - paragraph [ref=e860]: Looking for talent?
+            - link "Post a job" [ref=e861] [cursor=pointer]:
+              - /url: https://www.linkedin.com/talent/job-posting-redirect?trk=flagship3_job_detail
+    - generic:
+      - generic:
+        - complementary:
+          - generic [ref=e863]:
+            - generic [ref=e865] [cursor=pointer]:
+              - generic [ref=e866]:
+                - img "Adegboyega Ogidan" [ref=e867]
+                - generic [ref=e869]: Status is online
+              - button "You are on the messaging overlay. Press enter to open the list of conversations." [ref=e870]:
+                - generic [ref=e871]:
+                  - generic [ref=e872]: Messaging
+                  - generic [ref=e873]: You are on the messaging overlay. Press enter to open the list of conversations.
+            - generic [ref=e874]:
+              - button "Open messenger dropdown menu" [ref=e876] [cursor=pointer]:
+                - img "Open messenger dropdown menu" [ref=e877]
+              - button "Compose message" [ref=e880] [cursor=pointer]:
+                - img [ref=e881]
+                - generic [ref=e883]: Compose message
+              - button "You are on the messaging overlay. Press enter to open the list of conversations." [ref=e884] [cursor=pointer]:
+                - img [ref=e885]
+                - generic [ref=e887]: You are on the messaging overlay. Press enter to open the list of conversations.
+        - complementary "AI-powered assistant to get help with your career, jobs etc"

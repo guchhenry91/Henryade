@@ -1,0 +1,547 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e6]:
+          - link "Reed.co.uk" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Reed.co.uk" [ref=e8]
+          - list [ref=e9]:
+            - listitem [ref=e10]:
+              - link "Jobs" [ref=e11] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e12]: Jobs
+            - listitem [ref=e13]:
+              - link "Courses" [ref=e14] [cursor=pointer]:
+                - /url: /courses/?itm_source=js_navigation&itm_medium=jobseeker&itm_campaign=courses_tab&itm_content=standard_version
+                - generic [ref=e15]: Courses
+            - listitem [ref=e16]:
+              - link "Career advice" [ref=e17] [cursor=pointer]:
+                - /url: /career-advice/
+                - generic [ref=e18]: Career advice
+            - listitem [ref=e19]:
+              - link "Recruiting? Post a job" [ref=e20] [cursor=pointer]:
+                - /url: /recruiter/
+                - generic [ref=e21]:
+                  - text: Recruiting?
+                  - strong [ref=e22]: Post a job
+          - generic [ref=e23]:
+            - link "Register CV" [ref=e24] [cursor=pointer]:
+              - /url: /authentication/register?returnTo=%2Fjobs%2Fdesktop-support-analyst-london%2F56736600
+            - list [ref=e25]:
+              - listitem [ref=e26]:
+                - link "Saved jobs" [ref=e27] [cursor=pointer]:
+                  - /url: /account/jobs/shortlisted-jobs
+                  - img [ref=e29]
+                  - generic [ref=e31]: Saved jobs
+              - listitem [ref=e32]:
+                - status [ref=e33]:
+                  - img "Loading" [ref=e34]
+      - search [ref=e38]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: What
+            - textbox "e.g. \"marketing manager\"" [ref=e44]
+          - generic [ref=e45]:
+            - generic [ref=e46]: Where
+            - generic [ref=e47]:
+              - textbox "town or postcode" [ref=e48]
+              - button "Get current location" [ref=e49] [cursor=pointer]:
+                - img [ref=e50]
+          - button "Search jobs" [ref=e54] [cursor=pointer]
+          - link "Browse jobs" [ref=e56] [cursor=pointer]:
+            - /url: /popularjobs
+            - text: Browse jobs
+            - img [ref=e57]
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - link "ArrowSearch results" [ref=e64] [cursor=pointer]:
+            - /url: /jobs/desktop-support-analyst---london-jobs-in-london?jobId=56736600
+            - img "Arrow"
+            - text: Search results
+          - list [ref=e66]:
+            - listitem [ref=e67]:
+              - link "Home" [ref=e68] [cursor=pointer]:
+                - /url: /
+            - text: /
+            - listitem [ref=e69]:
+              - text: /
+              - link "Information Technology" [ref=e70] [cursor=pointer]:
+                - /url: /jobs/information-technology-jobs
+            - listitem [ref=e71]:
+              - text: /
+              - link "Analyst" [ref=e72] [cursor=pointer]:
+                - /url: /jobs/analyst-jobs
+            - listitem [ref=e73]:
+              - text: /
+              - link "Support Analyst" [ref=e74] [cursor=pointer]:
+                - /url: /jobs/support-analyst-jobs
+            - listitem [ref=e75]: /Job details
+        - generic [ref=e76]:
+          - generic [ref=e78]:
+            - generic [ref=e79]:
+              - generic [ref=e80]: New
+              - generic [ref=e81]:
+                - img [ref=e82]
+                - text: Easy Apply
+            - generic [ref=e84]:
+              - generic [ref=e85]:
+                - heading "Desktop Support Analyst - London" [level=1] [ref=e86]
+                - generic [ref=e87]:
+                  - text: 6 hrs ago by
+                  - link "Noir" [ref=e88] [cursor=pointer]:
+                    - /url: /company-profile/Noir-9137
+              - link "Noir jobs" [ref=e90] [cursor=pointer]:
+                - /url: /company-profile/Noir-9137
+                - img "Noir jobs" [ref=e91]
+            - list [ref=e92]:
+              - listitem [ref=e93]:
+                - img "Salary" [ref=e94]
+                - text: £30,000 - £35,000 per annum
+              - listitem [ref=e96]:
+                - img "Location" [ref=e97]
+                - text: London
+              - listitem [ref=e99]:
+                - img "Clock" [ref=e100]
+                - text: Permanent, full-time
+            - generic [ref=e103]:
+              - button "Apply now" [disabled]
+              - button "Shortlist job" [disabled]:
+                - img
+                - text: Save
+            - generic [ref=e105]:
+              - paragraph [ref=e106]:
+                - strong [ref=e107]: Desktop Support Analyst - London
+              - paragraph [ref=e108]: (Desktop Support Analyst, IT Support, 2nd Line Support, Systems Administration, Office 365, Windows 10, Windows Server, Infrastructure Engineer, Support, Networking, Windows 10, Windows Server, Azure AD, Microsoft Intune, Desktop Support Analyst, IT Support, 2nd Line Support, Urgent)
+              - paragraph [ref=e109]
+              - paragraph [ref=e110]: Our client is a highly reputable specialist within the insurance market. They have been a market leader for many years and are currently on the lookout for an exceptional Desktop Support Analyst with previous support experience and excellent communications skills to support all IT infrastructure within this growing business.
+              - paragraph [ref=e111]
+              - paragraph [ref=e112]: The successful candidate will be expected to provide physical hands-on support, telephone support, systems administration including Office 365 and Windows and resolve day-to-day IT incidents to help keep the business running smoothly. You will be expected to support users with desktop, laptop, software and peripheral issues and escalate more complex problems to the IT Manager where appropriate, with lots of opportunities to learn how to resolve these issues independently. A basic understanding of Azure AD environments, some Network troubleshooting and any experience managing devices via Microsoft Intune, would be highly beneficial.
+              - paragraph [ref=e113]
+              - paragraph [ref=e114]: A strong communicator with a helpful, user-focused approach is essential, as is a positive attitude, curiosity about IT Systems and a genuine desire to learn and progress. If you are proactive, keen to grow, and enjoy solving problems for people, this role will suit you perfectly.
+              - paragraph [ref=e115]
+              - paragraph [ref=e116]: This is a rare opportunity to join and have a huge impact within a truly exciting and established business. The company is quick to recognize talent and keen to nurture and develop it, as such your career with the company will go as far as your ambitions take you. The exceptional career opportunity really makes this an elite environment for Desktop Support Analysts.
+              - paragraph [ref=e117]
+              - paragraph [ref=e118]:
+                - strong [ref=e119]: "Salary:"
+                - text: £30k - £35k + Excellent Bonus + Unbeatable Benefits
+              - paragraph [ref=e120]: To apply for this position please send your CV to Nathan Warner at Noir.
+              - paragraph [ref=e121]
+              - paragraph [ref=e122]: NOIRUKTECHREC
+              - paragraph [ref=e123]: NOIRUKREC
+            - group [ref=e124]:
+              - button "shareShare" [ref=e127] [cursor=pointer]:
+                - img "share" [ref=e128]
+                - text: Share
+              - generic [ref=e130]:
+                - button "EyeHide" [disabled]:
+                  - img "Eye"
+                  - text: Hide
+          - generic [ref=e131]:
+            - banner [ref=e132]:
+              - heading "Create alerts for similar jobs" [level=2] [ref=e133]
+            - generic [ref=e135]:
+              - generic [ref=e136]:
+                - generic [ref=e137]:
+                  - generic [ref=e138]:
+                    - generic [ref=e140]: Desktop Support Analyst - London
+                    - generic [ref=e141]: London
+                  - button "Edit" [ref=e142] [cursor=pointer]
+                - generic [ref=e143]:
+                  - generic [ref=e144]: Email address
+                  - textbox "Email address" [ref=e146]
+              - generic [ref=e147]:
+                - button "Create alert" [disabled]:
+                  - generic:
+                    - img
+                  - text: Create alert
+              - generic [ref=e148]:
+                - text: By creating an alert, you agree to the
+                - link "Terms and conditions" [ref=e149] [cursor=pointer]:
+                  - /url: /policies
+                - text: applicable to our service and acknowledge that your personal data will be used in accordance with our
+                - link "Privacy policy" [ref=e150] [cursor=pointer]:
+                  - /url: /policies
+                - text: and you will receive emails and communications about jobs and career related topics.
+          - generic [ref=e151]:
+            - heading "Similar Jobs" [level=3] [ref=e153]
+            - generic [ref=e154]:
+              - link "Shortlist job Field Support Analyst 27 March by Willmott Dixon SalarySalary negotiable LocationLondon ClockPermanent, full-time" [ref=e155] [cursor=pointer]:
+                - /url: /jobs/field-support-analyst/56707551?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e156]:
+                      - img [ref=e157]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Field Support Analyst
+                          - generic: 27 March by Willmott Dixon
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Salary negotiable
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Easy Apply Desktop Support Analyst 9 March by Robert Walters Salary£30,000 - £45,000 per annum LocationLondon ClockPermanent, full-time" [ref=e159] [cursor=pointer]:
+                - /url: /jobs/desktop-support-analyst/56607866?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e160]:
+                      - img [ref=e161]
+                    - generic:
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Desktop Support Analyst
+                          - generic: 9 March by Robert Walters
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £30,000 - £45,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Easy Apply Desktop Support Analyst 2nd Line 9 March by Robert Walters Salary£35,000 - £40,000 per annum LocationLondon ClockPermanent, full-time" [ref=e163] [cursor=pointer]:
+                - /url: /jobs/desktop-support-analyst-2nd-line/56605639?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e164]:
+                      - img [ref=e165]
+                    - generic:
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Desktop Support Analyst 2nd Line
+                          - generic: 9 March by Robert Walters
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £35,000 - £40,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Featured Easy Apply 1st Line Support Engineer – Helpdesk – 6 week temp contract – Central London - £23 per hour 24 March by Ashdown Group Salary£18 - £23 per hour LocationLondon ClockContract, full-time or part-time" [ref=e167] [cursor=pointer]:
+                - /url: /jobs/1st-line-support-engineer--helpdesk--6-week-temp-contract--central-london-23-per-hour/56695205?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e168]:
+                      - img [ref=e169]
+                    - generic:
+                      - generic: Featured
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: 1st Line Support Engineer – Helpdesk – 6 week temp contract – Central London - £23 per hour
+                          - generic: 24 March by Ashdown Group
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £18 - £23 per hour
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Contract, full-time or part-time
+              - link "Shortlist job Featured Easy Apply Graduate IT Support Analyst – Helpdesk – 6 week temp contract – Central London 24 March by Ashdown Group Salary£18 - £23 per hour LocationLondon ClockContract, full-time or part-time" [ref=e171] [cursor=pointer]:
+                - /url: /jobs/graduate-it-support-analyst--helpdesk--6-week-temp-contract--central-london/56695255?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e172]:
+                      - img [ref=e173]
+                    - generic:
+                      - generic: Featured
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Graduate IT Support Analyst – Helpdesk – 6 week temp contract – Central London
+                          - generic: 24 March by Ashdown Group
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £18 - £23 per hour
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Contract, full-time or part-time
+              - link "Shortlist job Easy Apply Onsite IT Support Engineer / 2nd Line Desktop Support Technician 2 hrs ago by AWD online Salary£32,000 per annum LocationEast London, London ClockPermanent, full-time" [ref=e175] [cursor=pointer]:
+                - /url: /jobs/onsite-it-support-engineer-2nd-line-desktop-support-technician/56549463?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e176]:
+                      - img [ref=e177]
+                    - generic:
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Onsite IT Support Engineer / 2nd Line Desktop Support Technician
+                          - generic: 2 hrs ago by AWD online
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £32,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: East London, London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+            - link "See more jobs like this" [ref=e180] [cursor=pointer]:
+              - /url: /jobs/support-analyst-jobs
+          - generic [ref=e181]:
+            - generic [ref=e183]: Recommended courses
+            - generic [ref=e184]:
+              - link "MCSA Server 2016 Classroom based Training Classroom Enquire to get more info on pricing" [ref=e185] [cursor=pointer]:
+                - /url: /courses/mcsa-server-2016-classroom-based-training/71362?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it%20support_courses_71362
+                - generic: MCSA Server 2016 Classroom based Training
+                - generic: Classroom
+                - generic: Enquire to get more info on pricing
+              - link "Microsoft 365 Certified Endpoint Administrator Associate Online, Self-paced £395" [ref=e186] [cursor=pointer]:
+                - /url: /courses/microsoft-365-certified-endpoint-administrator-associate/510938?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it%20support_courses_510938
+                - generic: Microsoft 365 Certified Endpoint Administrator Associate
+                - generic: Online, Self-paced
+                - generic: £395
+              - link "Microsoft Certified Windows Server Hybrid Administrator Associate Online, Self-paced £395" [ref=e187] [cursor=pointer]:
+                - /url: /courses/microsoft-certified-windows-server-hybrid-administrator-associate/511179?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it%20support_courses_511179
+                - generic: Microsoft Certified Windows Server Hybrid Administrator Associate
+                - generic: Online, Self-paced
+                - generic: £395
+            - link "View IT support courses" [ref=e189] [cursor=pointer]:
+              - /url: https://www.reed.co.uk/courses/all?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=view_it%20support_courses
+          - generic [ref=e191]:
+            - generic [ref=e192]: Posted by Noir
+            - link "View all jobs and profile Chevron" [ref=e193] [cursor=pointer]:
+              - /url: /jobs/noir/p10319
+              - generic [ref=e194]: View all jobs and profile
+              - img "Chevron" [ref=e195]
+          - generic [ref=e200]:
+            - generic [ref=e201]: "Reference: 56736600"
+            - generic [ref=e202]:
+              - text: Please note that
+              - link "Reed.co.uk" [ref=e203] [cursor=pointer]:
+                - /url: https://reed.co.uk
+              - text: will never ask you to provide your bank, passport or driving licence details during the application process.
+            - link "Report this job Open in new tab" [ref=e205] [cursor=pointer]:
+              - /url: /enquiries?reportJobRef=56736600
+              - text: Report this job
+              - img "Open in new tab"
+        - complementary [ref=e206]
+    - contentinfo [ref=e207]:
+      - generic [ref=e209]:
+        - navigation [ref=e210]:
+          - button "JOBS" [ref=e212] [cursor=pointer]
+          - list [ref=e215]:
+            - listitem [ref=e216]:
+              - link "Contact us" [ref=e217] [cursor=pointer]:
+                - /url: /enquiries
+            - listitem [ref=e218]:
+              - link "Job search" [ref=e219] [cursor=pointer]:
+                - /url: /jobs
+            - listitem [ref=e220]:
+              - link "Recruiter directory" [ref=e221] [cursor=pointer]:
+                - /url: /recruiterdirectory
+            - listitem [ref=e222]:
+              - link "Work from home" [ref=e223] [cursor=pointer]:
+                - /url: /jobs/work-from-home-jobs
+            - listitem [ref=e224]:
+              - link "Browse jobs" [ref=e225] [cursor=pointer]:
+                - /url: /popularjobs
+            - listitem [ref=e226]:
+              - link "Browse locations" [ref=e227] [cursor=pointer]:
+                - /url: /location
+            - listitem [ref=e228]:
+              - link "Popular searches" [ref=e229] [cursor=pointer]:
+                - /url: /popularsearches
+            - listitem [ref=e230]:
+              - link "Career advice" [ref=e231] [cursor=pointer]:
+                - /url: /career-advice
+            - listitem [ref=e232]:
+              - link "Tax calculator" [ref=e233] [cursor=pointer]:
+                - /url: /tax-calculator
+            - listitem [ref=e234]:
+              - link "Average salary checker" [ref=e235] [cursor=pointer]:
+                - /url: /average-salary
+            - listitem [ref=e236]:
+              - link "Help" [ref=e237] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e238]:
+              - link "Contact a REED office" [ref=e239] [cursor=pointer]:
+                - /url: https://www.reed.com/offices
+            - listitem [ref=e240]:
+              - link "Sitemap" [ref=e241] [cursor=pointer]:
+                - /url: /html-sitemap
+        - navigation [ref=e242]:
+          - button "RECRUITER" [ref=e244] [cursor=pointer]
+          - list [ref=e247]:
+            - listitem [ref=e248]:
+              - link "Recruiter site" [ref=e249] [cursor=pointer]:
+                - /url: /recruiter?directjob=recruiter
+            - listitem [ref=e250]:
+              - link "Post a job" [ref=e251] [cursor=pointer]:
+                - /url: /recruiter/post-a-job?directjob=recruiter
+            - listitem [ref=e252]:
+              - link "CV Search" [ref=e253] [cursor=pointer]:
+                - /url: /recruiter/cv-search?directjob=recruiter
+            - listitem [ref=e254]:
+              - link "Recruitment agencies" [ref=e255] [cursor=pointer]:
+                - /url: /recruiter/recruitment-agencies?directjob=recruiter
+            - listitem [ref=e256]:
+              - link "Recruiter Advice" [ref=e257] [cursor=pointer]:
+                - /url: /recruiter-advice/?directjob=recruiter
+        - navigation [ref=e258]:
+          - button "COURSES" [ref=e260] [cursor=pointer]
+          - list [ref=e263]:
+            - listitem [ref=e264]:
+              - link "Help" [ref=e265] [cursor=pointer]:
+                - /url: /courses/help
+            - listitem [ref=e266]:
+              - link "Contact us" [ref=e267] [cursor=pointer]:
+                - /url: /courses/contact-us
+            - listitem [ref=e268]:
+              - link "Find a course" [ref=e269] [cursor=pointer]:
+                - /url: /courses/
+            - listitem [ref=e270]:
+              - link "View all subjects" [ref=e271] [cursor=pointer]:
+                - /url: /courses/directory
+            - listitem [ref=e272]:
+              - link "Discount courses" [ref=e273] [cursor=pointer]:
+                - /url: /courses/discount
+            - listitem [ref=e274]:
+              - link "Free courses" [ref=e275] [cursor=pointer]:
+                - /url: /courses/free
+            - listitem [ref=e276]:
+              - link "Awarding body directory" [ref=e277] [cursor=pointer]:
+                - /url: /courses/awarding-bodies
+            - listitem [ref=e278]:
+              - link "Career guides" [ref=e279] [cursor=pointer]:
+                - /url: /courses/career-guides
+            - listitem [ref=e280]:
+              - link "Advertise a course" [ref=e281] [cursor=pointer]:
+                - /url: /courses/providers/
+            - listitem [ref=e282]:
+              - link "Courses sitemap" [ref=e283] [cursor=pointer]:
+                - /url: /courses/html-sitemap
+        - navigation [ref=e284]:
+          - button "MORE FROM Reed.co.uk" [ref=e286] [cursor=pointer]
+          - list [ref=e289]:
+            - listitem [ref=e290]:
+              - link "About us" [ref=e291] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e292]:
+              - link "Careers at Reed.co.uk" [ref=e293] [cursor=pointer]:
+                - /url: https://www.reed.com/careers/jobs?businessDivision=Reed.co.uk
+            - listitem [ref=e294]:
+              - link "Press office" [ref=e295] [cursor=pointer]:
+                - /url: /press-office
+            - listitem [ref=e296]:
+              - link "Corporate governance" [ref=e297] [cursor=pointer]:
+                - /url: /corporate-governance
+            - listitem [ref=e298]:
+              - link "Modern slavery statement" [ref=e299] [cursor=pointer]:
+                - /url: https://www.reed.co.uk/cdn/jobseeker/pdf/Reed_MSA_Statement.pdf
+        - navigation [ref=e300]:
+          - button "REED" [ref=e302] [cursor=pointer]
+          - list [ref=e305]:
+            - listitem [ref=e306]:
+              - 'link "Tempzone: timesheets & holiday" [ref=e307] [cursor=pointer]':
+                - /url: https://candidate.reed.co.uk/candlogin.asp
+            - listitem [ref=e308]:
+              - link "Authorise timesheets" [ref=e309] [cursor=pointer]:
+                - /url: https://client.reed.co.uk/
+            - listitem [ref=e310]:
+              - link "Reed Group Services" [ref=e311] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e312]:
+              - link "Reed Specialist Recruitment" [ref=e313] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e314]:
+              - link "Reed in Partnership" [ref=e315] [cursor=pointer]:
+                - /url: https://www.reedinpartnership.co.uk/
+            - listitem [ref=e316]:
+              - link "Careers with REED" [ref=e317] [cursor=pointer]:
+                - /url: https://www.reed.com/careers
+            - listitem [ref=e318]:
+              - link "James Reed - Official Site" [ref=e319] [cursor=pointer]:
+                - /url: /james-reed/
+            - listitem [ref=e320]:
+              - 'link "Podcast - James Reed: all about business" [ref=e321] [cursor=pointer]':
+                - /url: https://www.reed.com/podcasts
+            - listitem [ref=e322]:
+              - link "ESG & sustainability" [ref=e323] [cursor=pointer]:
+                - /url: https://www.reed.com/esg-and-sustainability
+      - generic [ref=e325]:
+        - generic [ref=e326]:
+          - generic [ref=e328]:
+            - link "PhilCo" [ref=e329] [cursor=pointer]:
+              - /url: https://philco.org.uk/
+              - img "PhilCo" [ref=e330]
+            - generic [ref=e331]: Learn how Reed is leading the way in philanthropy
+          - img "Love Mondays" [ref=e333]
+        - generic [ref=e334]:
+          - generic [ref=e335]:
+            - 'link "James Reed: all about business" [ref=e336] [cursor=pointer]':
+              - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+              - 'img "James Reed: all about business" [ref=e337]'
+            - generic [ref=e338]:
+              - heading "Introducing our new podcast New" [level=3] [ref=e339]:
+                - text: Introducing our new podcast
+                - generic [ref=e340]: New
+              - paragraph [ref=e341]: "James Reed: all about business"
+              - link "Listen here" [ref=e342] [cursor=pointer]:
+                - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+          - generic [ref=e343]:
+            - generic [ref=e344]:
+              - generic [ref=e345]:
+                - link "Download on the App Store" [ref=e346] [cursor=pointer]:
+                  - /url: https://itunes.apple.com/GB/app/id1040443949?mt=8
+                  - img "Download on the App Store" [ref=e347]
+                - link "Get it on Google Play" [ref=e348] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.reedcouk.jobs&referrer=af_tranid%3D_HgKgkJ-aFiIn4G5iigdZQ%26pid%3DWebsite_Footer%26utm_source%3DWebsite_Footer
+                  - img "Get it on Google Play" [ref=e349]
+              - generic [ref=e350]:
+                - link "Facebook" [ref=e351] [cursor=pointer]:
+                  - /url: https://www.facebook.com/reedcouk
+                  - img "Facebook" [ref=e352]
+                - link "Instagram" [ref=e353] [cursor=pointer]:
+                  - /url: https://www.instagram.com/reedcouk/
+                  - img "Instagram" [ref=e354]
+                - link "Tiktok" [ref=e355] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@reedjobs
+                  - img "Tiktok" [ref=e356]
+            - list [ref=e357]:
+              - listitem [ref=e358]:
+                - button "Manage Preferences" [ref=e359] [cursor=pointer]
+                - text: ","
+              - listitem [ref=e360]:
+                - link "Security, Privacy, Terms & Conditions" [ref=e361] [cursor=pointer]:
+                  - /url: /policies
+            - paragraph [ref=e362]: COPYRIGHT © Reed.co.uk 2026
+  - alert [ref=e363]

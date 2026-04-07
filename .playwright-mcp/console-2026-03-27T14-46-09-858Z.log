@@ -1,0 +1,15 @@
+[      60ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[     162ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[     270ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[    1611ms] Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at rR (https://web.haystackapp.io/_next/static/chunks/0t5sx6uib_1ge.js:1:40276)
+    at oW (https://web.haystackapp.io/_next/static/chunks/0t5sx6uib_1ge.js:1:90129)
+    at ib (https://web.haystackapp.io/_next/static/chunks/0t5sx6uib_1ge.js:1:121216)
+    at https://web.haystackapp.io/_next/static/chunks/0t5sx6uib_1ge.js:1:121061
+    at iv (https://web.haystackapp.io/_next/static/chunks/0t5sx6uib_1ge.js:1:121069)
+    at io (https://web.haystackapp.io/_next/static/chunks/0t5sx6uib_1ge.js:1:116444)
+    at iX (https://web.haystackapp.io/_next/static/chunks/0t5sx6uib_1ge.js:1:139574)
+    at MessagePort.R (https://web.haystackapp.io/_next/static/chunks/0t5sx6uib_1ge.js:1:3453)
+[   14905ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.en.PJsh2cctCQI.O/m=auth2/rt=j/sv=1/d=1/ed=1/rs=AHpOoo_QlMhY2cycn60Rs8eI1WInRwuahw/cb=gapi.loaded_0?le=scs,fedcm_migration_mod:191
+[   15786ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://accounts.google.com/_/IdpIFrameHttp/cspreport/fine-allowlist:0
+[   16188ms] [WARNING] Your client application uses libraries for user authentication or authorization that are deprecated. See the [Migration Guide](https://developers.google.com/identity/gsi/web/guides/gis-migration) for more information. @ https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.en.PJsh2cctCQI.O/m=auth2/rt=j/sv=1/d=1/ed=1/rs=AHpOoo_QlMhY2cycn60Rs8eI1WInRwuahw/cb=gapi.loaded_0?le=scs,fedcm_migration_mod:171

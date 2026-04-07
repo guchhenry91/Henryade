@@ -1,0 +1,24 @@
+[    1097ms] [LOG] Visibility threshold pct=50, Visibility threshold ms = 0 @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[    1341ms] [LOG] Influent Media script loaded @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[    1345ms] [LOG] Influent Media script initialized @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[    1428ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-support-technician/56739090:0
+[    1469ms] [INFO] [REFRESH PATCH] pubads.refresh patched @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[    1470ms] [WARNING] [GPT] Invalid value encountered when calling: googletag.setConfig.targeting: {}
+https://goo.gle/gpt-message#159 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202603300101/pubads_impl.js?cb=31097555:18
+[    2666ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[    2668ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[    2669ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15
+[    5996ms] [ERROR] Failed to load resource: net::ERR_TOO_MANY_REDIRECTS @ https://pixel.tapad.com/idsync/ex/push?partner_id=2499&partner_device_id=2b62f1d1-d8b2-40c8-b5f7-14197b394798-69ce83e1-5553&partner_url=https%3A%2F%2Fsync.crwdcntrl.net%2Fqmap%3Fc%3D1389%26tp%3DSTSC%26tpid%3D2b62f1d1-d8b2-40c8-b5f7-14197b394798-69ce83e1-5553%26gdpr%3D0%26gdpr_consent%3D%26d%3Dhttps%253A%252F%252Fuser-sync.fwmrm.net%252Fad%252Fu%253Fmode%253Duser-register%2526dspid%253D48%2526dspuid%253D2b62f1d1-d8b2-40c8-b5f7-14197b394798-69ce83e1-5553%2526gdpr%253D0%2526gdpr_consent%253D:0
+[  104830ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-support-technician/56739090:0
+[  105977ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.reed.co.uk/_next/data/web-jobseeker-jobs__45404493b8cc8565e01dfb9648148985e4068970/authentication/login.json?returnTo=%2Fjobs%2Fit-support-technician%2F56739090%3FjobTitle%3Dit-support-technician%26jobId%3D56739090%26registrationSource%3Dapply_now_job_details:0
+[  108328ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://secure.reed.co.uk/login?state=hKFo2SAyN2VWeDRCRG5FTUFzMEhyZWFHM09pMnpWWDRYaTB3c6FupWxvZ2luo3RpZNkgVlVPVWpNYXhYVUs1YXdTVmR6TXZBcHYzR3c0QmR6RlqjY2lk2SBUS2JBVXhQRUFEWEFYZGYyN05tWUp2MEtnNmFEZnJkdA&client=TKbAUxPEADXAXdf27NmYJv0Kg6aDfrdt&protocol=oauth2&scope=openid%20profile%20email%20offline_access&redirect_uri=https%3A%2F%2Fwww.reed.co.uk%2Fauthentication%2Flogin%2Fcallback&audience=https%3A%2F%2Fwww.reed.co.uk%2F&response_type=code&response_mode=query&nonce=YVVRMkE3My4uNG5yc0lhLk1Ydk14eGdUUkk1REtOYUt6akJHYnNGczlGNg%3D%3D&code_challenge=fcbKOr4rQ-TwzD2E-FOezLlI450YfPU7g3MOAIuRcT8&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtc3BhLWpzIiwidmVyc2lvbiI6IjIuMTYuMCJ9:0
+[  145671ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://secure.reed.co.uk/usernamepassword/login:0
+[  158964ms] [INFO] [REFRESH PATCH] pubads.refresh patched @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[  159034ms] [LOG] Visibility threshold pct=50, Visibility threshold ms = 0 @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[  159282ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-support-technician/56739090?jobTitle=it-support-technician&jobId=56739090&registrationSource=apply_now_job_details:0
+[  159292ms] [LOG] Influent Media script loaded @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[  159319ms] [LOG] Influent Media script initialized @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[  159759ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[  159760ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[  159761ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15
+[  159966ms] [INFO] [REFRESH PATCH] Injecting targeting {key: AnonymisedSignalLift, value: 0} @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0

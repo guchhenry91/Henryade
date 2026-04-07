@@ -1,0 +1,49 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]: 選擇語言
+        - combobox "選擇語言" [ref=e6]:
+          - option "العربية (Arabic)"
+          - option "Čeština (Czech)"
+          - option "Dansk (Danish)"
+          - option "Deutsch (German)"
+          - option "English (English)" [selected]
+          - option "Español (Spanish)"
+          - option "Français (French)"
+          - option "हिंदी (Hindi)"
+          - option "Bahasa Indonesia (Bahasa Indonesia)"
+          - option "Italiano (Italian)"
+          - option "日本語 (Japanese)"
+          - option "한국어 (Korean)"
+          - option "Bahasa Malaysia (Malay)"
+          - option "Nederlands (Dutch)"
+          - option "Norsk (Norwegian)"
+          - option "Polski (Polish)"
+          - option "Português (Portuguese)"
+          - option "Română (Romanian)"
+          - option "Русский (Russian)"
+          - option "Svenska (Swedish)"
+          - option "Tagalog (Tagalog)"
+          - option "ภาษาไทย (Thai)"
+          - option "Türkçe (Turkish)"
+          - option "Українська (Ukrainian)"
+          - option "简体中文 (Chinese (Simplified))"
+          - option "繁體中文 (Chinese (Traditional))"
+        - img [ref=e8]
+      - link "LinkedIn" [ref=e12] [cursor=pointer]:
+        - /url: /
+        - img [ref=e13]
+  - main [ref=e27]:
+    - generic [ref=e30]:
+      - heading "Your LinkedIn Network Will Be Back Soon" [level=1] [ref=e31]
+      - heading "We’ve notified our operations staff that you are having a problem reaching LinkedIn. We’ll get you reconnected soon." [level=3] [ref=e32]
+      - generic [ref=e33]:
+        - paragraph [ref=e34]: You can leave this window open and we’ll automatically take you back to your LinkedIn home page in a few minutes.
+        - paragraph [ref=e35]: We apologize for the interruption.
+  - contentinfo [ref=e36]:
+    - generic [ref=e38]:
+      - link "LinkedIn" [ref=e39] [cursor=pointer]:
+        - /url: /
+        - img [ref=e40]
+      - text: © 2026

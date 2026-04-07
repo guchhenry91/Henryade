@@ -1,0 +1,1842 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e6]:
+          - link "Reed.co.uk" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Reed.co.uk" [ref=e8]
+          - list [ref=e9]:
+            - listitem [ref=e10]:
+              - link "Jobs" [ref=e11] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e12]: Jobs
+            - listitem [ref=e13]:
+              - link "Courses" [ref=e14] [cursor=pointer]:
+                - /url: /courses/?itm_source=js_navigation&itm_medium=jobseeker&itm_campaign=courses_tab&itm_content=standard_version
+                - generic [ref=e15]: Courses
+            - listitem [ref=e16]:
+              - link "Career advice" [ref=e17] [cursor=pointer]:
+                - /url: /career-advice/
+                - generic [ref=e18]: Career advice
+            - listitem [ref=e19]:
+              - link "Recruiting? Post a job" [ref=e20] [cursor=pointer]:
+                - /url: /recruiter/
+                - generic [ref=e21]:
+                  - text: Recruiting?
+                  - strong [ref=e22]: Post a job
+          - generic [ref=e23]:
+            - link "Register CV" [ref=e24] [cursor=pointer]:
+              - /url: /authentication/register?returnTo=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays%26salaryfrom%3D33000%26salaryto%3D100000
+            - list [ref=e25]:
+              - listitem [ref=e26]:
+                - link "Saved jobs" [ref=e27] [cursor=pointer]:
+                  - /url: /account/jobs/shortlisted-jobs
+                  - img [ref=e29]
+                  - generic [ref=e31]: Saved jobs
+              - listitem [ref=e32]:
+                - status [ref=e33]:
+                  - img "Loading" [ref=e34]
+      - search [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]:
+            - generic [ref=e41]:
+              - generic [ref=e42]: What
+              - generic [ref=e43]:
+                - textbox "e.g. \"marketing assistant\"" [ref=e44]: 2nd line support
+                - button "clear keywords" [ref=e45] [cursor=pointer]:
+                  - img [ref=e46]
+            - generic [ref=e49]:
+              - generic [ref=e50]: Where
+              - generic [ref=e51]:
+                - textbox "town or postcode" [ref=e52]: london
+                - button "clear location" [ref=e53] [cursor=pointer]:
+                  - img [ref=e54]
+            - button "Search jobs" [ref=e58] [cursor=pointer]
+            - link "Browse jobs" [ref=e60] [cursor=pointer]:
+              - /url: /popularjobs
+              - text: Browse jobs
+              - img [ref=e61]
+          - generic [ref=e63]:
+            - generic [ref=e64]: "Similar searches:"
+            - list [ref=e65]:
+              - listitem [ref=e66]:
+                - link "It Support jobs" [ref=e67] [cursor=pointer]:
+                  - /url: /jobs/it-support-jobs-in-london
+              - listitem [ref=e68]:
+                - link "It jobs" [ref=e69] [cursor=pointer]:
+                  - /url: /jobs/it-jobs-in-london
+              - listitem [ref=e70]:
+                - link "It Support Engineer jobs" [ref=e71] [cursor=pointer]:
+                  - /url: /jobs/it-support-engineer-jobs-in-london
+              - listitem [ref=e72]:
+                - link "It Support Analyst jobs" [ref=e73] [cursor=pointer]:
+                  - /url: /jobs/it-support-analyst-jobs-in-london
+              - listitem [ref=e74]:
+                - link "1St Line Support jobs" [ref=e75] [cursor=pointer]:
+                  - /url: /jobs/1st-line-support-jobs-in-london
+              - listitem [ref=e76]:
+                - link "2nd Line Support Jobs in Belfast" [ref=e77] [cursor=pointer]:
+                  - /url: /jobs/2nd-line-support-jobs-in-belfast
+              - listitem [ref=e78]:
+                - link "2nd Line Support Jobs in Birmingham" [ref=e79] [cursor=pointer]:
+                  - /url: /jobs/2nd-line-support-jobs-in-birmingham
+              - listitem [ref=e80]:
+                - link "2nd Line Support Jobs in Bradford" [ref=e81] [cursor=pointer]:
+                  - /url: /jobs/2nd-line-support-jobs-in-bradford-west-yorkshire
+      - generic [ref=e83]:
+        - generic [ref=e86]:
+          - heading "46 2nd Line Support Jobs in London" [level=1] [ref=e88]:
+            - text: "46"
+            - link "2nd Line Support" [ref=e89] [cursor=pointer]:
+              - /url: /jobs/2nd-line-support-jobs
+            - text: Jobs in
+            - link "London" [ref=e90] [cursor=pointer]:
+              - /url: /jobs/jobs-in-london
+          - button "Get Job Alerts" [ref=e97] [cursor=pointer]:
+            - img [ref=e98]
+            - text: Get job alerts
+        - generic [ref=e101]:
+          - main [ref=e102]:
+            - article [ref=e104]:
+              - generic [ref=e105]:
+                - button "2nd Line IT Support" [ref=e106] [cursor=pointer]
+                - generic [ref=e107]:
+                  - generic [ref=e108]:
+                    - generic [ref=e109]:
+                      - generic [ref=e110]:
+                        - generic [ref=e111]: Featured
+                        - generic [ref=e112]: New
+                        - generic [ref=e113]:
+                          - img [ref=e114]
+                          - text: Easy Apply
+                      - heading "2nd Line IT Support" [level=2] [ref=e116]:
+                        - link "2nd Line IT Support" [ref=e117] [cursor=pointer]:
+                          - /url: /jobs/2nd-line-it-support/56729948?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e118]:
+                        - text: Yesterday by
+                        - link "Michael Page Technology" [ref=e119] [cursor=pointer]:
+                          - /url: /jobs/michael-page-technology-59782/p59782
+                      - list [ref=e120]:
+                        - listitem [ref=e121]:
+                          - img "Salary" [ref=e122]
+                          - text: £200 - £250 per day
+                        - listitem [ref=e124]:
+                          - img "Location" [ref=e125]
+                          - text: London
+                        - listitem [ref=e127]:
+                          - img "Clock" [ref=e128]
+                          - text: Temporary, full-time
+                    - button "See job description" [ref=e130] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e131]
+                  - complementary [ref=e133]:
+                    - button "Easy apply" [ref=e134] [cursor=pointer]
+                  - link "Michael Page Technology jobs" [ref=e137] [cursor=pointer]:
+                    - /url: /jobs/michael-page-technology-59782/p59782
+                    - img "Michael Page Technology jobs" [ref=e138]
+                  - generic [ref=e139]:
+                    - button "Shortlist job" [ref=e140] [cursor=pointer]:
+                      - img [ref=e141]
+                    - button "hide job" [ref=e143] [cursor=pointer]:
+                      - img [ref=e144]
+            - article [ref=e147]:
+              - generic [ref=e148]:
+                - button "IT Infrastructure Engineer" [ref=e149] [cursor=pointer]
+                - generic [ref=e150]:
+                  - generic [ref=e151]:
+                    - generic [ref=e152]:
+                      - generic [ref=e153]:
+                        - generic [ref=e154]: Featured
+                        - generic [ref=e155]: New
+                        - generic [ref=e156]:
+                          - img [ref=e157]
+                          - text: Easy Apply
+                      - heading "IT Infrastructure Engineer" [level=2] [ref=e159]:
+                        - link "IT Infrastructure Engineer" [ref=e160] [cursor=pointer]:
+                          - /url: /jobs/it-infrastructure-engineer/56732585?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e161]:
+                        - text: Yesterday by
+                        - link "Matchtech" [ref=e162] [cursor=pointer]:
+                          - /url: /jobs/matchtech-19617/p19617
+                      - list [ref=e163]:
+                        - listitem [ref=e164]:
+                          - img "Salary" [ref=e165]
+                          - text: Salary negotiable
+                        - listitem [ref=e167]:
+                          - img "Location" [ref=e168]
+                          - text: London
+                        - listitem [ref=e170]:
+                          - img "Clock" [ref=e171]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e173] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e174]
+                  - complementary [ref=e176]:
+                    - button "Easy apply" [ref=e177] [cursor=pointer]
+                  - link "Matchtech jobs" [ref=e180] [cursor=pointer]:
+                    - /url: /jobs/matchtech-19617/p19617
+                    - img "Matchtech jobs" [ref=e181]
+                  - generic [ref=e182]:
+                    - button "Shortlist job" [ref=e183] [cursor=pointer]:
+                      - img [ref=e184]
+                    - button "hide job" [ref=e186] [cursor=pointer]:
+                      - img [ref=e187]
+            - article [ref=e190]:
+              - generic [ref=e191]:
+                - button "Desktop Support Analyst - London" [ref=e192] [cursor=pointer]
+                - generic [ref=e193]:
+                  - generic [ref=e194]:
+                    - generic [ref=e195]:
+                      - generic [ref=e196]:
+                        - generic [ref=e197]: New
+                        - generic [ref=e198]:
+                          - img [ref=e199]
+                          - text: Easy Apply
+                      - heading "Desktop Support Analyst - London" [level=2] [ref=e201]:
+                        - link "Desktop Support Analyst - London" [ref=e202] [cursor=pointer]:
+                          - /url: /jobs/desktop-support-analyst-london/56736600?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e203]:
+                        - text: 6 hrs ago by
+                        - link "Noir" [ref=e204] [cursor=pointer]:
+                          - /url: /jobs/noir/p10319
+                      - list [ref=e205]:
+                        - listitem [ref=e206]:
+                          - img "Salary" [ref=e207]
+                          - text: £30,000 - £35,000 per annum
+                        - listitem [ref=e209]:
+                          - img "Location" [ref=e210]
+                          - text: London
+                        - listitem [ref=e212]:
+                          - img "Clock" [ref=e213]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e215] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e216]
+                  - complementary [ref=e218]:
+                    - button "Easy apply" [ref=e219] [cursor=pointer]
+                  - link "Noir jobs" [ref=e222] [cursor=pointer]:
+                    - /url: /jobs/noir/p10319
+                    - img "Noir jobs" [ref=e223]
+                  - generic [ref=e224]:
+                    - button "Shortlist job" [ref=e225] [cursor=pointer]:
+                      - img [ref=e226]
+                    - button "hide job" [ref=e228] [cursor=pointer]:
+                      - img [ref=e229]
+            - article [ref=e232]:
+              - generic [ref=e233]:
+                - button "IT Support Technician" [ref=e234] [cursor=pointer]
+                - generic [ref=e235]:
+                  - generic [ref=e236]:
+                    - generic [ref=e237]:
+                      - generic [ref=e238]:
+                        - generic [ref=e239]: Featured
+                        - generic [ref=e240]: New
+                        - generic [ref=e241]:
+                          - img [ref=e242]
+                          - text: Easy Apply
+                      - heading "IT Support Technician" [level=2] [ref=e244]:
+                        - link "IT Support Technician" [ref=e245] [cursor=pointer]:
+                          - /url: /jobs/it-support-technician/56739090?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e246]:
+                        - text: 2 hrs ago by
+                        - link "Armstrong Knight" [ref=e247] [cursor=pointer]:
+                          - /url: /jobs/armstrong/p18273
+                      - list [ref=e248]:
+                        - listitem [ref=e249]:
+                          - img "Salary" [ref=e250]
+                          - text: £38,000 - £42,000 per annum
+                        - listitem [ref=e252]:
+                          - img "Location" [ref=e253]
+                          - text: London
+                        - listitem [ref=e255]:
+                          - img "Clock" [ref=e256]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e258] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e259]
+                  - complementary [ref=e261]:
+                    - button "Easy apply" [ref=e262] [cursor=pointer]
+                  - link "Armstrong Knight jobs" [ref=e265] [cursor=pointer]:
+                    - /url: /jobs/armstrong/p18273
+                    - img "Armstrong Knight jobs" [ref=e266]
+                  - generic [ref=e267]:
+                    - button "Shortlist job" [ref=e268] [cursor=pointer]:
+                      - img [ref=e269]
+                    - button "hide job" [ref=e271] [cursor=pointer]:
+                      - img [ref=e272]
+            - article [ref=e275]:
+              - generic [ref=e276]:
+                - button "Windows Engineer" [ref=e277] [cursor=pointer]
+                - generic [ref=e278]:
+                  - generic [ref=e279]:
+                    - generic [ref=e280]:
+                      - generic [ref=e281]:
+                        - generic [ref=e282]: Featured
+                        - generic [ref=e283]: New
+                      - heading "Windows Engineer" [level=2] [ref=e284]:
+                        - link "Windows Engineer" [ref=e285] [cursor=pointer]:
+                          - /url: /jobs/windows-engineer/56734323?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e286]:
+                        - text: Yesterday by
+                        - link "Accenture" [ref=e287] [cursor=pointer]:
+                          - /url: /jobs/accenture-31251/p31251
+                      - list [ref=e288]:
+                        - listitem [ref=e289]:
+                          - img "Salary" [ref=e290]
+                          - text: Competitive salary
+                        - listitem [ref=e292]:
+                          - img "Location" [ref=e293]
+                          - text: London
+                        - listitem [ref=e295]:
+                          - img "Clock" [ref=e296]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e298] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e299]
+                  - complementary [ref=e301]
+                  - link "Accenture jobs" [ref=e304] [cursor=pointer]:
+                    - /url: /jobs/accenture-31251/p31251
+                    - img "Accenture jobs" [ref=e305]
+                  - generic [ref=e306]:
+                    - button "Shortlist job" [ref=e307] [cursor=pointer]:
+                      - img [ref=e308]
+                    - button "hide job" [ref=e310] [cursor=pointer]:
+                      - img [ref=e311]
+            - article [ref=e314]:
+              - generic [ref=e315]:
+                - button "Applications Support Engineer" [ref=e316] [cursor=pointer]
+                - generic [ref=e317]:
+                  - generic [ref=e318]:
+                    - generic [ref=e319]:
+                      - generic [ref=e320]:
+                        - generic [ref=e321]: Featured
+                        - generic [ref=e322]: New
+                        - generic [ref=e323]:
+                          - img "EarlyBird" [ref=e324]
+                          - text: Early bird
+                      - heading "Applications Support Engineer" [level=2] [ref=e326]:
+                        - link "Applications Support Engineer" [ref=e327] [cursor=pointer]:
+                          - /url: /jobs/applications-support-engineer/56728367?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e328]:
+                        - text: Yesterday by
+                        - link "Matchtech" [ref=e329] [cursor=pointer]:
+                          - /url: /jobs/matchtech-19617/p19617
+                      - list [ref=e330]:
+                        - listitem [ref=e331]:
+                          - img "Salary" [ref=e332]
+                          - text: Salary negotiable
+                        - listitem [ref=e334]:
+                          - img "Location" [ref=e335]
+                          - text: Harlow, Essex
+                        - listitem [ref=e337]:
+                          - img "Clock" [ref=e338]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e340] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e341]
+                  - complementary [ref=e343]
+                  - link "Matchtech jobs" [ref=e346] [cursor=pointer]:
+                    - /url: /jobs/matchtech-19617/p19617
+                    - img "Matchtech jobs" [ref=e347]
+                  - generic [ref=e348]:
+                    - button "Shortlist job" [ref=e349] [cursor=pointer]:
+                      - img [ref=e350]
+                    - button "hide job" [ref=e352] [cursor=pointer]:
+                      - img [ref=e353]
+            - article [ref=e356]:
+              - generic [ref=e357]:
+                - button "Network and Infrastructure Engineer" [ref=e358] [cursor=pointer]
+                - generic [ref=e359]:
+                  - generic [ref=e360]:
+                    - generic [ref=e361]:
+                      - generic [ref=e362]:
+                        - generic [ref=e363]: New
+                        - generic [ref=e364]:
+                          - img "EarlyBird" [ref=e365]
+                          - text: Early bird
+                      - heading "Network and Infrastructure Engineer" [level=2] [ref=e367]:
+                        - link "Network and Infrastructure Engineer" [ref=e368] [cursor=pointer]:
+                          - /url: /jobs/network-and-infrastructure-engineer/56736728?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e369]:
+                        - text: 5 hrs ago by
+                        - link "Foresters Financial" [ref=e370] [cursor=pointer]:
+                          - /url: /jobs/foresters-financial/p106151
+                      - list [ref=e371]:
+                        - listitem [ref=e372]:
+                          - img "Salary" [ref=e373]
+                          - text: £10,000 - £50,000 per annum
+                        - listitem [ref=e375]:
+                          - img "Location" [ref=e376]
+                          - text: Bromley, Kent
+                        - listitem [ref=e378]:
+                          - img "Clock" [ref=e379]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e381] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e382]
+                  - complementary [ref=e384]
+                  - generic [ref=e386]:
+                    - link "Foresters Financial jobs":
+                      - /url: /jobs/foresters-financial/p106151
+                      - img "Foresters Financial jobs"
+                  - generic [ref=e387]:
+                    - button "Shortlist job" [ref=e388] [cursor=pointer]:
+                      - img [ref=e389]
+                    - button "hide job" [ref=e391] [cursor=pointer]:
+                      - img [ref=e392]
+            - article [ref=e395]:
+              - generic [ref=e396]:
+                - button "Compliance Business Systems Lead" [ref=e397] [cursor=pointer]
+                - generic [ref=e398]:
+                  - generic [ref=e399]:
+                    - generic [ref=e400]:
+                      - generic [ref=e402]:
+                        - img [ref=e403]
+                        - text: Easy Apply
+                      - heading "Compliance Business Systems Lead" [level=2] [ref=e405]:
+                        - link "Compliance Business Systems Lead" [ref=e406] [cursor=pointer]:
+                          - /url: /jobs/compliance-business-systems-lead/56717118?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e407]:
+                        - text: 2 days ago by
+                        - link "Precise Placements" [ref=e408] [cursor=pointer]:
+                          - /url: /jobs/precise-placements/p65691
+                      - list [ref=e409]:
+                        - listitem [ref=e410]:
+                          - img "Salary" [ref=e411]
+                          - text: £100,000 - £120,000 per annum
+                        - listitem [ref=e413]:
+                          - img "Location" [ref=e414]
+                          - text: London
+                        - listitem [ref=e416]:
+                          - img "Clock" [ref=e417]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e419] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e420]
+                  - complementary [ref=e422]:
+                    - button "Easy apply" [ref=e423] [cursor=pointer]
+                  - generic [ref=e425]:
+                    - link "Precise Placements jobs":
+                      - /url: /jobs/precise-placements/p65691
+                      - img "Precise Placements jobs"
+                  - generic [ref=e426]:
+                    - button "Shortlist job" [ref=e427] [cursor=pointer]:
+                      - img [ref=e428]
+                    - button "hide job" [ref=e430] [cursor=pointer]:
+                      - img [ref=e431]
+            - article [ref=e434]:
+              - generic [ref=e435]:
+                - button "Senior Service Desk Analyst" [ref=e436] [cursor=pointer]
+                - generic [ref=e437]:
+                  - generic [ref=e438]:
+                    - generic [ref=e439]:
+                      - generic [ref=e440]:
+                        - generic [ref=e441]: Featured
+                        - generic [ref=e442]:
+                          - img [ref=e443]
+                          - text: Easy Apply
+                      - heading "Senior Service Desk Analyst" [level=2] [ref=e445]:
+                        - link "Senior Service Desk Analyst" [ref=e446] [cursor=pointer]:
+                          - /url: /jobs/senior-service-desk-analyst/56720917?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e447]:
+                        - text: 2 days ago by
+                        - link "Reed" [ref=e448] [cursor=pointer]:
+                          - /url: /jobs/reed/p1342
+                      - list [ref=e449]:
+                        - listitem [ref=e450]:
+                          - img "Salary" [ref=e451]
+                          - text: £40,000 - £50,000 per annum, inc benefits
+                        - listitem [ref=e453]:
+                          - img "Location" [ref=e454]
+                          - text: Central London, London
+                        - listitem [ref=e456]:
+                          - img "Clock" [ref=e457]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e459] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e460]
+                  - complementary [ref=e462]:
+                    - button "Easy apply" [ref=e463] [cursor=pointer]
+                  - generic [ref=e465]:
+                    - link "Reed jobs":
+                      - /url: /jobs/reed/p1342
+                      - img "Reed jobs"
+                  - generic [ref=e466]:
+                    - button "Shortlist job" [ref=e467] [cursor=pointer]:
+                      - img [ref=e468]
+                    - button "hide job" [ref=e470] [cursor=pointer]:
+                      - img [ref=e471]
+            - article [ref=e474]:
+              - generic [ref=e475]:
+                - button "Senior IT Support" [ref=e476] [cursor=pointer]
+                - generic [ref=e477]:
+                  - generic [ref=e478]:
+                    - generic [ref=e479]:
+                      - generic [ref=e481]:
+                        - img [ref=e482]
+                        - text: Easy Apply
+                      - heading "Senior IT Support" [level=2] [ref=e484]:
+                        - link "Senior IT Support" [ref=e485] [cursor=pointer]:
+                          - /url: /jobs/senior-it-support/56718938?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e486]:
+                        - text: 2 days ago by
+                        - link "Eligo Recruitment" [ref=e487] [cursor=pointer]:
+                          - /url: /jobs/eligo-recruitment/p13082
+                      - list [ref=e488]:
+                        - listitem [ref=e489]:
+                          - img "Salary" [ref=e490]
+                          - text: £40,000 - £43,000 per annum
+                        - listitem [ref=e492]:
+                          - img "Location" [ref=e493]
+                          - text: City of London, London
+                        - listitem [ref=e495]:
+                          - img "Clock" [ref=e496]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e498] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e499]
+                  - complementary [ref=e501]:
+                    - button "Easy apply" [ref=e502] [cursor=pointer]
+                  - generic [ref=e504]:
+                    - link "Eligo Recruitment jobs":
+                      - /url: /jobs/eligo-recruitment/p13082
+                      - img "Eligo Recruitment jobs"
+                  - generic [ref=e505]:
+                    - button "Shortlist job" [ref=e506] [cursor=pointer]:
+                      - img [ref=e507]
+                    - button "hide job" [ref=e509] [cursor=pointer]:
+                      - img [ref=e510]
+            - article [ref=e513]:
+              - generic [ref=e514]:
+                - button "Trainee Cyber Security" [ref=e515] [cursor=pointer]
+                - generic [ref=e516]:
+                  - generic [ref=e517]:
+                    - generic [ref=e518]:
+                      - generic [ref=e519]:
+                        - generic [ref=e520]: Featured
+                        - generic [ref=e521]: New
+                      - heading "Trainee Cyber Security" [level=2] [ref=e522]:
+                        - link "Trainee Cyber Security" [ref=e523] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56737248?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e524]:
+                        - text: 5 hrs ago by
+                        - link "ITOL Recruit" [ref=e525] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e526]:
+                        - listitem [ref=e527]:
+                          - img "Salary" [ref=e528]
+                          - text: Training Course
+                        - listitem [ref=e530]:
+                          - img "Location" [ref=e531]
+                          - text: United Kingdom
+                        - listitem [ref=e533]:
+                          - img "Clock" [ref=e534]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e536] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e537]
+                  - complementary [ref=e539]
+                  - generic [ref=e541]:
+                    - link "ITOL Recruit jobs":
+                      - /url: /jobs/itonlinelearning-0/p57826
+                      - img "ITOL Recruit jobs"
+                  - generic [ref=e542]:
+                    - button "Shortlist job" [ref=e543] [cursor=pointer]:
+                      - img [ref=e544]
+                    - button "hide job" [ref=e546] [cursor=pointer]:
+                      - img [ref=e547]
+            - article [ref=e550]:
+              - generic [ref=e551]:
+                - button "Trainee Cyber Security" [ref=e552] [cursor=pointer]
+                - generic [ref=e553]:
+                  - generic [ref=e554]:
+                    - generic [ref=e555]:
+                      - generic [ref=e557]: New
+                      - heading "Trainee Cyber Security" [level=2] [ref=e558]:
+                        - link "Trainee Cyber Security" [ref=e559] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56726428?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e560]:
+                        - text: Yesterday by
+                        - link "ITOL Recruit" [ref=e561] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e562]:
+                        - listitem [ref=e563]:
+                          - img "Salary" [ref=e564]
+                          - text: Training Course
+                        - listitem [ref=e566]:
+                          - img "Location" [ref=e567]
+                          - text: London
+                        - listitem [ref=e569]:
+                          - img "Clock" [ref=e570]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e572] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e573]
+                  - complementary [ref=e575]
+                  - generic [ref=e577]:
+                    - link "ITOL Recruit jobs":
+                      - /url: /jobs/itonlinelearning-0/p57826
+                      - img "ITOL Recruit jobs"
+                  - generic [ref=e578]:
+                    - button "Shortlist job" [ref=e579] [cursor=pointer]:
+                      - img [ref=e580]
+                    - button "hide job" [ref=e582] [cursor=pointer]:
+                      - img [ref=e583]
+            - article [ref=e586]:
+              - generic [ref=e587]:
+                - button "Cyber Security Trainee" [ref=e588] [cursor=pointer]
+                - generic [ref=e589]:
+                  - generic [ref=e590]:
+                    - generic [ref=e591]:
+                      - heading "Cyber Security Trainee" [level=2] [ref=e592]:
+                        - link "Cyber Security Trainee" [ref=e593] [cursor=pointer]:
+                          - /url: /jobs/cyber-security-trainee/56713522?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e594]:
+                        - text: 3 days ago by
+                        - link "ITOL Recruit" [ref=e595] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e596]:
+                        - listitem [ref=e597]:
+                          - img "Salary" [ref=e598]
+                          - text: Training Course
+                        - listitem [ref=e600]:
+                          - img "Location" [ref=e601]
+                          - text: North West London, London
+                        - listitem [ref=e603]:
+                          - img "Clock" [ref=e604]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e606] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e607]
+                  - complementary [ref=e609]
+                  - generic [ref=e611]:
+                    - link "ITOL Recruit jobs":
+                      - /url: /jobs/itonlinelearning-0/p57826
+                      - img "ITOL Recruit jobs"
+                  - generic [ref=e612]:
+                    - button "Shortlist job" [ref=e613] [cursor=pointer]:
+                      - img [ref=e614]
+                    - button "hide job" [ref=e616] [cursor=pointer]:
+                      - img [ref=e617]
+            - generic [ref=e619]:
+              - article [ref=e620]:
+                - generic [ref=e621]:
+                  - button "Trainee Cyber Security" [ref=e622] [cursor=pointer]
+                  - generic [ref=e623]:
+                    - generic [ref=e624]:
+                      - generic [ref=e625]:
+                        - generic [ref=e627]: Featured
+                        - heading "Trainee Cyber Security" [level=2] [ref=e628]:
+                          - link "Trainee Cyber Security" [ref=e629] [cursor=pointer]:
+                            - /url: /jobs/trainee-cyber-security/56721082?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                        - generic [ref=e630]:
+                          - text: 2 days ago by
+                          - link "ITOL Recruit" [ref=e631] [cursor=pointer]:
+                            - /url: /jobs/itonlinelearning-0/p57826
+                        - list [ref=e632]:
+                          - listitem [ref=e633]:
+                            - img "Salary" [ref=e634]
+                            - text: Training Course
+                          - listitem [ref=e636]:
+                            - img "Location" [ref=e637]
+                            - text: United Kingdom
+                          - listitem [ref=e639]:
+                            - img "Clock" [ref=e640]
+                            - text: Permanent, full-time
+                      - button "See job description" [ref=e642] [cursor=pointer]:
+                        - text: See more
+                        - img "Chevron" [ref=e643]
+                    - complementary [ref=e645]
+                    - generic [ref=e647]:
+                      - link "ITOL Recruit jobs":
+                        - /url: /jobs/itonlinelearning-0/p57826
+                        - img "ITOL Recruit jobs"
+                    - generic [ref=e648]:
+                      - button "Shortlist job" [ref=e649] [cursor=pointer]:
+                        - img [ref=e650]
+                      - button "hide job" [ref=e652] [cursor=pointer]:
+                        - img [ref=e653]
+              - alert [ref=e655]:
+                - button "Get Job Alerts" [ref=e656] [cursor=pointer]:
+                  - img [ref=e657]
+                  - text: Get Job Alerts
+                - paragraph [ref=e660]: Get new jobs matching this search straight to your inbox.
+            - article [ref=e662]:
+              - generic [ref=e663]:
+                - button "Trainee Cyber Security" [ref=e664] [cursor=pointer]
+                - generic [ref=e665]:
+                  - generic [ref=e666]:
+                    - generic [ref=e667]:
+                      - generic [ref=e669]: Featured
+                      - heading "Trainee Cyber Security" [level=2] [ref=e670]:
+                        - link "Trainee Cyber Security" [ref=e671] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56721075?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e672]:
+                        - text: 2 days ago by
+                        - link "ITOL Recruit" [ref=e673] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e674]:
+                        - listitem [ref=e675]:
+                          - img "Salary" [ref=e676]
+                          - text: Training Course
+                        - listitem [ref=e678]:
+                          - img "Location" [ref=e679]
+                          - text: United Kingdom
+                        - listitem [ref=e681]:
+                          - img "Clock" [ref=e682]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e684] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e685]
+                  - complementary [ref=e687]
+                  - generic [ref=e689]:
+                    - link "ITOL Recruit jobs":
+                      - /url: /jobs/itonlinelearning-0/p57826
+                      - img "ITOL Recruit jobs"
+                  - generic [ref=e690]:
+                    - button "Shortlist job" [ref=e691] [cursor=pointer]:
+                      - img [ref=e692]
+                    - button "hide job" [ref=e694] [cursor=pointer]:
+                      - img [ref=e695]
+            - article [ref=e698]:
+              - generic [ref=e699]:
+                - button "Trainee Cyber Security Analyst" [ref=e700] [cursor=pointer]
+                - generic [ref=e701]:
+                  - generic [ref=e702]:
+                    - generic [ref=e703]:
+                      - generic [ref=e705]: New
+                      - heading "Trainee Cyber Security Analyst" [level=2] [ref=e706]:
+                        - link "Trainee Cyber Security Analyst" [ref=e707] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security-analyst/56726504?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e708]:
+                        - text: Yesterday by
+                        - link "ITOL Recruit" [ref=e709] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e710]:
+                        - listitem [ref=e711]:
+                          - img "Salary" [ref=e712]
+                          - text: Training Course
+                        - listitem [ref=e714]:
+                          - img "Location" [ref=e715]
+                          - text: North London, London
+                        - listitem [ref=e717]:
+                          - img "Clock" [ref=e718]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e720] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e721]
+                  - complementary [ref=e723]
+                  - generic [ref=e725]:
+                    - link "ITOL Recruit jobs":
+                      - /url: /jobs/itonlinelearning-0/p57826
+                      - img "ITOL Recruit jobs"
+                  - generic [ref=e726]:
+                    - button "Shortlist job" [ref=e727] [cursor=pointer]:
+                      - img [ref=e728]
+                    - button "hide job" [ref=e730] [cursor=pointer]:
+                      - img [ref=e731]
+            - article [ref=e734]:
+              - generic [ref=e735]:
+                - button "Cyber Security Trainee" [ref=e736] [cursor=pointer]
+                - generic [ref=e737]:
+                  - generic [ref=e738]:
+                    - generic [ref=e739]:
+                      - generic [ref=e741]: New
+                      - heading "Cyber Security Trainee" [level=2] [ref=e742]:
+                        - link "Cyber Security Trainee" [ref=e743] [cursor=pointer]:
+                          - /url: /jobs/cyber-security-trainee/56726314?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e744]:
+                        - text: Yesterday by
+                        - link "ITOL Recruit" [ref=e745] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e746]:
+                        - listitem [ref=e747]:
+                          - img "Salary" [ref=e748]
+                          - text: Training Course
+                        - listitem [ref=e750]:
+                          - img "Location" [ref=e751]
+                          - text: East London, London
+                        - listitem [ref=e753]:
+                          - img "Clock" [ref=e754]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e756] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e757]
+                  - complementary [ref=e759]
+                  - generic [ref=e761]:
+                    - link "ITOL Recruit jobs":
+                      - /url: /jobs/itonlinelearning-0/p57826
+                      - img "ITOL Recruit jobs"
+                  - generic [ref=e762]:
+                    - button "Shortlist job" [ref=e763] [cursor=pointer]:
+                      - img [ref=e764]
+                    - button "hide job" [ref=e766] [cursor=pointer]:
+                      - img [ref=e767]
+            - article [ref=e770]:
+              - generic [ref=e771]:
+                - button "Trainee Cyber Security" [ref=e772] [cursor=pointer]
+                - generic [ref=e773]:
+                  - generic [ref=e774]:
+                    - generic [ref=e775]:
+                      - generic [ref=e776]:
+                        - generic [ref=e777]: Featured
+                        - generic [ref=e778]: New
+                      - heading "Trainee Cyber Security" [level=2] [ref=e779]:
+                        - link "Trainee Cyber Security" [ref=e780] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56737047?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e781]:
+                        - text: 6 hrs ago by
+                        - link "ITOL Recruit" [ref=e782] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e783]:
+                        - listitem [ref=e784]:
+                          - img "Salary" [ref=e785]
+                          - text: Training Course
+                        - listitem [ref=e787]:
+                          - img "Location" [ref=e788]
+                          - text: London
+                        - listitem [ref=e790]:
+                          - img "Clock" [ref=e791]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e793] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e794]
+                  - complementary [ref=e796]
+                  - generic [ref=e798]:
+                    - link "ITOL Recruit jobs":
+                      - /url: /jobs/itonlinelearning-0/p57826
+                      - img "ITOL Recruit jobs"
+                  - generic [ref=e799]:
+                    - button "Shortlist job" [ref=e800] [cursor=pointer]:
+                      - img [ref=e801]
+                    - button "hide job" [ref=e803] [cursor=pointer]:
+                      - img [ref=e804]
+            - article [ref=e807]:
+              - generic [ref=e808]:
+                - button "Trainee Cyber Security" [ref=e809] [cursor=pointer]
+                - generic [ref=e810]:
+                  - generic [ref=e811]:
+                    - generic [ref=e812]:
+                      - generic [ref=e813]:
+                        - generic [ref=e814]: Featured
+                        - generic [ref=e815]: New
+                      - heading "Trainee Cyber Security" [level=2] [ref=e816]:
+                        - link "Trainee Cyber Security" [ref=e817] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56737032?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e818]:
+                        - text: 6 hrs ago by
+                        - link "ITOL Recruit" [ref=e819] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e820]:
+                        - listitem [ref=e821]:
+                          - img "Salary" [ref=e822]
+                          - text: Training Course
+                        - listitem [ref=e824]:
+                          - img "Location" [ref=e825]
+                          - text: London
+                        - listitem [ref=e827]:
+                          - img "Clock" [ref=e828]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e830] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e831]
+                  - complementary [ref=e833]
+                  - generic [ref=e835]:
+                    - link "ITOL Recruit jobs":
+                      - /url: /jobs/itonlinelearning-0/p57826
+                      - img "ITOL Recruit jobs"
+                  - generic [ref=e836]:
+                    - button "Shortlist job" [ref=e837] [cursor=pointer]:
+                      - img [ref=e838]
+                    - button "hide job" [ref=e840] [cursor=pointer]:
+                      - img [ref=e841]
+            - article [ref=e844]:
+              - generic [ref=e845]:
+                - button "Trainee Cyber Security" [ref=e846] [cursor=pointer]
+                - generic [ref=e847]:
+                  - generic [ref=e848]:
+                    - generic [ref=e849]:
+                      - generic [ref=e851]: Featured
+                      - heading "Trainee Cyber Security" [level=2] [ref=e852]:
+                        - link "Trainee Cyber Security" [ref=e853] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56721072?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e854]:
+                        - text: 2 days ago by
+                        - link "ITOL Recruit" [ref=e855] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e856]:
+                        - listitem [ref=e857]:
+                          - img "Salary" [ref=e858]
+                          - text: Training Course
+                        - listitem [ref=e860]:
+                          - img "Location" [ref=e861]
+                          - text: United Kingdom
+                        - listitem [ref=e863]:
+                          - img "Clock" [ref=e864]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e866] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e867]
+                  - complementary [ref=e869]
+                  - generic [ref=e871]:
+                    - link "ITOL Recruit jobs":
+                      - /url: /jobs/itonlinelearning-0/p57826
+                      - img "ITOL Recruit jobs"
+                  - generic [ref=e872]:
+                    - button "Shortlist job" [ref=e873] [cursor=pointer]:
+                      - img [ref=e874]
+                    - button "hide job" [ref=e876] [cursor=pointer]:
+                      - img [ref=e877]
+            - article [ref=e880]:
+              - generic [ref=e881]:
+                - button "Trainee Cyber Security Analyst" [ref=e882] [cursor=pointer]
+                - generic [ref=e883]:
+                  - generic [ref=e884]:
+                    - generic [ref=e885]:
+                      - generic [ref=e887]: New
+                      - heading "Trainee Cyber Security Analyst" [level=2] [ref=e888]:
+                        - link "Trainee Cyber Security Analyst" [ref=e889] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security-analyst/56726503?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e890]:
+                        - text: Yesterday by
+                        - link "ITOL Recruit" [ref=e891] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e892]:
+                        - listitem [ref=e893]:
+                          - img "Salary" [ref=e894]
+                          - text: Training Course
+                        - listitem [ref=e896]:
+                          - img "Location" [ref=e897]
+                          - text: North London, London
+                        - listitem [ref=e899]:
+                          - img "Clock" [ref=e900]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e902] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e903]
+                  - complementary [ref=e905]
+                  - generic [ref=e907]:
+                    - link "ITOL Recruit jobs":
+                      - /url: /jobs/itonlinelearning-0/p57826
+                      - img "ITOL Recruit jobs"
+                  - generic [ref=e908]:
+                    - button "Shortlist job" [ref=e909] [cursor=pointer]:
+                      - img [ref=e910]
+                    - button "hide job" [ref=e912] [cursor=pointer]:
+                      - img [ref=e913]
+            - article [ref=e916]:
+              - generic [ref=e917]:
+                - button "Trainee Cyber Security" [ref=e918] [cursor=pointer]
+                - generic [ref=e919]:
+                  - generic [ref=e920]:
+                    - generic [ref=e921]:
+                      - heading "Trainee Cyber Security" [level=2] [ref=e922]:
+                        - link "Trainee Cyber Security" [ref=e923] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56713449?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e924]:
+                        - text: 3 days ago by
+                        - link "ITOL Recruit" [ref=e925] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e926]:
+                        - listitem [ref=e927]:
+                          - img "Salary" [ref=e928]
+                          - text: Training Course
+                        - listitem [ref=e930]:
+                          - img "Location" [ref=e931]
+                          - text: North West London, London
+                        - listitem [ref=e933]:
+                          - img "Clock" [ref=e934]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e936] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e937]
+                  - complementary [ref=e939]
+                  - generic [ref=e941]:
+                    - link "ITOL Recruit jobs":
+                      - /url: /jobs/itonlinelearning-0/p57826
+                      - img "ITOL Recruit jobs"
+                  - generic [ref=e942]:
+                    - button "Shortlist job" [ref=e943] [cursor=pointer]:
+                      - img [ref=e944]
+                    - button "hide job" [ref=e946] [cursor=pointer]:
+                      - img [ref=e947]
+            - article [ref=e950]:
+              - generic [ref=e951]:
+                - button "Cyber Security Trainee" [ref=e952] [cursor=pointer]
+                - generic [ref=e953]:
+                  - generic [ref=e954]:
+                    - generic [ref=e955]:
+                      - generic [ref=e956]:
+                        - generic [ref=e957]: Featured
+                        - generic [ref=e958]: New
+                      - heading "Cyber Security Trainee" [level=2] [ref=e959]:
+                        - link "Cyber Security Trainee" [ref=e960] [cursor=pointer]:
+                          - /url: /jobs/cyber-security-trainee/56737241?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e961]:
+                        - text: 5 hrs ago by
+                        - link "ITOL Recruit" [ref=e962] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e963]:
+                        - listitem [ref=e964]:
+                          - img "Salary" [ref=e965]
+                          - text: Training Course
+                        - listitem [ref=e967]:
+                          - img "Location" [ref=e968]
+                          - text: United Kingdom
+                        - listitem [ref=e970]:
+                          - img "Clock" [ref=e971]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e973] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e974]
+                  - complementary [ref=e976]
+                  - generic [ref=e978]:
+                    - link "ITOL Recruit jobs":
+                      - /url: /jobs/itonlinelearning-0/p57826
+                      - img "ITOL Recruit jobs"
+                  - generic [ref=e979]:
+                    - button "Shortlist job" [ref=e980] [cursor=pointer]:
+                      - img [ref=e981]
+                    - button "hide job" [ref=e983] [cursor=pointer]:
+                      - img [ref=e984]
+            - article [ref=e987]:
+              - generic [ref=e988]:
+                - button "Trainee Cyber Security" [ref=e989] [cursor=pointer]
+                - generic [ref=e990]:
+                  - generic [ref=e991]:
+                    - generic [ref=e992]:
+                      - heading "Trainee Cyber Security" [level=2] [ref=e993]:
+                        - link "Trainee Cyber Security" [ref=e994] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56713542?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e995]:
+                        - text: 3 days ago by
+                        - link "ITOL Recruit" [ref=e996] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e997]:
+                        - listitem [ref=e998]:
+                          - img "Salary" [ref=e999]
+                          - text: Training Course
+                        - listitem [ref=e1001]:
+                          - img "Location" [ref=e1002]
+                          - text: Uxbridge, Middlesex
+                        - listitem [ref=e1004]:
+                          - img "Clock" [ref=e1005]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e1007] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e1008]
+                  - complementary [ref=e1010]
+                  - generic [ref=e1012]:
+                    - link "ITOL Recruit jobs":
+                      - /url: /jobs/itonlinelearning-0/p57826
+                      - img "ITOL Recruit jobs"
+                  - generic [ref=e1013]:
+                    - button "Shortlist job" [ref=e1014] [cursor=pointer]:
+                      - img [ref=e1015]
+                    - button "hide job" [ref=e1017] [cursor=pointer]:
+                      - img [ref=e1018]
+            - article [ref=e1021]:
+              - generic [ref=e1022]:
+                - button "Senior Infrastructure Engineer" [ref=e1023] [cursor=pointer]
+                - generic [ref=e1024]:
+                  - generic [ref=e1025]:
+                    - generic [ref=e1026]:
+                      - generic [ref=e1027]:
+                        - generic [ref=e1028]: Featured
+                        - generic [ref=e1029]:
+                          - img [ref=e1030]
+                          - text: Easy Apply
+                      - heading "Senior Infrastructure Engineer" [level=2] [ref=e1032]:
+                        - link "Senior Infrastructure Engineer" [ref=e1033] [cursor=pointer]:
+                          - /url: /jobs/senior-infrastructure-engineer/56715709?source=searchResults&filter=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e1034]:
+                        - text: 3 days ago by
+                        - link "vertex-it-solutions" [ref=e1035] [cursor=pointer]:
+                          - /url: /jobs/vertex-it-solutions-0/p47417
+                      - list [ref=e1036]:
+                        - listitem [ref=e1037]:
+                          - img "Salary" [ref=e1038]
+                          - text: Salary negotiable
+                        - listitem [ref=e1040]:
+                          - img "Location" [ref=e1041]
+                          - text: London
+                        - listitem [ref=e1043]:
+                          - img "Clock" [ref=e1044]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e1046] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e1047]
+                  - complementary [ref=e1049]:
+                    - button "Easy apply" [ref=e1050] [cursor=pointer]
+                  - generic [ref=e1052]:
+                    - link "vertex-it-solutions jobs":
+                      - /url: /jobs/vertex-it-solutions-0/p47417
+                      - img "vertex-it-solutions jobs"
+                  - generic [ref=e1053]:
+                    - button "Shortlist job" [ref=e1054] [cursor=pointer]:
+                      - img [ref=e1055]
+                    - button "hide job" [ref=e1057] [cursor=pointer]:
+                      - img [ref=e1058]
+            - generic [ref=e1060]:
+              - generic [ref=e1061]: 1 - 25 of 46 jobs
+              - generic [ref=e1062]:
+                - navigation "pagination" [ref=e1063]:
+                  - list [ref=e1064]:
+                    - listitem [ref=e1065]:
+                      - link "Previous page":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - img
+                        - text: Previous
+                    - listitem [ref=e1066]:
+                      - generic "Goto Page 1": "1"
+                    - listitem [ref=e1067]:
+                      - link "Goto Page 2" [ref=e1068] [cursor=pointer]:
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=2&dateCreatedOffSet=lastthreedays
+                        - text: "2"
+                    - listitem [ref=e1069]:
+                      - link "Next page" [ref=e1070] [cursor=pointer]:
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=2&dateCreatedOffSet=lastthreedays
+                        - text: Next
+                        - img [ref=e1071]
+                - link "Apply on the go - get the app" [ref=e1073] [cursor=pointer]:
+                  - /url: https://reedcouk.onelink.me/933966585/3bf9bc3e
+            - generic [ref=e1075]:
+              - generic [ref=e1076]: Frequently Asked Questions
+              - generic [ref=e1077]:
+                - strong [ref=e1078]: How many 2nd Line Support jobs in london are there on Reed.co.uk right now?
+                - paragraph [ref=e1080]: There are 46 2nd Line Support jobs within 10 miles of London on Reed.co.uk right now.
+              - generic [ref=e1081]:
+                - strong [ref=e1082]: How can I be the first to find out when there are new 2nd Line Support jobs london on Reed.co.uk?
+                - paragraph [ref=e1084]:
+                  - text: Creating
+                  - button "job alerts" [ref=e1085] [cursor=pointer]
+                  - text: will help you keep up-to-date with the latest 2nd Line Support jobs in london.
+                  - link "Sign in" [ref=e1086] [cursor=pointer]:
+                    - /url: /authentication/login?returnTo=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                  - text: or
+                  - link "register" [ref=e1087] [cursor=pointer]:
+                    - /url: /authentication/register?returnTo=%2Fjobs%2F2nd-line-support-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                  - text: to set them up today.
+              - generic [ref=e1088]:
+                - strong [ref=e1089]: What similar jobs can I find on Reed.co.uk?
+                - paragraph [ref=e1091]:
+                  - text: Jobseekers searching for 2nd line support jobs also search for
+                  - generic [ref=e1092]:
+                    - link "it support jobs" [ref=e1093] [cursor=pointer]:
+                      - /url: /jobs/it-support-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1094]:
+                    - link "it jobs" [ref=e1095] [cursor=pointer]:
+                      - /url: /jobs/it-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1096]:
+                    - link "it support engineer jobs" [ref=e1097] [cursor=pointer]:
+                      - /url: /jobs/it-support-engineer-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1098]:
+                    - link "it support analyst jobs" [ref=e1099] [cursor=pointer]:
+                      - /url: /jobs/it-support-analyst-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1100]:
+                    - text: and
+                    - link "1st line support jobs" [ref=e1101] [cursor=pointer]:
+                      - /url: /jobs/1st-line-support-jobs-in-london
+                    - text: .
+              - generic [ref=e1102]:
+                - strong [ref=e1103]: What is the average salary of 2nd Line Support jobs in london
+                - paragraph [ref=e1105]:
+                  - text: Use Reed.co.uk's
+                  - link "average salary checker" [ref=e1106] [cursor=pointer]:
+                    - /url: /average-salary
+                  - text: to find out what you could be earning.
+            - generic [ref=e1107]:
+              - generic [ref=e1108]: Browse jobs by locations
+              - list [ref=e1110]:
+                - listitem [ref=e1111]:
+                  - link "2nd Line Support Jobs in Belfast" [ref=e1112] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-belfast
+                - listitem [ref=e1113]:
+                  - link "2nd Line Support Jobs in Birmingham" [ref=e1114] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-birmingham
+                - listitem [ref=e1115]:
+                  - link "2nd Line Support Jobs in Bradford" [ref=e1116] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-bradford-west-yorkshire
+                - listitem [ref=e1117]:
+                  - link "2nd Line Support Jobs in Brighton" [ref=e1118] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-brighton
+                - listitem [ref=e1119]:
+                  - link "2nd Line Support Jobs in Bristol" [ref=e1120] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-bristol
+                - listitem [ref=e1121]:
+                  - link "2nd Line Support Jobs in Cardiff" [ref=e1122] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-cardiff
+                - listitem [ref=e1123]:
+                  - link "2nd Line Support Jobs in Coventry" [ref=e1124] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-coventry
+                - listitem [ref=e1125]:
+                  - link "2nd Line Support Jobs in Derby" [ref=e1126] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-derby
+                - listitem [ref=e1127]:
+                  - link "2nd Line Support Jobs in Edinburgh" [ref=e1128] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-edinburgh
+                - listitem [ref=e1129]:
+                  - link "2nd Line Support Jobs in Glasgow" [ref=e1130] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-glasgow
+                - listitem [ref=e1131]:
+                  - link "2nd Line Support Jobs in Hull" [ref=e1132] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-hull
+                - listitem [ref=e1133]:
+                  - link "2nd Line Support Jobs in Leeds" [ref=e1134] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-leeds
+                - listitem [ref=e1135]:
+                  - link "2nd Line Support Jobs in Leicester" [ref=e1136] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-leicester
+                - listitem [ref=e1137]:
+                  - link "2nd Line Support Jobs in Liverpool" [ref=e1138] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-liverpool
+                - listitem [ref=e1139]:
+                  - link "2nd Line Support Jobs in London" [ref=e1140] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-london
+                - listitem [ref=e1141]:
+                  - link "2nd Line Support Jobs in Manchester" [ref=e1142] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-manchester
+                - listitem [ref=e1143]:
+                  - link "2nd Line Support Jobs in Milton Keynes" [ref=e1144] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-milton-keynes
+                - listitem [ref=e1145]:
+                  - link "2nd Line Support Jobs in Newcastle Upon Tyne" [ref=e1146] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-newcastle-upon-tyne
+                - listitem [ref=e1147]:
+                  - link "2nd Line Support Jobs in Norwich" [ref=e1148] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-norwich
+                - listitem [ref=e1149]:
+                  - link "2nd Line Support Jobs in Nottingham" [ref=e1150] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-nottingham
+                - listitem [ref=e1151]:
+                  - link "2nd Line Support Jobs in Plymouth" [ref=e1152] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-plymouth
+                - listitem [ref=e1153]:
+                  - link "2nd Line Support Jobs in Reading" [ref=e1154] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-reading
+                - listitem [ref=e1155]:
+                  - link "2nd Line Support Jobs in Sheffield" [ref=e1156] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-sheffield
+                - listitem [ref=e1157]:
+                  - link "2nd Line Support Jobs in Southampton" [ref=e1158] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-southampton
+                - listitem [ref=e1159]:
+                  - link "2nd Line Support Jobs in Swansea" [ref=e1160] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-swansea
+                - listitem [ref=e1161]:
+                  - link "2nd Line Support Jobs in Swindon" [ref=e1162] [cursor=pointer]:
+                    - /url: /jobs/2nd-line-support-jobs-in-swindon
+          - complementary [ref=e1163]:
+            - generic [ref=e1164]:
+              - generic [ref=e1165]:
+                - generic [ref=e1166]:
+                  - paragraph [ref=e1167]:
+                    - text: Filters
+                    - generic [ref=e1168]: "4"
+                  - button "Clear all filters" [ref=e1169] [cursor=pointer]: Clear all
+                - list [ref=e1171]:
+                  - listitem [ref=e1172]:
+                    - button "2nd line support" [ref=e1173] [cursor=pointer]:
+                      - generic [ref=e1174]: 2nd line support
+                  - listitem [ref=e1175]:
+                    - button "Last three days" [ref=e1176] [cursor=pointer]:
+                      - generic [ref=e1177]: Last three days
+                  - listitem [ref=e1178]:
+                    - button "London (10 miles)" [ref=e1179] [cursor=pointer]:
+                      - generic [ref=e1180]: London (10 miles)
+                  - listitem [ref=e1181]:
+                    - button "£33,000 - £100,000" [ref=e1182] [cursor=pointer]:
+                      - generic [ref=e1183]: £33,000 - £100,000
+              - generic [ref=e1184]:
+                - generic [ref=e1186]:
+                  - generic [ref=e1188]: Distance
+                  - combobox "Select a proximity" [ref=e1189] [cursor=pointer]:
+                    - option "0 miles"
+                    - option "1 miles"
+                    - option "3 miles"
+                    - option "5 miles"
+                    - option "10 miles" [selected]
+                    - option "15 miles"
+                    - option "20 miles"
+                    - option "30 miles"
+                    - option "50 miles"
+                - generic [ref=e1190]:
+                  - button "Salary range" [ref=e1192] [cursor=pointer]
+                  - generic [ref=e1193]:
+                    - generic [ref=e1194]:
+                      - generic [ref=e1195]: "From:"
+                      - combobox "Select a salary from" [ref=e1196] [cursor=pointer]:
+                        - option "£ Any" [selected]
+                        - option "Up to £10,000"
+                        - option "£12,000"
+                        - option "£14,000"
+                        - option "£16,000"
+                        - option "£18,000"
+                        - option "£20,000"
+                        - option "£22,000"
+                        - option "£24,000"
+                        - option "£26,000"
+                        - option "£28,000"
+                        - option "£30,000"
+                        - option "£32,000"
+                        - option "£34,000"
+                        - option "£36,000"
+                        - option "£38,000"
+                        - option "£40,000"
+                        - option "£42,000"
+                        - option "£44,000"
+                        - option "£46,000"
+                        - option "£48,000"
+                        - option "£50,000"
+                        - option "£55,000"
+                        - option "£60,000"
+                        - option "£65,000"
+                        - option "£70,000"
+                        - option "£75,000"
+                        - option "£80,000"
+                        - option "£85,000"
+                        - option "£90,000"
+                        - option "£95,000"
+                        - option "£100,000+"
+                    - generic [ref=e1197]:
+                      - generic [ref=e1198]: "To:"
+                      - combobox "Select a salary to" [ref=e1199] [cursor=pointer]:
+                        - option "£ Any"
+                        - option "Up to £10,000"
+                        - option "£12,000"
+                        - option "£14,000"
+                        - option "£16,000"
+                        - option "£18,000"
+                        - option "£20,000"
+                        - option "£22,000"
+                        - option "£24,000"
+                        - option "£26,000"
+                        - option "£28,000"
+                        - option "£30,000"
+                        - option "£32,000"
+                        - option "£34,000"
+                        - option "£36,000"
+                        - option "£38,000"
+                        - option "£40,000"
+                        - option "£42,000"
+                        - option "£44,000"
+                        - option "£46,000"
+                        - option "£48,000"
+                        - option "£50,000"
+                        - option "£55,000"
+                        - option "£60,000"
+                        - option "£65,000"
+                        - option "£70,000"
+                        - option "£75,000"
+                        - option "£80,000"
+                        - option "£85,000"
+                        - option "£90,000"
+                        - option "£95,000"
+                        - option "£100,000+" [selected]
+                - generic [ref=e1200]:
+                  - button "Job type" [ref=e1202] [cursor=pointer]
+                  - generic [ref=e1203]:
+                    - generic [ref=e1205]:
+                      - checkbox "Permanent(42)" [ref=e1206]
+                      - link "Permanent(42)":
+                        - /url: /jobs/permanent-2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Permanent
+                        - generic: (42)
+                    - generic [ref=e1208]:
+                      - checkbox "Temporary(1)" [ref=e1209]
+                      - link "Temporary(1)":
+                        - /url: /jobs/temporary-2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Temporary
+                        - generic: (1)
+                    - generic [ref=e1211]:
+                      - checkbox "Contract(3)" [ref=e1212]
+                      - link "Contract(3)":
+                        - /url: /jobs/contract-2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Contract
+                        - generic: (3)
+                    - generic [ref=e1214]:
+                      - checkbox "Full-time(46)" [ref=e1215]
+                      - link "Full-time(46)":
+                        - /url: /jobs/full-time-2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Full-time
+                        - generic: (46)
+                    - generic [ref=e1217]:
+                      - checkbox "Part-time(0)" [disabled]
+                      - link "Part-time(0)":
+                        - /url: /jobs/part-time-2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Part-time
+                        - generic: (0)
+                    - generic [ref=e1219]:
+                      - checkbox "Work from home(0)" [disabled]
+                      - link "Work from home(0)":
+                        - /url: /jobs/work-from-home-2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Work from home
+                        - generic: (0)
+                - generic [ref=e1220]:
+                  - button "Posted by" [ref=e1222] [cursor=pointer]
+                  - generic [ref=e1223]:
+                    - generic [ref=e1225]:
+                      - checkbox "Agency(22)" [ref=e1226]
+                      - link "Agency(22)":
+                        - /url: /jobs/agency-2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Agency
+                        - generic: (22)
+                    - generic [ref=e1228]:
+                      - checkbox "Employer(24)" [ref=e1229]
+                      - link "Employer(24)":
+                        - /url: /jobs/direct-2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Employer
+                        - generic: (24)
+                    - generic [ref=e1231]:
+                      - checkbox "Reed" [disabled]
+                      - link "Reed":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&orgId=1
+                - generic [ref=e1232]:
+                  - button "Hide" [ref=e1234] [cursor=pointer]
+                  - generic [ref=e1235]:
+                    - generic [ref=e1238]:
+                      - checkbox "Jobs without salary displayed" [ref=e1239]
+                      - link "Jobs without salary displayed":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&excludeSalaryDescriptions=16%2C32%2C64
+                    - generic [ref=e1241]:
+                      - generic [ref=e1242]:
+                        - checkbox "Training courses(14)" [ref=e1243]
+                        - link "Training courses(14)":
+                          - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&hideTrainingJobs=true&dateCreatedOffSet=lastthreedays
+                          - text: Training courses
+                          - generic: (14)
+                      - img [ref=e1245]
+                    - generic [ref=e1248]:
+                      - generic [ref=e1249]:
+                        - checkbox "Survey jobs" [ref=e1250]
+                        - link "Survey jobs":
+                          - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&hideSurveyJobs=true&dateCreatedOffSet=lastthreedays
+                      - img [ref=e1252]
+                - generic [ref=e1254]:
+                  - button "Date posted" [ref=e1256] [cursor=pointer]
+                  - combobox "Select date posted within" [ref=e1259] [cursor=pointer]:
+                    - option "Anytime"
+                    - option "Today (7)"
+                    - option "Last three days (46)" [selected]
+                    - option "Last week (60)"
+                    - option "Last two weeks (98)"
+                - generic [ref=e1260]:
+                  - button "Specialisms" [ref=e1262] [cursor=pointer]
+                  - generic [ref=e1263]:
+                    - generic [ref=e1265]:
+                      - checkbox "IT & Telecoms(37)" [ref=e1266]
+                      - link "IT & Telecoms(37)":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=52
+                        - text: IT & Telecoms
+                        - generic: (37)
+                    - generic [ref=e1268]:
+                      - checkbox "Financial Services" [disabled]
+                      - link "Financial Services":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=117
+                    - generic [ref=e1270]:
+                      - checkbox "Sales" [disabled]
+                      - link "Sales":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=30
+                    - generic [ref=e1272]:
+                      - checkbox "Legal" [disabled]
+                      - link "Legal":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=101
+                    - generic [ref=e1274]:
+                      - checkbox "Education" [disabled]
+                      - link "Education":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=68
+                    - generic [ref=e1276]:
+                      - checkbox "Construction & Property" [disabled]
+                      - link "Construction & Property":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=146
+                    - generic [ref=e1278]:
+                      - checkbox "Engineering(1)" [ref=e1279]
+                      - link "Engineering(1)":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=12
+                        - text: Engineering
+                        - generic: (1)
+                    - generic [ref=e1281]:
+                      - checkbox "Admin, Secretarial & PA" [disabled]
+                      - link "Admin, Secretarial & PA":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=3
+                    - generic [ref=e1283]:
+                      - checkbox "General Insurance(1)" [ref=e1284]
+                      - link "General Insurance(1)":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=16
+                        - text: General Insurance
+                        - generic: (1)
+                    - generic [ref=e1286]:
+                      - checkbox "Strategy & Consultancy(1)" [ref=e1287]
+                      - link "Strategy & Consultancy(1)":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1755
+                        - text: Strategy & Consultancy
+                        - generic: (1)
+                    - generic [ref=e1289]:
+                      - checkbox "Accountancy (Qualified)" [disabled]
+                      - link "Accountancy (Qualified)":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=100
+                    - generic [ref=e1291]:
+                      - checkbox "Accountancy" [disabled]
+                      - link "Accountancy":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=2
+                    - generic [ref=e1293]:
+                      - checkbox "Estate Agency" [disabled]
+                      - link "Estate Agency":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1962
+                    - generic [ref=e1295]:
+                      - checkbox "Graduate Training & Internships" [disabled]
+                      - link "Graduate Training & Internships":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=169
+                    - generic [ref=e1297]:
+                      - checkbox "Leisure & Tourism" [disabled]
+                      - link "Leisure & Tourism":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=92
+                    - generic [ref=e1299]:
+                      - checkbox "Human Resources(2)" [ref=e1300]
+                      - link "Human Resources(2)":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=24
+                        - text: Human Resources
+                        - generic: (2)
+                    - generic [ref=e1302]:
+                      - checkbox "Marketing & PR" [disabled]
+                      - link "Marketing & PR":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=18
+                    - generic [ref=e1304]:
+                      - checkbox "Customer Service" [disabled]
+                      - link "Customer Service":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=66
+                    - generic [ref=e1306]:
+                      - checkbox "Social Care" [disabled]
+                      - link "Social Care":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=34
+                    - generic [ref=e1308]:
+                      - checkbox "Health & Medicine" [disabled]
+                      - link "Health & Medicine":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=36
+                    - generic [ref=e1310]:
+                      - checkbox "Charity & Voluntary" [disabled]
+                      - link "Charity & Voluntary":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=500
+                    - generic [ref=e1312]:
+                      - checkbox "Recruitment Consultancy" [disabled]
+                      - link "Recruitment Consultancy":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=338
+                    - generic [ref=e1314]:
+                      - checkbox "FMCG" [disabled]
+                      - link "FMCG":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1722
+                    - generic [ref=e1316]:
+                      - checkbox "Transport & Logistics" [disabled]
+                      - link "Transport & Logistics":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=11
+                    - generic [ref=e1318]:
+                      - checkbox "Energy" [disabled]
+                      - link "Energy":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1961
+                    - generic [ref=e1320]:
+                      - checkbox "Banking(4)" [ref=e1321]
+                      - link "Banking(4)":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=5
+                        - text: Banking
+                        - generic: (4)
+                    - generic [ref=e1323]:
+                      - checkbox "Purchasing" [disabled]
+                      - link "Purchasing":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=27
+                    - generic [ref=e1325]:
+                      - checkbox "Media, Digital & Creative" [disabled]
+                      - link "Media, Digital & Creative":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=71
+                    - generic [ref=e1327]:
+                      - checkbox "Security & Safety" [disabled]
+                      - link "Security & Safety":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1963
+                    - generic [ref=e1329]:
+                      - checkbox "Scientific" [disabled]
+                      - link "Scientific":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=89
+                    - generic [ref=e1331]:
+                      - checkbox "Other" [disabled]
+                      - link "Other":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=21
+                    - generic [ref=e1333]:
+                      - checkbox "Training" [disabled]
+                      - link "Training":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1909
+                    - generic [ref=e1335]:
+                      - checkbox "Manufacturing" [disabled]
+                      - link "Manufacturing":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=168
+                    - generic [ref=e1337]:
+                      - checkbox "Retail" [disabled]
+                      - link "Retail":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=90
+                    - generic [ref=e1339]:
+                      - checkbox "Motoring & Automotive" [disabled]
+                      - link "Motoring & Automotive":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1700
+                    - generic [ref=e1341]:
+                      - checkbox "Hospitality & Catering" [disabled]
+                      - link "Hospitality & Catering":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=6
+                    - generic [ref=e1343]:
+                      - checkbox "Apprenticeships" [disabled]
+                      - link "Apprenticeships":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1964
+                - generic [ref=e1344]:
+                  - button "Experience level" [ref=e1346] [cursor=pointer]
+                  - generic [ref=e1350]:
+                    - checkbox "Graduate" [ref=e1351]
+                    - link "Graduate":
+                      - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&graduate=true&dateCreatedOffSet=lastthreedays
+                - generic [ref=e1352]:
+                  - button "More options" [ref=e1354] [cursor=pointer]
+                  - generic [ref=e1355]:
+                    - generic [ref=e1358]:
+                      - checkbox "Early bird(2)" [ref=e1359]
+                      - link "Early bird(2)":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&isEarlyBird=true
+                        - text: Early bird
+                        - generic: (2)
+                    - generic [ref=e1362]:
+                      - checkbox "Easy apply" [ref=e1363]
+                      - link "Easy apply":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&isEasyApply=true
+                    - generic [ref=e1366]:
+                      - checkbox "Visa sponsorship" [disabled]
+                      - link "Visa sponsorship":
+                        - /url: /jobs/2nd-line-support-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&visaSponsorship=true
+                - generic [ref=e1367]:
+                  - generic [ref=e1368]: Locations
+                  - list [ref=e1369]:
+                    - listitem [ref=e1370]:
+                      - link "Harlow (1)" [ref=e1371] [cursor=pointer]:
+                        - /url: /jobs/2nd-line-support-jobs-in-harlow?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Harlow
+                        - generic [ref=e1372]: (1)
+                - link "View all jobs in london Chevron" [ref=e1374] [cursor=pointer]:
+                  - /url: /jobs/jobs-in-london
+                  - text: View all jobs in london
+                  - img "Chevron" [ref=e1375]
+            - generic [ref=e1378]:
+              - heading "2Nd Line Support courses" [level=3] [ref=e1380]
+              - generic [ref=e1381]:
+                - list [ref=e1382]:
+                  - listitem [ref=e1383]:
+                    - link "1st Line Support/Helpdesk | Complete IT Career Package 2025 Online, Self-paced £799" [ref=e1384] [cursor=pointer]:
+                      - /url: /courses/1st-line-support-helpdesk--complete-it-career-package-2025/247779?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=2Nd_Line Support_courses_247779
+                      - heading "1st Line Support/Helpdesk | Complete IT Career Package 2025" [level=4] [ref=e1385]
+                      - paragraph [ref=e1386]: Online, Self-paced
+                      - paragraph [ref=e1387]: £799
+                  - listitem [ref=e1388]:
+                    - link "1st Line Support Programme Online, Self-paced £799" [ref=e1389] [cursor=pointer]:
+                      - /url: /courses/1st-line-support-programme/247845?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=2Nd_Line Support_courses_247845
+                      - heading "1st Line Support Programme" [level=4] [ref=e1390]
+                      - paragraph [ref=e1391]: Online, Self-paced
+                      - paragraph [ref=e1392]: £799
+                  - listitem [ref=e1393]:
+                    - link "Certified IT 1, 2 & 3 Line Support Technician Online, Self-paced £499" [ref=e1394] [cursor=pointer]:
+                      - /url: /courses/certified-it-1-2-3-line-support-technician/248011?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=2Nd_Line Support_courses_248011
+                      - heading "Certified IT 1, 2 & 3 Line Support Technician" [level=4] [ref=e1395]
+                      - paragraph [ref=e1396]: Online, Self-paced
+                      - paragraph [ref=e1397]: £499
+                - link "View IT support courses Chevron" [ref=e1398] [cursor=pointer]:
+                  - /url: https://www.reed.co.uk/courses/all?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=view_2Nd_Line Support_courses
+                  - text: View IT support courses
+                  - img "Chevron" [ref=e1399]
+    - contentinfo [ref=e1403]:
+      - generic [ref=e1405]:
+        - navigation [ref=e1406]:
+          - button "JOBS" [ref=e1408] [cursor=pointer]
+          - list [ref=e1411]:
+            - listitem [ref=e1412]:
+              - link "Contact us" [ref=e1413] [cursor=pointer]:
+                - /url: /enquiries
+            - listitem [ref=e1414]:
+              - link "Job search" [ref=e1415] [cursor=pointer]:
+                - /url: /jobs
+            - listitem [ref=e1416]:
+              - link "Recruiter directory" [ref=e1417] [cursor=pointer]:
+                - /url: /recruiterdirectory
+            - listitem [ref=e1418]:
+              - link "Work from home" [ref=e1419] [cursor=pointer]:
+                - /url: /jobs/work-from-home-jobs
+            - listitem [ref=e1420]:
+              - link "Browse jobs" [ref=e1421] [cursor=pointer]:
+                - /url: /popularjobs
+            - listitem [ref=e1422]:
+              - link "Browse locations" [ref=e1423] [cursor=pointer]:
+                - /url: /location
+            - listitem [ref=e1424]:
+              - link "Popular searches" [ref=e1425] [cursor=pointer]:
+                - /url: /popularsearches
+            - listitem [ref=e1426]:
+              - link "Career advice" [ref=e1427] [cursor=pointer]:
+                - /url: /career-advice
+            - listitem [ref=e1428]:
+              - link "Tax calculator" [ref=e1429] [cursor=pointer]:
+                - /url: /tax-calculator
+            - listitem [ref=e1430]:
+              - link "Average salary checker" [ref=e1431] [cursor=pointer]:
+                - /url: /average-salary
+            - listitem [ref=e1432]:
+              - link "Help" [ref=e1433] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e1434]:
+              - link "Contact a REED office" [ref=e1435] [cursor=pointer]:
+                - /url: https://www.reed.com/offices
+            - listitem [ref=e1436]:
+              - link "Sitemap" [ref=e1437] [cursor=pointer]:
+                - /url: /html-sitemap
+        - navigation [ref=e1438]:
+          - button "RECRUITER" [ref=e1440] [cursor=pointer]
+          - list [ref=e1443]:
+            - listitem [ref=e1444]:
+              - link "Recruiter site" [ref=e1445] [cursor=pointer]:
+                - /url: /recruiter?directjob=recruiter
+            - listitem [ref=e1446]:
+              - link "Post a job" [ref=e1447] [cursor=pointer]:
+                - /url: /recruiter/post-a-job?directjob=recruiter
+            - listitem [ref=e1448]:
+              - link "CV Search" [ref=e1449] [cursor=pointer]:
+                - /url: /recruiter/cv-search?directjob=recruiter
+            - listitem [ref=e1450]:
+              - link "Recruitment agencies" [ref=e1451] [cursor=pointer]:
+                - /url: /recruiter/recruitment-agencies?directjob=recruiter
+            - listitem [ref=e1452]:
+              - link "Recruiter Advice" [ref=e1453] [cursor=pointer]:
+                - /url: /recruiter-advice/?directjob=recruiter
+        - navigation [ref=e1454]:
+          - button "COURSES" [ref=e1456] [cursor=pointer]
+          - list [ref=e1459]:
+            - listitem [ref=e1460]:
+              - link "Help" [ref=e1461] [cursor=pointer]:
+                - /url: /courses/help
+            - listitem [ref=e1462]:
+              - link "Contact us" [ref=e1463] [cursor=pointer]:
+                - /url: /courses/contact-us
+            - listitem [ref=e1464]:
+              - link "Find a course" [ref=e1465] [cursor=pointer]:
+                - /url: /courses/
+            - listitem [ref=e1466]:
+              - link "View all subjects" [ref=e1467] [cursor=pointer]:
+                - /url: /courses/directory
+            - listitem [ref=e1468]:
+              - link "Discount courses" [ref=e1469] [cursor=pointer]:
+                - /url: /courses/discount
+            - listitem [ref=e1470]:
+              - link "Free courses" [ref=e1471] [cursor=pointer]:
+                - /url: /courses/free
+            - listitem [ref=e1472]:
+              - link "Awarding body directory" [ref=e1473] [cursor=pointer]:
+                - /url: /courses/awarding-bodies
+            - listitem [ref=e1474]:
+              - link "Career guides" [ref=e1475] [cursor=pointer]:
+                - /url: /courses/career-guides
+            - listitem [ref=e1476]:
+              - link "Advertise a course" [ref=e1477] [cursor=pointer]:
+                - /url: /courses/providers/
+            - listitem [ref=e1478]:
+              - link "Courses sitemap" [ref=e1479] [cursor=pointer]:
+                - /url: /courses/html-sitemap
+        - navigation [ref=e1480]:
+          - button "MORE FROM Reed.co.uk" [ref=e1482] [cursor=pointer]
+          - list [ref=e1485]:
+            - listitem [ref=e1486]:
+              - link "About us" [ref=e1487] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e1488]:
+              - link "Careers at Reed.co.uk" [ref=e1489] [cursor=pointer]:
+                - /url: https://www.reed.com/careers/jobs?businessDivision=Reed.co.uk
+            - listitem [ref=e1490]:
+              - link "Press office" [ref=e1491] [cursor=pointer]:
+                - /url: /press-office
+            - listitem [ref=e1492]:
+              - link "Corporate governance" [ref=e1493] [cursor=pointer]:
+                - /url: /corporate-governance
+            - listitem [ref=e1494]:
+              - link "Modern slavery statement" [ref=e1495] [cursor=pointer]:
+                - /url: https://www.reed.co.uk/cdn/jobseeker/pdf/Reed_MSA_Statement.pdf
+        - navigation [ref=e1496]:
+          - button "REED" [ref=e1498] [cursor=pointer]
+          - list [ref=e1501]:
+            - listitem [ref=e1502]:
+              - 'link "Tempzone: timesheets & holiday" [ref=e1503] [cursor=pointer]':
+                - /url: https://candidate.reed.co.uk/candlogin.asp
+            - listitem [ref=e1504]:
+              - link "Authorise timesheets" [ref=e1505] [cursor=pointer]:
+                - /url: https://client.reed.co.uk/
+            - listitem [ref=e1506]:
+              - link "Reed Group Services" [ref=e1507] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e1508]:
+              - link "Reed Specialist Recruitment" [ref=e1509] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e1510]:
+              - link "Reed in Partnership" [ref=e1511] [cursor=pointer]:
+                - /url: https://www.reedinpartnership.co.uk/
+            - listitem [ref=e1512]:
+              - link "Careers with REED" [ref=e1513] [cursor=pointer]:
+                - /url: https://www.reed.com/careers
+            - listitem [ref=e1514]:
+              - link "James Reed - Official Site" [ref=e1515] [cursor=pointer]:
+                - /url: /james-reed/
+            - listitem [ref=e1516]:
+              - 'link "Podcast - James Reed: all about business" [ref=e1517] [cursor=pointer]':
+                - /url: https://www.reed.com/podcasts
+            - listitem [ref=e1518]:
+              - link "ESG & sustainability" [ref=e1519] [cursor=pointer]:
+                - /url: https://www.reed.com/esg-and-sustainability
+      - generic [ref=e1521]:
+        - generic [ref=e1522]:
+          - generic [ref=e1524]:
+            - link "PhilCo" [ref=e1525] [cursor=pointer]:
+              - /url: https://philco.org.uk/
+              - img "PhilCo" [ref=e1526]
+            - generic [ref=e1527]: Learn how Reed is leading the way in philanthropy
+          - img "Love Mondays" [ref=e1529]
+        - generic [ref=e1530]:
+          - generic [ref=e1531]:
+            - 'link "James Reed: all about business" [ref=e1532] [cursor=pointer]':
+              - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+              - 'img "James Reed: all about business" [ref=e1533]'
+            - generic [ref=e1534]:
+              - heading "Introducing our new podcast New" [level=3] [ref=e1535]:
+                - text: Introducing our new podcast
+                - generic [ref=e1536]: New
+              - paragraph [ref=e1537]: "James Reed: all about business"
+              - link "Listen here" [ref=e1538] [cursor=pointer]:
+                - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+          - generic [ref=e1539]:
+            - generic [ref=e1540]:
+              - generic [ref=e1541]:
+                - link "Download on the App Store" [ref=e1542] [cursor=pointer]:
+                  - /url: https://itunes.apple.com/GB/app/id1040443949?mt=8
+                  - img "Download on the App Store" [ref=e1543]
+                - link "Get it on Google Play" [ref=e1544] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.reedcouk.jobs&referrer=af_tranid%3D_HgKgkJ-aFiIn4G5iigdZQ%26pid%3DWebsite_Footer%26utm_source%3DWebsite_Footer
+                  - img "Get it on Google Play" [ref=e1545]
+              - generic [ref=e1546]:
+                - link "Facebook" [ref=e1547] [cursor=pointer]:
+                  - /url: https://www.facebook.com/reedcouk
+                  - img "Facebook" [ref=e1548]
+                - link "Instagram" [ref=e1549] [cursor=pointer]:
+                  - /url: https://www.instagram.com/reedcouk/
+                  - img "Instagram" [ref=e1550]
+                - link "Tiktok" [ref=e1551] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@reedjobs
+                  - img "Tiktok" [ref=e1552]
+            - list [ref=e1553]:
+              - listitem [ref=e1554]:
+                - button "Manage Preferences" [ref=e1555] [cursor=pointer]
+                - text: ","
+              - listitem [ref=e1556]:
+                - link "Security, Privacy, Terms & Conditions" [ref=e1557] [cursor=pointer]:
+                  - /url: /policies
+            - paragraph [ref=e1558]: COPYRIGHT © Reed.co.uk 2026
+  - alert [ref=e1559]

@@ -1,0 +1,9 @@
+[    1266ms] Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at rR (https://web.haystackapp.io/_next/static/chunks/0t5sx6uib_1ge.js:1:40276)
+    at oW (https://web.haystackapp.io/_next/static/chunks/0t5sx6uib_1ge.js:1:90129)
+    at ib (https://web.haystackapp.io/_next/static/chunks/0t5sx6uib_1ge.js:1:121216)
+    at https://web.haystackapp.io/_next/static/chunks/0t5sx6uib_1ge.js:1:121061
+    at iv (https://web.haystackapp.io/_next/static/chunks/0t5sx6uib_1ge.js:1:121069)
+    at io (https://web.haystackapp.io/_next/static/chunks/0t5sx6uib_1ge.js:1:116444)
+    at iX (https://web.haystackapp.io/_next/static/chunks/0t5sx6uib_1ge.js:1:139574)
+    at MessagePort.R (https://web.haystackapp.io/_next/static/chunks/0t5sx6uib_1ge.js:1:3453)

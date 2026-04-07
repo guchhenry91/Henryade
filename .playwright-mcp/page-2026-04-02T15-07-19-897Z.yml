@@ -1,0 +1,591 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e6]:
+          - link "Reed.co.uk" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Reed.co.uk" [ref=e8]
+          - list [ref=e9]:
+            - listitem [ref=e10]:
+              - link "Jobs" [ref=e11] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e12]: Jobs
+            - listitem [ref=e13]:
+              - link "Courses" [ref=e14] [cursor=pointer]:
+                - /url: /courses/?itm_source=js_navigation&itm_medium=jobseeker&itm_campaign=courses_tab&itm_content=standard_version
+                - generic [ref=e15]: Courses
+            - listitem [ref=e16]:
+              - link "Career advice" [ref=e17] [cursor=pointer]:
+                - /url: /career-advice/
+                - generic [ref=e18]: Career advice
+            - listitem [ref=e19]:
+              - link "Recruiting? Post a job" [ref=e20] [cursor=pointer]:
+                - /url: /recruiter/
+                - generic [ref=e21]:
+                  - text: Recruiting?
+                  - strong [ref=e22]: Post a job
+          - generic [ref=e23]:
+            - link "Register CV" [ref=e24] [cursor=pointer]:
+              - /url: /authentication/register?returnTo=%2Fjobs%2Fit-support-technician%2F56739090
+            - list [ref=e25]:
+              - listitem [ref=e26]:
+                - link "Saved jobs" [ref=e27] [cursor=pointer]:
+                  - /url: /account/jobs/shortlisted-jobs
+                  - img [ref=e29]
+                  - generic [ref=e31]: Saved jobs
+              - listitem [ref=e32]:
+                - status [ref=e33]:
+                  - img "Loading" [ref=e34]
+      - search [ref=e38]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: What
+            - textbox "e.g. \"office manager\"" [ref=e44]
+          - generic [ref=e45]:
+            - generic [ref=e46]: Where
+            - generic [ref=e47]:
+              - textbox "town or postcode" [ref=e48]
+              - button "Get current location" [ref=e49] [cursor=pointer]:
+                - img [ref=e50]
+          - button "Search jobs" [ref=e54] [cursor=pointer]
+          - link "Browse jobs" [ref=e56] [cursor=pointer]:
+            - /url: /popularjobs
+            - text: Browse jobs
+            - img [ref=e57]
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - link "ArrowSearch results" [ref=e64] [cursor=pointer]:
+            - /url: /jobs/it-support-technician-jobs-in-london?jobId=56739090
+            - img "Arrow"
+            - text: Search results
+          - list [ref=e66]:
+            - listitem [ref=e67]:
+              - link "Home" [ref=e68] [cursor=pointer]:
+                - /url: /
+            - text: /
+            - listitem [ref=e69]:
+              - text: /
+              - link "Information Technology" [ref=e70] [cursor=pointer]:
+                - /url: /jobs/information-technology-jobs
+            - listitem [ref=e71]:
+              - text: /
+              - link "Technician" [ref=e72] [cursor=pointer]:
+                - /url: /jobs/technician-jobs
+            - listitem [ref=e73]:
+              - text: /
+              - link "Support Technician" [ref=e74] [cursor=pointer]:
+                - /url: /jobs/support-technician-jobs
+            - listitem [ref=e75]: /Job details
+        - generic [ref=e76]:
+          - generic [ref=e78]:
+            - img "Job image banner" [ref=e79]
+            - generic [ref=e80]:
+              - generic [ref=e81]: Featured
+              - generic [ref=e82]: New
+              - generic [ref=e83]:
+                - img [ref=e84]
+                - text: Easy Apply
+            - generic [ref=e86]:
+              - generic [ref=e87]:
+                - heading "IT Support Technician" [level=1] [ref=e88]
+                - generic [ref=e89]:
+                  - text: 2 hrs ago by
+                  - link "Armstrong Knight" [ref=e90] [cursor=pointer]:
+                    - /url: /company-profile/Armstrong-Knight-43237
+              - link "Armstrong Knight jobs" [ref=e92] [cursor=pointer]:
+                - /url: /company-profile/Armstrong-Knight-43237
+                - img "Armstrong Knight jobs" [ref=e93]
+            - list [ref=e94]:
+              - listitem [ref=e95]:
+                - img "Salary" [ref=e96]
+                - text: £38,000 - £42,000 per annum
+              - listitem [ref=e98]:
+                - img "Location" [ref=e99]
+                - text: London
+              - listitem [ref=e101]:
+                - img "Clock" [ref=e102]
+                - text: Permanent, full-time
+            - generic [ref=e105]:
+              - button "Apply now" [disabled]
+              - button "Shortlist job" [disabled]:
+                - img
+                - text: Save
+            - generic [ref=e107]:
+              - paragraph [ref=e108]:
+                - strong [ref=e109]: IT Support Technician
+              - paragraph [ref=e110]:
+                - strong [ref=e111]: "Location: London (multi-site)"
+              - paragraph [ref=e112]:
+                - strong [ref=e113]: "Salary: Competitive + Benefits"
+              - paragraph [ref=e114]:
+                - text: We are working with a dynamic, multi-faceted property group with a diverse portfolio spanning residential, commercial, and development projects across London. As part of their continued growth, they are looking to appoint an experienced and ambitious
+                - strong [ref=e115]: IT Support Technician
+                - text: to join their close-knit internal IT team.
+              - paragraph [ref=e116]: This is a fantastic opportunity for someone who enjoys variety, takes ownership, and wants to play a key role in supporting a fast-moving, entrepreneurial business.
+              - strong [ref=e117]: The Role
+              - paragraph [ref=e118]: Reporting directly to the IT Manager, you will be responsible for providing hands-on technical support across three London-based offices, ensuring the smooth day-to-day running of all IT systems and infrastructure.
+              - paragraph [ref=e119]: This is a broad, all-encompassing role where no two days are the same, ideal for someone who enjoys being both reactive and proactive in a business-critical environment.
+              - strong [ref=e120]: Key Responsibilities
+              - list [ref=e121]:
+                - listitem [ref=e122]: Provide 1st and 2nd line support to users across multiple office locations
+                - listitem [ref=e123]: Diagnose and resolve hardware and software issues across desktops, laptops, and mobile devices
+                - listitem [ref=e124]:
+                  - text: Manage and maintain
+                  - strong [ref=e125]: Microsoft 365
+                  - text: environments, including user accounts, permissions, and subscriptions
+                - listitem [ref=e126]: Support infrastructure projects, including upgrades, rollouts, and system improvements
+                - listitem [ref=e127]: Troubleshoot network, connectivity, and server-related issues
+                - listitem [ref=e128]: Assist with cybersecurity protocols, updates, and best practice implementation
+                - listitem [ref=e129]: Manage IT ticketing system, ensuring timely resolution and excellent user communication
+                - listitem [ref=e130]: Support onboarding and offboarding processes for employees
+                - listitem [ref=e131]: Maintain IT documentation and asset registers
+                - listitem [ref=e132]: Liaise with third-party providers where required
+              - strong [ref=e133]: About You
+              - list [ref=e134]:
+                - listitem [ref=e135]: Proven experience in an IT support role (ideally within a multi-site environment)
+                - listitem [ref=e136]:
+                  - text: Strong working knowledge of
+                  - strong [ref=e137]: Microsoft 365
+                  - text: ", Windows environments, and common business systems"
+                - listitem [ref=e138]: Confident troubleshooting hardware, software, and basic network issues
+                - listitem [ref=e139]: Exposure to infrastructure support and system upgrades
+                - listitem [ref=e140]: Understanding of cybersecurity fundamentals and best practices
+                - listitem [ref=e141]: Highly organised, proactive, and able to manage multiple priorities
+                - listitem [ref=e142]: Strong communication skills, comfortable dealing with users at all levels
+                - listitem [ref=e143]: A genuine interest in technology and continuous improvement
+              - strong [ref=e144]: Why Join?
+              - list [ref=e145]:
+                - listitem [ref=e146]: Work within a successful and growing property group with a strong reputation
+                - listitem [ref=e147]: Broad, hands-on role with real responsibility and visibility
+                - listitem [ref=e148]: Opportunity to develop your technical skillset across infrastructure and systems
+                - listitem [ref=e149]: Supportive team environment with a forward-thinking approach to technol
+              - paragraph [ref=e150]
+            - group [ref=e151]:
+              - button "shareShare" [ref=e154] [cursor=pointer]:
+                - img "share" [ref=e155]
+                - text: Share
+              - generic [ref=e157]:
+                - button "EyeHide" [disabled]:
+                  - img "Eye"
+                  - text: Hide
+          - generic [ref=e158]:
+            - banner [ref=e159]:
+              - heading "Create alerts for similar jobs" [level=2] [ref=e160]
+            - generic [ref=e162]:
+              - generic [ref=e163]:
+                - generic [ref=e164]:
+                  - generic [ref=e165]:
+                    - generic [ref=e167]: IT Support Technician
+                    - generic [ref=e168]: London
+                  - button "Edit" [ref=e169] [cursor=pointer]
+                - generic [ref=e170]:
+                  - generic [ref=e171]: Email address
+                  - textbox "Email address" [ref=e173]
+              - generic [ref=e174]:
+                - button "Create alert" [disabled]:
+                  - generic:
+                    - img
+                  - text: Create alert
+              - generic [ref=e175]:
+                - text: By creating an alert, you agree to the
+                - link "Terms and conditions" [ref=e176] [cursor=pointer]:
+                  - /url: /policies
+                - text: applicable to our service and acknowledge that your personal data will be used in accordance with our
+                - link "Privacy policy" [ref=e177] [cursor=pointer]:
+                  - /url: /policies
+                - text: and you will receive emails and communications about jobs and career related topics.
+          - generic [ref=e178]:
+            - heading "Similar Jobs" [level=3] [ref=e180]
+            - generic [ref=e181]:
+              - link "Shortlist job IT Support Technician 17 March by Speak Digital Limited Salary£28,000 - £35,000 per annum LocationShenley, Hertfordshire ClockPermanent, full-time" [ref=e182] [cursor=pointer]:
+                - /url: /jobs/it-support-technician/56660259?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e183]:
+                      - img [ref=e184]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: IT Support Technician
+                          - generic: 17 March by Speak Digital Limited
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £28,000 - £35,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: Shenley, Hertfordshire
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Easy Apply IT Support Technician - hybrid 20 March by Eligo Recruitment Salary£35,000 - £39,000 per annum LocationCity of London, London ClockPermanent, full-time" [ref=e186] [cursor=pointer]:
+                - /url: /jobs/it-support-technician-hybrid/56680968?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e187]:
+                      - img [ref=e188]
+                    - generic:
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: IT Support Technician - hybrid
+                          - generic: 20 March by Eligo Recruitment
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £35,000 - £39,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: City of London, London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Easy Apply IT Support Technician - hybrid 1 week ago by Eligo Recruitment Salary£35,000 - £39,000 per annum LocationCity of London, London ClockPermanent, full-time" [ref=e190] [cursor=pointer]:
+                - /url: /jobs/it-support-technician-hybrid/56703283?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e191]:
+                      - img [ref=e192]
+                    - generic:
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: IT Support Technician - hybrid
+                          - generic: 1 week ago by Eligo Recruitment
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £35,000 - £39,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: City of London, London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Easy Apply IT Support Technician - hybrid 25 February by Eligo Recruitment Salary£35,000 - £39,000 per annum LocationCity of London, London ClockPermanent, full-time" [ref=e194] [cursor=pointer]:
+                - /url: /jobs/it-support-technician-hybrid/56538790?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e195]:
+                      - img [ref=e196]
+                    - generic:
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: IT Support Technician - hybrid
+                          - generic: 25 February by Eligo Recruitment
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £35,000 - £39,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: City of London, London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Easy Apply Onsite IT Support Engineer / 2nd Line Desktop Support Technician 2 hrs ago by AWD online Salary£32,000 per annum LocationEast London, London ClockPermanent, full-time" [ref=e198] [cursor=pointer]:
+                - /url: /jobs/onsite-it-support-engineer-2nd-line-desktop-support-technician/56549463?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e199]:
+                      - img [ref=e200]
+                    - generic:
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Onsite IT Support Engineer / 2nd Line Desktop Support Technician
+                          - generic: 2 hrs ago by AWD online
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £32,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: East London, London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Trainee IT Helpdesk Technician / 1st Line Support 23 February by Newto Training SalaryCompetitive salary LocationUnited Kingdom ClockPermanent, full-time" [ref=e202] [cursor=pointer]:
+                - /url: /jobs/trainee-it-helpdesk-technician-1st-line-support/56518164?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e203]:
+                      - img [ref=e204]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Trainee IT Helpdesk Technician / 1st Line Support
+                          - generic: 23 February by Newto Training
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Competitive salary
+                      - listitem:
+                        - img "Location"
+                        - text: United Kingdom
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+            - link "See more jobs like this" [ref=e207] [cursor=pointer]:
+              - /url: /jobs/support-technician-jobs
+          - generic [ref=e208]:
+            - generic [ref=e210]: Recommended courses
+            - generic [ref=e211]:
+              - link "1st Line Support/Helpdesk | Complete IT Career Package 2025 Online, Self-paced £799" [ref=e212] [cursor=pointer]:
+                - /url: /courses/1st-line-support-helpdesk--complete-it-career-package-2025/247779?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it%20support_courses_247779
+                - generic: 1st Line Support/Helpdesk | Complete IT Career Package 2025
+                - generic: Online, Self-paced
+                - generic: £799
+              - link "IT Support Engineer Traineeship Program Blended (classroom and online) £2,250" [ref=e213] [cursor=pointer]:
+                - /url: /courses/it-support-engineer-traineeship-program/421527?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it%20support_courses_421527
+                - generic: IT Support Engineer Traineeship Program
+                - generic: Blended (classroom and online)
+                - generic: £2,250
+              - link "IT Support Technician Online, Self-paced £799" [ref=e214] [cursor=pointer]:
+                - /url: /courses/it-support-technician/473420?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it%20support_courses_473420
+                - generic: IT Support Technician
+                - generic: Online, Self-paced
+                - generic: £799
+            - link "View IT support courses" [ref=e216] [cursor=pointer]:
+              - /url: https://www.reed.co.uk/courses/all?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=view_it%20support_courses
+          - generic [ref=e218]:
+            - generic [ref=e219]: Posted by Armstrong Knight
+            - link "View all jobs and profile Chevron" [ref=e220] [cursor=pointer]:
+              - /url: /jobs/armstrong/p18273
+              - generic [ref=e221]: View all jobs and profile
+              - img "Chevron" [ref=e222]
+          - generic [ref=e225]:
+            - generic [ref=e226]: Not what you are looking for?
+            - list [ref=e227]:
+              - listitem [ref=e228]:
+                - link "It Support jobs" [ref=e229] [cursor=pointer]:
+                  - /url: /jobs/it-support-jobs-in-london
+              - listitem [ref=e230]:
+                - link "It Technician jobs" [ref=e231] [cursor=pointer]:
+                  - /url: /jobs/it-technician-jobs-in-london
+              - listitem [ref=e232]:
+                - link "It jobs" [ref=e233] [cursor=pointer]:
+                  - /url: /jobs/it-jobs-in-london
+              - listitem [ref=e234]:
+                - link "It Support Engineer jobs" [ref=e235] [cursor=pointer]:
+                  - /url: /jobs/it-support-engineer-jobs-in-london
+              - listitem [ref=e236]:
+                - link "Service Desk jobs" [ref=e237] [cursor=pointer]:
+                  - /url: /jobs/service-desk-jobs-in-london
+          - generic [ref=e238]:
+            - generic [ref=e239]: "Reference: 56739090"
+            - generic [ref=e240]:
+              - text: Please note that
+              - link "Reed.co.uk" [ref=e241] [cursor=pointer]:
+                - /url: https://reed.co.uk
+              - text: will never ask you to provide your bank, passport or driving licence details during the application process.
+            - link "Report this job Open in new tab" [ref=e243] [cursor=pointer]:
+              - /url: /enquiries?reportJobRef=56739090
+              - text: Report this job
+              - img "Open in new tab"
+        - complementary
+    - contentinfo [ref=e244]:
+      - generic [ref=e246]:
+        - navigation [ref=e247]:
+          - button "JOBS" [ref=e249] [cursor=pointer]
+          - list [ref=e252]:
+            - listitem [ref=e253]:
+              - link "Contact us" [ref=e254] [cursor=pointer]:
+                - /url: /enquiries
+            - listitem [ref=e255]:
+              - link "Job search" [ref=e256] [cursor=pointer]:
+                - /url: /jobs
+            - listitem [ref=e257]:
+              - link "Recruiter directory" [ref=e258] [cursor=pointer]:
+                - /url: /recruiterdirectory
+            - listitem [ref=e259]:
+              - link "Work from home" [ref=e260] [cursor=pointer]:
+                - /url: /jobs/work-from-home-jobs
+            - listitem [ref=e261]:
+              - link "Browse jobs" [ref=e262] [cursor=pointer]:
+                - /url: /popularjobs
+            - listitem [ref=e263]:
+              - link "Browse locations" [ref=e264] [cursor=pointer]:
+                - /url: /location
+            - listitem [ref=e265]:
+              - link "Popular searches" [ref=e266] [cursor=pointer]:
+                - /url: /popularsearches
+            - listitem [ref=e267]:
+              - link "Career advice" [ref=e268] [cursor=pointer]:
+                - /url: /career-advice
+            - listitem [ref=e269]:
+              - link "Tax calculator" [ref=e270] [cursor=pointer]:
+                - /url: /tax-calculator
+            - listitem [ref=e271]:
+              - link "Average salary checker" [ref=e272] [cursor=pointer]:
+                - /url: /average-salary
+            - listitem [ref=e273]:
+              - link "Help" [ref=e274] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e275]:
+              - link "Contact a REED office" [ref=e276] [cursor=pointer]:
+                - /url: https://www.reed.com/offices
+            - listitem [ref=e277]:
+              - link "Sitemap" [ref=e278] [cursor=pointer]:
+                - /url: /html-sitemap
+        - navigation [ref=e279]:
+          - button "RECRUITER" [ref=e281] [cursor=pointer]
+          - list [ref=e284]:
+            - listitem [ref=e285]:
+              - link "Recruiter site" [ref=e286] [cursor=pointer]:
+                - /url: /recruiter?directjob=recruiter
+            - listitem [ref=e287]:
+              - link "Post a job" [ref=e288] [cursor=pointer]:
+                - /url: /recruiter/post-a-job?directjob=recruiter
+            - listitem [ref=e289]:
+              - link "CV Search" [ref=e290] [cursor=pointer]:
+                - /url: /recruiter/cv-search?directjob=recruiter
+            - listitem [ref=e291]:
+              - link "Recruitment agencies" [ref=e292] [cursor=pointer]:
+                - /url: /recruiter/recruitment-agencies?directjob=recruiter
+            - listitem [ref=e293]:
+              - link "Recruiter Advice" [ref=e294] [cursor=pointer]:
+                - /url: /recruiter-advice/?directjob=recruiter
+        - navigation [ref=e295]:
+          - button "COURSES" [ref=e297] [cursor=pointer]
+          - list [ref=e300]:
+            - listitem [ref=e301]:
+              - link "Help" [ref=e302] [cursor=pointer]:
+                - /url: /courses/help
+            - listitem [ref=e303]:
+              - link "Contact us" [ref=e304] [cursor=pointer]:
+                - /url: /courses/contact-us
+            - listitem [ref=e305]:
+              - link "Find a course" [ref=e306] [cursor=pointer]:
+                - /url: /courses/
+            - listitem [ref=e307]:
+              - link "View all subjects" [ref=e308] [cursor=pointer]:
+                - /url: /courses/directory
+            - listitem [ref=e309]:
+              - link "Discount courses" [ref=e310] [cursor=pointer]:
+                - /url: /courses/discount
+            - listitem [ref=e311]:
+              - link "Free courses" [ref=e312] [cursor=pointer]:
+                - /url: /courses/free
+            - listitem [ref=e313]:
+              - link "Awarding body directory" [ref=e314] [cursor=pointer]:
+                - /url: /courses/awarding-bodies
+            - listitem [ref=e315]:
+              - link "Career guides" [ref=e316] [cursor=pointer]:
+                - /url: /courses/career-guides
+            - listitem [ref=e317]:
+              - link "Advertise a course" [ref=e318] [cursor=pointer]:
+                - /url: /courses/providers/
+            - listitem [ref=e319]:
+              - link "Courses sitemap" [ref=e320] [cursor=pointer]:
+                - /url: /courses/html-sitemap
+        - navigation [ref=e321]:
+          - button "MORE FROM Reed.co.uk" [ref=e323] [cursor=pointer]
+          - list [ref=e326]:
+            - listitem [ref=e327]:
+              - link "About us" [ref=e328] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e329]:
+              - link "Careers at Reed.co.uk" [ref=e330] [cursor=pointer]:
+                - /url: https://www.reed.com/careers/jobs?businessDivision=Reed.co.uk
+            - listitem [ref=e331]:
+              - link "Press office" [ref=e332] [cursor=pointer]:
+                - /url: /press-office
+            - listitem [ref=e333]:
+              - link "Corporate governance" [ref=e334] [cursor=pointer]:
+                - /url: /corporate-governance
+            - listitem [ref=e335]:
+              - link "Modern slavery statement" [ref=e336] [cursor=pointer]:
+                - /url: https://www.reed.co.uk/cdn/jobseeker/pdf/Reed_MSA_Statement.pdf
+        - navigation [ref=e337]:
+          - button "REED" [ref=e339] [cursor=pointer]
+          - list [ref=e342]:
+            - listitem [ref=e343]:
+              - 'link "Tempzone: timesheets & holiday" [ref=e344] [cursor=pointer]':
+                - /url: https://candidate.reed.co.uk/candlogin.asp
+            - listitem [ref=e345]:
+              - link "Authorise timesheets" [ref=e346] [cursor=pointer]:
+                - /url: https://client.reed.co.uk/
+            - listitem [ref=e347]:
+              - link "Reed Group Services" [ref=e348] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e349]:
+              - link "Reed Specialist Recruitment" [ref=e350] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e351]:
+              - link "Reed in Partnership" [ref=e352] [cursor=pointer]:
+                - /url: https://www.reedinpartnership.co.uk/
+            - listitem [ref=e353]:
+              - link "Careers with REED" [ref=e354] [cursor=pointer]:
+                - /url: https://www.reed.com/careers
+            - listitem [ref=e355]:
+              - link "James Reed - Official Site" [ref=e356] [cursor=pointer]:
+                - /url: /james-reed/
+            - listitem [ref=e357]:
+              - 'link "Podcast - James Reed: all about business" [ref=e358] [cursor=pointer]':
+                - /url: https://www.reed.com/podcasts
+            - listitem [ref=e359]:
+              - link "ESG & sustainability" [ref=e360] [cursor=pointer]:
+                - /url: https://www.reed.com/esg-and-sustainability
+      - generic [ref=e362]:
+        - generic [ref=e363]:
+          - generic [ref=e365]:
+            - link "PhilCo" [ref=e366] [cursor=pointer]:
+              - /url: https://philco.org.uk/
+              - img "PhilCo" [ref=e367]
+            - generic [ref=e368]: Learn how Reed is leading the way in philanthropy
+          - img "Love Mondays" [ref=e370]
+        - generic [ref=e371]:
+          - generic [ref=e372]:
+            - 'link "James Reed: all about business" [ref=e373] [cursor=pointer]':
+              - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+              - 'img "James Reed: all about business" [ref=e374]'
+            - generic [ref=e375]:
+              - heading "Introducing our new podcast New" [level=3] [ref=e376]:
+                - text: Introducing our new podcast
+                - generic [ref=e377]: New
+              - paragraph [ref=e378]: "James Reed: all about business"
+              - link "Listen here" [ref=e379] [cursor=pointer]:
+                - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+          - generic [ref=e380]:
+            - generic [ref=e381]:
+              - generic [ref=e382]:
+                - link "Download on the App Store" [ref=e383] [cursor=pointer]:
+                  - /url: https://itunes.apple.com/GB/app/id1040443949?mt=8
+                  - img "Download on the App Store" [ref=e384]
+                - link "Get it on Google Play" [ref=e385] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.reedcouk.jobs&referrer=af_tranid%3D_HgKgkJ-aFiIn4G5iigdZQ%26pid%3DWebsite_Footer%26utm_source%3DWebsite_Footer
+                  - img "Get it on Google Play" [ref=e386]
+              - generic [ref=e387]:
+                - link "Facebook" [ref=e388] [cursor=pointer]:
+                  - /url: https://www.facebook.com/reedcouk
+                  - img "Facebook" [ref=e389]
+                - link "Instagram" [ref=e390] [cursor=pointer]:
+                  - /url: https://www.instagram.com/reedcouk/
+                  - img "Instagram" [ref=e391]
+                - link "Tiktok" [ref=e392] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@reedjobs
+                  - img "Tiktok" [ref=e393]
+            - list [ref=e394]:
+              - listitem [ref=e395]:
+                - button "Manage Preferences" [ref=e396] [cursor=pointer]
+                - text: ","
+              - listitem [ref=e397]:
+                - link "Security, Privacy, Terms & Conditions" [ref=e398] [cursor=pointer]:
+                  - /url: /policies
+            - paragraph [ref=e399]: COPYRIGHT © Reed.co.uk 2026
+  - alert [ref=e400]

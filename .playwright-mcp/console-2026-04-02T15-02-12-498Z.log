@@ -1,0 +1,12 @@
+[     256ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.reed.co.uk/account/cv:0
+[     925ms] [WARNING] Anonymised tag: patchGptRefresh error: TypeError: Cannot read properties of undefined (reading 'push')
+    at L (https://cdn1.anonymised.io/light/loader.js?ref=gtm:1:10719)
+    at https://cdn1.anonymised.io/light/loader.js?ref=gtm:3:1061
+    at https://cdn1.anonymised.io/light/loader.js?ref=gtm:3:1617 @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[     926ms] [WARNING] Anonymised tag: Initialization error: TypeError: Cannot read properties of undefined (reading 'push')
+    at E (https://cdn1.anonymised.io/light/loader.js?ref=gtm:1:4474)
+    at https://cdn1.anonymised.io/light/loader.js?ref=gtm:3:1477
+    at https://cdn1.anonymised.io/light/loader.js?ref=gtm:3:1617 @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:2
+[    1391ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[    1394ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[    1395ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15

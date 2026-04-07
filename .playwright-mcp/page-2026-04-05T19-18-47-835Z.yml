@@ -1,0 +1,1123 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - heading "⚡ BETTING MODEL DASHBOARD" [level=1] [ref=e3]
+    - generic [ref=e4]:
+      - generic [ref=e5]: "Tokens Left: 14235"
+      - generic [ref=e6]: "Used: 5765"
+      - generic [ref=e7]: "Cache: NaNm ago (47) · 14235 tokens left"
+      - button "↻ Cache" [ref=e8] [cursor=pointer]
+      - button "⚡ Refresh" [ref=e9] [cursor=pointer]
+  - generic [ref=e10]:
+    - generic [ref=e11] [cursor=pointer]: All Value Bets
+    - generic [ref=e12] [cursor=pointer]: 💰 Safe Bets
+    - generic [ref=e13] [cursor=pointer]: ⚽ Soccer
+    - generic [ref=e14] [cursor=pointer]: 🏀 NBA
+    - generic [ref=e15] [cursor=pointer]: 🏈 NFL
+    - generic [ref=e16] [cursor=pointer]: 🏒 NHL
+    - generic [ref=e17] [cursor=pointer]: ⚾ MLB
+    - generic [ref=e18] [cursor=pointer]: 📊 History
+  - generic [ref=e1915]:
+    - generic [ref=e1916]:
+      - text: ⚾ MLB — 15 games
+      - generic [ref=e1917]: Updated just now
+    - generic [ref=e1918]:
+      - button "Sort by Edge ↓" [ref=e1919] [cursor=pointer]
+      - button "Sort by Score ↓" [ref=e1920] [cursor=pointer]
+      - button "OVERs only" [ref=e1921] [cursor=pointer]
+      - button "UNDERs only" [ref=e1922] [cursor=pointer]
+      - button "All" [ref=e1923] [cursor=pointer]
+    - generic [ref=e1924]:
+      - generic [ref=e1925]:
+        - generic [ref=e1926]: New York Yankees vs Miami Marlins
+        - generic [ref=e1927]: Sun 5 Apr, 15:30 ET
+      - generic [ref=e1928]:
+        - generic [ref=e1929]: 🏆 WINNER PREDICTION
+        - generic [ref=e1930]:
+          - generic [ref=e1931]: New York Yankees
+          - generic [ref=e1934]: 71.8%
+        - generic [ref=e1935]:
+          - generic [ref=e1936]: Miami Marlins
+          - generic [ref=e1939]: 28.2%
+        - generic [ref=e1940]:
+          - text: "Pick:"
+          - strong [ref=e1941]: New York Yankees
+          - generic [ref=e1942]: HIGH
+          - text: "71.8% confidence · Odds: 1.37"
+      - generic [ref=e1943]: 🎯 TOP PICKS — New York Yankees vs Miami Marlins
+      - generic [ref=e1944]:
+        - generic [ref=e1945]:
+          - generic [ref=e1946]:
+            - generic [ref=e1947]: A★
+            - generic [ref=e1948]: HIGH
+          - generic [ref=e1949]: Cody Bellinger
+          - generic [ref=e1950]: HITS
+          - generic [ref=e1951]: "1.5"
+          - generic [ref=e1952]:
+            - generic [ref=e1953]: UNDER
+            - generic [ref=e1954]: 75.4% implied
+          - generic [ref=e1955]:
+            - generic [ref=e1956]:
+              - text: "Model: 81% / Book: 75% →"
+              - strong [ref=e1957]: +5.5% edge
+            - generic [ref=e1958]: 5.0% stake
+          - generic [ref=e1959]: ✅ Data verified
+          - generic [ref=e1960]: 📊 19% OVER / 81% UNDER (L8 distribution)
+          - generic [ref=e1961]: "🎲 Hit prob: 81% 🎯 Consistent"
+          - generic [ref=e1962]: "📈 L5: 0.8 avg 🎯 Consistent (hit 20% of L5)"
+          - generic [ref=e1963]: "↘ Trending down: L5 0.8 vs L15 1.0"
+          - generic [ref=e1964]: 🥶 15°F — cold affects bat speed
+          - generic [ref=e1965]:
+            - text: 75.4% market edge · 3 books · fair line
+            - generic [ref=e1966]: score 0.58
+          - generic [ref=e1968]: Generated 3:17 PM ET
+          - generic [ref=e1969]:
+            - button "OVER" [ref=e1970] [cursor=pointer]
+            - button "UNDER" [ref=e1971] [cursor=pointer]
+        - generic [ref=e1972]:
+          - generic [ref=e1973]:
+            - generic [ref=e1974]: A
+            - generic [ref=e1975]: HIGH
+          - generic [ref=e1976]: Trent Grisham
+          - generic [ref=e1977]: HITS
+          - generic [ref=e1978]: "2.5"
+          - generic [ref=e1979]:
+            - generic [ref=e1980]: UNDER
+            - generic [ref=e1981]: 78.4% implied
+          - generic [ref=e1982]:
+            - generic [ref=e1983]:
+              - text: "Model: 98% / Book: 78% →"
+              - strong [ref=e1984]: +19.3% edge
+            - generic [ref=e1985]: 5.0% stake
+          - generic [ref=e1986]: ✅ Data verified
+          - generic [ref=e1987]: 📊 2% OVER / 98% UNDER (L8 distribution)
+          - generic [ref=e1988]: "🎲 Hit prob: 98% 🎯 Consistent"
+          - generic [ref=e1989]: "📈 L5: 0.6 avg 🎯 Consistent (hit 0% of L5)"
+          - generic [ref=e1990]: 🥶 15°F — cold affects bat speed
+          - generic [ref=e1991]:
+            - text: 78.4% market edge · 3 books · fair line
+            - generic [ref=e1992]: score 0.57
+          - generic [ref=e1994]: Generated 3:17 PM ET
+          - generic [ref=e1995]:
+            - button "OVER" [ref=e1996] [cursor=pointer]
+            - button "UNDER" [ref=e1997] [cursor=pointer]
+        - generic [ref=e1998]:
+          - generic [ref=e1999]:
+            - generic [ref=e2000]: B
+            - generic [ref=e2001]: HIGH
+          - generic [ref=e2002]: Ben Rice
+          - generic [ref=e2003]: HITS
+          - generic [ref=e2004]: "1.5"
+          - generic [ref=e2005]:
+            - generic [ref=e2006]: UNDER
+            - generic [ref=e2007]: 71.6% implied
+          - generic [ref=e2008]:
+            - generic [ref=e2009]:
+              - text: "Model: 59% / Book: 72% →"
+              - strong [ref=e2010]: "-12.4% edge"
+            - generic [ref=e2011]: No bet
+          - generic [ref=e2012]: ✅ Data verified
+          - generic [ref=e2013]: 📊 41% OVER / 59% UNDER (L7 distribution)
+          - generic [ref=e2014]: "🎲 Hit prob: 59% 🎯 Consistent"
+          - generic [ref=e2015]: "📈 L5: 1.4 avg 🎯 Consistent (hit 60% of L5)"
+          - generic [ref=e2016]: 🥶 15°F — cold affects bat speed
+          - generic [ref=e2017]:
+            - text: 71.6% market edge · 3 books · fair line
+            - generic [ref=e2018]: score 0.57
+          - generic [ref=e2020]: Generated 3:17 PM ET
+          - generic [ref=e2021]:
+            - button "OVER" [ref=e2022] [cursor=pointer]
+            - button "UNDER" [ref=e2023] [cursor=pointer]
+        - generic [ref=e2024]:
+          - generic [ref=e2025]:
+            - generic [ref=e2026]: B
+            - generic [ref=e2027]: MED
+          - generic [ref=e2028]: Heriberto Hernandez
+          - generic [ref=e2029]: HITS RUNS RBIS
+          - generic [ref=e2030]: "1.5"
+          - generic [ref=e2031]:
+            - generic [ref=e2032]: OVER
+            - generic [ref=e2033]: 51.1% implied
+          - generic [ref=e2034]:
+            - generic [ref=e2035]:
+              - text: "Model: 55% / Book: 51% →"
+              - strong [ref=e2036]: +3.9% edge
+            - generic [ref=e2037]: 5.0% stake
+          - generic [ref=e2038]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e2039]: 🥶 15°F — cold affects bat speed
+          - generic [ref=e2040]:
+            - text: 4 books · fair line
+            - generic [ref=e2041]: score 0.26
+          - generic [ref=e2043]: Generated 3:17 PM ET
+          - generic [ref=e2044]:
+            - button "OVER" [ref=e2045] [cursor=pointer]
+            - button "UNDER" [ref=e2046] [cursor=pointer]
+    - generic [ref=e2047]:
+      - generic [ref=e2048]:
+        - generic [ref=e2049]: Washington Nationals vs Los Angeles Dodgers
+        - generic [ref=e2050]: Sun 5 Apr, 15:45 ET
+      - generic [ref=e2051]:
+        - generic [ref=e2052]: 🏆 WINNER PREDICTION
+        - generic [ref=e2053]:
+          - generic [ref=e2054]: Washington Nationals
+          - generic [ref=e2057]: 38.6%
+        - generic [ref=e2058]:
+          - generic [ref=e2059]: Los Angeles Dodgers
+          - generic [ref=e2062]: 61.4%
+        - generic [ref=e2063]:
+          - text: "Pick:"
+          - strong [ref=e2064]: Los Angeles Dodgers
+          - generic [ref=e2065]: MED
+          - text: "61.4% confidence · Odds: 1.6"
+      - generic [ref=e2066]: No qualifying player props.
+    - generic [ref=e2067]:
+      - generic [ref=e2068]:
+        - generic [ref=e2069]: Athletics vs Houston Astros
+        - generic [ref=e2070]: Sun 5 Apr, 16:06 ET
+      - generic [ref=e2071]:
+        - generic [ref=e2072]: 🏆 WINNER PREDICTION
+        - generic [ref=e2073]:
+          - generic [ref=e2074]: Athletics
+          - generic [ref=e2077]: 45.1%
+        - generic [ref=e2078]:
+          - generic [ref=e2079]: Houston Astros
+          - generic [ref=e2082]: 54.9%
+        - generic [ref=e2083]:
+          - text: "Pick:"
+          - strong [ref=e2084]: Houston Astros
+          - generic [ref=e2085]: LOW
+          - text: "54.9% confidence · Odds: 1.79"
+      - generic [ref=e2086]: 💰 SAFE PICKS — Athletics vs Houston Astros (stats + odds + history all agree)
+      - generic [ref=e2087]:
+        - generic [ref=e2088]:
+          - generic [ref=e2089]:
+            - generic [ref=e2090]: 💰 SAFE
+            - generic [ref=e2091]: MED
+          - generic [ref=e2092]: Cam Smith
+          - generic [ref=e2093]: HITS RUNS RBIS
+          - generic [ref=e2094]: "1.5"
+          - generic [ref=e2095]:
+            - generic [ref=e2096]: OVER
+            - generic [ref=e2097]: 69.2%
+          - generic [ref=e2098]:
+            - generic [ref=e2099]: 🎲 69% model probability
+            - generic [ref=e2100]: ✅ Hit in 80% of last 5 games
+            - generic [ref=e2101]: 4 books agree · 2.4% vig
+        - generic [ref=e2102]:
+          - generic [ref=e2103]:
+            - generic [ref=e2104]: 💰 SAFE
+            - generic [ref=e2105]: MED
+          - generic [ref=e2106]: Brent Rooker
+          - generic [ref=e2107]: HITS RUNS RBIS
+          - generic [ref=e2108]: "1.5"
+          - generic [ref=e2109]:
+            - generic [ref=e2110]: UNDER
+            - generic [ref=e2111]: 73.6%
+          - generic [ref=e2112]:
+            - generic [ref=e2113]: 🎲 74% model probability
+            - generic [ref=e2114]: ✅ Hit in 60% of last 5 games
+            - generic [ref=e2115]: 5 books agree · 5.5% vig
+      - generic [ref=e2116]: 🎯 TOP PICKS — Athletics vs Houston Astros
+      - generic [ref=e2117]:
+        - generic [ref=e2118]:
+          - generic [ref=e2119]:
+            - generic [ref=e2120]: A★
+            - generic [ref=e2121]: HIGH
+          - generic [ref=e2122]: Christian Walker
+          - generic [ref=e2123]: TOTAL BASES
+          - generic [ref=e2124]: "1.5"
+          - generic [ref=e2125]:
+            - generic [ref=e2126]: UNDER
+            - generic [ref=e2127]: 73.8% implied
+          - generic [ref=e2128]:
+            - generic [ref=e2129]:
+              - text: "Model: 35% / Book: 74% →"
+              - strong [ref=e2130]: "-38.5% edge"
+            - generic [ref=e2131]: No bet
+          - generic [ref=e2132]: ⚠️ Stats say OVER 65% but odds say UNDER 74% — check lineup/matchup
+          - generic [ref=e2133]: ✅ Data verified
+          - generic [ref=e2134]: 📊 65% OVER / 35% UNDER (L9 distribution)
+          - generic [ref=e2135]: "🎲 Hit prob: 35%"
+          - generic [ref=e2136]: "📈 L5: 2.6 avg (hit 60% of L5)"
+          - generic [ref=e2137]: "↗ Trending up: L5 2.6 vs L15 2.2"
+          - generic [ref=e2138]:
+            - text: 73.8% market edge · 7 books aligned · fair line
+            - generic [ref=e2139]: score 0.70
+          - generic [ref=e2141]: Generated 3:17 PM ET
+          - generic [ref=e2142]:
+            - button "OVER" [ref=e2143] [cursor=pointer]
+            - button "UNDER" [ref=e2144] [cursor=pointer]
+        - generic [ref=e2145]:
+          - generic [ref=e2146]:
+            - generic [ref=e2147]: A
+            - generic [ref=e2148]: HIGH
+          - generic [ref=e2149]: Lance McCullers Jr.
+          - generic [ref=e2150]: STRIKEOUTS
+          - generic [ref=e2151]: "6.5"
+          - generic [ref=e2152]:
+            - generic [ref=e2153]: OVER
+            - generic [ref=e2154]: 73.7% stats override
+            - generic [ref=e2155]: ⚡ FLIPPED
+          - generic [ref=e2156]:
+            - generic [ref=e2157]:
+              - text: "Model: 74% / Book: 46% →"
+              - strong [ref=e2158]: +27.3% edge
+            - generic [ref=e2159]: 5.0% stake
+          - generic [ref=e2160]:
+            - text: ⚠️ Stats data 6d old
+            - text: ⚠️ Only 1 games of data — low sample
+            - text: ⚠️ Edge +27% is unusually high — verify line is current
+          - generic [ref=e2161]: 📊 74% OVER / 26% UNDER (L1 distribution)
+          - generic [ref=e2162]: "🎲 Hit prob: 74%"
+          - generic [ref=e2163]: "📈 L5: 9.0 avg (hit 100% of L5)"
+          - generic [ref=e2164]: 📅 Stats from Mar 29 (6d ago ⚠️ STALE)
+          - generic [ref=e2165]:
+            - text: 73.7% market edge · 8 books aligned · fair line
+            - generic [ref=e2166]: score 0.69
+          - generic [ref=e2168]: Generated 3:17 PM ET
+          - generic [ref=e2169]:
+            - button "OVER" [ref=e2170] [cursor=pointer]
+            - button "UNDER" [ref=e2171] [cursor=pointer]
+        - generic [ref=e2172]:
+          - generic [ref=e2173]:
+            - generic [ref=e2174]: B
+            - generic [ref=e2175]: HIGH
+          - generic [ref=e2176]: Tyler Soderstrom
+          - generic [ref=e2177]: HITS
+          - generic [ref=e2178]: "2.5"
+          - generic [ref=e2179]:
+            - generic [ref=e2180]: UNDER
+            - generic [ref=e2181]: 79.5% implied
+          - generic [ref=e2182]:
+            - generic [ref=e2183]:
+              - text: "Model: 93% / Book: 80% →"
+              - strong [ref=e2184]: +13.5% edge
+            - generic [ref=e2185]: 5.0% stake
+          - generic [ref=e2186]: ✅ Data verified
+          - generic [ref=e2187]: 📊 7% OVER / 93% UNDER (L8 distribution)
+          - generic [ref=e2188]: "🎲 Hit prob: 93%"
+          - generic [ref=e2189]: "📈 L5: 0.8 avg (hit 0% of L5)"
+          - generic [ref=e2190]:
+            - text: 79.5% market edge · 4 books · fair line
+            - generic [ref=e2191]: score 0.68
+          - generic [ref=e2193]: Generated 3:17 PM ET
+          - generic [ref=e2194]:
+            - button "OVER" [ref=e2195] [cursor=pointer]
+            - button "UNDER" [ref=e2196] [cursor=pointer]
+        - generic [ref=e2197]:
+          - generic [ref=e2198]:
+            - generic [ref=e2199]: B
+            - generic [ref=e2200]: HIGH
+          - generic [ref=e2201]: Christian Walker
+          - generic [ref=e2202]: HITS
+          - generic [ref=e2203]: "2.5"
+          - generic [ref=e2204]:
+            - generic [ref=e2205]: UNDER
+            - generic [ref=e2206]: 77.7% implied
+          - generic [ref=e2207]:
+            - generic [ref=e2208]:
+              - text: "Model: 83% / Book: 78% →"
+              - strong [ref=e2209]: +5.6% edge
+            - generic [ref=e2210]: 5.0% stake
+          - generic [ref=e2211]: ✅ Data verified
+          - generic [ref=e2212]: 📊 17% OVER / 83% UNDER (L9 distribution)
+          - generic [ref=e2213]: "🎲 Hit prob: 83% 🎯 Consistent"
+          - generic [ref=e2214]: "📈 L5: 1.4 avg 🎯 Consistent (hit 20% of L5)"
+          - generic [ref=e2215]: "↗ Trending up: L5 1.4 vs L15 1.2"
+          - generic [ref=e2216]:
+            - text: 77.7% market edge · 4 books · fair line
+            - generic [ref=e2217]: score 0.68
+          - generic [ref=e2219]: Generated 3:17 PM ET
+          - generic [ref=e2220]:
+            - button "OVER" [ref=e2221] [cursor=pointer]
+            - button "UNDER" [ref=e2222] [cursor=pointer]
+        - generic [ref=e2223]:
+          - generic [ref=e2224]:
+            - generic [ref=e2225]: B
+            - generic [ref=e2226]: HIGH
+          - generic [ref=e2227]: Christian Walker
+          - generic [ref=e2228]: HITS RUNS RBIS
+          - generic [ref=e2229]: "1.5"
+          - generic [ref=e2230]:
+            - generic [ref=e2231]: OVER
+            - generic [ref=e2232]: 74.3% stats override
+            - generic [ref=e2233]: ⚡ FLIPPED
+          - generic [ref=e2234]:
+            - generic [ref=e2235]:
+              - text: "Model: 74% / Book: 47% →"
+              - strong [ref=e2236]: +27.1% edge
+            - generic [ref=e2237]: 5.0% stake
+          - generic [ref=e2238]: ⚠️ Edge +27% is unusually high — verify line is current
+          - generic [ref=e2239]: 📊 74% OVER / 26% UNDER (L9 distribution)
+          - generic [ref=e2240]: "🎲 Hit prob: 74% 🎲 Volatile"
+          - generic [ref=e2241]: "📈 L5: 3.4 avg 🎲 Volatile (hit 80% of L5)"
+          - generic [ref=e2242]: "↗ Trending up: L5 3.4 vs L15 2.9"
+          - generic [ref=e2243]:
+            - text: 74.3% market edge · 5 books aligned · fair line
+            - generic [ref=e2244]: score 0.42
+          - generic [ref=e2246]: Generated 3:17 PM ET
+          - generic [ref=e2247]:
+            - button "OVER" [ref=e2248] [cursor=pointer]
+            - button "UNDER" [ref=e2249] [cursor=pointer]
+    - generic [ref=e2250]:
+      - generic [ref=e2251]:
+        - generic [ref=e2252]: San Francisco Giants vs New York Mets
+        - generic [ref=e2253]: Sun 5 Apr, 16:06 ET
+      - generic [ref=e2254]:
+        - generic [ref=e2255]: 🏆 WINNER PREDICTION
+        - generic [ref=e2256]:
+          - generic [ref=e2257]: San Francisco Giants
+          - generic [ref=e2260]: 52.5%
+        - generic [ref=e2261]:
+          - generic [ref=e2262]: New York Mets
+          - generic [ref=e2265]: 47.5%
+        - generic [ref=e2266]:
+          - text: "Pick:"
+          - strong [ref=e2267]: San Francisco Giants
+          - generic [ref=e2268]: LOW
+          - text: "52.5% confidence · Odds: 1.87"
+      - generic [ref=e2269]: 🎯 TOP PICKS — San Francisco Giants vs New York Mets
+      - generic [ref=e2270]:
+        - generic [ref=e2271]:
+          - generic [ref=e2272]:
+            - generic [ref=e2273]: A★
+            - generic [ref=e2274]: HIGH
+          - generic [ref=e2275]: Jung Hoo Lee
+          - generic [ref=e2276]: HITS
+          - generic [ref=e2277]: "2.5"
+          - generic [ref=e2278]:
+            - generic [ref=e2279]: UNDER
+            - generic [ref=e2280]: 78.7% implied
+          - generic [ref=e2281]:
+            - generic [ref=e2282]:
+              - text: "Model: 93% / Book: 79% →"
+              - strong [ref=e2283]: +14.6% edge
+            - generic [ref=e2284]: 5.0% stake
+          - generic [ref=e2285]: ✅ Data verified
+          - generic [ref=e2286]: 📊 7% OVER / 93% UNDER (L9 distribution)
+          - generic [ref=e2287]: "🎲 Hit prob: 93%"
+          - generic [ref=e2288]: "📈 L5: 0.8 avg (hit 20% of L5)"
+          - generic [ref=e2289]: "🔥 HOT: L5 0.8 vs L15 0.6"
+          - generic [ref=e2290]: 🥶 27°F — cold affects bat speed
+          - generic [ref=e2291]:
+            - text: 78.7% market edge · 4 books · fair line
+            - generic [ref=e2292]: score 0.60
+          - generic [ref=e2294]: Generated 3:17 PM ET
+          - generic [ref=e2295]:
+            - button "OVER" [ref=e2296] [cursor=pointer]
+            - button "UNDER" [ref=e2297] [cursor=pointer]
+        - generic [ref=e2298]:
+          - generic [ref=e2299]:
+            - generic [ref=e2300]: A
+            - generic [ref=e2301]: HIGH
+          - generic [ref=e2302]: Marcus Semien
+          - generic [ref=e2303]: TOTAL BASES
+          - generic [ref=e2304]: "1.5"
+          - generic [ref=e2305]:
+            - generic [ref=e2306]: UNDER
+            - generic [ref=e2307]: 78.1% implied
+          - generic [ref=e2308]:
+            - generic [ref=e2309]:
+              - text: "Model: 57% / Book: 78% →"
+              - strong [ref=e2310]: "-21.5% edge"
+            - generic [ref=e2311]: No bet
+          - generic [ref=e2312]: ✅ Data verified
+          - generic [ref=e2313]: 📊 43% OVER / 57% UNDER (L9 distribution)
+          - generic [ref=e2314]: "🎲 Hit prob: 57% 🎲 Volatile"
+          - generic [ref=e2315]: "📈 L5: 1.8 avg 🎲 Volatile (hit 40% of L5)"
+          - generic [ref=e2316]: "🔥 HOT: L5 1.8 vs L15 1.3"
+          - generic [ref=e2317]: 🥶 27°F — cold affects bat speed
+          - generic [ref=e2318]:
+            - text: 78.1% market edge · 4 books · fair line
+            - generic [ref=e2319]: score 0.60
+          - generic [ref=e2321]: Generated 3:17 PM ET
+          - generic [ref=e2322]:
+            - button "OVER" [ref=e2323] [cursor=pointer]
+            - button "UNDER" [ref=e2324] [cursor=pointer]
+        - generic [ref=e2325]:
+          - generic [ref=e2326]:
+            - generic [ref=e2327]: B
+            - generic [ref=e2328]: HIGH
+          - generic [ref=e2329]: Matt Chapman
+          - generic [ref=e2330]: TOTAL BASES
+          - generic [ref=e2331]: "1.5"
+          - generic [ref=e2332]:
+            - generic [ref=e2333]: UNDER
+            - generic [ref=e2334]: 79.2% implied
+          - generic [ref=e2335]:
+            - generic [ref=e2336]:
+              - text: "Model: 52% / Book: 79% →"
+              - strong [ref=e2337]: "-27.1% edge"
+            - generic [ref=e2338]: No bet
+          - generic [ref=e2339]: ✅ Data verified
+          - generic [ref=e2340]: 📊 48% OVER / 52% UNDER (L9 distribution)
+          - generic [ref=e2341]: "🎲 Hit prob: 52%"
+          - generic [ref=e2342]: "📈 L5: 1.8 avg (hit 40% of L5)"
+          - generic [ref=e2343]: "🔥 HOT: L5 1.8 vs L15 1.2"
+          - generic [ref=e2344]: 🥶 27°F — cold affects bat speed
+          - generic [ref=e2345]:
+            - text: 79.2% market edge · 4 books · fair line
+            - generic [ref=e2346]: score 0.60
+          - generic [ref=e2348]: Generated 3:17 PM ET
+          - generic [ref=e2349]:
+            - button "OVER" [ref=e2350] [cursor=pointer]
+            - button "UNDER" [ref=e2351] [cursor=pointer]
+        - generic [ref=e2352]:
+          - generic [ref=e2353]:
+            - generic [ref=e2354]: B
+            - generic [ref=e2355]: HIGH
+          - generic [ref=e2356]: Kodai Senga
+          - generic [ref=e2357]: STRIKEOUTS
+          - generic [ref=e2358]: "5.5"
+          - generic [ref=e2359]:
+            - generic [ref=e2360]: OVER
+            - generic [ref=e2361]: 58.9% implied
+          - generic [ref=e2362]:
+            - generic [ref=e2363]:
+              - text: "Model: 83% / Book: 59% →"
+              - strong [ref=e2364]: +24.2% edge
+            - generic [ref=e2365]: 5.0% stake
+          - generic [ref=e2366]:
+            - text: ⚠️ Stats data 5d old
+            - text: ⚠️ Only 1 games of data — low sample
+            - text: ⚠️ Edge +24% is unusually high — verify line is current
+          - generic [ref=e2367]: 📊 83% OVER / 17% UNDER (L1 distribution)
+          - generic [ref=e2368]: "🎲 Hit prob: 83%"
+          - generic [ref=e2369]: "📈 L5: 9.0 avg (hit 100% of L5)"
+          - generic [ref=e2370]: 📅 Stats from Mar 30 (5d ago ⚠️ STALE)
+          - generic [ref=e2371]: 🥶 27°F — cold affects bat speed
+          - generic [ref=e2372]:
+            - text: 6 books aligned · fair line
+            - generic [ref=e2373]: score 0.59
+          - generic [ref=e2375]: Generated 3:17 PM ET
+          - generic [ref=e2376]:
+            - button "OVER" [ref=e2377] [cursor=pointer]
+            - button "UNDER" [ref=e2378] [cursor=pointer]
+        - generic [ref=e2379]:
+          - generic [ref=e2380]:
+            - generic [ref=e2381]: B
+            - generic [ref=e2382]: HIGH
+          - generic [ref=e2383]: Logan Webb
+          - generic [ref=e2384]: EARNED RUNS
+          - generic [ref=e2385]: "2.5"
+          - generic [ref=e2386]:
+            - generic [ref=e2387]: OVER
+            - generic [ref=e2388]: 76.6% stats override
+            - generic [ref=e2389]: ⚡ FLIPPED
+          - generic [ref=e2390]:
+            - generic [ref=e2391]:
+              - text: "Model: 77% / Book: 48% →"
+              - strong [ref=e2392]: +28.2% edge
+            - generic [ref=e2393]: 5.0% stake
+          - generic [ref=e2394]:
+            - text: ⚠️ Stats data 5d old
+            - text: ⚠️ Only 2 games of data — low sample
+            - text: ⚠️ Edge +28% is unusually high — verify line is current
+          - generic [ref=e2395]: 📊 77% OVER / 23% UNDER (L2 distribution)
+          - generic [ref=e2396]: "🎲 Hit prob: 77%"
+          - generic [ref=e2397]: "📈 L5: 4.5 avg (hit 100% of L5)"
+          - generic [ref=e2398]: 📅 Stats from Mar 30 (5d ago ⚠️ STALE)
+          - generic [ref=e2399]: 🥶 27°F — cold affects bat speed
+          - generic [ref=e2400]:
+            - text: 76.6% market edge · 4 books · fair line
+            - generic [ref=e2401]: score 0.40
+          - generic [ref=e2403]: Generated 3:17 PM ET
+          - generic [ref=e2404]:
+            - button "OVER" [ref=e2405] [cursor=pointer]
+            - button "UNDER" [ref=e2406] [cursor=pointer]
+    - generic [ref=e2407]:
+      - generic [ref=e2408]:
+        - generic [ref=e2409]: Los Angeles Angels vs Seattle Mariners
+        - generic [ref=e2410]: Sun 5 Apr, 16:08 ET
+      - generic [ref=e2411]:
+        - generic [ref=e2412]: 🏆 WINNER PREDICTION
+        - generic [ref=e2413]:
+          - generic [ref=e2414]: Los Angeles Angels
+          - generic [ref=e2417]: 39.7%
+        - generic [ref=e2418]:
+          - generic [ref=e2419]: Seattle Mariners
+          - generic [ref=e2422]: 60.3%
+        - generic [ref=e2423]:
+          - text: "Pick:"
+          - strong [ref=e2424]: Seattle Mariners
+          - generic [ref=e2425]: MED
+          - text: "60.3% confidence · Odds: 1.62"
+      - generic [ref=e2426]: 🎯 TOP PICKS — Los Angeles Angels vs Seattle Mariners
+      - generic [ref=e2427]:
+        - generic [ref=e2428]:
+          - generic [ref=e2429]:
+            - generic [ref=e2430]: A★
+            - generic [ref=e2431]: HIGH
+          - generic [ref=e2432]: Cole Young
+          - generic [ref=e2433]: TOTAL BASES
+          - generic [ref=e2434]: "1.5"
+          - generic [ref=e2435]:
+            - generic [ref=e2436]: UNDER
+            - generic [ref=e2437]: 79.5% implied
+          - generic [ref=e2438]:
+            - generic [ref=e2439]:
+              - text: "Model: 50% / Book: 80% →"
+              - strong [ref=e2440]: "-29.6% edge"
+            - generic [ref=e2441]: No bet
+          - generic [ref=e2442]: ✅ Data verified
+          - generic [ref=e2443]: 📊 50% OVER / 50% UNDER (L9 distribution)
+          - generic [ref=e2444]: "🎲 Hit prob: 50%"
+          - generic [ref=e2445]: "📈 L5: 1.8 avg (hit 40% of L5)"
+          - generic [ref=e2446]: 🥶 28°F — cold affects bat speed
+          - generic [ref=e2447]:
+            - text: 79.5% market edge · 6 books aligned · fair line
+            - generic [ref=e2448]: score 0.65
+          - generic [ref=e2450]: Generated 3:17 PM ET
+          - generic [ref=e2451]:
+            - button "OVER" [ref=e2452] [cursor=pointer]
+            - button "UNDER" [ref=e2453] [cursor=pointer]
+        - generic [ref=e2454]:
+          - generic [ref=e2455]:
+            - generic [ref=e2456]: A
+            - generic [ref=e2457]: HIGH
+          - generic [ref=e2458]: J.P. Crawford
+          - generic [ref=e2459]: TOTAL BASES
+          - generic [ref=e2460]: "1.5"
+          - generic [ref=e2461]:
+            - generic [ref=e2462]: UNDER
+            - generic [ref=e2463]: 77.5% implied
+          - generic [ref=e2464]:
+            - generic [ref=e2465]:
+              - text: "Model: 74% / Book: 78% →"
+              - strong [ref=e2466]: "-3.4% edge"
+            - generic [ref=e2467]: No bet
+          - generic [ref=e2468]: ⚠️ Only 2 games of data — low sample
+          - generic [ref=e2469]: 📊 26% OVER / 74% UNDER (L2 distribution)
+          - generic [ref=e2470]: "🎲 Hit prob: 74%"
+          - generic [ref=e2471]: "📈 L5: 1.0 avg (hit 50% of L5)"
+          - generic [ref=e2472]: 🥶 28°F — cold affects bat speed
+          - generic [ref=e2473]:
+            - text: 77.5% market edge · 6 books aligned · fair line
+            - generic [ref=e2474]: score 0.64
+          - generic [ref=e2476]: Generated 3:17 PM ET
+          - generic [ref=e2477]:
+            - button "OVER" [ref=e2478] [cursor=pointer]
+            - button "UNDER" [ref=e2479] [cursor=pointer]
+        - generic [ref=e2480]:
+          - generic [ref=e2481]:
+            - generic [ref=e2482]: B
+            - generic [ref=e2483]: HIGH
+          - generic [ref=e2484]: Nolan Schanuel
+          - generic [ref=e2485]: HITS
+          - generic [ref=e2486]: "0.5"
+          - generic [ref=e2487]:
+            - generic [ref=e2488]: UNDER
+            - generic [ref=e2489]: 73.6% implied
+          - generic [ref=e2490]:
+            - generic [ref=e2491]:
+              - text: "Model: 45% / Book: 74% →"
+              - strong [ref=e2492]: "-28.7% edge"
+            - generic [ref=e2493]: No bet
+          - generic [ref=e2494]: ✅ Data verified
+          - generic [ref=e2495]: 📊 55% OVER / 45% UNDER (L8 distribution)
+          - generic [ref=e2496]: "🎲 Hit prob: 45% 🎯 Consistent"
+          - generic [ref=e2497]: "📈 L5: 0.8 avg 🎯 Consistent (hit 60% of L5)"
+          - generic [ref=e2498]: "↘ Trending down: L5 0.8 vs L15 1.0"
+          - generic [ref=e2499]: 🥶 28°F — cold affects bat speed
+          - generic [ref=e2500]:
+            - text: 73.6% market edge · 5 books aligned · fair line
+            - generic [ref=e2501]: score 0.63
+          - generic [ref=e2503]: Generated 3:17 PM ET
+          - generic [ref=e2504]:
+            - button "OVER" [ref=e2505] [cursor=pointer]
+            - button "UNDER" [ref=e2506] [cursor=pointer]
+        - generic [ref=e2507]:
+          - generic [ref=e2508]:
+            - generic [ref=e2509]: B
+            - generic [ref=e2510]: HIGH
+          - generic [ref=e2511]: Luis Castillo
+          - generic [ref=e2512]: STRIKEOUTS
+          - generic [ref=e2513]: "5.5"
+          - generic [ref=e2514]:
+            - generic [ref=e2515]: OVER
+            - generic [ref=e2516]: 53.7% implied
+          - generic [ref=e2517]:
+            - generic [ref=e2518]:
+              - text: "Model: 65% / Book: 54% →"
+              - strong [ref=e2519]: +11.1% edge
+            - generic [ref=e2520]: 5.0% stake
+          - generic [ref=e2521]:
+            - text: ⚠️ Stats data 6d old
+            - text: ⚠️ Only 1 games of data — low sample
+            - text: ⚠️ Model 65% but actual hit rate 100% — verify
+          - generic [ref=e2522]: 📊 65% OVER / 35% UNDER (L1 distribution)
+          - generic [ref=e2523]: "🎲 Hit prob: 65%"
+          - generic [ref=e2524]: "📈 L5: 7.0 avg (hit 100% of L5)"
+          - generic [ref=e2525]: 📅 Stats from Mar 29 (6d ago ⚠️ STALE)
+          - generic [ref=e2526]: 🥶 28°F — cold affects bat speed
+          - generic [ref=e2527]:
+            - text: 8 books aligned · fair line
+            - generic [ref=e2528]: score 0.54
+          - generic [ref=e2530]: Generated 3:17 PM ET
+          - generic [ref=e2531]:
+            - button "OVER" [ref=e2532] [cursor=pointer]
+            - button "UNDER" [ref=e2533] [cursor=pointer]
+    - generic [ref=e2534]:
+      - generic [ref=e2535]:
+        - generic [ref=e2536]: Arizona Diamondbacks vs Atlanta Braves
+        - generic [ref=e2537]: Sun 5 Apr, 16:11 ET
+      - generic [ref=e2538]:
+        - generic [ref=e2539]: 🏆 WINNER PREDICTION
+        - generic [ref=e2540]:
+          - generic [ref=e2541]: Arizona Diamondbacks
+          - generic [ref=e2544]: 50.1%
+        - generic [ref=e2545]:
+          - generic [ref=e2546]: Atlanta Braves
+          - generic [ref=e2549]: 49.9%
+        - generic [ref=e2550]:
+          - text: "Pick:"
+          - strong [ref=e2551]: Arizona Diamondbacks
+          - generic [ref=e2552]: LOW
+          - text: "50.1% confidence · Odds: 1.95"
+      - generic [ref=e2553]: 💰 SAFE PICKS — Arizona Diamondbacks vs Atlanta Braves (stats + odds + history all agree)
+      - generic [ref=e2554]:
+        - generic [ref=e2555]:
+          - generic [ref=e2556]:
+            - generic [ref=e2557]: 💰 SAFE
+            - generic [ref=e2558]: MED
+          - generic [ref=e2559]: Michael Harris II
+          - generic [ref=e2560]: HITS RUNS RBIS
+          - generic [ref=e2561]: "1.5"
+          - generic [ref=e2562]:
+            - generic [ref=e2563]: UNDER
+            - generic [ref=e2564]: 69.5%
+          - generic [ref=e2565]:
+            - generic [ref=e2566]: 🎲 70% model probability
+            - generic [ref=e2567]: ✅ Hit in 80% of last 5 games
+            - generic [ref=e2568]: 5 books agree · 2.0% vig
+        - generic [ref=e2569]:
+          - generic [ref=e2570]:
+            - generic [ref=e2571]: 💰 SAFE
+            - generic [ref=e2572]: MED
+          - generic [ref=e2573]: Nolan Arenado
+          - generic [ref=e2574]: HITS RUNS RBIS
+          - generic [ref=e2575]: "1.5"
+          - generic [ref=e2576]:
+            - generic [ref=e2577]: UNDER
+            - generic [ref=e2578]: 66.3%
+          - generic [ref=e2579]:
+            - generic [ref=e2580]: 🎲 66% model probability
+            - generic [ref=e2581]: ✅ Hit in 60% of last 5 games
+            - generic [ref=e2582]: 5 books agree · 2.9% vig
+      - generic [ref=e2583]: 🎯 TOP PICKS — Arizona Diamondbacks vs Atlanta Braves
+      - generic [ref=e2584]:
+        - generic [ref=e2585]:
+          - generic [ref=e2586]:
+            - generic [ref=e2587]: A★
+            - generic [ref=e2588]: HIGH
+          - generic [ref=e2589]: Mauricio Dubon
+          - generic [ref=e2590]: HITS
+          - generic [ref=e2591]: "0.5"
+          - generic [ref=e2592]:
+            - generic [ref=e2593]: UNDER
+            - generic [ref=e2594]: 79.2% implied
+          - generic [ref=e2595]:
+            - generic [ref=e2596]:
+              - text: "Model: 90% / Book: 79% →"
+              - strong [ref=e2597]: +10.8% edge
+            - generic [ref=e2598]: 5.0% stake
+          - generic [ref=e2599]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e2600]:
+            - text: 79.2% market edge · 4 books · fair line
+            - generic [ref=e2601]: score 0.72
+          - generic [ref=e2603]: Generated 3:17 PM ET
+          - generic [ref=e2604]:
+            - button "OVER" [ref=e2605] [cursor=pointer]
+            - button "UNDER" [ref=e2606] [cursor=pointer]
+        - generic [ref=e2607]:
+          - generic [ref=e2608]:
+            - generic [ref=e2609]: A
+            - generic [ref=e2610]: HIGH
+          - generic [ref=e2611]: Brandon Pfaadt
+          - generic [ref=e2612]: STRIKEOUTS
+          - generic [ref=e2613]: "4.5"
+          - generic [ref=e2614]:
+            - generic [ref=e2615]: UNDER
+            - generic [ref=e2616]: 78.7% stats override
+            - generic [ref=e2617]: ⚡ FLIPPED
+          - generic [ref=e2618]:
+            - generic [ref=e2619]:
+              - text: "Model: 79% / Book: 42% →"
+              - strong [ref=e2620]: +37.1% edge
+            - generic [ref=e2621]: 5.0% stake
+          - generic [ref=e2622]:
+            - text: ⚠️ Stats data 5d old
+            - text: ⚠️ Only 1 games of data — low sample
+            - text: ⚠️ Edge +37% is unusually high — verify line is current
+          - generic [ref=e2623]: 📊 21% OVER / 79% UNDER (L1 distribution)
+          - generic [ref=e2624]: "🎲 Hit prob: 79%"
+          - generic [ref=e2625]: "📈 L5: 3.0 avg (hit 0% of L5)"
+          - generic [ref=e2626]: 📅 Stats from Mar 30 (5d ago ⚠️ STALE)
+          - generic [ref=e2627]:
+            - text: 78.7% market edge · 7 books aligned · fair line
+            - generic [ref=e2628]: score 0.71
+          - generic [ref=e2630]: Generated 3:17 PM ET
+          - generic [ref=e2631]:
+            - button "OVER" [ref=e2632] [cursor=pointer]
+            - button "UNDER" [ref=e2633] [cursor=pointer]
+        - generic [ref=e2634]:
+          - generic [ref=e2635]:
+            - generic [ref=e2636]: B
+            - generic [ref=e2637]: HIGH
+          - generic [ref=e2638]: Nolan Arenado
+          - generic [ref=e2639]: HITS
+          - generic [ref=e2640]: "1.5"
+          - generic [ref=e2641]:
+            - generic [ref=e2642]: UNDER
+            - generic [ref=e2643]: 77.8% implied
+          - generic [ref=e2644]:
+            - generic [ref=e2645]:
+              - text: "Model: 81% / Book: 78% →"
+              - strong [ref=e2646]: +3.1% edge
+            - generic [ref=e2647]: 5.0% stake
+          - generic [ref=e2648]: ✅ Data verified
+          - generic [ref=e2649]: 📊 19% OVER / 81% UNDER (L8 distribution)
+          - generic [ref=e2650]: "🎲 Hit prob: 81% 🎯 Consistent"
+          - generic [ref=e2651]: "📈 L5: 0.8 avg 🎯 Consistent (hit 0% of L5)"
+          - generic [ref=e2652]: "🔥 HOT: L5 0.8 vs L15 0.6"
+          - generic [ref=e2653]:
+            - text: 77.8% market edge · 4 books · fair line
+            - generic [ref=e2654]: score 0.70
+          - generic [ref=e2656]: Generated 3:17 PM ET
+          - generic [ref=e2657]:
+            - button "OVER" [ref=e2658] [cursor=pointer]
+            - button "UNDER" [ref=e2659] [cursor=pointer]
+        - generic [ref=e2660]:
+          - generic [ref=e2661]:
+            - generic [ref=e2662]: B
+            - generic [ref=e2663]: HIGH
+          - generic [ref=e2664]: Drake Baldwin
+          - generic [ref=e2665]: HITS RUNS RBIS
+          - generic [ref=e2666]: "1.5"
+          - generic [ref=e2667]:
+            - generic [ref=e2668]: OVER
+            - generic [ref=e2669]: 76.4% stats override
+            - generic [ref=e2670]: ⚡ FLIPPED
+          - generic [ref=e2671]:
+            - generic [ref=e2672]:
+              - text: "Model: 76% / Book: 49% →"
+              - strong [ref=e2673]: +27.0% edge
+            - generic [ref=e2674]: 5.0% stake
+          - generic [ref=e2675]: ⚠️ Edge +27% is unusually high — verify line is current
+          - generic [ref=e2676]: 📊 76% OVER / 24% UNDER (L9 distribution)
+          - generic [ref=e2677]: "🎲 Hit prob: 76%"
+          - generic [ref=e2678]: "📈 L5: 3.2 avg (hit 60% of L5)"
+          - generic [ref=e2679]: "↗ Trending up: L5 3.2 vs L15 2.9"
+          - generic [ref=e2680]:
+            - text: 76.4% market edge · 5 books aligned · fair line
+            - generic [ref=e2681]: score 0.45
+          - generic [ref=e2683]: Generated 3:17 PM ET
+          - generic [ref=e2684]:
+            - button "OVER" [ref=e2685] [cursor=pointer]
+            - button "UNDER" [ref=e2686] [cursor=pointer]
+        - generic [ref=e2687]:
+          - generic [ref=e2688]:
+            - generic [ref=e2689]: B
+            - generic [ref=e2690]: HIGH
+          - generic [ref=e2691]: Matt Olson
+          - generic [ref=e2692]: HITS RUNS RBIS
+          - generic [ref=e2693]: "1.5"
+          - generic [ref=e2694]:
+            - generic [ref=e2695]: OVER
+            - generic [ref=e2696]: 70.1% stats override
+            - generic [ref=e2697]: ⚡ FLIPPED
+          - generic [ref=e2698]:
+            - generic [ref=e2699]:
+              - text: "Model: 70% / Book: 48% →"
+              - strong [ref=e2700]: +22.1% edge
+            - generic [ref=e2701]: 5.0% stake
+          - generic [ref=e2702]: ⚠️ Edge +22% is unusually high — verify line is current
+          - generic [ref=e2703]: 📊 70% OVER / 30% UNDER (L9 distribution)
+          - generic [ref=e2704]: "🎲 Hit prob: 70% 🎲 Volatile"
+          - generic [ref=e2705]: "📈 L5: 3.2 avg 🎲 Volatile (hit 60% of L5)"
+          - generic [ref=e2706]: "🔥 HOT: L5 3.2 vs L15 2.6"
+          - generic [ref=e2707]:
+            - text: 70.1% market edge · 5 books aligned · fair line
+            - generic [ref=e2708]: score 0.42
+          - generic [ref=e2710]: Generated 3:17 PM ET
+          - generic [ref=e2711]:
+            - button "OVER" [ref=e2712] [cursor=pointer]
+            - button "UNDER" [ref=e2713] [cursor=pointer]
+    - generic [ref=e2714]:
+      - generic [ref=e2715]:
+        - generic [ref=e2716]: Cleveland Guardians vs Chicago Cubs
+        - generic [ref=e2717]: Sun 5 Apr, 16:41 ET
+      - generic [ref=e2718]:
+        - generic [ref=e2719]: 🏆 WINNER PREDICTION
+        - generic [ref=e2720]:
+          - generic [ref=e2721]: Cleveland Guardians
+          - generic [ref=e2724]: 45.8%
+        - generic [ref=e2725]:
+          - generic [ref=e2726]: Chicago Cubs
+          - generic [ref=e2729]: 54.2%
+        - generic [ref=e2730]:
+          - text: "Pick:"
+          - strong [ref=e2731]: Chicago Cubs
+          - generic [ref=e2732]: LOW
+          - text: "54.2% confidence · Odds: 1.81"
+      - generic [ref=e2733]: No qualifying player props.
+    - generic [ref=e2734]:
+      - generic [ref=e2735]:
+        - generic [ref=e2736]: Detroit Tigers vs St. Louis Cardinals
+        - generic [ref=e2737]: Sun 5 Apr, 19:21 ET
+      - generic [ref=e2738]:
+        - generic [ref=e2739]: 🏆 WINNER PREDICTION
+        - generic [ref=e2740]:
+          - generic [ref=e2741]: Detroit Tigers
+          - generic [ref=e2744]: 55.6%
+        - generic [ref=e2745]:
+          - generic [ref=e2746]: St. Louis Cardinals
+          - generic [ref=e2749]: 44.4%
+        - generic [ref=e2750]:
+          - text: "Pick:"
+          - strong [ref=e2751]: Detroit Tigers
+          - generic [ref=e2752]: MED
+          - text: "55.6% confidence · Odds: 1.76"
+      - generic [ref=e2753]: 🎯 TOP PICKS — Detroit Tigers vs St. Louis Cardinals
+      - generic [ref=e2754]:
+        - generic [ref=e2755]:
+          - generic [ref=e2756]:
+            - generic [ref=e2757]: A★
+            - generic [ref=e2758]: HIGH
+          - generic [ref=e2759]: Colt Keith
+          - generic [ref=e2760]: HITS
+          - generic [ref=e2761]: "0.5"
+          - generic [ref=e2762]:
+            - generic [ref=e2763]: UNDER
+            - generic [ref=e2764]: 77.8% implied
+          - generic [ref=e2765]:
+            - generic [ref=e2766]:
+              - text: "Model: 20% / Book: 78% →"
+              - strong [ref=e2767]: "-57.6% edge"
+            - generic [ref=e2768]: No bet
+          - generic [ref=e2769]: ⚠️ Stats say OVER 80% but odds say UNDER 78% — check lineup/matchup
+          - generic [ref=e2770]: ✅ Data verified
+          - generic [ref=e2771]: 📊 80% OVER / 20% UNDER (L7 distribution)
+          - generic [ref=e2772]: "🎲 Hit prob: 20% 🎯 Consistent"
+          - generic [ref=e2773]: "📈 L5: 1.6 avg 🎯 Consistent (hit 100% of L5)"
+          - generic [ref=e2774]: "↗ Trending up: L5 1.6 vs L15 1.4"
+          - generic [ref=e2775]: 💨 Wind 19mph — monitor park factors
+          - generic [ref=e2776]:
+            - text: 77.8% market edge · 4 books · fair line
+            - generic [ref=e2777]: score 0.66
+          - generic [ref=e2779]: Generated 3:17 PM ET
+          - generic [ref=e2780]:
+            - button "OVER" [ref=e2781] [cursor=pointer]
+            - button "UNDER" [ref=e2782] [cursor=pointer]
+        - generic [ref=e2783]:
+          - generic [ref=e2784]:
+            - generic [ref=e2785]: A
+            - generic [ref=e2786]: HIGH
+          - generic [ref=e2787]: Ivan Herrera
+          - generic [ref=e2788]: HITS
+          - generic [ref=e2789]: "0.5"
+          - generic [ref=e2790]:
+            - generic [ref=e2791]: UNDER
+            - generic [ref=e2792]: 74.9% implied
+          - generic [ref=e2793]:
+            - generic [ref=e2794]:
+              - text: "Model: 37% / Book: 75% →"
+              - strong [ref=e2795]: "-38.1% edge"
+            - generic [ref=e2796]: No bet
+          - generic [ref=e2797]: ⚠️ Stats say OVER 63% but odds say UNDER 75% — check lineup/matchup
+          - generic [ref=e2798]: ⚠️ Model 37% but actual hit rate 0% — verify
+          - generic [ref=e2799]: 📊 63% OVER / 37% UNDER (L8 distribution)
+          - generic [ref=e2800]: "🎲 Hit prob: 37% 🎯 Consistent"
+          - generic [ref=e2801]: "📈 L5: 1.0 avg 🎯 Consistent (hit 100% of L5)"
+          - generic [ref=e2802]: "🔥 HOT: L5 1.0 vs L15 0.8"
+          - generic [ref=e2803]: 💨 Wind 19mph — monitor park factors
+          - generic [ref=e2804]:
+            - text: 74.9% market edge · 4 books · fair line
+            - generic [ref=e2805]: score 0.63
+          - generic [ref=e2807]: Generated 3:17 PM ET
+          - generic [ref=e2808]:
+            - button "OVER" [ref=e2809] [cursor=pointer]
+            - button "UNDER" [ref=e2810] [cursor=pointer]
+        - generic [ref=e2811]:
+          - generic [ref=e2812]:
+            - generic [ref=e2813]: B
+            - generic [ref=e2814]: HIGH
+          - generic [ref=e2815]: Jordan Walker
+          - generic [ref=e2816]: TOTAL BASES
+          - generic [ref=e2817]: "2.5"
+          - generic [ref=e2818]:
+            - generic [ref=e2819]: UNDER
+            - generic [ref=e2820]: 78.5% implied
+          - generic [ref=e2821]:
+            - generic [ref=e2822]:
+              - text: "Model: 82% / Book: 79% →"
+              - strong [ref=e2823]: +3.7% edge
+            - generic [ref=e2824]: 5.0% stake
+          - generic [ref=e2825]: ✅ Data verified
+          - generic [ref=e2826]: 📊 18% OVER / 82% UNDER (L8 distribution)
+          - generic [ref=e2827]: "🎲 Hit prob: 82% 🎲 Volatile"
+          - generic [ref=e2828]: "📈 L5: 1.4 avg 🎲 Volatile (hit 20% of L5)"
+          - generic [ref=e2829]: "🥶 COLD: L5 1.4 vs L15 2.0"
+          - generic [ref=e2830]: 💨 Wind 19mph — monitor park factors
+          - generic [ref=e2831]:
+            - text: 78.5% market edge · 4 books · fair line
+            - generic [ref=e2832]: score 0.54
+          - generic [ref=e2834]: Generated 3:17 PM ET
+          - generic [ref=e2835]:
+            - button "OVER" [ref=e2836] [cursor=pointer]
+            - button "UNDER" [ref=e2837] [cursor=pointer]
+        - generic [ref=e2838]:
+          - generic [ref=e2839]:
+            - generic [ref=e2840]: B
+            - generic [ref=e2841]: MED
+          - generic [ref=e2842]: Riley Greene
+          - generic [ref=e2843]: HITS RUNS RBIS
+          - generic [ref=e2844]: "1.5"
+          - generic [ref=e2845]:
+            - generic [ref=e2846]: OVER
+            - generic [ref=e2847]: 76.9% stats override
+            - generic [ref=e2848]: ⚡ FLIPPED
+          - generic [ref=e2849]:
+            - generic [ref=e2850]:
+              - text: "Model: 77% / Book: 50% →"
+              - strong [ref=e2851]: +27.4% edge
+            - generic [ref=e2852]: 5.0% stake
+          - generic [ref=e2853]: ⚠️ Edge +27% is unusually high — verify line is current
+          - generic [ref=e2854]: 📊 77% OVER / 23% UNDER (L8 distribution)
+          - generic [ref=e2855]: "🎲 Hit prob: 77% 🎯 Consistent"
+          - generic [ref=e2856]: "📈 L5: 2.8 avg 🎯 Consistent (hit 60% of L5)"
+          - generic [ref=e2857]: "↗ Trending up: L5 2.8 vs L15 2.3"
+          - generic [ref=e2858]: 💨 Wind 19mph — monitor park factors
+          - generic [ref=e2859]:
+            - text: 76.9% market edge · 5 books aligned · fair line
+            - generic [ref=e2860]: score 0.26
+          - generic [ref=e2862]: Generated 3:17 PM ET
+          - generic [ref=e2863]:
+            - button "OVER" [ref=e2864] [cursor=pointer]
+            - button "UNDER" [ref=e2865] [cursor=pointer]
+    - generic [ref=e2866]:
+      - generic [ref=e2867]:
+        - generic [ref=e2868]: Cleveland Guardians vs Kansas City Royals
+        - generic [ref=e2869]: Mon 6 Apr, 18:11 ET
+      - generic [ref=e2870]:
+        - generic [ref=e2871]: 🏆 WINNER PREDICTION
+        - generic [ref=e2872]:
+          - generic [ref=e2873]: Cleveland Guardians
+          - generic [ref=e2876]: 51.2%
+        - generic [ref=e2877]:
+          - generic [ref=e2878]: Kansas City Royals
+          - generic [ref=e2881]: 48.8%
+        - generic [ref=e2882]:
+          - text: "Pick:"
+          - strong [ref=e2883]: Cleveland Guardians
+          - generic [ref=e2884]: LOW
+          - text: "51.2% confidence · Odds: 1.91"
+      - generic [ref=e2885]: No qualifying player props.
+    - generic [ref=e2886]:
+      - generic [ref=e2887]:
+        - generic [ref=e2888]: Miami Marlins vs Cincinnati Reds
+        - generic [ref=e2889]: Mon 6 Apr, 18:41 ET
+      - generic [ref=e2890]:
+        - generic [ref=e2891]: 🏆 WINNER PREDICTION
+        - generic [ref=e2892]:
+          - generic [ref=e2893]: Miami Marlins
+          - generic [ref=e2896]: 52.8%
+        - generic [ref=e2897]:
+          - generic [ref=e2898]: Cincinnati Reds
+          - generic [ref=e2901]: 47.2%
+        - generic [ref=e2902]:
+          - text: "Pick:"
+          - strong [ref=e2903]: Miami Marlins
+          - generic [ref=e2904]: LOW
+          - text: "52.8% confidence · Odds: 1.85"
+      - generic [ref=e2905]: No qualifying player props.
+    - generic [ref=e2906]:
+      - generic [ref=e2907]:
+        - generic [ref=e2908]: Pittsburgh Pirates vs San Diego Padres
+        - generic [ref=e2909]: Mon 6 Apr, 18:41 ET
+      - generic [ref=e2910]:
+        - generic [ref=e2911]: 🏆 WINNER PREDICTION
+        - generic [ref=e2912]:
+          - generic [ref=e2913]: Pittsburgh Pirates
+          - generic [ref=e2916]: 52.9%
+        - generic [ref=e2917]:
+          - generic [ref=e2918]: San Diego Padres
+          - generic [ref=e2921]: 47.1%
+        - generic [ref=e2922]:
+          - text: "Pick:"
+          - strong [ref=e2923]: Pittsburgh Pirates
+          - generic [ref=e2924]: LOW
+          - text: "52.9% confidence · Odds: 1.85"
+      - generic [ref=e2925]: No qualifying player props.
+    - generic [ref=e2926]:
+      - generic [ref=e2927]:
+        - generic [ref=e2928]: Boston Red Sox vs Milwaukee Brewers
+        - generic [ref=e2929]: Mon 6 Apr, 18:46 ET
+      - generic [ref=e2930]:
+        - generic [ref=e2931]: 🏆 WINNER PREDICTION
+        - generic [ref=e2932]:
+          - generic [ref=e2933]: Boston Red Sox
+          - generic [ref=e2936]: 49.1%
+        - generic [ref=e2937]:
+          - generic [ref=e2938]: Milwaukee Brewers
+          - generic [ref=e2941]: 50.9%
+        - generic [ref=e2942]:
+          - text: "Pick:"
+          - strong [ref=e2943]: Milwaukee Brewers
+          - generic [ref=e2944]: LOW
+          - text: "50.9% confidence · Odds: 1.93"
+      - generic [ref=e2945]: No qualifying player props.
+    - generic [ref=e2946]:
+      - generic [ref=e2947]:
+        - generic [ref=e2948]: Washington Nationals vs St. Louis Cardinals
+        - generic [ref=e2949]: Mon 6 Apr, 18:46 ET
+      - generic [ref=e2950]:
+        - generic [ref=e2951]: 🏆 WINNER PREDICTION
+        - generic [ref=e2952]:
+          - generic [ref=e2953]: Washington Nationals
+          - generic [ref=e2956]: 50.0%
+        - generic [ref=e2957]:
+          - generic [ref=e2958]: St. Louis Cardinals
+          - generic [ref=e2961]: 50.0%
+        - generic [ref=e2962]:
+          - text: "Pick:"
+          - strong [ref=e2963]: Washington Nationals
+          - generic [ref=e2964]: LOW
+          - text: "50.0% confidence · Odds: 1.95"
+      - generic [ref=e2965]: No qualifying player props.
+    - generic [ref=e2966]:
+      - generic [ref=e2967]:
+        - generic [ref=e2968]: Toronto Blue Jays vs Los Angeles Dodgers
+        - generic [ref=e2969]: Mon 6 Apr, 19:08 ET
+      - generic [ref=e2970]:
+        - generic [ref=e2971]: 🏆 WINNER PREDICTION
+        - generic [ref=e2972]:
+          - generic [ref=e2973]: Toronto Blue Jays
+          - generic [ref=e2976]: 44.1%
+        - generic [ref=e2977]:
+          - generic [ref=e2978]: Los Angeles Dodgers
+          - generic [ref=e2981]: 55.9%
+        - generic [ref=e2982]:
+          - text: "Pick:"
+          - strong [ref=e2983]: Los Angeles Dodgers
+          - generic [ref=e2984]: MED
+          - text: "55.9% confidence · Odds: 1.75"
+      - generic [ref=e2985]: No qualifying player props.
+    - generic [ref=e2986]:
+      - generic [ref=e2987]:
+        - generic [ref=e2988]: Minnesota Twins vs Detroit Tigers
+        - generic [ref=e2989]: Mon 6 Apr, 19:41 ET
+      - generic [ref=e2990]:
+        - generic [ref=e2991]: 🏆 WINNER PREDICTION
+        - generic [ref=e2992]:
+          - generic [ref=e2993]: Minnesota Twins
+          - generic [ref=e2996]: 52.7%
+        - generic [ref=e2997]:
+          - generic [ref=e2998]: Detroit Tigers
+          - generic [ref=e3001]: 47.3%
+        - generic [ref=e3002]:
+          - text: "Pick:"
+          - strong [ref=e3003]: Minnesota Twins
+          - generic [ref=e3004]: LOW
+          - text: "52.7% confidence · Odds: 1.87"
+      - generic [ref=e3005]: No qualifying player props.
+  - button "📋 My Picks" [ref=e21] [cursor=pointer]

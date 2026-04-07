@@ -1,0 +1,541 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "Reed.co.uk" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7]: Reed.co.uk
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - link "Jobs" [ref=e10] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e11]:
+          - link "Courses" [ref=e12] [cursor=pointer]:
+            - /url: /courses/?itm_source=js_navigation&itm_medium=jobseeker&itm_campaign=courses_tab&itm_content=standard_version
+        - listitem [ref=e13]:
+          - link "Career advice" [ref=e14] [cursor=pointer]:
+            - /url: /career-advice
+        - listitem [ref=e15]:
+          - link "Recruiting? Post a job" [ref=e16] [cursor=pointer]:
+            - /url: /recruiter?directjob=recruiter
+      - list [ref=e17]:
+        - listitem [ref=e18]:
+          - link "2 Saved jobs" [ref=e19] [cursor=pointer]:
+            - /url: /account/jobs/shortlisted-jobs
+            - generic [ref=e21]: "2"
+            - text: Saved jobs
+        - listitem [ref=e22]:
+          - link "Adegboyega" [ref=e23] [cursor=pointer]:
+            - /url: /candidate-profile
+            - generic [ref=e25]: Adegboyega
+      - generic [ref=e27]: You haven't saved any jobs yet
+      - listitem [ref=e28]:
+        - menuitem [ref=e29] [cursor=pointer]: Profile and CV
+      - listitem [ref=e30]:
+        - menuitem [ref=e31] [cursor=pointer]: Draft applications
+      - listitem [ref=e32]:
+        - menuitem [ref=e33] [cursor=pointer]: Saved jobs
+      - listitem [ref=e34]:
+        - menuitem [ref=e35] [cursor=pointer]: Jobs applied for
+      - listitem [ref=e36]:
+        - menuitem [ref=e37] [cursor=pointer]: Your searches and alerts
+      - listitem [ref=e38]:
+        - menuitem [ref=e39] [cursor=pointer]: Get the Job Search app
+      - listitem [ref=e40]:
+        - menuitem [ref=e41] [cursor=pointer]: Course purchase history
+      - listitem [ref=e42]:
+        - menuitem [ref=e43] [cursor=pointer]: Account
+      - listitem [ref=e44]:
+        - menuitem [ref=e45] [cursor=pointer]: Sign out
+  - generic [ref=e46]:
+    - search [ref=e47]:
+      - group "Find a company" [ref=e50]:
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e54]: Find a company
+            - textbox "keywords e.g. reed.co.uk" [ref=e56]:
+              - /placeholder: keywords e.g. Reed.co.uk
+          - button "Search" [ref=e59] [cursor=pointer]
+    - main [ref=e60]:
+      - generic [ref=e61]:
+        - complementary [ref=e62]:
+          - generic [ref=e63]:
+            - heading "Company type" [level=4] [ref=e64]
+            - list [ref=e65]:
+              - listitem [ref=e66]:
+                - link "Any" [ref=e67] [cursor=pointer]:
+                  - /url: /recruiterdirectory
+                  - radio "Any" [checked]
+                  - generic: Any
+              - listitem [ref=e68]:
+                - link "Recruitment Agency" [ref=e69] [cursor=pointer]:
+                  - /url: /recruiterdirectory/agencies
+                  - radio "Recruitment Agency"
+                  - generic: Recruitment Agency
+              - listitem [ref=e70]:
+                - link "Direct Employer" [ref=e71] [cursor=pointer]:
+                  - /url: /recruiterdirectory/direct
+                  - radio "Direct Employer"
+                  - generic: Direct Employer
+          - generic [ref=e72]:
+            - heading "Specialism" [level=4] [ref=e73]
+            - list [ref=e74]:
+              - listitem [ref=e75]: All specialisms
+              - listitem [ref=e76]:
+                - link "Accountancy" [ref=e77] [cursor=pointer]:
+                  - /url: /recruiterdirectory/accountancy
+              - listitem [ref=e78]:
+                - link "Accountancy (Qualified)" [ref=e79] [cursor=pointer]:
+                  - /url: /recruiterdirectory/accountancy-qualified
+              - listitem [ref=e80]:
+                - link "Admin, Secretarial & PA" [ref=e81] [cursor=pointer]:
+                  - /url: /recruiterdirectory/admin-secretarial-pa
+              - listitem [ref=e82]:
+                - link "Apprenticeships" [ref=e83] [cursor=pointer]:
+                  - /url: /recruiterdirectory/apprenticeships
+              - listitem [ref=e84]:
+                - link "Banking" [ref=e85] [cursor=pointer]:
+                  - /url: /recruiterdirectory/banking
+              - listitem [ref=e86]:
+                - link "Charity & Voluntary" [ref=e87] [cursor=pointer]:
+                  - /url: /recruiterdirectory/charity-voluntary
+              - listitem [ref=e88]:
+                - link "Construction & Property" [ref=e89] [cursor=pointer]:
+                  - /url: /recruiterdirectory/construction-property
+              - listitem [ref=e90]:
+                - link "Customer Service" [ref=e91] [cursor=pointer]:
+                  - /url: /recruiterdirectory/customer-service
+              - listitem [ref=e92]:
+                - link "Education" [ref=e93] [cursor=pointer]:
+                  - /url: /recruiterdirectory/education
+              - listitem [ref=e94]:
+                - link "Energy" [ref=e95] [cursor=pointer]:
+                  - /url: /recruiterdirectory/energy
+              - listitem [ref=e96]:
+                - link "Engineering" [ref=e97] [cursor=pointer]:
+                  - /url: /recruiterdirectory/engineering
+              - listitem [ref=e98]:
+                - link "Estate Agency" [ref=e99] [cursor=pointer]:
+                  - /url: /recruiterdirectory/estate-agency
+              - listitem [ref=e100]:
+                - link "Financial Services" [ref=e101] [cursor=pointer]:
+                  - /url: /recruiterdirectory/financial-services
+              - listitem [ref=e102]:
+                - link "FMCG" [ref=e103] [cursor=pointer]:
+                  - /url: /recruiterdirectory/fmcg
+              - listitem [ref=e104]:
+                - link "General Insurance" [ref=e105] [cursor=pointer]:
+                  - /url: /recruiterdirectory/general-insurance
+              - listitem [ref=e106]:
+                - link "Graduate Training & Internships" [ref=e107] [cursor=pointer]:
+                  - /url: /recruiterdirectory/graduate-training-internships
+              - listitem [ref=e108]:
+                - link "Health & Medicine" [ref=e109] [cursor=pointer]:
+                  - /url: /recruiterdirectory/health-medicine
+              - listitem [ref=e110]:
+                - link "Hospitality & Catering" [ref=e111] [cursor=pointer]:
+                  - /url: /recruiterdirectory/hospitality-catering
+              - listitem [ref=e112]:
+                - link "Human Resources" [ref=e113] [cursor=pointer]:
+                  - /url: /recruiterdirectory/human-resources
+              - listitem [ref=e114]:
+                - link "IT & Telecoms" [ref=e115] [cursor=pointer]:
+                  - /url: /recruiterdirectory/it-telecoms
+              - listitem [ref=e116]:
+                - link "Legal" [ref=e117] [cursor=pointer]:
+                  - /url: /recruiterdirectory/legal
+              - listitem [ref=e118]:
+                - link "Leisure & Tourism" [ref=e119] [cursor=pointer]:
+                  - /url: /recruiterdirectory/leisure-tourism
+              - listitem [ref=e120]:
+                - link "Manufacturing" [ref=e121] [cursor=pointer]:
+                  - /url: /recruiterdirectory/manufacturing
+              - listitem [ref=e122]:
+                - link "Marketing & PR" [ref=e123] [cursor=pointer]:
+                  - /url: /recruiterdirectory/marketing-pr
+              - listitem [ref=e124]:
+                - link "Media, Digital & Creative" [ref=e125] [cursor=pointer]:
+                  - /url: /recruiterdirectory/media-digital-creative
+              - listitem [ref=e126]:
+                - link "Motoring & Automotive" [ref=e127] [cursor=pointer]:
+                  - /url: /recruiterdirectory/motoring-automotive
+              - listitem [ref=e128]:
+                - link "Public Sector" [ref=e129] [cursor=pointer]:
+                  - /url: /recruiterdirectory/public-sector
+              - listitem [ref=e130]:
+                - link "Purchasing" [ref=e131] [cursor=pointer]:
+                  - /url: /recruiterdirectory/purchasing
+              - listitem [ref=e132]:
+                - link "Recruitment Consultancy" [ref=e133] [cursor=pointer]:
+                  - /url: /recruiterdirectory/recruitment-consultancy
+              - listitem [ref=e134]:
+                - link "Retail" [ref=e135] [cursor=pointer]:
+                  - /url: /recruiterdirectory/retail
+              - listitem [ref=e136]:
+                - link "Sales" [ref=e137] [cursor=pointer]:
+                  - /url: /recruiterdirectory/sales
+              - listitem [ref=e138]:
+                - link "Scientific" [ref=e139] [cursor=pointer]:
+                  - /url: /recruiterdirectory/scientific
+              - listitem [ref=e140]:
+                - link "Security & Safety" [ref=e141] [cursor=pointer]:
+                  - /url: /recruiterdirectory/security-safety
+              - listitem [ref=e142]:
+                - link "Social Care" [ref=e143] [cursor=pointer]:
+                  - /url: /recruiterdirectory/social-care
+              - listitem [ref=e144]:
+                - link "Strategy & Consultancy" [ref=e145] [cursor=pointer]:
+                  - /url: /recruiterdirectory/strategy-consultancy
+              - listitem [ref=e146]:
+                - link "Training" [ref=e147] [cursor=pointer]:
+                  - /url: /recruiterdirectory/training
+              - listitem [ref=e148]:
+                - link "Transport & Logistics" [ref=e149] [cursor=pointer]:
+                  - /url: /recruiterdirectory/transport-logistics
+              - listitem [ref=e150]:
+                - link "Other" [ref=e151] [cursor=pointer]:
+                  - /url: /recruiterdirectory/other
+        - generic [ref=e152]:
+          - generic [ref=e153]:
+            - heading "Recruiter directory" [level=1] [ref=e154]
+            - paragraph [ref=e155]:
+              - text: The Recruiter Directory is your go-to resource for connecting with thousands of organisations and recruiters who are looking to fill top positions with qualified candidates.
+              - button "Read more" [ref=e156] [cursor=pointer]
+          - heading "Browse Companies" [level=2] [ref=e158]
+          - generic [ref=e159]:
+            - generic [ref=e160]:
+              - link "Hays Specialist Recruitment Limited jobs" [ref=e162] [cursor=pointer]:
+                - /url: /jobs/hays-specialist-recruitment-limited/p36210
+                - img "Hays Specialist Recruitment Limited jobs" [ref=e163]
+              - generic [ref=e164]:
+                - link "Hays Specialist Recruitment Limited jobs" [ref=e165] [cursor=pointer]:
+                  - /url: /jobs/hays-specialist-recruitment-limited/p36210
+                - text: (3311)
+            - generic [ref=e166]:
+              - link "Reed Education jobs" [ref=e168] [cursor=pointer]:
+                - /url: /jobs/reed-education/p1307
+                - img "Reed Education jobs" [ref=e169]
+              - generic [ref=e170]:
+                - link "Reed Education jobs" [ref=e171] [cursor=pointer]:
+                  - /url: /jobs/reed-education/p1307
+                - text: (2486)
+            - generic [ref=e172]:
+              - link "Academics jobs" [ref=e174] [cursor=pointer]:
+                - /url: /jobs/academics/p14099
+                - img "Academics jobs" [ref=e175]
+              - generic [ref=e176]:
+                - link "Academics jobs" [ref=e177] [cursor=pointer]:
+                  - /url: /jobs/academics/p14099
+                - text: (2303)
+            - generic [ref=e178]:
+              - link "Reed Business Support jobs" [ref=e180] [cursor=pointer]:
+                - /url: /jobs/reed-business-support/p1311
+                - img "Reed Business Support jobs" [ref=e181]
+              - generic [ref=e182]:
+                - link "Reed Business Support jobs" [ref=e183] [cursor=pointer]:
+                  - /url: /jobs/reed-business-support/p1311
+                - text: (2282)
+            - generic [ref=e185]:
+              - link "Tradewind Recruitment jobs" [ref=e187] [cursor=pointer]:
+                - /url: /jobs/tradewind-recruitment/p12807
+                - img "Tradewind Recruitment jobs" [ref=e188]
+              - generic [ref=e189]:
+                - link "Tradewind Recruitment jobs" [ref=e190] [cursor=pointer]:
+                  - /url: /jobs/tradewind-recruitment/p12807
+                - text: (2064)
+            - generic [ref=e191]:
+              - link "eFinancial Careers jobs" [ref=e193] [cursor=pointer]:
+                - /url: /jobs/efinancial-careers/p74850
+                - img "eFinancial Careers jobs" [ref=e194]
+              - generic [ref=e195]:
+                - link "eFinancial Careers jobs" [ref=e196] [cursor=pointer]:
+                  - /url: /jobs/efinancial-careers/p74850
+                - text: (1944)
+            - generic [ref=e197]:
+              - link "Reed jobs" [ref=e199] [cursor=pointer]:
+                - /url: /jobs/reed/p1342
+                - img "Reed jobs" [ref=e200]
+              - generic [ref=e201]:
+                - link "Reed jobs" [ref=e202] [cursor=pointer]:
+                  - /url: /jobs/reed/p1342
+                - text: (1516)
+            - generic [ref=e203]:
+              - link "David Lloyd Clubs jobs" [ref=e205] [cursor=pointer]:
+                - /url: /jobs/david-lloyd-clubs/p67236
+                - img "David Lloyd Clubs jobs" [ref=e206]
+              - generic [ref=e207]:
+                - link "David Lloyd Clubs jobs" [ref=e208] [cursor=pointer]:
+                  - /url: /jobs/david-lloyd-clubs/p67236
+                - text: (1515)
+            - generic [ref=e210]:
+              - link "Adecco UK Limited jobs" [ref=e212] [cursor=pointer]:
+                - /url: /jobs/adecco-uk-limited-45420/p45420
+                - img "Adecco UK Limited jobs" [ref=e213]
+              - generic [ref=e214]:
+                - link "Adecco UK Limited jobs" [ref=e215] [cursor=pointer]:
+                  - /url: /jobs/adecco-uk-limited-45420/p45420
+                - text: (1282)
+            - generic [ref=e216]:
+              - link "Rise Technical Recruitment Limited jobs" [ref=e218] [cursor=pointer]:
+                - /url: /jobs/rise-technical-recruitment-limited/p19642
+                - img "Rise Technical Recruitment Limited jobs" [ref=e219]
+              - generic [ref=e220]:
+                - link "Rise Technical Recruitment Limited jobs" [ref=e221] [cursor=pointer]:
+                  - /url: /jobs/rise-technical-recruitment-limited/p19642
+                - text: (1250)
+            - generic [ref=e222]:
+              - link "Aspire People Limited jobs" [ref=e224] [cursor=pointer]:
+                - /url: /jobs/aspire-people-limited-39578/p39578
+                - img "Aspire People Limited jobs" [ref=e225]
+              - generic [ref=e226]:
+                - link "Aspire People Limited jobs" [ref=e227] [cursor=pointer]:
+                  - /url: /jobs/aspire-people-limited-39578/p39578
+                - text: (1150)
+            - generic [ref=e228]:
+              - link "Ernest Gordon Recruitment Limited jobs" [ref=e230] [cursor=pointer]:
+                - /url: /jobs/ernest-gordon-recruitment-limited/p50272
+                - img "Ernest Gordon Recruitment Limited jobs" [ref=e231]
+              - generic [ref=e232]:
+                - link "Ernest Gordon Recruitment Limited jobs" [ref=e233] [cursor=pointer]:
+                  - /url: /jobs/ernest-gordon-recruitment-limited/p50272
+                - text: (1145)
+            - generic [ref=e235]:
+              - link "Prospero Teaching jobs" [ref=e237] [cursor=pointer]:
+                - /url: /jobs/prospero-teaching/p14135
+                - img "Prospero Teaching jobs" [ref=e238]
+              - generic [ref=e239]:
+                - link "Prospero Teaching jobs" [ref=e240] [cursor=pointer]:
+                  - /url: /jobs/prospero-teaching/p14135
+                - text: (1125)
+            - generic [ref=e241]:
+              - link "ITOL Recruit jobs" [ref=e243] [cursor=pointer]:
+                - /url: /jobs/itonlinelearning-0/p57826
+                - img "ITOL Recruit jobs" [ref=e244]
+              - generic [ref=e245]:
+                - link "ITOL Recruit jobs" [ref=e246] [cursor=pointer]:
+                  - /url: /jobs/itonlinelearning-0/p57826
+                - text: (1124)
+            - generic [ref=e247]:
+              - link "Reeson Education jobs" [ref=e249] [cursor=pointer]:
+                - /url: /jobs/reeson-education/p3501
+                - img "Reeson Education jobs" [ref=e250]
+              - generic [ref=e251]:
+                - link "Reeson Education jobs" [ref=e252] [cursor=pointer]:
+                  - /url: /jobs/reeson-education/p3501
+                - text: (1122)
+            - generic [ref=e253]:
+              - link "IT Career Switch jobs" [ref=e255] [cursor=pointer]:
+                - /url: /jobs/it-career-switch-ltd/p59958
+                - img "IT Career Switch jobs" [ref=e256]
+              - generic [ref=e257]:
+                - link "IT Career Switch jobs" [ref=e258] [cursor=pointer]:
+                  - /url: /jobs/it-career-switch-ltd/p59958
+                - text: (1107)
+            - generic [ref=e260]:
+              - link "Michael Page Finance jobs" [ref=e262] [cursor=pointer]:
+                - /url: /jobs/michael-page-finance-25836/p25836
+                - img "Michael Page Finance jobs" [ref=e263]
+              - generic [ref=e264]:
+                - link "Michael Page Finance jobs" [ref=e265] [cursor=pointer]:
+                  - /url: /jobs/michael-page-finance-25836/p25836
+                - text: (1091)
+            - generic [ref=e266]:
+              - link "Aldi jobs" [ref=e268] [cursor=pointer]:
+                - /url: /jobs/aldi-30089/p30089
+                - img "Aldi jobs" [ref=e269]
+              - generic [ref=e270]:
+                - link "Aldi jobs" [ref=e271] [cursor=pointer]:
+                  - /url: /jobs/aldi-30089/p30089
+                - text: (1055)
+            - generic [ref=e272]:
+              - link "Sanctuary Personnel jobs" [ref=e274] [cursor=pointer]:
+                - /url: /jobs/sanctuary-personnel-ltd/p3956
+                - img "Sanctuary Personnel jobs" [ref=e275]
+              - generic [ref=e276]:
+                - link "Sanctuary Personnel jobs" [ref=e277] [cursor=pointer]:
+                  - /url: /jobs/sanctuary-personnel-ltd/p3956
+                - text: (1048)
+            - generic [ref=e278]:
+              - link "Penguin Recruitment jobs" [ref=e280] [cursor=pointer]:
+                - /url: /jobs/penguin-recruitment/p2808
+                - img "Penguin Recruitment jobs" [ref=e281]
+              - generic [ref=e282]:
+                - link "Penguin Recruitment jobs" [ref=e283] [cursor=pointer]:
+                  - /url: /jobs/penguin-recruitment/p2808
+                - text: (1009)
+          - list [ref=e287]:
+            - listitem [ref=e288]: Prev
+            - listitem [ref=e289]: "1"
+            - listitem [ref=e290]:
+              - link "2" [ref=e291] [cursor=pointer]:
+                - /url: /recruiterdirectory?pageno=2
+            - listitem [ref=e292]:
+              - link "3" [ref=e293] [cursor=pointer]:
+                - /url: /recruiterdirectory?pageno=3
+            - listitem [ref=e294]:
+              - link "4" [ref=e295] [cursor=pointer]:
+                - /url: /recruiterdirectory?pageno=4
+            - listitem [ref=e296]:
+              - link "5" [ref=e297] [cursor=pointer]:
+                - /url: /recruiterdirectory?pageno=5
+            - listitem [ref=e298]: ...
+            - listitem [ref=e299]:
+              - link "194" [ref=e300] [cursor=pointer]:
+                - /url: /recruiterdirectory?pageno=194
+            - listitem [ref=e301]:
+              - link "Next" [ref=e302] [cursor=pointer]:
+                - /url: /recruiterdirectory?pageno=2
+  - contentinfo [ref=e303]:
+    - generic [ref=e304]:
+      - generic [ref=e305]: Footer
+      - list [ref=e307]:
+        - listitem [ref=e308]:
+          - navigation [ref=e309]:
+            - heading "JOBS" [level=3] [ref=e310]
+            - list [ref=e311]:
+              - listitem [ref=e312]:
+                - link "Contact us" [ref=e313] [cursor=pointer]:
+                  - /url: /enquiries
+              - listitem [ref=e314]:
+                - link "Job search" [ref=e315] [cursor=pointer]:
+                  - /url: /jobs
+              - listitem [ref=e316]:
+                - link "Recruiter directory" [ref=e317] [cursor=pointer]:
+                  - /url: /recruiterdirectory
+              - listitem [ref=e318]:
+                - link "Work from home" [ref=e319] [cursor=pointer]:
+                  - /url: /jobs/work-from-home-jobs
+              - listitem [ref=e320]:
+                - link "Browse jobs" [ref=e321] [cursor=pointer]:
+                  - /url: /popularjobs
+              - listitem [ref=e322]:
+                - link "Browse locations" [ref=e323] [cursor=pointer]:
+                  - /url: /location
+              - listitem [ref=e324]:
+                - link "Popular searches" [ref=e325] [cursor=pointer]:
+                  - /url: /popularsearches
+              - listitem [ref=e326]:
+                - link "Career advice" [ref=e327] [cursor=pointer]:
+                  - /url: /career-advice
+              - listitem [ref=e328]:
+                - link "Tax calculator" [ref=e329] [cursor=pointer]:
+                  - /url: /tax-calculator
+              - listitem [ref=e330]:
+                - link "Average salary checker" [ref=e331] [cursor=pointer]:
+                  - /url: /average-salary
+              - listitem [ref=e332]:
+                - link "Help" [ref=e333] [cursor=pointer]:
+                  - /url: /help
+              - listitem [ref=e334]:
+                - link "Contact a Reed office" [ref=e335] [cursor=pointer]:
+                  - /url: https://www.reedglobal.com/en_GB/web/reedgb/contact-us
+              - listitem [ref=e336]:
+                - link "Sitemap" [ref=e337] [cursor=pointer]:
+                  - /url: /html-sitemap
+        - listitem [ref=e338]:
+          - navigation [ref=e339]:
+            - heading "COURSES" [level=3] [ref=e340]
+            - list [ref=e341]:
+              - listitem [ref=e342]:
+                - link "Help" [ref=e343] [cursor=pointer]:
+                  - /url: /courses/help
+              - listitem [ref=e344]:
+                - link "Contact us" [ref=e345] [cursor=pointer]:
+                  - /url: /courses/contact-us
+              - listitem [ref=e346]:
+                - link "Find a course" [ref=e347] [cursor=pointer]:
+                  - /url: /courses/
+              - listitem [ref=e348]:
+                - link "View all subjects" [ref=e349] [cursor=pointer]:
+                  - /url: /courses/directory
+              - listitem [ref=e350]:
+                - link "Discount courses" [ref=e351] [cursor=pointer]:
+                  - /url: /courses/discount
+              - listitem [ref=e352]:
+                - link "Online courses" [ref=e353] [cursor=pointer]:
+                  - /url: /courses/online
+              - listitem [ref=e354]:
+                - link "Free courses" [ref=e355] [cursor=pointer]:
+                  - /url: /courses/free
+              - listitem [ref=e356]:
+                - link "Awarding body directory" [ref=e357] [cursor=pointer]:
+                  - /url: /courses/awarding-bodies
+              - listitem [ref=e358]:
+                - link "Career guides" [ref=e359] [cursor=pointer]:
+                  - /url: /courses/career-guides
+              - listitem [ref=e360]:
+                - link "Advertise a course" [ref=e361] [cursor=pointer]:
+                  - /url: /courses/providers/
+              - listitem [ref=e362]:
+                - link "Courses sitemap" [ref=e363] [cursor=pointer]:
+                  - /url: /courses/html-sitemap
+        - listitem [ref=e364]:
+          - navigation [ref=e365]:
+            - heading "MORE FROM Reed.co.uk" [level=3] [ref=e366]
+            - list [ref=e367]:
+              - listitem [ref=e368]:
+                - link "About us" [ref=e369] [cursor=pointer]:
+                  - /url: /about
+              - listitem [ref=e370]:
+                - link "Careers at Reed.co.uk" [ref=e371] [cursor=pointer]:
+                  - /url: https://www.reed.com/careers/jobs?businessDivision=Reed.co.uk
+              - listitem [ref=e372]:
+                - link "Press office" [ref=e373] [cursor=pointer]:
+                  - /url: /press-office
+              - listitem [ref=e374]:
+                - link "Corporate governance" [ref=e375] [cursor=pointer]:
+                  - /url: /corporate-governance
+              - listitem [ref=e376]:
+                - link "Modern slavery statement" [ref=e377] [cursor=pointer]:
+                  - /url: https://www.reed.co.uk/cdn/jobseeker/pdf/Reed_MSA_Statement.pdf
+    - generic [ref=e378]:
+      - generic [ref=e379]: Secondary footer
+      - generic [ref=e380]:
+        - generic [ref=e382]:
+          - link "Learn how Reed is leading the way in philanthropy" [ref=e383] [cursor=pointer]:
+            - /url: https://philco.org.uk/
+            - generic [ref=e384]: PhilCo
+          - generic [ref=e385]: Learn how Reed is leading the way in philanthropy
+        - generic [ref=e387]: Love Mondays
+      - generic [ref=e388]:
+        - generic [ref=e390]:
+          - 'link "James Reed: all about business" [ref=e391] [cursor=pointer]':
+            - /url: https://www.reed.com/podcasts
+            - 'img "James Reed: all about business" [ref=e392]'
+          - generic [ref=e393]:
+            - heading "Introducing our new podcast New" [level=3] [ref=e394]:
+              - text: Introducing our new podcast
+              - generic [ref=e395]: New
+            - paragraph [ref=e396]: "James Reed: all about business"
+            - link "Listen here" [ref=e397] [cursor=pointer]:
+              - /url: https://www.reed.com/podcasts
+        - generic [ref=e398]:
+          - generic [ref=e399]:
+            - list [ref=e401]:
+              - listitem [ref=e402]:
+                - link "Download the Reed.co.uk app on the Apple store" [ref=e403] [cursor=pointer]:
+                  - /url: https://app.appsflyer.com/id1040443949?pid=Website_Footer
+              - listitem [ref=e404]:
+                - link "Download the Reed.co.uk app on Google Play" [ref=e405] [cursor=pointer]:
+                  - /url: https://app.appsflyer.com/com.reedcouk.jobs?pid=Website_Footer
+            - list [ref=e407]:
+              - listitem [ref=e408]:
+                - link "Follow us on facebook" [ref=e409] [cursor=pointer]:
+                  - /url: https://www.facebook.com/reedcouk
+                  - text: On facebook
+              - listitem [ref=e410]:
+                - link "Follow us on Instagram" [ref=e411] [cursor=pointer]:
+                  - /url: https://www.instagram.com/reedcouk/
+                  - text: On Instagram
+              - listitem [ref=e412]:
+                - link "Follow us on TikTok" [ref=e413] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@reedjobs
+                  - text: On TikTok
+          - generic [ref=e414]:
+            - list [ref=e415]:
+              - listitem [ref=e416]:
+                - button "Manage Preferences" [ref=e417] [cursor=pointer]
+                - text: ","
+              - listitem [ref=e418]:
+                - link "Security, Privacy, Terms & Conditions" [ref=e419] [cursor=pointer]:
+                  - /url: /policies
+            - paragraph [ref=e420]: COPYRIGHT © Reed.co.uk 2026

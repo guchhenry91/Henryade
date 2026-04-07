@@ -1,0 +1,9 @@
+[    2557ms] [LOG] Visibility threshold pct=50, Visibility threshold ms = 0 @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[    2625ms] [LOG] Influent Media script loaded @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[    2673ms] [LOG] Influent Media script initialized @ https://resources.reed.co.uk/cdn/web-jobseeker-jobs/20260402.1/_next/static/chunks/307-fdbeae25a91c3798.js:0
+[    2680ms] [INFO] [REFRESH PATCH] pubads.refresh patched @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[    3155ms] [INFO] [REFRESH PATCH] Injecting targeting {key: AnonymisedSignalLift, value: 0} @ https://cdn1.anonymised.io/light/loader.js?ref=gtm:0
+[    3460ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[    3461ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[    3461ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15
+[    3467ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/2nd-line-service-desk-engineer/56345769:0

@@ -1,0 +1,62 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - heading "⚡ BETTING MODEL DASHBOARD" [level=1] [ref=e3]
+    - generic [ref=e4]:
+      - generic [ref=e5]: "Tokens Left: —"
+      - generic [ref=e6]: "Used: —"
+      - generic [ref=e7]: "Cache: 4m ago (58)"
+      - button "↻ Cache" [ref=e8] [cursor=pointer]
+      - button "⚡ Refresh" [ref=e9] [cursor=pointer]
+  - generic [ref=e10]:
+    - generic [ref=e11] [cursor=pointer]: All Value Bets
+    - generic [ref=e12] [cursor=pointer]: 💰 Safe Bets
+    - generic [ref=e13] [cursor=pointer]: ⚽ Soccer
+    - generic [ref=e14] [cursor=pointer]: 🏀 NBA
+    - generic [ref=e15] [cursor=pointer]: 🏈 NFL
+    - generic [ref=e16] [cursor=pointer]: 🏒 NHL
+    - generic [ref=e17] [cursor=pointer]: ⚾ MLB
+    - generic [ref=e18] [cursor=pointer]: 📊 History
+  - generic [ref=e22]:
+    - heading "✅ SOCCER VALUE BETS — Edge > +3% (8 found)" [level=3] [ref=e23]
+    - generic [ref=e24]:
+      - generic [ref=e25]: A
+      - text: +15% |
+      - strong [ref=e26]: Barcelona Win
+      - text: "| Barcelona vs Atlético Madrid (🌍 Champions League)"
+    - generic [ref=e27]:
+      - generic [ref=e28]: A
+      - text: +14.5% |
+      - strong [ref=e29]: Paris Saint Germain Win
+      - text: "| Paris Saint Germain vs Liverpool (🌍 Champions League)"
+    - generic [ref=e30]:
+      - generic [ref=e31]: B
+      - text: +6.8% |
+      - strong [ref=e32]: Under 2.5
+      - text: "| Real Madrid vs Bayern Munich (🌍 Champions League)"
+    - generic [ref=e33]:
+      - generic [ref=e34]: B
+      - text: +6.1% |
+      - strong [ref=e35]: Arsenal Win
+      - text: "| Sporting Lisbon vs Arsenal (🌍 Champions League)"
+    - generic [ref=e36]:
+      - generic [ref=e37]: B
+      - text: +5.7% |
+      - strong [ref=e38]: Under 2.5
+      - text: "| Girona vs Villarreal (🇪🇸 La Liga)"
+    - generic [ref=e39]:
+      - generic [ref=e40]: B
+      - text: +5.1% |
+      - strong [ref=e41]: Under 2.5
+      - text: "| Sporting Lisbon vs Arsenal (🌍 Champions League)"
+    - generic [ref=e42]:
+      - generic [ref=e43]: B
+      - text: +4.9% |
+      - strong [ref=e44]: Under 2.5
+      - text: "| Barcelona vs Atlético Madrid (🌍 Champions League)"
+    - generic [ref=e45]:
+      - generic [ref=e46]: B
+      - text: +3.2% |
+      - strong [ref=e47]: Under 2.5
+      - text: "| Paris Saint Germain vs Liverpool (🌍 Champions League)"
+    - paragraph [ref=e48]: Edge = Poisson model probability minus bookmaker implied probability. Load individual sport tabs to populate player prop picks below.
+  - button "📋 My Picks" [ref=e21] [cursor=pointer]

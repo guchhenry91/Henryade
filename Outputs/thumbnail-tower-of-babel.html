@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    font-family: 'Georgia', serif;
+  }
+  .container {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    background: #0a0a0a;
+  }
+  .bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4) contrast(1.3) saturate(1.2);
+  }
+  .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(50,20,0,0.6) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.7) 100%);
+  }
+  .vignette {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.85) 100%);
+  }
+  .content {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 60px;
+  }
+  .top-text {
+    color: #d4a855;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+  }
+  .main-text {
+    color: #ffffff;
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.9), 0 0 40px rgba(212,168,85,0.3);
+    letter-spacing: 2px;
+  }
+  .main-text .highlight {
+    color: #d4a855;
+    display: block;
+    font-size: 64px;
+  }
+  .divider {
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #d4a855, transparent);
+    margin: 20px auto;
+  }
+  .sub-text {
+    color: #e8dcc8;
+    font-size: 28px;
+    font-style: italic;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+    letter-spacing: 3px;
+  }
+  .badge {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: rgba(212,168,85,0.9);
+    color: #000;
+    font-size: 22px;
+    font-weight: 900;
+    padding: 8px 20px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .ep-badge {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background: rgba(212,168,85,0.9);
+    color: #000;
+    font-size: 18px;
+    font-weight: 900;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <!-- Scene 10: The Tower at its peak, piercing the clouds -->
+  <img class="bg" src="../bible-video-4/public/images/32.1-invideo-kling_v3_image.png" alt="bg">
+  <div class="overlay"></div>
+  <div class="vignette"></div>
+  <div class="ep-badge">Episode 4</div>
+  <div class="badge">Full Story</div>
+  <div class="content">
+    <div class="top-text">Tower of Babel</div>
+    <div class="main-text">
+      They Tried To
+      <span class="highlight">BECOME GOD</span>
+    </div>
+    <div class="divider"></div>
+    <div class="sub-text">Genesis 11</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+[     432ms] [LOG] Visibility threshold pct=50, Visibility threshold ms = 0 @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[     964ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[     967ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[     969ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15

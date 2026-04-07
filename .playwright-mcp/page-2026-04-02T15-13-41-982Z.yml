@@ -1,0 +1,554 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e6]:
+          - link "Reed.co.uk" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Reed.co.uk" [ref=e8]
+          - list [ref=e9]:
+            - listitem [ref=e10]:
+              - link "Jobs" [ref=e11] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e12]: Jobs
+            - listitem [ref=e13]:
+              - link "Courses" [ref=e14] [cursor=pointer]:
+                - /url: /courses/?itm_source=js_navigation&itm_medium=jobseeker&itm_campaign=courses_tab&itm_content=standard_version
+                - generic [ref=e15]: Courses
+            - listitem [ref=e16]:
+              - link "Career advice" [ref=e17] [cursor=pointer]:
+                - /url: /career-advice/
+                - generic [ref=e18]: Career advice
+            - listitem [ref=e19]:
+              - link "Recruiting? Post a job" [ref=e20] [cursor=pointer]:
+                - /url: /recruiter/
+                - generic [ref=e21]:
+                  - text: Recruiting?
+                  - strong [ref=e22]: Post a job
+          - generic [ref=e23]:
+            - link "Register CV" [ref=e24] [cursor=pointer]:
+              - /url: /authentication/register?returnTo=%2Fjobs%2Fnetwork-and-infrastructure-engineer%2F56736728
+            - list [ref=e25]:
+              - listitem [ref=e26]:
+                - link "Saved jobs" [ref=e27] [cursor=pointer]:
+                  - /url: /account/jobs/shortlisted-jobs
+                  - img [ref=e29]
+                  - generic [ref=e31]: Saved jobs
+              - listitem [ref=e32]:
+                - status [ref=e33]:
+                  - img "Loading" [ref=e34]
+      - search [ref=e38]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: What
+            - textbox "e.g. \"analyst\"" [ref=e44]
+          - generic [ref=e45]:
+            - generic [ref=e46]: Where
+            - generic [ref=e47]:
+              - textbox "town or postcode" [ref=e48]
+              - button "Get current location" [ref=e49] [cursor=pointer]:
+                - img [ref=e50]
+          - button "Search jobs" [ref=e54] [cursor=pointer]
+          - link "Browse jobs" [ref=e56] [cursor=pointer]:
+            - /url: /popularjobs
+            - text: Browse jobs
+            - img [ref=e57]
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - link "ArrowSearch results" [ref=e64] [cursor=pointer]:
+            - /url: /jobs/network-and-infrastructure-engineer-jobs-in-bromley?jobId=56736728
+            - img "Arrow"
+            - text: Search results
+          - list [ref=e66]:
+            - listitem [ref=e67]:
+              - link "Home" [ref=e68] [cursor=pointer]:
+                - /url: /
+            - text: /
+            - listitem [ref=e69]:
+              - text: /
+              - link "Information Technology" [ref=e70] [cursor=pointer]:
+                - /url: /jobs/information-technology-jobs
+            - listitem [ref=e71]:
+              - text: /
+              - link "Engineer" [ref=e72] [cursor=pointer]:
+                - /url: /jobs/engineering-jobs
+            - listitem [ref=e73]:
+              - text: /
+              - link "Network Engineer" [ref=e74] [cursor=pointer]:
+                - /url: /jobs/network-engineer-jobs
+            - listitem [ref=e75]: /Job details
+        - generic [ref=e76]:
+          - generic [ref=e78]:
+            - generic [ref=e79]:
+              - generic [ref=e80]: New
+              - generic [ref=e81]:
+                - img "EarlyBird" [ref=e82]
+                - text: Early bird
+            - generic [ref=e84]:
+              - generic [ref=e85]:
+                - heading "Network and Infrastructure Engineer" [level=1] [ref=e86]
+                - generic [ref=e87]: 5 hrs ago by Foresters Financial
+              - img "Foresters Financial jobs" [ref=e89]
+            - list [ref=e90]:
+              - listitem [ref=e91]:
+                - img "Salary" [ref=e92]
+                - text: £10,000 - £50,000 per annum
+              - listitem [ref=e94]:
+                - img "Location" [ref=e95]
+                - text: Bromley, Kent
+              - listitem [ref=e97]:
+                - img "Clock" [ref=e98]
+                - text: Permanent, full-time
+            - generic [ref=e101]:
+              - button "Open in new tabApply now" [disabled]:
+                - img "Open in new tab"
+                - text: Apply now
+              - button "Shortlist job" [disabled]:
+                - img
+                - text: Save
+            - generic [ref=e103]:
+              - paragraph [ref=e104]:
+                - strong [ref=e105]: Network and Infrastructure Engineer
+              - paragraph [ref=e106]:
+                - strong [ref=e107]: Up to £50,000 per annum
+              - paragraph [ref=e108]:
+                - strong [ref=e109]: Bromley, Kent
+              - paragraph [ref=e110]:
+                - strong [ref=e111]: Full-Time
+              - paragraph [ref=e112]:
+                - strong [ref=e113]: Permanent
+              - paragraph [ref=e114]
+              - paragraph [ref=e115]:
+                - strong [ref=e116]: About the Role
+              - paragraph [ref=e117]: We’re looking for a driven and collaborative Network & Infrastructure Security Engineer to join our agile infrastructure team. In this hands-on position, you’ll take the lead on network engineering while also contributing to broader infrastructure operations—so a strong foundation in both areas is essential.
+              - paragraph [ref=e118]: You’ll be instrumental in maintaining and enhancing a secure, resilient, and high-performing IT environment. This role is ideal for someone who enjoys working across disciplines, thrives in a team-oriented setting, and is passionate about delivering robust and secure technology solutions.
+              - paragraph [ref=e119]:
+                - strong [ref=e120]: Key Responsibilities
+              - list [ref=e121]:
+                - listitem [ref=e122]: Manage and optimise network infrastructure, including virtual networks, cloud platforms, and WAN technologies.
+                - listitem [ref=e123]: Configure and maintain firewalls, routers, switches, and load balancers.
+                - listitem [ref=e124]: Deploy security and operational updates in line with business guidelines.
+                - listitem [ref=e125]: Monitor network performance and resolve bottlenecks.
+                - listitem [ref=e126]: Support backup and disaster recovery solutions.
+                - listitem [ref=e127]: Familiarity with Microsoft Azure cloud services and architecture
+                - listitem [ref=e128]: Dell Servers, including iDrac
+                - listitem [ref=e129]: Knowledge of SAN’s operations
+              - paragraph [ref=e130]:
+                - strong [ref=e131]: Essential Skills & Experience
+              - list [ref=e132]:
+                - listitem [ref=e133]: Strong knowledge of networking protocols (TCP/IP), subnetting, VLANs, VPNs, and load balancing.
+                - listitem [ref=e134]: Experience with FortiNet firewalls and Cisco switches (including CLI configuration and firmware updates).
+                - listitem [ref=e135]: Proficiency in Windows operating systems and active directory.
+                - listitem [ref=e136]: Demonstrated ability to design / troubleshoot complex network.
+                - listitem [ref=e137]: Experience working with hybrid infrastructure and virtual networks.
+                - listitem [ref=e138]: Ability to work collaboratively across infrastructure and security teams.
+                - listitem [ref=e139]: Willingness to work outside of core hours when required.
+              - paragraph [ref=e140]:
+                - strong [ref=e141]: What We’re Looking For
+              - paragraph [ref=e142]:
+                - strong [ref=e143]: We value team players who bring fresh ideas, enthusiasm, and a collaborative spirit. If you’re passionate about network security and infrastructure, and want to make a meaningful impact in a close-knit team, we’d love to hear from you.
+              - paragraph [ref=e144]
+              - paragraph [ref=e145]:
+                - strong [ref=e146]: About us
+              - paragraph [ref=e147]: Foresters Financial is not your typical financial services provider. Those who join our purpose-driven organisation enjoy a culture of collaboration, creativity, and mutual respect and are challenged to do their best to make a difference every day. We help everyday families achieve their financial goals and make a lasting difference in their lives and communities.
+              - paragraph [ref=e148]:
+                - strong [ref=e149]: What we do
+              - paragraph [ref=e150]: We help everyday families achieve their financial goals and make a lasting difference in their lives and communities. We will continue to do this by employing enthusiastic and talented Financial Advisers working across the country and equally talented people to be based at our Head Office in Bromley.
+            - group [ref=e151]:
+              - button "shareShare" [ref=e154] [cursor=pointer]:
+                - img "share" [ref=e155]
+                - text: Share
+              - generic [ref=e157]:
+                - button "EyeHide" [disabled]:
+                  - img "Eye"
+                  - text: Hide
+          - generic [ref=e158]:
+            - banner [ref=e159]:
+              - heading "Create alerts for similar jobs" [level=2] [ref=e160]
+            - generic [ref=e162]:
+              - generic [ref=e163]:
+                - generic [ref=e164]:
+                  - generic [ref=e165]:
+                    - generic [ref=e167]: Network and Infrastructure Engineer
+                    - generic [ref=e168]: Bromley
+                  - button "Edit" [ref=e169] [cursor=pointer]
+                - generic [ref=e170]:
+                  - generic [ref=e171]: Email address
+                  - textbox "Email address" [ref=e173]
+              - generic [ref=e174]:
+                - button "Create alert" [disabled]:
+                  - generic:
+                    - img
+                  - text: Create alert
+              - generic [ref=e175]:
+                - text: By creating an alert, you agree to the
+                - link "Terms and conditions" [ref=e176] [cursor=pointer]:
+                  - /url: /policies
+                - text: applicable to our service and acknowledge that your personal data will be used in accordance with our
+                - link "Privacy policy" [ref=e177] [cursor=pointer]:
+                  - /url: /policies
+                - text: and you will receive emails and communications about jobs and career related topics.
+          - generic [ref=e178]:
+            - heading "Similar Jobs" [level=3] [ref=e180]
+            - generic [ref=e181]:
+              - link "Shortlist job Easy Apply IT Support Engineer 23 February by GreatFind Recruitment SalarySalary negotiable LocationCroydon, Surrey ClockPermanent, full-time" [ref=e182] [cursor=pointer]:
+                - /url: /jobs/it-support-engineer/56522679?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e183]:
+                      - img [ref=e184]
+                    - generic:
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: IT Support Engineer
+                          - generic: 23 February by GreatFind Recruitment
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Salary negotiable
+                      - listitem:
+                        - img "Location"
+                        - text: Croydon, Surrey
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Trainee Network & Security Engineer 4 March by ITOL Recruit Salary£28,000 - £40,000 per annum LocationWidmore, Kent ClockPermanent, full-time" [ref=e186] [cursor=pointer]:
+                - /url: /jobs/trainee-network-security-engineer/56575596?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e187]:
+                      - img [ref=e188]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Trainee Network & Security Engineer
+                          - generic: 4 March by ITOL Recruit
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £28,000 - £40,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: Widmore, Kent
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Trainee Network & Security Engineer 24 March by ITOL Recruit Salary£28,000 - £40,000 per annum LocationLondon ClockPermanent, full-time" [ref=e190] [cursor=pointer]:
+                - /url: /jobs/trainee-network-security-engineer/56691122?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e191]:
+                      - img [ref=e192]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Trainee Network & Security Engineer
+                          - generic: 24 March by ITOL Recruit
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £28,000 - £40,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Trainee Network Engineer 3 days ago by IT Career Switch Salary£24,000 - £45,000 per annum, negotiable LocationLondon ClockPermanent, full-time" [ref=e194] [cursor=pointer]:
+                - /url: /jobs/trainee-network-engineer/56478249?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e195]:
+                      - img [ref=e196]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Trainee Network Engineer
+                          - generic: 3 days ago by IT Career Switch
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £24,000 - £45,000 per annum, negotiable
+                      - listitem:
+                        - img "Location"
+                        - text: London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Trainee Network Engineer 3 days ago by IT Career Switch Salary£24,000 - £45,000 per annum, negotiable LocationBromley, Kent ClockPermanent, full-time" [ref=e198] [cursor=pointer]:
+                - /url: /jobs/trainee-network-engineer/56478096?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e199]:
+                      - img [ref=e200]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Trainee Network Engineer
+                          - generic: 3 days ago by IT Career Switch
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £24,000 - £45,000 per annum, negotiable
+                      - listitem:
+                        - img "Location"
+                        - text: Bromley, Kent
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Security Systems Field Service Engineer 2 days ago by Operations Resources Salary£35,000 - £41,820 per annum, inc benefits LocationEltham, London ClockPermanent, full-time" [ref=e202] [cursor=pointer]:
+                - /url: /jobs/security-systems-field-service-engineer/56718131?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e203]:
+                      - img [ref=e204]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Security Systems Field Service Engineer
+                          - generic: 2 days ago by Operations Resources
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £35,000 - £41,820 per annum, inc benefits
+                      - listitem:
+                        - img "Location"
+                        - text: Eltham, London
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+            - link "See more jobs like this" [ref=e207] [cursor=pointer]:
+              - /url: /jobs/network-engineer-jobs
+          - generic [ref=e208]:
+            - generic [ref=e210]: Recommended courses
+            - generic [ref=e211]:
+              - 'link "Network Infrastructure Engineering: Building Reliable Systems Online, Self-paced £21" [ref=e212] [cursor=pointer]':
+                - /url: /courses/network-infrastructure-engineering-building-reliable-systems/504422?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=financial%20engineering_courses_504422
+                - generic: "Network Infrastructure Engineering: Building Reliable Systems"
+                - generic: Online, Self-paced
+                - generic: £21
+              - link "Cybersecurity , CompTIA Network+ Security+ CCNA Online with live classes £2,999.99" [ref=e213] [cursor=pointer]:
+                - /url: /courses/cybersecurity--comptia-network-security-ccna/322486?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=financial%20engineering_courses_322486
+                - generic: Cybersecurity , CompTIA Network+ Security+ CCNA
+                - generic: Online with live classes
+                - generic: £2,999.99
+              - 'link "IT Security: Cyber Security & CompTIA Network+ (AWS, Cisco ASA Firewall) - CPD Certified Online, Self-paced £119" [ref=e214] [cursor=pointer]':
+                - /url: /courses/it-security-cyber-security-comptia-network-aws-cisco-asa-firewall-cpd-certified/332607?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=financial%20engineering_courses_332607
+                - generic: "IT Security: Cyber Security & CompTIA Network+ (AWS, Cisco ASA Firewall) - CPD Certified"
+                - generic: Online, Self-paced
+                - generic: £119
+            - link "View Financial engineering courses" [ref=e216] [cursor=pointer]:
+              - /url: https://www.reed.co.uk/courses/all?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=view_financial%20engineering_courses
+          - generic [ref=e218]:
+            - generic [ref=e219]: Posted by Foresters Financial
+            - link "View all jobs and profile Chevron" [ref=e220] [cursor=pointer]:
+              - /url: /jobs/foresters-financial/p106151
+              - generic [ref=e221]: View all jobs and profile
+              - img "Chevron" [ref=e222]
+          - generic [ref=e227]:
+            - generic [ref=e228]: "Reference: 56736728"
+            - generic [ref=e229]:
+              - text: Please note that
+              - link "Reed.co.uk" [ref=e230] [cursor=pointer]:
+                - /url: https://reed.co.uk
+              - text: will never ask you to provide your bank, passport or driving licence details during the application process.
+            - link "Report this job Open in new tab" [ref=e232] [cursor=pointer]:
+              - /url: /enquiries?reportJobRef=56736728
+              - text: Report this job
+              - img "Open in new tab"
+        - complementary [ref=e233]
+    - contentinfo [ref=e234]:
+      - generic [ref=e236]:
+        - navigation [ref=e237]:
+          - button "JOBS" [ref=e239] [cursor=pointer]
+          - list [ref=e242]:
+            - listitem [ref=e243]:
+              - link "Contact us" [ref=e244] [cursor=pointer]:
+                - /url: /enquiries
+            - listitem [ref=e245]:
+              - link "Job search" [ref=e246] [cursor=pointer]:
+                - /url: /jobs
+            - listitem [ref=e247]:
+              - link "Recruiter directory" [ref=e248] [cursor=pointer]:
+                - /url: /recruiterdirectory
+            - listitem [ref=e249]:
+              - link "Work from home" [ref=e250] [cursor=pointer]:
+                - /url: /jobs/work-from-home-jobs
+            - listitem [ref=e251]:
+              - link "Browse jobs" [ref=e252] [cursor=pointer]:
+                - /url: /popularjobs
+            - listitem [ref=e253]:
+              - link "Browse locations" [ref=e254] [cursor=pointer]:
+                - /url: /location
+            - listitem [ref=e255]:
+              - link "Popular searches" [ref=e256] [cursor=pointer]:
+                - /url: /popularsearches
+            - listitem [ref=e257]:
+              - link "Career advice" [ref=e258] [cursor=pointer]:
+                - /url: /career-advice
+            - listitem [ref=e259]:
+              - link "Tax calculator" [ref=e260] [cursor=pointer]:
+                - /url: /tax-calculator
+            - listitem [ref=e261]:
+              - link "Average salary checker" [ref=e262] [cursor=pointer]:
+                - /url: /average-salary
+            - listitem [ref=e263]:
+              - link "Help" [ref=e264] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e265]:
+              - link "Contact a REED office" [ref=e266] [cursor=pointer]:
+                - /url: https://www.reed.com/offices
+            - listitem [ref=e267]:
+              - link "Sitemap" [ref=e268] [cursor=pointer]:
+                - /url: /html-sitemap
+        - navigation [ref=e269]:
+          - button "RECRUITER" [ref=e271] [cursor=pointer]
+          - list [ref=e274]:
+            - listitem [ref=e275]:
+              - link "Recruiter site" [ref=e276] [cursor=pointer]:
+                - /url: /recruiter?directjob=recruiter
+            - listitem [ref=e277]:
+              - link "Post a job" [ref=e278] [cursor=pointer]:
+                - /url: /recruiter/post-a-job?directjob=recruiter
+            - listitem [ref=e279]:
+              - link "CV Search" [ref=e280] [cursor=pointer]:
+                - /url: /recruiter/cv-search?directjob=recruiter
+            - listitem [ref=e281]:
+              - link "Recruitment agencies" [ref=e282] [cursor=pointer]:
+                - /url: /recruiter/recruitment-agencies?directjob=recruiter
+            - listitem [ref=e283]:
+              - link "Recruiter Advice" [ref=e284] [cursor=pointer]:
+                - /url: /recruiter-advice/?directjob=recruiter
+        - navigation [ref=e285]:
+          - button "COURSES" [ref=e287] [cursor=pointer]
+          - list [ref=e290]:
+            - listitem [ref=e291]:
+              - link "Help" [ref=e292] [cursor=pointer]:
+                - /url: /courses/help
+            - listitem [ref=e293]:
+              - link "Contact us" [ref=e294] [cursor=pointer]:
+                - /url: /courses/contact-us
+            - listitem [ref=e295]:
+              - link "Find a course" [ref=e296] [cursor=pointer]:
+                - /url: /courses/
+            - listitem [ref=e297]:
+              - link "View all subjects" [ref=e298] [cursor=pointer]:
+                - /url: /courses/directory
+            - listitem [ref=e299]:
+              - link "Discount courses" [ref=e300] [cursor=pointer]:
+                - /url: /courses/discount
+            - listitem [ref=e301]:
+              - link "Free courses" [ref=e302] [cursor=pointer]:
+                - /url: /courses/free
+            - listitem [ref=e303]:
+              - link "Awarding body directory" [ref=e304] [cursor=pointer]:
+                - /url: /courses/awarding-bodies
+            - listitem [ref=e305]:
+              - link "Career guides" [ref=e306] [cursor=pointer]:
+                - /url: /courses/career-guides
+            - listitem [ref=e307]:
+              - link "Advertise a course" [ref=e308] [cursor=pointer]:
+                - /url: /courses/providers/
+            - listitem [ref=e309]:
+              - link "Courses sitemap" [ref=e310] [cursor=pointer]:
+                - /url: /courses/html-sitemap
+        - navigation [ref=e311]:
+          - button "MORE FROM Reed.co.uk" [ref=e313] [cursor=pointer]
+          - list [ref=e316]:
+            - listitem [ref=e317]:
+              - link "About us" [ref=e318] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e319]:
+              - link "Careers at Reed.co.uk" [ref=e320] [cursor=pointer]:
+                - /url: https://www.reed.com/careers/jobs?businessDivision=Reed.co.uk
+            - listitem [ref=e321]:
+              - link "Press office" [ref=e322] [cursor=pointer]:
+                - /url: /press-office
+            - listitem [ref=e323]:
+              - link "Corporate governance" [ref=e324] [cursor=pointer]:
+                - /url: /corporate-governance
+            - listitem [ref=e325]:
+              - link "Modern slavery statement" [ref=e326] [cursor=pointer]:
+                - /url: https://www.reed.co.uk/cdn/jobseeker/pdf/Reed_MSA_Statement.pdf
+        - navigation [ref=e327]:
+          - button "REED" [ref=e329] [cursor=pointer]
+          - list [ref=e332]:
+            - listitem [ref=e333]:
+              - 'link "Tempzone: timesheets & holiday" [ref=e334] [cursor=pointer]':
+                - /url: https://candidate.reed.co.uk/candlogin.asp
+            - listitem [ref=e335]:
+              - link "Authorise timesheets" [ref=e336] [cursor=pointer]:
+                - /url: https://client.reed.co.uk/
+            - listitem [ref=e337]:
+              - link "Reed Group Services" [ref=e338] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e339]:
+              - link "Reed Specialist Recruitment" [ref=e340] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e341]:
+              - link "Reed in Partnership" [ref=e342] [cursor=pointer]:
+                - /url: https://www.reedinpartnership.co.uk/
+            - listitem [ref=e343]:
+              - link "Careers with REED" [ref=e344] [cursor=pointer]:
+                - /url: https://www.reed.com/careers
+            - listitem [ref=e345]:
+              - link "James Reed - Official Site" [ref=e346] [cursor=pointer]:
+                - /url: /james-reed/
+            - listitem [ref=e347]:
+              - 'link "Podcast - James Reed: all about business" [ref=e348] [cursor=pointer]':
+                - /url: https://www.reed.com/podcasts
+            - listitem [ref=e349]:
+              - link "ESG & sustainability" [ref=e350] [cursor=pointer]:
+                - /url: https://www.reed.com/esg-and-sustainability
+      - generic [ref=e352]:
+        - generic [ref=e353]:
+          - generic [ref=e355]:
+            - link "PhilCo" [ref=e356] [cursor=pointer]:
+              - /url: https://philco.org.uk/
+              - img "PhilCo" [ref=e357]
+            - generic [ref=e358]: Learn how Reed is leading the way in philanthropy
+          - img "Love Mondays" [ref=e360]
+        - generic [ref=e361]:
+          - generic [ref=e362]:
+            - 'link "James Reed: all about business" [ref=e363] [cursor=pointer]':
+              - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+              - 'img "James Reed: all about business" [ref=e364]'
+            - generic [ref=e365]:
+              - heading "Introducing our new podcast New" [level=3] [ref=e366]:
+                - text: Introducing our new podcast
+                - generic [ref=e367]: New
+              - paragraph [ref=e368]: "James Reed: all about business"
+              - link "Listen here" [ref=e369] [cursor=pointer]:
+                - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+          - generic [ref=e370]:
+            - generic [ref=e371]:
+              - generic [ref=e372]:
+                - link "Download on the App Store" [ref=e373] [cursor=pointer]:
+                  - /url: https://itunes.apple.com/GB/app/id1040443949?mt=8
+                  - img "Download on the App Store" [ref=e374]
+                - link "Get it on Google Play" [ref=e375] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.reedcouk.jobs&referrer=af_tranid%3D_HgKgkJ-aFiIn4G5iigdZQ%26pid%3DWebsite_Footer%26utm_source%3DWebsite_Footer
+                  - img "Get it on Google Play" [ref=e376]
+              - generic [ref=e377]:
+                - link "Facebook" [ref=e378] [cursor=pointer]:
+                  - /url: https://www.facebook.com/reedcouk
+                  - img "Facebook" [ref=e379]
+                - link "Instagram" [ref=e380] [cursor=pointer]:
+                  - /url: https://www.instagram.com/reedcouk/
+                  - img "Instagram" [ref=e381]
+                - link "Tiktok" [ref=e382] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@reedjobs
+                  - img "Tiktok" [ref=e383]
+            - list [ref=e384]:
+              - listitem [ref=e385]:
+                - button "Manage Preferences" [ref=e386] [cursor=pointer]
+                - text: ","
+              - listitem [ref=e387]:
+                - link "Security, Privacy, Terms & Conditions" [ref=e388] [cursor=pointer]:
+                  - /url: /policies
+            - paragraph [ref=e389]: COPYRIGHT © Reed.co.uk 2026
+  - alert [ref=e390]

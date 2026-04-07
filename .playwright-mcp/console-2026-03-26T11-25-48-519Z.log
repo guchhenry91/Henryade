@@ -1,0 +1,80 @@
+[    1250ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:25:49.768Z Invalid eventBatchSize undefined, defaulting to 10 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-23:1
+[    1251ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:25:49.769Z Invalid eventFlushInterval undefined, defaulting to 1000 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-23:1
+[    1526ms] [WARNING] Disabling this snippet because Optimizely has already initialized on this page load. Are there multiple snippets on the page? @ https://www.totaljobs.com/optimizely-edge/20561852190.js:2
+[    2438ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:25:50.956Z Invalid eventBatchSize undefined, defaulting to 10 @ https://www.totaljobs.com/viewlets/searchbarrenderer/search-bar-renderer/uk/1_71_0__d3c02e3/vendors.af106491529af76777df.js:1
+[    2439ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:25:50.957Z Invalid eventFlushInterval undefined, defaulting to 1000 @ https://www.totaljobs.com/viewlets/searchbarrenderer/search-bar-renderer/uk/1_71_0__d3c02e3/vendors.af106491529af76777df.js:1
+[    2771ms] [WARNING] Datadog Browser SDK: SDK is loaded more than once. This is unsupported and might have unexpected behavior. @ https://www.totaljobs.com/static/ld/job-ad-display/732-5b534f846661efa34dd3.js?a530840429f56731c414:1
+[    3128ms] [ERROR] Datadog Browser SDK: DD_LOGS is already initialized. @ https://www.totaljobs.com/static/ld/job-ad-display/732-5b534f846661efa34dd3.js?a530840429f56731c414:1
+[    3389ms] [WARNING] Datadog Browser SDK: SDK is loaded more than once. This is unsupported and might have unexpected behavior. @ https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:1
+[    5108ms] Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at Qr (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:184594)
+    at Xs (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:225824)
+    at Su (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249971)
+    at wu (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249711)
+    at bu (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249578)
+    at vu (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249441)
+    at au (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:244606)
+    at E (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:621416)
+    at O (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:621948)
+    at e.exports (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:19882)
+[    5109ms] Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at kl (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:261774)
+    at wu (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249650)
+    at bu (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249578)
+    at vu (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:249441)
+    at su (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:246276)
+    at au (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:244832)
+    at E (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:621416)
+    at O (https://www.totaljobs.com/static/cbc-garland/recom/recommender-widget/reco-477-1ba645127fb4f29bc5c3-5942beb.js?2675ca99e905bfe32db1:2:621948)
+    at e.exports (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:19882)
+    at g.<computed> (https://www.totaljobs.com/sharedassets/@stepstone/react-redux-vendor-package-next/22.0.0/index.js:2:35098)
+[    5887ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.totaljobs.com/premium/api/v1/candidate/subscription/status:0
+[   10488ms] Uncaught The pagetype parameter is required when you include the prodid parameter.
+    at UET.throwError (https://bat.bing.com/bat.js:0:26126)
+    at UET.validateDataObjectNew (https://bat.bing.com/bat.js:0:31565)
+    at UET.evt (https://bat.bing.com/bat.js:0:35110)
+    at UET._push (https://bat.bing.com/bat.js:0:16964)
+    at UET.checkuetHostdocumentload (https://bat.bing.com/bat.js:0:7903)
+    at UET.containerCheckLoad (https://bat.bing.com/bat.js:0:54229)
+    at UET.containerOnLoad (https://bat.bing.com/bat.js:0:53968)
+[   11364ms] [WARNING] [Meta Pixel] - Duplicate Pixel ID: 665267016975562. @ https://connect.facebook.net/en_US/fbevents.js:175
+[   12421ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/it-support-engineer/viqu-it-recruitment-job106975751:0
+[   12421ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/it-support-engineer/viqu-it-recruitment-job106975751:0
+[   12421ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/it-support-engineer/viqu-it-recruitment-job106975751:0
+[   12421ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/it-support-engineer/viqu-it-recruitment-job106975751:0
+[   12422ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/it-support-engineer/viqu-it-recruitment-job106975751:0
+[   28909ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:26:17.427Z Invalid eventBatchSize undefined, defaulting to 10 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-26:1
+[   28910ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:26:17.428Z Invalid eventFlushInterval undefined, defaulting to 1000 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-26:1
+[   29193ms] [WARNING] Datadog Browser SDK: SDK is loaded more than once. This is unsupported and might have unexpected behavior. @ https://www.totaljobs.com/application/process-renderer/assets/main.e8011ca9474037069869.js:1
+[   33178ms] SyntaxError: Failed to execute 'json' on 'Response': Unexpected end of JSON input
+    at s (https://www.totaljobs.com/application/process-renderer/assets/main.e8011ca9474037069869.js:2:231989)
+[   33291ms] Uncaught The pagetype parameter is required when you include the prodid parameter.
+    at UET.throwError (https://bat.bing.com/bat.js:0:26126)
+    at UET.validateDataObjectNew (https://bat.bing.com/bat.js:0:31565)
+    at UET.evt (https://bat.bing.com/bat.js:0:35110)
+    at UET._push (https://bat.bing.com/bat.js:0:16964)
+    at UET.checkuetHostdocumentload (https://bat.bing.com/bat.js:0:7903)
+    at UET.containerCheckLoad (https://bat.bing.com/bat.js:0:54229)
+    at UET.containerOnLoad (https://bat.bing.com/bat.js:0:53968)
+[   33880ms] [WARNING] [Meta Pixel] - Duplicate Pixel ID: 665267016975562. @ https://connect.facebook.net/en_US/fbevents.js:175
+[   34192ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/d2d4a9e6-ef23-4030-b711-09323d6403eb/application/dynamic-apply?workflow=ApplyExpress&locale=en_GB:0
+[   34199ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/d2d4a9e6-ef23-4030-b711-09323d6403eb/application/dynamic-apply?workflow=ApplyExpress&locale=en_GB:0
+[   34200ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/d2d4a9e6-ef23-4030-b711-09323d6403eb/application/dynamic-apply?workflow=ApplyExpress&locale=en_GB:0
+[   34200ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/d2d4a9e6-ef23-4030-b711-09323d6403eb/application/dynamic-apply?workflow=ApplyExpress&locale=en_GB:0
+[   40959ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:26:29.477Z Invalid eventBatchSize undefined, defaulting to 10 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-25:1
+[   40960ms] [WARNING] [OPTIMIZELY] - WARN  2026-03-26T11:26:29.478Z Invalid eventFlushInterval undefined, defaulting to 1000 @ https://www.totaljobs.com/static/lpca/social-auth-logout-script/main.js?v=2026-03-25:1
+[   41541ms] [WARNING] Datadog Browser SDK: SDK is loaded more than once. This is unsupported and might have unexpected behavior. @ https://www.totaljobs.com/application/process-renderer/assets/confirmation.1014290052c280cc8044.js:1
+[   44800ms] [WARNING] [Meta Pixel] - Duplicate Pixel ID: 665267016975562. @ https://connect.facebook.net/en_US/fbevents.js:175
+[   44947ms] Uncaught The pagetype parameter is required when you include the prodid parameter.
+    at UET.throwError (https://bat.bing.com/bat.js:0:26126)
+    at UET.validateDataObjectNew (https://bat.bing.com/bat.js:0:31565)
+    at UET.evt (https://bat.bing.com/bat.js:0:35110)
+    at UET._push (https://bat.bing.com/bat.js:0:16964)
+    at UET.checkuetHostdocumentload (https://bat.bing.com/bat.js:0:7903)
+    at <anonymous> (https://bat.bing.com/bat.js:0:8194)
+[   45602ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/d2d4a9e6-ef23-4030-b711-09323d6403eb/application/confirmation/success?userFlow=ApplyExpress&locale=en_GB&applicationId=9f3368e8-d968-4bc2-b8e9-bc2797ee64b9:0
+[   45605ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.totaljobs.com/job/d2d4a9e6-ef23-4030-b711-09323d6403eb/application/confirmation/success?userFlow=ApplyExpress&locale=en_GB&applicationId=9f3368e8-d968-4bc2-b8e9-bc2797ee64b9:0
+[   49428ms] [WARNING] The resource https://www.totaljobs.com/sharedassets/@stepstone-genesis/fonts/core/Relative-Bold-Pro.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://www.totaljobs.com/job/d2d4a9e6-ef23-4030-b711-09323d6403eb/application/confirmation/success?userFlow=ApplyExpress&locale=en_GB&applicationId=9f3368e8-d968-4bc2-b8e9-bc2797ee64b9:0
+[   49428ms] [WARNING] The resource https://www.totaljobs.com/sharedassets/@stepstone-genesis/fonts/core/Relative-Medium-Pro.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://www.totaljobs.com/job/d2d4a9e6-ef23-4030-b711-09323d6403eb/application/confirmation/success?userFlow=ApplyExpress&locale=en_GB&applicationId=9f3368e8-d968-4bc2-b8e9-bc2797ee64b9:0
+[   49428ms] [WARNING] The resource https://www.totaljobs.com/sharedassets/@stepstone-genesis/fonts/core/Relative-Book-Pro.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://www.totaljobs.com/job/d2d4a9e6-ef23-4030-b711-09323d6403eb/application/confirmation/success?userFlow=ApplyExpress&locale=en_GB&applicationId=9f3368e8-d968-4bc2-b8e9-bc2797ee64b9:0
+[   49428ms] [WARNING] The resource https://www.totaljobs.com/sharedassets/@stepstone-genesis/fonts/core/fonts.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://www.totaljobs.com/job/d2d4a9e6-ef23-4030-b711-09323d6403eb/application/confirmation/success?userFlow=ApplyExpress&locale=en_GB&applicationId=9f3368e8-d968-4bc2-b8e9-bc2797ee64b9:0

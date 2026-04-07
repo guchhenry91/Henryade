@@ -1,0 +1,32 @@
+[    6210ms] [WARNING] [GPT] This ad request is subject to Google's EU User Consent Policy. An IAB TCF signal was not received. This ad request will not be eligible for personalized ads.
+https://goo.gle/gpt-message#175 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202603190101/pubads_impl.js:18
+[    8436ms] [WARNING] The following CSA option(s) were ignored due to being overridden by native style controls: fontFamily @ https://www.google.com/adsense/search/async-ads.js:218
+[    8437ms] [WARNING] The following CSA option(s) are unsupported: longerHeadlines, fontSizeTitle, fontSizeDescription, fontSizeDomainLink, colorTitleLink, colorDomainLink @ https://www.google.com/adsense/search/async-ads.js:218
+[   10588ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[   10909ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-support-analyst/56703571:0
+[   10913ms] [WARNING] Anonymised tag: Unset or used incorrect value of the cmp-provider:'undefined'. 
+        The default TCFv2 API will be used @ https://cdn1.anonymised.io/light/bundle.js?v=1.8.51:0
+[   32053ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-support-analyst/56703571:0
+[   45160ms] [WARNING] [TikTok Pixel] - Missing email and phone number
+Issue: Email and phone number info isn't being received. This information is required for Complete Payment events.
+Suggestion: Improve your email and phone coverage. This allows you to attribute more conversions and reach more people with your ads. See https://ads.tiktok.com/marketing_api/docs?rid=5ipocbxyw8v&id=1701890972946433 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MTJlMjhkNzMyMQ.js:0
+[   45162ms] [WARNING] [TikTok Pixel] - Missing 'content_id' paramter
+Issue: The 'content_id' parameter isn't being received. This is required for Video Shopping Ads (VSA).
+Suggestion: Include the 'content_id' parameter in your source code. This is required for Video Shopping Ads (VSA). See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MTJlMjhkNzMyMQ.js:0
+[   45163ms] [WARNING] [TikTok Pixel] - Missing "value" parameter
+Issue: Events shared are missing a 'value' parameter'. This is used calculate ROAS for people and the bid for your highest value customers. 
+Suggestion: Go to your source code and include the "value" parameter. See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MTJlMjhkNzMyMQ.js:0
+[   45163ms] [WARNING] [TikTok Pixel] - Missing "currency" parameter
+Issue: Events shared are missing a 'currency' parameter. This impacts our ability to receive the value amount correctly, which can affect the accuracy of reporting for your return on ad spend.
+Suggestion: Go to your source code and include the "currency" parameter. You can check supported currency codes. See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MTJlMjhkNzMyMQ.js:0
+[   45484ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.reed.co.uk/jobs/it-support-analyst/56703571:0
+[   48358ms] [WARNING] [GPT] This ad request is subject to Google's EU User Consent Policy. An IAB TCF signal was not received. This ad request will not be eligible for personalized ads.
+https://goo.gle/gpt-message#175 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202603190101/pubads_impl.js:18
+[   51542ms] [WARNING] Anonymised tag: Unset or used incorrect value of the cmp-provider:'undefined'. 
+        The default TCFv2 API will be used @ https://cdn1.anonymised.io/light/bundle.js?v=1.8.51:0
+[   55516ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[   55542ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[   55516ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[   55542ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[   55896ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[   55908ms] Failed to read a named property 'addEventListener' from 'Window': Blocked a frame with origin "https://578523115de13bef64bee4a65e93b8b3.safeframe.googlesyndication.com" from accessing a cross-origin frame.

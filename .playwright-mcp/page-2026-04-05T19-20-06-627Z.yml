@@ -1,0 +1,386 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - heading "⚡ BETTING MODEL DASHBOARD" [level=1] [ref=e3]
+    - generic [ref=e4]:
+      - generic [ref=e5]: "Tokens Left: 14181"
+      - generic [ref=e6]: "Used: 5819"
+      - generic [ref=e7]: "Cache: NaNm ago (55) · 14181 tokens left"
+      - button "↻ Cache" [ref=e8] [cursor=pointer]
+      - button "⚡ Refresh" [ref=e9] [cursor=pointer]
+  - generic [ref=e10]:
+    - generic [ref=e11] [cursor=pointer]: All Value Bets
+    - generic [ref=e12] [cursor=pointer]: 💰 Safe Bets
+    - generic [ref=e13] [cursor=pointer]: ⚽ Soccer
+    - generic [ref=e14] [cursor=pointer]: 🏀 NBA
+    - generic [ref=e15] [cursor=pointer]: 🏈 NFL
+    - generic [ref=e16] [cursor=pointer]: 🏒 NHL
+    - generic [ref=e17] [cursor=pointer]: ⚾ MLB
+    - generic [ref=e18] [cursor=pointer]: 📊 History
+  - generic [ref=e3138]:
+    - generic [ref=e3139]:
+      - text: 🏒 NHL — 9 games
+      - generic [ref=e3140]: Updated just now
+    - generic [ref=e3141]:
+      - button "Sort by Edge ↓" [ref=e3142] [cursor=pointer]
+      - button "Sort by Score ↓" [ref=e3143] [cursor=pointer]
+      - button "OVERs only" [ref=e3144] [cursor=pointer]
+      - button "UNDERs only" [ref=e3145] [cursor=pointer]
+      - button "All" [ref=e3146] [cursor=pointer]
+    - generic [ref=e3147]:
+      - generic [ref=e3148]:
+        - generic [ref=e3149]: Philadelphia Flyers vs Boston Bruins
+        - generic [ref=e3150]: Sun 5 Apr, 15:47 ET
+      - generic [ref=e3151]:
+        - generic [ref=e3152]: 🏆 WINNER PREDICTION
+        - generic [ref=e3153]:
+          - generic [ref=e3154]: Philadelphia Flyers
+          - generic [ref=e3157]: 58.0%
+        - generic [ref=e3158]:
+          - generic [ref=e3159]: Boston Bruins
+          - generic [ref=e3162]: 42.0%
+        - generic [ref=e3163]:
+          - text: "Pick:"
+          - strong [ref=e3164]: Philadelphia Flyers
+          - generic [ref=e3165]: MED
+          - text: "58.0% confidence · Odds: 1.68"
+      - generic [ref=e3166]: No qualifying player props.
+    - generic [ref=e3167]:
+      - generic [ref=e3168]:
+        - generic [ref=e3169]: Ottawa Senators vs Carolina Hurricanes
+        - generic [ref=e3170]: Sun 5 Apr, 17:10 ET
+      - generic [ref=e3171]:
+        - generic [ref=e3172]: 🏆 WINNER PREDICTION
+        - generic [ref=e3173]:
+          - generic [ref=e3174]: Ottawa Senators
+          - generic [ref=e3177]: 44.9%
+        - generic [ref=e3178]:
+          - generic [ref=e3179]: Carolina Hurricanes
+          - generic [ref=e3182]: 55.1%
+        - generic [ref=e3183]:
+          - text: "Pick:"
+          - strong [ref=e3184]: Carolina Hurricanes
+          - generic [ref=e3185]: MED
+          - text: "55.1% confidence · Odds: 1.77"
+      - generic [ref=e3186]: 🎯 TOP PICKS — Ottawa Senators vs Carolina Hurricanes
+      - generic [ref=e3187]:
+        - generic [ref=e3188]:
+          - generic [ref=e3189]:
+            - generic [ref=e3190]: A★
+            - generic [ref=e3191]: HIGH
+          - generic [ref=e3192]: Tim Stützle
+          - generic [ref=e3193]: SHOTS ON GOAL
+          - generic [ref=e3194]: "1.5"
+          - generic [ref=e3195]:
+            - generic [ref=e3196]: OVER
+            - generic [ref=e3197]: 50.5% implied
+          - generic [ref=e3198]:
+            - generic [ref=e3199]:
+              - text: "Model: 57% / Book: 51% →"
+              - strong [ref=e3200]: +6.2% edge
+            - generic [ref=e3201]: 5.0% stake
+          - generic [ref=e3202]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e3203]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e3204]: score 0.41
+          - generic [ref=e3206]: Generated 3:19 PM ET
+          - generic [ref=e3207]:
+            - button "OVER" [ref=e3208] [cursor=pointer]
+            - button "UNDER" [ref=e3209] [cursor=pointer]
+        - generic [ref=e3210]:
+          - generic [ref=e3211]:
+            - generic [ref=e3212]: A
+            - generic [ref=e3213]: MED
+          - generic [ref=e3214]: Jake Sanderson
+          - generic [ref=e3215]: SHOTS ON GOAL
+          - generic [ref=e3216]: "2.5"
+          - generic [ref=e3217]:
+            - generic [ref=e3218]: UNDER
+            - generic [ref=e3219]: 51.1% implied
+          - generic [ref=e3220]:
+            - generic [ref=e3221]:
+              - text: "Model: 56% / Book: 51% →"
+              - strong [ref=e3222]: +5.1% edge
+            - generic [ref=e3223]: 5.0% stake
+          - generic [ref=e3224]: "⚠️ Data gap: L5 spans 35 days (missing games — stats may be unreliable)"
+          - generic [ref=e3225]: 📊 53% OVER / 47% UNDER (L15 distribution)
+          - generic [ref=e3226]: "📈 L5: 2.8 avg 🎯 Consistent (hit 80% of L5)"
+          - generic [ref=e3227]: "↗ Trending up: L5 2.8 vs L15 2.3"
+          - generic [ref=e3228]: "⚠️ Data gap: L5 spans 35 days (missing games — stats may be unreliable)"
+          - generic [ref=e3229]: 😴 Back-to-back (1.2 days rest)
+          - generic [ref=e3230]:
+            - text: 6 books aligned · fair line
+            - generic [ref=e3231]: score 0.34
+          - generic [ref=e3233]: Generated 3:19 PM ET
+          - generic [ref=e3234]:
+            - button "OVER" [ref=e3235] [cursor=pointer]
+            - button "UNDER" [ref=e3236] [cursor=pointer]
+    - generic [ref=e3237]:
+      - generic [ref=e3238]:
+        - generic [ref=e3239]: Montréal Canadiens vs New Jersey Devils
+        - generic [ref=e3240]: Sun 5 Apr, 19:10 ET
+      - generic [ref=e3241]:
+        - generic [ref=e3242]: 🏆 WINNER PREDICTION
+        - generic [ref=e3243]:
+          - generic [ref=e3244]: Montréal Canadiens
+          - generic [ref=e3247]: 57.6%
+        - generic [ref=e3248]:
+          - generic [ref=e3249]: New Jersey Devils
+          - generic [ref=e3252]: 42.4%
+        - generic [ref=e3253]:
+          - text: "Pick:"
+          - strong [ref=e3254]: Montréal Canadiens
+          - generic [ref=e3255]: MED
+          - text: "57.6% confidence · Odds: 1.69"
+      - generic [ref=e3256]: 🎯 TOP PICKS — Montréal Canadiens vs New Jersey Devils
+      - generic [ref=e3258]:
+        - generic [ref=e3259]:
+          - generic [ref=e3260]: A★
+          - generic [ref=e3261]: MED
+        - generic [ref=e3262]: Jack Hughes
+        - generic [ref=e3263]: SHOTS ON GOAL
+        - generic [ref=e3264]: "3.5"
+        - generic [ref=e3265]:
+          - generic [ref=e3266]: OVER
+          - generic [ref=e3267]: 52.3% implied
+        - generic [ref=e3268]:
+          - generic [ref=e3269]:
+            - text: "Model: 56% / Book: 52% →"
+            - strong [ref=e3270]: +4.0% edge
+          - generic [ref=e3271]: 3.3% stake
+        - generic [ref=e3272]: ⚠️ No player stats loaded — pick based on odds only
+        - generic [ref=e3273]:
+          - text: 7 books aligned · fair line
+          - generic [ref=e3274]: score 0.27
+        - generic [ref=e3276]: Generated 3:19 PM ET
+        - generic [ref=e3277]:
+          - button "OVER" [ref=e3278] [cursor=pointer]
+          - button "UNDER" [ref=e3279] [cursor=pointer]
+    - generic [ref=e3280]:
+      - generic [ref=e3281]:
+        - generic [ref=e3282]: New York Rangers vs Washington Capitals
+        - generic [ref=e3283]: Sun 5 Apr, 19:10 ET
+      - generic [ref=e3284]:
+        - generic [ref=e3285]: 🏆 WINNER PREDICTION
+        - generic [ref=e3286]:
+          - generic [ref=e3287]: New York Rangers
+          - generic [ref=e3290]: 48.8%
+        - generic [ref=e3291]:
+          - generic [ref=e3292]: Washington Capitals
+          - generic [ref=e3295]: 51.2%
+        - generic [ref=e3296]:
+          - text: "Pick:"
+          - strong [ref=e3297]: Washington Capitals
+          - generic [ref=e3298]: LOW
+          - text: "51.2% confidence · Odds: 1.91"
+      - generic [ref=e3299]: 🎯 TOP PICKS — New York Rangers vs Washington Capitals
+      - generic [ref=e3300]:
+        - generic [ref=e3301]:
+          - generic [ref=e3302]:
+            - generic [ref=e3303]: A★
+            - generic [ref=e3304]: MED
+          - generic [ref=e3305]: Alexis Lafrenière
+          - generic [ref=e3306]: SHOTS ON GOAL
+          - generic [ref=e3307]: "2.5"
+          - generic [ref=e3308]:
+            - generic [ref=e3309]: UNDER
+            - generic [ref=e3310]: 60.5% implied
+          - generic [ref=e3311]:
+            - generic [ref=e3312]:
+              - text: "Model: 65% / Book: 61% →"
+              - strong [ref=e3313]: +4.1% edge
+            - generic [ref=e3314]: 1.2% stake
+          - generic [ref=e3315]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e3316]:
+            - text: 60.5% implied · 7 books aligned · fair line
+            - generic [ref=e3317]: score 0.27
+          - generic [ref=e3319]: Generated 3:19 PM ET
+          - generic [ref=e3320]:
+            - button "OVER" [ref=e3321] [cursor=pointer]
+            - button "UNDER" [ref=e3322] [cursor=pointer]
+        - generic [ref=e3323]:
+          - generic [ref=e3324]:
+            - generic [ref=e3325]: A
+            - generic [ref=e3326]: MED
+          - generic [ref=e3327]: Ryan Leonard
+          - generic [ref=e3328]: SHOTS ON GOAL
+          - generic [ref=e3329]: "1.5"
+          - generic [ref=e3330]:
+            - generic [ref=e3331]: UNDER
+            - generic [ref=e3332]: 50.4% implied
+          - generic [ref=e3333]:
+            - generic [ref=e3334]:
+              - text: "Model: 54% / Book: 50% →"
+              - strong [ref=e3335]: +3.9% edge
+            - generic [ref=e3336]: 5.0% stake
+          - generic [ref=e3337]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e3338]: 🔥 3-in-3 nights — heavy fatigue
+          - generic [ref=e3339]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e3340]: score 0.26
+          - generic [ref=e3342]: Generated 3:19 PM ET
+          - generic [ref=e3343]:
+            - button "OVER" [ref=e3344] [cursor=pointer]
+            - button "UNDER" [ref=e3345] [cursor=pointer]
+        - generic [ref=e3346]:
+          - generic [ref=e3347]:
+            - generic [ref=e3348]: B
+            - generic [ref=e3349]: MED
+          - generic [ref=e3350]: Tom Wilson
+          - generic [ref=e3351]: SHOTS ON GOAL
+          - generic [ref=e3352]: "1.5"
+          - generic [ref=e3353]:
+            - generic [ref=e3354]: OVER
+            - generic [ref=e3355]: 50.2% implied
+          - generic [ref=e3356]:
+            - generic [ref=e3357]:
+              - text: "Model: 54% / Book: 50% →"
+              - strong [ref=e3358]: +3.8% edge
+            - generic [ref=e3359]: 5.0% stake
+          - generic [ref=e3360]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e3361]: 🔥 3-in-3 nights — heavy fatigue
+          - generic [ref=e3362]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e3363]: score 0.25
+          - generic [ref=e3365]: Generated 3:19 PM ET
+          - generic [ref=e3366]:
+            - button "OVER" [ref=e3367] [cursor=pointer]
+            - button "UNDER" [ref=e3368] [cursor=pointer]
+    - generic [ref=e3369]:
+      - generic [ref=e3370]:
+        - generic [ref=e3371]: Colorado Avalanche vs St Louis Blues
+        - generic [ref=e3372]: Sun 5 Apr, 21:45 ET
+      - generic [ref=e3373]:
+        - generic [ref=e3374]: 🏆 WINNER PREDICTION
+        - generic [ref=e3375]:
+          - generic [ref=e3376]: Colorado Avalanche
+          - generic [ref=e3379]: 65.7%
+        - generic [ref=e3380]:
+          - generic [ref=e3381]: St Louis Blues
+          - generic [ref=e3384]: 34.3%
+        - generic [ref=e3385]:
+          - text: "Pick:"
+          - strong [ref=e3386]: Colorado Avalanche
+          - generic [ref=e3387]: HIGH
+          - text: "65.7% confidence · Odds: 1.49"
+      - generic [ref=e3388]: 🎯 TOP PICKS — Colorado Avalanche vs St Louis Blues
+      - generic [ref=e3389]:
+        - generic [ref=e3390]:
+          - generic [ref=e3391]:
+            - generic [ref=e3392]: A★
+            - generic [ref=e3393]: MED
+          - generic [ref=e3394]: Jordan Kyrou
+          - generic [ref=e3395]: SHOTS ON GOAL
+          - generic [ref=e3396]: "1.5"
+          - generic [ref=e3397]:
+            - generic [ref=e3398]: UNDER
+            - generic [ref=e3399]: 50.8% implied
+          - generic [ref=e3400]:
+            - generic [ref=e3401]:
+              - text: "Model: 56% / Book: 51% →"
+              - strong [ref=e3402]: +5.1% edge
+            - generic [ref=e3403]: 5.0% stake
+          - generic [ref=e3404]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e3405]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e3406]: score 0.34
+          - generic [ref=e3408]: Generated 3:19 PM ET
+          - generic [ref=e3409]:
+            - button "OVER" [ref=e3410] [cursor=pointer]
+            - button "UNDER" [ref=e3411] [cursor=pointer]
+        - generic [ref=e3412]:
+          - generic [ref=e3413]:
+            - generic [ref=e3414]: A
+            - generic [ref=e3415]: MED
+          - generic [ref=e3416]: Nathan MacKinnon
+          - generic [ref=e3417]: SHOTS ON GOAL
+          - generic [ref=e3418]: "3.5"
+          - generic [ref=e3419]:
+            - generic [ref=e3420]: OVER
+            - generic [ref=e3421]: 50.5% implied
+          - generic [ref=e3422]:
+            - generic [ref=e3423]:
+              - text: "Model: 55% / Book: 51% →"
+              - strong [ref=e3424]: +4.0% edge
+            - generic [ref=e3425]: 5.0% stake
+          - generic [ref=e3426]: ⚠️ No player stats loaded — pick based on odds only
+          - generic [ref=e3427]: 😴 Back-to-back (1.3 days rest)
+          - generic [ref=e3428]:
+            - text: 7 books aligned · fair line
+            - generic [ref=e3429]: score 0.27
+          - generic [ref=e3431]: Generated 3:19 PM ET
+          - generic [ref=e3432]:
+            - button "OVER" [ref=e3433] [cursor=pointer]
+            - button "UNDER" [ref=e3434] [cursor=pointer]
+    - generic [ref=e3435]:
+      - generic [ref=e3436]:
+        - generic [ref=e3437]: Buffalo Sabres vs Tampa Bay Lightning
+        - generic [ref=e3438]: Mon 6 Apr, 19:00 ET
+      - generic [ref=e3439]:
+        - generic [ref=e3440]: 🏆 WINNER PREDICTION
+        - generic [ref=e3441]:
+          - generic [ref=e3442]: Buffalo Sabres
+          - generic [ref=e3445]: 49.0%
+        - generic [ref=e3446]:
+          - generic [ref=e3447]: Tampa Bay Lightning
+          - generic [ref=e3450]: 51.0%
+        - generic [ref=e3451]:
+          - text: "Pick:"
+          - strong [ref=e3452]: Tampa Bay Lightning
+          - generic [ref=e3453]: LOW
+          - text: "51.0% confidence · Odds: 1.91"
+      - generic [ref=e3454]: No qualifying player props.
+    - generic [ref=e3455]:
+      - generic [ref=e3456]:
+        - generic [ref=e3457]: Winnipeg Jets vs Seattle Kraken
+        - generic [ref=e3458]: Mon 6 Apr, 19:30 ET
+      - generic [ref=e3459]:
+        - generic [ref=e3460]: 🏆 WINNER PREDICTION
+        - generic [ref=e3461]:
+          - generic [ref=e3462]: Winnipeg Jets
+          - generic [ref=e3465]: 61.8%
+        - generic [ref=e3466]:
+          - generic [ref=e3467]: Seattle Kraken
+          - generic [ref=e3470]: 38.2%
+        - generic [ref=e3471]:
+          - text: "Pick:"
+          - strong [ref=e3472]: Winnipeg Jets
+          - generic [ref=e3473]: MED
+          - text: "61.8% confidence · Odds: 1.61"
+      - generic [ref=e3474]: No qualifying player props.
+    - generic [ref=e3475]:
+      - generic [ref=e3476]:
+        - generic [ref=e3477]: San Jose Sharks vs Chicago Blackhawks
+        - generic [ref=e3478]: Mon 6 Apr, 22:00 ET
+      - generic [ref=e3479]:
+        - generic [ref=e3480]: 🏆 WINNER PREDICTION
+        - generic [ref=e3481]:
+          - generic [ref=e3482]: San Jose Sharks
+          - generic [ref=e3485]: 58.9%
+        - generic [ref=e3486]:
+          - generic [ref=e3487]: Chicago Blackhawks
+          - generic [ref=e3490]: 41.1%
+        - generic [ref=e3491]:
+          - text: "Pick:"
+          - strong [ref=e3492]: San Jose Sharks
+          - generic [ref=e3493]: MED
+          - text: "58.9% confidence · Odds: 1.65"
+      - generic [ref=e3494]: No qualifying player props.
+    - generic [ref=e3495]:
+      - generic [ref=e3496]:
+        - generic [ref=e3497]: Los Angeles Kings vs Nashville Predators
+        - generic [ref=e3498]: Mon 6 Apr, 22:30 ET
+      - generic [ref=e3499]:
+        - generic [ref=e3500]: 🏆 WINNER PREDICTION
+        - generic [ref=e3501]:
+          - generic [ref=e3502]: Los Angeles Kings
+          - generic [ref=e3505]: 55.2%
+        - generic [ref=e3506]:
+          - generic [ref=e3507]: Nashville Predators
+          - generic [ref=e3510]: 44.8%
+        - generic [ref=e3511]:
+          - text: "Pick:"
+          - strong [ref=e3512]: Los Angeles Kings
+          - generic [ref=e3513]: MED
+          - text: "55.2% confidence · Odds: 1.78"
+      - generic [ref=e3514]: No qualifying player props.
+  - button "📋 My Picks" [ref=e21] [cursor=pointer]

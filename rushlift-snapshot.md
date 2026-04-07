@@ -1,0 +1,671 @@
+- generic [active] [ref=e13]:
+  - generic:
+    - region "Toast message":
+      - heading "0 notifications total" [level=2] [ref=e15]
+      - alert
+  - region [ref=e12]
+  - generic [ref=e16]:
+    - generic [ref=e18]:
+      - button "Skip to search" [ref=e19] [cursor=pointer]:
+        - generic [ref=e20]: Skip to search
+      - button "Skip to main content" [ref=e21] [cursor=pointer]:
+        - generic [ref=e22]: Skip to main content
+      - button "Keyboard shortcuts" [ref=e23] [cursor=pointer]:
+        - generic [ref=e24]: Keyboard shortcuts
+      - button "Close jump menu" [ref=e25] [cursor=pointer]:
+        - img [ref=e26]
+        - generic [ref=e28]: Close jump menu
+    - banner "Global Navigation" [ref=e29]:
+      - generic [ref=e30]:
+        - link "LinkedIn" [ref=e31] [cursor=pointer]:
+          - /url: https://www.linkedin.com/feed/?nis=true
+          - img "LinkedIn" [ref=e34]:
+            - img [ref=e35]
+        - generic [ref=e39]:
+          - combobox "Search" [ref=e40]
+          - generic:
+            - img
+        - navigation "Primary Navigation" [ref=e41]:
+          - list [ref=e42]:
+            - listitem [ref=e43]:
+              - link "new feed updates notifications Home" [ref=e44] [cursor=pointer]:
+                - /url: https://www.linkedin.com/feed/?nis=true&
+                - generic [ref=e45]:
+                  - generic [ref=e48]: new feed updates notifications
+                  - img [ref=e52]
+                - generic "Home" [ref=e54]
+            - listitem [ref=e55]:
+              - link "My Network" [ref=e56] [cursor=pointer]:
+                - /url: https://www.linkedin.com/mynetwork/?
+                - img [ref=e60]
+                - generic "My Network" [ref=e62]
+            - listitem [ref=e63]:
+              - link "Jobs" [ref=e64] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/?
+                - img [ref=e68]
+                - generic "Jobs" [ref=e70]
+            - listitem [ref=e71]:
+              - link "Messaging" [ref=e72] [cursor=pointer]:
+                - /url: https://www.linkedin.com/messaging/?
+                - img [ref=e76]
+                - generic "Messaging" [ref=e78]
+            - listitem [ref=e79]:
+              - link "Notifications" [ref=e80] [cursor=pointer]:
+                - /url: https://www.linkedin.com/notifications/?
+                - img [ref=e84]
+                - generic "Notifications" [ref=e86]
+            - listitem [ref=e87]:
+              - button "Adegboyega Ogidan Me" [ref=e89] [cursor=pointer]:
+                - img "Adegboyega Ogidan" [ref=e90]
+                - generic [ref=e91]:
+                  - text: Me
+                  - img [ref=e92]
+            - listitem [ref=e94]:
+              - button "For Business" [ref=e96] [cursor=pointer]:
+                - img [ref=e100]
+                - generic "For Business" [ref=e102]:
+                  - text: For Business
+                  - img [ref=e103]
+            - listitem [ref=e105]:
+              - link "Post a job" [ref=e106] [cursor=pointer]:
+                - /url: https://www.linkedin.com/talent/job-posting-redirect?trk=nav_spotlight_post_job&
+                - img [ref=e110]
+                - generic "Post a job" [ref=e115]
+    - generic [ref=e116]:
+      - generic [ref=e119]:
+        - main [ref=e120]:
+          - generic [ref=e123]:
+            - generic [ref=e127]:
+              - generic [ref=e128]:
+                - generic [ref=e129]:
+                  - link "Rushlift GSE logo" [ref=e130] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/company/rushliftgse/life
+                    - img "Rushlift GSE logo" [ref=e133]
+                  - link "Rushlift GSE" [ref=e135] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/company/rushliftgse/life
+                - generic [ref=e136]:
+                  - button "Share" [ref=e139] [cursor=pointer]:
+                    - img [ref=e140]
+                    - generic [ref=e142]: Share
+                  - button "Show more options" [ref=e144] [cursor=pointer]:
+                    - img [ref=e145]
+                    - generic [ref=e147]: Show more options
+              - heading "IT Coordinator" [level=1] [ref=e150]
+              - generic [ref=e153]:
+                - generic [ref=e154]: London, England, United Kingdom
+                - generic [ref=e155]: ·
+                - strong [ref=e157]:
+                  - text: Reposted
+                  - generic [ref=e158]: 1 hour ago
+                - generic [ref=e159]: ·
+                - generic [ref=e160]: Over 100 people clicked apply
+                - paragraph [ref=e161]:
+                  - generic [ref=e162]: Promoted by hirer
+                  - generic [ref=e163]: ·
+                  - generic [ref=e164]: Responses managed off LinkedIn
+              - generic [ref=e165]:
+                - button "Matches your job preferences, workplace type is On-site." [ref=e166] [cursor=pointer]:
+                  - strong [ref=e169]:
+                    - img [ref=e171]
+                    - text: On-site
+                  - generic [ref=e173]: Matches your job preferences, workplace type is On-site.
+                - button "Matches your job preferences, job type is Full-time." [ref=e174] [cursor=pointer]:
+                  - strong [ref=e177]:
+                    - img [ref=e179]
+                    - text: Full-time
+                  - generic [ref=e181]: Matches your job preferences, job type is Full-time.
+              - generic [ref=e183]:
+                - link "Apply to IT Coordinator on company website" [ref=e186] [cursor=pointer]:
+                  - img [ref=e187]
+                  - generic [ref=e189]: Apply
+                - button "Save IT Coordinator at Rushlift GSE" [ref=e190] [cursor=pointer]:
+                  - generic [ref=e191]: Save
+                  - generic [ref=e192]: Save IT Coordinator at Rushlift GSE
+            - generic [ref=e193]:
+              - heading "How your profile and resume fit this job" [level=2] [ref=e194]
+              - paragraph [ref=e195]:
+                - text: Get AI-powered advice on this job and more exclusive features with Premium.
+                - link "Reactivate Premium" [ref=e196] [cursor=pointer]:
+                  - /url: http://www.linkedin.com/premium/products/?upsellOrderOrigin=Tracking%3Av1%3Apremium_job_details_how_you_fit_upsell%3AJob+Seeker%3AIn-Product&utype=coach_job&referenceId=nydyeEXSQteR6%2FizF5OtSw%3D%3D&isSS=false
+              - list [ref=e201]:
+                - listitem [ref=e202]:
+                  - button "Show match details" [ref=e203] [cursor=pointer]:
+                    - img [ref=e204]
+                    - generic [ref=e206]: Show match details
+                - listitem [ref=e207]:
+                  - button "Tailor my resume" [ref=e208] [cursor=pointer]:
+                    - img [ref=e209]
+                    - generic [ref=e211]: Tailor my resume
+                - listitem [ref=e212]:
+                  - button "Help me stand out" [ref=e213] [cursor=pointer]:
+                    - img [ref=e214]
+                    - generic [ref=e216]: Help me stand out
+            - generic [ref=e217]:
+              - article [ref=e218]:
+                - generic [ref=e220]:
+                  - heading "About the job" [level=2] [ref=e221]
+                  - paragraph [ref=e223]:
+                    - text: We are Bobcat. A community powered by people. Across 16 countries and 50 nationalities, we have over 2,500 employees, 300 dealers in EMEA and a world-class innovation centre that’s breaking new ground every day. We’ve been engineering powerful machines and transforming how the world works for more than 60 years. From construction to agriculture, our products make an impact. We empower people to accomplish more, and we’re proud of that. It’s our people that make it possible. We value the skill and expertise that surrounds us. As part of our team, you’ll find career opportunities that will challenge, inspire, and reward you. We believe that together we can unearth something extraordinary.
+                    - text: We are looking for IT Coordinator to join our team at Bobcat.
+                    - text: As IT Coordinator at Rushllift GSE, you’ll play a key role in our community to ensure seamless IT operations at GSE sites by maintaining robust infrastructure, resolving technical issues quickly, and safeguarding the business against cyber risks. By supporting hardware, software, networks, and user needs, the IT Co-ordinator enables efficient site operations and business continuity. You will also contribute to IT strategy by identifying improvements, coordinating projects, and ensuring compliance with business and regulatory requirements.
+                    - strong [ref=e225]: We’re Looking For Someone Who Will
+                    - list [ref=e227]:
+                      - listitem [ref=e228]: Oversee day-to-day operations of IT systems, hardware, and networks at GSE sites.
+                      - listitem [ref=e229]: Monitor system performance, troubleshoot issues, and implement fixes to minimise downtime.
+                      - listitem [ref=e230]: Support system upgrades, migrations and configurations to ensure technology remains fit for purpose.
+                      - listitem [ref=e231]: Provide first and second-line IT support for the site employees, resolving hardware, software, and network issues.
+                      - listitem [ref=e232]: Act as an escalation point for IT tickets and ensure timely resolution in line with the SLA’s
+                      - listitem [ref=e233]: Manage the set-up, installation, and configuration of computers, servers, printers, and mobile devices.
+                      - listitem [ref=e234]: Support the integration of IT systems with ERP, finance, or operational platforms.
+                      - listitem [ref=e235]: Monitor and respond to cyber security alerts, escalating risks where required.
+                      - listitem [ref=e236]: Maintain accurate records of IT assets, systems and user requests.
+                      - listitem [ref=e237]: Act as primary contact for IT vendors, monitoring service quality and resolving issues.
+                      - listitem [ref=e238]: Support planning and execution of IT projects, ensuring deliverables are met on time and within scope.
+                      - listitem [ref=e239]: Track project milestones and provide status updates to management.
+                    - strong [ref=e241]: What Sets You Apart
+                    - list [ref=e243]:
+                      - listitem [ref=e244]: Batchelors degree in information Technology, Computer Science or related field
+                      - listitem [ref=e245]: Relevant certifications such as CompTIA A+, Network+, MCP, or equivalent
+                      - listitem [ref=e246]: Strong experience in IT support, co-ordination, or systems administration.
+                      - listitem [ref=e247]: Experience with ERP, finance or business software platforms (eg, Dynamics, Navision / Business Central preferrable
+                      - listitem [ref=e248]: Strong knowledge of IT infrastructure (servers, networks, storage, cloud systems)
+                      - listitem [ref=e249]: Proficiency in IT service management
+                      - listitem [ref=e250]: Understanding of cyber security best practices and compliance requirements
+                      - listitem [ref=e251]: Strong communication skills
+                      - listitem [ref=e252]: Problem solving approach
+                      - listitem [ref=e253]: Strong organisational and time management skills with the ability to meet deadlines
+                      - listitem [ref=e254]: Team player with a proactive attitude and willingness to learn
+                      - listitem [ref=e255]: High level of integrity
+                    - strong [ref=e257]: What You Get In Return
+                    - list [ref=e259]:
+                      - listitem [ref=e260]: Competitive Salary Package
+                      - listitem [ref=e261]: Contributory Pension Scheme
+                      - listitem [ref=e262]: Enhanced Parental Policies
+                      - listitem [ref=e263]: Life Assurance
+                      - listitem [ref=e264]: On-site parking
+                      - listitem [ref=e265]: Employee Welfare Scheme – Vouchers for birthdays/weddings/children/studies/long service etc
+                      - listitem [ref=e266]: Employee Assistance Programme giving you access to Retail/Health/Gym discounts, confidential counselling and advice, Cycle2Work Scheme, and much more…
+                    - strong [ref=e268]: "#RLGSE"
+                    - text: At Bobcat, we support equal opportunities, value diversity of skills, perspectives and cultures and encourage applications from candidates from all backgrounds.
+              - button "Click to see more description" [ref=e270] [cursor=pointer]:
+                - img [ref=e271]
+                - generic [ref=e273]: See more
+            - generic [ref=e275]:
+              - generic [ref=e276]:
+                - heading "Set alert for similar jobs" [level=2] [ref=e277]
+                - generic [ref=e279]: Information Technology Coordinator, London, England, United Kingdom
+              - generic [ref=e281] [cursor=pointer]:
+                - generic [ref=e282]: "Off"
+                - generic [ref=e283]: Set alert
+                - switch "Set alert"
+            - generic [ref=e289]:
+              - heading "Job search faster with Premium" [level=3] [ref=e290]
+              - paragraph [ref=e291]: Access company insights like strategic priorities, headcount trends, and more
+              - generic [ref=e292]:
+                - list [ref=e294]:
+                  - listitem [ref=e295]
+                  - listitem [ref=e297]
+                  - listitem [ref=e299]
+                - paragraph [ref=e301]: Phibian Nosa and millions of other members use Premium
+              - link "Reactivate Premium" [ref=e302] [cursor=pointer]:
+                - /url: http://www.linkedin.com/premium/products/?upsellOrderOrigin=Tracking%3Av1%3Apremium_job_details_how_you_match_upsell%3AJob+Seeker%3AIn-Product&utype=job&referenceId=Yg8xrH3CQaCfFvLPPnoLlw%3D%3D&isSS=false&destRedirectURL=https%3A%2F%2Fwww.linkedin.com%2Fjobs%2Fview%2Fit-coordinator-at-rushlift-gse-4342201321%2F%3ForiginalSubdomain%3Duk
+              - paragraph [ref=e303]: Cancel anytime. No hidden fees.
+            - generic [ref=e305]:
+              - generic [ref=e306]:
+                - heading "About the company" [level=2] [ref=e307]
+                - generic [ref=e308]:
+                  - generic [ref=e309]:
+                    - link "Rushlift GSE company logo" [ref=e311] [cursor=pointer]:
+                      - /url: /company/rushliftgse/life/
+                      - img "Rushlift GSE company logo" [ref=e312]
+                    - generic [ref=e313]:
+                      - link "Rushlift GSE" [ref=e315] [cursor=pointer]:
+                        - /url: /company/rushliftgse/life/
+                      - generic [ref=e316]: 3,381 followers
+                  - button "Follow" [ref=e317] [cursor=pointer]:
+                    - img [ref=e318]
+                    - generic [ref=e320]: Follow
+                - generic [ref=e321]:
+                  - text: Airlines and Aviation
+                  - generic [ref=e322]: • 11-50 employees
+                  - generic [ref=e323]: • 42 on LinkedIn
+                - paragraph [ref=e324]:
+                  - generic [ref=e325]:
+                    - text: If you’re looking for a tailor-made solution to your Ground Support Equipment needs then look no further than Rushlift GSE – we tailor the equipment, support and costs to the needs of your team to ensure that we are your partners for the long-term and allow us to grow together.
+                    - generic [ref=e326]:
+                      - generic [ref=e327]: …
+                      - button "show more" [ref=e328] [cursor=pointer]
+              - link "Show more about the company" [ref=e330] [cursor=pointer]:
+                - /url: /company/rushliftgse/life/
+                - text: Show more
+            - heading "More jobs" [level=2] [ref=e332]
+            - list [ref=e334]:
+              - listitem [ref=e335]:
+                - link "HBS logo IT Support Coordinator FTC with verification HBS London Area, United Kingdom (Hybrid) £30K/yr - £36K/yr 15 Sky company alumni work here 2 weeks ago" [ref=e337] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4384875545&referenceJobId=4342201321&originToLandingJobPostings=4384875545&trackingId=gJKzctXqINAh3lUiJJQp4g%3D%3D&refId=jjiBtOLMgPf%2FFzDn9cofRw%3D%3D&eBP=CwEAAAGdL8OvMbTqOuG89bPonZOrinX4t_xYBUE_Bu_HpMIT4Rk-nHYl_33FIv25QsfCdjPocNiK1uNApp4r6nj-2vWCjeDLGwEc114NCl7Tnz176kxPDADN5e3AcprjrRY4_vS_-pTQQ3jo5v5E4k1iRRf0ruSh0kspGUs9JeNPzEYzT0Gn3_s4V0pIexGbEv_-NLwuQxCGnGPikOKfbVvCrC21lQFRoTjOBwi_hZ3FTjCTYlwz0J5H-smiFGuVmXrLkPvYZXWAE5W4oLkxHv1sGmXKFWRDmViSxkdi2dT2Vmnv0-CKwDh-qe3LRc6zqNGF8aNj7g-H3ItHvzNHoVqKmUIpSqKAN_yk_LvwaTSBtW_HUq_7QRSBLsnDlgsajU7ZQY-tS0-8rf6Ty9YXMeV496R0ZGhWBH7JKwwsRgXnhX_SsC_4Bs8GUcuEGOSyiZGcxKlwcMQEUOHJz9fSjZnP8kv79vs9KhAkq63UbUWp5Qblj1bkWNTffNCuY9ffNWyNQbsMRAiARrsKDTQdVma09SKu8XwzoGZw
+                  - generic [ref=e339]:
+                    - img "HBS logo" [ref=e344]
+                    - generic [ref=e345]:
+                      - generic [ref=e346]:
+                        - generic [ref=e347]:
+                          - generic [ref=e348]:
+                            - strong [ref=e349]: IT Support Coordinator FTC
+                            - img [ref=e351]
+                          - generic [ref=e353]: IT Support Coordinator FTC with verification
+                        - generic [ref=e355]: HBS
+                        - generic [ref=e357]: London Area, United Kingdom (Hybrid)
+                        - generic [ref=e358]:
+                          - generic [ref=e359]: £30K/yr - £36K/yr
+                          - list [ref=e360]:
+                            - listitem [ref=e361]:
+                              - generic [ref=e364]:
+                                - generic [ref=e365]: 15 company alumni work here
+                                - generic [ref=e366]: 15 Sky company alumni work here
+                      - list [ref=e368]:
+                        - listitem [ref=e369]:
+                          - time [ref=e370]: 2 weeks ago
+              - listitem [ref=e371]:
+                - link "ISS Facility Services UK logo Technical Coordinator with verification ISS Facility Services UK Reading, England, United Kingdom (On-site) 7 Sky company alumni work here 10 minutes ago Easy Apply" [ref=e373] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4391598710&referenceJobId=4342201321&originToLandingJobPostings=4391598710&trackingId=Frsd6m9EmYSq1Sz%2FWP3Q%2Bg%3D%3D&refId=jjiBtOLMgPf%2FFzDn9cofRw%3D%3D&eBP=CwEAAAGdL8OvMc5mTWb59XOj0_upfbtfBitrRcGZz2ZcpkDUhEFn6oEnA6ybvnImniVpGPK2_on16VPBnYqUbY7eTcLWPEc3KnMlzB0ahHDJRkFVbLw7CbgWELQowyUk6riVkpbCay39AfKE-ojGjoO9KTgNkBhsiRwkPBYNmNTFz_jSAfBAkx9Dda7Q_C91rMQZu0TnhW3nEzgoPaC3PIemTxJypMwzGRbsHd6MBZLjNsqThM4AusDhaB66XNT9EsYpxEPdBeuuCKevchMxIpl44W8h53NqDHFRLntDpGEiFDs0L-FGTS2LepeKXrOZ9Al_rLSDB-MZOGc2UNvNZCy0fG1UgzEubUpkUzYPa0yWIw1Zi9P19IovQngBt5VzNuaAFd7n4Byfpo2nhYia4953ZLx6ydmbo8zPxptNrl49TnRmdr-BzTg4ybDD53Ia4teWzBnCMZ7wdbgpd1mlIAB6m2xp9s1GvHNLOKZLyad6FhQUhdbhLmR_gxA91ZLMCDMbBCU5JyqFXhTU1LQpD9u9zlvg
+                  - generic [ref=e375]:
+                    - img "ISS Facility Services UK logo" [ref=e380]
+                    - generic [ref=e381]:
+                      - generic [ref=e382]:
+                        - generic [ref=e383]:
+                          - generic [ref=e384]:
+                            - strong [ref=e385]: Technical Coordinator
+                            - img [ref=e387]
+                          - generic [ref=e389]: Technical Coordinator with verification
+                        - generic [ref=e391]: ISS Facility Services UK
+                        - generic [ref=e393]: Reading, England, United Kingdom (On-site)
+                        - list [ref=e395]:
+                          - listitem [ref=e396]:
+                            - generic [ref=e399]:
+                              - generic [ref=e400]: 7 company alumni work here
+                              - generic [ref=e401]: 7 Sky company alumni work here
+                      - list [ref=e403]:
+                        - listitem [ref=e404]:
+                          - time [ref=e405]: 10 minutes ago
+                        - listitem [ref=e406]:
+                          - img [ref=e407]:
+                            - img [ref=e408]
+                          - generic [ref=e410]: Easy Apply
+              - listitem [ref=e411]:
+                - link "Hilton logo IT Coordinator with verification Hilton London, England, United Kingdom (On-site) 38 Broward College school alumni work here 4 days ago" [ref=e413] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4389072898&referenceJobId=4342201321&originToLandingJobPostings=4389072898&trackingId=M74fEiw01ukkvCb7suqSSw%3D%3D&refId=jjiBtOLMgPf%2FFzDn9cofRw%3D%3D&eBP=CwEAAAGdL8OvMRA8Pd_aKUsFlGzrpdb36tByUalvnDPGSMIshuoIBVGmjIoaL6cvwNMdmDUYyRJqH57jIYeHi4_zv3QE0el47-IJVV_RsAJuor8vffkcKuGslQmQ3IszTjtqYRUczDJ6F-Mz79Yp35Q8O6R2pyh-qB49a9vsDP8aj9yeVudo85ZlNdgbA4-3oEMFTa_f7dhOrBxAx-xdnCGwfcM61GY1RvUFK1PAKqrBYLT1wd4-h8j2zPEo5ziJGDXdw-BaizrPiUCQURTA9DfIXgQVHRrt7jwlAzb4GMLgTlGHiLPitPS-OFOYvkeGcU937znQivk5WvkD411NyODSvaHuSsFKzQmY3j5T_k54PiS8-I6jiSE71jLcyQt0-gPOGyzGj2ShB7MHLwIaPA-DzwBYHToAzUfo-U7fo75sLfuVQDMIocR1-sh42VoG4-TIHJKsbdzuthR_I6rmWIGvQ9eQgObBVNmgAULzkSlEp47lUGzQzERLl5tUehH6c97MMOD9LXExZ7bB4Zw7TKB0GdAZzjA1MdrBJck
+                  - generic [ref=e415]:
+                    - img "Hilton logo" [ref=e420]
+                    - generic [ref=e421]:
+                      - generic [ref=e422]:
+                        - generic [ref=e423]:
+                          - generic [ref=e424]:
+                            - strong [ref=e425]: IT Coordinator
+                            - img [ref=e427]
+                          - generic [ref=e429]: IT Coordinator with verification
+                        - generic [ref=e431]: Hilton
+                        - generic [ref=e433]: London, England, United Kingdom (On-site)
+                        - list [ref=e435]:
+                          - listitem [ref=e436]:
+                            - generic [ref=e439]:
+                              - generic [ref=e440]: 38 school alumni work here
+                              - generic [ref=e441]: 38 Broward College school alumni work here
+                      - list [ref=e443]:
+                        - listitem [ref=e444]:
+                          - time [ref=e445]: 4 days ago
+              - listitem [ref=e446]:
+                - link "Gold Group Ltd logo IT Project Coordinator with verification Gold Group Ltd City Of London, England, United Kingdom (Hybrid) £30K/yr - £32K/yr Actively reviewing applicants Actively reviewing applicants 1 day ago Easy Apply" [ref=e448] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4390139757&referenceJobId=4342201321&originToLandingJobPostings=4390139757&trackingId=hV2BMvFLRqaukhFr9%2BQ98w%3D%3D&refId=jjiBtOLMgPf%2FFzDn9cofRw%3D%3D&eBP=CwEAAAGdL8OvMTWLER9Xlt-La8RHV10i-SN7QVbNwa3b9geeTO31fu7OnbFTkcP8Uf90UxfvhfdQ46g7FvmEFv0az-dcPkKCHY1yOmjgb4ag4Xuqmxnxm3QuShS8_exO-kBpialN-KfEvvu33J28TcJiiHdjKa4P-3nVBjSNasQ95nay9ow5jjQEzFktkTic3MlbpCUloRzdII8xoKIrHyFmCceNoEXS26dG69ay0D2rn9AgB2EbxNSfsfhYhOFLPSrkacog9zGhbdO9zkQZ9iPlT8MlYEFD90CQvJgHlJEhqsHQxrOrShjNSPJ1Ky2uYewbfGueKsvgVH7AJz-rd5ZZiNlFGZ7KvodSQbN7JeTkb4dah3UXfiHiAPM3QAgPZQwKCCmLvk9x5VnudDqZYFR1F4YoTGDX1dBnzpmZBMmVG9nmPjALoOi2Y6PCTruCItDoGdsI6sqBm8dJZNmuQ8x02naw3Lx-8JZ3-3PmLdiTWLTMscmr4V-PJeWUzG1ytWNAwVdJnqveNL_M0PTxmEREuPlclf6WGQ
+                  - generic [ref=e450]:
+                    - img "Gold Group Ltd logo" [ref=e455]
+                    - generic [ref=e456]:
+                      - generic [ref=e457]:
+                        - generic [ref=e458]:
+                          - generic [ref=e459]:
+                            - strong [ref=e460]: IT Project Coordinator
+                            - img [ref=e462]
+                          - generic [ref=e464]: IT Project Coordinator with verification
+                        - generic [ref=e466]: Gold Group Ltd
+                        - generic [ref=e468]: City Of London, England, United Kingdom (Hybrid)
+                        - generic [ref=e469]:
+                          - generic [ref=e470]: £30K/yr - £32K/yr
+                          - list [ref=e471]:
+                            - listitem [ref=e472]:
+                              - img "Actively reviewing applicants" [ref=e475]
+                              - generic [ref=e477]: Actively reviewing applicants
+                      - list [ref=e479]:
+                        - listitem [ref=e480]:
+                          - time [ref=e481]: 1 day ago
+                        - listitem [ref=e482]:
+                          - img [ref=e483]:
+                            - img [ref=e484]
+                          - generic [ref=e486]: Easy Apply
+              - listitem [ref=e487]:
+                - link "Grant Thornton UK logo IT Problem Management and Major Incident Coordinator with verification Grant Thornton UK London, England, United Kingdom (Hybrid) 5 Sky company alumni work here 1 week ago" [ref=e489] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4374844566&referenceJobId=4342201321&originToLandingJobPostings=4374844566&trackingId=arFc%2F5snZYwSFQUIZX%2BlbA%3D%3D&refId=jjiBtOLMgPf%2FFzDn9cofRw%3D%3D&eBP=CwEAAAGdL8OvMdEhZHeVkDKw7cODKxBvlnzaL37fXjybPAIqElHZZt_yT7HFUEayOhtFmo-CbZexppBSSSKQl3fBitDHrPNd1W4ZloLSBjy7N9nTNxJq0OLD7I48sVDvp24D4E0PT60zPGmYn4wOgy1zSgoyOy9iMieNmMGUmZLQ4Lq5U5ZDTYQKz0SmSyjQDfzr42KR1hJ1r8Zcl7iihJIZwVklIAkrOi87VHvOIT181EFKTnzuP7IYtIw8FqUfss5Eeb1MBSMuzmK1_-iBr-ahTrznL5-AeOfQMwjmUyxxr3SWxo7h19GZ5f_NVRfWO7ndQ4QG1vs4lGp3D7-V5WkbCTH7LSi-6r-vcIcFMQ6cP9qu0sVHHP_HC_zvdWLtU4Oldc4bV6NO_xkimyljDJm7X4LTMBM4BvL1VOeKY9XcA62_LkY_y5FV7ctbztuweKiTh0rUAkVpUtFGCO3AtHelKoJ46jr9wC8RimPmTUd7UlzKzDNbQhL45vSw03W8OJ7RfqZh6UYCuf_qEDct-Yhy18Zr7OWFCFaX
+                  - generic [ref=e491]:
+                    - img "Grant Thornton UK logo" [ref=e496]
+                    - generic [ref=e497]:
+                      - generic [ref=e498]:
+                        - generic [ref=e499]:
+                          - generic [ref=e500]:
+                            - strong [ref=e501]: IT Problem Management and Major Incident Coordinator
+                            - img [ref=e503]
+                          - generic [ref=e505]: IT Problem Management and Major Incident Coordinator with verification
+                        - generic [ref=e507]: Grant Thornton UK
+                        - generic [ref=e509]: London, England, United Kingdom (Hybrid)
+                        - list [ref=e511]:
+                          - listitem [ref=e512]:
+                            - generic [ref=e515]:
+                              - generic [ref=e516]: 5 company alumni work here
+                              - generic [ref=e517]: 5 Sky company alumni work here
+                      - list [ref=e519]:
+                        - listitem [ref=e520]:
+                          - time [ref=e521]: 1 week ago
+              - listitem [ref=e522]:
+                - link "Haystack logo IT Project Coordinator Haystack London, England, United Kingdom (Hybrid) 21 hours ago" [ref=e524] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4391128701&referenceJobId=4342201321&originToLandingJobPostings=4391128701&trackingId=GGHeUQAUcCWm3y3h%2FKMCJQ%3D%3D&refId=jjiBtOLMgPf%2FFzDn9cofRw%3D%3D&eBP=CwEAAAGdL8OvMa1CR8lawRJqlKK1RtWmbcbbi8T14RQYTXDNz6QYiRa_nFR286iS3msCeinqbp976tvmjQwDjfr2W3iiJP51zh6GsZxqafdsY553RhUW3fabu7B24-tvxGkJJzV7uOsaJt65X-hu5a7WKW3gUpWt-McUZeo48Eac8q63eub0kEXy7SDd7echZtA7udNyxyNUwmJr6Yc3btTnl9sPtzIZm5e6yw9UNj7astROg9d77NhWW1sFWTzN56YvKwfMONQGtwqg7K0gZSI3vO34-vTbTVXo_IkluN9WrrAuoKiqfvDOeTdlOMs-wALuqFPIfIkCJx7BbChApYEcDOJtCIkFz9etfcD8tqzWFj4ITh6xAQrDbjdvzwYHW5mfqegPELoSEsRZsP9fiIf0e63tjFZUFjlIqEsBtyUHTuKc8t-e1LrmQCNZO0dzvMJF9J-1NQzYfmUkV5Ll0pROKQu4dNCcahGAaSOI6l-0rcrpzaH5aUkUWLIAapQGYlnOgQs5arVpat5wZgaidS53IznZ8c_Rd4I291kDwxg-mc-Be1AEFHBmG7jTXg
+                  - generic [ref=e526]:
+                    - img "Haystack logo" [ref=e531]
+                    - generic [ref=e532]:
+                      - generic [ref=e533]:
+                        - generic [ref=e534]:
+                          - strong [ref=e536]: IT Project Coordinator
+                          - generic [ref=e537]: IT Project Coordinator
+                        - generic [ref=e539]: Haystack
+                        - generic [ref=e541]: London, England, United Kingdom (Hybrid)
+                      - list [ref=e543]:
+                        - listitem [ref=e544]:
+                          - time [ref=e545]: 21 hours ago
+              - listitem [ref=e546]:
+                - link "OneAPPS Consulting logo ISM Co-Ordinator OneAPPS Consulting Glasgow, Scotland, United Kingdom (On-site) 2 Sky company alumni work here 2 weeks ago Be an early applicant Easy Apply" [ref=e548] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4382574230&referenceJobId=4342201321&originToLandingJobPostings=4382574230&trackingId=iP9Ehv2IcOwW6zrTSmyMmA%3D%3D&refId=jjiBtOLMgPf%2FFzDn9cofRw%3D%3D&eBP=CwEAAAGdL8OvMSM1CYS-4UvWtn8GVqJbO-fD0WqtKzo0u3MqI7s-3PWmufb4EfUoXdG7R-pwfUiWw0TnrZ1IGksRByky_ri7sPJjF-a1qNvxmxE1UzV_JO4aTz0Sh8UypslqRL1U3eTRGuJBMrbFG8fwkl3xyYzdgrjgOygtMULg-ePtX-py7I6wGU37MCVX_B9QWIAYabjpMh49z3E1loN1A_85mtNSQRn5Gvdd6_hOGf1IFWUfmVm8IunI_N0w_zILmbn8OY0maWosdis5-xSd7Q1CnTie0etKYVxuhY2Kof5gN7q32wPaK8c8E31HqTmxMLxTg45ea7L5TalGj9i6dzR3lc6_X7WDS9bnWIJD7Ma3qpJWGzZ_uSAgSJSol3Mom0M8d0Gj5vHkzmMpt99wzMUbzQ43tmmT3q940hsbNV5YCYt79DZUlxxXxIizFzDSKskfoTuwt_HVEcNxb_6-R0p01CApldmzL5Lhf_pT6SFZ5aRHUj4usqIIRfNCXxPP1yDUJs75jFyg1X3eKzdf1ebrYFU
+                  - generic [ref=e550]:
+                    - img "OneAPPS Consulting logo" [ref=e555]
+                    - generic [ref=e556]:
+                      - generic [ref=e557]:
+                        - generic [ref=e558]:
+                          - strong [ref=e560]: ISM Co-Ordinator
+                          - generic [ref=e561]: ISM Co-Ordinator
+                        - generic [ref=e563]: OneAPPS Consulting
+                        - generic [ref=e565]: Glasgow, Scotland, United Kingdom (On-site)
+                        - list [ref=e567]:
+                          - listitem [ref=e568]:
+                            - generic [ref=e571]:
+                              - generic [ref=e572]: 2 company alumni work here
+                              - generic [ref=e573]: 2 Sky company alumni work here
+                      - list [ref=e575]:
+                        - listitem [ref=e576]:
+                          - time [ref=e577]: 2 weeks ago
+                        - listitem [ref=e578]:
+                          - strong [ref=e580]:
+                            - generic [ref=e581]: Be an early applicant
+                        - listitem [ref=e582]:
+                          - img [ref=e583]:
+                            - img [ref=e584]
+                          - generic [ref=e586]: Easy Apply
+              - listitem [ref=e587]:
+                - link "Ampstek logo Patch Compliance Coordinator with verification Ampstek Birmingham, England, United Kingdom (Hybrid) Actively reviewing applicants Actively reviewing applicants 4 days ago Be an early applicant Easy Apply" [ref=e589] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4388901380&referenceJobId=4342201321&originToLandingJobPostings=4388901380&trackingId=njpPCneNVFKJr1C7ZuByUA%3D%3D&refId=jjiBtOLMgPf%2FFzDn9cofRw%3D%3D&eBP=CwEAAAGdL8OvMR3s92HW_tD4XJc7ryLWVAp4ziljYjXn_dAZMZiJLJQuACC1QHjAmo0bvyVLH4NZF1Ky1yr0C-X8Oqo3aQFdCGGQnFW8bP_a2Kd4aZHRtJeHkqwSKBum6QteBXgmZm_YzZ9IBxx5W80zYhDmYh9HEgW5XtdIw6FiF7qlcfSM-GspxZbAZBEqJItH6YOXBZHrXxRyGeX8DIjnFVNhwEHYB_a6N5u1Upkthjtz174S6x9y8G7Mcu4NOtA8lrrpo6WeMjJkRc8riJerX0cA8jbbad4v9UYPhThguhsbBvNyh2js_jKgVgcpr8py3xDTdhXgwHxN_U9fz3EHK5d6H7ykOD8DMOgQb0wqlVow9X4YcqqFM4f590kAO8oETYCgT-cLDdHPfNuQTIGyr5H11swqbRKbhl2IiQ_t0lblAr2xa-2q6Q_afUs_-TMagyT_Kk7MQAAhS-2qcJlGU6I1dOwochStqp9T5-0M8avPj6PYqe_9AfLeEwKpyHYSkuaJBOZ3HCMb1JrF5qRRJWqw-60
+                  - generic [ref=e591]:
+                    - img "Ampstek logo" [ref=e596]
+                    - generic [ref=e597]:
+                      - generic [ref=e598]:
+                        - generic [ref=e599]:
+                          - generic [ref=e600]:
+                            - strong [ref=e601]: Patch Compliance Coordinator
+                            - img [ref=e603]
+                          - generic [ref=e605]: Patch Compliance Coordinator with verification
+                        - generic [ref=e607]: Ampstek
+                        - generic [ref=e609]: Birmingham, England, United Kingdom (Hybrid)
+                        - list [ref=e611]:
+                          - listitem [ref=e612]:
+                            - img "Actively reviewing applicants" [ref=e615]
+                            - generic [ref=e617]: Actively reviewing applicants
+                      - list [ref=e619]:
+                        - listitem [ref=e620]:
+                          - time [ref=e621]: 4 days ago
+                        - listitem [ref=e622]:
+                          - strong [ref=e624]:
+                            - generic [ref=e625]: Be an early applicant
+                        - listitem [ref=e626]:
+                          - img [ref=e627]:
+                            - img [ref=e628]
+                          - generic [ref=e630]: Easy Apply
+              - listitem [ref=e631]:
+                - link "Talent logo Services SD WAN Rollout Coordinator with verification Talent Witham St Hughs, England, United Kingdom (On-site) £205 daily 2 weeks ago Be an early applicant" [ref=e633] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4382893953&referenceJobId=4342201321&originToLandingJobPostings=4382893953&trackingId=t2ISqs5DukHulbxoh4fAUg%3D%3D&refId=jjiBtOLMgPf%2FFzDn9cofRw%3D%3D&eBP=CwEAAAGdL8OvMdTddNW5Rfed74GkkT_dS987O891B4PHzkX8lBi-yADJhqZsNmxKEnXeuQ4ptKlwMFWSvU5QYI5I1Q0SONaLhmGjo3-PrajnWnjNDsAaVFa2jbV8BQuwMYYGbBPCe3xSBHMVrhgEUs1P1DI7WFEnR0khHZ_gYGvcwwWdOdFVcy10TprWqo40i1mEmwHePM26N2L85P8lvh2Vd2AU9HWsEyZGbgQGC093L3WqiJrhJ5KKqIKbEx-tpACcrzrJwzy-2jF-49GHGBQ3wyKjfdX_HPS_w4zANwSP9UChFqdWvGFfOPD-rGVPTfeWN-NSgrVFVfxeYCQwdWt9ZXYvUA6iglYk3PMivrRPrmOnRo4xWUOTbu-_ajZaf0d9QUYmyELw_ILWo5oWx18nRE7ybZDMjbc6_QgDOZAPsjghhlEXpi52i1Xnd8ZZKYprce21rNZtDAuXyl6dofLS1qT7NIU4HIriKHLsqqi5Mi7n9Ttt-DdWLjeppR4R-uD1SaOTq5RFZZH-ZPCeOdGjYcnD
+                  - generic [ref=e635]:
+                    - img "Talent logo" [ref=e640]
+                    - generic [ref=e641]:
+                      - generic [ref=e642]:
+                        - generic [ref=e643]:
+                          - generic [ref=e644]:
+                            - strong [ref=e645]: Services SD WAN Rollout Coordinator
+                            - img [ref=e647]
+                          - generic [ref=e649]: Services SD WAN Rollout Coordinator with verification
+                        - generic [ref=e651]: Talent
+                        - generic [ref=e653]: Witham St Hughs, England, United Kingdom (On-site)
+                        - generic [ref=e655]: £205 daily
+                      - list [ref=e657]:
+                        - listitem [ref=e658]:
+                          - time [ref=e659]: 2 weeks ago
+                        - listitem [ref=e660]:
+                          - strong [ref=e662]:
+                            - generic [ref=e663]: Be an early applicant
+              - listitem [ref=e664]:
+                - link "Consortium Professional Recruitment logo IT Asset Coordinator Consortium Professional Recruitment Kingston Upon Hull, England, United Kingdom (On-site) 2 weeks ago" [ref=e666] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4381725017&referenceJobId=4342201321&originToLandingJobPostings=4381725017&trackingId=rY9a33lOi%2FytoeoTcgsj%2Bw%3D%3D&refId=jjiBtOLMgPf%2FFzDn9cofRw%3D%3D&eBP=CwEAAAGdL8OvMYfDt9k9yHrxn2fQbJuuYUzYetmFo7Nx0Uj7WOjJaR-tSYTZydSDLgRax5oXy2OW1ZnGJa0saDNbMMwGg4zhOD5THKZFnlgNtFUAiGXwn8bvoXA33OEbuArw6AjLcTooQT4TVwgezTvnl_TqYhgbG3DZfrNLCoiAECHF2H0uWIGrTAx_ym5uJGIgKvHsN9R-VJ-3pRiCgnW0q7f4qbL0Bw1W_esI_-4A_n4O2G6XnAkmcAeCYX6g96dKUlk5Nvv_8Bl3vkyamSBLzlE6AmabUVmwGyfTNneGTIys7L3SIdIKR2H4hA2br098nzbieEIMigEOaUR1QllDKL-BVHWNWi_tTw3jz2Qa5Rn9n_AqQbHB4FYbEGxWYR2yaAVV3-8kJp8c5lRyICdeG8vqbTjO8y2n9d93eKIk-JsniXWgtrJk0Zj3LG4Kvf8qNdIDQ748evNHd5win8TxfojLKqqv49DqMOhwEVY9atoyZtuodwD2oApAWnOtG66wJr_QA-3rtqsFpv8xF0EG05w1XKq4Xv_7
+                  - generic [ref=e668]:
+                    - img "Consortium Professional Recruitment logo" [ref=e673]
+                    - generic [ref=e674]:
+                      - generic [ref=e675]:
+                        - generic [ref=e676]:
+                          - strong [ref=e678]: IT Asset Coordinator
+                          - generic [ref=e679]: IT Asset Coordinator
+                        - generic [ref=e681]: Consortium Professional Recruitment
+                        - generic [ref=e683]: Kingston Upon Hull, England, United Kingdom (On-site)
+                      - list [ref=e685]:
+                        - listitem [ref=e686]:
+                          - time [ref=e687]: 2 weeks ago
+              - listitem [ref=e688]:
+                - link "Better Cotton Initiative logo Senior Technology Risk Coordinator Better Cotton Initiative London, England, United Kingdom (On-site) 1 day ago Be an early applicant" [ref=e690] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4378981989&referenceJobId=4342201321&originToLandingJobPostings=4378981989&trackingId=Ws5%2F7OeloVDZX1Q7gQC5WQ%3D%3D&refId=jjiBtOLMgPf%2FFzDn9cofRw%3D%3D&eBP=CwEAAAGdL8OvMdxGBNguorLkB0LCx0ll5S2TEffJn_dilDV6u9a-IS-2w5kKHtYix2LwjszAwJXh87ooYdfhtJh82dNEU9ffsC-cZY1hVdWsoL9HuSEIWwAa9w162G_apPWNIdsQn11rFzuXjGP1fK4VOsIz_TzMyPcEdfl_whNwPX6PM_ZAR2BpKdkd44cGp27aZByiJBfpGfoq255OWMj9zGHSpp_pYs_UR-Bv5o5ShqRF8uIwnK85fb67wTMDfC5YS4LgNbO_RvcJNe5i8F4KE0b3rBB0F_EJM61Nc87Rrtg9ugBms_oASDDRRu1qtH3fnSBFERlkBYBZRXKH-Gsg8qi_KRV7qev0tzArWFD-bldJsAKGE4l8bfi9t61qL2pFMOifzc5cOquCtkbMTaCINqUgR9dc9Sr4M9iVjl708U7EsYBJIRhEG783KXjxJyu8xRpmNAs6hKNeCCe_49HJmKu282Gxrks9qBqXmLNVs0aKSIpVC0EMbIzHDWioZSCAfo0-2KFyT27iMv-a8Un9J8zgZ3-DQA
+                  - generic [ref=e692]:
+                    - img "Better Cotton Initiative logo" [ref=e697]
+                    - generic [ref=e698]:
+                      - generic [ref=e699]:
+                        - generic [ref=e700]:
+                          - strong [ref=e702]: Senior Technology Risk Coordinator
+                          - generic [ref=e703]: Senior Technology Risk Coordinator
+                        - generic [ref=e705]: Better Cotton Initiative
+                        - generic [ref=e707]: London, England, United Kingdom (On-site)
+                      - list [ref=e709]:
+                        - listitem [ref=e710]:
+                          - time [ref=e711]: 1 day ago
+                        - listitem [ref=e712]:
+                          - strong [ref=e714]:
+                            - generic [ref=e715]: Be an early applicant
+              - listitem [ref=e716]:
+                - link "UKAS logo IT Project Coordinator with verification UKAS Staines-Upon-Thames, England, United Kingdom (On-site) 3 weeks ago" [ref=e718] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4381460941&referenceJobId=4342201321&originToLandingJobPostings=4381460941&trackingId=A8N20ooU%2BIOjWWOXglOj3g%3D%3D&refId=jjiBtOLMgPf%2FFzDn9cofRw%3D%3D&eBP=CwEAAAGdL8OvMWiBbqAQ83A45SKxQaJxE_e5L1WUWOmIAK26S3VAXWz89n_Tv6iSTed7E3FM34CewQSS3s9SnQS_0xlz3kP3a-v2bymNGcdycPexr_GWr6kk094V1QgUiPRkclMWF5tHb3LnN7UD8z8c44AGdqTFMr3j_WPD2pibC7thaXy74HMm9JL2XME6N-pTwMf5tEqFWdgHQeEr-hMaripibw5dhNd1Olzdzs3YYdZwxXPZYiVlHzLdgEPuBLnYWL8Z3sR9nW28BEpxiwklEF43eSj9Tf-TNSynYg6CPR2m82oi-x97RcbUPq2JKlnyu1j9p1rmjSt9_gWYsYgkaVVookpy2z3xBb-FUQinutOO0Q2u3RG98b_wVSCL28ldhMEwLXXdGr9_3nazENrKOtQmA2124jkXc5T-F4VfkXi7fttEIfjpixR8SJpq7tuH1ZgZy_7UK8IHENG0bzrDc_lAN29zQ8-pZ6p1Y0vtTwNXxpERtm4bjjTqEvDTfy6Kz5iML3eMeAcF06XLkrgkZkA-BTI
+                  - generic [ref=e720]:
+                    - img "UKAS logo" [ref=e725]
+                    - generic [ref=e726]:
+                      - generic [ref=e727]:
+                        - generic [ref=e728]:
+                          - generic [ref=e729]:
+                            - strong [ref=e730]: IT Project Coordinator
+                            - img [ref=e732]
+                          - generic [ref=e734]: IT Project Coordinator with verification
+                        - generic [ref=e736]: UKAS
+                        - generic [ref=e738]: Staines-Upon-Thames, England, United Kingdom (On-site)
+                      - list [ref=e740]:
+                        - listitem [ref=e741]:
+                          - time [ref=e742]: 3 weeks ago
+            - link "See more jobs like this" [ref=e744] [cursor=pointer]:
+              - /url: https://www.linkedin.com/jobs/collections/similar-jobs?referenceJobId=4342201321
+        - complementary [ref=e745]:
+          - generic [ref=e746]:
+            - generic [ref=e747]:
+              - generic [ref=e749]:
+                - heading "Job search smarter with Premium" [level=3] [ref=e750]
+                - list [ref=e751]:
+                  - listitem [ref=e752]:
+                    - img [ref=e756]
+                    - generic [ref=e759]: See jobs where you’d be a top applicant
+                  - listitem [ref=e760]:
+                    - img [ref=e764]
+                    - generic [ref=e767]: Message hiring managers with InMail
+                  - listitem [ref=e768]:
+                    - img [ref=e772]
+                    - generic [ref=e775]: Get personalized cover letter and resume tips
+                  - listitem [ref=e776]:
+                    - img [ref=e780]
+                    - generic [ref=e783]: Plus! Get insider access to live talks with industry leaders.
+                - generic [ref=e784]:
+                  - list [ref=e786]:
+                    - listitem [ref=e787]
+                    - listitem [ref=e789]
+                    - listitem [ref=e791]
+                  - paragraph [ref=e793]: Phibian Nosa and millions of other members use Premium
+                - link "Reactivate Premium" [ref=e794] [cursor=pointer]:
+                  - /url: http://www.linkedin.com/premium/products/?upsellOrderOrigin=Tracking%3Av1%3Ajob_right_rail_upsell%3AJob+Seeker%3AIn-Product&utype=job&referenceId=HfBQ0fpBRBukNQqTw7Ek3A%3D%3D&isSS=false&destRedirectURL=https%3A%2F%2Fwww.linkedin.com%2Fjobs%2Fview%2Fit-coordinator-at-rushlift-gse-4342201321%2F%3ForiginalSubdomain%3Duk
+                - paragraph [ref=e795]: Cancel anytime. No hidden fees.
+              - button "Dismiss premium promotion" [ref=e796] [cursor=pointer]:
+                - img [ref=e797]
+                - generic [ref=e799]: Dismiss premium promotion
+            - generic [ref=e800]:
+              - paragraph [ref=e801]: Looking for talent?
+              - link "Post a job" [ref=e802] [cursor=pointer]:
+                - /url: https://www.linkedin.com/talent/job-posting-redirect?trk=flagship3_job_detail
+      - contentinfo [ref=e804]:
+        - generic [ref=e806]:
+          - generic [ref=e807]:
+            - navigation [ref=e808]:
+              - list [ref=e809]:
+                - listitem [ref=e810]:
+                  - link "About" [ref=e811] [cursor=pointer]:
+                    - /url: https://about.linkedin.com/
+                - listitem [ref=e812]:
+                  - link "Accessibility" [ref=e813] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/accessibility
+                - listitem [ref=e814]:
+                  - link "Talent Solutions" [ref=e815] [cursor=pointer]:
+                    - /url: https://business.linkedin.com/talent-solutions?trk=flagship_nav&veh=li-footer-lts-control&src=li-footer
+                - listitem [ref=e816]:
+                  - link "Professional Community Policies" [ref=e817] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/legal/professional-community-policies
+                - listitem [ref=e818]:
+                  - link "Careers" [ref=e819] [cursor=pointer]:
+                    - /url: https://careers.linkedin.com/
+                - listitem [ref=e820]:
+                  - link "Marketing Solutions" [ref=e821] [cursor=pointer]:
+                    - /url: https://business.linkedin.com/marketing-solutions?trk=n_nav_lms_f&src=li-footer
+                - listitem [ref=e822]:
+                  - button "Privacy & Terms" [ref=e824] [cursor=pointer]:
+                    - generic [ref=e826]:
+                      - text: Privacy & Terms
+                      - img [ref=e827]
+                - listitem [ref=e829]:
+                  - link "Ad Choices" [ref=e830] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/help/linkedin/answer/62931
+                - listitem [ref=e831]:
+                  - link "Advertising" [ref=e832] [cursor=pointer]:
+                    - /url: https://business.linkedin.com/marketing-solutions/ads?trk=n_nav_ads_f
+                - listitem [ref=e833]:
+                  - link "Sales Solutions" [ref=e834] [cursor=pointer]:
+                    - /url: https://business.linkedin.com/sales-solutions?trk=flagship_nav&veh=li-footer-lss-control&src=li-footer
+                - listitem [ref=e835]:
+                  - link "Mobile" [ref=e836] [cursor=pointer]:
+                    - /url: https://mobile.linkedin.com/
+                - listitem [ref=e837]:
+                  - link "Small Business" [ref=e838] [cursor=pointer]:
+                    - /url: https://smallbusiness.linkedin.com?&src=li-footer
+                - listitem [ref=e839]:
+                  - link "Safety Center" [ref=e840] [cursor=pointer]:
+                    - /url: https://safety.linkedin.com
+            - generic [ref=e842]:
+              - list [ref=e843]:
+                - listitem [ref=e844]:
+                  - img [ref=e845]
+                  - generic [ref=e847]:
+                    - link "Questions? Visit our Help Center." [ref=e848] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/help/linkedin?trk=d_flagship3_job_details
+                      - text: Questions?
+                    - paragraph [ref=e849]: Visit our Help Center.
+                - listitem [ref=e850]:
+                  - img [ref=e851]
+                  - generic [ref=e853]:
+                    - link "Manage your account and privacy Go to your Settings." [ref=e854] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/psettings/
+                      - text: Manage your account and privacy
+                    - paragraph [ref=e855]: Go to your Settings.
+                - listitem [ref=e856]:
+                  - img [ref=e857]
+                  - generic [ref=e859]:
+                    - link "Recommendation transparency Learn more about Recommended Content." [ref=e860] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/help/linkedin/answer/a1339724
+                      - text: Recommendation transparency
+                    - paragraph [ref=e861]: Learn more about Recommended Content.
+              - generic [ref=e862]:
+                - generic [ref=e863]: Select Language
+                - combobox "Select Language" [ref=e864]:
+                  - option "العربية (Arabic)"
+                  - option "বাংলা (Bangla)"
+                  - option "Čeština (Czech)"
+                  - option "Dansk (Danish)"
+                  - option "Deutsch (German)"
+                  - option "Ελληνικά (Greek)"
+                  - option "English (English)" [selected]
+                  - option "Español (Spanish)"
+                  - option "فارسی (Persian)"
+                  - option "Suomi (Finnish)"
+                  - option "Français (French)"
+                  - option "हिंदी (Hindi)"
+                  - option "Magyar (Hungarian)"
+                  - option "Bahasa Indonesia (Indonesian)"
+                  - option "Italiano (Italian)"
+                  - option "עברית (Hebrew)"
+                  - option "日本語 (Japanese)"
+                  - option "한국어 (Korean)"
+                  - option "मराठी (Marathi)"
+                  - option "Bahasa Malaysia (Malay)"
+                  - option "Nederlands (Dutch)"
+                  - option "Norsk (Norwegian)"
+                  - option "ਪੰਜਾਬੀ (Punjabi)"
+                  - option "Polski (Polish)"
+                  - option "Português (Portuguese)"
+                  - option "Română (Romanian)"
+                  - option "Русский (Russian)"
+                  - option "Svenska (Swedish)"
+                  - option "తెలుగు (Telugu)"
+                  - option "ภาษาไทย (Thai)"
+                  - option "Tagalog (Tagalog)"
+                  - option "Türkçe (Turkish)"
+                  - option "Українська (Ukrainian)"
+                  - option "Tiếng Việt (Vietnamese)"
+                  - option "简体中文 (Chinese (Simplified))"
+                  - option "正體中文 (Chinese (Traditional))"
+          - paragraph [ref=e865]: LinkedIn Corporation © 2026
+    - generic:
+      - generic:
+        - complementary:
+          - generic [ref=e867]:
+            - generic [ref=e869] [cursor=pointer]:
+              - generic [ref=e870]:
+                - img "Adegboyega Ogidan" [ref=e871]
+                - generic [ref=e873]: Status is online
+              - button "You are on the messaging overlay. Press enter to open the list of conversations." [ref=e874]:
+                - generic [ref=e875]:
+                  - generic [ref=e876]: Messaging
+                  - generic [ref=e877]: You are on the messaging overlay. Press enter to open the list of conversations.
+            - generic [ref=e878]:
+              - button "Open messenger dropdown menu" [ref=e880] [cursor=pointer]:
+                - img "Open messenger dropdown menu" [ref=e881]
+              - button "Compose message" [ref=e884] [cursor=pointer]:
+                - img [ref=e885]
+                - generic [ref=e887]: Compose message
+              - button "You are on the messaging overlay. Press enter to open the list of conversations." [ref=e888] [cursor=pointer]:
+                - img [ref=e889]
+                - generic [ref=e891]: You are on the messaging overlay. Press enter to open the list of conversations.
+        - complementary "AI-powered assistant to get help with your career, jobs etc"

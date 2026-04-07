@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LinkedIn Banner — Adegboyega Ogidan</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #111;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .banner {
+    width: 1584px;
+    height: 396px;
+    position: relative;
+    overflow: hidden;
+    background: #0a0e1a;
+  }
+
+  /* Gradient mesh background */
+  .bg-layer {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse 600px 400px at 15% 50%, rgba(0, 102, 255, 0.25) 0%, transparent 70%),
+      radial-gradient(ellipse 500px 350px at 75% 30%, rgba(0, 200, 255, 0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 400px 300px at 90% 80%, rgba(120, 0, 255, 0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 300px 250px at 50% 90%, rgba(0, 150, 255, 0.1) 0%, transparent 60%);
+  }
+
+  /* Animated mesh grid */
+  .grid-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(rgba(0, 150, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 150, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse 800px 400px at 60% 50%, black 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 800px 400px at 60% 50%, black 20%, transparent 70%);
+  }
+
+  /* Glowing orbs */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+  }
+  .orb-1 {
+    width: 300px; height: 300px;
+    background: rgba(0, 102, 255, 0.3);
+    top: -100px; left: -50px;
+  }
+  .orb-2 {
+    width: 200px; height: 200px;
+    background: rgba(0, 210, 255, 0.2);
+    top: 150px; right: 200px;
+  }
+  .orb-3 {
+    width: 250px; height: 250px;
+    background: rgba(100, 50, 255, 0.15);
+    bottom: -80px; right: -30px;
+  }
+
+  /* Floating particles */
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 6px rgba(0, 180, 255, 0.8), 0 0 15px rgba(0, 180, 255, 0.3);
+  }
+  .p1 { width: 3px; height: 3px; top: 40px; left: 200px; }
+  .p2 { width: 2px; height: 2px; top: 100px; left: 500px; }
+  .p3 { width: 4px; height: 4px; top: 60px; right: 350px; }
+  .p4 { width: 2px; height: 2px; top: 280px; left: 350px; }
+  .p5 { width: 3px; height: 3px; top: 200px; right: 150px; }
+  .p6 { width: 2px; height: 2px; top: 320px; left: 700px; }
+  .p7 { width: 3px; height: 3px; top: 150px; left: 900px; }
+  .p8 { width: 2px; height: 2px; top: 80px; right: 500px; }
+  .p9 { width: 4px; height: 4px; bottom: 60px; left: 150px; }
+  .p10 { width: 2px; height: 2px; top: 250px; right: 600px; }
+
+  /* Connection lines between particles */
+  .conn-lines {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+  }
+  .conn-lines svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Content wrapper */
+  .content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 90px;
+    justify-content: space-between;
+  }
+
+  /* Left side */
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .name {
+    font-size: 52px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    text-shadow: 0 0 40px rgba(0, 120, 255, 0.3);
+  }
+  .name span {
+    color: #00c8ff;
+  }
+  .title {
+    font-size: 22px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 4px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #0066ff, #00c8ff);
+    border-radius: 2px;
+    margin: 10px 0;
+  }
+  .location {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 1px;
+  }
+
+  /* Right side — hex skill grid */
+  .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .hex-row {
+    display: flex;
+    gap: 10px;
+  }
+  .hex-badge {
+    width: 140px;
+    height: 56px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+  }
+  .hex-badge.glow {
+    border-color: rgba(0, 200, 255, 0.3);
+    background: rgba(0, 100, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 150, 255, 0.1), inset 0 0 20px rgba(0, 150, 255, 0.05);
+  }
+  .hex-badge .icon {
+    margin-right: 8px;
+    font-size: 18px;
+    opacity: 0.9;
+  }
+
+  /* Accent elements */
+  .top-line {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #0066ff, #00c8ff, #0066ff, transparent);
+  }
+  .bottom-line {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0, 100, 255, 0.4), transparent);
+  }
+
+  /* Corner brackets */
+  .bracket {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    z-index: 5;
+  }
+  .bracket-tl { top: 20px; left: 30px; border-top: 2px solid rgba(0, 200, 255, 0.3); border-left: 2px solid rgba(0, 200, 255, 0.3); }
+  .bracket-tr { top: 20px; right: 30px; border-top: 2px solid rgba(0, 200, 255, 0.3); border-right: 2px solid rgba(0, 200, 255, 0.3); }
+  .bracket-bl { bottom: 20px; left: 30px; border-bottom: 2px solid rgba(0, 200, 255, 0.3); border-left: 2px solid rgba(0, 200, 255, 0.3); }
+  .bracket-br { bottom: 20px; right: 30px; border-bottom: 2px solid rgba(0, 200, 255, 0.3); border-right: 2px solid rgba(0, 200, 255, 0.3); }
+
+  .instructions {
+    color: #666;
+    text-align: center;
+    font-size: 14px;
+  }
+  .instructions strong { color: #ccc; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="banner" id="banner">
+    <!-- Background layers -->
+    <div class="bg-layer"></div>
+    <div class="grid-overlay"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- Particles -->
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+    <div class="particle p5"></div>
+    <div class="particle p6"></div>
+    <div class="particle p7"></div>
+    <div class="particle p8"></div>
+    <div class="particle p9"></div>
+    <div class="particle p10"></div>
+
+    <!-- Connection lines -->
+    <div class="conn-lines">
+      <svg viewBox="0 0 1584 396" fill="none">
+        <line x1="200" y1="40" x2="500" y2="100" stroke="rgba(0,180,255,0.07)" stroke-width="1"/>
+        <line x1="500" y1="100" x2="900" y2="150" stroke="rgba(0,180,255,0.05)" stroke-width="1"/>
+        <line x1="350" y1="280" x2="700" y2="320" stroke="rgba(0,180,255,0.06)" stroke-width="1"/>
+        <line x1="200" y1="40" x2="350" y2="280" stroke="rgba(0,180,255,0.04)" stroke-width="1"/>
+        <line x1="900" y1="150" x2="1434" y2="200" stroke="rgba(0,180,255,0.05)" stroke-width="1"/>
+        <line x1="150" y1="336" x2="500" y2="100" stroke="rgba(0,180,255,0.04)" stroke-width="1"/>
+        <line x1="1234" y1="60" x2="1434" y2="200" stroke="rgba(0,180,255,0.06)" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <!-- Corner brackets -->
+    <div class="bracket bracket-tl"></div>
+    <div class="bracket bracket-tr"></div>
+    <div class="bracket bracket-bl"></div>
+    <div class="bracket bracket-br"></div>
+
+    <!-- Accent lines -->
+    <div class="top-line"></div>
+    <div class="bottom-line"></div>
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="left">
+        <div class="name">ADE <span>OGIDAN</span></div>
+        <div class="title">IT Support Engineer</div>
+        <div class="divider"></div>
+        <div class="location">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(0,200,255,0.7)" stroke-width="2">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+            <circle cx="12" cy="9" r="2.5"/>
+          </svg>
+          LONDON, UK
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="hex-row">
+          <div class="hex-badge glow"><span class="icon">&#9783;</span> Windows</div>
+          <div class="hex-badge glow"><span class="icon">&#9729;</span> Microsoft 365</div>
+        </div>
+        <div class="hex-row">
+          <div class="hex-badge"><span class="icon">&#9881;</span> Active Directory</div>
+          <div class="hex-badge"><span class="icon">&#9736;</span> Service Desk</div>
+          <div class="hex-badge"><span class="icon">&#9832;</span> Networking</div>
+        </div>
+        <div class="hex-row">
+          <div class="hex-badge glow"><span class="icon">&#10003;</span> CompTIA A+</div>
+          <div class="hex-badge"><span class="icon">&#9874;</span> Hardware</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="instructions"><strong>How to save:</strong> Right-click > Save image as, or screenshot this banner. Size: 1584 x 396px</p>
+</div>
+</body>
+</html>

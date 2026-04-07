@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    font-family: 'Georgia', serif;
+  }
+  .container {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+  }
+  .bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4) contrast(1.3) saturate(1.2);
+  }
+  .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(0,20,60,0.6) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.7) 100%);
+  }
+  .vignette {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.85) 100%);
+  }
+  .content {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 60px;
+  }
+  .top-text {
+    color: #4a9fd4;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+  }
+  .main-text {
+    color: #ffffff;
+    font-size: 78px;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.9), 0 0 40px rgba(74,159,212,0.3);
+    letter-spacing: 2px;
+  }
+  .main-text .highlight {
+    color: #4a9fd4;
+    display: block;
+    font-size: 68px;
+  }
+  .divider {
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #4a9fd4, transparent);
+    margin: 20px auto;
+  }
+  .sub-text {
+    color: #e8dcc8;
+    font-size: 28px;
+    font-style: italic;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+    letter-spacing: 3px;
+  }
+  .badge {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: rgba(74,159,212,0.9);
+    color: #fff;
+    font-size: 22px;
+    font-weight: 900;
+    padding: 8px 20px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .ep-badge {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background: rgba(212,168,85,0.9);
+    color: #000;
+    font-size: 18px;
+    font-weight: 900;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <!-- Scene 15: The ark on apocalyptic floodwaters -->
+  <img class="bg" src="../bible-video-3/public/images/scene-15.png" alt="bg" onerror="this.style.display='none'">
+  <div class="overlay"></div>
+  <div class="vignette"></div>
+  <div class="ep-badge">Episode 3</div>
+  <div class="badge">Full Story</div>
+  <div class="content">
+    <div class="top-text">Noah's Ark</div>
+    <div class="main-text">
+      The Flood That
+      <span class="highlight">ERASED THE WORLD</span>
+    </div>
+    <div class="divider"></div>
+    <div class="sub-text">Genesis 6-9</div>
+  </div>
+</div>
+</body>
+</html>

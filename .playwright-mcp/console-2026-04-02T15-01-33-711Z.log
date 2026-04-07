@@ -1,0 +1,6 @@
+[    7446ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://secure.reed.co.uk/favicon.ico:0
+[   10019ms] [LOG] Visibility threshold pct=50, Visibility threshold ms = 0 @ https://tag.durationmedia.net/sites/11540/dm.js:0
+[   10615ms] [LOG] Starting 3pc test @ https://static.anonm.io/light/check3pc.html:9
+[   10618ms] [LOG] 3PC enabled: true @ https://static.anonm.io/light/check3pc.html:32
+[   10618ms] [LOG] Storage API: cookie access granted @ https://static.anonm.io/light/check3pc.html:15
+[   11575ms] [ERROR] Failed to load resource: the server responded with a status of 451 () @ https://pippio.com/api/sync?pid=711517&it=4&iv=f481b2f75a11ffc3dcbef2f4273b85e8&it=4&iv=1eea1a0d4b14835b2b78852e32761f61547dbe8c2a0a1c3775ce9d4509f593e4&it=4&iv=a86c80252e8b0651581e1a2df17640d29744f2e5:0

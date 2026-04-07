@@ -1,0 +1,1891 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e6]:
+          - link "Reed.co.uk" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Reed.co.uk" [ref=e8]
+          - list [ref=e9]:
+            - listitem [ref=e10]:
+              - link "Jobs" [ref=e11] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e12]: Jobs
+            - listitem [ref=e13]:
+              - link "Courses" [ref=e14] [cursor=pointer]:
+                - /url: /courses/?itm_source=js_navigation&itm_medium=jobseeker&itm_campaign=courses_tab&itm_content=standard_version
+                - generic [ref=e15]: Courses
+            - listitem [ref=e16]:
+              - link "Career advice" [ref=e17] [cursor=pointer]:
+                - /url: /career-advice/
+                - generic [ref=e18]: Career advice
+            - listitem [ref=e19]:
+              - link "Recruiting? Post a job" [ref=e20] [cursor=pointer]:
+                - /url: /recruiter/
+                - generic [ref=e21]:
+                  - text: Recruiting?
+                  - strong [ref=e22]: Post a job
+          - generic [ref=e23]:
+            - link "Register CV" [ref=e24] [cursor=pointer]:
+              - /url: /authentication/register?returnTo=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays%26salaryfrom%3D33000%26salaryto%3D100000
+            - list [ref=e25]:
+              - listitem [ref=e26]:
+                - link "Saved jobs" [ref=e27] [cursor=pointer]:
+                  - /url: /account/jobs/shortlisted-jobs
+                  - img [ref=e29]
+                  - generic [ref=e31]: Saved jobs
+              - listitem [ref=e32]:
+                - status [ref=e33]:
+                  - img "Loading" [ref=e34]
+      - search [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]:
+            - generic [ref=e41]:
+              - generic [ref=e42]: What
+              - generic [ref=e43]:
+                - textbox "e.g. \"marketing assistant\"" [ref=e44]: helpdesk
+                - button "clear keywords" [ref=e45] [cursor=pointer]:
+                  - img [ref=e46]
+            - generic [ref=e49]:
+              - generic [ref=e50]: Where
+              - generic [ref=e51]:
+                - textbox "town or postcode" [ref=e52]: london
+                - button "clear location" [ref=e53] [cursor=pointer]:
+                  - img [ref=e54]
+            - button "Search jobs" [ref=e58] [cursor=pointer]
+            - link "Browse jobs" [ref=e60] [cursor=pointer]:
+              - /url: /popularjobs
+              - text: Browse jobs
+              - img [ref=e61]
+          - generic [ref=e63]:
+            - generic [ref=e64]: "Similar searches:"
+            - list [ref=e65]:
+              - listitem [ref=e66]:
+                - link "It Support jobs" [ref=e67] [cursor=pointer]:
+                  - /url: /jobs/it-support-jobs-in-london
+              - listitem [ref=e68]:
+                - link "It Technician jobs" [ref=e69] [cursor=pointer]:
+                  - /url: /jobs/it-technician-jobs-in-london
+              - listitem [ref=e70]:
+                - link "It jobs" [ref=e71] [cursor=pointer]:
+                  - /url: /jobs/it-jobs-in-london
+              - listitem [ref=e72]:
+                - link "It Helpdesk jobs" [ref=e73] [cursor=pointer]:
+                  - /url: /jobs/it-helpdesk-jobs-in-london
+              - listitem [ref=e74]:
+                - link "Customer Service jobs" [ref=e75] [cursor=pointer]:
+                  - /url: /jobs/customer-service-jobs-in-london
+              - listitem [ref=e76]:
+                - link "Helpdesk Jobs in Belfast" [ref=e77] [cursor=pointer]:
+                  - /url: /jobs/helpdesk-jobs-in-belfast
+              - listitem [ref=e78]:
+                - link "Helpdesk Jobs in Birmingham" [ref=e79] [cursor=pointer]:
+                  - /url: /jobs/helpdesk-jobs-in-birmingham
+              - listitem [ref=e80]:
+                - link "Helpdesk Jobs in Bradford" [ref=e81] [cursor=pointer]:
+                  - /url: /jobs/helpdesk-jobs-in-bradford-west-yorkshire
+      - generic [ref=e83]:
+        - generic [ref=e86]:
+          - heading "40 Helpdesk Jobs in London" [level=1] [ref=e88]:
+            - text: "40"
+            - link "Helpdesk" [ref=e89] [cursor=pointer]:
+              - /url: /jobs/helpdesk-jobs
+            - text: Jobs in
+            - link "London" [ref=e90] [cursor=pointer]:
+              - /url: /jobs/jobs-in-london
+          - button "Get Job Alerts" [ref=e97] [cursor=pointer]:
+            - img [ref=e98]
+            - text: Get job alerts
+        - generic [ref=e101]:
+          - main [ref=e102]:
+            - article [ref=e104]:
+              - generic [ref=e105]:
+                - button "Applications Support Engineer" [ref=e106] [cursor=pointer]
+                - generic [ref=e107]:
+                  - generic [ref=e108]:
+                    - generic [ref=e109]:
+                      - generic [ref=e110]:
+                        - generic [ref=e111]: Featured
+                        - generic [ref=e112]: New
+                        - generic [ref=e113]:
+                          - img "EarlyBird" [ref=e114]
+                          - text: Early bird
+                      - heading "Applications Support Engineer" [level=2] [ref=e116]:
+                        - link "Applications Support Engineer" [ref=e117] [cursor=pointer]:
+                          - /url: /jobs/applications-support-engineer/56728367?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e118]:
+                        - text: Yesterday by
+                        - link "Matchtech" [ref=e119] [cursor=pointer]:
+                          - /url: /jobs/matchtech-19617/p19617
+                      - list [ref=e120]:
+                        - listitem [ref=e121]:
+                          - img "Salary" [ref=e122]
+                          - text: Salary negotiable
+                        - listitem [ref=e124]:
+                          - img "Location" [ref=e125]
+                          - text: Harlow, Essex
+                        - listitem [ref=e127]:
+                          - img "Clock" [ref=e128]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e130] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e131]
+                  - complementary [ref=e133]
+                  - link "Matchtech jobs" [ref=e136] [cursor=pointer]:
+                    - /url: /jobs/matchtech-19617/p19617
+                    - img "Matchtech jobs" [ref=e137]
+                  - generic [ref=e138]:
+                    - button "Shortlist job" [ref=e139] [cursor=pointer]:
+                      - img [ref=e140]
+                    - button "hide job" [ref=e142] [cursor=pointer]:
+                      - img [ref=e143]
+            - article [ref=e146]:
+              - generic [ref=e147]:
+                - button "IT Support Technician" [ref=e148] [cursor=pointer]
+                - generic [ref=e149]:
+                  - generic [ref=e150]:
+                    - generic [ref=e151]:
+                      - generic [ref=e152]:
+                        - generic [ref=e153]: Featured
+                        - generic [ref=e154]: New
+                        - generic [ref=e155]:
+                          - img [ref=e156]
+                          - text: Easy Apply
+                      - heading "IT Support Technician" [level=2] [ref=e158]:
+                        - link "IT Support Technician" [ref=e159] [cursor=pointer]:
+                          - /url: /jobs/it-support-technician/56739090?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e160]:
+                        - text: 2 hrs ago by
+                        - link "Armstrong Knight" [ref=e161] [cursor=pointer]:
+                          - /url: /jobs/armstrong/p18273
+                      - list [ref=e162]:
+                        - listitem [ref=e163]:
+                          - img "Salary" [ref=e164]
+                          - text: £38,000 - £42,000 per annum
+                        - listitem [ref=e166]:
+                          - img "Location" [ref=e167]
+                          - text: London
+                        - listitem [ref=e169]:
+                          - img "Clock" [ref=e170]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e172] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e173]
+                  - complementary [ref=e175]:
+                    - button "Easy apply" [ref=e176] [cursor=pointer]
+                  - link "Armstrong Knight jobs" [ref=e179] [cursor=pointer]:
+                    - /url: /jobs/armstrong/p18273
+                    - img "Armstrong Knight jobs" [ref=e180]
+                  - generic [ref=e181]:
+                    - button "Shortlist job" [ref=e182] [cursor=pointer]:
+                      - img [ref=e183]
+                    - button "hide job" [ref=e185] [cursor=pointer]:
+                      - img [ref=e186]
+            - article [ref=e189]:
+              - generic [ref=e190]:
+                - button "Service Desk Manager" [ref=e191] [cursor=pointer]
+                - generic [ref=e192]:
+                  - generic [ref=e193]:
+                    - generic [ref=e194]:
+                      - generic [ref=e196]:
+                        - img [ref=e197]
+                        - text: Easy Apply
+                      - heading "Service Desk Manager" [level=2] [ref=e199]:
+                        - link "Service Desk Manager" [ref=e200] [cursor=pointer]:
+                          - /url: /jobs/service-desk-manager/56715741?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e201]:
+                        - text: 3 days ago by
+                        - link "Context Recruitment Limited" [ref=e202] [cursor=pointer]:
+                          - /url: /jobs/context-recruitment-limited/p39150
+                      - list [ref=e203]:
+                        - listitem [ref=e204]:
+                          - img "Salary" [ref=e205]
+                          - text: £65,000 - £70,000 per annum
+                        - listitem [ref=e207]:
+                          - img "Location" [ref=e208]
+                          - text: London
+                        - listitem [ref=e210]:
+                          - img "Clock" [ref=e211]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e213] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e214]
+                  - complementary [ref=e216]:
+                    - button "Easy apply" [ref=e217] [cursor=pointer]
+                  - link "Context Recruitment Limited jobs" [ref=e220] [cursor=pointer]:
+                    - /url: /jobs/context-recruitment-limited/p39150
+                    - img "Context Recruitment Limited jobs" [ref=e221]
+                  - generic [ref=e222]:
+                    - button "Shortlist job" [ref=e223] [cursor=pointer]:
+                      - img [ref=e224]
+                    - button "hide job" [ref=e226] [cursor=pointer]:
+                      - img [ref=e227]
+            - article [ref=e230]:
+              - generic [ref=e231]:
+                - button "Senior Service Desk Analyst" [ref=e232] [cursor=pointer]
+                - generic [ref=e233]:
+                  - generic [ref=e234]:
+                    - generic [ref=e235]:
+                      - generic [ref=e236]:
+                        - generic [ref=e237]: Featured
+                        - generic [ref=e238]:
+                          - img [ref=e239]
+                          - text: Easy Apply
+                      - heading "Senior Service Desk Analyst" [level=2] [ref=e241]:
+                        - link "Senior Service Desk Analyst" [ref=e242] [cursor=pointer]:
+                          - /url: /jobs/senior-service-desk-analyst/56720917?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e243]:
+                        - text: 2 days ago by
+                        - link "Reed" [ref=e244] [cursor=pointer]:
+                          - /url: /jobs/reed/p1342
+                      - list [ref=e245]:
+                        - listitem [ref=e246]:
+                          - img "Salary" [ref=e247]
+                          - text: £40,000 - £50,000 per annum, inc benefits
+                        - listitem [ref=e249]:
+                          - img "Location" [ref=e250]
+                          - text: Central London, London
+                        - listitem [ref=e252]:
+                          - img "Clock" [ref=e253]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e255] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e256]
+                  - complementary [ref=e258]:
+                    - button "Easy apply" [ref=e259] [cursor=pointer]
+                  - link "Reed jobs" [ref=e262] [cursor=pointer]:
+                    - /url: /jobs/reed/p1342
+                    - img "Reed jobs" [ref=e263]
+                  - generic [ref=e264]:
+                    - button "Shortlist job" [ref=e265] [cursor=pointer]:
+                      - img [ref=e266]
+                    - button "hide job" [ref=e268] [cursor=pointer]:
+                      - img [ref=e269]
+            - article [ref=e272]:
+              - generic [ref=e273]:
+                - button "IT Support Analyst" [ref=e274] [cursor=pointer]
+                - generic [ref=e275]:
+                  - generic [ref=e276]:
+                    - generic [ref=e277]:
+                      - heading "IT Support Analyst" [level=2] [ref=e278]:
+                        - link "IT Support Analyst" [ref=e279] [cursor=pointer]:
+                          - /url: /jobs/it-support-analyst/56715966?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e280]:
+                        - text: 3 days ago by
+                        - link "Sussum Consulting LTD" [ref=e281] [cursor=pointer]:
+                          - /url: /jobs/sussum-consulting-ltd-106593/p106593
+                      - list [ref=e282]:
+                        - listitem [ref=e283]:
+                          - img "Salary" [ref=e284]
+                          - text: £30,000 - £35,000 per annum
+                        - listitem [ref=e286]:
+                          - img "Location" [ref=e287]
+                          - text: Borehamwood, Hertfordshire
+                        - listitem [ref=e289]:
+                          - img "Clock" [ref=e290]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e292] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e293]
+                  - complementary [ref=e295]
+                  - link "Sussum Consulting LTD jobs" [ref=e298] [cursor=pointer]:
+                    - /url: /jobs/sussum-consulting-ltd-106593/p106593
+                    - img "Sussum Consulting LTD jobs" [ref=e299]
+                  - generic [ref=e300]:
+                    - button "Shortlist job" [ref=e301] [cursor=pointer]:
+                      - img [ref=e302]
+                    - button "hide job" [ref=e304] [cursor=pointer]:
+                      - img [ref=e305]
+            - article [ref=e308]:
+              - generic [ref=e309]:
+                - button "Field Service Technician (Hardware Break/Fix) – London SE" [ref=e310] [cursor=pointer]
+                - generic [ref=e311]:
+                  - generic [ref=e312]:
+                    - generic [ref=e313]:
+                      - generic [ref=e314]:
+                        - generic [ref=e315]: Featured
+                        - generic [ref=e316]: New
+                        - generic [ref=e317]:
+                          - img [ref=e318]
+                          - text: Easy Apply
+                      - heading "Field Service Technician (Hardware Break/Fix) – London SE" [level=2] [ref=e320]:
+                        - link "Field Service Technician (Hardware Break/Fix) – London SE" [ref=e321] [cursor=pointer]:
+                          - /url: /jobs/field-service-technician-hardware-break-fix--london-se/56728741?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e322]:
+                        - text: Yesterday by
+                        - link "Global Technology Solutions Ltd" [ref=e323] [cursor=pointer]:
+                          - /url: /jobs/global-technology-solutions/p2937
+                      - list [ref=e324]:
+                        - listitem [ref=e325]:
+                          - img "Salary" [ref=e326]
+                          - text: £150 - £165 per day
+                        - listitem [ref=e328]:
+                          - img "Location" [ref=e329]
+                          - text: London
+                        - listitem [ref=e331]:
+                          - img "Clock" [ref=e332]
+                          - text: Contract, full-time
+                    - button "See job description" [ref=e334] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e335]
+                  - complementary [ref=e337]:
+                    - button "Easy apply" [ref=e338] [cursor=pointer]
+                  - generic [ref=e340]:
+                    - link "Global Technology Solutions Ltd jobs":
+                      - /url: /jobs/global-technology-solutions/p2937
+                      - img "Global Technology Solutions Ltd jobs"
+                  - generic [ref=e341]:
+                    - button "Shortlist job" [ref=e342] [cursor=pointer]:
+                      - img [ref=e343]
+                    - button "hide job" [ref=e345] [cursor=pointer]:
+                      - img [ref=e346]
+            - article [ref=e349]:
+              - generic [ref=e350]:
+                - button "2nd Line IT Support" [ref=e351] [cursor=pointer]
+                - generic [ref=e352]:
+                  - generic [ref=e353]:
+                    - generic [ref=e354]:
+                      - generic [ref=e355]:
+                        - generic [ref=e356]: Featured
+                        - generic [ref=e357]: New
+                        - generic [ref=e358]:
+                          - img [ref=e359]
+                          - text: Easy Apply
+                      - heading "2nd Line IT Support" [level=2] [ref=e361]:
+                        - link "2nd Line IT Support" [ref=e362] [cursor=pointer]:
+                          - /url: /jobs/2nd-line-it-support/56729948?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e363]:
+                        - text: Yesterday by
+                        - link "Michael Page Technology" [ref=e364] [cursor=pointer]:
+                          - /url: /jobs/michael-page-technology-59782/p59782
+                      - list [ref=e365]:
+                        - listitem [ref=e366]:
+                          - img "Salary" [ref=e367]
+                          - text: £200 - £250 per day
+                        - listitem [ref=e369]:
+                          - img "Location" [ref=e370]
+                          - text: London
+                        - listitem [ref=e372]:
+                          - img "Clock" [ref=e373]
+                          - text: Temporary, full-time
+                    - button "See job description" [ref=e375] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e376]
+                  - complementary [ref=e378]:
+                    - button "Easy apply" [ref=e379] [cursor=pointer]
+                  - generic [ref=e381]:
+                    - link "Michael Page Technology jobs":
+                      - /url: /jobs/michael-page-technology-59782/p59782
+                      - img "Michael Page Technology jobs"
+                  - generic [ref=e382]:
+                    - button "Shortlist job" [ref=e383] [cursor=pointer]:
+                      - img [ref=e384]
+                    - button "hide job" [ref=e386] [cursor=pointer]:
+                      - img [ref=e387]
+            - article [ref=e390]:
+              - generic [ref=e391]:
+                - button "Desktop Support Analyst - London" [ref=e392] [cursor=pointer]
+                - generic [ref=e393]:
+                  - generic [ref=e394]:
+                    - generic [ref=e395]:
+                      - generic [ref=e396]:
+                        - generic [ref=e397]: New
+                        - generic [ref=e398]:
+                          - img [ref=e399]
+                          - text: Easy Apply
+                      - heading "Desktop Support Analyst - London" [level=2] [ref=e401]:
+                        - link "Desktop Support Analyst - London" [ref=e402] [cursor=pointer]:
+                          - /url: /jobs/desktop-support-analyst-london/56736600?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e403]:
+                        - text: 6 hrs ago by
+                        - link "Noir" [ref=e404] [cursor=pointer]:
+                          - /url: /jobs/noir/p10319
+                      - list [ref=e405]:
+                        - listitem [ref=e406]:
+                          - img "Salary" [ref=e407]
+                          - text: £30,000 - £35,000 per annum
+                        - listitem [ref=e409]:
+                          - img "Location" [ref=e410]
+                          - text: London
+                        - listitem [ref=e412]:
+                          - img "Clock" [ref=e413]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e415] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e416]
+                  - complementary [ref=e418]:
+                    - button "Easy apply" [ref=e419] [cursor=pointer]
+                  - generic [ref=e421]:
+                    - link "Noir jobs":
+                      - /url: /jobs/noir/p10319
+                      - img "Noir jobs"
+                  - generic [ref=e422]:
+                    - button "Shortlist job" [ref=e423] [cursor=pointer]:
+                      - img [ref=e424]
+                    - button "hide job" [ref=e426] [cursor=pointer]:
+                      - img [ref=e427]
+            - article [ref=e430]:
+              - generic [ref=e431]:
+                - button "Problem Management Analyst" [ref=e432] [cursor=pointer]
+                - generic [ref=e433]:
+                  - generic [ref=e434]:
+                    - generic [ref=e435]:
+                      - generic [ref=e436]:
+                        - generic [ref=e437]: New
+                        - generic [ref=e438]:
+                          - img [ref=e439]
+                          - text: Easy Apply
+                      - heading "Problem Management Analyst" [level=2] [ref=e441]:
+                        - link "Problem Management Analyst" [ref=e442] [cursor=pointer]:
+                          - /url: /jobs/problem-management-analyst/56722654?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e443]:
+                        - text: Yesterday by
+                        - link "Hays Specialist Recruitment Limited" [ref=e444] [cursor=pointer]:
+                          - /url: /jobs/hays-specialist-recruitment-limited/p36210
+                      - list [ref=e445]:
+                        - listitem [ref=e446]:
+                          - img "Salary" [ref=e447]
+                          - text: £50,000 - £58,000 per annum
+                        - listitem [ref=e449]:
+                          - img "Location" [ref=e450]
+                          - text: London
+                        - listitem [ref=e452]:
+                          - img "Clock" [ref=e453]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e455] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e456]
+                  - complementary [ref=e458]:
+                    - button "Easy apply" [ref=e459] [cursor=pointer]
+                  - generic [ref=e461]:
+                    - link "Hays Specialist Recruitment Limited jobs":
+                      - /url: /jobs/hays-specialist-recruitment-limited/p36210
+                      - img "Hays Specialist Recruitment Limited jobs"
+                  - generic [ref=e462]:
+                    - button "Shortlist job" [ref=e463] [cursor=pointer]:
+                      - img [ref=e464]
+                    - button "hide job" [ref=e466] [cursor=pointer]:
+                      - img [ref=e467]
+            - article [ref=e470]:
+              - generic [ref=e471]:
+                - button "Service Advisor" [ref=e472] [cursor=pointer]
+                - generic [ref=e473]:
+                  - generic [ref=e474]:
+                    - generic [ref=e475]:
+                      - generic [ref=e476]:
+                        - generic [ref=e477]: New
+                        - generic [ref=e478]:
+                          - img [ref=e479]
+                          - text: Easy Apply
+                      - heading "Service Advisor" [level=2] [ref=e481]:
+                        - link "Service Advisor" [ref=e482] [cursor=pointer]:
+                          - /url: /jobs/service-advisor/56736190?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e483]:
+                        - text: 7 hrs ago by
+                        - link "Pembrook Resourcing" [ref=e484] [cursor=pointer]:
+                          - /url: /jobs/pembrook-resourcing-limited-0/p50596
+                      - list [ref=e485]:
+                        - listitem [ref=e486]:
+                          - img "Salary" [ref=e487]
+                          - text: £32,000 - £48,000 per annum
+                        - listitem [ref=e489]:
+                          - img "Location" [ref=e490]
+                          - text: Harold Wood, Essex
+                        - listitem [ref=e492]:
+                          - img "Clock" [ref=e493]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e495] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e496]
+                  - complementary [ref=e498]:
+                    - button "Easy apply" [ref=e499] [cursor=pointer]
+                  - generic [ref=e501]:
+                    - link "Pembrook Resourcing jobs":
+                      - /url: /jobs/pembrook-resourcing-limited-0/p50596
+                      - img "Pembrook Resourcing jobs"
+                  - generic [ref=e502]:
+                    - button "Shortlist job" [ref=e503] [cursor=pointer]:
+                      - img [ref=e504]
+                    - button "hide job" [ref=e506] [cursor=pointer]:
+                      - img [ref=e507]
+            - article [ref=e510]:
+              - generic [ref=e511]:
+                - button "Service Advisor" [ref=e512] [cursor=pointer]
+                - generic [ref=e513]:
+                  - generic [ref=e514]:
+                    - generic [ref=e515]:
+                      - generic [ref=e516]:
+                        - generic [ref=e517]: New
+                        - generic [ref=e518]:
+                          - img [ref=e519]
+                          - text: Easy Apply
+                      - heading "Service Advisor" [level=2] [ref=e521]:
+                        - link "Service Advisor" [ref=e522] [cursor=pointer]:
+                          - /url: /jobs/service-advisor/56732024?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e523]:
+                        - text: Yesterday by
+                        - link "Pembrook Resourcing" [ref=e524] [cursor=pointer]:
+                          - /url: /jobs/pembrook-resourcing-limited-0/p50596
+                      - list [ref=e525]:
+                        - listitem [ref=e526]:
+                          - img "Salary" [ref=e527]
+                          - text: £32,000 - £50,000 per annum
+                        - listitem [ref=e529]:
+                          - img "Location" [ref=e530]
+                          - text: Brentford, Middlesex
+                        - listitem [ref=e532]:
+                          - img "Clock" [ref=e533]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e535] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e536]
+                  - complementary [ref=e538]:
+                    - button "Easy apply" [ref=e539] [cursor=pointer]
+                  - generic [ref=e541]:
+                    - link "Pembrook Resourcing jobs":
+                      - /url: /jobs/pembrook-resourcing-limited-0/p50596
+                      - img "Pembrook Resourcing jobs"
+                  - generic [ref=e542]:
+                    - button "Shortlist job" [ref=e543] [cursor=pointer]:
+                      - img [ref=e544]
+                    - button "hide job" [ref=e546] [cursor=pointer]:
+                      - img [ref=e547]
+            - article [ref=e550]:
+              - generic [ref=e551]:
+                - button "Service Advisor" [ref=e552] [cursor=pointer]
+                - generic [ref=e553]:
+                  - generic [ref=e554]:
+                    - generic [ref=e555]:
+                      - generic [ref=e556]:
+                        - generic [ref=e557]: Featured
+                        - generic [ref=e558]:
+                          - img [ref=e559]
+                          - text: Easy Apply
+                      - heading "Service Advisor" [level=2] [ref=e561]:
+                        - link "Service Advisor" [ref=e562] [cursor=pointer]:
+                          - /url: /jobs/service-advisor/56714287?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e563]:
+                        - text: 3 days ago by
+                        - link "Perfect Placement Uk Ltd" [ref=e564] [cursor=pointer]:
+                          - /url: /jobs/perfect-placement-uk-ltd/p9125
+                      - list [ref=e565]:
+                        - listitem [ref=e566]:
+                          - img "Salary" [ref=e567]
+                          - text: £32,000 - £44,000 per annum
+                        - listitem [ref=e569]:
+                          - img "Location" [ref=e570]
+                          - text: Watford, Hertfordshire
+                        - listitem [ref=e572]:
+                          - img "Clock" [ref=e573]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e575] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e576]
+                  - complementary [ref=e578]:
+                    - button "Easy apply" [ref=e579] [cursor=pointer]
+                  - generic [ref=e581]:
+                    - link "Perfect Placement Uk Ltd jobs":
+                      - /url: /jobs/perfect-placement-uk-ltd/p9125
+                      - img "Perfect Placement Uk Ltd jobs"
+                  - generic [ref=e582]:
+                    - button "Shortlist job" [ref=e583] [cursor=pointer]:
+                      - img [ref=e584]
+                    - button "hide job" [ref=e586] [cursor=pointer]:
+                      - img [ref=e587]
+            - article [ref=e590]:
+              - generic [ref=e591]:
+                - button "Hire Desk Manage" [ref=e592] [cursor=pointer]
+                - generic [ref=e593]:
+                  - generic [ref=e594]:
+                    - generic [ref=e595]:
+                      - generic [ref=e596]:
+                        - generic [ref=e597]: Featured
+                        - generic [ref=e598]:
+                          - img [ref=e599]
+                          - text: Easy Apply
+                      - heading "Hire Desk Manage" [level=2] [ref=e601]:
+                        - link "Hire Desk Manage" [ref=e602] [cursor=pointer]:
+                          - /url: /jobs/hire-desk-manage/56721971?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e603]:
+                        - text: Yesterday by
+                        - link "Reed" [ref=e604] [cursor=pointer]:
+                          - /url: /jobs/reed-business-support/p1311
+                      - list [ref=e605]:
+                        - listitem [ref=e606]:
+                          - img "Salary" [ref=e607]
+                          - text: £40,000 - £70,000 per annum, inc benefits
+                        - listitem [ref=e609]:
+                          - img "Location" [ref=e610]
+                          - text: Sutton, Surrey
+                        - listitem [ref=e612]:
+                          - img "Clock" [ref=e613]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e615] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e616]
+                  - complementary [ref=e618]:
+                    - button "Easy apply" [ref=e619] [cursor=pointer]
+                  - generic [ref=e621]:
+                    - link "Reed jobs":
+                      - /url: /jobs/reed-business-support/p1311
+                      - img "Reed jobs"
+                  - generic [ref=e622]:
+                    - button "Shortlist job" [ref=e623] [cursor=pointer]:
+                      - img [ref=e624]
+                    - button "hide job" [ref=e626] [cursor=pointer]:
+                      - img [ref=e627]
+            - generic [ref=e629]:
+              - article [ref=e630]:
+                - generic [ref=e631]:
+                  - button "Smart Repairer" [ref=e632] [cursor=pointer]
+                  - generic [ref=e633]:
+                    - generic [ref=e634]:
+                      - generic [ref=e635]:
+                        - generic [ref=e636]:
+                          - generic [ref=e637]: Featured
+                          - generic [ref=e638]:
+                            - img [ref=e639]
+                            - text: Easy Apply
+                        - heading "Smart Repairer" [level=2] [ref=e641]:
+                          - link "Smart Repairer" [ref=e642] [cursor=pointer]:
+                            - /url: /jobs/smart-repairer/56714568?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                        - generic [ref=e643]:
+                          - text: 3 days ago by
+                          - link "Perfect Placement Uk Ltd" [ref=e644] [cursor=pointer]:
+                            - /url: /jobs/perfect-placement-uk-ltd/p9125
+                        - list [ref=e645]:
+                          - listitem [ref=e646]:
+                            - img "Salary" [ref=e647]
+                            - text: £40,000 - £50,000 per annum
+                          - listitem [ref=e649]:
+                            - img "Location" [ref=e650]
+                            - text: Barking, Essex
+                          - listitem [ref=e652]:
+                            - img "Clock" [ref=e653]
+                            - text: Permanent, full-time
+                      - button "See job description" [ref=e655] [cursor=pointer]:
+                        - text: See more
+                        - img "Chevron" [ref=e656]
+                    - complementary [ref=e658]:
+                      - button "Easy apply" [ref=e659] [cursor=pointer]
+                    - generic [ref=e661]:
+                      - link "Perfect Placement Uk Ltd jobs":
+                        - /url: /jobs/perfect-placement-uk-ltd/p9125
+                        - img "Perfect Placement Uk Ltd jobs"
+                    - generic [ref=e662]:
+                      - button "Shortlist job" [ref=e663] [cursor=pointer]:
+                        - img [ref=e664]
+                      - button "hide job" [ref=e666] [cursor=pointer]:
+                        - img [ref=e667]
+              - alert [ref=e669]:
+                - button "Get Job Alerts" [ref=e670] [cursor=pointer]:
+                  - img [ref=e671]
+                  - text: Get Job Alerts
+                - paragraph [ref=e674]: Get new jobs matching this search straight to your inbox.
+            - article [ref=e676]:
+              - generic [ref=e677]:
+                - button "Mechanical Day Shift Engineer" [ref=e678] [cursor=pointer]
+                - generic [ref=e679]:
+                  - generic [ref=e680]:
+                    - generic [ref=e681]:
+                      - generic [ref=e682]:
+                        - generic [ref=e683]: Featured
+                        - generic [ref=e684]: New
+                        - generic [ref=e685]:
+                          - img "EarlyBird" [ref=e686]
+                          - text: Early bird
+                      - heading "Mechanical Day Shift Engineer" [level=2] [ref=e688]:
+                        - link "Mechanical Day Shift Engineer" [ref=e689] [cursor=pointer]:
+                          - /url: /jobs/mechanical-day-shift-engineer/56735029?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e690]:
+                        - text: Yesterday by
+                        - link "NG Bailey" [ref=e691] [cursor=pointer]:
+                          - /url: /jobs/ng-bailey/p33512
+                      - list [ref=e692]:
+                        - listitem [ref=e693]:
+                          - img "Salary" [ref=e694]
+                          - text: Competitive salary
+                        - listitem [ref=e696]:
+                          - img "Location" [ref=e697]
+                          - text: London
+                        - listitem [ref=e699]:
+                          - img "Clock" [ref=e700]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e702] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e703]
+                  - complementary [ref=e705]
+                  - generic [ref=e707]:
+                    - link "NG Bailey jobs":
+                      - /url: /jobs/ng-bailey/p33512
+                      - img "NG Bailey jobs"
+                  - generic [ref=e708]:
+                    - button "Shortlist job" [ref=e709] [cursor=pointer]:
+                      - img [ref=e710]
+                    - button "hide job" [ref=e712] [cursor=pointer]:
+                      - img [ref=e713]
+            - article [ref=e716]:
+              - generic [ref=e717]:
+                - button "School Management Information Systems and Data Systems Specialist" [ref=e718] [cursor=pointer]
+                - generic [ref=e719]:
+                  - generic [ref=e720]:
+                    - generic [ref=e721]:
+                      - generic [ref=e723]: Featured
+                      - heading "School Management Information Systems and Data Systems Specialist" [level=2] [ref=e724]:
+                        - link "School Management Information Systems and Data Systems Specialist" [ref=e725] [cursor=pointer]:
+                          - /url: /jobs/school-management-information-systems-and-data-systems-specialist/56716032?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e726]:
+                        - text: 3 days ago by
+                        - link "The American School in London" [ref=e727] [cursor=pointer]:
+                          - /url: /jobs/the-american-school-in-london-92377/p92377
+                      - list [ref=e728]:
+                        - listitem [ref=e729]:
+                          - img "Salary" [ref=e730]
+                          - text: Salary negotiable
+                        - listitem [ref=e732]:
+                          - img "Location" [ref=e733]
+                          - text: London
+                        - listitem [ref=e735]:
+                          - img "Clock" [ref=e736]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e738] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e739]
+                  - complementary [ref=e741]
+                  - link "The American School in London jobs" [ref=e744] [cursor=pointer]:
+                    - /url: /jobs/the-american-school-in-london-92377/p92377
+                    - img "The American School in London jobs" [ref=e745]
+                  - generic [ref=e746]:
+                    - button "Shortlist job" [ref=e747] [cursor=pointer]:
+                      - img [ref=e748]
+                    - button "hide job" [ref=e750] [cursor=pointer]:
+                      - img [ref=e751]
+            - article [ref=e754]:
+              - generic [ref=e755]:
+                - button "Mechanical Day Shift Engineer" [ref=e756] [cursor=pointer]
+                - generic [ref=e757]:
+                  - generic [ref=e758]:
+                    - generic [ref=e759]:
+                      - generic [ref=e760]:
+                        - generic [ref=e761]: Featured
+                        - generic [ref=e762]: New
+                        - generic [ref=e763]:
+                          - img "EarlyBird" [ref=e764]
+                          - text: Early bird
+                      - heading "Mechanical Day Shift Engineer" [level=2] [ref=e766]:
+                        - link "Mechanical Day Shift Engineer" [ref=e767] [cursor=pointer]:
+                          - /url: /jobs/mechanical-day-shift-engineer/56735022?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e768]:
+                        - text: Yesterday by
+                        - link "NG Bailey" [ref=e769] [cursor=pointer]:
+                          - /url: /jobs/ng-bailey-108043/p108043
+                      - list [ref=e770]:
+                        - listitem [ref=e771]:
+                          - img "Salary" [ref=e772]
+                          - text: Competitive salary
+                        - listitem [ref=e774]:
+                          - img "Location" [ref=e775]
+                          - text: London
+                        - listitem [ref=e777]:
+                          - img "Clock" [ref=e778]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e780] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e781]
+                  - complementary [ref=e783]
+                  - generic [ref=e785]:
+                    - link "NG Bailey jobs":
+                      - /url: /jobs/ng-bailey-108043/p108043
+                      - img "NG Bailey jobs"
+                  - generic [ref=e786]:
+                    - button "Shortlist job" [ref=e787] [cursor=pointer]:
+                      - img [ref=e788]
+                    - button "hide job" [ref=e790] [cursor=pointer]:
+                      - img [ref=e791]
+            - article [ref=e794]:
+              - generic [ref=e795]:
+                - button "Front of House and Building Manager" [ref=e796] [cursor=pointer]
+                - generic [ref=e797]:
+                  - generic [ref=e798]:
+                    - generic [ref=e799]:
+                      - generic [ref=e801]:
+                        - img [ref=e802]
+                        - text: Easy Apply
+                      - heading "Front of House and Building Manager" [level=2] [ref=e804]:
+                        - link "Front of House and Building Manager" [ref=e805] [cursor=pointer]:
+                          - /url: /jobs/front-of-house-and-building-manager/56721732?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e806]:
+                        - text: 2 days ago by
+                        - link "Office Angels" [ref=e807] [cursor=pointer]:
+                          - /url: /jobs/office-angels-45417/p45417
+                      - list [ref=e808]:
+                        - listitem [ref=e809]:
+                          - img "Salary" [ref=e810]
+                          - text: £30,000 - £33,000 per annum
+                        - listitem [ref=e812]:
+                          - img "Location" [ref=e813]
+                          - text: London
+                        - listitem [ref=e815]:
+                          - img "Clock" [ref=e816]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e818] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e819]
+                  - complementary [ref=e821]:
+                    - button "Easy apply" [ref=e822] [cursor=pointer]
+                  - generic [ref=e824]:
+                    - link "Office Angels jobs":
+                      - /url: /jobs/office-angels-45417/p45417
+                      - img "Office Angels jobs"
+                  - generic [ref=e825]:
+                    - button "Shortlist job" [ref=e826] [cursor=pointer]:
+                      - img [ref=e827]
+                    - button "hide job" [ref=e829] [cursor=pointer]:
+                      - img [ref=e830]
+            - article [ref=e833]:
+              - generic [ref=e834]:
+                - button "Assistant Operations Manager" [ref=e835] [cursor=pointer]
+                - generic [ref=e836]:
+                  - generic [ref=e837]:
+                    - generic [ref=e838]:
+                      - generic [ref=e839]:
+                        - generic [ref=e840]: New
+                        - generic [ref=e841]:
+                          - img [ref=e842]
+                          - text: Easy Apply
+                      - heading "Assistant Operations Manager" [level=2] [ref=e844]:
+                        - link "Assistant Operations Manager" [ref=e845] [cursor=pointer]:
+                          - /url: /jobs/assistant-operations-manager/56722241?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e846]:
+                        - text: Yesterday by
+                        - link "Cobalt Recruitment" [ref=e847] [cursor=pointer]:
+                          - /url: /jobs/cobalt-recruitment/p6920
+                      - list [ref=e848]:
+                        - listitem [ref=e849]:
+                          - img "Salary" [ref=e850]
+                          - text: £45,000 - £50,000 per annum
+                        - listitem [ref=e852]:
+                          - img "Location" [ref=e853]
+                          - text: London
+                        - listitem [ref=e855]:
+                          - img "Clock" [ref=e856]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e858] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e859]
+                  - complementary [ref=e861]:
+                    - button "Easy apply" [ref=e862] [cursor=pointer]
+                  - generic [ref=e864]:
+                    - link "Cobalt Recruitment jobs":
+                      - /url: /jobs/cobalt-recruitment/p6920
+                      - img "Cobalt Recruitment jobs"
+                  - generic [ref=e865]:
+                    - button "Shortlist job" [ref=e866] [cursor=pointer]:
+                      - img [ref=e867]
+                    - button "hide job" [ref=e869] [cursor=pointer]:
+                      - img [ref=e870]
+            - article [ref=e873]:
+              - generic [ref=e874]:
+                - button "IT Manager" [ref=e875] [cursor=pointer]
+                - generic [ref=e876]:
+                  - generic [ref=e877]:
+                    - generic [ref=e878]:
+                      - generic [ref=e879]:
+                        - generic [ref=e880]: Featured
+                        - generic [ref=e881]: New
+                        - generic [ref=e882]:
+                          - img [ref=e883]
+                          - text: Easy Apply
+                      - heading "IT Manager" [level=2] [ref=e885]:
+                        - link "IT Manager" [ref=e886] [cursor=pointer]:
+                          - /url: /jobs/it-manager/56722370?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e887]:
+                        - text: Yesterday by
+                        - link "Antella Travel Recruitment" [ref=e888] [cursor=pointer]:
+                          - /url: /jobs/antella-recruitment-78658/p78658
+                      - list [ref=e889]:
+                        - listitem [ref=e890]:
+                          - img "Salary" [ref=e891]
+                          - text: £40,000 - £55,000 per annum
+                        - listitem [ref=e893]:
+                          - img "Location" [ref=e894]
+                          - text: London
+                        - listitem [ref=e896]:
+                          - img "Clock" [ref=e897]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e899] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e900]
+                  - complementary [ref=e902]:
+                    - button "Easy apply" [ref=e903] [cursor=pointer]
+                  - generic [ref=e905]:
+                    - link "Antella Travel Recruitment jobs":
+                      - /url: /jobs/antella-recruitment-78658/p78658
+                      - img "Antella Travel Recruitment jobs"
+                  - generic [ref=e906]:
+                    - button "Shortlist job" [ref=e907] [cursor=pointer]:
+                      - img [ref=e908]
+                    - button "hide job" [ref=e910] [cursor=pointer]:
+                      - img [ref=e911]
+            - article [ref=e914]:
+              - generic [ref=e915]:
+                - button "Senior IT Support" [ref=e916] [cursor=pointer]
+                - generic [ref=e917]:
+                  - generic [ref=e918]:
+                    - generic [ref=e919]:
+                      - generic [ref=e921]:
+                        - img [ref=e922]
+                        - text: Easy Apply
+                      - heading "Senior IT Support" [level=2] [ref=e924]:
+                        - link "Senior IT Support" [ref=e925] [cursor=pointer]:
+                          - /url: /jobs/senior-it-support/56718938?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e926]:
+                        - text: 2 days ago by
+                        - link "Eligo Recruitment" [ref=e927] [cursor=pointer]:
+                          - /url: /jobs/eligo-recruitment/p13082
+                      - list [ref=e928]:
+                        - listitem [ref=e929]:
+                          - img "Salary" [ref=e930]
+                          - text: £40,000 - £43,000 per annum
+                        - listitem [ref=e932]:
+                          - img "Location" [ref=e933]
+                          - text: City of London, London
+                        - listitem [ref=e935]:
+                          - img "Clock" [ref=e936]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e938] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e939]
+                  - complementary [ref=e941]:
+                    - button "Easy apply" [ref=e942] [cursor=pointer]
+                  - generic [ref=e944]:
+                    - link "Eligo Recruitment jobs":
+                      - /url: /jobs/eligo-recruitment/p13082
+                      - img "Eligo Recruitment jobs"
+                  - generic [ref=e945]:
+                    - button "Shortlist job" [ref=e946] [cursor=pointer]:
+                      - img [ref=e947]
+                    - button "hide job" [ref=e949] [cursor=pointer]:
+                      - img [ref=e950]
+            - article [ref=e953]:
+              - generic [ref=e954]:
+                - button "Software Developer" [ref=e955] [cursor=pointer]
+                - generic [ref=e956]:
+                  - generic [ref=e957]:
+                    - generic [ref=e958]:
+                      - generic [ref=e959]:
+                        - generic [ref=e960]: New
+                        - generic [ref=e961]:
+                          - img [ref=e962]
+                          - text: Easy Apply
+                      - heading "Software Developer" [level=2] [ref=e964]:
+                        - link "Software Developer" [ref=e965] [cursor=pointer]:
+                          - /url: /jobs/software-developer/56728925?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e966]:
+                        - text: Yesterday by
+                        - link "Davies Talent Solutions" [ref=e967] [cursor=pointer]:
+                          - /url: /jobs/davies-resourcing/p72491
+                      - list [ref=e968]:
+                        - listitem [ref=e969]:
+                          - img "Salary" [ref=e970]
+                          - text: £60,000 - £70,000 per annum
+                        - listitem [ref=e972]:
+                          - img "Location" [ref=e973]
+                          - text: City of London, London
+                        - listitem [ref=e975]:
+                          - img "Clock" [ref=e976]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e978] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e979]
+                  - complementary [ref=e981]:
+                    - button "Easy apply" [ref=e982] [cursor=pointer]
+                  - generic [ref=e984]:
+                    - link "Davies Talent Solutions jobs":
+                      - /url: /jobs/davies-resourcing/p72491
+                      - img "Davies Talent Solutions jobs"
+                  - generic [ref=e985]:
+                    - button "Shortlist job" [ref=e986] [cursor=pointer]:
+                      - img [ref=e987]
+                    - button "hide job" [ref=e989] [cursor=pointer]:
+                      - img [ref=e990]
+            - article [ref=e993]:
+              - generic [ref=e994]:
+                - button "Trainee Cyber Security Analyst" [ref=e995] [cursor=pointer]
+                - generic [ref=e996]:
+                  - generic [ref=e997]:
+                    - generic [ref=e998]:
+                      - generic [ref=e1000]: New
+                      - heading "Trainee Cyber Security Analyst" [level=2] [ref=e1001]:
+                        - link "Trainee Cyber Security Analyst" [ref=e1002] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security-analyst/56726503?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e1003]:
+                        - text: Yesterday by
+                        - link "ITOL Recruit" [ref=e1004] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e1005]:
+                        - listitem [ref=e1006]:
+                          - img "Salary" [ref=e1007]
+                          - text: Training Course
+                        - listitem [ref=e1009]:
+                          - img "Location" [ref=e1010]
+                          - text: North London, London
+                        - listitem [ref=e1012]:
+                          - img "Clock" [ref=e1013]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e1015] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e1016]
+                  - complementary [ref=e1018]
+                  - generic [ref=e1020]:
+                    - link "ITOL Recruit jobs":
+                      - /url: /jobs/itonlinelearning-0/p57826
+                      - img "ITOL Recruit jobs"
+                  - generic [ref=e1021]:
+                    - button "Shortlist job" [ref=e1022] [cursor=pointer]:
+                      - img [ref=e1023]
+                    - button "hide job" [ref=e1025] [cursor=pointer]:
+                      - img [ref=e1026]
+            - article [ref=e1029]:
+              - generic [ref=e1030]:
+                - button "Trainee Cyber Security" [ref=e1031] [cursor=pointer]
+                - generic [ref=e1032]:
+                  - generic [ref=e1033]:
+                    - generic [ref=e1034]:
+                      - heading "Trainee Cyber Security" [level=2] [ref=e1035]:
+                        - link "Trainee Cyber Security" [ref=e1036] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56713449?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e1037]:
+                        - text: 3 days ago by
+                        - link "ITOL Recruit" [ref=e1038] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e1039]:
+                        - listitem [ref=e1040]:
+                          - img "Salary" [ref=e1041]
+                          - text: Training Course
+                        - listitem [ref=e1043]:
+                          - img "Location" [ref=e1044]
+                          - text: North West London, London
+                        - listitem [ref=e1046]:
+                          - img "Clock" [ref=e1047]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e1049] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e1050]
+                  - complementary [ref=e1052]
+                  - generic [ref=e1054]:
+                    - link "ITOL Recruit jobs":
+                      - /url: /jobs/itonlinelearning-0/p57826
+                      - img "ITOL Recruit jobs"
+                  - generic [ref=e1055]:
+                    - button "Shortlist job" [ref=e1056] [cursor=pointer]:
+                      - img [ref=e1057]
+                    - button "hide job" [ref=e1059] [cursor=pointer]:
+                      - img [ref=e1060]
+            - article [ref=e1063]:
+              - generic [ref=e1064]:
+                - button "Trainee Cyber Security" [ref=e1065] [cursor=pointer]
+                - generic [ref=e1066]:
+                  - generic [ref=e1067]:
+                    - generic [ref=e1068]:
+                      - generic [ref=e1070]: Featured
+                      - heading "Trainee Cyber Security" [level=2] [ref=e1071]:
+                        - link "Trainee Cyber Security" [ref=e1072] [cursor=pointer]:
+                          - /url: /jobs/trainee-cyber-security/56721082?source=searchResults&filter=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                      - generic [ref=e1073]:
+                        - text: 2 days ago by
+                        - link "ITOL Recruit" [ref=e1074] [cursor=pointer]:
+                          - /url: /jobs/itonlinelearning-0/p57826
+                      - list [ref=e1075]:
+                        - listitem [ref=e1076]:
+                          - img "Salary" [ref=e1077]
+                          - text: Training Course
+                        - listitem [ref=e1079]:
+                          - img "Location" [ref=e1080]
+                          - text: United Kingdom
+                        - listitem [ref=e1082]:
+                          - img "Clock" [ref=e1083]
+                          - text: Permanent, full-time
+                    - button "See job description" [ref=e1085] [cursor=pointer]:
+                      - text: See more
+                      - img "Chevron" [ref=e1086]
+                  - complementary [ref=e1088]
+                  - generic [ref=e1090]:
+                    - link "ITOL Recruit jobs":
+                      - /url: /jobs/itonlinelearning-0/p57826
+                      - img "ITOL Recruit jobs"
+                  - generic [ref=e1091]:
+                    - button "Shortlist job" [ref=e1092] [cursor=pointer]:
+                      - img [ref=e1093]
+                    - button "hide job" [ref=e1095] [cursor=pointer]:
+                      - img [ref=e1096]
+            - generic [ref=e1098]:
+              - generic [ref=e1099]: 1 - 25 of 40 jobs
+              - generic [ref=e1100]:
+                - navigation "pagination" [ref=e1101]:
+                  - list [ref=e1102]:
+                    - listitem [ref=e1103]:
+                      - link "Previous page":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - img
+                        - text: Previous
+                    - listitem [ref=e1104]:
+                      - generic "Goto Page 1": "1"
+                    - listitem [ref=e1105]:
+                      - link "Goto Page 2" [ref=e1106] [cursor=pointer]:
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=2&dateCreatedOffSet=lastthreedays
+                        - text: "2"
+                    - listitem [ref=e1107]:
+                      - link "Next page" [ref=e1108] [cursor=pointer]:
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&pageno=2&dateCreatedOffSet=lastthreedays
+                        - text: Next
+                        - img [ref=e1109]
+                - link "Apply on the go - get the app" [ref=e1111] [cursor=pointer]:
+                  - /url: https://reedcouk.onelink.me/933966585/3bf9bc3e
+            - generic [ref=e1113]:
+              - generic [ref=e1114]: Frequently Asked Questions
+              - generic [ref=e1115]:
+                - strong [ref=e1116]: How many Helpdesk jobs in london are there on Reed.co.uk right now?
+                - paragraph [ref=e1118]: There are 40 Helpdesk jobs within 10 miles of London on Reed.co.uk right now.
+              - generic [ref=e1119]:
+                - strong [ref=e1120]: How can I be the first to find out when there are new Helpdesk jobs london on Reed.co.uk?
+                - paragraph [ref=e1122]:
+                  - text: Creating
+                  - button "job alerts" [ref=e1123] [cursor=pointer]
+                  - text: will help you keep up-to-date with the latest Helpdesk jobs in london.
+                  - link "Sign in" [ref=e1124] [cursor=pointer]:
+                    - /url: /authentication/login?returnTo=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                  - text: or
+                  - link "register" [ref=e1125] [cursor=pointer]:
+                    - /url: /authentication/register?returnTo=%2Fjobs%2Fhelpdesk-jobs-in-london%3FsalaryFrom%3D33000%26salaryTo%3D100000%26dateCreatedOffSet%3Dlastthreedays
+                  - text: to set them up today.
+              - generic [ref=e1126]:
+                - strong [ref=e1127]: What similar jobs can I find on Reed.co.uk?
+                - paragraph [ref=e1129]:
+                  - text: Jobseekers searching for helpdesk jobs also search for
+                  - generic [ref=e1130]:
+                    - link "it support jobs" [ref=e1131] [cursor=pointer]:
+                      - /url: /jobs/it-support-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1132]:
+                    - link "it technician jobs" [ref=e1133] [cursor=pointer]:
+                      - /url: /jobs/it-technician-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1134]:
+                    - link "it jobs" [ref=e1135] [cursor=pointer]:
+                      - /url: /jobs/it-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1136]:
+                    - link "it helpdesk jobs" [ref=e1137] [cursor=pointer]:
+                      - /url: /jobs/it-helpdesk-jobs-in-london
+                    - text: ","
+                  - generic [ref=e1138]:
+                    - text: and
+                    - link "customer service jobs" [ref=e1139] [cursor=pointer]:
+                      - /url: /jobs/customer-service-jobs-in-london
+                    - text: .
+              - generic [ref=e1140]:
+                - strong [ref=e1141]: What is the average salary of Helpdesk jobs in london
+                - paragraph [ref=e1143]:
+                  - text: Use Reed.co.uk's
+                  - link "average salary checker" [ref=e1144] [cursor=pointer]:
+                    - /url: /average-salary
+                  - text: to find out what you could be earning.
+            - generic [ref=e1145]:
+              - generic [ref=e1146]: Browse jobs by locations
+              - list [ref=e1148]:
+                - listitem [ref=e1149]:
+                  - link "Helpdesk Jobs in Belfast" [ref=e1150] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-belfast
+                - listitem [ref=e1151]:
+                  - link "Helpdesk Jobs in Birmingham" [ref=e1152] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-birmingham
+                - listitem [ref=e1153]:
+                  - link "Helpdesk Jobs in Bradford" [ref=e1154] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-bradford-west-yorkshire
+                - listitem [ref=e1155]:
+                  - link "Helpdesk Jobs in Brighton" [ref=e1156] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-brighton
+                - listitem [ref=e1157]:
+                  - link "Helpdesk Jobs in Bristol" [ref=e1158] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-bristol
+                - listitem [ref=e1159]:
+                  - link "Helpdesk Jobs in Cardiff" [ref=e1160] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-cardiff
+                - listitem [ref=e1161]:
+                  - link "Helpdesk Jobs in Coventry" [ref=e1162] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-coventry
+                - listitem [ref=e1163]:
+                  - link "Helpdesk Jobs in Derby" [ref=e1164] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-derby
+                - listitem [ref=e1165]:
+                  - link "Helpdesk Jobs in Edinburgh" [ref=e1166] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-edinburgh
+                - listitem [ref=e1167]:
+                  - link "Helpdesk Jobs in Glasgow" [ref=e1168] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-glasgow
+                - listitem [ref=e1169]:
+                  - link "Helpdesk Jobs in Hull" [ref=e1170] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-hull
+                - listitem [ref=e1171]:
+                  - link "Helpdesk Jobs in Leeds" [ref=e1172] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-leeds
+                - listitem [ref=e1173]:
+                  - link "Helpdesk Jobs in Leicester" [ref=e1174] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-leicester
+                - listitem [ref=e1175]:
+                  - link "Helpdesk Jobs in Liverpool" [ref=e1176] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-liverpool
+                - listitem [ref=e1177]:
+                  - link "Helpdesk Jobs in London" [ref=e1178] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-london
+                - listitem [ref=e1179]:
+                  - link "Helpdesk Jobs in Manchester" [ref=e1180] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-manchester
+                - listitem [ref=e1181]:
+                  - link "Helpdesk Jobs in Milton Keynes" [ref=e1182] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-milton-keynes
+                - listitem [ref=e1183]:
+                  - link "Helpdesk Jobs in Newcastle Upon Tyne" [ref=e1184] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-newcastle-upon-tyne
+                - listitem [ref=e1185]:
+                  - link "Helpdesk Jobs in Norwich" [ref=e1186] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-norwich
+                - listitem [ref=e1187]:
+                  - link "Helpdesk Jobs in Nottingham" [ref=e1188] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-nottingham
+                - listitem [ref=e1189]:
+                  - link "Helpdesk Jobs in Plymouth" [ref=e1190] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-plymouth
+                - listitem [ref=e1191]:
+                  - link "Helpdesk Jobs in Reading" [ref=e1192] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-reading
+                - listitem [ref=e1193]:
+                  - link "Helpdesk Jobs in Sheffield" [ref=e1194] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-sheffield
+                - listitem [ref=e1195]:
+                  - link "Helpdesk Jobs in Southampton" [ref=e1196] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-southampton
+                - listitem [ref=e1197]:
+                  - link "Helpdesk Jobs in Swansea" [ref=e1198] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-swansea
+                - listitem [ref=e1199]:
+                  - link "Helpdesk Jobs in Swindon" [ref=e1200] [cursor=pointer]:
+                    - /url: /jobs/helpdesk-jobs-in-swindon
+          - complementary [ref=e1201]:
+            - generic [ref=e1202]:
+              - generic [ref=e1203]:
+                - generic [ref=e1204]:
+                  - paragraph [ref=e1205]:
+                    - text: Filters
+                    - generic [ref=e1206]: "4"
+                  - button "Clear all filters" [ref=e1207] [cursor=pointer]: Clear all
+                - list [ref=e1209]:
+                  - listitem [ref=e1210]:
+                    - button "helpdesk" [ref=e1211] [cursor=pointer]:
+                      - generic [ref=e1212]: helpdesk
+                  - listitem [ref=e1213]:
+                    - button "Last three days" [ref=e1214] [cursor=pointer]:
+                      - generic [ref=e1215]: Last three days
+                  - listitem [ref=e1216]:
+                    - button "London (10 miles)" [ref=e1217] [cursor=pointer]:
+                      - generic [ref=e1218]: London (10 miles)
+                  - listitem [ref=e1219]:
+                    - button "£33,000 - £100,000" [ref=e1220] [cursor=pointer]:
+                      - generic [ref=e1221]: £33,000 - £100,000
+              - generic [ref=e1222]:
+                - generic [ref=e1224]:
+                  - generic [ref=e1226]: Distance
+                  - combobox "Select a proximity" [ref=e1227] [cursor=pointer]:
+                    - option "0 miles"
+                    - option "1 miles"
+                    - option "3 miles"
+                    - option "5 miles"
+                    - option "10 miles" [selected]
+                    - option "15 miles"
+                    - option "20 miles"
+                    - option "30 miles"
+                    - option "50 miles"
+                - generic [ref=e1228]:
+                  - button "Salary range" [ref=e1230] [cursor=pointer]
+                  - generic [ref=e1231]:
+                    - generic [ref=e1232]:
+                      - generic [ref=e1233]: "From:"
+                      - combobox "Select a salary from" [ref=e1234] [cursor=pointer]:
+                        - option "£ Any" [selected]
+                        - option "Up to £10,000"
+                        - option "£12,000"
+                        - option "£14,000"
+                        - option "£16,000"
+                        - option "£18,000"
+                        - option "£20,000"
+                        - option "£22,000"
+                        - option "£24,000"
+                        - option "£26,000"
+                        - option "£28,000"
+                        - option "£30,000"
+                        - option "£32,000"
+                        - option "£34,000"
+                        - option "£36,000"
+                        - option "£38,000"
+                        - option "£40,000"
+                        - option "£42,000"
+                        - option "£44,000"
+                        - option "£46,000"
+                        - option "£48,000"
+                        - option "£50,000"
+                        - option "£55,000"
+                        - option "£60,000"
+                        - option "£65,000"
+                        - option "£70,000"
+                        - option "£75,000"
+                        - option "£80,000"
+                        - option "£85,000"
+                        - option "£90,000"
+                        - option "£95,000"
+                        - option "£100,000+"
+                    - generic [ref=e1235]:
+                      - generic [ref=e1236]: "To:"
+                      - combobox "Select a salary to" [ref=e1237] [cursor=pointer]:
+                        - option "£ Any"
+                        - option "Up to £10,000"
+                        - option "£12,000"
+                        - option "£14,000"
+                        - option "£16,000"
+                        - option "£18,000"
+                        - option "£20,000"
+                        - option "£22,000"
+                        - option "£24,000"
+                        - option "£26,000"
+                        - option "£28,000"
+                        - option "£30,000"
+                        - option "£32,000"
+                        - option "£34,000"
+                        - option "£36,000"
+                        - option "£38,000"
+                        - option "£40,000"
+                        - option "£42,000"
+                        - option "£44,000"
+                        - option "£46,000"
+                        - option "£48,000"
+                        - option "£50,000"
+                        - option "£55,000"
+                        - option "£60,000"
+                        - option "£65,000"
+                        - option "£70,000"
+                        - option "£75,000"
+                        - option "£80,000"
+                        - option "£85,000"
+                        - option "£90,000"
+                        - option "£95,000"
+                        - option "£100,000+" [selected]
+                - generic [ref=e1238]:
+                  - button "Job type" [ref=e1240] [cursor=pointer]
+                  - generic [ref=e1241]:
+                    - generic [ref=e1243]:
+                      - checkbox "Permanent(37)" [ref=e1244]
+                      - link "Permanent(37)":
+                        - /url: /jobs/permanent-helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Permanent
+                        - generic: (37)
+                    - generic [ref=e1246]:
+                      - checkbox "Temporary(1)" [ref=e1247]
+                      - link "Temporary(1)":
+                        - /url: /jobs/temporary-helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Temporary
+                        - generic: (1)
+                    - generic [ref=e1249]:
+                      - checkbox "Contract(2)" [ref=e1250]
+                      - link "Contract(2)":
+                        - /url: /jobs/contract-helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Contract
+                        - generic: (2)
+                    - generic [ref=e1252]:
+                      - checkbox "Full-time(40)" [ref=e1253]
+                      - link "Full-time(40)":
+                        - /url: /jobs/full-time-helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Full-time
+                        - generic: (40)
+                    - generic [ref=e1255]:
+                      - checkbox "Part-time(0)" [disabled]
+                      - link "Part-time(0)":
+                        - /url: /jobs/part-time-helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Part-time
+                        - generic: (0)
+                    - generic [ref=e1257]:
+                      - checkbox "Work from home(0)" [disabled]
+                      - link "Work from home(0)":
+                        - /url: /jobs/work-from-home-helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Work from home
+                        - generic: (0)
+                - generic [ref=e1258]:
+                  - button "Posted by" [ref=e1260] [cursor=pointer]
+                  - generic [ref=e1261]:
+                    - generic [ref=e1263]:
+                      - checkbox "Agency(20)" [ref=e1264]
+                      - link "Agency(20)":
+                        - /url: /jobs/agency-helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Agency
+                        - generic: (20)
+                    - generic [ref=e1266]:
+                      - checkbox "Employer(20)" [ref=e1267]
+                      - link "Employer(20)":
+                        - /url: /jobs/direct-helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Employer
+                        - generic: (20)
+                    - generic [ref=e1269]:
+                      - checkbox "Reed" [disabled]
+                      - link "Reed":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&orgId=1
+                - generic [ref=e1270]:
+                  - button "Hide" [ref=e1272] [cursor=pointer]
+                  - generic [ref=e1273]:
+                    - generic [ref=e1276]:
+                      - checkbox "Jobs without salary displayed" [ref=e1277]
+                      - link "Jobs without salary displayed":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&excludeSalaryDescriptions=16%2C32%2C64
+                    - generic [ref=e1279]:
+                      - generic [ref=e1280]:
+                        - checkbox "Training courses(14)" [ref=e1281]
+                        - link "Training courses(14)":
+                          - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&hideTrainingJobs=true&dateCreatedOffSet=lastthreedays
+                          - text: Training courses
+                          - generic: (14)
+                      - img [ref=e1283]
+                    - generic [ref=e1286]:
+                      - generic [ref=e1287]:
+                        - checkbox "Survey jobs" [ref=e1288]
+                        - link "Survey jobs":
+                          - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&hideSurveyJobs=true&dateCreatedOffSet=lastthreedays
+                      - img [ref=e1290]
+                - generic [ref=e1292]:
+                  - button "Date posted" [ref=e1294] [cursor=pointer]
+                  - combobox "Select date posted within" [ref=e1297] [cursor=pointer]:
+                    - option "Anytime"
+                    - option "Today (7)"
+                    - option "Last three days (40)" [selected]
+                    - option "Last week (50)"
+                    - option "Last two weeks (87)"
+                - generic [ref=e1298]:
+                  - button "Specialisms" [ref=e1300] [cursor=pointer]
+                  - generic [ref=e1301]:
+                    - generic [ref=e1303]:
+                      - checkbox "Education" [disabled]
+                      - link "Education":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=68
+                    - generic [ref=e1305]:
+                      - checkbox "IT & Telecoms(30)" [ref=e1306]
+                      - link "IT & Telecoms(30)":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=52
+                        - text: IT & Telecoms
+                        - generic: (30)
+                    - generic [ref=e1308]:
+                      - checkbox "Legal" [disabled]
+                      - link "Legal":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=101
+                    - generic [ref=e1310]:
+                      - checkbox "Accountancy (Qualified)" [disabled]
+                      - link "Accountancy (Qualified)":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=100
+                    - generic [ref=e1312]:
+                      - checkbox "Accountancy" [disabled]
+                      - link "Accountancy":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=2
+                    - generic [ref=e1314]:
+                      - checkbox "Leisure & Tourism" [disabled]
+                      - link "Leisure & Tourism":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=92
+                    - generic [ref=e1316]:
+                      - checkbox "Engineering(2)" [ref=e1317]
+                      - link "Engineering(2)":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=12
+                        - text: Engineering
+                        - generic: (2)
+                    - generic [ref=e1319]:
+                      - checkbox "Sales" [disabled]
+                      - link "Sales":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=30
+                    - generic [ref=e1321]:
+                      - checkbox "Admin, Secretarial & PA(1)" [ref=e1322]
+                      - link "Admin, Secretarial & PA(1)":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=3
+                        - text: Admin, Secretarial & PA
+                        - generic: (1)
+                    - generic [ref=e1324]:
+                      - checkbox "Financial Services" [disabled]
+                      - link "Financial Services":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=117
+                    - generic [ref=e1326]:
+                      - checkbox "Strategy & Consultancy" [disabled]
+                      - link "Strategy & Consultancy":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1755
+                    - generic [ref=e1328]:
+                      - checkbox "Construction & Property(3)" [ref=e1329]
+                      - link "Construction & Property(3)":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=146
+                        - text: Construction & Property
+                        - generic: (3)
+                    - generic [ref=e1331]:
+                      - checkbox "Hospitality & Catering" [disabled]
+                      - link "Hospitality & Catering":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=6
+                    - generic [ref=e1333]:
+                      - checkbox "Other" [disabled]
+                      - link "Other":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=21
+                    - generic [ref=e1335]:
+                      - checkbox "Retail" [disabled]
+                      - link "Retail":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=90
+                    - generic [ref=e1337]:
+                      - checkbox "Marketing & PR" [disabled]
+                      - link "Marketing & PR":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=18
+                    - generic [ref=e1339]:
+                      - checkbox "Banking" [disabled]
+                      - link "Banking":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=5
+                    - generic [ref=e1341]:
+                      - checkbox "Transport & Logistics" [disabled]
+                      - link "Transport & Logistics":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=11
+                    - generic [ref=e1343]:
+                      - checkbox "Social Care" [disabled]
+                      - link "Social Care":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=34
+                    - generic [ref=e1345]:
+                      - checkbox "Human Resources" [disabled]
+                      - link "Human Resources":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=24
+                    - generic [ref=e1347]:
+                      - checkbox "Health & Medicine" [disabled]
+                      - link "Health & Medicine":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=36
+                    - generic [ref=e1349]:
+                      - checkbox "General Insurance" [disabled]
+                      - link "General Insurance":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=16
+                    - generic [ref=e1351]:
+                      - checkbox "Recruitment Consultancy" [disabled]
+                      - link "Recruitment Consultancy":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=338
+                    - generic [ref=e1353]:
+                      - checkbox "Estate Agency" [disabled]
+                      - link "Estate Agency":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1962
+                    - generic [ref=e1355]:
+                      - checkbox "Customer Service" [disabled]
+                      - link "Customer Service":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=66
+                    - generic [ref=e1357]:
+                      - checkbox "Media, Digital & Creative" [disabled]
+                      - link "Media, Digital & Creative":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=71
+                    - generic [ref=e1359]:
+                      - checkbox "FMCG" [disabled]
+                      - link "FMCG":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1722
+                    - generic [ref=e1361]:
+                      - checkbox "Charity & Voluntary" [disabled]
+                      - link "Charity & Voluntary":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=500
+                    - generic [ref=e1363]:
+                      - checkbox "Motoring & Automotive(4)" [ref=e1364]
+                      - link "Motoring & Automotive(4)":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1700
+                        - text: Motoring & Automotive
+                        - generic: (4)
+                    - generic [ref=e1366]:
+                      - checkbox "Manufacturing" [disabled]
+                      - link "Manufacturing":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=168
+                    - generic [ref=e1368]:
+                      - checkbox "Graduate Training & Internships" [disabled]
+                      - link "Graduate Training & Internships":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=169
+                    - generic [ref=e1370]:
+                      - checkbox "Training" [disabled]
+                      - link "Training":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1909
+                    - generic [ref=e1372]:
+                      - checkbox "Purchasing" [disabled]
+                      - link "Purchasing":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=27
+                    - generic [ref=e1374]:
+                      - checkbox "Scientific" [disabled]
+                      - link "Scientific":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=89
+                    - generic [ref=e1376]:
+                      - checkbox "Energy" [disabled]
+                      - link "Energy":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1961
+                    - generic [ref=e1378]:
+                      - checkbox "Security & Safety" [disabled]
+                      - link "Security & Safety":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1963
+                    - generic [ref=e1380]:
+                      - checkbox "Apprenticeships" [disabled]
+                      - link "Apprenticeships":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&multipleParentSectorIds=1964
+                - generic [ref=e1381]:
+                  - button "Experience level" [ref=e1383] [cursor=pointer]
+                  - generic [ref=e1387]:
+                    - checkbox "Graduate" [ref=e1388]
+                    - link "Graduate":
+                      - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&graduate=true&dateCreatedOffSet=lastthreedays
+                - generic [ref=e1389]:
+                  - button "More options" [ref=e1391] [cursor=pointer]
+                  - generic [ref=e1392]:
+                    - generic [ref=e1395]:
+                      - checkbox "Early bird(3)" [ref=e1396]
+                      - link "Early bird(3)":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&isEarlyBird=true
+                        - text: Early bird
+                        - generic: (3)
+                    - generic [ref=e1399]:
+                      - checkbox "Easy apply" [ref=e1400]
+                      - link "Easy apply":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&isEasyApply=true
+                    - generic [ref=e1403]:
+                      - checkbox "Visa sponsorship" [disabled]
+                      - link "Visa sponsorship":
+                        - /url: /jobs/helpdesk-jobs-in-london?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays&visaSponsorship=true
+                - generic [ref=e1404]:
+                  - generic [ref=e1405]: Locations
+                  - list [ref=e1406]:
+                    - listitem [ref=e1407]:
+                      - link "Brentford (1)" [ref=e1408] [cursor=pointer]:
+                        - /url: /jobs/helpdesk-jobs-in-brentford?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Brentford
+                        - generic [ref=e1409]: (1)
+                    - listitem [ref=e1410]:
+                      - link "Harlow (1)" [ref=e1411] [cursor=pointer]:
+                        - /url: /jobs/helpdesk-jobs-in-harlow?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Harlow
+                        - generic [ref=e1412]: (1)
+                    - listitem [ref=e1413]:
+                      - link "Harold Wood (1)" [ref=e1414] [cursor=pointer]:
+                        - /url: /jobs/helpdesk-jobs-in-harold-wood?salaryFrom=33000&salaryTo=100000&dateCreatedOffSet=lastthreedays
+                        - text: Harold Wood
+                        - generic [ref=e1415]: (1)
+                - link "View all jobs in london Chevron" [ref=e1417] [cursor=pointer]:
+                  - /url: /jobs/jobs-in-london
+                  - text: View all jobs in london
+                  - img "Chevron" [ref=e1418]
+            - generic [ref=e1421]:
+              - heading "Helpdesk courses" [level=3] [ref=e1423]
+              - generic [ref=e1424]:
+                - list [ref=e1425]:
+                  - listitem [ref=e1426]:
+                    - link "Helpdesk Operations Manager Online, Self-paced £22.99" [ref=e1427] [cursor=pointer]:
+                      - /url: /courses/helpdesk-operations-manager/520811?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=Helpdesk_courses_520811
+                      - heading "Helpdesk Operations Manager" [level=4] [ref=e1428]
+                      - paragraph [ref=e1429]: Online, Self-paced
+                      - paragraph [ref=e1430]: £22.99
+                  - listitem [ref=e1431]:
+                    - link "Helpdesk & Technical Support Online, Self-paced £21.49" [ref=e1432] [cursor=pointer]:
+                      - /url: /courses/helpdesk-technical-support/528202?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=Helpdesk_courses_528202
+                      - heading "Helpdesk & Technical Support" [level=4] [ref=e1433]
+                      - paragraph [ref=e1434]: Online, Self-paced
+                      - paragraph [ref=e1435]: £21.49
+                  - listitem [ref=e1436]:
+                    - link "Helpdesk Operations Manager Online, Self-paced £21.99" [ref=e1437] [cursor=pointer]:
+                      - /url: /courses/helpdesk-operations-manager/469697?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=Helpdesk_courses_469697
+                      - heading "Helpdesk Operations Manager" [level=4] [ref=e1438]
+                      - paragraph [ref=e1439]: Online, Self-paced
+                      - paragraph [ref=e1440]: £21.99
+                - link "View Customer service courses Chevron" [ref=e1441] [cursor=pointer]:
+                  - /url: https://www.reed.co.uk/courses/all?itm_source=js_search_results&itm_medium=jobseeker&itm_campaign=keyword_search_courses_panel&itm_content=view_Helpdesk_courses
+                  - text: View Customer service courses
+                  - img "Chevron" [ref=e1442]
+    - contentinfo [ref=e1446]:
+      - generic [ref=e1448]:
+        - navigation [ref=e1449]:
+          - button "JOBS" [ref=e1451] [cursor=pointer]
+          - list [ref=e1454]:
+            - listitem [ref=e1455]:
+              - link "Contact us" [ref=e1456] [cursor=pointer]:
+                - /url: /enquiries
+            - listitem [ref=e1457]:
+              - link "Job search" [ref=e1458] [cursor=pointer]:
+                - /url: /jobs
+            - listitem [ref=e1459]:
+              - link "Recruiter directory" [ref=e1460] [cursor=pointer]:
+                - /url: /recruiterdirectory
+            - listitem [ref=e1461]:
+              - link "Work from home" [ref=e1462] [cursor=pointer]:
+                - /url: /jobs/work-from-home-jobs
+            - listitem [ref=e1463]:
+              - link "Browse jobs" [ref=e1464] [cursor=pointer]:
+                - /url: /popularjobs
+            - listitem [ref=e1465]:
+              - link "Browse locations" [ref=e1466] [cursor=pointer]:
+                - /url: /location
+            - listitem [ref=e1467]:
+              - link "Popular searches" [ref=e1468] [cursor=pointer]:
+                - /url: /popularsearches
+            - listitem [ref=e1469]:
+              - link "Career advice" [ref=e1470] [cursor=pointer]:
+                - /url: /career-advice
+            - listitem [ref=e1471]:
+              - link "Tax calculator" [ref=e1472] [cursor=pointer]:
+                - /url: /tax-calculator
+            - listitem [ref=e1473]:
+              - link "Average salary checker" [ref=e1474] [cursor=pointer]:
+                - /url: /average-salary
+            - listitem [ref=e1475]:
+              - link "Help" [ref=e1476] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e1477]:
+              - link "Contact a REED office" [ref=e1478] [cursor=pointer]:
+                - /url: https://www.reed.com/offices
+            - listitem [ref=e1479]:
+              - link "Sitemap" [ref=e1480] [cursor=pointer]:
+                - /url: /html-sitemap
+        - navigation [ref=e1481]:
+          - button "RECRUITER" [ref=e1483] [cursor=pointer]
+          - list [ref=e1486]:
+            - listitem [ref=e1487]:
+              - link "Recruiter site" [ref=e1488] [cursor=pointer]:
+                - /url: /recruiter?directjob=recruiter
+            - listitem [ref=e1489]:
+              - link "Post a job" [ref=e1490] [cursor=pointer]:
+                - /url: /recruiter/post-a-job?directjob=recruiter
+            - listitem [ref=e1491]:
+              - link "CV Search" [ref=e1492] [cursor=pointer]:
+                - /url: /recruiter/cv-search?directjob=recruiter
+            - listitem [ref=e1493]:
+              - link "Recruitment agencies" [ref=e1494] [cursor=pointer]:
+                - /url: /recruiter/recruitment-agencies?directjob=recruiter
+            - listitem [ref=e1495]:
+              - link "Recruiter Advice" [ref=e1496] [cursor=pointer]:
+                - /url: /recruiter-advice/?directjob=recruiter
+        - navigation [ref=e1497]:
+          - button "COURSES" [ref=e1499] [cursor=pointer]
+          - list [ref=e1502]:
+            - listitem [ref=e1503]:
+              - link "Help" [ref=e1504] [cursor=pointer]:
+                - /url: /courses/help
+            - listitem [ref=e1505]:
+              - link "Contact us" [ref=e1506] [cursor=pointer]:
+                - /url: /courses/contact-us
+            - listitem [ref=e1507]:
+              - link "Find a course" [ref=e1508] [cursor=pointer]:
+                - /url: /courses/
+            - listitem [ref=e1509]:
+              - link "View all subjects" [ref=e1510] [cursor=pointer]:
+                - /url: /courses/directory
+            - listitem [ref=e1511]:
+              - link "Discount courses" [ref=e1512] [cursor=pointer]:
+                - /url: /courses/discount
+            - listitem [ref=e1513]:
+              - link "Free courses" [ref=e1514] [cursor=pointer]:
+                - /url: /courses/free
+            - listitem [ref=e1515]:
+              - link "Awarding body directory" [ref=e1516] [cursor=pointer]:
+                - /url: /courses/awarding-bodies
+            - listitem [ref=e1517]:
+              - link "Career guides" [ref=e1518] [cursor=pointer]:
+                - /url: /courses/career-guides
+            - listitem [ref=e1519]:
+              - link "Advertise a course" [ref=e1520] [cursor=pointer]:
+                - /url: /courses/providers/
+            - listitem [ref=e1521]:
+              - link "Courses sitemap" [ref=e1522] [cursor=pointer]:
+                - /url: /courses/html-sitemap
+        - navigation [ref=e1523]:
+          - button "MORE FROM Reed.co.uk" [ref=e1525] [cursor=pointer]
+          - list [ref=e1528]:
+            - listitem [ref=e1529]:
+              - link "About us" [ref=e1530] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e1531]:
+              - link "Careers at Reed.co.uk" [ref=e1532] [cursor=pointer]:
+                - /url: https://www.reed.com/careers/jobs?businessDivision=Reed.co.uk
+            - listitem [ref=e1533]:
+              - link "Press office" [ref=e1534] [cursor=pointer]:
+                - /url: /press-office
+            - listitem [ref=e1535]:
+              - link "Corporate governance" [ref=e1536] [cursor=pointer]:
+                - /url: /corporate-governance
+            - listitem [ref=e1537]:
+              - link "Modern slavery statement" [ref=e1538] [cursor=pointer]:
+                - /url: https://www.reed.co.uk/cdn/jobseeker/pdf/Reed_MSA_Statement.pdf
+        - navigation [ref=e1539]:
+          - button "REED" [ref=e1541] [cursor=pointer]
+          - list [ref=e1544]:
+            - listitem [ref=e1545]:
+              - 'link "Tempzone: timesheets & holiday" [ref=e1546] [cursor=pointer]':
+                - /url: https://candidate.reed.co.uk/candlogin.asp
+            - listitem [ref=e1547]:
+              - link "Authorise timesheets" [ref=e1548] [cursor=pointer]:
+                - /url: https://client.reed.co.uk/
+            - listitem [ref=e1549]:
+              - link "Reed Group Services" [ref=e1550] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e1551]:
+              - link "Reed Specialist Recruitment" [ref=e1552] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e1553]:
+              - link "Reed in Partnership" [ref=e1554] [cursor=pointer]:
+                - /url: https://www.reedinpartnership.co.uk/
+            - listitem [ref=e1555]:
+              - link "Careers with REED" [ref=e1556] [cursor=pointer]:
+                - /url: https://www.reed.com/careers
+            - listitem [ref=e1557]:
+              - link "James Reed - Official Site" [ref=e1558] [cursor=pointer]:
+                - /url: /james-reed/
+            - listitem [ref=e1559]:
+              - 'link "Podcast - James Reed: all about business" [ref=e1560] [cursor=pointer]':
+                - /url: https://www.reed.com/podcasts
+            - listitem [ref=e1561]:
+              - link "ESG & sustainability" [ref=e1562] [cursor=pointer]:
+                - /url: https://www.reed.com/esg-and-sustainability
+      - generic [ref=e1564]:
+        - generic [ref=e1565]:
+          - generic [ref=e1567]:
+            - link "PhilCo" [ref=e1568] [cursor=pointer]:
+              - /url: https://philco.org.uk/
+              - img "PhilCo" [ref=e1569]
+            - generic [ref=e1570]: Learn how Reed is leading the way in philanthropy
+          - img "Love Mondays" [ref=e1572]
+        - generic [ref=e1573]:
+          - generic [ref=e1574]:
+            - 'link "James Reed: all about business" [ref=e1575] [cursor=pointer]':
+              - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+              - 'img "James Reed: all about business" [ref=e1576]'
+            - generic [ref=e1577]:
+              - heading "Introducing our new podcast New" [level=3] [ref=e1578]:
+                - text: Introducing our new podcast
+                - generic [ref=e1579]: New
+              - paragraph [ref=e1580]: "James Reed: all about business"
+              - link "Listen here" [ref=e1581] [cursor=pointer]:
+                - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+          - generic [ref=e1582]:
+            - generic [ref=e1583]:
+              - generic [ref=e1584]:
+                - link "Download on the App Store" [ref=e1585] [cursor=pointer]:
+                  - /url: https://itunes.apple.com/GB/app/id1040443949?mt=8
+                  - img "Download on the App Store" [ref=e1586]
+                - link "Get it on Google Play" [ref=e1587] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.reedcouk.jobs&referrer=af_tranid%3D_HgKgkJ-aFiIn4G5iigdZQ%26pid%3DWebsite_Footer%26utm_source%3DWebsite_Footer
+                  - img "Get it on Google Play" [ref=e1588]
+              - generic [ref=e1589]:
+                - link "Facebook" [ref=e1590] [cursor=pointer]:
+                  - /url: https://www.facebook.com/reedcouk
+                  - img "Facebook" [ref=e1591]
+                - link "Instagram" [ref=e1592] [cursor=pointer]:
+                  - /url: https://www.instagram.com/reedcouk/
+                  - img "Instagram" [ref=e1593]
+                - link "Tiktok" [ref=e1594] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@reedjobs
+                  - img "Tiktok" [ref=e1595]
+            - list [ref=e1596]:
+              - listitem [ref=e1597]:
+                - button "Manage Preferences" [ref=e1598] [cursor=pointer]
+                - text: ","
+              - listitem [ref=e1599]:
+                - link "Security, Privacy, Terms & Conditions" [ref=e1600] [cursor=pointer]:
+                  - /url: /policies
+            - paragraph [ref=e1601]: COPYRIGHT © Reed.co.uk 2026
+  - alert [ref=e1602]

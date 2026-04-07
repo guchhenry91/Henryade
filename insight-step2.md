@@ -1,0 +1,746 @@
+- generic [ref=e1]:
+  - generic:
+    - region "Toast message":
+      - heading "0 notifications total" [level=2] [ref=e3]
+      - alert
+  - dialog "Apply to Insight Investment" [ref=e397]:
+    - generic [ref=e398]: Dialog content start.
+    - button "Dismiss" [ref=e399] [cursor=pointer]:
+      - img [ref=e400]
+    - heading "Apply to Insight Investment" [level=2] [ref=e404]
+    - region "Your job application progress is at 33 percent." [ref=e1300]:
+      - generic [ref=e407]:
+        - progressbar [ref=e410]: "Current value: 33"
+        - note "Your job application progress is at 33 percent." [ref=e1301]: 33%
+      - generic [ref=e413]:
+        - generic [ref=e414]:
+          - generic [ref=e1302]:
+            - heading "Resume" [level=3] [ref=e1303]
+            - generic [ref=e1304]:
+              - generic [ref=e1305]: Be sure to include an updated resume *
+              - generic [ref=e1306]:
+                - generic "Selected" [ref=e1307] [cursor=pointer]:
+                  - text: PDF
+                  - paragraph [ref=e1308]:
+                    - heading "AdE (2).pdf" [level=3] [ref=e1309]
+                    - paragraph [ref=e1310]: 106 KB · Last used on 3/26/2026
+                  - generic [ref=e1311]:
+                    - button "Download resume AdE (2).pdf" [ref=e1312]:
+                      - img [ref=e1313]
+                    - radio "Deselect resume AdE (2).pdf" [checked]
+                    - generic [ref=e1318]: Deselect resume AdE (2).pdf
+                - generic "Select this resume" [ref=e1319] [cursor=pointer]:
+                  - text: PDF
+                  - paragraph [ref=e1320]:
+                    - heading "AdE (1).pdf" [level=3] [ref=e1321]
+                    - paragraph [ref=e1322]: 106 KB · Last used on 3/4/2026
+                  - generic [ref=e1323]:
+                    - button "Download resume AdE (1).pdf" [ref=e1324]:
+                      - img [ref=e1325]
+                    - radio "Select resume AdE (1).pdf"
+                    - generic [ref=e1330]: Select resume AdE (1).pdf
+              - generic [ref=e1331]:
+                - generic [ref=e1332]:
+                  - button "Upload resume button. Only, DOC, DOCX, PDF formats are supported. Max file size is (2 MB)." [ref=e1334] [cursor=pointer]: Upload resume
+                  - paragraph [ref=e1335]: DOC, DOCX, PDF (2 MB)
+                - button "Show 3 more resumes" [ref=e1337] [cursor=pointer]:
+                  - img [ref=e1338]
+                  - generic [ref=e1340]: Show 3 more resumes
+          - generic [ref=e1341]:
+            - generic [ref=e1346]:
+              - generic [ref=e1347]: Notice period / availability to start
+              - textbox "Notice period / availability to start" [active] [ref=e1348]: Immediately available
+            - generic [ref=e1353]:
+              - generic [ref=e1354]: Current / latest annual base salary or day rate (currency and amount)
+              - textbox "Current / latest annual base salary or day rate (currency and amount)" [ref=e1355]
+            - generic [ref=e1360]:
+              - generic [ref=e1361]: Annual salary or day rate expectations (currency and amount)
+              - textbox "Annual salary or day rate expectations (currency and amount)" [ref=e1362]
+          - generic [ref=e1364]:
+            - generic [ref=e1365]: Covering letter
+            - generic [ref=e1366]:
+              - generic "Selected" [ref=e1367] [cursor=pointer]:
+                - text: PDF
+                - paragraph [ref=e1368]:
+                  - heading "AdE (2).pdf" [level=3] [ref=e1369]
+                  - paragraph [ref=e1370]: 106 KB · Last used on 3/26/2026
+                - generic [ref=e1371]:
+                  - button "Download resume AdE (2).pdf" [ref=e1372]:
+                    - img [ref=e1373]
+                  - radio "Deselect resume AdE (2).pdf" [checked]
+                  - generic [ref=e1378]: Deselect resume AdE (2).pdf
+              - generic "Select this resume" [ref=e1379] [cursor=pointer]:
+                - text: PDF
+                - paragraph [ref=e1380]:
+                  - heading "AdE (1).pdf" [level=3] [ref=e1381]
+                  - paragraph [ref=e1382]: 106 KB · Last used on 3/4/2026
+                - generic [ref=e1383]:
+                  - button "Download resume AdE (1).pdf" [ref=e1384]:
+                    - img [ref=e1385]
+                  - radio "Select resume AdE (1).pdf"
+                  - generic [ref=e1390]: Select resume AdE (1).pdf
+            - generic [ref=e1391]:
+              - generic [ref=e1392]:
+                - button "Upload resume button. Only, PDF, DOC, DOCX, ODT, RTF formats are supported. Max file size is (2 MB)." [ref=e1394] [cursor=pointer]: Upload
+                - paragraph [ref=e1395]: PDF, DOC, DOCX, ODT, RTF (2 MB)
+              - button "Show 3 more resumes" [ref=e1397] [cursor=pointer]:
+                - img [ref=e1398]
+                - generic [ref=e1400]: Show 3 more resumes
+        - generic [ref=e547]:
+          - paragraph [ref=e548]: Submitting this application won’t change your LinkedIn profile.
+          - paragraph [ref=e549]:
+            - text: Application powered by Workable.
+            - link "Visit help center to know more" [ref=e550] [cursor=pointer]:
+              - /url: /help/linkedin/answer/71792?lang=en_US
+              - text: Help Center
+        - generic [ref=e551]:
+          - button "Back to previous step" [ref=e1401] [cursor=pointer]:
+            - generic [ref=e1402]: Back
+          - button "Continue to next step" [ref=e552] [cursor=pointer]:
+            - generic [ref=e553]: Next
+    - generic [ref=e554]: Dialog content end.
+  - region [ref=e4]
+  - generic [ref=e5]:
+    - generic [ref=e7]:
+      - button [ref=e555] [cursor=pointer]:
+        - generic [ref=e9]: Skip to search
+      - button [ref=e556] [cursor=pointer]:
+        - generic [ref=e11]: Skip to main content
+      - button [ref=e557] [cursor=pointer]:
+        - generic [ref=e13]: Keyboard shortcuts
+      - button [ref=e558] [cursor=pointer]:
+        - img [ref=e15]
+        - generic [ref=e17]: Close jump menu
+    - banner [ref=e559]:
+      - generic [ref=e19]:
+        - link [ref=e560] [cursor=pointer]:
+          - /url: https://www.linkedin.com/feed/?nis=true
+          - img [ref=e561]:
+            - img [ref=e24]
+        - generic [ref=e28]:
+          - combobox [ref=e562]
+          - generic:
+            - img
+        - navigation [ref=e563]:
+          - list [ref=e31]:
+            - listitem [ref=e32]:
+              - link [ref=e564] [cursor=pointer]:
+                - /url: https://www.linkedin.com/feed/?nis=true&
+                - generic [ref=e34]:
+                  - generic [ref=e37]: new feed updates notifications
+                  - img [ref=e41]
+                - generic [ref=e565]: Home
+            - listitem [ref=e44]:
+              - link [ref=e566] [cursor=pointer]:
+                - /url: https://www.linkedin.com/mynetwork/?
+                - img [ref=e49]
+                - generic [ref=e567]: My Network
+            - listitem [ref=e52]:
+              - link [ref=e568] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/?
+                - img [ref=e57]
+                - generic [ref=e569]: Jobs
+            - listitem [ref=e60]:
+              - link [ref=e570] [cursor=pointer]:
+                - /url: https://www.linkedin.com/messaging/?
+                - img [ref=e65]
+                - generic [ref=e571]: Messaging
+            - listitem [ref=e68]:
+              - link [ref=e572] [cursor=pointer]:
+                - /url: https://www.linkedin.com/notifications/?
+                - img [ref=e73]
+                - generic [ref=e573]: Notifications
+            - listitem [ref=e76]:
+              - button [ref=e574] [cursor=pointer]:
+                - img [ref=e575]
+                - generic [ref=e80]:
+                  - text: Me
+                  - img [ref=e81]
+            - listitem [ref=e83]:
+              - button [ref=e576] [cursor=pointer]:
+                - img [ref=e89]
+                - generic [ref=e577]:
+                  - text: For Business
+                  - img [ref=e92]
+            - listitem [ref=e94]:
+              - link [ref=e578] [cursor=pointer]:
+                - /url: https://www.linkedin.com/talent/job-posting-redirect?trk=nav_spotlight_post_job&
+                - img [ref=e99]
+                - generic [ref=e579]: Post a job
+    - generic [ref=e108]:
+      - main [ref=e109]:
+        - generic [ref=e112]:
+          - generic [ref=e116]:
+            - generic [ref=e117]:
+              - generic [ref=e118]:
+                - link [ref=e580] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/company/insight-investment/life
+                  - img [ref=e581]
+                - link [ref=e582] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/company/insight-investment/life
+                  - text: Insight Investment
+              - generic [ref=e125]:
+                - button [ref=e583] [cursor=pointer]:
+                  - img [ref=e129]
+                  - generic [ref=e131]: Share
+                - button [ref=e584] [cursor=pointer]:
+                  - img [ref=e134]
+                  - generic [ref=e136]: Show more options
+            - generic [ref=e138]:
+              - heading [level=1] [ref=e585]: Service Desk Analyst (Contract) - London
+              - button [ref=e586] [cursor=pointer]:
+                - img [ref=e144]
+            - generic [ref=e148]:
+              - generic [ref=e587]: London, England, United Kingdom
+              - generic [ref=e588]: ·
+              - strong [ref=e590]:
+                - generic [ref=e591]: 1 hour ago
+              - generic [ref=e592]: ·
+              - generic [ref=e593]: 9 applicants
+              - paragraph [ref=e594]:
+                - generic [ref=e595]: No response insights available yet
+            - generic [ref=e158]:
+              - button [ref=e596] [cursor=pointer]:
+                - strong [ref=e599]:
+                  - img [ref=e601]
+                  - text: On-site
+                - generic [ref=e603]: Matches your job preferences, workplace type is On-site.
+              - button [ref=e604] [cursor=pointer]:
+                - strong [ref=e606]: Contract
+            - generic [ref=e171]:
+              - button [ref=e607] [cursor=pointer]:
+                - img [ref=e175]
+                - generic [ref=e177]: Easy Apply
+              - button [ref=e608] [cursor=pointer]:
+                - generic [ref=e609]: Save
+                - generic [ref=e610]: Save Service Desk Analyst (Contract) - London at Insight Investment
+          - generic [ref=e611]:
+            - heading [level=2] [ref=e612]: How your profile and resume fit this job
+            - paragraph [ref=e613]:
+              - text: Get AI-powered advice on this job and more exclusive features with Premium.
+              - link [ref=e614] [cursor=pointer]:
+                - /url: http://www.linkedin.com/premium/products/?upsellOrderOrigin=Tracking%3Av1%3Apremium_job_details_how_you_fit_upsell%3AJob+Seeker%3AIn-Product&utype=coach_job&referenceId=oSWGO5CgR76IKJeniOD%2Bpw%3D%3D&isSS=false
+                - text: Reactivate Premium
+            - list [ref=e619]:
+              - listitem [ref=e620]:
+                - button [ref=e621] [cursor=pointer]:
+                  - img [ref=e622]
+                  - generic [ref=e624]: Show match details
+              - listitem [ref=e625]:
+                - button [ref=e626] [cursor=pointer]:
+                  - img [ref=e627]
+                  - generic [ref=e629]: Tailor my resume
+              - listitem [ref=e630]:
+                - button [ref=e631] [cursor=pointer]:
+                  - img [ref=e632]
+                  - generic [ref=e634]: Help me stand out
+          - generic [ref=e181]:
+            - heading [level=2] [ref=e635]: People you can reach out to
+            - generic [ref=e638]:
+              - generic [ref=e639]:
+                - generic [ref=e640]:
+                  - list [ref=e641]:
+                    - listitem [ref=e642]:
+                      - img [ref=e644]
+                  - generic [ref=e645]: Sky logo
+                - generic [ref=e646]: Company alumni from Sky
+              - button [ref=e647] [cursor=pointer]:
+                - generic [ref=e648]: Show all
+          - generic [ref=e190]:
+            - article [ref=e191]:
+              - generic [ref=e193]:
+                - heading [level=2] [ref=e649]: About the job
+                - paragraph [ref=e196]:
+                  - paragraph [ref=e198]:
+                    - strong [ref=e200]: "Role Overview:"
+                  - paragraph [ref=e202]: "We are looking for a Service Desk Analyst to join our London office for a 12 month contract. As a Service Desk Analyst, you will be the first point of contact for technical support, delivering high-quality customer service and resolving a wide range of IT issues. Your responsibilities will include:"
+                  - list [ref=e204]:
+                    - listitem [ref=e205]:
+                      - strong [ref=e207]: Incident Management
+                      - text: ": Logging, triaging, and resolving technical issues related to desktop systems, video conferencing equipment, printers, and a broad suite of software applications"
+                    - listitem [ref=e208]:
+                      - strong [ref=e210]: Application Support
+                      - text: ": Providing guidance and troubleshooting for commonly used applications, escalating complex issues to 2nd Line Support when necessary"
+                    - listitem [ref=e211]:
+                      - strong [ref=e213]: User Access Control
+                      - text: ": Managing user provisioning, permissions, and access requests in line with security protocols"
+                    - listitem [ref=e214]:
+                      - strong [ref=e216]: Business Continuity & Vendor Coordination
+                      - text: ": Assisting in continuity planning and liaising with external vendors for hardware and software support"
+                    - listitem [ref=e217]:
+                      - strong [ref=e219]: Collaboration
+                      - text: ": Working closely with internal teams, including 2nd and 3rd Line Support, to ensure seamless issue resolution and knowledge sharing"
+                  - paragraph [ref=e221]:
+                    - strong [ref=e223]: "Platform Profile:"
+                  - list [ref=e225]:
+                    - listitem [ref=e226]:
+                      - strong [ref=e228]: Desktop Platform
+                      - text: ": 100% VDI"
+                    - listitem [ref=e229]:
+                      - strong [ref=e231]: Operating System
+                      - text: ": Evergreen Windows 11 & Microsoft 365"
+                    - listitem [ref=e232]:
+                      - strong [ref=e234]: "Directory Services:"
+                      - text: Active Directory & Microsoft Entra
+                    - listitem [ref=e235]:
+                      - strong [ref=e237]: "Profile Management:"
+                      - text: Ivanti and FSLogix
+                    - listitem [ref=e238]:
+                      - strong [ref=e240]: "Application Delivery:"
+                      - text: Virtual and native
+                    - listitem [ref=e241]:
+                      - strong [ref=e243]: "Email Services:"
+                      - text: Outlook, Exchange Online and Mimecast
+                    - listitem [ref=e244]:
+                      - strong [ref=e246]: "System Monitoring:"
+                      - text: System intelligence monitoring and data collection provided by Lakeside SysTrack
+                    - listitem [ref=e247]:
+                      - strong [ref=e249]: "Security Systems:"
+                      - text: Microsoft Defender, Ivanti and Qualys
+                    - listitem [ref=e250]:
+                      - strong [ref=e252]: Thin Client Management
+                      - text: ": Dell zero/thin clients"
+                      - strong [ref=e254]: Collaboration Tools
+                      - text: ": Teams for video conferencing and collaboration"
+                  - paragraph [ref=e256]:
+                    - strong [ref=e258]: "Role Responsibilities:"
+                  - list [ref=e260]:
+                    - listitem [ref=e261]: Provide a proactive and quality service
+                    - listitem [ref=e262]: Ensure all support tickets are responded to within a timely manner
+                    - listitem [ref=e263]: Manage the customer's expectations and ensure they receive regular updates on outstanding issues
+                    - listitem [ref=e264]: Ticket escalations
+                    - listitem [ref=e265]: Manage issues through to resolution where possible
+                    - listitem [ref=e266]: Update Service Desk tickets so others can see updates
+                    - listitem [ref=e267]: Carry out root cause analysis
+                    - listitem [ref=e268]: Undertake continuous improvement & small-scale enhancements/mini projects as requested
+                    - listitem [ref=e269]: Create and update documentation as required
+                    - listitem [ref=e270]: Ensure our infrastructure is kept secure and adhere to our IT Security and Information Risk controls
+                  - paragraph [ref=e272]:
+                    - strong [ref=e274]: "Experience Required:"
+                  - paragraph [ref=e276]: "Essential:"
+                  - list [ref=e278]:
+                    - listitem [ref=e279]: Experience in a customer facing environment
+                    - listitem [ref=e280]: A keen interest in technology and a willingness to learn
+                  - paragraph [ref=e282]
+                  - paragraph [ref=e284]: "Beneficial:"
+                  - list [ref=e286]:
+                    - listitem [ref=e287]: Windows 11 and Microsoft 365 Suite of Applications
+                    - listitem [ref=e288]: Active Directory
+                    - listitem [ref=e289]: Microsoft Entra/Azure
+                    - listitem [ref=e290]: Microsoft Authenticator
+                    - listitem [ref=e291]: Microsoft Intune
+                    - listitem [ref=e292]: ServiceNow
+                    - listitem [ref=e293]: Omnissa, formerly VMware
+                    - listitem [ref=e294]: Mimecast
+                    - listitem [ref=e295]: Altiris / Software Centre (Application Deployment/Imaging)
+                    - listitem [ref=e296]: PowerShell Scripting
+                    - listitem [ref=e297]: Understanding of networking and server infrastructure
+                  - paragraph [ref=e299]:
+                    - strong [ref=e301]: "Personal Qualities:"
+                  - list [ref=e303]:
+                    - listitem [ref=e304]: Strong focus on providing exceptional customer service
+                    - listitem [ref=e305]: Excellent written and verbal communication skills
+                    - listitem [ref=e306]: Confident in a technically complex environment with shifting priorities
+                    - listitem [ref=e307]: Works well under pressure in a busy office setting
+                    - listitem [ref=e308]: Able to explain technical issues to diverse audiences
+                    - listitem [ref=e309]: Adapts approach based on situation and audience
+                    - listitem [ref=e310]: Engages in meaningful interactions with users
+                    - listitem [ref=e311]: Prioritises users and manages competing priorities effectively
+                    - listitem [ref=e312]: Provides solutions to potential problems
+                    - listitem [ref=e313]: Builds relationships across the organisation
+                    - listitem [ref=e314]: Maintains a positive attitude and team spirit
+                    - listitem [ref=e315]: Responds calmly under difficult conditions
+                    - listitem [ref=e316]: Adapts to changing work environments and remains focused
+                  - paragraph [ref=e318]: Insight Investment is an equal opportunities employer and makes employment decisions without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, protected veteran status, disability status, age, or any other status protected by law. If you are a candidate with a disability, or are assisting a candidate with a disability, and require an accommodation to apply for one of our jobs, please email us at TalentAcquisition@InsightInvestment.com
+                  - paragraph [ref=e320]:
+                    - strong [ref=e322]: "About Insight Investment:"
+                  - paragraph [ref=e324]: "Insight Investment is a leading asset manager focused on designing investment solutions to meet its clients' needs. Founded in 2002, Insight's collaborative approach has delivered both investment performance and growth in assets under management. Insight manages assets across its core liability-driven investment, risk management, full-spectrum fixed income, currency and absolute return capabilities. Insight has a global network of operations in the UK, Ireland, Germany, US, Japan and Australia. More information about Insight Investment can be found at: https://www.insightinvestment.com/corporate/"
+            - button [ref=e650] [cursor=pointer]:
+              - img [ref=e327]
+              - generic [ref=e329]: See more
+          - generic [ref=e331]:
+            - generic [ref=e332]:
+              - heading [level=2] [ref=e651]: Set alert for similar jobs
+              - generic [ref=e335]: Service Desk Analyst, London, England, United Kingdom
+            - generic [ref=e337] [cursor=pointer]:
+              - generic [ref=e338]: "Off"
+              - generic [ref=e339]: Set alert
+              - switch
+          - generic [ref=e341]:
+            - generic [ref=e342]:
+              - heading [level=2] [ref=e652]: About the company
+              - generic [ref=e344]:
+                - generic [ref=e345]:
+                  - link [ref=e653] [cursor=pointer]:
+                    - /url: /company/insight-investment/life/
+                    - img [ref=e654]
+                  - generic [ref=e349]:
+                    - link [ref=e655] [cursor=pointer]:
+                      - /url: /company/insight-investment/life/
+                      - text: Insight Investment
+                    - generic [ref=e352]: 63,261 followers
+                - button [ref=e656] [cursor=pointer]:
+                  - img [ref=e354]
+                  - generic [ref=e355]: Follow
+              - generic [ref=e356]:
+                - text: Investment Management
+                - generic [ref=e357]: • 1,001-5,000 employees
+                - generic [ref=e358]: • 1,301 on LinkedIn
+              - paragraph [ref=e359]:
+                - generic [ref=e360]:
+                  - text: We are a recognised market leader in liability driven and fixed income investment and are one of the world’s largest institutional investment managers and the world’s largest LDI manager.
+                  - text: "Headquartered in London, we have a global network of operations in the UK, Ireland, Germany, US, Japan and Australia. Our clients include pension funds, corporates, local authorities, insurers, sovereign wealth funds, wealth managers, financial institutions and supernationals. Our purpose is to partner with clients to reach their financial goals with clarity, confidence and certainty by delivering innovative, tailored solutions. We are a subsidiary of The Bank of New York Mellon Corporation: https://www.bny.com/investments.html Read our mission statement here: https://www.insightinvestment.com/corporate/about-insight/purpose-and-mission/ To view our terms and conditions click here: https://www.insightinvestment.com/terms-and-conditions/ Posts are intended for professional investors only. Investing involves risk."
+                  - generic [ref=e362]:
+                    - generic [ref=e363]: …
+                    - button [ref=e658] [cursor=pointer]: show more
+            - link [ref=e659] [cursor=pointer]:
+              - /url: /company/insight-investment/life/
+              - text: Show more
+          - heading [level=2] [ref=e661]: More jobs
+          - list [ref=e663]:
+            - listitem [ref=e664]:
+              - link [ref=e666] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4382078037&referenceJobId=4391589539&originToLandingJobPostings=4382078037&trackingId=%2BuzsRfMBCp2nj153RxXSOw%3D%3D&refId=2ulArAatkum8h6JRgMEK%2FA%3D%3D&eBP=CwEAAAGdL8Tt5qYGU5hqRIPEgteU-mkb17xw3ad93CGtispTlkM_ZByiFSJt64K9nw4g9vQeo_kpdGh75jIQwN_xrR2ORpPzuem2ht6eDnouWXoZozj22brJhCsqk2CKcRA-MRvX0Hxf3TU0qzUlIcT3SSGWiT13D36H0fY61pM7gJHhXXcV6cf-9z_oCVRDVZVwAoAicphdfYCjvgpG1JP1by9sCH1ezBMDNTGPjoANcCzS2K9pi3h9Ds9vrXspvmTqeApdbLCf3fA_3vQUpHH4DJQJJEL1jXm8t8liiWSltotksAdBbzqkNJ5WF8zXO_bLdBi4-QicX8FunmMREQL8Oqz9wHlXO5Ks5d8dnaRf2xhgoW1vYUXkVETVAVU7y2wK5Zs7N8mE5BDVMIt06KQTIVtS51lZT2YuVa5XNFPoil3PqR8rjM_unPlknnkK_y3c96s3ES07ukd_8DS7dDrnwC8e4QTJqGUZVKNUsT6xBFaXKXjSVfdPewH-LQsyGT5gErlN20UYBOU8bGQ0h54nxv1y08k8iIFg
+                - generic [ref=e668]:
+                  - img [ref=e673]
+                  - generic [ref=e674]:
+                    - generic [ref=e675]:
+                      - generic [ref=e676]:
+                        - generic [ref=e677]:
+                          - strong [ref=e678]: Service Desk Analyst
+                          - img [ref=e680]
+                        - generic [ref=e682]: Service Desk Analyst with verification
+                      - generic [ref=e684]: Tata Consultancy Services
+                      - generic [ref=e686]: Crawley, England, United Kingdom (On-site)
+                      - list [ref=e688]:
+                        - listitem [ref=e689]:
+                          - img [ref=e692]
+                          - generic [ref=e694]: Actively reviewing applicants
+                    - list [ref=e696]:
+                      - listitem [ref=e697]:
+                        - time [ref=e698]: 2 weeks ago
+                      - listitem [ref=e699]:
+                        - img [ref=e700]:
+                          - img [ref=e701]
+                        - generic [ref=e703]: Easy Apply
+            - listitem [ref=e704]:
+              - link [ref=e706] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4386117018&referenceJobId=4391589539&originToLandingJobPostings=4386117018&trackingId=4K1S2CKZJDtE5tiGtvttDA%3D%3D&refId=2ulArAatkum8h6JRgMEK%2FA%3D%3D&eBP=CwEAAAGdL8Tt5sRFp4Ujh1VsyT3m2j5CnbLgR93ddWrPYW6evu_gDK7EfF6YT1u1F4-448ZG_GW7ZbsA7cDgXqb5WZxCJdK9ShGNLUzEok5P6QpiX1WCYjfSxoidO8QKqZ2s4G4biIeWmMJVwy6mQweQqzkJcdzmpha8zGDgPxP7iUer_mQPLu7pBppS4UhCmSh5NNRQYxnwHgLlVtw0FjQs58tr-I06MhfYt-QC0qYrRM51zoxi99AGHh8RfHMziHnsH-gSPyl5htjD7sYukL--5Z3MnxmK8i2DReDf4HVDQiRFtYhu3pqIrQglCEWF69Y2A7A3PexmhhGkdFzEUWizAyIod_LN_cFMJeieJVO7mJg42LdDO3e0Basv_hJExaCT1bU71Pfjk1ARoucpRjGt3bLu5Mc4KkZ1poAcrEn0Y0M-TOFYFBHq3s7lNUldsSMysaT3g3Yek1juSq6jkFKuhBqxOLsi979Vp_YaIuVRRIUbVW9IHC4lzMr6GfDgsNb65u3jpCiWyZzX5omzQYkc7QS0mr7F6ic0
+                - generic [ref=e708]:
+                  - img [ref=e713]
+                  - generic [ref=e714]:
+                    - generic [ref=e715]:
+                      - generic [ref=e716]:
+                        - generic [ref=e717]:
+                          - strong [ref=e718]: Desktop Support Analyst
+                          - img [ref=e720]
+                        - generic [ref=e722]: Desktop Support Analyst with verification
+                      - generic [ref=e724]: Scotiabank
+                      - generic [ref=e726]: London, England, United Kingdom
+                      - list [ref=e728]:
+                        - listitem [ref=e729]:
+                          - generic [ref=e732]:
+                            - generic [ref=e733]: 1 school alum works here
+                            - generic [ref=e734]: 1 Broward College school alum works here
+                    - list [ref=e736]:
+                      - listitem [ref=e737]:
+                        - time [ref=e738]: 6 days ago
+            - listitem [ref=e739]:
+              - link [ref=e741] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4386919871&referenceJobId=4391589539&originToLandingJobPostings=4386919871&trackingId=G7Ju5Y2sxgfDJ%2F08jStSoA%3D%3D&refId=2ulArAatkum8h6JRgMEK%2FA%3D%3D&eBP=CwEAAAGdL8Tt5ieUo3lK2JoB0wd3fCZmZhLtQPjoSTNGcgIPKymgtq-nXOynimvNW8p_YiZeP5i-8OsnG74IdHZfTVeBQr0fXqP0Z3Dw6xKonj1h8x36u3J-bUNBAPKX88csGOR1tsefbReWTDUg0Qb3ciGMc-zPeobHnP-FDt2IR6EBTo9cqB87kHcPpm4OaYsJuAL0wXMV6Ike9naZgooMKalhL7OYumH2-yp9KjtkBnDKTEgPDS0URdQI3iwJbKMDmE6wrZokEMylOrVRmC7PGkXW27jbfTjX0P9fjI0ZHtTysjwxNSLRRs_TCo3cIeicJRyK1QIKie3jejMKsbvMwXvlRNajEuQX9KXN23kDjEvxbYPf5DmCHqt74p2HIl7Jmm5Pf2zCiseeo1jgJ35k5nUPJmNF_BLNZ8JRdciCRQWvRZwp4DLte9UOS9ZA15ydiOTdTnXYl1OP2KZJCv5M5JuP8dQknYw-Hfxc2hK_Ql_oHgz_phZe5kQlqUs-d3sdV_tfyYmib83uC64r5echGGhNaPN8mA
+                - generic [ref=e743]:
+                  - img [ref=e748]
+                  - generic [ref=e749]:
+                    - generic [ref=e750]:
+                      - generic [ref=e751]:
+                        - strong [ref=e753]: 1st & 2nd Line Service Desk Analyst – Financial Services
+                        - generic [ref=e754]: 1st & 2nd Line Service Desk Analyst – Financial Services
+                      - generic [ref=e756]: NINE by SATIGO
+                      - generic [ref=e758]: City Of London, England, United Kingdom (On-site)
+                      - generic [ref=e759]:
+                        - generic [ref=e760]: £40K/yr - £42K/yr
+                        - list [ref=e761]:
+                          - listitem [ref=e762]:
+                            - img [ref=e765]
+                            - generic [ref=e767]: Actively reviewing applicants
+                    - list [ref=e769]:
+                      - listitem [ref=e770]:
+                        - time [ref=e771]: 1 week ago
+                      - listitem [ref=e772]:
+                        - img [ref=e773]:
+                          - img [ref=e774]
+                        - generic [ref=e776]: Easy Apply
+            - listitem [ref=e777]:
+              - link [ref=e779] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4385333882&referenceJobId=4391589539&originToLandingJobPostings=4385333882&trackingId=h2pYBUioHlE6aZsWaTe18w%3D%3D&refId=2ulArAatkum8h6JRgMEK%2FA%3D%3D&eBP=CwEAAAGdL8Tt5oI0VS_jRqEpdth2vsBpb1pCBELEf6wDYmHuTupsYa5Dpm_J6hMUdfcCF4w0O0GUi3SSzFf6uhCEL2dsT9ETm7Vtaf0S1_LkhzIFvGT9TYOYVGvhOIz7tQcuhTQ-NwKYjd3JfwuQPos3bEUH2_PtgLH2vcWgSl3svnil7dnDdrO4v8ujeZOCsdUdvLAlFIL_hd2Lm7DWw82bFQmNi04UQ9imBUMN7oYYOGdRnB6p3yltfmcmoXd_l6fL26hgN2Y19nqC8szxHlMDA3GtPcNuCYTJYczHoAl7rbi-ET1sU6MMGsaV2_gFlMFBNt71F2RpSD96SF-EmVIv90dmhNKI1OnvXfoh1bgPxOeeKwh0rDInfPkeEN7Qjl1KdPH7MlH3ILWS_EyflMBjenaWA8NbasgMaRk-jvDCvo9_wDo0rO7sedBSSgJlB6nYeY8Kgzs8TaOs4hyoFxVla57bAxkvuExKoOeKeYcLSfcU7PZ5zumGIsGpQfK7PrAWDN1VEYvlJUSVYJ99TaWTcze9aErl5w
+                - generic [ref=e781]:
+                  - img [ref=e786]
+                  - generic [ref=e787]:
+                    - generic [ref=e788]:
+                      - generic [ref=e789]:
+                        - generic [ref=e790]:
+                          - strong [ref=e791]: IT Helpdesk Analyst contract
+                          - img [ref=e793]
+                        - generic [ref=e795]: IT Helpdesk Analyst contract with verification
+                      - generic [ref=e797]: E-Frontiers
+                      - generic [ref=e799]: London, England, United Kingdom (On-site)
+                      - list [ref=e801]:
+                        - listitem [ref=e802]:
+                          - img [ref=e805]
+                          - generic [ref=e807]: Actively reviewing applicants
+                    - list [ref=e809]:
+                      - listitem [ref=e810]:
+                        - time [ref=e811]: 2 weeks ago
+                      - listitem [ref=e812]:
+                        - img [ref=e813]:
+                          - img [ref=e814]
+                        - generic [ref=e816]: Easy Apply
+            - listitem [ref=e817]:
+              - link [ref=e819] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4362257431&referenceJobId=4391589539&originToLandingJobPostings=4362257431&trackingId=YHr34QytZ%2BOdyDYY9QLcIw%3D%3D&refId=2ulArAatkum8h6JRgMEK%2FA%3D%3D&eBP=CwEAAAGdL8Tt5jLm6zb6cy8ehkgjP7kuJgRhsruCdBkxgnoWP10wlUlSsU-8OhRVhYoG7u7ugPIBRRYmOeIprxSt7yv5cEmGCc1JSs2SZmB4o28yeBFw_sPytt8VLUJyUS9_F60ZqcR17GD4iHGoLEPWVjVS_s76HnPtL70sQnWL3tLemr3mCau3rmQJq5NzYvg5u_8Qh6f5HuIekRHLaihiipkR_4CtoeFP7F8fY5rzlHEi6B6MexqM26F8vnsGV9IB2eeVIPOugz8izQv8CM5V7Sjh9Nr-gUX8N8Kg5OkcstFnwZHWoegonOA0MF5VN53oZtRncnIO0Z-MgeUQb0G1DDZo3iJ2MDOZ_ZRorNdrazp83EWUdxvIJlZn0YzHpSHLPPjZe6NHeoI68uhbw0wYZel9i61vHe8ccl-jTCs9Q-RT2pbljCGdIrJWEffoTjBZdnHGVHxJlNxG6XSQAULODydQZeSWzRfKEKUouxMhvQ8RSH9tFBef9NXLjMpzSUBXMfdnw53Ip_ZlJvaJd_5ulhf5IaATgKUO
+                - generic [ref=e821]:
+                  - img [ref=e826]
+                  - generic [ref=e827]:
+                    - generic [ref=e828]:
+                      - generic [ref=e829]:
+                        - generic [ref=e830]:
+                          - strong [ref=e831]: Service Desk Technician / Analyst
+                          - img [ref=e833]
+                        - generic [ref=e835]: Service Desk Technician / Analyst with verification
+                      - generic [ref=e837]: Mayer Brown
+                      - generic [ref=e839]: London, England, United Kingdom (On-site)
+                      - list [ref=e841]:
+                        - listitem [ref=e842]:
+                          - generic [ref=e845]:
+                            - generic [ref=e846]: 1 company alum works here
+                            - generic [ref=e847]: 1 Sky company alum works here
+                    - list [ref=e849]:
+                      - listitem [ref=e850]:
+                        - time [ref=e851]: 2 days ago
+            - listitem [ref=e852]:
+              - link [ref=e854] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4386683332&referenceJobId=4391589539&originToLandingJobPostings=4386683332&trackingId=T%2BEc%2FzIyfuq%2BWmXuVUrDFg%3D%3D&refId=2ulArAatkum8h6JRgMEK%2FA%3D%3D&eBP=CwEAAAGdL8Tt5pP8rjxe5prLr6JMz0Z3PZuX-MEUOVBLKZyu2TLivmsV1HJrji_6xG9hV2JCMdtRWePTOwO_R5C7iGC-GbzB0yie4a74c5hVtyBS3r7Ocia-0YwH1kEvrbBAQy8S1ge4RYHoUxr3EXMT1QHiZiUoD234axE0-aWzBhddOz5y0CWCQB0AzptfFOcpJoKiXG3hp5xm1ROU0gVgfOwzfU1f9R24a1NXbNhDz1vvliADKl-TQv_PwI5L5ToMAGB7VGReYuJT6R6pGrPl7D8ik6i2u8arFwoZ9OuP9G--yj_Q2bSqwl7eLptD8RfDOfCJwc7QJmLiYwTPrLp8gEjjlzYO8EqpS6lTnbEET5nBoJJepJiH1bXiu8nBvmSQ6k0WXICzlwtku5LSOxJrGWA8jnjDuKj3vjmGyf0Pv3KAHlrq0HghP596_CWEFaPzu4SOAwNDAjYMSA_0-NCm71DlBh1D4uqIWgJ2E3Kuo8t9Uou1YTVIFKiKQYPg_W2V_4e9dCu27DcLtlnQUrf30reEvat6Bg
+                - generic [ref=e856]:
+                  - img [ref=e861]
+                  - generic [ref=e862]:
+                    - generic [ref=e863]:
+                      - generic [ref=e864]:
+                        - generic [ref=e865]:
+                          - strong [ref=e866]: Service Desk Analyst (End User Computing Analyst)
+                          - img [ref=e868]
+                        - generic [ref=e870]: Service Desk Analyst (End User Computing Analyst) with verification
+                      - generic [ref=e872]: JATO Dynamics
+                      - generic [ref=e874]: Uxbridge, England, United Kingdom (On-site)
+                    - list [ref=e876]:
+                      - listitem [ref=e877]:
+                        - time [ref=e878]: 4 days ago
+            - listitem [ref=e879]:
+              - link [ref=e881] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4386848590&referenceJobId=4391589539&originToLandingJobPostings=4386848590&trackingId=bQ2EEIsFjHeCQcSTAIX%2Fdg%3D%3D&refId=2ulArAatkum8h6JRgMEK%2FA%3D%3D&eBP=CwEAAAGdL8Tt5jndDmIOybRtT8qJg5WzltEyWlEBo4WtfA5ru5MQgvrAFD6AHqIxreqCAOKuQ549zb53mgN_lDsqLxwF969I3K7dMSfqdvA5pnMuvzHCVkd4h7PYNDm1-BIwyS0zbekOpgJ4Qf91Sy84CjWumK2Xf3-pXEgHUyTAKAtwtUmnqv9aPbDBNyZFxHqOEA6C_tdrHFnLrwUj2TKsQKeYHDsIj27-s11CQZzkdaqKYkPyyEPZ_EKJ_OkD2U1sUysuBQIEsPPMcozHAgl41aAidboQGwwkzACD1Ae3XntSCxDivjY4HbywiKpEVJyleFcXC4HcgocH02w4GNJ7qutel4SsjBdvt3fGi9YAQnOeX6vpQ41UtphtD7xZZnJAOEllgC3oewDvhRIe79sYkN9PCY0ND-ZwFXHUo7EoleT_tWe_6JjUJj-WTo4miKuUhsRdXa9yvmkSWHn7CtW1by1mg2EU0thNRzzfv2QtSolK5fwW0UDsu-Do87qGIpSfLH7Aa3YBExNHtMQRwS5p2vG-q-cEnggk
+                - generic [ref=e883]:
+                  - img [ref=e888]
+                  - generic [ref=e889]:
+                    - generic [ref=e890]:
+                      - generic [ref=e891]:
+                        - generic [ref=e892]:
+                          - strong [ref=e893]: Information Technology Support Analyst
+                          - img [ref=e895]
+                        - generic [ref=e897]: Information Technology Support Analyst with verification
+                      - generic [ref=e899]: La Fosse
+                      - generic [ref=e901]: London Area, United Kingdom (Hybrid)
+                      - generic [ref=e902]:
+                        - generic [ref=e903]: £1,000/month - £2,000/month
+                        - list [ref=e904]:
+                          - listitem [ref=e905]:
+                            - img [ref=e908]
+                            - generic [ref=e910]: Actively reviewing applicants
+                    - list [ref=e912]:
+                      - listitem [ref=e913]:
+                        - time [ref=e914]: 1 week ago
+                      - listitem [ref=e915]:
+                        - img [ref=e916]:
+                          - img [ref=e917]
+                        - generic [ref=e919]: Easy Apply
+            - listitem [ref=e920]:
+              - link [ref=e922] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4382407308&referenceJobId=4391589539&originToLandingJobPostings=4382407308&trackingId=xeB5F9uJEdOyd63dFm1oxA%3D%3D&refId=2ulArAatkum8h6JRgMEK%2FA%3D%3D&eBP=CwEAAAGdL8Tt5l9IHen-rXrqWr1ZBpD5vlbeRJtMD0FxJROs8BPvFVYBJ_Dw9xN-2_0AB5cSA1Vw9NUefEuCufQkRDJzsLpNEfon-fAXW7jtNbc5RjhVSfGOpTnX9ZQInK0cjtOSD-zPjLYqCKiX-xsfBDS6-DHcXthox8TGRUGuZpDSeP1ptIT5RAO75XtXULGSq1ldzPTyaIk5uY66mhQ_D0JzwmMRejBauAgagyK0MkbmLluak2W33UdjDA4mi-pM1ctt7cfJPXl7I12m2ukCbgtoU1_yZ6Qen5VQ-kI1NvtvMkKqzd5XZv5CCXNUwugaKLdYhhzCq0vhQMJNN2l7yRcQ0UTnIRd7DmLkreF8GLfXW-COLGmXrhY9h6D97KZD6Aq8w0Tc-bRNavYRSoko_BKL0v8N1URf5A83GbtRIxqYKhwsvjvVB1aK9xKqismb6Wm_V3pXW5ZunD8HjuKo4_ab79Q-C_iSoaDI8haGTjWk8cGRqZOATLkAObqymqQawsbtY89DbnARhPiRzXb2abEBvLVnER12
+                - generic [ref=e924]:
+                  - img [ref=e929]
+                  - generic [ref=e930]:
+                    - generic [ref=e931]:
+                      - generic [ref=e932]:
+                        - generic [ref=e933]:
+                          - strong [ref=e934]: Service Desk Analyst
+                          - img [ref=e936]
+                        - generic [ref=e938]: Service Desk Analyst with verification
+                      - generic [ref=e940]: Medical Protection Society
+                      - generic [ref=e942]: Greater London, England, United Kingdom (Hybrid)
+                      - generic [ref=e943]:
+                        - generic [ref=e944]: £27K/yr - £30K/yr
+                        - list [ref=e945]:
+                          - listitem [ref=e946]:
+                            - generic [ref=e949]:
+                              - generic [ref=e950]: 6 company alumni work here
+                              - generic [ref=e951]: 6 Sky company alumni work here
+                    - list [ref=e953]:
+                      - listitem [ref=e954]:
+                        - time [ref=e955]: 2 weeks ago
+            - listitem [ref=e956]:
+              - link [ref=e958] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4384164140&referenceJobId=4391589539&originToLandingJobPostings=4384164140&trackingId=IGLisnYoWYsm3GIBizfWiQ%3D%3D&refId=2ulArAatkum8h6JRgMEK%2FA%3D%3D&eBP=CwEAAAGdL8Tt5j7rvpcwSsRhl7EVVaMLVx8mxNk6xo-_Jl-jLEluSjj9UHKBzwhJveSHIBCwIqGZuX-7IztiHvXK-rMIvcoWhNtpoWfC65Q1SD6sTWpnR9CsLlpPiHzYw8ppE5v3MnPA4Y4WLw3l6lhL5c_Q4qhMn0G2eMMgDir5ntwUoqQvmkhA9jdKEsS2kUThTp3XBR4jb1kJzwGVqlFMxS8g3FLT3XAgH-sY_JwUQCI72IpW_Nbd24pD12pb77H7ARl2nKW8eAm8nFpYp6tkj6SYbbry-GhiynkdKQZoxwcSLWE68fthV2I8Tw1qRRZjjKbTqcyxJWYC0LYNuPeRMPWa4FdaWWEHhJ7RumLBkZwhLTJhlPZBtg2H1lUHKSVirKeImlpzdDxroSfI5nVBIud3HpAoRHYLiz9sYqpUpeFCU_WRlAx2-6-JUX3qsIJJSnPDZECES_PyL0URtQ9ezReWg4OqihHCZ7bXZjBP_67gfSR9xAj_o1iShwSWXCzd17WNwG0EODQhF0t2RuaSEYLFwZLy4fr5hDg
+                - generic [ref=e960]:
+                  - img [ref=e965]
+                  - generic [ref=e966]:
+                    - generic [ref=e967]:
+                      - generic [ref=e968]:
+                        - strong [ref=e970]: Application Support / Service Desk Support – TSM (Associate Level)
+                        - generic [ref=e971]: Application Support / Service Desk Support – TSM (Associate Level)
+                      - generic [ref=e973]: Scot Lewis Associates
+                      - generic [ref=e975]: London Area, United Kingdom (Hybrid)
+                      - generic [ref=e976]:
+                        - generic [ref=e977]: £50K/yr - £60K/yr
+                        - list [ref=e978]:
+                          - listitem [ref=e979]:
+                            - img [ref=e982]
+                            - generic [ref=e984]: Actively reviewing applicants
+                    - list [ref=e986]:
+                      - listitem [ref=e987]:
+                        - time [ref=e988]: 3 days ago
+                      - listitem [ref=e989]:
+                        - img [ref=e990]:
+                          - img [ref=e991]
+                        - generic [ref=e993]: Easy Apply
+            - listitem [ref=e994]:
+              - link [ref=e996] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4386778455&referenceJobId=4391589539&originToLandingJobPostings=4386778455&trackingId=HHopX2yZuTSiqwctRKfJpg%3D%3D&refId=2ulArAatkum8h6JRgMEK%2FA%3D%3D&eBP=CwEAAAGdL8Tt5tKzgWMlgPRBoscpPKgI7IJOZi283iDu1y0Q5ISCfE5ouWokx5NKaKNU4RO6ZutODjTvhnQ3Zaqnl4nP8ztrNvqwp7cNPcr5povxfkORW3JIPwndTr92dhP4XZOi66CqEjJ5yTO7F844AXV8FPJNwJgik6-4p2XhAGAOSuBnyOGSgM1GZWXN3EMvtf5wc14n02sZz035FyzGh8QMhFImQfLMFcBO5tsXCveDMY3YPpmYTxsHoXT8Q4_WY5WXh-Fewo_T8_QR92sCT77dL3CLm7x8dOP3WE-FbhMjTf8uyI9X6MLU-JxkXpO9tpMcfxN4oStH4UrQHM6ndkcScDmYhtkHkNNmqy9eej5viSa2_eiLfdwl4-FyVm5oPpK9Q0XPboZXC3wiidFbzAyWVdDDoON2OfnjXr5AQo8noUfX9UU1d7SLwyNs2J9V8L0DXsPOHKUh9hHHajeUho_j-djqHTK7tDhV_SWlVpY4OCXwQTm100bh7E_x_8BdUOeS9rigZ07QnTzn_gzaE0-SItc
+                - generic [ref=e998]:
+                  - img [ref=e1003]
+                  - generic [ref=e1004]:
+                    - generic [ref=e1005]:
+                      - generic [ref=e1006]:
+                        - generic [ref=e1007]:
+                          - strong [ref=e1008]: Service Desk Analyst (2nd Line)
+                          - img [ref=e1010]
+                        - generic [ref=e1012]: Service Desk Analyst (2nd Line) with verification
+                      - generic [ref=e1014]: FluidOne
+                      - generic [ref=e1016]: Chorley, England, United Kingdom (On-site)
+                      - generic [ref=e1017]:
+                        - generic [ref=e1018]: £27K/yr - £30K/yr
+                        - list [ref=e1019]:
+                          - listitem [ref=e1020]:
+                            - img [ref=e1023]
+                            - generic [ref=e1025]: Actively reviewing applicants
+                    - list [ref=e1027]:
+                      - listitem [ref=e1028]:
+                        - time [ref=e1029]: 1 week ago
+                      - listitem [ref=e1030]:
+                        - img [ref=e1031]:
+                          - img [ref=e1032]
+                        - generic [ref=e1034]: Easy Apply
+            - listitem [ref=e1035]:
+              - link [ref=e1037] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4357482412&referenceJobId=4391589539&originToLandingJobPostings=4357482412&trackingId=jhXlj9TWa5B1JL%2BdzBpRhw%3D%3D&refId=2ulArAatkum8h6JRgMEK%2FA%3D%3D&eBP=CwEAAAGdL8Tt5kBEr9g-7ZRWHqKbbdRn_sXIdBAVPffB0kOCtAPWobcAZfJPZibLI44DEN_bNNoXW35jN0eGNdCcCfLajkgNfudX9HFEQq0EbfgGS_iLOJqF0XUqhWzxlxqHc7K490IZwa2TRTnm99vSvaDdGfsjLyPdktND-RMewhm7G_0EwyyaqUEJ5hx753uCLDJHdUoJU5SPTo6TJ0phUtuF-G6Vx939q4v0sN_lPVPGG5ai5Z8IrZ7WKpj2CerFwjKf3LK8L0gsYFbFSZAD_k0sItEsaCSbsCwmHy2uvsH7gq3BIlE10CD-VTW4855D5O8MIj7xxWKQS34EQ35AzaS_GAt68wTqEtMq2jF4gvUdR1ZQQRWN-S2iMUQHmW_B0wevR19Yj-Aky3v00gDtIVCv_eFxqzUuvOmWyEFjuP8a4RyPgxyKKO4HqEeImPKZHDOoJp1Rv34Gl5ZxtP2s355-gMmDsmoTXom5T3rfi5Tqdd1ZTqjfnTI-8yqe7vO20nerp3NezMxkTRGZhOlkVBHqI-G_zgUMpl8
+                - generic [ref=e1039]:
+                  - img [ref=e1044]
+                  - generic [ref=e1045]:
+                    - generic [ref=e1046]:
+                      - generic [ref=e1047]:
+                        - generic [ref=e1048]:
+                          - strong [ref=e1049]: Service Desk Analyst - Permanent
+                          - img [ref=e1051]
+                        - generic [ref=e1053]: Service Desk Analyst - Permanent with verification
+                      - generic [ref=e1055]: Methods
+                      - generic [ref=e1057]: London, England, United Kingdom (Hybrid)
+                      - list [ref=e1059]:
+                        - listitem [ref=e1060]:
+                          - img [ref=e1063]
+                          - generic [ref=e1065]: Actively reviewing applicants
+                    - list [ref=e1067]:
+                      - listitem [ref=e1068]:
+                        - time [ref=e1069]: 1 week ago
+                      - listitem [ref=e1070]:
+                        - img [ref=e1071]:
+                          - img [ref=e1072]
+                        - generic [ref=e1074]: Easy Apply
+            - listitem [ref=e1075]:
+              - link [ref=e1077] [cursor=pointer]:
+                - /url: https://www.linkedin.com/jobs/collections/similar-jobs?currentJobId=4288218078&referenceJobId=4391589539&originToLandingJobPostings=4288218078&trackingId=zTvg4XvUJJ8s3JoEYN%2FqPg%3D%3D&refId=2ulArAatkum8h6JRgMEK%2FA%3D%3D&eBP=CwEAAAGdL8Tt5kREfgXN67ulGh8_6fUdrxbWCPDRMUvYfyXMi2MP8lDq0wZ0yPPaxjQ00zEj1oXPE4KhBPpvYh1MWsQY5EfcA5jHQoh3pVV0QSH2xtbiJc7LN7p8oaownZl1XvEciVcvP4B8L5dKHFvEkzBLct3qMNcK2huxoomyC0W-l_y9qjiJeti03_AZES0TIz2bnGsPEBtNUHn92K6lJote5JBTFGtXydHmshlang2twht5NP0ZjiUd-SOxANPMJ8Zd9vTXTowrNbntMov6nUkS5T8rbx8LnSpCA0-rwBGqtICeFYbKPZZWAWhWm3VFOuQKue0Z4P5mWIUjlJCzqxTZpAxKk88ZvB7fFROR1mUvwOIxJ8eeiVBO6-r1cXvwHO4J1ixcZIDAbXoc-ycyU704KR5WmOi5p6HV8l23FNgZpnd34tXAk9dA2PJyen2rLqfZEVpvcaHNpwXPTantVZs_kYRuzh3s-AfT6-cb_4-9zahi1HRYC1IW5uR84c2iBGoF-dh9hFPjLlM8PM0MSGn5EZ-db6nx
+                - generic [ref=e1079]:
+                  - img [ref=e1084]
+                  - generic [ref=e1085]:
+                    - generic [ref=e1086]:
+                      - generic [ref=e1087]:
+                        - generic [ref=e1088]:
+                          - strong [ref=e1089]: IT Desktop Support Analyst
+                          - img [ref=e1091]
+                        - generic [ref=e1093]: IT Desktop Support Analyst with verification
+                      - generic [ref=e1095]: DGH Recruitment
+                      - generic [ref=e1097]: London Area, United Kingdom (On-site)
+                      - list [ref=e1099]:
+                        - listitem [ref=e1100]:
+                          - img [ref=e1103]
+                          - generic [ref=e1105]: Actively reviewing applicants
+                    - list [ref=e1107]:
+                      - listitem [ref=e1108]:
+                        - time [ref=e1109]: 1 week ago
+                      - listitem [ref=e1110]:
+                        - img [ref=e1111]:
+                          - img [ref=e1112]
+                        - generic [ref=e1114]: Easy Apply
+          - link [ref=e1116] [cursor=pointer]:
+            - /url: https://www.linkedin.com/jobs/collections/similar-jobs?referenceJobId=4391589539
+            - text: See more jobs like this
+      - complementary [ref=e367]:
+        - generic [ref=e368]:
+          - generic [ref=e1117]:
+            - generic [ref=e1119]:
+              - heading [level=3] [ref=e1120]: Job search smarter with Premium
+              - list [ref=e1121]:
+                - listitem [ref=e1122]:
+                  - img [ref=e1126]
+                  - generic [ref=e1129]: See jobs where you’d be a top applicant
+                - listitem [ref=e1130]:
+                  - img [ref=e1134]
+                  - generic [ref=e1137]: Message hiring managers with InMail
+                - listitem [ref=e1138]:
+                  - img [ref=e1142]
+                  - generic [ref=e1145]: Get personalized cover letter and resume tips
+                - listitem [ref=e1146]:
+                  - img [ref=e1150]
+                  - generic [ref=e1153]: Plus! Get insider access to live talks with industry leaders.
+              - generic [ref=e1154]:
+                - list [ref=e1156]:
+                  - listitem [ref=e1157]
+                  - listitem [ref=e1159]
+                  - listitem [ref=e1161]
+                - paragraph [ref=e1163]: Phibian Nosa and millions of other members use Premium
+              - link [ref=e1164] [cursor=pointer]:
+                - /url: http://www.linkedin.com/premium/products/?upsellOrderOrigin=Tracking%3Av1%3Ajob_right_rail_upsell%3AJob+Seeker%3AIn-Product&utype=job&referenceId=dL6OA1rOQzqem6LZLilWmg%3D%3D&isSS=false&destRedirectURL=https%3A%2F%2Fwww.linkedin.com%2Fjobs%2Fview%2Fservice-desk-analyst-contract-london-at-insight-investment-4391589539%2F%3ForiginalSubdomain%3Duk
+                - text: Reactivate Premium
+              - paragraph [ref=e1165]: Cancel anytime. No hidden fees.
+            - button [ref=e1166] [cursor=pointer]:
+              - img [ref=e1167]
+              - generic [ref=e1169]: Dismiss premium promotion
+          - generic [ref=e369]:
+            - paragraph [ref=e370]: Looking for talent?
+            - link [ref=e1170] [cursor=pointer]:
+              - /url: https://www.linkedin.com/talent/job-posting-redirect?trk=flagship3_job_detail
+              - text: Post a job
+    - generic [ref=e373]:
+      - generic [ref=e375] [cursor=pointer]:
+        - generic [ref=e376]:
+          - img [ref=e1171]
+          - generic [ref=e1173]: Status is online
+        - button [ref=e1174]:
+          - generic [ref=e379]:
+            - generic [ref=e380]: Messaging
+            - generic [ref=e381]: You are on the messaging overlay. Press enter to open the list of conversations.
+      - generic [ref=e382]:
+        - button [ref=e1175] [cursor=pointer]:
+          - img [ref=e1176]
+        - button [ref=e1177] [cursor=pointer]:
+          - img [ref=e389]
+          - generic [ref=e391]: Compose message
+        - button [ref=e1178] [cursor=pointer]:
+          - img [ref=e393]
+          - generic [ref=e395]: You are on the messaging overlay. Press enter to open the list of conversations.

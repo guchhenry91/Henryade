@@ -1,0 +1,567 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e6]:
+          - link "Reed.co.uk" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Reed.co.uk" [ref=e8]
+          - list [ref=e9]:
+            - listitem [ref=e10]:
+              - link "Jobs" [ref=e11] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e12]: Jobs
+            - listitem [ref=e13]:
+              - link "Courses" [ref=e14] [cursor=pointer]:
+                - /url: /courses/?itm_source=js_navigation&itm_medium=jobseeker&itm_campaign=courses_tab&itm_content=standard_version
+                - generic [ref=e15]: Courses
+            - listitem [ref=e16]:
+              - link "Career advice" [ref=e17] [cursor=pointer]:
+                - /url: /career-advice/
+                - generic [ref=e18]: Career advice
+            - listitem [ref=e19]:
+              - link "Recruiting? Post a job" [ref=e20] [cursor=pointer]:
+                - /url: /recruiter/
+                - generic [ref=e21]:
+                  - text: Recruiting?
+                  - strong [ref=e22]: Post a job
+          - generic [ref=e23]:
+            - link "Register CV" [ref=e24] [cursor=pointer]:
+              - /url: /authentication/register?returnTo=%2Fjobs%2Fapplications-support-engineer%2F56728367
+            - list [ref=e25]:
+              - listitem [ref=e26]:
+                - link "Saved jobs" [ref=e27] [cursor=pointer]:
+                  - /url: /account/jobs/shortlisted-jobs
+                  - img [ref=e29]
+                  - generic [ref=e31]: Saved jobs
+              - listitem [ref=e32]:
+                - status [ref=e33]:
+                  - img "Loading" [ref=e34]
+      - search [ref=e38]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: What
+            - textbox "e.g. \"it support\"" [ref=e44]
+          - generic [ref=e45]:
+            - generic [ref=e46]: Where
+            - generic [ref=e47]:
+              - textbox "town or postcode" [ref=e48]
+              - button "Get current location" [ref=e49] [cursor=pointer]:
+                - img [ref=e50]
+          - button "Search jobs" [ref=e54] [cursor=pointer]
+          - link "Browse jobs" [ref=e56] [cursor=pointer]:
+            - /url: /popularjobs
+            - text: Browse jobs
+            - img [ref=e57]
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - link "ArrowSearch results" [ref=e64] [cursor=pointer]:
+            - /url: /jobs/applications-support-engineer-jobs-in-harlow?jobId=56728367
+            - img "Arrow"
+            - text: Search results
+          - list [ref=e66]:
+            - listitem [ref=e67]:
+              - link "Home" [ref=e68] [cursor=pointer]:
+                - /url: /
+            - text: /
+            - listitem [ref=e69]:
+              - text: /
+              - link "Information Technology" [ref=e70] [cursor=pointer]:
+                - /url: /jobs/information-technology-jobs
+            - listitem [ref=e71]:
+              - text: /
+              - link "Engineer" [ref=e72] [cursor=pointer]:
+                - /url: /jobs/engineering-jobs
+            - listitem [ref=e73]:
+              - text: /
+              - link "Application Engineer" [ref=e74] [cursor=pointer]:
+                - /url: /jobs/application-engineer-jobs
+            - listitem [ref=e75]: /Job details
+        - generic [ref=e76]:
+          - generic [ref=e78]:
+            - img "Job image banner" [ref=e79]
+            - generic [ref=e80]:
+              - generic [ref=e81]: Featured
+              - generic [ref=e82]: New
+              - generic [ref=e83]:
+                - img "EarlyBird" [ref=e84]
+                - text: Early bird
+            - generic [ref=e86]:
+              - generic [ref=e87]:
+                - heading "Applications Support Engineer" [level=1] [ref=e88]
+                - generic [ref=e89]:
+                  - text: Yesterday by
+                  - link "Matchtech" [ref=e90] [cursor=pointer]:
+                    - /url: /company-profile/Matchtech--76790
+              - link "Matchtech jobs" [ref=e92] [cursor=pointer]:
+                - /url: /company-profile/Matchtech--76790
+                - img "Matchtech jobs" [ref=e93]
+            - list [ref=e94]:
+              - listitem [ref=e95]:
+                - img "Salary" [ref=e96]
+                - text: Salary negotiable
+              - listitem [ref=e98]:
+                - img "Location" [ref=e99]
+                - text: Harlow, Essex
+              - listitem [ref=e101]:
+                - img "Clock" [ref=e102]
+                - text: Permanent, full-time
+            - generic [ref=e105]:
+              - button "Apply now" [disabled]
+              - button "Shortlist job" [disabled]:
+                - img
+                - text: Save
+            - generic [ref=e107]:
+              - paragraph [ref=e108]: Our client, a prominent player in the Defence & Security sector, is currently looking for an Applications Support Engineer to join their dynamic team based in Harlow (Hybrid). This position is a Fixed Term Contract for 12 months, offering full-time hours of 37 hours per week. The successful applicant must be SC eligible.
+              - strong [ref=e109]: "About the Role:"
+              - paragraph [ref=e110]: The Applications Support Engineer will become part of the wider Data and BI Product Family, initially focusing on technical deployment and application support for a major financial planning transformation. This role involves a close working relationship with programme teams and Digital Technology functions such as Architecture, Security, and Operations. Strong technical troubleshooting skills and hands-on experience with financial planning platforms are essential.
+              - strong [ref=e111]: "Key Responsibilities:"
+              - strong [ref=e112]: "Deployment & Technical Support:"
+              - list [ref=e113]:
+                - listitem [ref=e114]: Support the initial deployment, configuration, and technical validation of the new financial platform.
+                - listitem [ref=e115]: Provide hands-on troubleshooting and issue resolution across application, interface, and configuration layers.
+                - listitem [ref=e116]: Work closely with infrastructure, network, and security teams to ensure end-to-end environment readiness.
+              - strong [ref=e117]: "Collaboration & Cross-Functional Engagement:"
+              - list [ref=e118]:
+                - listitem [ref=e119]: Collaborate with key programme stakeholders including Architecture, Engineering, Programme Delivery, QA, and Finance Operations.
+                - listitem [ref=e120]: Participate in Agile ceremonies and contribute to iterative delivery cycles, backlog refinement, and continuous improvement.
+                - listitem [ref=e121]: Assist in interpreting architectural and design requirements into actionable support tasks.
+              - strong [ref=e122]: "Operational Readiness & Transition:"
+              - list [ref=e123]:
+                - listitem [ref=e124]: Prepare the wider support organisation for steady-state operations by developing documentation, standard operating procedures, and knowledge articles.
+                - listitem [ref=e125]: Deliver training and knowledge-transfer sessions to ensure operational teams can confidently support the live Finance platform.
+                - listitem [ref=e126]: Contribute to hyper-care and early life support activities post-go-live.
+              - strong [ref=e127]: "Monitoring, Incident Management & Continuous Improvement:"
+              - list [ref=e128]:
+                - listitem [ref=e129]: Implement and maintain monitoring solutions to ensure system availability and performance.
+                - listitem [ref=e130]: Manage incident triage, root cause analysis, and problem resolution for platform-related issues.
+                - listitem [ref=e131]: Identify opportunities to enhance stability, resilience, and operational efficiency of the platform.
+              - strong [ref=e132]: "Job Requirements:"
+              - strong [ref=e133]: "Essential:"
+              - list [ref=e134]:
+                - listitem [ref=e135]: Experience in application support, ideally with finance platforms, OneStream in particular.
+                - listitem [ref=e136]: Strong understanding of Service Management frameworks such as ITIL.
+                - listitem [ref=e137]:
+                  - text: "Solid background in:"
+                  - list [ref=e138]:
+                    - listitem [ref=e139]: Operating system management (Windows/Linux)
+                    - listitem [ref=e140]: Application troubleshooting and performance optimisation
+                    - listitem [ref=e141]: Log analysis, system monitoring, and incident management
+                - listitem [ref=e142]: Ability to collaborate effectively with technical and non-technical stakeholders.
+                - listitem [ref=e143]: Experience working in structured delivery environments; familiarity with Agile ways of working is advantageous.
+              - strong [ref=e144]: "Desirable:"
+              - list [ref=e145]:
+                - listitem [ref=e146]: Experience in support of a wide range of Data and MI/BI platforms.
+                - listitem [ref=e147]: Experience supporting applications in regulated industries (e.g., government, aerospace, and defence).
+                - listitem [ref=e148]: Knowledge of integration concepts (ETL, Event, APIs, message-based interfaces).
+                - listitem [ref=e149]: Exposure to deployment automation or DevOps practices.
+              - strong [ref=e150]: "Personal Attributes:"
+              - list [ref=e151]:
+                - listitem [ref=e152]: Strong analytical and problem-solving mindset.
+                - listitem [ref=e153]: Clear communicator able to work across diverse technical teams.
+                - listitem [ref=e154]: Proactive, collaborative, and committed to delivering high-quality support.
+                - listitem [ref=e155]: Adaptable, eager to learn, and able to transition seamlessly between project and BAU contexts.
+              - paragraph [ref=e156]: If you are a dedicated and skilled Applications Support Engineer looking to contribute to national security projects within a supportive and innovative environment, apply now to join our client's esteemed team in Harlow.
+            - group [ref=e157]:
+              - button "shareShare" [ref=e160] [cursor=pointer]:
+                - img "share" [ref=e161]
+                - text: Share
+              - generic [ref=e163]:
+                - button "EyeHide" [disabled]:
+                  - img "Eye"
+                  - text: Hide
+          - generic [ref=e164]:
+            - banner [ref=e165]:
+              - heading "Create alerts for similar jobs" [level=2] [ref=e166]
+            - generic [ref=e168]:
+              - generic [ref=e169]:
+                - generic [ref=e170]:
+                  - generic [ref=e171]:
+                    - generic [ref=e173]: Applications Support Engineer
+                    - generic [ref=e174]: Harlow
+                  - button "Edit" [ref=e175] [cursor=pointer]
+                - generic [ref=e176]:
+                  - generic [ref=e177]: Email address
+                  - textbox "Email address" [ref=e179]
+              - generic [ref=e180]:
+                - button "Create alert" [disabled]:
+                  - generic:
+                    - img
+                  - text: Create alert
+              - generic [ref=e181]:
+                - text: By creating an alert, you agree to the
+                - link "Terms and conditions" [ref=e182] [cursor=pointer]:
+                  - /url: /policies
+                - text: applicable to our service and acknowledge that your personal data will be used in accordance with our
+                - link "Privacy policy" [ref=e183] [cursor=pointer]:
+                  - /url: /policies
+                - text: and you will receive emails and communications about jobs and career related topics.
+          - generic [ref=e184]:
+            - heading "Similar Jobs" [level=3] [ref=e186]
+            - generic [ref=e187]:
+              - link "Shortlist job IT Support Specialist - job guarantee 23 February by Newto Training SalaryCompetitive salary LocationUnited Kingdom ClockPermanent, full-time" [ref=e188] [cursor=pointer]:
+                - /url: /jobs/it-support-specialist-job-guarantee/56518186?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e189]:
+                      - img [ref=e190]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: IT Support Specialist - job guarantee
+                          - generic: 23 February by Newto Training
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Competitive salary
+                      - listitem:
+                        - img "Location"
+                        - text: United Kingdom
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Trainee IT Support Engineer 23 February by Newto Training SalaryCompetitive salary LocationUnited Kingdom ClockPermanent, full-time" [ref=e192] [cursor=pointer]:
+                - /url: /jobs/trainee-it-support-engineer/56518238?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e193]:
+                      - img [ref=e194]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Trainee IT Support Engineer
+                          - generic: 23 February by Newto Training
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Competitive salary
+                      - listitem:
+                        - img "Location"
+                        - text: United Kingdom
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job IT Security Engineer 23 February by Newto Training SalaryCompetitive salary LocationUnited Kingdom ClockPermanent, full-time" [ref=e196] [cursor=pointer]:
+                - /url: /jobs/it-security-engineer/56518189?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e197]:
+                      - img [ref=e198]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: IT Security Engineer
+                          - generic: 23 February by Newto Training
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Competitive salary
+                      - listitem:
+                        - img "Location"
+                        - text: United Kingdom
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Easy Apply Service Engineer - Multi-Skilled 16 March by Elix Sourcing Solutions Limited Salary£35,000 - £45,000 per annum LocationTheydon Bois, Essex ClockPermanent, full-time" [ref=e200] [cursor=pointer]:
+                - /url: /jobs/service-engineer-multi-skilled/56651994?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e201]:
+                      - img [ref=e202]
+                    - generic:
+                      - generic:
+                        - img
+                        - text: Easy Apply
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Service Engineer - Multi-Skilled
+                          - generic: 16 March by Elix Sourcing Solutions Limited
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £35,000 - £45,000 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: Theydon Bois, Essex
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Featured New Cloud Engineer Yesterday by Matchtech SalarySalary negotiable LocationHarlow, Essex ClockPermanent, full-time" [ref=e204] [cursor=pointer]:
+                - /url: /jobs/cloud-engineer/56728744?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e205]:
+                      - img [ref=e206]
+                    - generic:
+                      - generic: Featured
+                      - generic: New
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Cloud Engineer
+                          - generic: Yesterday by Matchtech
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: Salary negotiable
+                      - listitem:
+                        - img "Location"
+                        - text: Harlow, Essex
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+              - link "Shortlist job Promoted Class 1 Driver 13 March by GXO Logistics Salary£62,774 per annum LocationHoddesdon, Hertfordshire ClockPermanent, full-time" [ref=e208] [cursor=pointer]:
+                - /url: /jobs/class-1-driver/56642966?source=details.similarjobs
+                - generic:
+                  - generic:
+                    - button "Shortlist job" [ref=e209]:
+                      - img [ref=e210]
+                    - generic:
+                      - generic: Promoted
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Class 1 Driver
+                          - generic: 13 March by GXO Logistics
+                    - list:
+                      - listitem:
+                        - img "Salary"
+                        - text: £62,774 per annum
+                      - listitem:
+                        - img "Location"
+                        - text: Hoddesdon, Hertfordshire
+                      - listitem:
+                        - img "Clock"
+                        - text: Permanent, full-time
+            - link "See more jobs like this" [ref=e213] [cursor=pointer]:
+              - /url: /jobs/application-engineer-jobs
+          - generic [ref=e214]:
+            - generic [ref=e216]: Recommended courses
+            - generic [ref=e217]:
+              - link "IT Support Engineer Career Change Bootcamp Online, Self-paced £2,250" [ref=e218] [cursor=pointer]:
+                - /url: /courses/it-support-engineer-career-change-bootcamp/498761?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it%20security_courses_498761
+                - generic: IT Support Engineer Career Change Bootcamp
+                - generic: Online, Self-paced
+                - generic: £2,250
+              - 'link "CompTIA: CompTIA A+ : CompTIA N+ : CompTIA S+ Online, Self-paced £899" [ref=e219] [cursor=pointer]':
+                - /url: /courses/comptia-comptia-a--comptia-n--comptia-s/247780?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it%20security_courses_247780
+                - generic: "CompTIA: CompTIA A+ : CompTIA N+ : CompTIA S+"
+                - generic: Online, Self-paced
+                - generic: £899
+              - 'link "CompTIA : CompTIA Cloud+ Online, Self-paced £899" [ref=e220] [cursor=pointer]':
+                - /url: /courses/comptia--comptia-cloud/340760?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=it%20security_courses_340760
+                - generic: "CompTIA : CompTIA Cloud+"
+                - generic: Online, Self-paced
+                - generic: £899
+            - link "View IT security courses" [ref=e222] [cursor=pointer]:
+              - /url: https://www.reed.co.uk/courses/all?itm_source=js_job_details&itm_medium=jobseeker&itm_campaign=recommended_courses_panel&itm_content=view_it%20security_courses
+          - generic [ref=e224]:
+            - generic [ref=e225]: Posted by Matchtech
+            - link "View all jobs and profile Chevron" [ref=e226] [cursor=pointer]:
+              - /url: /jobs/matchtech-19617/p19617
+              - generic [ref=e227]: View all jobs and profile
+              - img "Chevron" [ref=e228]
+          - generic [ref=e231]:
+            - generic [ref=e232]: "Reference: 56728367"
+            - generic [ref=e233]:
+              - text: Please note that
+              - link "Reed.co.uk" [ref=e234] [cursor=pointer]:
+                - /url: https://reed.co.uk
+              - text: will never ask you to provide your bank, passport or driving licence details during the application process.
+            - link "Report this job Open in new tab" [ref=e236] [cursor=pointer]:
+              - /url: /enquiries?reportJobRef=56728367
+              - text: Report this job
+              - img "Open in new tab"
+        - complementary
+    - contentinfo [ref=e237]:
+      - generic [ref=e239]:
+        - navigation [ref=e240]:
+          - button "JOBS" [ref=e242] [cursor=pointer]
+          - list [ref=e245]:
+            - listitem [ref=e246]:
+              - link "Contact us" [ref=e247] [cursor=pointer]:
+                - /url: /enquiries
+            - listitem [ref=e248]:
+              - link "Job search" [ref=e249] [cursor=pointer]:
+                - /url: /jobs
+            - listitem [ref=e250]:
+              - link "Recruiter directory" [ref=e251] [cursor=pointer]:
+                - /url: /recruiterdirectory
+            - listitem [ref=e252]:
+              - link "Work from home" [ref=e253] [cursor=pointer]:
+                - /url: /jobs/work-from-home-jobs
+            - listitem [ref=e254]:
+              - link "Browse jobs" [ref=e255] [cursor=pointer]:
+                - /url: /popularjobs
+            - listitem [ref=e256]:
+              - link "Browse locations" [ref=e257] [cursor=pointer]:
+                - /url: /location
+            - listitem [ref=e258]:
+              - link "Popular searches" [ref=e259] [cursor=pointer]:
+                - /url: /popularsearches
+            - listitem [ref=e260]:
+              - link "Career advice" [ref=e261] [cursor=pointer]:
+                - /url: /career-advice
+            - listitem [ref=e262]:
+              - link "Tax calculator" [ref=e263] [cursor=pointer]:
+                - /url: /tax-calculator
+            - listitem [ref=e264]:
+              - link "Average salary checker" [ref=e265] [cursor=pointer]:
+                - /url: /average-salary
+            - listitem [ref=e266]:
+              - link "Help" [ref=e267] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e268]:
+              - link "Contact a REED office" [ref=e269] [cursor=pointer]:
+                - /url: https://www.reed.com/offices
+            - listitem [ref=e270]:
+              - link "Sitemap" [ref=e271] [cursor=pointer]:
+                - /url: /html-sitemap
+        - navigation [ref=e272]:
+          - button "RECRUITER" [ref=e274] [cursor=pointer]
+          - list [ref=e277]:
+            - listitem [ref=e278]:
+              - link "Recruiter site" [ref=e279] [cursor=pointer]:
+                - /url: /recruiter?directjob=recruiter
+            - listitem [ref=e280]:
+              - link "Post a job" [ref=e281] [cursor=pointer]:
+                - /url: /recruiter/post-a-job?directjob=recruiter
+            - listitem [ref=e282]:
+              - link "CV Search" [ref=e283] [cursor=pointer]:
+                - /url: /recruiter/cv-search?directjob=recruiter
+            - listitem [ref=e284]:
+              - link "Recruitment agencies" [ref=e285] [cursor=pointer]:
+                - /url: /recruiter/recruitment-agencies?directjob=recruiter
+            - listitem [ref=e286]:
+              - link "Recruiter Advice" [ref=e287] [cursor=pointer]:
+                - /url: /recruiter-advice/?directjob=recruiter
+        - navigation [ref=e288]:
+          - button "COURSES" [ref=e290] [cursor=pointer]
+          - list [ref=e293]:
+            - listitem [ref=e294]:
+              - link "Help" [ref=e295] [cursor=pointer]:
+                - /url: /courses/help
+            - listitem [ref=e296]:
+              - link "Contact us" [ref=e297] [cursor=pointer]:
+                - /url: /courses/contact-us
+            - listitem [ref=e298]:
+              - link "Find a course" [ref=e299] [cursor=pointer]:
+                - /url: /courses/
+            - listitem [ref=e300]:
+              - link "View all subjects" [ref=e301] [cursor=pointer]:
+                - /url: /courses/directory
+            - listitem [ref=e302]:
+              - link "Discount courses" [ref=e303] [cursor=pointer]:
+                - /url: /courses/discount
+            - listitem [ref=e304]:
+              - link "Free courses" [ref=e305] [cursor=pointer]:
+                - /url: /courses/free
+            - listitem [ref=e306]:
+              - link "Awarding body directory" [ref=e307] [cursor=pointer]:
+                - /url: /courses/awarding-bodies
+            - listitem [ref=e308]:
+              - link "Career guides" [ref=e309] [cursor=pointer]:
+                - /url: /courses/career-guides
+            - listitem [ref=e310]:
+              - link "Advertise a course" [ref=e311] [cursor=pointer]:
+                - /url: /courses/providers/
+            - listitem [ref=e312]:
+              - link "Courses sitemap" [ref=e313] [cursor=pointer]:
+                - /url: /courses/html-sitemap
+        - navigation [ref=e314]:
+          - button "MORE FROM Reed.co.uk" [ref=e316] [cursor=pointer]
+          - list [ref=e319]:
+            - listitem [ref=e320]:
+              - link "About us" [ref=e321] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e322]:
+              - link "Careers at Reed.co.uk" [ref=e323] [cursor=pointer]:
+                - /url: https://www.reed.com/careers/jobs?businessDivision=Reed.co.uk
+            - listitem [ref=e324]:
+              - link "Press office" [ref=e325] [cursor=pointer]:
+                - /url: /press-office
+            - listitem [ref=e326]:
+              - link "Corporate governance" [ref=e327] [cursor=pointer]:
+                - /url: /corporate-governance
+            - listitem [ref=e328]:
+              - link "Modern slavery statement" [ref=e329] [cursor=pointer]:
+                - /url: https://www.reed.co.uk/cdn/jobseeker/pdf/Reed_MSA_Statement.pdf
+        - navigation [ref=e330]:
+          - button "REED" [ref=e332] [cursor=pointer]
+          - list [ref=e335]:
+            - listitem [ref=e336]:
+              - 'link "Tempzone: timesheets & holiday" [ref=e337] [cursor=pointer]':
+                - /url: https://candidate.reed.co.uk/candlogin.asp
+            - listitem [ref=e338]:
+              - link "Authorise timesheets" [ref=e339] [cursor=pointer]:
+                - /url: https://client.reed.co.uk/
+            - listitem [ref=e340]:
+              - link "Reed Group Services" [ref=e341] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e342]:
+              - link "Reed Specialist Recruitment" [ref=e343] [cursor=pointer]:
+                - /url: https://www.reed.com/
+            - listitem [ref=e344]:
+              - link "Reed in Partnership" [ref=e345] [cursor=pointer]:
+                - /url: https://www.reedinpartnership.co.uk/
+            - listitem [ref=e346]:
+              - link "Careers with REED" [ref=e347] [cursor=pointer]:
+                - /url: https://www.reed.com/careers
+            - listitem [ref=e348]:
+              - link "James Reed - Official Site" [ref=e349] [cursor=pointer]:
+                - /url: /james-reed/
+            - listitem [ref=e350]:
+              - 'link "Podcast - James Reed: all about business" [ref=e351] [cursor=pointer]':
+                - /url: https://www.reed.com/podcasts
+            - listitem [ref=e352]:
+              - link "ESG & sustainability" [ref=e353] [cursor=pointer]:
+                - /url: https://www.reed.com/esg-and-sustainability
+      - generic [ref=e355]:
+        - generic [ref=e356]:
+          - generic [ref=e358]:
+            - link "PhilCo" [ref=e359] [cursor=pointer]:
+              - /url: https://philco.org.uk/
+              - img "PhilCo" [ref=e360]
+            - generic [ref=e361]: Learn how Reed is leading the way in philanthropy
+          - img "Love Mondays" [ref=e363]
+        - generic [ref=e364]:
+          - generic [ref=e365]:
+            - 'link "James Reed: all about business" [ref=e366] [cursor=pointer]':
+              - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+              - 'img "James Reed: all about business" [ref=e367]'
+            - generic [ref=e368]:
+              - heading "Introducing our new podcast New" [level=3] [ref=e369]:
+                - text: Introducing our new podcast
+                - generic [ref=e370]: New
+              - paragraph [ref=e371]: "James Reed: all about business"
+              - link "Listen here" [ref=e372] [cursor=pointer]:
+                - /url: https://feeds.captivate.fm/james-reed-all-about-business/
+          - generic [ref=e373]:
+            - generic [ref=e374]:
+              - generic [ref=e375]:
+                - link "Download on the App Store" [ref=e376] [cursor=pointer]:
+                  - /url: https://itunes.apple.com/GB/app/id1040443949?mt=8
+                  - img "Download on the App Store" [ref=e377]
+                - link "Get it on Google Play" [ref=e378] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.reedcouk.jobs&referrer=af_tranid%3D_HgKgkJ-aFiIn4G5iigdZQ%26pid%3DWebsite_Footer%26utm_source%3DWebsite_Footer
+                  - img "Get it on Google Play" [ref=e379]
+              - generic [ref=e380]:
+                - link "Facebook" [ref=e381] [cursor=pointer]:
+                  - /url: https://www.facebook.com/reedcouk
+                  - img "Facebook" [ref=e382]
+                - link "Instagram" [ref=e383] [cursor=pointer]:
+                  - /url: https://www.instagram.com/reedcouk/
+                  - img "Instagram" [ref=e384]
+                - link "Tiktok" [ref=e385] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@reedjobs
+                  - img "Tiktok" [ref=e386]
+            - list [ref=e387]:
+              - listitem [ref=e388]:
+                - button "Manage Preferences" [ref=e389] [cursor=pointer]
+                - text: ","
+              - listitem [ref=e390]:
+                - link "Security, Privacy, Terms & Conditions" [ref=e391] [cursor=pointer]:
+                  - /url: /policies
+            - paragraph [ref=e392]: COPYRIGHT © Reed.co.uk 2026
+  - alert [ref=e393]

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Poisson Correct Score Model — WCQ March 26, 2026</title>
+<style>
+  body { font-family: monospace; background: #0f0f0f; color: #e0e0e0; padding: 20px; max-width: 900px; margin: auto; }
+  h1 { color: #00ff88; border-bottom: 1px solid #333; padding-bottom: 8px; }
+  h2 { color: #ffcc00; margin-top: 30px; }
+  .match { background: #1a1a1a; border: 1px solid #333; border-radius: 6px; padding: 16px; margin-bottom: 20px; }
+  .match h3 { color: #00ccff; margin: 0 0 12px 0; font-size: 1.1em; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 10px; font-size: 0.88em; }
+  th { background: #222; color: #aaa; text-align: left; padding: 5px 8px; }
+  td { padding: 4px 8px; border-bottom: 1px solid #222; }
+  .score-1 { color: #00ff88; font-weight: bold; }
+  .score-2 { color: #88ff00; }
+  .score-3 { color: #ccff00; }
+  .pos-edge { color: #00ff88; }
+  .neg-edge { color: #ff4444; }
+  .neutral { color: #aaa; }
+  .value-bets { background: #0a2a0a; border: 1px solid #00ff88; border-radius: 6px; padding: 16px; margin-top: 30px; }
+  .value-bets h2 { color: #00ff88; margin-top: 0; }
+  .value-item { padding: 6px 0; border-bottom: 1px solid #1a3a1a; color: #00ff88; }
+  .summary-table td { font-size: 0.85em; }
+  .tier-a { color: #00ff88; font-weight: bold; }
+  .tier-b { color: #ffcc00; }
+  .note { color: #888; font-size: 0.8em; margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<h1>⚽ Poisson Correct Score Model</h1>
+<p style="color:#888">World Cup Qualifiers — UEFA Playoff Semifinals | March 26, 2026<br>
+Odds sourced live from The Odds API. xG estimated from qualifying campaign stats.</p>
+
+<div id="output"></div>
+
+<script>
+// ── Poisson probability ──────────────────────────────────────────────────────
+function poisson(lambda, k) {
+  return (Math.exp(-lambda) * Math.pow(lambda, k)) / factorial(k);
+}
+
+function factorial(n) {
+  if (n <= 1) return 1;
+  let r = 1;
+  for (let i = 2; i <= n; i++) r *= i;
+  return r;
+}
+
+// ── Correct score grid (0-0 to 6-6) ─────────────────────────────────────────
+function correctScores(homeXG, awayXG, max = 6) {
+  const scores = [];
+  for (let h = 0; h <= max; h++) {
+    for (let a = 0; a <= max; a++) {
+      scores.push({ h, a, p: poisson(homeXG, h) * poisson(awayXG, a) });
+    }
+  }
+  scores.sort((a, b) => b.p - a.p);
+  return scores;
+}
+
+// ── Implied probability ───────────────────────────────────────────────────────
+function impliedProb(odds) { return 1 / odds; }
+function edge(modelProb, odds) {
+  return ((modelProb - impliedProb(odds)) * 100).toFixed(1);
+}
+
+// ── Match data ───────────────────────────────────────────────────────────────
+const matches = [
+  {
+    home: "Italy", away: "Northern Ireland",
+    homeXG: 2.1,  // 21 goals in qualifying, strong home side
+    awayXG: 0.5,  // NI 7 goals, historically 0 vs Italy
+    oddsHome: 1.25, oddsDraw: 5.50, oddsAway: 13.0,
+    oddsOver: 1.75, oddsUnder: 2.00,
+    notes: "Italy never conceded vs NI in history (5W 2D). Missing: Scamacca, Chiesa, Di Lorenzo. NI missing Bradley, Ballard."
+  },
+  {
+    home: "Wales", away: "Bosnia & Herzegovina",
+    homeXG: 1.8,  // Wales 7-1 last game, strong home but key injuries
+    awayXG: 1.0,  // Dzeko threat, Bosnia unbeaten last 4
+    oddsHome: 1.70, oddsDraw: 3.60, oddsAway: 5.20,
+    oddsOver: 1.91, oddsUnder: 1.80,
+    notes: "Wales never beaten Bosnia (H2H). Bosnia 0 wins in 7 playoff attempts. Wales missing: Davies, Mepham, Moore."
+  },
+  {
+    home: "Ukraine", away: "Sweden",
+    homeXG: 1.7,  // Ukraine only lost to France, solid run
+    awayXG: 0.6,  // Sweden 0 wins in 6 qualifiers, GD -8, missing Isak/Kulusevski
+    oddsHome: 3.35, oddsDraw: 3.20, oddsAway: 2.30,
+    oddsOver: 2.15, oddsUnder: 1.62,
+    notes: "NOTE: Bookmakers favour Sweden despite inferior form — possibly due to neutral venue. Model strongly favours Ukraine. Sweden missing: Isak, Kulusevski, Svanberg, Starfelt."
+  },
+  {
+    home: "Poland", away: "Albania",
+    homeXG: 1.9,  // 14 goals in 8, Lewandowski, unbeaten last 6
+    awayXG: 0.7,  // Albania 3 away wins all 1-0, tight defensive unit
+    oddsHome: 1.67, oddsDraw: 3.50, oddsAway: 5.80,
+    oddsOver: 2.20, oddsUnder: 1.62,
+    notes: "Albania without Berisha (thigh tendon). Lewandowski 88 intl goals. Poland full squad available."
+  },
+  {
+    home: "Turkey", away: "Romania",
+    homeXG: 1.6,  // Drew 2-2 Spain, Güler threat but Celik/Demiral doubts
+    awayXG: 1.1,  // Romania capable, Dennis Man dangerous
+    oddsHome: 1.40, oddsDraw: 4.90, oddsAway: 7.20,
+    oddsOver: 1.55, oddsUnder: 2.30,
+    notes: "Turkey heavy favourites at Vodafone Park. Both teams have goal threat — leans Over. Missing: Celik, Demiral (fitness)."
+  },
+  {
+    home: "Slovakia", away: "Kosovo",
+    homeXG: 1.2,  // 0 goals conceded in last 5 home games
+    awayXG: 0.8,  // Kosovo 5 unbeaten, 4 clean sheets, but low scorers
+    oddsHome: 2.30, oddsDraw: 3.10, oddsAway: 3.50,
+    oddsOver: 2.40, oddsUnder: 1.53,
+    notes: "Most defensive game of the round. Both teams scored just 6 goals in 6 qualifiers each."
+  },
+  {
+    home: "Denmark", away: "North Macedonia",
+    homeXG: 2.3,  // Hojlund in outstanding form at Napoli, home dominance
+    awayXG: 0.4,  // Lost 7-1 to Wales, confidence shot
+    oddsHome: 1.23, oddsDraw: 6.10, oddsAway: 15.0,
+    oddsOver: 1.62, oddsUnder: 2.15,
+    notes: "Denmark clear favourites. Hojlund vs North Macedonia's leaky defence. Eljif Elmas (Napoli) for North Macedonia."
+  },
+  {
+    home: "Czech Republic", away: "Ireland",
+    homeXG: 1.8,  // Unbeaten in 17 home qualifiers, Schick available
+    awayXG: 0.9,  // Parrott 5 goals in last 2 games but Ebosele+Scales suspended
+    oddsHome: 1.90, oddsDraw: 3.45, oddsAway: 4.20,
+    oddsOver: 2.10, oddsUnder: 1.67,
+    notes: "Czech new manager (first game — Ivan Hasek sacked). Ireland never won in Czech Republic. Key suspensions: Ebosele, Scales."
+  },
+];
+
+// ── Build output ─────────────────────────────────────────────────────────────
+function buildReport() {
+  const out = document.getElementById("output");
+  const valueBets = [];
+
+  matches.forEach((m, i) => {
+    const scores = correctScores(m.homeXG, m.awayXG);
+
+    // Aggregate probs
+    let homeWin = 0, draw = 0, awayWin = 0, over = 0, under = 0, btts = 0;
+    scores.forEach(s => {
+      if (s.h > s.a) homeWin += s.p;
+      else if (s.h === s.a) draw += s.p;
+      else awayWin += s.p;
+      if (s.h + s.a > 2) over += s.p;
+      else under += s.p;
+      if (s.h > 0 && s.a > 0) btts += s.p;
+    });
+
+    const homeEdge  = parseFloat(edge(homeWin, m.oddsHome));
+    const drawEdge  = parseFloat(edge(draw, m.oddsDraw));
+    const awayEdge  = parseFloat(edge(awayWin, m.oddsAway));
+    const overEdge  = parseFloat(edge(over, m.oddsOver));
+    const underEdge = parseFloat(edge(under, m.oddsUnder));
+
+    const top5 = scores.slice(0, 5);
+
+    // Collect value bets
+    if (homeEdge  > 3) valueBets.push({ label: `${m.home} Win`, edge: homeEdge, match: `${m.home} vs ${m.away}` });
+    if (drawEdge  > 3) valueBets.push({ label: `Draw`, edge: drawEdge, match: `${m.home} vs ${m.away}` });
+    if (awayEdge  > 3) valueBets.push({ label: `${m.away} Win`, edge: awayEdge, match: `${m.home} vs ${m.away}` });
+    if (overEdge  > 3) valueBets.push({ label: `Over 2.5`, edge: overEdge, match: `${m.home} vs ${m.away}` });
+    if (underEdge > 3) valueBets.push({ label: `Under 2.5`, edge: underEdge, match: `${m.home} vs ${m.away}` });
+
+    function edgeColor(e) {
+      return e > 0 ? `<span class="pos-edge">+${e}%</span>` : `<span class="neg-edge">${e}%</span>`;
+    }
+
+    const tier = homeEdge > 10 || awayEdge > 10 ? '<span class="tier-a">A — HIGH</span>' : '<span class="tier-b">B — MEDIUM</span>';
+
+    out.innerHTML += `
+    <div class="match">
+      <h3>Match ${i+1}: ${m.home} vs ${m.away} ${tier}</h3>
+      <table>
+        <tr><th>Outcome</th><th>Model %</th><th>Odds</th><th>Implied %</th><th>Edge</th></tr>
+        <tr>
+          <td>${m.home} Win</td>
+          <td>${(homeWin*100).toFixed(1)}%</td>
+          <td>${m.oddsHome}</td>
+          <td>${(impliedProb(m.oddsHome)*100).toFixed(1)}%</td>
+          <td>${edgeColor(homeEdge)}</td>
+        </tr>
+        <tr>
+          <td>Draw</td>
+          <td>${(draw*100).toFixed(1)}%</td>
+          <td>${m.oddsDraw}</td>
+          <td>${(impliedProb(m.oddsDraw)*100).toFixed(1)}%</td>
+          <td>${edgeColor(drawEdge)}</td>
+        </tr>
+        <tr>
+          <td>${m.away} Win</td>
+          <td>${(awayWin*100).toFixed(1)}%</td>
+          <td>${m.oddsAway}</td>
+          <td>${(impliedProb(m.oddsAway)*100).toFixed(1)}%</td>
+          <td>${edgeColor(awayEdge)}</td>
+        </tr>
+        <tr>
+          <td>Over 2.5</td>
+          <td>${(over*100).toFixed(1)}%</td>
+          <td>${m.oddsOver}</td>
+          <td>${(impliedProb(m.oddsOver)*100).toFixed(1)}%</td>
+          <td>${edgeColor(overEdge)}</td>
+        </tr>
+        <tr>
+          <td>Under 2.5</td>
+          <td>${(under*100).toFixed(1)}%</td>
+          <td>${m.oddsUnder}</td>
+          <td>${(impliedProb(m.oddsUnder)*100).toFixed(1)}%</td>
+          <td>${edgeColor(underEdge)}</td>
+        </tr>
+        <tr>
+          <td>BTTS</td>
+          <td>${(btts*100).toFixed(1)}%</td>
+          <td>—</td><td>—</td><td>—</td>
+        </tr>
+      </table>
+
+      <strong style="color:#aaa; font-size:0.85em">TOP 5 CORRECT SCORES (Poisson):</strong>
+      <table style="margin-top:4px">
+        <tr><th>#</th><th>Score</th><th>Model Probability</th></tr>
+        ${top5.map((s, idx) => `
+          <tr class="${idx===0?'score-1':idx===1?'score-2':'score-3'}">
+            <td>${idx+1}</td>
+            <td>${m.home} ${s.h} – ${s.a} ${m.away}</td>
+            <td>${(s.p*100).toFixed(2)}%</td>
+          </tr>`).join('')}
+      </table>
+      <p class="note">📌 ${m.notes}</p>
+    </div>`;
+  });
+
+  // Value bets summary
+  valueBets.sort((a, b) => b.edge - a.edge);
+  let vbHtml = '<div class="value-bets"><h2>✅ VALUE BETS (Model Edge > +3%)</h2>';
+  if (valueBets.length === 0) {
+    vbHtml += '<p style="color:#888">No value bets detected this round.</p>';
+  } else {
+    valueBets.forEach(v => {
+      vbHtml += `<div class="value-item">+${v.edge}% edge — <strong>${v.match}</strong> → ${v.label}</div>`;
+    });
+  }
+  vbHtml += `
+    <p class="note" style="margin-top:12px">⚠️ Edge is calculated vs bookmaker implied probability.<br>
+    Only bet correct scores when edge > +5% and confidence is HIGH.<br>
+    xG values are estimated from qualifying campaign stats — not live Opta data.</p>
+  </div>`;
+  out.innerHTML += vbHtml;
+}
+
+buildReport();
+</script>
+</body>
+</html>

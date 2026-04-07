@@ -1,0 +1,9 @@
+- generic [active] [ref=e1]:
+  - main [ref=e4]:
+    - generic [ref=e5]:
+      - heading "Oops, page not found" [level=1] [ref=e7]
+      - paragraph [ref=e9]: Head back to our homepage to continue your job search.
+      - link "Go to homepage" [ref=e11] [cursor=pointer]:
+        - /url: /
+    - generic [ref=e12]: Copyright © reed.co.uk 2026
+  - alert [ref=e13]
