@@ -48,12 +48,11 @@ Classify every offer into one of these types (or hybrid of 2):
 
 | Archetype | Key signals in JD |
 |-----------|-------------------|
-| AI Platform / LLMOps | "observability", "evals", "pipelines", "monitoring", "reliability" |
-| Agentic / Automation | "agent", "HITL", "orchestration", "workflow", "multi-agent" |
-| Technical AI PM | "PRD", "roadmap", "discovery", "stakeholder", "product manager" |
-| AI Solutions Architect | "architecture", "enterprise", "integration", "design", "systems" |
-| AI Forward Deployed | "client-facing", "deploy", "prototype", "fast delivery", "field" |
-| AI Transformation | "change management", "adoption", "enablement", "transformation" |
+| 1st/2nd Line IT Support | "1st line", "2nd line", "IT support", "helpdesk", "service desk", "ticketing", "incident" |
+| Service Desk Analyst | "service desk", "ITIL", "SLA", "incident management", "ServiceNow", "Jira" |
+| Platform Operations | "NOC", "platform", "monitoring", "broadcast", "infrastructure", "operations" |
+| Desktop Support Engineer | "desktop", "endpoint", "SCCM", "Intune", "deployment", "imaging", "hardware" |
+| IT Technician / Field Engineer | "field", "on-site", "hardware repair", "multi-site", "break-fix" |
 
 After detecting archetype, read `modes/_profile.md` for the user's specific framing and proof points for that archetype.
 
