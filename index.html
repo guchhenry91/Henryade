@@ -2954,13 +2954,14 @@ async function buildSoccer(force) {
         // PATH 2: Form-based (TheSportsDB) — for leagues without Understat coverage
         else if (homeForm && awayForm) {
           const leagueAvgGoals = 1.30;
-          const hAttack = homeForm.homeGames >= 3 ? homeForm.homeGoalsFor : homeForm.goalsFor;
-          const awayDefense = awayForm.awayGames >= 3 ? awayForm.awayGoalsAg : awayForm.goalsAgainst;
-          const aAttack = awayForm.awayGames >= 3 ? awayForm.awayGoalsFor : awayForm.goalsFor;
-          const homeDefense = homeForm.homeGames >= 3 ? homeForm.homeGoalsAg : homeForm.goalsAgainst;
+          // Fall back to overall goals if home/away split has no data (null)
+          const hAttack = (homeForm.homeGames >= 3 && homeForm.homeGoalsFor != null) ? homeForm.homeGoalsFor : homeForm.goalsFor;
+          const awayDefense = (awayForm.awayGames >= 3 && awayForm.awayGoalsAg != null) ? awayForm.awayGoalsAg : awayForm.goalsAgainst;
+          const aAttack = (awayForm.awayGames >= 3 && awayForm.awayGoalsFor != null) ? awayForm.awayGoalsFor : awayForm.goalsFor;
+          const homeDefense = (homeForm.homeGames >= 3 && homeForm.homeGoalsAg != null) ? homeForm.homeGoalsAg : homeForm.goalsAgainst;
 
-          const formHomeXG = (hAttack && awayDefense) ? hAttack * (awayDefense / leagueAvgGoals) : null;
-          const formAwayXG = (aAttack && homeDefense) ? aAttack * (homeDefense / leagueAvgGoals) : null;
+          const formHomeXG = (hAttack != null && awayDefense != null) ? hAttack * (awayDefense / leagueAvgGoals) : null;
+          const formAwayXG = (aAttack != null && homeDefense != null) ? aAttack * (homeDefense / leagueAvgGoals) : null;
 
           if (formHomeXG && formAwayXG && !isNaN(formHomeXG) && !isNaN(formAwayXG)) {
             // Blend 55% form, 45% odds (form is less reliable than xG)
