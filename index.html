@@ -1981,7 +1981,16 @@ function dixonColes(h, a, hXG, aXG, rho = -0.08) {
   return base;
 }
 
-function correctScores(hXG, aXG, rho = -0.08, max=6) {
+// Dynamic score max based on expected total goals — prevents overstating low scores in high-xG matches
+function dynamicScoreMax(hXG, aXG) {
+  const total = hXG + aXG;
+  if (total >= 5.5) return 10;
+  if (total >= 4.5) return 9;
+  if (total >= 3.5) return 8;
+  return 7;
+}
+
+function correctScores(hXG, aXG, rho = -0.08, max=7) {
   const s=[];
   for(let h=0;h<=max;h++) for(let a=0;a<=max;a++) s.push({h,a,p:dixonColes(h,a,hXG,aXG,rho)});
   // Normalize so probabilities sum to 1
@@ -2208,10 +2217,13 @@ async function fetchLeagueTeamXG(leagueKey) {
 function getTeamXG(leagueData, teamName) {
   if (!leagueData || !leagueData.teams) return null;
   const t = teamName.toLowerCase();
-  // Try exact match, then partial match
-  return leagueData.teams.find(x => x.team.toLowerCase() === t)
-    || leagueData.teams.find(x => t.includes(x.team.toLowerCase()) || x.team.toLowerCase().includes(t))
-    || null;
+  // Try exact match first
+  const exact = leagueData.teams.find(x => x.team.toLowerCase() === t);
+  if (exact) return exact;
+  // Partial match — but ONLY accept if it's unique (prevents "United" matching wrong team)
+  const partials = leagueData.teams.filter(x => t.includes(x.team.toLowerCase()) || x.team.toLowerCase().includes(t));
+  if (partials.length === 1) return partials[0];
+  return null; // ambiguous or no match — safer to return null than wrong team
 }
 
 // ── Independent xG Model ────────────────────────────────────────────────────
@@ -3120,7 +3132,13 @@ async function buildSoccer(force) {
 
         // Per-league rho for Dixon-Coles
         const rho = LEAGUE_RHO[leagueXGKey] || LEAGUE_RHO[espnLeague.league === 'uefa.champions' ? 'ucl' : espnLeague.league === 'eng.fa' ? 'fa_cup' : 'default'];
-        const scores = correctScores(homeXG, awayXG, rho);
+        // Use pure pre-nudge xG for correct scores (more model-driven, less market-following)
+        // The odds-nudged homeXG/awayXG is still used for winner/totals probabilities
+        const scoreHomeXG = indepXG ? indepXG.homeXG : homeXG; // pure Understat xG if available
+        const scoreAwayXG = indepXG ? indepXG.awayXG : awayXG;
+        const scoreMax = dynamicScoreMax(scoreHomeXG, scoreAwayXG);
+        const scores = correctScores(scoreHomeXG, scoreAwayXG, rho, scoreMax);
+        const allowExactScore = xgSource !== 'odds'; // odds-only correct scores are low confidence
         let hw=0,dr=0,aw=0,ov=0,un=0,btts=0;
         scores.forEach(s=>{
           if(s.h>s.a) hw+=s.p; else if(s.h===s.a) dr+=s.p; else aw+=s.p;
@@ -3169,13 +3187,14 @@ async function buildSoccer(force) {
             <tr><td>BTTS</td><td>${(btts*100).toFixed(1)}%</td>${bttsOdds.yes && bttsOdds.no ? `<td style="color:#ffcc00">${bttsOdds.yes.toFixed(2)} / ${bttsOdds.no.toFixed(2)}</td><td>${(impliedProb(bttsOdds.yes)*100).toFixed(1)}%</td><td>${edgeHtml(((btts - impliedProb(bttsOdds.yes))*100).toFixed(1))}</td>` : `<td colspan="3" style="color:${btts>0.5?'#00ff88':'#ff6666'}">${btts>0.5?'YES — likely':'NO — unlikely'}</td>`}</tr>
             ${dnbOdds.home ? `<tr><td>Draw No Bet</td><td colspan="2" style="color:#ffcc00">${home.split(' ').pop()} ${dnbOdds.home.toFixed(2)} / ${away.split(' ').pop()} ${dnbOdds.away.toFixed(2)}</td><td colspan="2" style="color:#888">Safer winner bet</td></tr>` : ''}
           </table>
-          <div class="label">TOP 5 CORRECT SCORES (Dixon-Coles Poisson)
+          <div class="label">TOP 5 CORRECT SCORES (Dixon-Coles Poisson)${!allowExactScore ? ' — <span style="color:#ff9944;font-size:0.85em">LOW CONFIDENCE (odds-derived)</span>' : ''}
             ${(() => {
               const top5sum = top5.reduce((s,x) => s + x.p, 0);
-              const dataQuality = homeForm && awayForm
-                ? (homeForm.games >= 8 && awayForm.games >= 8 ? '🟢 Strong data' : '🟡 Limited data')
-                : '🔴 Odds-only (no form)';
-              return `<span style="float:right;font-size:0.85em;color:#444">${dataQuality} · Top 5 cover ${(top5sum*100).toFixed(0)}%</span>`;
+              const dataQuality = xgSource === 'understat' ? '🟢 Independent xG'
+                : xgSource === 'understat+odds' ? '🟢 xG + calibrated'
+                : xgSource === 'form+odds' ? '🟡 Form-based'
+                : '🔴 Odds-only (low confidence)';
+              return `<span style="float:right;font-size:0.85em;color:#444">${dataQuality} · Top 5 cover ${(top5sum*100).toFixed(0)}% · max:${scoreMax}</span>`;
             })()}
           </div>
           <div class="score-grid">
