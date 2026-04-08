@@ -1478,9 +1478,10 @@ async function autoGrade(forceAll = false) {
   const now     = new Date();
   // forceAll (manual button): try ALL pending picks including today's
   // auto (page load): only picks from 6+ hours ago
+  // Skip parlays — they can't be auto-graded (need manual W/L marking)
   const pending = forceAll
-    ? history.filter(p => !p.result)
-    : history.filter(p => !p.result && new Date(p.date) < new Date(now.getTime() - 6 * 60 * 60 * 1000));
+    ? history.filter(p => !p.result && p.type !== 'parlay')
+    : history.filter(p => !p.result && p.type !== 'parlay' && new Date(p.date) < new Date(now.getTime() - 6 * 60 * 60 * 1000));
   if (!pending.length) return 0;
 
   let graded = 0;
@@ -3788,6 +3789,8 @@ function buildParlayTab() {
     html += `<div class="no-games">No profitable parlays found. Need more safe picks from different games.</div>`;
   }
 
+  // Only save top 3 parlays to history (avoid cluttering pending list)
+  const MAX_PARLAYS_SAVED = 3;
   goodParlays.forEach((parlay, idx) => {
     const legs = parlay.legs;
     const probPct = (parlay.combinedProb * 100).toFixed(1);
@@ -3846,7 +3849,9 @@ function buildParlayTab() {
 
     html += `</div></div>`;
 
-    // Save parlay to history for tracking
+    // Save top 3 parlays to history for tracking (skip the rest to avoid clutter)
+    if (idx >= MAX_PARLAYS_SAVED) { /* still rendered, just not saved to history */ }
+    else {
     const legIds = legs.map(p => `${p.player}_${p.market}`).join('+');
     const parlayPick = {
       id:        `${todayET()}_parlay_${legs.length}leg_${idx}`.replace(/\W+/g,'_'),
@@ -3871,6 +3876,7 @@ function buildParlayTab() {
       type:      'parlay',
     };
     savePickToHistory(parlayPick);
+    } // end else (idx < MAX_PARLAYS_SAVED)
   });
 
   html += '</div>';
