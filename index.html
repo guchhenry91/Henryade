@@ -2500,6 +2500,14 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
         const hitProb = p.c.pick === 'OVER' ? (p.statResult.hitProbOver || 0) : (p.statResult.hitProbUnder || 0);
         if (hitProb < minHitProb) return false;
 
+        // Kill picks where actual L5 hit rate is 0% for the recommended direction
+        // If OVER is recommended but player went OVER 0/5 times — that's betting against the data
+        if (p.statResult.actualHitRate != null) {
+          const actualForDir = p.c.pick === 'OVER' ? p.statResult.actualHitRate : (1 - p.statResult.actualHitRate);
+          if (actualForDir === 0) return false; // 0% hit rate in L5 = kill
+          if (actualForDir <= 0.20) return false; // 1/5 = 20% = still too low
+        }
+
         // Variance gate for NBA/NHL: block volatile players (variance > 2× mean)
         // Volatile = unpredictable = coin flip. Consistent players are where the edge is.
         if ((isNBA || isNHL) && p.statResult.variance > p.statResult.effectiveMean * 2) return false;
