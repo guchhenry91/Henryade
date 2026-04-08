@@ -3006,17 +3006,20 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
   const xgNote = teamXGmult !== 1.0
     ? ` · xG mult ${teamXGmult.toFixed(2)}×${teamXGmult > 1.05 ? ' ↑ high-chance game' : teamXGmult < 0.95 ? ' ↓ low-chance game' : ''}`
     : '';
-  let html = `<div class="section-hdr">⚽ TOP 10 LIKELY GOAL SCORERS <span style="font-size:0.8em;color:#444">(vig removed${xgNote} · ${Object.keys(scorers).length} players)</span></div>
+  // Display only top 5 (candidate pool is wider for reranking, but user sees best 5)
+  const displayList = list.slice(0, 5);
+  let html = `<div class="section-hdr">⚽ TOP 5 LIKELY GOAL SCORERS <span style="font-size:0.8em;color:#444">(vig removed${xgNote} · from ${Object.keys(scorers).length} candidates)</span></div>
     <table class="ptable">
-      <tr><th>#</th><th>Player</th><th>Odds</th><th>Prob%</th><th>Books</th><th>Form</th><th>Confidence</th></tr>`;
+      <tr><th>#</th><th>Player</th><th>Odds</th><th>Prob%</th><th>Shots/g</th><th>Form</th><th>Confidence</th></tr>`;
 
-  list.forEach((s,i)=>{
+  displayList.forEach((s,i)=>{
+    const shotsLabel = s.form?.shotsPerGame ? s.form.shotsPerGame.toFixed(1) : '—';
     html += `<tr>
       <td style="color:#555">${i+1}</td>
       <td style="color:#fff;font-weight:bold">${s.name}</td>
       <td style="color:#ffcc00">${s.odds.toFixed(2)}</td>
       <td style="color:#aaa">${s.blendedProb.toFixed(1)}%</td>
-      <td style="color:${s.books>=3?'#00ff88':s.books>=2?'#ffcc00':'#555'}">${s.books}</td>
+      <td style="color:${s.form?.shotsPerGame >= 2 ? '#00ff88' : s.form?.shotsPerGame >= 1 ? '#ffcc00' : '#555'}">${shotsLabel}</td>
       <td style="color:${s.formLabel?'#00ccff':'#333'};font-size:0.85em">${s.formLabel || '—'}</td>
       <td>${badge(s.conf)}</td>
     </tr>`;
