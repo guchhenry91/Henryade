@@ -3706,11 +3706,12 @@ function buildHistoryTab() {
       const d        = new Date(p.date).toLocaleDateString('en-US',{day:'numeric',month:'short',timeZone:TZ});
       const safeLabel = p.safe ? ' <span style="color:#00ff88;font-size:0.65em;background:#00ff8810;padding:1px 5px;border-radius:8px;border:1px solid #00ff8830">SAFE</span>' : '';
       const parlayLabel = isParlay ? ' <span style="color:#ffcc00;font-size:0.65em;background:#ffcc0010;padding:1px 5px;border-radius:8px;border:1px solid #ffcc0030">PARLAY</span>' : '';
+      const matchRef = (!isMatch && !isParlay && p.match) ? `<br><span style="color:#444;font-size:0.7em">${p.match}</span>` : '';
       const infoCell = isParlay
         ? `<span style="color:#ffcc00;font-weight:600">${p.market}</span> <span style="color:#333;font-size:0.75em">@ ${p.line}</span>${parlayLabel}<br><span style="color:#555;font-size:0.72em">${p.player}</span>`
         : isMatch
         ? `<span style="color:#bbb">${p.match}</span> <span style="color:#333;font-size:0.8em">Winner</span>${safeLabel}`
-        : `${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>${safeLabel}`;
+        : `${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>${safeLabel}${matchRef}`;
       const pickCell = isParlay
         ? `<span style="color:#ffcc00;font-weight:700">${p.market}</span>`
         : isMatch
@@ -3761,11 +3762,12 @@ function buildHistoryTab() {
       const stat     = isParlay ? '' : p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
       const d        = new Date(p.date).toLocaleDateString('en-US',{day:'numeric',month:'short',timeZone:TZ});
       const isBest   = bestBetIds.has(p.id);
+      const settledMatchRef = (!isMatch && !isParlay && p.match) ? `<br><span style="color:#444;font-size:0.7em">${p.match}</span>` : '';
       const infoCell = isParlay
         ? `<span style="color:#ffcc00;font-weight:600">${p.market}</span> <span style="color:#333;font-size:0.75em">@ ${p.line}</span><br><span style="color:#555;font-size:0.72em">${p.player}</span>`
         : isMatch
         ? `<span style="color:#bbb">${p.match}</span> <span style="color:#333;font-size:0.8em">Winner</span>`
-        : `${isBest ? '⭐ ' : ''}${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>`;
+        : `${isBest ? '⭐ ' : ''}${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>${settledMatchRef}`;
       const pickCell = isParlay
         ? `<span style="color:#ffcc00;font-weight:700">${p.market}</span>`
         : isMatch
