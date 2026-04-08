@@ -399,16 +399,22 @@ async function nbaProxyGamelog(playerName, statKey, line) {
     const gameKey = keyMap[statKey] || 'pts';
 
     const entries = [];
+    let playerTeamAbbrev = null; // detect from most recent matchup
     for (const g of data.games) {
       // Skip DNP (0 minutes)
       if (!g.min || g.min === 0) continue;
       const val = parseFloat(g[gameKey]);
       if (isNaN(val)) continue;
       entries.push({ val, isHome: g.is_home || false, gameDate: g.date || null });
+      // Extract team abbreviation from matchup (e.g., "BOS vs. LAL" → BOS is home team, "BOS @ LAL" → BOS is away)
+      if (!playerTeamAbbrev && g.matchup) {
+        playerTeamAbbrev = g.matchup.split(/\s+(vs\.|@)\s+/)[0].trim();
+      }
     }
 
     // Proxy returns newest-first, but our code expects oldest-first (slice(-5) = last 5)
     entries.reverse();
+    if (entries.length) entries.playerTeamAbbrev = playerTeamAbbrev;
     return entries.length ? entries : null;
   } catch { return null; }
 }
@@ -840,6 +846,7 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
     effectiveMean: parseFloat(effectiveMean.toFixed(2)),
     actualHitRate, consistencyTag, daysStale, staleLabel, hasDataGap,
     trendRatio: parseFloat(trendRatio.toFixed(3)),
+    playerTeamAbbrev: entries.playerTeamAbbrev || null, // detected from gamelog matchup
   };
 }
 
@@ -2507,7 +2514,15 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       // ── PHASE 2: Independent Player Projection → Model Probability ──
       // Build our OWN projected stat line, then calculate P(OVER) from that.
       // This is independent of book odds — we compare our number to theirs for edge.
-      const playerProjection = projectPlayerStat(statResult, gameOppFactor, restResult, null, sportLabel || '');
+      // Detect home/away from player's team abbreviation vs match home team
+      let isHomeGame = null;
+      if (statResult && statResult.playerTeamAbbrev && homeTeamName) {
+        const abbrev = statResult.playerTeamAbbrev.toUpperCase();
+        const homeName = homeTeamName.toUpperCase();
+        // Check if home team name contains the abbreviation (e.g., "Boston Celtics" contains "BOS")
+        isHomeGame = homeName.includes(abbrev) || abbrev.includes(homeName.split(' ').pop()?.slice(0,3)?.toUpperCase());
+      }
+      const playerProjection = projectPlayerStat(statResult, gameOppFactor, restResult, isHomeGame, sportLabel || '');
 
       const bookProb = c.pick === 'OVER'
         ? parseFloat(c.op) / 100
@@ -2603,13 +2618,30 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
         if ((isNBA || isNHL) && p.statResult.variance > p.statResult.effectiveMean * 2) return false;
       }
 
-      // MLB high-variance batter markets: require stronger evidence to pass
-      // HR, total bases, H+R+RBI are naturally noisy — tighter thresholds for win rate
+      // ── Market-specific thresholds: tighten noisy markets, leave steady ones open ──
+
+      // MLB high-variance batter markets
       const isHighVarianceMlb = sport.includes('MLB') &&
         ['batter_home_runs', 'batter_total_bases', 'batter_hits_runs_rbis'].includes(p.market);
       if (isHighVarianceMlb) {
-        if ((p.modelProb || 0) < 0.70) return false; // need 70%+ model prob (vs 60% for normal)
-        if (p.edge < 5) return false;                 // need 5%+ edge (vs 3% for normal)
+        if ((p.modelProb || 0) < 0.70) return false;
+        if (p.edge < 5) return false;
+      }
+
+      // NBA high-variance markets: points/assists/threes are noisier than rebounds/blocks
+      const isHighVarNBA = isNBA &&
+        ['player_points', 'player_assists', 'player_threes'].includes(p.market);
+      if (isHighVarNBA) {
+        if ((p.modelProb || 0) < 0.70) return false; // 70% for noisy NBA markets
+        if (p.edge < 4) return false;                 // 4% edge minimum
+      }
+
+      // NHL noisy markets: goals/points much noisier than shots on goal
+      const isNoisyNHL = isNHL &&
+        ['player_points', 'player_goals'].includes(p.market);
+      if (isNoisyNHL) {
+        if ((p.modelProb || 0) < 0.72) return false; // 72% for noisy NHL (stricter than NBA)
+        if (p.edge < 5) return false;                 // 5% edge minimum
       }
 
       return true;
