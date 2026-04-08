@@ -697,6 +697,16 @@ function negBinomCDF(mean, variance, threshold) {
 
 // Returns P(OVER threshold) using negative binomial distribution
 function probOverLine(mean, variance, line) {
+  // For half-point lines (0.5, 1.5, 2.5): P(OVER) = 1 - CDF(floor(line)) — clean
+  // For integer lines (1, 2, 3): hitting exactly the line = push (void)
+  // Treat push as half-win: P(OVER) = 1 - CDF(line) + 0.5 * P(X = line)
+  const isInteger = line === Math.floor(line);
+  if (isInteger && line >= 0) {
+    const cdfAtLine = negBinomCDF(mean, variance, line);
+    const cdfBelow = line > 0 ? negBinomCDF(mean, variance, line - 1) : 0;
+    const pExact = cdfAtLine - cdfBelow; // P(X = line)
+    return Math.max(0, Math.min(1, 1 - cdfAtLine + pExact * 0.5));
+  }
   return 1 - negBinomCDF(mean, variance, line);
 }
 
@@ -1293,6 +1303,7 @@ const FAIR_VIG  = 0.08;  // "fair" line benchmark — vig at or below this gets 
 
 // Vig = total over-round — 0.10 means 10% baked into the line
 function calcVig(overOdds, underOdds) {
+  if (!overOdds || !underOdds || overOdds <= 1 || underOdds <= 1) return 1; // invalid odds = max vig (kills pick)
   return (1 / overOdds + 1 / underOdds) - 1;
 }
 
@@ -1441,8 +1452,35 @@ function playerStatFromSummary(summary, playerName, statKey) {
     return null;
   }
   if (statKey === 'totalBases') {
+    // Try direct totalBases stat first (most accurate)
+    // ESPN sometimes has it directly in the boxscore
+    for (const team of (summary?.boxscore?.players || [])) {
+      for (const grp of (team.statistics || [])) {
+        const idx = (grp.keys || []).indexOf('totalBases');
+        if (idx === -1) continue;
+        for (const ath of (grp.athletes || [])) {
+          const athName = (ath.athlete?.displayName || '').toLowerCase().replace(/[^a-z\s]/g,'').trim();
+          const searchName = playerName.toLowerCase().replace(/[^a-z\s]/g,'').trim();
+          const firstMatch = athName.split(' ')[0] === searchName.split(' ')[0];
+          const lastMatch = athName.split(' ').pop() === searchName.split(' ').pop();
+          if ((athName === searchName) || (firstMatch && lastMatch)) {
+            const v = parseFloat(ath.stats?.[idx]);
+            if (!isNaN(v)) return v;
+          }
+        }
+      }
+    }
+    // Fallback: compute from components. TB = hits + doubles + 2*triples + 3*HR
+    // Since ESPN doesn't always give doubles/triples separately, use: TB = hits + (2B) + 2*(3B) + 3*(HR)
+    // Simplified when only hits+HR available: TB ≈ hits + 3*HR (undercounts by doubles+triples)
     const hits = playerStatFromSummary(summary, playerName, 'hits');
-    const hr   = playerStatFromSummary(summary, playerName, 'homeRuns');
+    const doubles = playerStatFromSummary(summary, playerName, 'doubles');
+    const triples = playerStatFromSummary(summary, playerName, 'triples');
+    const hr = playerStatFromSummary(summary, playerName, 'homeRuns');
+    if (hits !== null && doubles !== null && triples !== null && hr !== null) {
+      return hits + doubles + (triples * 2) + (hr * 3);
+    }
+    // Last resort: hits + 3*HR (still better than nothing, but flags as approximate)
     if (hits !== null && hr !== null) return hits + (hr * 3);
     return null;
   }
@@ -2511,11 +2549,10 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
 
         // Kill picks where actual L5 hit rate is 0% for the recommended direction
         // If OVER is recommended but player went OVER 0/5 times — that's betting against the data
-        if (p.statResult.actualHitRate != null) {
-          const actualForDir = p.c.pick === 'OVER' ? p.statResult.actualHitRate : (1 - p.statResult.actualHitRate);
-          if (actualForDir === 0) return false; // 0% hit rate in L5 = kill
-          if (actualForDir <= 0.20) return false; // 1/5 = 20% = still too low
-        }
+        // Use loose equality (== null) to catch BOTH null AND undefined
+        if (p.statResult.actualHitRate == null) return false; // no hit rate data = can't trust pick
+        const actualForDir = p.c.pick === 'OVER' ? p.statResult.actualHitRate : (1 - p.statResult.actualHitRate);
+        if (actualForDir <= 0.20) return false; // 0/5 or 1/5 = too low, kill
 
         // Variance gate for NBA/NHL: block volatile players (variance > 2× mean)
         // Volatile = unpredictable = coin flip. Consistent players are where the edge is.
@@ -2706,14 +2743,14 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
         <span class="score-badge">score ${p.score.toFixed(2)}
           <div class="score-tip">
             <div style="color:#555;margin-bottom:4px;font-size:0.85em">SCORE BREAKDOWN</div>
-            <div style="color:${parseFloat(p.c.pct)>60?'#00ff88':'#888'}">📊 Edge: ${((parseFloat(p.c.pct)-50)/50*0.25).toFixed(3)}</div>
-            <div style="color:#888">📚 Books: ${(Math.min(p.bookCount/6,1)*0.20).toFixed(3)} (${p.bookCount} books)</div>
-            <div style="color:#888">💰 Vig: ${(Math.max(0,1-p.vig/MAX_VIG)*0.15).toFixed(3)} (${(p.vig*100).toFixed(1)}%)</div>
-            ${p.statResult ? `<div style="color:${p.statResult.signal>0?'#00ff88':p.statResult.signal<0?'#ff4444':'#555'}">📈 Stats: ${(p.statResult.signal*0.20).toFixed(3)} (${(p.statResult.hitProbOver*100).toFixed(0)}% OVER prob)</div>` : '<div style="color:#333">📈 Stats: no data</div>'}
-            ${p.lineMove ? `<div style="color:${p.lineMove.direction===p.c.pick?'#00ccff':'#ff9944'}">🔀 Line move: ${p.lineMove.direction===p.c.pick?'+':'-'}${(Math.abs(p.lineMove.pctChange>=0.08?0.15:0.08)*0.10).toFixed(3)}</div>` : '<div style="color:#333">🔀 Line move: none</div>'}
+            <div style="color:${parseFloat(p.c.pct)>60?'#00ff88':'#888'}">📊 Edge: ${((parseFloat(p.c.pct)-50)/50*0.22).toFixed(3)}</div>
+            <div style="color:#888">📚 Books: ${(Math.min(p.bookCount/6,1)*0.18).toFixed(3)} (${p.bookCount} books)</div>
+            <div style="color:#888">💰 Vig: ${(Math.max(0,1-p.vig/MAX_VIG)*0.12).toFixed(3)} (${(p.vig*100).toFixed(1)}%)</div>
+            ${p.statResult ? `<div style="color:${p.statResult.signal>0?'#00ff88':p.statResult.signal<0?'#ff4444':'#555'}">📈 Stats: ${(p.statResult.signal*(p.confidenceDecay?.multiplier===1?0.20:0.25)).toFixed(3)} (${(p.statResult.hitProbOver*100).toFixed(0)}% OVER prob)</div>` : '<div style="color:#333">📈 Stats: no data</div>'}
+            ${p.lineMove ? `<div style="color:${p.lineMove.direction===p.c.pick?'#00ccff':'#ff9944'}">🔀 Line move: ${(p.lineMove.direction===p.c.pick?1:-1)*(p.lineMove.strength==='sharp'?0.15:0.08).toFixed(3)}</div>` : '<div style="color:#333">🔀 Line move: none</div>'}
             ${p.restResult?.isB2B ? `<div style="color:#ff4444">😴 B2B penalty: ${(p.restResult.penalty).toFixed(3)}</div>` : ''}
             ${p.weatherData?.penalty ? `<div style="color:#ff9944">🌦 Weather: ${(p.weatherData.penalty).toFixed(3)}</div>` : ''}
-            ${p.oppFactor ? `<div style="color:${p.oppFactor.signal>0?'#00ff88':'#ff6644'}">🛡 Opp defense: ${(p.oppFactor.signal*0.12).toFixed(3)} (${p.oppFactor.defenseRating.toFixed(2)}×)</div>` : '<div style="color:#333">🛡 Opp defense: no data</div>'}
+            ${p.oppFactor ? `<div style="color:${p.oppFactor.signal>0?'#00ff88':'#ff6644'}">🛡 Opp defense: ${(p.oppFactor.signal*(p.confidenceDecay?.multiplier===1?0.12:0.05)).toFixed(3)} (${p.oppFactor.defenseRating.toFixed(2)}×)</div>` : '<div style="color:#333">🛡 Opp defense: no data</div>'}
           </div>
         </span>
       </div>
@@ -3275,10 +3312,11 @@ function buildHistoryTab() {
     let totalUnits = 0;
     settled.filter(p => p.result === 'W' || p.result === 'L').forEach(p => {
       if (p.result === 'W') {
-        // Estimate decimal odds from implied pct (vig-removed)
+        // Estimate real odds from implied pct — apply ~5% vig to get realistic bookmaker odds
         const prob = parseFloat(p.pct) / 100;
-        const estOdds = prob > 0 ? 1 / prob : 2.0;
-        totalUnits += (estOdds - 1); // profit on win
+        const fairOdds = prob > 0 ? 1 / prob : 2.0;
+        const realOdds = fairOdds * 0.95; // discount 5% for typical vig
+        totalUnits += (realOdds - 1); // profit on win (conservative)
       } else {
         totalUnits -= 1; // loss
       }
