@@ -1409,12 +1409,17 @@ function nameMatch(a, b) {
   const n = s => s.toLowerCase().replace(/[^a-z\s]/g, '').trim();
   const [na, nb] = [n(a), n(b)];
   if (na === nb) return true;
-  if (na.split(' ').pop() === nb.split(' ').pop()) return true;
+  // Last word match (for team names: "Warriors", "Lakers", etc.)
+  const lastA = na.split(' ').pop(), lastB = nb.split(' ').pop();
+  if (lastA.length >= 4 && lastA === lastB) return true; // min 4 chars to avoid "Jr" etc.
   // Multi-word match for teams like Trail Blazers, Blue Jays, Red Sox, White Sox
   const lastTwo = s => s.split(' ').slice(-2).join(' ');
-  if (lastTwo(na) === lastTwo(nb)) return true;
-  // Partial inclusion for shortened names
-  if (na.includes(nb) || nb.includes(na)) return true;
+  if (lastTwo(na).length >= 8 && lastTwo(na) === lastTwo(nb)) return true;
+  // For player names: require BOTH first AND last name present
+  const wordsA = na.split(' '), wordsB = nb.split(' ');
+  if (wordsA.length >= 2 && wordsB.length >= 2) {
+    if (wordsA[0] === wordsB[0] && wordsA[wordsA.length-1] === wordsB[wordsB.length-1]) return true;
+  }
   return false;
 }
 
@@ -1560,7 +1565,9 @@ async function autoGrade(forceAll = false) {
             const comp        = matchEv.competitions?.[0]?.competitors || [];
             const winnerComp  = comp.find(c => c.winner === true);
             const actualWinner = winnerComp ? (winnerComp.team?.displayName || '') : 'Draw';
-            const result = nameMatch(pick.pick, actualWinner) ? 'W' : 'L';
+            // Draw = VOID for match winner picks (not a loss)
+            const result = actualWinner === 'Draw' ? 'V'
+              : nameMatch(pick.pick, actualWinner) ? 'W' : 'L';
             const hp = history.find(x => x.id === pick.id);
             if (hp) { hp.result = result; hp.autoGraded = true; graded++; }
           } else {
@@ -2329,7 +2336,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       // The stronger signal wins. Stats need higher confidence to override stronger odds.
       let flipped = false;
       let warning = null;
-      if (statResult && statResult.hitProbOver != null) {
+      if (statResult && statResult.hitProbOver != null && statResult.hitProbUnder != null) {
         const oddsLean = parseFloat(c.pct);
         const statsOverProb = statResult.hitProbOver * 100;
         const statsUnderProb = statResult.hitProbUnder * 100;
@@ -2432,14 +2439,16 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
         : parseFloat(c.up) / 100;
 
       let modelProb;
-      if (playerProjection && statResult && statResult.variance != null && p.line > 0) {
+      // Only use stats-based probability if data gap wasn't detected
+      const hasCleanStats = statResult && statResult.hitProbOver != null && !statResult.hasDataGap;
+      if (playerProjection && hasCleanStats && statResult.variance != null && p.line > 0) {
         // USE PROJECTION: recalculate hit probability from projected mean
         const projMean = playerProjection.projection;
-        const projVariance = statResult.variance * (playerProjection.totalAdj ** 2); // scale variance too
+        const projVariance = statResult.variance * (playerProjection.totalAdj ** 2);
         const projHitProbOver = probOverLine(projMean, projVariance, p.line);
         const projHitProbUnder = 1 - projHitProbOver;
         modelProb = c.pick === 'OVER' ? projHitProbOver : projHitProbUnder;
-      } else if (statResult && statResult.hitProbOver != null) {
+      } else if (hasCleanStats) {
         // Fallback: raw stats probability (no matchup adjustment)
         modelProb = c.pick === 'OVER' ? statResult.hitProbOver : statResult.hitProbUnder;
       } else {
@@ -2466,9 +2475,9 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
         if (statResult.actualHitRate != null) {
           const modelDir = c.pick === 'OVER' ? statResult.hitProbOver : statResult.hitProbUnder;
           const actualDir = c.pick === 'OVER' ? statResult.actualHitRate : (1 - statResult.actualHitRate);
-          // Only flag when they disagree on direction: one says >50% and other says <50%
-          if (modelDir && ((modelDir > 0.5 && actualDir < 0.4) || (modelDir < 0.5 && actualDir > 0.6))) {
-            dataFlags.push(`⚠️ Model ${(modelDir*100).toFixed(0)}% but actual hit rate ${(actualDir*100).toFixed(0)}% — direction mismatch`);
+          // Flag when model and actual disagree by more than 20% — tighter than before
+          if (modelDir && Math.abs(modelDir - actualDir) > 0.20) {
+            dataFlags.push(`⚠️ Model ${(modelDir*100).toFixed(0)}% but actual hit rate ${(actualDir*100).toFixed(0)}% — ${((modelDir > 0.5) !== (actualDir > 0.5)) ? 'direction mismatch' : 'magnitude gap'}`);
           }
         }
       }
@@ -2486,7 +2495,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     // Removed hard 53% floor — score threshold (0.50) and edge already filter bad picks
     .filter(p => p.score >= 0.25) // post-regression threshold: shows quality picks without over-filtering
     // ── Hard gate: block negative edge and low hit probability picks ──
-    .filter(p => p.edge > 0) // negative edge = no bet, don't show at all
+    .filter(p => p.edge >= 3) // minimum 3% edge — tiny edges aren't real edge, just noise
     .filter(p => {
       // Sport-specific hit probability thresholds
       // MLB works at 60% because the stats are more predictable
@@ -2557,6 +2566,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
 
   // ── SAFE PICKS: STRICT — only the most winnable props. Previous 2/4 rate was too loose. ──
   const safePicks = scored.filter(p => {
+    if (p.c.conf === 'LOW') return false;                // no LOW confidence picks (14.3% WR)
     if (!p.statResult) return false;                     // must have stats
     if (p.statResult.hitProbOver == null) return false;   // must have distribution data
     if (p.statResult.actualHitRate == null) return false; // must have actual hit rate
@@ -2564,7 +2574,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     if (p.vig < 0) return false;                         // no negative vig
     if (p.vig > 0.10) return false;                      // vig under 10% (tightened from MAX_VIG 15%)
     if (p.edge > 18) return false;                       // edge under 18% (tightened from 25%)
-    if (p.edge < 1) return false;                        // must have positive edge
+    if (p.edge < 3) return false;                        // must have 3%+ real edge (not noise)
     if (p.dataQuality === 'danger') return false;        // no danger-flagged picks
     if (p.statResult.hasDataGap) return false;           // no gapped data
 
@@ -2682,7 +2692,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       ${p.warning ? `<div style="font-size:0.68em;margin:2px 0;padding:4px 8px;background:#ff660010;border:1px solid #ff660030;border-radius:4px;color:#ff9944">${p.warning}</div>` : ''}
       ${p.dataFlags && p.dataFlags.length ? `<div style="font-size:0.68em;margin:4px 0;padding:5px 8px;background:${p.dataQuality==='danger'?'#ff000012':'#ff880008'};border:1px solid ${p.dataQuality==='danger'?'#ff000030':'#ff880020'};border-radius:4px;color:${p.dataQuality==='danger'?'#ff4444':'#ff9944'}">
         ${p.dataFlags.join('<br>')}
-      </div>` : `<div style="font-size:0.65em;margin:2px 0;color:#1a3a1a">✅ Data verified</div>`}
+      </div>` : (p.kellyPct >= 0.5 ? `<div style="font-size:0.65em;margin:2px 0;color:#1a3a1a">✅ Data verified</div>` : '')}
       ${p.statResult ? `<div style="font-size:0.7em;margin:4px 0 2px;color:${p.statResult.signal>0?'#00ff88':p.statResult.signal<0?'#ff4444':'#555'}">${p.statResult.signalLabel}</div>` : ''}
       ${p.statResult?.hitProbOver != null ? `<div style="font-size:0.68em;margin:1px 0;color:${(p.c.pick==='OVER'?p.statResult.hitProbOver:p.statResult.hitProbUnder)>=0.6?'#00ff88':(p.c.pick==='OVER'?p.statResult.hitProbOver:p.statResult.hitProbUnder)>=0.5?'#ffcc00':'#ff4444'}">🎲 Hit prob: ${((p.c.pick==='OVER'?p.statResult.hitProbOver:p.statResult.hitProbUnder)*100).toFixed(0)}% ${p.statResult.consistencyTag||''}</div>` : ''}
       ${p.statResult?.extraLabels?.map(l => `<div style="font-size:0.67em;margin:1px 0;color:#555">${l}</div>`).join('') || ''}
