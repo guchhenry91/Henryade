@@ -475,7 +475,8 @@ async function mlbOfficialGamelog(playerName, statKey) {
     // We can't tell from statKey alone — try hitting first, if no data try pitching
 
     for (const g of ['hitting', 'pitching']) {
-      const res = await fetch(`https://statsapi.mlb.com/api/v1/people/${playerId}/stats?stats=gameLog&season=2026&group=${g}`);
+      const mlbSeason = new Date().getFullYear();
+      const res = await fetch(`https://statsapi.mlb.com/api/v1/people/${playerId}/stats?stats=gameLog&season=${mlbSeason}&group=${g}`);
       if (!res.ok) continue;
       const data = await res.json();
       const statsArr = data.stats || [];
@@ -537,7 +538,11 @@ async function nhlOfficialGamelog(playerName, statKey) {
     if (!playerId) return null;
 
     // Fetch gamelog
-    const res = await fetch(`https://api-web.nhle.com/v1/player/${playerId}/game-log/20252026/2`);
+    // Dynamic NHL season: season starts in October, so Aug+ = current year, before Aug = previous year
+    const nhlNow = new Date();
+    const nhlYear = nhlNow.getMonth() >= 8 ? nhlNow.getFullYear() : nhlNow.getFullYear() - 1;
+    const nhlSeasonCode = `${nhlYear}${nhlYear + 1}`;
+    const res = await fetch(`https://api-web.nhle.com/v1/player/${playerId}/game-log/${nhlSeasonCode}/2`);
     if (!res.ok) return null;
     const data = await res.json();
     const games = data.gameLog || [];
@@ -1484,8 +1489,7 @@ function playerStatFromSummary(summary, playerName, statKey) {
     if (hits !== null && doubles !== null && triples !== null && hr !== null) {
       return hits + doubles + (triples * 2) + (hr * 3);
     }
-    // Last resort: hits + 3*HR (still better than nothing, but flags as approximate)
-    if (hits !== null && hr !== null) return hits + (hr * 3);
+    // Do NOT approximate — wrong TB grades corrupt calibration and kill UNDER strategy
     return null;
   }
   if (statKey === 'hitsRunsRBIs') {
@@ -1623,7 +1627,12 @@ async function autoGrade(forceAll = false) {
             if (!sumRes.ok) { console.warn(`Auto-grade: ESPN summary failed for event ${matchEv.id}`); continue; }
             const summary    = await sumRes.json();
             const actualStat = playerStatFromSummary(summary, pick.player, statKey);
-            if (actualStat === null) continue;
+            if (actualStat === null) {
+              const hp = history.find(x => x.id === pick.id);
+              if (hp) hp.gradeError = `Missing stat: ${pick.market}`;
+              console.warn(`Auto-grade skipped ${pick.id}: stat not found in ESPN summary`);
+              continue;
+            }
 
             const result = actualStat === pick.line ? 'V'
               : pick.pick === 'OVER' ? (actualStat > pick.line ? 'W' : 'L')
@@ -1723,13 +1732,15 @@ function getDailyExposure() {
   const h = getHistory();
   const todayPicks = h.filter(p => p.id && p.id.startsWith(today) && !p.result && !p.parlay);
   const totalExposure = todayPicks.reduce((sum, p) => {
-    // Estimate Kelly from stored data
-    const prob = parseFloat(p.pct) / 100;
-    const odds = prob > 0 ? 1 / prob : 2.0;
-    const b = odds - 1;
-    const modelProb = p.score ? Math.min(0.85, prob + p.score * 0.15) : prob;
-    const kelly = b > 0 ? Math.max(0, (b * modelProb - (1 - modelProb)) / b) : 0;
-    const stake = Math.min(3, kelly * 25); // quarter-Kelly capped at 3%
+    // Use actual stored kellyPct when available, otherwise estimate
+    const stake = Number.isFinite(p.kellyPct) ? p.kellyPct : (() => {
+      const prob = parseFloat(p.pct) / 100;
+      const odds = p.odds || (prob > 0 ? 1 / prob : 2.0);
+      const b = odds - 1;
+      const mp = p.score ? Math.min(0.85, prob + p.score * 0.15) : prob;
+      const k = b > 0 ? Math.max(0, (b * mp - (1 - mp)) / b) : 0;
+      return Math.min(3, k * 25);
+    })();
     return sum + stake;
   }, 0);
   return { totalExposure: parseFloat(totalExposure.toFixed(1)), picksCount: todayPicks.length, remaining: parseFloat((MAX_DAILY_EXPOSURE - totalExposure).toFixed(1)) };
@@ -2552,7 +2563,8 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
         : 0.60;                               // UNDERs ride at 60%
 
       if (p.statResult) {
-        const hitProb = isOver ? (p.statResult.hitProbOver || 0) : (p.statResult.hitProbUnder || 0);
+        // USE FINAL MODEL PROBABILITY (includes projection adjustments) not raw stats
+        const hitProb = p.modelProb || (isOver ? (p.statResult.hitProbOver || 0) : (p.statResult.hitProbUnder || 0));
         if (hitProb < minHitProb) return false;
 
         // Kill picks where actual L5 hit rate is 0% for the recommended direction
@@ -2623,8 +2635,8 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     if (p.dataQuality === 'danger') return false;        // no danger-flagged picks
     if (p.statResult.hasDataGap) return false;           // no gapped data
 
-    // Model probability must be 65%+ (tightened from 58%)
-    const modelHitProb = p.c.pick === 'OVER' ? p.statResult.hitProbOver : p.statResult.hitProbUnder;
+    // Model probability must be 65%+ — USE FINAL modelProb (includes projection adjustments)
+    const modelHitProb = p.modelProb || (p.c.pick === 'OVER' ? p.statResult.hitProbOver : p.statResult.hitProbUnder);
     if (modelHitProb < 0.65) return false;
 
     // Actual hit rate must be 75%+ in L5 (tightened from 60% — need 4/5 or 5/5 games hitting)
@@ -2660,13 +2672,15 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     const allShownPicks = [...safePicks, ...props.filter(p => !safePicks.includes(p))];
     allShownPicks.forEach((p, i) => {
       const pick = {
-        id:        `${todayET()}_${p.player}_${p.market}`.replace(/\W+/g,'_'),
+        id:        `${todayET()}_${matchLabel}_${p.player}_${p.market}_${p.line}_${p.c.pick}`.replace(/\W+/g,'_'),
         date:      new Date().toISOString(),
         sport:     sportLabel, match: matchLabel,
         player:    p.player,  market: p.market,
         line:      p.line,    pick:   p.c.pick,
         pct:       p.c.pct,   conf:   p.c.conf,
         score:     p.score,   bookCount: p.bookCount, vig: p.vig,
+        odds:      p.c.pick === 'OVER' ? p.bestOver : p.bestUnder,
+        kellyPct:  p.kellyPct,
         result:    null,
         safe:      safePicks.includes(p),
       };
@@ -2767,7 +2781,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
         <span class="pick-stale-check"></span>
       </div>
       <div class="pick-card-select">${(() => {
-        const slipPick = { id: `${todayET()}_${p.player}_${p.market}`.replace(/\W+/g,'_'), player: p.player, market: p.market, line: p.line, sport: sportLabel, pct: p.c.pct, myPick: null };
+        const slipPick = { id: `${todayET()}_${matchLabel}_${p.player}_${p.market}_${p.line}`.replace(/\W+/g,'_'), player: p.player, market: p.market, line: p.line, sport: sportLabel, pct: p.c.pct, myPick: null };
         const enc = encodeURIComponent(JSON.stringify(slipPick));
         const saved = getSlip().find(x => x.id === slipPick.id);
         return `<button class="pick-select-btn over ${saved?.myPick==='OVER'?'sel':''}" data-slip-id="${slipPick.id}" data-dir="OVER" onclick="pickSelect(this,'${enc}','OVER')">OVER</button>
@@ -3320,11 +3334,9 @@ function buildHistoryTab() {
     let totalUnits = 0;
     settled.filter(p => p.result === 'W' || p.result === 'L').forEach(p => {
       if (p.result === 'W') {
-        // Estimate real odds from implied pct — apply ~5% vig to get realistic bookmaker odds
-        const prob = parseFloat(p.pct) / 100;
-        const fairOdds = prob > 0 ? 1 / prob : 2.0;
-        const realOdds = fairOdds * 0.95; // discount 5% for typical vig
-        totalUnits += (realOdds - 1); // profit on win (conservative)
+        // Use actual stored odds when available, fall back to fair odds from pct
+        const odds = p.odds || (parseFloat(p.pct) > 0 ? 1 / (parseFloat(p.pct) / 100) : 2.0);
+        totalUnits += (odds - 1); // profit on win
       } else {
         totalUnits -= 1; // loss
       }
