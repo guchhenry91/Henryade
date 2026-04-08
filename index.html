@@ -434,6 +434,8 @@ async function nhlProxyGamelog(playerName, statKey) {
 
     const entries = [];
     for (const g of data.games) {
+      // Filter out DNP/low-TOI games — 0 stats from scratch games pollute averages
+      if (g.toi === '00:00' || g.toi === '0:00' || g.toi === null) continue;
       const val = parseFloat(g[gameKey]);
       if (isNaN(val)) continue;
       entries.push({ val, isHome: g.is_home || false, gameDate: g.date || null });
@@ -1231,9 +1233,10 @@ function getCLV(pickId, closeOver, closeUnder) {
 const _teamStandingsCache = {};
 
 async function getTeamStandings(sport, league) {
-  // MLB: OppPPG doesn't translate to baseball — runs allowed requires different data model
-  // Disable for now; MLB calibration + stats handle direction better than generic opponent rating
-  if (league === 'mlb') return null;
+  // Disable opponent defense for MLB, NBA, NHL — data proves pure stats outperform
+  // MLB at 64% WITHOUT opponent factors, NBA 52% and NHL 50% WITH them
+  // Generic team OppPPG doesn't predict individual player props well
+  if (league === 'mlb' || league === 'nba' || league === 'nhl') return null;
   const ck = `standings__${league}`;
   if (_teamStandingsCache[ck]) return _teamStandingsCache[ck];
   try {
@@ -1417,7 +1420,8 @@ const MARKET_STAT_KEY = {
 // Fuzzy name match — handles ESPN vs Odds API name variations
 // Checks: exact, last name, last-two-words (for "Trail Blazers", "Red Sox" etc.)
 function nameMatch(a, b) {
-  const n = s => s.toLowerCase().replace(/[^a-z\s]/g, '').trim();
+  // Normalize Unicode accents: Jokić→Jokic, Dembélé→Dembele, Lafrenière→Lafreniere
+  const n = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z\s]/g, '').trim();
   const [na, nb] = [n(a), n(b)];
   if (na === nb) return true;
   // Last word match (for team names: "Warriors", "Lakers", etc.)
@@ -2535,16 +2539,20 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     // ── Hard gate: block negative edge and low hit probability picks ──
     .filter(p => p.edge >= 3) // minimum 3% edge — tiny edges aren't real edge, just noise
     .filter(p => {
-      // Sport-specific hit probability thresholds
-      // MLB works at 60% because the stats are more predictable
-      // NBA/NHL need higher confidence because they're more volatile
+      // Split OVER/UNDER thresholds — UNDERs win at 69%, OVERs at 46%
+      // Public bets OVERs for entertainment, books juice them → structural UNDER edge
+      // OVER needs higher confidence bar, UNDER can ride at lower threshold
       const sport = (sportLabel || '').toUpperCase();
       const isNBA = sport.includes('NBA');
       const isNHL = sport.includes('NHL');
-      const minHitProb = (isNBA || isNHL) ? 0.65 : 0.60; // NBA/NHL need 65%+, MLB stays at 60%
+      const isOver = p.c.pick === 'OVER';
+      // OVER: 70% for NBA/NHL, 65% for MLB. UNDER: 60% for all.
+      const minHitProb = isOver
+        ? ((isNBA || isNHL) ? 0.70 : 0.65)  // OVERs need higher confidence
+        : 0.60;                               // UNDERs ride at 60%
 
       if (p.statResult) {
-        const hitProb = p.c.pick === 'OVER' ? (p.statResult.hitProbOver || 0) : (p.statResult.hitProbUnder || 0);
+        const hitProb = isOver ? (p.statResult.hitProbOver || 0) : (p.statResult.hitProbUnder || 0);
         if (hitProb < minHitProb) return false;
 
         // Kill picks where actual L5 hit rate is 0% for the recommended direction
