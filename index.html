@@ -3773,12 +3773,8 @@ function buildSafeTab() {
     return;
   }
 
-  // Sort by model hit probability (highest first)
-  allSafePicks.sort((a, b) => {
-    const aProb = a.c.pick === 'OVER' ? (a.statResult?.hitProbOver || 0) : (a.statResult?.hitProbUnder || 0);
-    const bProb = b.c.pick === 'OVER' ? (b.statResult?.hitProbOver || 0) : (b.statResult?.hitProbUnder || 0);
-    return bProb - aProb;
-  });
+  // Sort by FINAL model probability (includes projection/matchup/rest adjustments)
+  allSafePicks.sort((a, b) => (b.modelProb || 0) - (a.modelProb || 0));
 
   let html = `<div class="hero-section" style="border-color:#00ff8840">
     <div class="hero-title">💰 SAFE BETS — All Sports (${allSafePicks.length} picks)</div>
@@ -3830,12 +3826,8 @@ function buildParlayTab() {
     return;
   }
 
-  // Sort safe picks by model hit probability (highest first)
-  const picks = [...allSafePicks].sort((a, b) => {
-    const aProb = a.c.pick === 'OVER' ? (a.statResult?.hitProbOver || 0) : (a.statResult?.hitProbUnder || 0);
-    const bProb = b.c.pick === 'OVER' ? (b.statResult?.hitProbOver || 0) : (b.statResult?.hitProbUnder || 0);
-    return bProb - aProb;
-  });
+  // Sort safe picks by FINAL model probability (includes all adjustments)
+  const picks = [...allSafePicks].sort((a, b) => (b.modelProb || 0) - (a.modelProb || 0));
 
   // Rule: only 1 pick per game (correlated picks in same game kill parlays)
   const usedMatches = new Set();
@@ -3862,7 +3854,8 @@ function buildParlayTab() {
     let combinedProb = 1;
     let combinedOdds = 1;
     legs.forEach(p => {
-      const hitProb = p.c.pick === 'OVER' ? (p.statResult?.hitProbOver || 0.5) : (p.statResult?.hitProbUnder || 0.5);
+      // Use FINAL modelProb (includes projection adjustments), not raw stats
+      const hitProb = p.modelProb || 0.5;
       combinedProb *= hitProb;
       const odds = p.c.pick === 'OVER' ? p.bestOver : p.bestUnder;
       combinedOdds *= (odds || 1.5);
@@ -3873,23 +3866,26 @@ function buildParlayTab() {
     return { legs, combinedProb, combinedOdds, impliedProb, edge };
   }
 
-  // 2-leg parlays (top 3 combinations)
-  if (uncorrelated.length >= 2) {
-    for (let i = 0; i < Math.min(uncorrelated.length, 4); i++) {
-      for (let j = i + 1; j < Math.min(uncorrelated.length, 5); j++) {
-        parlays.push(buildParlay([uncorrelated[i], uncorrelated[j]]));
+  // Rank uncorrelated picks by final modelProb for best combo generation
+  const ranked = [...uncorrelated].sort((a, b) => (b.modelProb || 0) - (a.modelProb || 0));
+
+  // 2-leg parlays (wider search: top 6×8 combinations to find best edges)
+  if (ranked.length >= 2) {
+    for (let i = 0; i < Math.min(ranked.length, 6); i++) {
+      for (let j = i + 1; j < Math.min(ranked.length, 8); j++) {
+        parlays.push(buildParlay([ranked[i], ranked[j]]));
       }
     }
   }
 
-  // 3-leg parlay (top 3 picks)
-  if (uncorrelated.length >= 3) {
-    parlays.push(buildParlay(uncorrelated.slice(0, 3)));
+  // 3-leg parlay (top 3 by modelProb)
+  if (ranked.length >= 3) {
+    parlays.push(buildParlay(ranked.slice(0, 3)));
   }
 
-  // 4-leg parlay (top 4 picks)
-  if (uncorrelated.length >= 4) {
-    parlays.push(buildParlay(uncorrelated.slice(0, 4)));
+  // 4-leg parlay (top 4 by modelProb)
+  if (ranked.length >= 4) {
+    parlays.push(buildParlay(ranked.slice(0, 4)));
   }
 
   // Sort by edge (best parlay first), filter out negative edge
