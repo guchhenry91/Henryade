@@ -3068,45 +3068,45 @@ async function buildSoccer(force) {
       html += `<div class="sport-section"><div class="sport-title">${lg.label} <span style="color:#555;font-size:0.8em">(${today.length} upcoming)</span></div>`;
       if (!today.length) { html+='<div class="no-games">No matches in next 4 days.</div></div>'; continue; }
 
-      for (const ev of today) {
+      // Pre-fetch ALL per-event data in parallel for this league (massive speed boost)
+      const espnLeague = lg.key.includes('epl') ? {sport:'soccer',league:'eng.1'}
+        : lg.key.includes('fa_cup') ? {sport:'soccer',league:'eng.fa'}
+        : lg.key.includes('champs') ? {sport:'soccer',league:'uefa.champions'}
+        : lg.key.includes('la_liga') ? {sport:'soccer',league:'esp.1'}
+        : {sport:'soccer',league:'fifa.world'};
+      const leagueXGKey = xgLeagueMap[lg.key] || null;
+      const leagueXG = leagueXGKey ? xgData[leagueXGKey] : null;
+
+      const prefetched = await Promise.all(today.map(async ev => {
+        const home = ev.home_team, away = ev.away_team;
+        // Fetch BTTS/DNB, home form, away form, goal scorers all in parallel
+        const [extraData, hForm, aForm, scorerData] = await Promise.all([
+          ev.id ? fetchEventProps(lg.key, ev.id, 'btts,draw_no_bet', 'uk', force).catch(() => null) : Promise.resolve(null),
+          fetchTeamForm(espnLeague.sport, espnLeague.league, home).catch(() => null),
+          fetchTeamForm(espnLeague.sport, espnLeague.league, away).catch(() => null),
+          (lg.props && ev.id) ? fetchEventProps(lg.key, ev.id, 'player_goal_scorer_anytime', 'uk,eu,au', force).catch(() => null) : Promise.resolve(null),
+        ]);
+        return { ev, extraData, homeForm: hForm, awayForm: aForm, scorerData };
+      }));
+
+      for (const { ev, extraData, homeForm, awayForm, scorerData } of prefetched) {
         const h2h = bestOdds(ev,'h2h');
         const home=ev.home_team, away=ev.away_team;
         const hO=h2h[home], aO=h2h[away], dO=h2h['Draw'];
         if (!hO||!aO) continue;
 
         const tot = bestTotal(ev,2.5);
-        // BTTS + DNB: only available on event-level endpoint, not bulk
         let bttsOdds = { yes: null, no: null };
         let dnbOdds = { home: null, away: null };
-        if (ev.id) {
-          try {
-            const extraData = await fetchEventProps(lg.key, ev.id, 'btts,draw_no_bet', 'uk', force);
-            bttsOdds = bestBTTS(extraData);
-            // DNB needs team names — inject them from the bulk event data
-            if (extraData) { extraData.home_team = home; extraData.away_team = away; }
-            dnbOdds = bestDNB(extraData);
-          } catch {}
+        if (extraData) {
+          bttsOdds = bestBTTS(extraData);
+          extraData.home_team = home; extraData.away_team = away;
+          dnbOdds = bestDNB(extraData);
         }
 
         // ── PHASE 1: Independent xG Model ──────────────────────────────────────
-        // PRIMARY: Use Understat team xG (independent of book odds)
-        // FALLBACK: Form-based goals from TheSportsDB
-        // LAST RESORT: Odds-derived xG (old circular method — only for FA Cup, WC Qualifiers)
-        const leagueXGKey = xgLeagueMap[lg.key] || null;
-        const leagueXG = leagueXGKey ? xgData[leagueXGKey] : null;
         const homeTeamXG = getTeamXG(leagueXG, home);
         const awayTeamXG = getTeamXG(leagueXG, away);
-
-        // Also fetch form data as supplementary (W-D-L, momentum)
-        const espnLeague = lg.key.includes('epl') ? {sport:'soccer',league:'eng.1'}
-          : lg.key.includes('fa_cup') ? {sport:'soccer',league:'eng.fa'}
-          : lg.key.includes('champs') ? {sport:'soccer',league:'uefa.champions'}
-          : lg.key.includes('la_liga') ? {sport:'soccer',league:'esp.1'}
-          : {sport:'soccer',league:'fifa.world'};
-        const [homeForm, awayForm] = await Promise.all([
-          fetchTeamForm(espnLeague.sport, espnLeague.league, home),
-          fetchTeamForm(espnLeague.sport, espnLeague.league, away),
-        ]);
 
         let homeXG, awayXG;
         let xgSource = 'odds'; // track which path we used
@@ -3237,12 +3237,10 @@ async function buildSoccer(force) {
         // Save opening line for this soccer event (enables line movement tracking)
         if (tot.over && tot.under) saveOpeningLine(ev.id, 'totals', 'match_total', tot.over, tot.under);
 
-        // Goal scorer props — now enabled for EPL, FA Cup, CL, La Liga
-        if (lg.props) {
+        // Goal scorer props — use pre-fetched data (already fetched in parallel above)
+        if (lg.props && scorerData) {
           try {
-            // Goal scorer props — use uk,eu,au regions (uk alone often returns empty)
-            const propData = await fetchEventProps(lg.key, ev.id, 'player_goal_scorer_anytime', 'uk,eu,au', force);
-            html += await renderGoalScorers(propData, lg.label, `${home} vs ${away}`, espnLeague, homeForm, awayForm);
+            html += await renderGoalScorers(scorerData, lg.label, `${home} vs ${away}`, espnLeague, homeForm, awayForm);
           } catch(e) {
             html += `<div class="no-games" style="margin-top:8px">Goal scorer odds unavailable</div>`;
           }
