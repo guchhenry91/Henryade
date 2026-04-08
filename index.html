@@ -2870,11 +2870,15 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
     (bk.markets||[]).forEach(mkt=>{
       if (mkt.key !== 'player_goal_scorer_anytime') return;
       (mkt.outcomes||[]).forEach(o=>{
-        if (!scorers[o.name]) scorers[o.name] = { bestOdds: o.price, allOdds: [o.price], books: 1 };
+        // EU bookmakers use { name: "Yes", description: "Player Name" } format
+        // UK bookmakers use { name: "Player Name" } format
+        const playerName = o.description || o.name;
+        if (!playerName || playerName === 'Yes' || playerName === 'No') return; // skip malformed
+        if (!scorers[playerName]) scorers[playerName] = { bestOdds: o.price, allOdds: [o.price], books: 1 };
         else {
-          scorers[o.name].allOdds.push(o.price);
-          scorers[o.name].books++;
-          if (o.price < scorers[o.name].bestOdds) scorers[o.name].bestOdds = o.price;
+          scorers[playerName].allOdds.push(o.price);
+          scorers[playerName].books++;
+          if (o.price < scorers[playerName].bestOdds) scorers[playerName].bestOdds = o.price;
         }
       });
     });
