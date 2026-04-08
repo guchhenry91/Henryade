@@ -1593,12 +1593,18 @@ async function autoGrade(forceAll = false) {
 
       for (const pick of grp.picks) {
         try {
-          // Find the ESPN event matching this pick's game — use fuzzy nameMatch
+          // Find the ESPN event matching this pick's game
+          // Priority 1: match by stored eventId (exact, handles doubleheaders)
+          // Priority 2: fuzzy name match requiring BOTH teams (&&, not ||)
           const [partA, partB] = (pick.match || '').split(/\s+vs\.?\s+/i).map(s => s.trim());
-          const matchEv = events.find(ev => {
+          const matchEv = (pick.eventId
+            ? events.find(ev => String(ev.id) === String(pick.eventId))
+            : null
+          ) || events.find(ev => {
             const names = (ev.competitions?.[0]?.competitors || [])
               .map(c => c.team?.displayName || c.team?.name || '');
-            return names.some(n => partA && nameMatch(partA, n)) ||
+            // Require BOTH teams match (&&) — prevents grading against wrong game
+            return names.some(n => partA && nameMatch(partA, n)) &&
                    names.some(n => partB && nameMatch(partB, n));
           });
           if (!matchEv) continue; // may match in another date group
@@ -2015,7 +2021,7 @@ function pickHtml(pick) {
 
 // ── Winner prediction box ─────────────────────────────────────────────────────
 // eventDate + sportLabel: when provided, the pick is saved to grading history
-function winnerBox(home, away, homeOdds, awayOdds, drawOdds, eventDate, sportLabel) {
+function winnerBox(home, away, homeOdds, awayOdds, drawOdds, eventDate, sportLabel, eventId = '') {
   if (!homeOdds || !awayOdds) return '';
   const hi=1/homeOdds, ai=1/awayOdds, di=drawOdds?1/drawOdds:0;
   const tot=hi+ai+di;
@@ -2031,7 +2037,8 @@ function winnerBox(home, away, homeOdds, awayOdds, drawOdds, eventDate, sportLab
   // Save this pick to the grading history so it can be auto-graded tomorrow
   if (sportLabel && eventDate) {
     savePickToHistory({
-      id:     `${dateToET(eventDate)}_match_${home}_${away}`.replace(/\W+/g, '_'),
+      id:     `${dateToET(eventDate)}_${eventId || 'noid'}_match_${home}_${away}`.replace(/\W+/g, '_'),
+      eventId: eventId || null,
       date:   eventDate,
       sport:  sportLabel,
       match:  `${home} vs ${away}`,
@@ -2042,6 +2049,7 @@ function winnerBox(home, away, homeOdds, awayOdds, drawOdds, eventDate, sportLab
       pick:   winnerName,
       pct:    winnerPct.toFixed(1),
       conf:   conf,
+      odds:   winnerName === home ? homeOdds : winnerName === away ? awayOdds : (drawOdds || null),
       result: null,
     });
   }
@@ -2672,7 +2680,8 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     const allShownPicks = [...safePicks, ...props.filter(p => !safePicks.includes(p))];
     allShownPicks.forEach((p, i) => {
       const pick = {
-        id:        `${todayET()}_${matchLabel}_${p.player}_${p.market}_${p.line}_${p.c.pick}`.replace(/\W+/g,'_'),
+        id:        `${todayET()}_${eventId || 'noid'}_${matchLabel}_${p.player}_${p.market}_${p.line}_${p.c.pick}`.replace(/\W+/g,'_'),
+        eventId:   eventId || null,
         date:      new Date().toISOString(),
         sport:     sportLabel, match: matchLabel,
         player:    p.player,  market: p.market,
@@ -3130,7 +3139,7 @@ async function buildSoccer(force) {
               <span style="color:#444;font-size:0.68em;margin-left:4px">hXG:${homeXG.toFixed(2)} aXG:${awayXG.toFixed(2)} rho:${rho}</span>
             </div>
           </div>
-          ${winnerBox(home,away,hO,aO,dO,ev.commence_time,lg.label)}
+          ${winnerBox(home,away,hO,aO,dO,ev.commence_time,lg.label,ev.id)}
           <table class="odds-table">
             <tr><th>Outcome</th><th>Model%</th><th>Odds</th><th>Imp%</th><th>Edge</th></tr>
             <tr><td>${home}</td><td>${(hw*100).toFixed(1)}%</td><td>${hO}</td><td>${(impliedProb(hO)*100).toFixed(1)}%</td><td>${edgeHtml(hwE.toFixed(1))}</td></tr>
@@ -3241,7 +3250,7 @@ async function buildSportTab(name, force) {
           <span>${home} vs ${away}</span>
           <span class="match-time">${gameDate(ev.commence_time)}</span>
         </div>`;
-      if (hO && aO) html += winnerBox(home, away, hO, aO, null, ev.commence_time, s.label);
+      if (hO && aO) html += winnerBox(home, away, hO, aO, null, ev.commence_time, s.label, ev.id);
       html += propsHtmlResults[i];
       html += '</div>';
     });
