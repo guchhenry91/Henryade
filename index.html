@@ -831,7 +831,7 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
 // projection = baseAvg × matchupFactor × paceFactor × restFactor × homeAwayFactor × trendFactor
 // Then uses neg-binom distribution to get P(OVER) from the PROJECTED mean.
 
-function projectPlayerStat(statResult, oppFactor, restResult, isHomeGame) {
+function projectPlayerStat(statResult, oppFactor, restResult, isHomeGame, sportHint = '') {
   if (!statResult || !statResult.avg) return null;
 
   // Base: blend of L5 (60%) and L15 (40%) for stability + recency
@@ -841,21 +841,30 @@ function projectPlayerStat(statResult, oppFactor, restResult, isHomeGame) {
 
   let factors = [];
 
+  // Sport detection for sport-specific tuning
+  const isMLB = sportHint.toUpperCase().includes('MLB');
+  const isNBA = sportHint.toUpperCase().includes('NBA');
+  const isNHL = sportHint.toUpperCase().includes('NHL');
+
   // ── Matchup factor: opponent defense rating ──
-  // defenseRating >1 = weak defense (player scores MORE), <1 = strong defense (scores LESS)
+  // KEY INSIGHT: MLB works at 64% WITHOUT opponent factors. NBA/NHL at 50-52% WITH them.
+  // The generic OppPPG metric doesn't translate well to individual player props.
+  // Fix: reduce opponent impact for NBA/NHL, disable entirely for MLB (already disabled in standings).
   let matchupFactor = 1.0;
-  if (oppFactor && oppFactor.defenseRating) {
-    // Scale the impact: defense rating 1.10 → projection × 1.07 (70% pass-through)
-    matchupFactor = 1.0 + (oppFactor.defenseRating - 1.0) * 0.70;
-    matchupFactor = Math.max(0.80, Math.min(1.25, matchupFactor)); // cap at ±25%
+  if (oppFactor && oppFactor.defenseRating && !isMLB) {
+    // NBA/NHL: much lower pass-through (30% instead of 70%) — generic defense stats are noisy
+    const passThrough = isNBA ? 0.25 : isNHL ? 0.20 : 0.40;
+    matchupFactor = 1.0 + (oppFactor.defenseRating - 1.0) * passThrough;
+    matchupFactor = Math.max(0.90, Math.min(1.12, matchupFactor)); // tighter cap: ±12% (was ±25%)
     factors.push({ name: 'matchup', value: matchupFactor, label: oppFactor.label || `Defense: ${oppFactor.defenseRating.toFixed(2)}x` });
   }
 
   // ── Pace factor: fast games = more possessions = more stats ──
   let paceFactor = 1.0;
-  if (oppFactor && oppFactor.paceMultiplier) {
-    paceFactor = 1.0 + (oppFactor.paceMultiplier - 1.0) * 0.40; // 40% pass-through
-    paceFactor = Math.max(0.90, Math.min(1.12, paceFactor)); // cap at ±12%
+  if (oppFactor && oppFactor.paceMultiplier && !isMLB) {
+    const pacePass = isNBA ? 0.20 : 0.15; // reduced from 0.40
+    paceFactor = 1.0 + (oppFactor.paceMultiplier - 1.0) * pacePass;
+    paceFactor = Math.max(0.94, Math.min(1.08, paceFactor)); // tighter cap
     factors.push({ name: 'pace', value: paceFactor, label: `Pace: ${oppFactor.paceMultiplier.toFixed(2)}x` });
   }
 
@@ -1306,10 +1315,15 @@ function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineM
   // oppSignal: positive = weak defense (boost OVER), negative = strong defense (boost UNDER)
   // Flip sign for UNDER direction: strong defense helps UNDER picks
   const oppAdj = direction === 'OVER' ? oppSignal : -oppSignal;
+  // Reduce opponent weight for NBA/NHL — generic OppPPG is noisy and hurting accuracy
+  // MLB already has oppSignal=0 (disabled in getTeamStandings)
+  const isVolatileSport = sportHint.toUpperCase().includes('NBA') || sportHint.toUpperCase().includes('NHL');
+  const oppWeight = isVolatileSport ? 0.05 : 0.12; // NBA/NHL: 5% (was 12%), others: 12%
+  const statsWeight = isVolatileSport ? 0.25 : 0.20; // NBA/NHL: boost pure stats signal to 25%
 
   const raw = (edgeFactor * 0.22 + consensusFactor * 0.18 + fairFactor * 0.12
-    - vigPenalty * 0.08 + statsSignal * 0.20 + lineMoveSig * 0.08
-    + oppAdj * 0.12 // opponent defense + pace: 12% weight
+    - vigPenalty * 0.08 + statsSignal * statsWeight + lineMoveSig * 0.08
+    + oppAdj * oppWeight // opponent defense: reduced for NBA/NHL
     + restPenalty + weatherPenalty + overPenalty) * dirCalib;
 
   // Market regression (BookieX-style): pull score 10% toward neutral
@@ -2411,7 +2425,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       // ── PHASE 2: Independent Player Projection → Model Probability ──
       // Build our OWN projected stat line, then calculate P(OVER) from that.
       // This is independent of book odds — we compare our number to theirs for edge.
-      const playerProjection = projectPlayerStat(statResult, gameOppFactor, restResult, null);
+      const playerProjection = projectPlayerStat(statResult, gameOppFactor, restResult, null, sportLabel || '');
 
       const bookProb = c.pick === 'OVER'
         ? parseFloat(c.op) / 100
@@ -2474,10 +2488,21 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     // ── Hard gate: block negative edge and low hit probability picks ──
     .filter(p => p.edge > 0) // negative edge = no bet, don't show at all
     .filter(p => {
-      // Block picks where model hit probability is below 60%
+      // Sport-specific hit probability thresholds
+      // MLB works at 60% because the stats are more predictable
+      // NBA/NHL need higher confidence because they're more volatile
+      const sport = (sportLabel || '').toUpperCase();
+      const isNBA = sport.includes('NBA');
+      const isNHL = sport.includes('NHL');
+      const minHitProb = (isNBA || isNHL) ? 0.65 : 0.60; // NBA/NHL need 65%+, MLB stays at 60%
+
       if (p.statResult) {
         const hitProb = p.c.pick === 'OVER' ? (p.statResult.hitProbOver || 0) : (p.statResult.hitProbUnder || 0);
-        if (hitProb < 0.60) return false;
+        if (hitProb < minHitProb) return false;
+
+        // Variance gate for NBA/NHL: block volatile players (variance > 2× mean)
+        // Volatile = unpredictable = coin flip. Consistent players are where the edge is.
+        if ((isNBA || isNHL) && p.statResult.variance > p.statResult.effectiveMean * 2) return false;
       }
       return true;
     })
