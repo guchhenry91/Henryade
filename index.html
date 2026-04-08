@@ -2875,7 +2875,10 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
 // ── SOCCER tab ────────────────────────────────────────────────────────────────
 async function buildSoccer(force) {
   const container = document.getElementById('tab-soccer');
-  container.innerHTML = '<div class="loading">⚽ Fetching odds for 5 leagues...</div>';
+  container.innerHTML = '<div class="loading">⚽ Waking proxy & fetching odds...</div>';
+
+  // Ensure proxy is awake before fetching xG data (free tier cold start)
+  try { await Promise.race([_proxyWarm, new Promise(r => setTimeout(r, 15000))]); } catch {}
 
   const leagues = [
     { key:'soccer_epl',                           label:'🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League',    props:true  },
@@ -3101,7 +3104,12 @@ async function buildSoccer(force) {
 async function buildSportTab(name, force) {
   const s = SPORT_TABS[name];
   const container = document.getElementById('tab-' + name);
-  container.innerHTML = `<div class="loading">${s.label} — Fetching odds & player stats...</div>`;
+  container.innerHTML = `<div class="loading">${s.label} — Waking proxy & fetching data...</div>`;
+
+  // Ensure proxy is awake for NBA/NHL (they need the Render proxy for gamelogs)
+  if (name === 'nba' || name === 'nhl') {
+    try { await Promise.race([_proxyWarm, new Promise(r => setTimeout(r, 15000))]); } catch {}
+  }
 
   try {
     // 1. h2h bulk for winner predictions
@@ -4133,9 +4141,15 @@ function filterPickCards(btn, dir) {
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────
+// ── Pre-warm Render proxy on script load (before DOM ready) ──────────────
+// Free tier sleeps after 15min idle. This wake-up call fires immediately so
+// by the time the user clicks a sport tab (~5-10s later), the proxy is awake.
+// Multiple pings: first wakes it, second confirms it's ready.
+const _proxyWarm = fetch(`${NBA_PROXY}/health`).catch(() => null);
+setTimeout(() => fetch(`${NBA_PROXY}/health`).catch(() => {}), 3000); // 2nd ping at 3s
+setTimeout(() => fetch(`${NBA_PROXY}/health`).catch(() => {}), 8000); // 3rd ping at 8s
+
 window.addEventListener('load', () => {
-  // Pre-warm the Render proxy so it's awake when sport tabs load
-  fetch(`${NBA_PROXY}/health`).catch(() => {});
   refreshAll(false);
   autoGrade().then(n => {
     // Retry after 30s for any picks ESPN hadn't processed yet on first pass
