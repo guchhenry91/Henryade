@@ -3188,7 +3188,8 @@ async function buildSoccer(force) {
         // Goal scorer props — now enabled for EPL, FA Cup, CL, La Liga
         if (lg.props) {
           try {
-            const propData = await fetchEventProps(lg.key, ev.id, 'player_goal_scorer_anytime', 'uk', force);
+            // Goal scorer props — use uk,eu,au regions (uk alone often returns empty)
+            const propData = await fetchEventProps(lg.key, ev.id, 'player_goal_scorer_anytime', 'uk,eu,au', force);
             html += await renderGoalScorers(propData, lg.label, `${home} vs ${away}`, espnLeague, homeForm, awayForm);
           } catch(e) {
             html += `<div class="no-games" style="margin-top:8px">Goal scorer odds unavailable</div>`;
