@@ -505,14 +505,32 @@ async function nhlProxyGamelog(playerName, statKey) {
 
     const fetchPromise = (async () => {
       try {
-        const ctrl = new AbortController();
-        const timer = setTimeout(() => ctrl.abort(), 90000);
-        let res;
-        try { res = await fetch(`${NBA_PROXY}/api/nhl/player/${encodeURIComponent(playerName)}/gamelog`, { signal: ctrl.signal }); }
-        finally { clearTimeout(timer); }
-        if (!res || !res.ok) return null;
-        const data = await res.json();
-        if (!data.games || !data.games.length) return null;
+        // Try Statmuse first (15s, fresh SSR data)
+        let data = null;
+        try {
+          const smRes = await fetch(
+            `${NBA_PROXY}/api/nhl/player/${encodeURIComponent(playerName)}/gamelog/statmuse`,
+            { signal: AbortSignal.timeout(15000) }
+          );
+          if (smRes.ok) {
+            const smData = await smRes.json();
+            if (smData.games && smData.games.length) data = smData;
+          }
+        } catch { /* fall through */ }
+
+        // Fall back to official NHL API proxy
+        if (!data) {
+          const ctrl = new AbortController();
+          const timer = setTimeout(() => ctrl.abort(), 90000);
+          let res;
+          try { res = await fetch(`${NBA_PROXY}/api/nhl/player/${encodeURIComponent(playerName)}/gamelog`, { signal: ctrl.signal }); }
+          finally { clearTimeout(timer); }
+          if (!res || !res.ok) return null;
+          const raw = await res.json();
+          if (!raw.games || !raw.games.length) return null;
+          data = raw;
+        }
+
         setGamelogCache(cacheKey, data);
         return data;
       } catch { return null; }
@@ -552,27 +570,64 @@ function _mlbExtractEntries(splits, statKey) {
   return entries.length ? entries : null;
 }
 
+// Extract MLB entries from a Statmuse gamelog response (different field names to official API)
+function _mlbExtractFromStatmuse(games, statKey) {
+  if (!games || !games.length) return null;
+  const entries = [];
+  for (const g of games) {
+    let val;
+    if      (statKey === 'hits')         val = g.hits;
+    else if (statKey === 'homeRuns')     val = g.homeRuns;
+    else if (statKey === 'RBIs')         val = g.RBIs;
+    else if (statKey === 'runs')         val = g.runs;
+    else if (statKey === 'totalBases')   val = g.totalBases;
+    else if (statKey === 'strikeOuts')   val = g.strikeouts;
+    else if (statKey === 'baseOnBalls')  val = g.walks;
+    else if (statKey === 'hitsRunsRBIs') val = g.hitsRunsRBIs;
+    else continue;
+    if (val == null || isNaN(parseFloat(val))) continue;
+    entries.push({ val: parseFloat(val), isHome: g.is_home || false, gameDate: g.date || null });
+  }
+  return entries.length ? entries : null;
+}
+
 async function mlbOfficialGamelog(playerName, statKey) {
   const glCacheKey = 'mlb_' + playerName.toLowerCase().replace(/\s+/g, '_');
   try {
-    // 1. Check full-gamelog cache first — avoids all 3 API calls
+    // 1. Check cache first
     const cachedLog = getGamelogCache(glCacheKey);
     if (cachedLog) {
-      // Try hitting splits, then pitching
+      // Statmuse-sourced cache has .games array; official API cache has .hitting/.pitching
+      if (cachedLog.games) return _mlbExtractFromStatmuse(cachedLog.games, statKey);
       return _mlbExtractEntries(cachedLog.hitting, statKey)
           || _mlbExtractEntries(cachedLog.pitching, statKey);
     }
 
-    // Dedup: if already fetching this player, wait
     if (_gamelogInFlight[glCacheKey]) {
       const log = await _gamelogInFlight[glCacheKey];
       if (!log) return null;
+      if (log.games) return _mlbExtractFromStatmuse(log.games, statKey);
       return _mlbExtractEntries(log.hitting, statKey) || _mlbExtractEntries(log.pitching, statKey);
     }
 
     const fetchPromise = (async () => {
       try {
-        // 2. Player ID lookup (session cache)
+        // Try Statmuse first (fast, 30-min server cache)
+        try {
+          const smRes = await fetch(
+            `${NBA_PROXY}/api/mlb/player/${encodeURIComponent(playerName)}/gamelog/statmuse`,
+            { signal: AbortSignal.timeout(15000) }
+          );
+          if (smRes.ok) {
+            const smData = await smRes.json();
+            if (smData.games && smData.games.length) {
+              setGamelogCache(glCacheKey, smData);
+              return smData;
+            }
+          }
+        } catch { /* fall through to official API */ }
+
+        // Fall back to statsapi.mlb.com
         const idKey = `mlb__${playerName}`;
         let playerId = _mlbPlayerIdCache[idKey];
         if (playerId === undefined) {
@@ -588,7 +643,6 @@ async function mlbOfficialGamelog(playerName, statKey) {
         }
         if (!playerId) return null;
 
-        // 3. Fetch hitting + pitching gamelog in parallel (was sequential)
         const mlbSeason = new Date().getFullYear();
         const [hitRes, pitRes] = await Promise.all([
           fetch(`https://statsapi.mlb.com/api/v1/people/${playerId}/stats?stats=gameLog&season=${mlbSeason}&group=hitting`),
@@ -597,7 +651,7 @@ async function mlbOfficialGamelog(playerName, statKey) {
         const hitData = hitRes.ok ? await hitRes.json() : null;
         const pitData = pitRes.ok ? await pitRes.json() : null;
         const log = {
-          hitting: hitData ? ((hitData.stats||[])[0]?.splits || []) : [],
+          hitting:  hitData ? ((hitData.stats||[])[0]?.splits || []) : [],
           pitching: pitData ? ((pitData.stats||[])[0]?.splits || []) : [],
         };
         setGamelogCache(glCacheKey, log);
@@ -608,6 +662,7 @@ async function mlbOfficialGamelog(playerName, statKey) {
     _gamelogInFlight[glCacheKey] = fetchPromise;
     const log = await fetchPromise;
     if (!log) return null;
+    if (log.games) return _mlbExtractFromStatmuse(log.games, statKey);
     return _mlbExtractEntries(log.hitting, statKey) || _mlbExtractEntries(log.pitching, statKey);
   } catch { return null; }
 }
