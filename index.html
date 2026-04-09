@@ -1396,7 +1396,11 @@ const ESPN_CFG = {
   'PREMIER LEAGUE':   { sport: 'soccer',           league: 'eng.1'          },
   'FA CUP':           { sport: 'soccer',           league: 'eng.fa'         },
   'CHAMPIONS LEAGUE': { sport: 'soccer',           league: 'uefa.champions' },
+  'EUROPA LEAGUE':    { sport: 'soccer',           league: 'uefa.europa'    },
   'LA LIGA':          { sport: 'soccer',           league: 'esp.1'          },
+  'BUNDESLIGA':       { sport: 'soccer',           league: 'ger.1'          },
+  'SERIE A':          { sport: 'soccer',           league: 'ita.1'          },
+  'LIGUE 1':          { sport: 'soccer',           league: 'fra.1'          },
   'WC QUALIFIERS':    { sport: 'soccer',           league: 'fifa.world'     },
 };
 
@@ -1431,19 +1435,62 @@ const MARKET_STAT_KEY = {
   pitcher_earned_runs:     { mlb: 'earnedRuns'                                         },
 };
 
+// Known team name aliases — Odds API name → canonical, ESPN may use either
+// Add new entries here when a team fails to grade
+const TEAM_ALIASES = {
+  'paris saint-germain': ['paris sg', 'psg', 'paris saint germain'],
+  'paris sg':            ['paris saint-germain', 'psg', 'paris saint germain'],
+  'manchester city':     ['man city', 'man. city'],
+  'manchester united':   ['man utd', 'man united', 'man. united'],
+  'atletico madrid':     ['atletico de madrid', 'atletico', 'atletico madrid cf'],
+  'internazionale':      ['inter milan', 'inter', 'fc internazionale'],
+  'ac milan':            ['milan'],
+  'bayern munich':       ['fc bayern munchen', 'fc bayern', 'bayern'],
+  'bayer leverkusen':    ['leverkusen', 'bayer 04 leverkusen'],
+  'rb leipzig':          ['rasenballsport leipzig', 'red bull leipzig'],
+  'borussia dortmund':   ['bvb', 'dortmund'],
+  'newcastle united':    ['newcastle'],
+  'tottenham hotspur':   ['tottenham', 'spurs'],
+  'west ham united':     ['west ham'],
+  'nottingham forest':   ['nottm forest', 'forest'],
+  'wolverhampton wanderers': ['wolves', 'wolverhampton'],
+  'brighton & hove albion':  ['brighton'],
+  'crystal palace':      ['palace'],
+  'real sociedad':       ['real sociedad de futbol'],
+  'athletic bilbao':     ['athletic club'],
+  'real betis':          ['betis', 'real betis balompie'],
+};
+
 // Fuzzy name match — handles ESPN vs Odds API name variations
-// Checks: exact, last name, last-two-words (for "Trail Blazers", "Red Sox" etc.)
+// Checks: exact, aliases, last name, last-two-words, first-word city match
 function nameMatch(a, b) {
   // Normalize Unicode accents: Jokić→Jokic, Dembélé→Dembele, Lafrenière→Lafreniere
   const n = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z\s]/g, '').trim();
   const [na, nb] = [n(a), n(b)];
   if (na === nb) return true;
+
+  // Alias check — resolve both sides through alias table
+  const resolve = s => {
+    for (const [canonical, aliases] of Object.entries(TEAM_ALIASES)) {
+      if (s === n(canonical) || aliases.map(x => n(x)).includes(s)) {
+        return [n(canonical), ...aliases.map(x => n(x))];
+      }
+    }
+    return [s];
+  };
+  const formsA = resolve(na), formsB = resolve(nb);
+  if (formsA.some(fa => formsB.includes(fa))) return true;
+
   // Last word match (for team names: "Warriors", "Lakers", etc.)
   const lastA = na.split(' ').pop(), lastB = nb.split(' ').pop();
   if (lastA.length >= 4 && lastA === lastB) return true; // min 4 chars to avoid "Jr" etc.
   // Multi-word match for teams like Trail Blazers, Blue Jays, Red Sox, White Sox
   const lastTwo = s => s.split(' ').slice(-2).join(' ');
   if (lastTwo(na).length >= 8 && lastTwo(na) === lastTwo(nb)) return true;
+  // First-word (city) match for soccer teams — "Paris" matches "Paris Saint-Germain"
+  // Only for 5+ char first words to avoid false positives (e.g., "AS" Roma vs AS Monaco)
+  const firstA = na.split(' ')[0], firstB = nb.split(' ')[0];
+  if (firstA.length >= 5 && firstA === firstB) return true;
   // For player names: require BOTH first AND last name present
   const wordsA = na.split(' '), wordsB = nb.split(' ');
   if (wordsA.length >= 2 && wordsB.length >= 2) {
@@ -1616,10 +1663,23 @@ async function autoGrade(forceAll = false) {
             return names.some(n => partA && nameMatch(partA, n)) &&
                    names.some(n => partB && nameMatch(partB, n));
           });
-          if (!matchEv) continue; // may match in another date group
+          if (!matchEv) {
+            // Log which games ESPN had — helps debug name mismatches
+            const hp = history.find(x => x.id === pick.id);
+            const availableTeams = events.flatMap(ev =>
+              (ev.competitions?.[0]?.competitors || []).map(c => c.team?.displayName || c.team?.name || '')
+            ).filter(Boolean).join(', ');
+            if (hp && !hp.gradeError) hp.gradeError = `No ESPN event found for "${pick.match}" — ESPN had: ${availableTeams || 'no events'}`;
+            console.warn(`Auto-grade: no event match for "${pick.match}" in ${grp.cfg.league} on ${grp.dateStr}. ESPN teams: ${availableTeams}`);
+            continue;
+          }
 
           // Only grade completed games
-          if (!matchEv.competitions?.[0]?.status?.type?.completed) continue;
+          if (!matchEv.competitions?.[0]?.status?.type?.completed) {
+            const hp = history.find(x => x.id === pick.id);
+            if (hp && !hp.gradeError) hp.gradeError = `Game not yet completed in ESPN`;
+            continue;
+          }
 
           if (pick.market === 'match_winner') {
             // Grade from scoreboard competitor data — no summary fetch needed
@@ -3745,11 +3805,12 @@ function buildHistoryTab() {
       const safeLabel = p.safe ? ' <span style="color:#00ff88;font-size:0.65em;background:#00ff8810;padding:1px 5px;border-radius:8px;border:1px solid #00ff8830">SAFE</span>' : '';
       const parlayLabel = isParlay ? ' <span style="color:#ffcc00;font-size:0.65em;background:#ffcc0010;padding:1px 5px;border-radius:8px;border:1px solid #ffcc0030">PARLAY</span>' : '';
       const matchRef = (!isMatch && !isParlay && p.match) ? `<br><span style="color:#444;font-size:0.7em">${p.match}</span>` : '';
+      const gradeErr = p.gradeError ? `<br><span style="color:#ff6644;font-size:0.65em" title="${p.gradeError.replace(/"/g,"'")}">⚠ ${p.gradeError.length > 60 ? p.gradeError.slice(0,57)+'...' : p.gradeError}</span>` : '';
       const infoCell = isParlay
         ? `<span style="color:#ffcc00;font-weight:600">${p.market}</span> <span style="color:#333;font-size:0.75em">@ ${p.line}</span>${parlayLabel}<br><span style="color:#555;font-size:0.72em">${p.player}</span>`
         : isMatch
-        ? `<span style="color:#bbb">${p.match}</span> <span style="color:#333;font-size:0.8em">Winner</span>${safeLabel}`
-        : `${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>${safeLabel}${matchRef}`;
+        ? `<span style="color:#bbb">${p.match}</span> <span style="color:#333;font-size:0.8em">Winner</span>${safeLabel}${gradeErr}`
+        : `${p.player} <span style="color:#333;font-size:0.8em">${stat} ${p.line}</span>${safeLabel}${matchRef}${gradeErr}`;
       const pickCell = isParlay
         ? `<span style="color:#ffcc00;font-weight:700">${p.market}</span>`
         : isMatch
