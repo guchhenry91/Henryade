@@ -371,152 +371,220 @@ async function espnAthleteId(sport, league, playerName) {
 // Calls our own proxy which uses nba_api to bypass NBA.com bot protection
 const NBA_PROXY = 'https://nba-stats-proxy-9kur.onrender.com';
 
-async function nbaProxyGamelog(playerName, statKey, line) {
+// ── Gamelog cache — 12-hour TTL, persisted in localStorage ──────────────────
+// Prevents re-fetching same player on every tab click (biggest speed win)
+// Also deduplicates in-flight: LeBron points + LeBron rebounds = 1 proxy call
+const GAMELOG_TTL = 12 * 60 * 60 * 1000; // 12 hours
+const _gamelogInFlight = {}; // key → Promise (dedup concurrent requests)
+
+function getGamelogCache(key) {
   try {
-    // Map our stat keys to the proxy's market names
-    const marketMap = {
-      points: 'points', totalRebounds: 'rebounds', assists: 'assists',
-      threePointFieldGoalsMade: 'threes', blocks: 'blocks', steals: 'steals',
-      turnovers: 'turnovers', fieldGoalsMade: 'fieldGoalsMade',
-    };
-    const market = marketMap[statKey] || statKey;
+    const r = localStorage.getItem('gl_' + key);
+    if (!r) return null;
+    const { ts, data } = JSON.parse(r);
+    if (Date.now() - ts > GAMELOG_TTL) { localStorage.removeItem('gl_' + key); return null; }
+    return data;
+  } catch { return null; }
+}
+function setGamelogCache(key, data) {
+  try { localStorage.setItem('gl_' + key, JSON.stringify({ ts: Date.now(), data })); } catch {}
+}
 
-    // 90s timeout — Render free tier takes 30-50s to wake, then each player lookup is 3-5s
-    const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), 90000);
-    let res;
-    try { res = await fetch(`${NBA_PROXY}/api/nba/player/${encodeURIComponent(playerName)}/gamelog`, { signal: ctrl.signal }); } finally { clearTimeout(timer); }
-    if (!res || !res.ok) return null;
-    const data = await res.json();
-    if (!data.games || !data.games.length) return null;
+// Extract entries array from a raw NBA proxy gamelog for any statKey
+function _nbaExtractEntries(data, statKey) {
+  const keyMap = {
+    points: 'pts', totalRebounds: 'reb', assists: 'ast',
+    threePointFieldGoalsMade: 'fg3m', blocks: 'blk', steals: 'stl',
+    turnovers: 'tov', fieldGoalsMade: 'fgm',
+  };
+  const gameKey = keyMap[statKey] || 'pts';
+  const entries = [];
+  let playerTeamAbbrev = null;
+  for (const g of (data.games || [])) {
+    if (!g.min || g.min === 0) continue;
+    const val = parseFloat(g[gameKey]);
+    if (isNaN(val)) continue;
+    entries.push({ val, isHome: g.is_home || false, gameDate: g.date || null });
+    if (!playerTeamAbbrev && g.matchup) {
+      playerTeamAbbrev = g.matchup.split(/\s+(vs\.|@)\s+/)[0].trim();
+    }
+  }
+  entries.reverse(); // proxy = newest-first, we need oldest-first
+  if (entries.length) entries.playerTeamAbbrev = playerTeamAbbrev;
+  return entries.length ? entries : null;
+}
 
-    // Map proxy response to our standard entries format { val, isHome, gameDate }
-    const keyMap = {
-      points: 'pts', totalRebounds: 'reb', assists: 'ast',
-      threePointFieldGoalsMade: 'fg3m', blocks: 'blk', steals: 'stl',
-      turnovers: 'tov', fieldGoalsMade: 'fgm',
-    };
-    const gameKey = keyMap[statKey] || 'pts';
+async function nbaProxyGamelog(playerName, statKey, line) {
+  const cacheKey = 'nba_' + playerName.toLowerCase().replace(/\s+/g, '_');
+  try {
+    // 1. Check localStorage cache (12h TTL)
+    const cached = getGamelogCache(cacheKey);
+    if (cached) return _nbaExtractEntries(cached, statKey);
 
-    const entries = [];
-    let playerTeamAbbrev = null; // detect from most recent matchup
-    for (const g of data.games) {
-      // Skip DNP (0 minutes)
-      if (!g.min || g.min === 0) continue;
-      const val = parseFloat(g[gameKey]);
-      if (isNaN(val)) continue;
-      entries.push({ val, isHome: g.is_home || false, gameDate: g.date || null });
-      // Extract team abbreviation from matchup (e.g., "BOS vs. LAL" → BOS is home team, "BOS @ LAL" → BOS is away)
-      if (!playerTeamAbbrev && g.matchup) {
-        playerTeamAbbrev = g.matchup.split(/\s+(vs\.|@)\s+/)[0].trim();
-      }
+    // 2. Dedup: if already fetching this player, share that promise
+    if (_gamelogInFlight[cacheKey]) {
+      const data = await _gamelogInFlight[cacheKey];
+      return data ? _nbaExtractEntries(data, statKey) : null;
     }
 
-    // Proxy returns newest-first, but our code expects oldest-first (slice(-5) = last 5)
-    entries.reverse();
-    if (entries.length) entries.playerTeamAbbrev = playerTeamAbbrev;
-    return entries.length ? entries : null;
+    // 3. Fetch (90s timeout — Render cold start can take 30-50s)
+    const fetchPromise = (async () => {
+      try {
+        const ctrl = new AbortController();
+        const timer = setTimeout(() => ctrl.abort(), 90000);
+        let res;
+        try { res = await fetch(`${NBA_PROXY}/api/nba/player/${encodeURIComponent(playerName)}/gamelog`, { signal: ctrl.signal }); }
+        finally { clearTimeout(timer); }
+        if (!res || !res.ok) return null;
+        const data = await res.json();
+        if (!data.games || !data.games.length) return null;
+        setGamelogCache(cacheKey, data);
+        return data;
+      } catch { return null; }
+      finally { delete _gamelogInFlight[cacheKey]; }
+    })();
+    _gamelogInFlight[cacheKey] = fetchPromise;
+    const data = await fetchPromise;
+    return data ? _nbaExtractEntries(data, statKey) : null;
   } catch { return null; }
 }
 
 // ── NHL Stats via Render Proxy (bypasses CORS on api-web.nhle.com) ──────────
+function _nhlExtractEntries(data, statKey) {
+  const keyMap = {
+    goals: 'goals', assists: 'assists', points: 'points',
+    shotsTotal: 'shots', blockedShots: 'blocked_shots',
+    powerPlayGoals: 'pp_goals', powerPlayPoints: 'pp_points',
+  };
+  const gameKey = keyMap[statKey] || 'points';
+  const entries = [];
+  for (const g of (data.games || [])) {
+    if (g.toi === '00:00' || g.toi === '0:00' || g.toi === null) continue;
+    const val = parseFloat(g[gameKey]);
+    if (isNaN(val)) continue;
+    entries.push({ val, isHome: g.is_home || false, gameDate: g.date || null });
+  }
+  entries.reverse();
+  return entries.length ? entries : null;
+}
+
 async function nhlProxyGamelog(playerName, statKey) {
+  const cacheKey = 'nhl_' + playerName.toLowerCase().replace(/\s+/g, '_');
   try {
-    const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), 90000);
-    let res;
-    try { res = await fetch(`${NBA_PROXY}/api/nhl/player/${encodeURIComponent(playerName)}/gamelog`, { signal: ctrl.signal }); } finally { clearTimeout(timer); }
-    if (!res || !res.ok) return null;
-    const data = await res.json();
-    if (!data.games || !data.games.length) return null;
+    const cached = getGamelogCache(cacheKey);
+    if (cached) return _nhlExtractEntries(cached, statKey);
 
-    // Map stat keys to proxy response fields
-    const keyMap = {
-      goals: 'goals', assists: 'assists', points: 'points',
-      shotsTotal: 'shots', blockedShots: 'blocked_shots',
-      powerPlayGoals: 'pp_goals', powerPlayPoints: 'pp_points',
-    };
-    const gameKey = keyMap[statKey] || 'points';
-
-    const entries = [];
-    for (const g of data.games) {
-      // Filter out DNP/low-TOI games — 0 stats from scratch games pollute averages
-      if (g.toi === '00:00' || g.toi === '0:00' || g.toi === null) continue;
-      const val = parseFloat(g[gameKey]);
-      if (isNaN(val)) continue;
-      entries.push({ val, isHome: g.is_home || false, gameDate: g.date || null });
+    if (_gamelogInFlight[cacheKey]) {
+      const data = await _gamelogInFlight[cacheKey];
+      return data ? _nhlExtractEntries(data, statKey) : null;
     }
-    // Proxy returns newest-first, reverse for our code (expects oldest-first)
-    entries.reverse();
-    return entries.length ? entries : null;
+
+    const fetchPromise = (async () => {
+      try {
+        const ctrl = new AbortController();
+        const timer = setTimeout(() => ctrl.abort(), 90000);
+        let res;
+        try { res = await fetch(`${NBA_PROXY}/api/nhl/player/${encodeURIComponent(playerName)}/gamelog`, { signal: ctrl.signal }); }
+        finally { clearTimeout(timer); }
+        if (!res || !res.ok) return null;
+        const data = await res.json();
+        if (!data.games || !data.games.length) return null;
+        setGamelogCache(cacheKey, data);
+        return data;
+      } catch { return null; }
+      finally { delete _gamelogInFlight[cacheKey]; }
+    })();
+    _gamelogInFlight[cacheKey] = fetchPromise;
+    const data = await fetchPromise;
+    return data ? _nhlExtractEntries(data, statKey) : null;
   } catch { return null; }
 }
 
 // ── Official MLB Stats API (statsapi.mlb.com) — real-time, no key needed ────
 // Returns per-game entries { val, isHome, gameDate } or null
-const _mlbPlayerCache = {};
+// Caches full hitting+pitching gamelog per player (12h TTL) — MLB has no proxy so calls are fast,
+// but player search + 2 gamelog fetches = 3 round trips per player per market without caching
+const _mlbPlayerIdCache = {}; // player name → MLB player ID (session-scoped)
+
+function _mlbExtractEntries(splits, statKey) {
+  const keyMap = {
+    hits: 'hits', homeRuns: 'homeRuns', RBIs: 'rbi', runs: 'runs',
+    totalBases: 'totalBases', strikeouts: 'strikeOuts', walks: 'baseOnBalls',
+    earnedRuns: 'earnedRuns', hitsRunsRBIs: '_composite',
+  };
+  const mlbKey = keyMap[statKey];
+  if (!mlbKey && statKey !== 'hitsRunsRBIs') return null;
+  const entries = [];
+  for (const s of (splits || [])) {
+    const stat = s.stat || {};
+    let val = statKey === 'hitsRunsRBIs'
+      ? (stat.hits || 0) + (stat.runs || 0) + (stat.rbi || 0)
+      : stat[mlbKey];
+    if (val == null) continue;
+    val = parseFloat(val);
+    if (isNaN(val)) continue;
+    entries.push({ val, isHome: s.isHome || false, gameDate: s.date || null });
+  }
+  return entries.length ? entries : null;
+}
+
 async function mlbOfficialGamelog(playerName, statKey) {
+  const glCacheKey = 'mlb_' + playerName.toLowerCase().replace(/\s+/g, '_');
   try {
-    // Search for player
-    const cacheKey = `mlb__${playerName}`;
-    let playerId = _mlbPlayerCache[cacheKey];
-    if (playerId === undefined) {
-      const searchRes = await fetch(`https://statsapi.mlb.com/api/v1/people/search?names=${encodeURIComponent(playerName)}&sportIds=1`);
-      if (!searchRes.ok) return null;
-      const searchData = await searchRes.json();
-      const match = (searchData.people || []).find(p => {
-        const n = (p.fullName || '').toLowerCase();
-        return n === playerName.toLowerCase() || n.includes(playerName.toLowerCase().split(' ').pop());
-      });
-      playerId = match ? match.id : null;
-      _mlbPlayerCache[cacheKey] = playerId;
+    // 1. Check full-gamelog cache first — avoids all 3 API calls
+    const cachedLog = getGamelogCache(glCacheKey);
+    if (cachedLog) {
+      // Try hitting splits, then pitching
+      return _mlbExtractEntries(cachedLog.hitting, statKey)
+          || _mlbExtractEntries(cachedLog.pitching, statKey);
     }
-    if (!playerId) return null;
 
-    // Determine hitting vs pitching group
-    const isPitcher = statKey === 'strikeouts' && (statKey === 'earnedRuns' || true); // pitcher markets
-    const group = ['strikeouts', 'earnedRuns', 'walks'].includes(statKey) && !['hits','homeRuns','rbi','runs','totalBases'].includes(statKey)
-      ? 'pitching' : 'hitting';
-    // Actually: for batter_strikeouts the group is hitting, for pitcher_strikeouts it's pitching
-    // We can't tell from statKey alone — try hitting first, if no data try pitching
+    // Dedup: if already fetching this player, wait
+    if (_gamelogInFlight[glCacheKey]) {
+      const log = await _gamelogInFlight[glCacheKey];
+      if (!log) return null;
+      return _mlbExtractEntries(log.hitting, statKey) || _mlbExtractEntries(log.pitching, statKey);
+    }
 
-    for (const g of ['hitting', 'pitching']) {
-      const mlbSeason = new Date().getFullYear();
-      const res = await fetch(`https://statsapi.mlb.com/api/v1/people/${playerId}/stats?stats=gameLog&season=${mlbSeason}&group=${g}`);
-      if (!res.ok) continue;
-      const data = await res.json();
-      const statsArr = data.stats || [];
-      const splits = (statsArr.length ? statsArr[0].splits : null) || [];
-      if (!splits.length) continue;
-
-      // Map our stat keys to MLB API keys
-      const keyMap = {
-        hits: 'hits', homeRuns: 'homeRuns', RBIs: 'rbi', runs: 'runs',
-        totalBases: 'totalBases', strikeouts: 'strikeOuts', walks: 'baseOnBalls',
-        earnedRuns: 'earnedRuns', hitsRunsRBIs: '_composite_hrr',
-      };
-      const mlbKey = keyMap[statKey];
-      if (!mlbKey && statKey !== 'hitsRunsRBIs') continue;
-
-      const entries = [];
-      for (const s of splits) {
-        const stat = s.stat || {};
-        let val;
-        if (statKey === 'hitsRunsRBIs') {
-          val = (stat.hits || 0) + (stat.runs || 0) + (stat.rbi || 0);
-        } else {
-          val = stat[mlbKey];
+    const fetchPromise = (async () => {
+      try {
+        // 2. Player ID lookup (session cache)
+        const idKey = `mlb__${playerName}`;
+        let playerId = _mlbPlayerIdCache[idKey];
+        if (playerId === undefined) {
+          const searchRes = await fetch(`https://statsapi.mlb.com/api/v1/people/search?names=${encodeURIComponent(playerName)}&sportIds=1`);
+          if (!searchRes.ok) return null;
+          const searchData = await searchRes.json();
+          const match = (searchData.people || []).find(p => {
+            const n = (p.fullName || '').toLowerCase();
+            return n === playerName.toLowerCase() || n.includes(playerName.toLowerCase().split(' ').pop());
+          });
+          playerId = match ? match.id : null;
+          _mlbPlayerIdCache[idKey] = playerId;
         }
-        if (val == null) continue;
-        val = parseFloat(val);
-        if (isNaN(val)) continue;
-        const isHome = s.isHome || false;
-        const gameDate = s.date || null;
-        entries.push({ val, isHome, gameDate });
-      }
-      if (entries.length) return entries;
-    }
-    return null;
+        if (!playerId) return null;
+
+        // 3. Fetch hitting + pitching gamelog in parallel (was sequential)
+        const mlbSeason = new Date().getFullYear();
+        const [hitRes, pitRes] = await Promise.all([
+          fetch(`https://statsapi.mlb.com/api/v1/people/${playerId}/stats?stats=gameLog&season=${mlbSeason}&group=hitting`),
+          fetch(`https://statsapi.mlb.com/api/v1/people/${playerId}/stats?stats=gameLog&season=${mlbSeason}&group=pitching`),
+        ]);
+        const hitData = hitRes.ok ? await hitRes.json() : null;
+        const pitData = pitRes.ok ? await pitRes.json() : null;
+        const log = {
+          hitting: hitData ? ((hitData.stats||[])[0]?.splits || []) : [],
+          pitching: pitData ? ((pitData.stats||[])[0]?.splits || []) : [],
+        };
+        setGamelogCache(glCacheKey, log);
+        return log;
+      } catch { return null; }
+      finally { delete _gamelogInFlight[glCacheKey]; }
+    })();
+    _gamelogInFlight[glCacheKey] = fetchPromise;
+    const log = await fetchPromise;
+    if (!log) return null;
+    return _mlbExtractEntries(log.hitting, statKey) || _mlbExtractEntries(log.pitching, statKey);
   } catch { return null; }
 }
 
@@ -2036,7 +2104,14 @@ function getCache(k)   {
   } catch { return null; }
 }
 function setCache(k,d) { try { localStorage.setItem(cacheKey(k), JSON.stringify({ts:Date.now(),data:d})); } catch {} }
-function clearAllCache(){ Object.keys(localStorage).filter(k=>k.startsWith('bm_') && k !== HISTORY_KEY).forEach(k=>localStorage.removeItem(k)); }
+function clearAllCache(){
+  // Clear odds cache (bm_ prefix) and gamelog cache (gl_ prefix)
+  Object.keys(localStorage)
+    .filter(k => (k.startsWith('bm_') || k.startsWith('gl_')) && k !== HISTORY_KEY)
+    .forEach(k => localStorage.removeItem(k));
+  // Also clear in-memory dedup map so next load re-fetches
+  Object.keys(_gamelogInFlight).forEach(k => delete _gamelogInFlight[k]);
+}
 function updateCacheStatus(){
   const keys = Object.keys(localStorage).filter(k => k.startsWith('bm_') && k !== HISTORY_KEY);
   if (!keys.length) { document.getElementById('cacheStatus').textContent='Cache: empty'; return; }
@@ -3460,39 +3535,42 @@ async function buildSportTab(name, force) {
         <button class="btn" style="padding:3px 10px" onclick="filterPickCards(this,'all')">All</button>
       </div>`;
 
-    // Fetch ALL props in parallel first (no more 300ms sequential delays)
-    // Then render sequentially for correct HTML order
+    // Fetch ALL event props in parallel (Odds API calls)
     const propResults = await Promise.all(
       upcoming.map(ev =>
         fetchEventProps(s.key, ev.id, s.props, s.region, force).catch(() => ({ bookmakers: [] }))
       )
     );
 
-    // Render all props in parallel too (ESPN stats calls happen inside)
-    const propsHtmlResults = await Promise.all(
-      upcoming.map((ev, i) =>
-        renderProps(propResults[i], `${ev.home_team} vs ${ev.away_team}`, s.label, ev.id, ev.commence_time, ev.home_team).catch(() => '')
-      )
-    );
-
-    upcoming.forEach((ev, i) => {
+    // Render games progressively — paint each card as soon as its stats arrive.
+    // Show a skeleton card immediately so the tab isn't blank while proxies load.
+    container.innerHTML = html + upcoming.map((ev, i) => {
       const home=ev.home_team, away=ev.away_team;
       const h2hEv = (h2hBulk||[]).find(e=>e.id===ev.id);
       const h2h   = h2hEv ? bestOdds(h2hEv,'h2h') : {};
       const hO=h2h[home], aO=h2h[away];
-
-      html += `<div class="match-card">
+      const headHtml = `<div class="match-card" id="mc-${name}-${i}">
         <div class="match-title">
           <span>${home} vs ${away}</span>
           <span class="match-time">${gameDate(ev.commence_time)}</span>
-        </div>`;
-      if (hO && aO) html += winnerBox(home, away, hO, aO, null, ev.commence_time, s.label, ev.id);
-      html += propsHtmlResults[i];
-      html += '</div>';
-    });
+        </div>${hO && aO ? winnerBox(home, away, hO, aO, null, ev.commence_time, s.label, ev.id) : ''}
+        <div id="mc-props-${name}-${i}" style="color:#444;font-size:0.8em;padding:8px 0">⏳ Loading player props...</div>
+      </div>`;
+      return headHtml;
+    }).join('') + '</div>';
 
-    html += '</div>';
-    container.innerHTML = html;
+    // Now fill in each game's props as they come in (parallel, each updates DOM when ready)
+    await Promise.all(upcoming.map(async (ev, i) => {
+      try {
+        const propsHtml = await renderProps(propResults[i], `${ev.home_team} vs ${ev.away_team}`, s.label, ev.id, ev.commence_time, ev.home_team);
+        const el = document.getElementById(`mc-props-${name}-${i}`);
+        if (el) el.outerHTML = propsHtml;
+      } catch {
+        const el = document.getElementById(`mc-props-${name}-${i}`);
+        if (el) el.innerHTML = '';
+      }
+    }));
+
     stampTab(name);
   } catch(e) {
     container.innerHTML = `<div class="error">⚠ ${s.label} error: ${e.message}</div>`;
