@@ -427,17 +427,41 @@ async function nbaProxyGamelog(playerName, statKey, line) {
       return data ? _nbaExtractEntries(data, statKey) : null;
     }
 
-    // 3. Fetch (90s timeout — Render cold start can take 30-50s)
+    // 3. Fetch — try Statmuse first (fresher, 30-min cache on server)
+    //    Fall back to nba_api if player slug not in map or Statmuse fails
     const fetchPromise = (async () => {
       try {
-        const ctrl = new AbortController();
-        const timer = setTimeout(() => ctrl.abort(), 90000);
-        let res;
-        try { res = await fetch(`${NBA_PROXY}/api/nba/player/${encodeURIComponent(playerName)}/gamelog`, { signal: ctrl.signal }); }
-        finally { clearTimeout(timer); }
-        if (!res || !res.ok) return null;
-        const data = await res.json();
-        if (!data.games || !data.games.length) return null;
+        // ── Statmuse attempt (15s timeout — fast SSR, no cold start) ──
+        let data = null;
+        try {
+          const smRes = await fetch(
+            `${NBA_PROXY}/api/nba/player/${encodeURIComponent(playerName)}/gamelog/statmuse`,
+            { signal: AbortSignal.timeout(15000) }
+          );
+          if (smRes.ok) {
+            const smData = await smRes.json();
+            // Statmuse response uses same games[] format — wrap to match nba_api shape
+            if (smData.games && smData.games.length) {
+              // Add min/is_home defaults so _nbaExtractEntries works
+              smData.games = smData.games.map(g => ({ ...g, min: g.min ?? 20 }));
+              data = smData;
+            }
+          }
+        } catch { /* Statmuse failed — fall through to nba_api */ }
+
+        // ── nba_api fallback (90s timeout — Render cold start) ──
+        if (!data) {
+          const ctrl = new AbortController();
+          const timer = setTimeout(() => ctrl.abort(), 90000);
+          let res;
+          try { res = await fetch(`${NBA_PROXY}/api/nba/player/${encodeURIComponent(playerName)}/gamelog`, { signal: ctrl.signal }); }
+          finally { clearTimeout(timer); }
+          if (!res || !res.ok) return null;
+          const raw = await res.json();
+          if (!raw.games || !raw.games.length) return null;
+          data = raw;
+        }
+
         setGamelogCache(cacheKey, data);
         return data;
       } catch { return null; }
