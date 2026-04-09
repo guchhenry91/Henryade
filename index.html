@@ -1435,41 +1435,130 @@ const MARKET_STAT_KEY = {
   pitcher_earned_runs:     { mlb: 'earnedRuns'                                         },
 };
 
-// Known team name aliases — Odds API name → canonical, ESPN may use either
-// Add new entries here when a team fails to grade
+// Known team name aliases — covers all common ESPN ↔ Odds API name mismatches
+// Each entry maps one form to all other known forms (bidirectional via resolve())
 const TEAM_ALIASES = {
-  'paris saint-germain': ['paris sg', 'psg', 'paris saint germain'],
-  'paris sg':            ['paris saint-germain', 'psg', 'paris saint germain'],
-  'manchester city':     ['man city', 'man. city'],
-  'manchester united':   ['man utd', 'man united', 'man. united'],
-  'atletico madrid':     ['atletico de madrid', 'atletico', 'atletico madrid cf'],
-  'internazionale':      ['inter milan', 'inter', 'fc internazionale'],
-  'ac milan':            ['milan'],
-  'bayern munich':       ['fc bayern munchen', 'fc bayern', 'bayern'],
-  'bayer leverkusen':    ['leverkusen', 'bayer 04 leverkusen'],
-  'rb leipzig':          ['rasenballsport leipzig', 'red bull leipzig'],
-  'borussia dortmund':   ['bvb', 'dortmund'],
-  'newcastle united':    ['newcastle'],
-  'tottenham hotspur':   ['tottenham', 'spurs'],
-  'west ham united':     ['west ham'],
-  'nottingham forest':   ['nottm forest', 'forest'],
-  'wolverhampton wanderers': ['wolves', 'wolverhampton'],
-  'brighton & hove albion':  ['brighton'],
-  'crystal palace':      ['palace'],
-  'real sociedad':       ['real sociedad de futbol'],
-  'athletic bilbao':     ['athletic club'],
-  'real betis':          ['betis', 'real betis balompie'],
+  // ── French ──────────────────────────────────────────────────────────────
+  'paris saint-germain':      ['paris sg', 'psg', 'paris saint germain'],
+  'olympique lyonnais':       ['lyon', 'ol lyon', 'olympique lyonnais fc'],
+  'olympique de marseille':   ['marseille', 'om marseille'],
+  'stade rennais':            ['rennes', 'stade rennais fc'],
+  'losc lille':               ['lille', 'losc'],
+  'ogc nice':                 ['nice'],
+  'rc lens':                  ['lens', 'racing club de lens'],
+  'as monaco':                ['monaco'],
+  'stade brestois':           ['brest', 'stade brestois 29'],
+  'rc strasbourg':            ['strasbourg', 'rc strasbourg alsace'],
+  'fc nantes':                ['nantes'],
+  'montpellier hsc':          ['montpellier'],
+  'toulouse fc':              ['toulouse'],
+  'le havre':                 ['le havre ac'],
+  // ── German ──────────────────────────────────────────────────────────────
+  'bayern munich':            ['fc bayern munchen', 'fc bayern munich', 'fc bayern', 'bayern'],
+  'bayer leverkusen':         ['bayer 04 leverkusen', 'leverkusen'],
+  'rb leipzig':               ['rasenballsport leipzig', 'red bull leipzig', 'leipzig'],
+  'borussia dortmund':        ['bvb', 'dortmund', 'bvb 09'],
+  'borussia monchengladbach': ['monchengladbach', 'mgladbach', 'gladbach', 'bmg'],
+  'eintracht frankfurt':      ['frankfurt', 'sge frankfurt'],
+  'vfb stuttgart':            ['stuttgart'],
+  'sc freiburg':              ['freiburg'],
+  'vfl wolfsburg':            ['wolfsburg'],
+  'vfl bochum':               ['bochum'],
+  'fc augsburg':              ['augsburg'],
+  'fc union berlin':          ['union berlin', '1 fc union berlin'],
+  'sv werder bremen':         ['werder bremen', 'bremen'],
+  'tsg hoffenheim':           ['hoffenheim', '1899 hoffenheim'],
+  'fc heidenheim':            ['heidenheim'],
+  'holstein kiel':            ['kiel'],
+  // ── Spanish ─────────────────────────────────────────────────────────────
+  'atletico madrid':          ['atletico de madrid', 'club atletico de madrid', 'atletico'],
+  'real betis':               ['real betis balompie', 'betis'],
+  'athletic bilbao':          ['athletic club', 'athletic club de bilbao'],
+  'real sociedad':            ['real sociedad de futbol'],
+  'deportivo alaves':         ['alaves', 'deportivo alaves cf'],
+  'getafe cf':                ['getafe'],
+  'ca osasuna':               ['osasuna'],
+  'rayo vallecano':           ['rayo'],
+  'ud las palmas':            ['las palmas'],
+  'cd leganes':               ['leganes'],
+  'real valladolid':          ['valladolid', 'real valladolid cf'],
+  'girona fc':                ['girona'],
+  'rc celta vigo':            ['celta vigo', 'celta'],
+  'sevilla fc':               ['sevilla'],
+  'valencia cf':              ['valencia'],
+  'villarreal cf':            ['villarreal'],
+  'ud almeria':               ['almeria'],
+  // ── Italian ─────────────────────────────────────────────────────────────
+  'internazionale':           ['inter milan', 'fc internazionale', 'inter', 'fc inter'],
+  'ac milan':                 ['milan'],
+  'ss lazio':                 ['lazio'],
+  'ssc napoli':               ['napoli'],
+  'as roma':                  ['roma'],
+  'atalanta bc':              ['atalanta'],
+  'acf fiorentina':           ['fiorentina'],
+  'torino fc':                ['torino'],
+  'udinese calcio':           ['udinese'],
+  'cagliari calcio':          ['cagliari'],
+  'genoa cfc':                ['genoa'],
+  'us lecce':                 ['lecce'],
+  'frosinone calcio':         ['frosinone'],
+  'hellas verona':            ['verona'],
+  'bologna fc':               ['bologna'],
+  'empoli fc':                ['empoli'],
+  'us salernitana':           ['salernitana'],
+  'venezia fc':               ['venezia'],
+  'como 1907':                ['como'],
+  'parma calcio':             ['parma'],
+  'monza':                    ['ac monza'],
+  // ── English ─────────────────────────────────────────────────────────────
+  'manchester city':          ['man city', 'man. city'],
+  'manchester united':        ['man utd', 'man united', 'man. united'],
+  'tottenham hotspur':        ['tottenham', 'spurs'],
+  'newcastle united':         ['newcastle'],
+  'west ham united':          ['west ham'],
+  'nottingham forest':        ['nottm forest', 'nott\'m forest', 'forest'],
+  'wolverhampton wanderers':  ['wolves', 'wolverhampton'],
+  'brighton & hove albion':   ['brighton', 'bha'],
+  'crystal palace':           ['palace'],
+  'leicester city':           ['leicester'],
+  'norwich city':             ['norwich'],
+  'sheffield united':         ['sheff utd', 'sheffield utd'],
+  'leeds united':             ['leeds'],
+  'ipswich town':             ['ipswich'],
+  'sunderland afc':           ['sunderland'],
+  'burnley fc':               ['burnley'],
+  'luton town':               ['luton'],
+  // ── Portuguese ──────────────────────────────────────────────────────────
+  'sl benfica':               ['benfica'],
+  'fc porto':                 ['porto'],
+  'sporting cp':              ['sporting lisbon', 'sporting clube de portugal', 'sporting'],
+  'sc braga':                 ['braga'],
+  // ── Dutch ───────────────────────────────────────────────────────────────
+  'ajax':                     ['afc ajax', 'ajax amsterdam'],
+  'psv eindhoven':            ['psv'],
+  'feyenoord':                ['feyenoord rotterdam'],
+  'az alkmaar':               ['az'],
+  // ── Scottish ────────────────────────────────────────────────────────────
+  'celtic fc':                ['celtic'],
+  'rangers fc':               ['rangers'],
+  // ── Other UCL regulars ───────────────────────────────────────────────────
+  'club brugge':              ['club brugge kv', 'brugge'],
+  'red star belgrade':        ['crvena zvezda', 'fk crvena zvezda'],
+  'shakhtar donetsk':         ['shakhtar'],
+  'dinamo zagreb':            ['gnk dinamo zagreb'],
+  'young boys':               ['bsc young boys'],
+  'slavia prague':            ['sk slavia prague', 'slavia praha'],
 };
 
 // Fuzzy name match — handles ESPN vs Odds API name variations
-// Checks: exact, aliases, last name, last-two-words, first-word city match
+// Check order: exact → alias table → last-word → last-two-words → first-word city → shared distinctive word
 function nameMatch(a, b) {
-  // Normalize Unicode accents: Jokić→Jokic, Dembélé→Dembele, Lafrenière→Lafreniere
+  // Normalize: strip accents (Jokić→Jokic), lowercase, remove non-alpha
   const n = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z\s]/g, '').trim();
   const [na, nb] = [n(a), n(b)];
   if (na === nb) return true;
 
-  // Alias check — resolve both sides through alias table
+  // ── Alias resolution ────────────────────────────────────────────────────
   const resolve = s => {
     for (const [canonical, aliases] of Object.entries(TEAM_ALIASES)) {
       if (s === n(canonical) || aliases.map(x => n(x)).includes(s)) {
@@ -1481,20 +1570,30 @@ function nameMatch(a, b) {
   const formsA = resolve(na), formsB = resolve(nb);
   if (formsA.some(fa => formsB.includes(fa))) return true;
 
-  // Last word match (for team names: "Warriors", "Lakers", etc.)
+  // ── Last word match (Warriors, Lakers, Bayern…) ─────────────────────────
   const lastA = na.split(' ').pop(), lastB = nb.split(' ').pop();
-  if (lastA.length >= 4 && lastA === lastB) return true; // min 4 chars to avoid "Jr" etc.
-  // Multi-word match for teams like Trail Blazers, Blue Jays, Red Sox, White Sox
+  if (lastA.length >= 4 && lastA === lastB) return true;
+
+  // ── Last-two-word match (Trail Blazers, Red Sox, White Sox…) ─────────────
   const lastTwo = s => s.split(' ').slice(-2).join(' ');
   if (lastTwo(na).length >= 8 && lastTwo(na) === lastTwo(nb)) return true;
-  // First-word (city) match for soccer teams — "Paris" matches "Paris Saint-Germain"
-  // Only for 5+ char first words to avoid false positives (e.g., "AS" Roma vs AS Monaco)
+
+  // ── First-word city match (Paris, Liverpool, Arsenal…) ──────────────────
+  // Min 5 chars prevents "AS Roma" matching "AS Monaco", "FC" matches, etc.
   const firstA = na.split(' ')[0], firstB = nb.split(' ')[0];
   if (firstA.length >= 5 && firstA === firstB) return true;
-  // For player names: require BOTH first AND last name present
-  const wordsA = na.split(' '), wordsB = nb.split(' ');
-  if (wordsA.length >= 2 && wordsB.length >= 2) {
-    if (wordsA[0] === wordsB[0] && wordsA[wordsA.length-1] === wordsB[wordsB.length-1]) return true;
+
+  // ── Shared distinctive word (6+ chars, not in skip-list) ────────────────
+  // Catches "Internazionale FC" vs "FC Internazionale Milano" etc.
+  const SKIP = new Set(['city','town','united','rovers','wanderers','athletic','sporting','real','club','royal','olympique','stade','racing','association']);
+  const wordsA = na.split(' ').filter(w => w.length >= 6 && !SKIP.has(w));
+  const wordsB = nb.split(' ').filter(w => w.length >= 6 && !SKIP.has(w));
+  if (wordsA.length && wordsB.length && wordsA.some(w => wordsB.includes(w))) return true;
+
+  // ── Player name match: both first + last name must agree ─────────────────
+  const pA = na.split(' '), pB = nb.split(' ');
+  if (pA.length >= 2 && pB.length >= 2) {
+    if (pA[0] === pB[0] && pA[pA.length-1] === pB[pB.length-1]) return true;
   }
   return false;
 }
