@@ -3216,19 +3216,55 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
     .sort((a,b) => b.prob - a.prob)
     .slice(0, 20); // Wider pool (was 10) — form/xG reranking can promote longer-priced names
 
-  // Fetch player stats from proxy — try Understat (xG/shots) first, fall back to ESPN scorers
+  // Fetch player stats — three-tier:
+  //   1. Statmuse FC per-player (last 5 games xG/shots — freshest, any league)
+  //   2. Understat season-level (EPL + La Liga only — deeper sample)
+  //   3. ESPN scorers fallback (goals/game only, no xG)
   if (espnLeague) {
     const leagueKey = SOCCER_LEAGUE_MAP[espnLeague.league] || 'epl';
     try {
       const ctrl = new AbortController();
       const timer = setTimeout(() => ctrl.abort(), 45000);
-      // Try Understat first (has xG, shots, xA — EPL + La Liga only)
+
+      // Tier 1: Statmuse FC — fetch top candidates in parallel (fast, 15s each)
+      // Limit to top 10 by odds to avoid too many requests
+      const smCandidates = list.slice(0, 10);
+      const smResults = await Promise.all(
+        smCandidates.map(async s => {
+          try {
+            const r = await fetch(
+              `${NBA_PROXY}/api/soccer/player/${encodeURIComponent(s.name)}/gamelog/statmuse`,
+              { signal: AbortSignal.timeout(12000) }
+            );
+            if (!r.ok) return null;
+            return await r.json();
+          } catch { return null; }
+        })
+      );
+      smCandidates.forEach((s, i) => {
+        const sm = smResults[i];
+        if (!sm || !sm.games || sm.games.length < 3) return;
+        const avg = sm.averages;
+        s.form = {
+          goalsPerGame:  avg.goals_per_game,
+          games:         sm.games_count,
+          goals:         Math.round(avg.goals_per_game * sm.games_count),
+          xgPerGame:     avg.xg_per_game,
+          shotsPerGame:  avg.shots_per_game,
+          sotPerGame:    avg.sot_per_game,
+          xa:            null,
+          source:        'statmuse',
+        };
+      });
+
+      // Tier 2: Understat season stats — fill in any player not enriched by Statmuse
       let playerData = null;
       try {
         const usRes = await fetch(`${NBA_PROXY}/api/soccer/players/${leagueKey}`, { signal: ctrl.signal });
         if (usRes && usRes.ok) playerData = (await usRes.json()).players || [];
       } catch {}
-      // Fall back to ESPN scorers if Understat doesn't cover this league
+
+      // Tier 3: ESPN scorers fallback if Understat also missing
       if (!playerData) {
         try {
           const scRes = await fetch(`${NBA_PROXY}/api/soccer/scorers/${leagueKey}`, { signal: ctrl.signal });
@@ -3243,8 +3279,10 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
       }
       clearTimeout(timer);
 
+      // Apply Understat/ESPN data only for players without Statmuse form
       if (playerData) {
         list.forEach(s => {
+          if (s.form?.source === 'statmuse') return; // already have better data
           const sLower = s.name.toLowerCase();
           const match = playerData.find(p =>
             p.name.toLowerCase() === sLower ||
@@ -3255,6 +3293,7 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
               goalsPerGame: match.goals_per_game, games: match.games, goals: match.goals,
               shots: match.shots, xg: match.xg, xgPerGame: match.xg_per_game,
               shotsPerGame: match.shots_per_game, xa: match.xa,
+              source: 'understat',
             };
           }
         });
@@ -3284,8 +3323,11 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
         : 1.0;
       // 45% odds + 40% form (was 55/35) — lean more on actual player data
       s.blendedProb = (s.prob * 0.45 + formProb * 0.40) * teamXGmult * xgBoost;
-      const xgTag = s.form.xg != null ? ` · xG:${s.form.xg} · ${s.form.shotsPerGame?.toFixed(1) || '?'} shots/g` : '';
-      s.formLabel = `${s.form.goalsPerGame.toFixed(2)} gpg (L${s.form.games})${xgTag}`;
+      const xgTag = (s.form.xgPerGame != null && s.form.xgPerGame > 0)
+        ? ` · xG:${s.form.xgPerGame.toFixed(2)}/g · ${s.form.shotsPerGame?.toFixed(1) || '?'} shots/g`
+        : (s.form.xg != null ? ` · xG:${s.form.xg} · ${s.form.shotsPerGame?.toFixed(1) || '?'} shots/g` : '');
+      const srcTag = s.form.source === 'statmuse' ? ' [L5]' : '';
+      s.formLabel = `${s.form.goalsPerGame.toFixed(2)} gpg (${s.form.games}g${srcTag})${xgTag}`;
     } else {
       s.blendedProb = s.prob * teamXGmult;
       s.formLabel = null;
