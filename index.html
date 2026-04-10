@@ -2996,8 +2996,8 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       const isHighVarNBA = isNBA &&
         ['player_points', 'player_assists', 'player_threes'].includes(p.market);
       if (isHighVarNBA) {
-        if ((p.modelProb || 0) < 0.70) return false; // 70% for noisy NBA markets
-        if (p.edge < 4) return false;                 // 4% edge minimum
+        if ((p.modelProb || 0) < 0.67) return false; // 67% for noisy NBA markets (was 70%, too tight)
+        if (p.edge < 3) return false;                 // 3% edge minimum
       }
 
       // NHL noisy markets: goals/points are noisier — keep 68% threshold
@@ -3018,8 +3018,8 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       if (p.dataFlags && p.dataFlags.some(f =>
         /stats data \d+d old/i.test(f) && parseInt(f.match(/(\d+)d/)?.[1]) >= 7 ||  // 7d+ stale stats
         /only [12] games? of data/i.test(f) ||                                       // 1-2 games only
-        /edge \+\d+% is unusually high/i.test(f) ||                                  // edge 20%+ suspicious
-        /no player stats loaded/i.test(f)                                             // no stats at all
+        /edge \+\d+% is unusually high/i.test(f)                                     // edge 20%+ suspicious
+        // NOTE: "no player stats loaded" is no longer a hard kill — odds-only picks allowed at lower confidence
       )) return false;
       return true;
     })
@@ -3050,7 +3050,19 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     ? `<div style="font-size:0.72em;color:#ff6644;margin-bottom:8px">🚑 Filtered out (injury/doubtful): ${injuredNames.join(', ')}</div>`
     : '';
 
-  if (!props.length) return injuryNote + `<div class="no-games">No qualifying player props.</div>`;
+  if (!props.length) {
+    const bookCount = (propData.bookmakers||[]).length;
+    const rawCount = Object.values(lines).filter(p => p.bestOver > 0 && p.bestUnder > 0).length;
+    const afterScore = scored.length;
+    const debugMsg = bookCount === 0
+      ? `No props posted yet by books (0 bookmakers returned).`
+      : rawCount === 0
+      ? `Books returned ${bookCount} bookmaker(s) but no two-sided props found.`
+      : afterScore === 0
+      ? `${rawCount} raw props found across ${bookCount} books — all filtered by score/edge/threshold. Market may not be open yet or model probability too low.`
+      : `${rawCount} raw props → ${afterScore} scored → 0 passed final filter. Edge/hit-rate/variance thresholds blocked all.`;
+    return injuryNote + `<div class="no-games" style="font-size:0.78em">No qualifying player props. <span style="color:#444">${debugMsg}</span></div>`;
+  }
 
   // ── SAFE PICKS: STRICT — only the most winnable props. Previous 2/4 rate was too loose. ──
   const safePicks = scored.filter(p => {
