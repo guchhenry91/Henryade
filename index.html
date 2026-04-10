@@ -2088,8 +2088,8 @@ function getConfidenceDecay(sportLabel) {
   if (last10.length >= 10 && last10Losses >= 7) {
     return { multiplier: 0.50, label: `⚠️ ${sportClean} cold: ${10 - last10Losses}W/${last10Losses}L last 10 — exposure halved` };
   }
-  if (last7.length >= 7 && last7Losses >= 5) {
-    return { multiplier: 0.70, label: `⚠️ ${sportClean} cooling: ${7 - last7Losses}W/${last7Losses}L last 7 — exposure reduced 30%` };
+  if (last7.length >= 7 && last7Losses >= 6) {
+    return { multiplier: 0.80, label: `⚠️ ${sportClean} cooling: ${7 - last7Losses}W/${last7Losses}L last 7 — exposure reduced 20%` };
   }
   // Opposite: if winning streak, slight boost
   const last7Wins = last7.filter(p => p.result === 'W').length;
@@ -2949,12 +2949,13 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
         if (p.edge < 4) return false;                 // 4% edge minimum
       }
 
-      // NHL noisy markets: goals/points much noisier than shots on goal
+      // NHL noisy markets: goals/points are noisier — keep 68% threshold
+      // shots_on_goal uses standard 65% (it's more consistent, lines up better with Statmuse data)
       const isNoisyNHL = isNHL &&
         ['player_points', 'player_goals'].includes(p.market);
       if (isNoisyNHL) {
-        if ((p.modelProb || 0) < 0.72) return false; // 72% for noisy NHL (stricter than NBA)
-        if (p.edge < 5) return false;                 // 5% edge minimum
+        if ((p.modelProb || 0) < 0.68) return false; // 68% for noisy NHL goals/points (was 72%)
+        if (p.edge < 4) return false;                 // 4% edge minimum (was 5%)
       }
 
       return true;
@@ -3027,6 +3028,10 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
 
     // Must be consistent (not volatile) — volatile players are unpredictable
     if (p.statResult.consistencyTag === '🎲 Volatile') return false;
+
+    // NHL shots on goal excluded from safe bets — all 3 recent safe-bet losses were NHL SOG
+    const isNHL = (sportLabel || '').toUpperCase().includes('NHL') || p.league === 'nhl';
+    if (isNHL && p.market === 'player_shots_on_goal') return false;
 
     // Suspicious edge combos
     if (p.edge > 15 && parseFloat(p.c.pct) < 53) return false;
@@ -3420,11 +3425,30 @@ async function buildSoccer(force) {
   for (let lgIdx = 0; lgIdx < leagues.length; lgIdx++) {
     const lg = leagues[lgIdx];
     try {
+      // La Liga primera teams only — filter out segunda división teams that bleed in via Odds API
+      const LA_LIGA_PRIMERA = new Set([
+        'real madrid','barcelona','atletico madrid','athletic bilbao','real sociedad',
+        'real betis','villarreal','valencia','sevilla','osasuna','celta vigo',
+        'girona','getafe','deportivo alaves','rayo vallecano','mallorca',
+        'las palmas','espanyol','real valladolid','leganes','ud las palmas',
+        'cd leganes','deportivo alaves','alaves',
+      ]);
+      const n = s => (s||'').toLowerCase().replace(/[^a-z\s]/g,'').trim();
+      const isLaLiga = lg.key.includes('la_liga');
+
       const events = leagueOdds[lgIdx];
       const now = new Date();
       const today = events.filter(e=>{
         const d=new Date(e.commence_time);
-        return d>=now && d<=new Date(now.getTime()+4*24*60*60*1000);
+        if (!(d>=now && d<=new Date(now.getTime()+4*24*60*60*1000))) return false;
+        // Filter out segunda teams from La Liga feed
+        if (isLaLiga) {
+          const h = n(e.home_team), a = n(e.away_team);
+          const inPrimera = t => LA_LIGA_PRIMERA.has(t) ||
+            [...LA_LIGA_PRIMERA].some(k => t.includes(k) || k.includes(t));
+          if (!inPrimera(h) && !inPrimera(a)) return false; // both teams unknown = segunda
+        }
+        return true;
       });
 
       html += `<div class="sport-section"><div class="sport-title">${lg.label} <span style="color:#555;font-size:0.8em">(${today.length} upcoming)</span></div>`;
