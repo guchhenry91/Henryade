@@ -207,6 +207,7 @@
   <div class="tab" onclick="showTab('nhl',event)">🏒 NHL</div>
   <div class="tab" onclick="showTab('mlb',event)">⚾ MLB</div>
   <div class="tab" onclick="showTab('history',event)">📊 History</div>
+  <div class="tab" onclick="showTab('bankroll',event)">💼 Bankroll</div>
 </div>
 
 <div id="tab-safe"   class="tab-content"><div class="loading" style="color:#555">Load sport tabs first — safe picks collected automatically</div></div>
@@ -217,7 +218,8 @@
 <div id="tab-nfl"    class="tab-content"><div class="loading" style="color:#555">Click 🏈 NFL tab to load picks</div></div>
 <div id="tab-nhl"    class="tab-content"><div class="loading" style="color:#555">Click 🏒 NHL tab to load picks</div></div>
 <div id="tab-mlb"     class="tab-content"><div class="loading" style="color:#555">Click ⚾ MLB tab to load picks</div></div>
-<div id="tab-history" class="tab-content"><div class="loading" style="color:#555">Click 📊 History tab to view picks</div></div>
+<div id="tab-history"  class="tab-content"><div class="loading" style="color:#555">Click 📊 History tab to view picks</div></div>
+<div id="tab-bankroll" class="tab-content"><div class="loading" style="color:#555">Load sport tabs first — bankroll tracker needs picks</div></div>
 
 <script>
 const API_KEY = '17b4d42651ab4e81ef298300544f5a21';
@@ -2200,17 +2202,19 @@ function showTab(name, e) {
     loadedTabs.add(name);
     if (name === 'soccer') {
       document.getElementById('tab-soccer').innerHTML = '<div class="loading">⚽ Fetching odds & form data...</div>';
-      buildSoccer(false).then(() => { buildAllTab(); buildSafeTab(); buildParlayTab(); });
+      buildSoccer(false).then(() => { buildAllTab(); buildSafeTab(); buildParlayTab(); buildBankrollTab(); });
     } else if (name === 'safe') {
       buildSafeTab();
     } else if (name === 'parlay') {
       buildParlayTab();
+    } else if (name === 'bankroll') {
+      buildBankrollTab();
     } else if (name === 'history') {
       buildHistoryTab();
     } else if (SPORT_TABS[name]) {
       const sportName = SPORT_TABS[name].label || name.toUpperCase();
       document.getElementById('tab-' + name).innerHTML = `<div class="loading">${sportName} — Fetching odds & player stats...</div>`;
-      buildSportTab(name, false).then(() => { buildAllTab(); buildSafeTab(); buildParlayTab(); });
+      buildSportTab(name, false).then(() => { buildAllTab(); buildSafeTab(); buildParlayTab(); buildBankrollTab(); });
     }
   }
 }
@@ -4525,6 +4529,243 @@ function buildParlayTab() {
   container.innerHTML = html;
 }
 
+// ── BANKROLL TRACKER ─────────────────────────────────────────────────────────
+const BK_KEY = 'bm_bankroll_v2';
+
+function getBankroll() {
+  try { return JSON.parse(localStorage.getItem(BK_KEY)) || {}; } catch { return {}; }
+}
+function setBankroll(amount) {
+  try {
+    const existing = getBankroll();
+    const data = { amount, setAt: Date.now(), startingAmount: existing.startingAmount || amount };
+    localStorage.setItem(BK_KEY, JSON.stringify(data));
+  } catch {}
+}
+
+// Half-Kelly stake calculation
+// Returns recommended stake in currency units (capped at 5% of bankroll for singles, 2% for parlays)
+function halfKellyStake(bankroll, modelProb, decimalOdds, isParlay = false) {
+  if (!bankroll || bankroll <= 0 || !modelProb || !decimalOdds || decimalOdds <= 1) return 0;
+  const b = decimalOdds - 1;
+  const p = Math.min(0.92, Math.max(0.51, modelProb));
+  const q = 1 - p;
+  const kelly = (p * b - q) / b;
+  const halfKelly = kelly / 2;
+  if (halfKelly <= 0) return 0;
+  const cap = isParlay ? 0.02 : 0.05; // 5% cap singles, 2% cap parlays
+  const stake = bankroll * Math.min(halfKelly, cap);
+  return Math.round(stake * 100) / 100;
+}
+
+function buildBankrollTab() {
+  const container = document.getElementById('tab-bankroll');
+  const bk = getBankroll();
+  const bankroll = bk.amount || null;
+  const starting = bk.startingAmount || bankroll;
+
+  // ── P&L from history ──────────────────────────────────────────────────────
+  const history = getHistory();
+  const settled  = history.filter(p => p.result && !p.parlay && p.type !== 'parlay' && p.type !== 'match_winner');
+  const wins     = settled.filter(p => p.result === 'W').length;
+  const losses   = settled.filter(p => p.result === 'L').length;
+  const voids    = settled.filter(p => p.result === 'V').length;
+
+  // Retrospective P&L: what would you have made using half-Kelly on a fixed £100 bank?
+  const simBank = 100;
+  let simPL = 0;
+  let flatUnits = 0; // flat £1 unit
+  settled.forEach(p => {
+    const prob  = Math.max(0.51, Math.min(0.92, (parseFloat(p.pct) || 55) / 100));
+    const odds  = parseFloat(p.odds) || 1.91;
+    const stake = halfKellyStake(simBank, prob, odds, false);
+    if (p.result === 'W') { simPL += stake * (odds - 1); flatUnits += (odds - 1); }
+    if (p.result === 'L') { simPL -= stake; flatUnits -= 1; }
+  });
+  const simROI = simBank > 0 ? (simPL / simBank * 100) : 0;
+
+  // Actual P&L if user set a bankroll
+  let actualPL = null;
+  if (bankroll && settled.length) {
+    let runningBank = starting;
+    actualPL = 0;
+    settled.forEach(p => {
+      const prob  = Math.max(0.51, Math.min(0.92, (parseFloat(p.pct) || 55) / 100));
+      const odds  = parseFloat(p.odds) || 1.91;
+      const stake = halfKellyStake(runningBank, prob, odds, false);
+      if (p.result === 'W') { const profit = stake * (odds - 1); actualPL += profit; runningBank += profit; }
+      if (p.result === 'L') { actualPL -= stake; runningBank -= stake; }
+    });
+  }
+
+  // ── Build parlay combos (same logic as buildParlayTab) ─────────────────────
+  const usedMatches = new Set();
+  const uncorrelated = [...allSafePicks]
+    .sort((a, b) => (b.modelProb || 0) - (a.modelProb || 0))
+    .filter(p => {
+      if (usedMatches.has(p.matchLabel)) return false;
+      usedMatches.add(p.matchLabel);
+      return true;
+    });
+
+  function buildCombo(legs) {
+    let combinedProb = 1, combinedOdds = 1;
+    legs.forEach(p => {
+      combinedProb *= (p.modelProb || 0.5);
+      combinedOdds *= (p.c.pick === 'OVER' ? p.bestOver : p.bestUnder) || 1.5;
+    });
+    const impliedProb = 1 / combinedOdds;
+    const edge = (combinedProb - impliedProb) * 100;
+    return { legs, combinedProb, combinedOdds, impliedProb, edge };
+  }
+
+  const allCombos = [];
+  // 2-leg
+  for (let i = 0; i < Math.min(uncorrelated.length, 6); i++)
+    for (let j = i + 1; j < Math.min(uncorrelated.length, 8); j++)
+      allCombos.push(buildCombo([uncorrelated[i], uncorrelated[j]]));
+  // 3-leg
+  if (uncorrelated.length >= 3) allCombos.push(buildCombo(uncorrelated.slice(0, 3)));
+  // 4-leg
+  if (uncorrelated.length >= 4) allCombos.push(buildCombo(uncorrelated.slice(0, 4)));
+
+  // Best combo per leg count
+  const bestByLegs = {};
+  allCombos.filter(c => c.edge > 0 && c.combinedProb >= 0.15).forEach(c => {
+    const n = c.legs.length;
+    if (!bestByLegs[n] || c.edge > bestByLegs[n].edge) bestByLegs[n] = c;
+  });
+  const topParlays = Object.values(bestByLegs).sort((a, b) => b.combinedProb - a.combinedProb);
+
+  // ── HTML ──────────────────────────────────────────────────────────────────
+  const fmt  = v => v == null ? '—' : (v >= 0 ? '+' : '') + '£' + Math.abs(v).toFixed(2);
+  const fmtU = v => (v >= 0 ? '+' : '') + v.toFixed(2) + 'u';
+
+  let html = `<div style="max-width:680px;margin:0 auto;padding:10px 0">`;
+
+  // ── Bankroll setup card ───────────────────────────────────────────────────
+  html += `<div class="match-card" style="border-color:#ffcc0040;margin-bottom:12px">
+    <div style="color:#ffcc00;font-weight:700;font-size:0.85em;margin-bottom:12px;letter-spacing:1px">💼 MY BANKROLL</div>
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+      <span style="color:#888;font-size:0.82em">Current bankroll:</span>
+      <input id="bk-input" type="number" min="1" step="1"
+        value="${bankroll || ''}" placeholder="e.g. 500"
+        style="background:#111;border:1px solid #333;color:#fff;padding:6px 10px;border-radius:6px;width:110px;font-size:0.85em"
+        onkeydown="if(event.key==='Enter')document.getElementById('bk-save').click()" />
+      <button id="bk-save" class="btn" style="padding:5px 14px;font-size:0.8em"
+        onclick="const v=parseFloat(document.getElementById('bk-input').value);if(v>0){setBankroll(v);buildBankrollTab();}">
+        Save
+      </button>
+      ${bankroll ? `<span style="color:#555;font-size:0.75em">Set ${new Date(bk.setAt).toLocaleDateString('en-GB',{day:'numeric',month:'short'})}</span>` : ''}
+    </div>
+    ${bankroll ? `
+    <div style="display:flex;gap:16px;margin-top:14px;flex-wrap:wrap">
+      <div>
+        <div style="font-size:0.68em;color:#555;text-transform:uppercase;letter-spacing:1px">Bankroll</div>
+        <div style="font-size:1.3em;font-weight:700;color:#ffcc00">£${bankroll.toFixed(0)}</div>
+      </div>
+      ${actualPL !== null ? `
+      <div>
+        <div style="font-size:0.68em;color:#555;text-transform:uppercase;letter-spacing:1px">P&L (Half-Kelly)</div>
+        <div style="font-size:1.3em;font-weight:700;color:${actualPL>=0?'#00ff88':'#ff4444'}">${fmt(actualPL)}</div>
+      </div>` : ''}
+      <div>
+        <div style="font-size:0.68em;color:#555;text-transform:uppercase;letter-spacing:1px">Record</div>
+        <div style="font-size:1.1em;font-weight:700;color:#ddd">${wins}W ${losses}L ${voids}V</div>
+      </div>
+      <div>
+        <div style="font-size:0.68em;color:#555;text-transform:uppercase;letter-spacing:1px">ROI (sim £100)</div>
+        <div style="font-size:1.1em;font-weight:700;color:${simROI>=0?'#00ff88':'#ff4444'}">${simROI>=0?'+':''}${simROI.toFixed(1)}%</div>
+      </div>
+      <div>
+        <div style="font-size:0.68em;color:#555;text-transform:uppercase;letter-spacing:1px">Units</div>
+        <div style="font-size:1.1em;font-weight:700;color:${flatUnits>=0?'#00ff88':'#ff4444'}">${fmtU(flatUnits)}</div>
+      </div>
+    </div>` : '<div style="color:#555;font-size:0.78em;margin-top:10px">Enter your bankroll above to see stake recommendations</div>'}
+  </div>`;
+
+  // ── Singles stakes ────────────────────────────────────────────────────────
+  if (!bankroll) {
+    html += `<div class="no-games" style="margin:10px 0">Set your bankroll above to unlock stake sizing</div>`;
+  } else {
+    // Singles from safe picks
+    html += `<div class="match-card" style="margin-bottom:12px">
+      <div style="color:#00ff88;font-weight:700;font-size:0.85em;margin-bottom:10px;letter-spacing:1px">🎯 TODAY'S SINGLE STAKES</div>`;
+
+    if (!allSafePicks.length) {
+      html += `<div style="color:#555;font-size:0.8em">No safe picks yet — load sport tabs first</div>`;
+    } else {
+      const sortedSafe = [...allSafePicks].sort((a, b) => (b.modelProb || 0) - (a.modelProb || 0));
+      sortedSafe.forEach(p => {
+        const odds  = p.c.pick === 'OVER' ? p.bestOver : p.bestUnder;
+        const prob  = p.modelProb || 0.65;
+        const stake = halfKellyStake(bankroll, prob, odds, false);
+        const kellyPct = (stake / bankroll * 100).toFixed(1);
+        const stat  = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+        const payout = stake > 0 ? (stake * (odds - 1)).toFixed(2) : '0';
+        html += `<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #0d0d0d">
+          <div style="flex:1;min-width:0">
+            <div style="color:#ddd;font-size:0.82em;font-weight:600">${p.player} <span style="color:#555;font-weight:400">${stat} ${p.line}</span> <span style="color:#00ff88">${p.c.pick}</span></div>
+            <div style="color:#555;font-size:0.68em">${p.sportLabel || ''} · ${p.matchLabel || ''}</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;margin-left:10px">
+            <div style="color:#ffcc00;font-weight:700;font-size:0.95em">£${stake.toFixed(2)}</div>
+            <div style="color:#444;font-size:0.68em">${kellyPct}% · wins £${payout}</div>
+          </div>
+        </div>`;
+      });
+    }
+    html += `<div style="margin-top:8px;font-size:0.68em;color:#333">Half-Kelly · max 5% per bet · based on model probability + best available odds</div>
+    </div>`;
+
+    // ── Parlay stakes ────────────────────────────────────────────────────────
+    html += `<div class="match-card" style="margin-bottom:12px">
+      <div style="color:#ffcc00;font-weight:700;font-size:0.85em;margin-bottom:10px;letter-spacing:1px">🎰 TODAY'S PARLAY STAKES</div>`;
+
+    if (!topParlays.length) {
+      html += `<div style="color:#555;font-size:0.8em">No profitable parlays yet — need safe picks from 2+ different games</div>`;
+    } else {
+      topParlays.forEach(parlay => {
+        const stake   = halfKellyStake(bankroll, parlay.combinedProb, parlay.combinedOdds, true);
+        const kellyPct = (stake / bankroll * 100).toFixed(1);
+        const payout  = stake > 0 ? (stake * (parlay.combinedOdds - 1)).toFixed(2) : '0';
+        const rating  = parlay.combinedProb >= 0.45 ? '🟢' : parlay.combinedProb >= 0.30 ? '🟡' : '🟠';
+        html += `<div style="padding:10px 0;border-bottom:1px solid #0d0d0d">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <div>
+              <span style="color:#ffcc00;font-weight:700;font-size:0.85em">${parlay.legs.length}-Leg Parlay ${rating}</span>
+              <span style="color:#444;font-size:0.72em;margin-left:6px">@ ${parlay.combinedOdds.toFixed(2)} · Model ${(parlay.combinedProb*100).toFixed(1)}% · Edge +${parlay.edge.toFixed(1)}%</span>
+            </div>
+            <div style="text-align:right">
+              <div style="color:#ffcc00;font-weight:700;font-size:0.95em">£${stake.toFixed(2)}</div>
+              <div style="color:#444;font-size:0.68em">${kellyPct}% · wins £${payout}</div>
+            </div>
+          </div>
+          ${parlay.legs.map(p => {
+            const s = p.market.replace(/^(player_|batter_|pitcher_)/,'').replace(/_/g,' ').toUpperCase();
+            return `<div style="font-size:0.72em;color:#555;padding:2px 0 2px 8px;border-left:2px solid #1a1a1a">
+              ${p.player} ${s} ${p.line} <span style="color:#00ff88">${p.c.pick}</span>
+              <span style="color:#333;margin-left:4px">${(p.modelProb*100).toFixed(0)}%</span>
+            </div>`;
+          }).join('')}
+        </div>`;
+      });
+    }
+    html += `<div style="margin-top:8px;font-size:0.68em;color:#333">Half-Kelly · max 2% per parlay · best combo per leg count, correlated legs removed</div>
+    </div>`;
+
+    // ── Simulation note ───────────────────────────────────────────────────────
+    html += `<div style="padding:10px 12px;background:#050505;border:1px solid #111;border-radius:8px;font-size:0.72em;color:#444;line-height:1.6">
+      <span style="color:#555">ℹ️</span> Stakes use <strong style="color:#666">Half-Kelly criterion</strong> — mathematically optimal for long-run bankroll growth.
+      Full Kelly maximises growth but is aggressive; half-Kelly halves drawdowns while keeping ~75% of the edge.
+      The CLV tracker (History tab) will validate whether these stakes are genuinely +EV over time.
+    </div>`;
+  }
+
+  html += `</div>`;
+  container.innerHTML = html;
+}
+
 function buildAllTab() {
   const container = document.getElementById('tab-all');
   let html = '';
@@ -4609,6 +4850,7 @@ async function refreshAll(force=false) {
   buildAllTab();
   buildSafeTab();
   buildParlayTab();
+  buildBankrollTab();
 
   // History tab loads on startup (no API calls, just localStorage)
   buildHistoryTab();
