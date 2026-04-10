@@ -2957,11 +2957,11 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       const isNBA = sport.includes('NBA');
       const isNHL = sport.includes('NHL');
       const isOver = p.c.pick === 'OVER';
-      // OVER: 70% for NBA/NHL, 65% for MLB. UNDER: 60% for all.
-      // NBA OVER at 0.68 (slightly softer — 0.70 was removing profitable bets)
-      // NHL OVER stays strict at 0.70 (thinner markets, more noise)
+      // OVER: 65% for NHL/MLB, 68% for NBA. UNDER: 60% for all.
+      // NHL was at 0.70 which blocked ALL picks when Statmuse proxy returns no data (modelProb=bookProb)
+      // Noisy NHL markets (goals/points) still get 68% via the market-specific filter below
       const minHitProb = isOver
-        ? (isNBA ? 0.68 : isNHL ? 0.70 : 0.65)
+        ? (isNBA ? 0.68 : 0.65)
         : 0.60;                               // UNDERs ride at 60%
 
       if (p.statResult) {
@@ -2971,10 +2971,11 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
 
         // Kill picks where actual L5 hit rate is 0% for the recommended direction
         // If OVER is recommended but player went OVER 0/5 times — that's betting against the data
-        // Use loose equality (== null) to catch BOTH null AND undefined
-        if (p.statResult.actualHitRate == null) return false; // no hit rate data = can't trust pick
-        const actualForDir = p.c.pick === 'OVER' ? p.statResult.actualHitRate : (1 - p.statResult.actualHitRate);
-        if (actualForDir <= 0.20) return false; // 0/5 or 1/5 = too low, kill
+        // Note: null actualHitRate means we have distribution data but no L5 — allow through at lower bar
+        if (p.statResult.actualHitRate != null) {
+          const actualForDir = p.c.pick === 'OVER' ? p.statResult.actualHitRate : (1 - p.statResult.actualHitRate);
+          if (actualForDir <= 0.20) return false; // 0/5 or 1/5 = too low, kill
+        }
 
         // Variance gate for NBA/NHL: block volatile players (variance > 2× mean)
         // Volatile = unpredictable = coin flip. Consistent players are where the edge is.
@@ -3476,12 +3477,15 @@ async function buildSoccer(force) {
     const lg = leagues[lgIdx];
     try {
       // La Liga primera teams only — filter out segunda división teams that bleed in via Odds API
-      const LA_LIGA_PRIMERA = new Set([
-        'real madrid','barcelona','atletico madrid','athletic bilbao','real sociedad',
-        'real betis','villarreal','valencia','sevilla','osasuna','celta vigo',
-        'girona','getafe','deportivo alaves','rayo vallecano','mallorca',
-        'las palmas','espanyol','real valladolid','leganes','ud las palmas',
-        'cd leganes','deportivo alaves','alaves',
+      // Known segunda / cup-only teams to BLOCK even if they play a primera team
+      const SEGUNDA_BLOCK = new Set([
+        'oviedo','real oviedo','elche','elche cf','levante','levante ud',
+        'sporting gijon','real sporting','sd eibar','eibar','fc andorra','andorra',
+        'racing santander','racing club','sd huesca','huesca','cartagena','fc cartagena',
+        'burgos','burgos cf','fc burgos','albacete','albacete bp','lugo','cd lugo',
+        'tenerife','cd tenerife','mirandes','cd mirandes','alcorcon','ad alcorcon',
+        'ponferradina','sd ponferradina','ibiza','ud ibiza','leganes','cd leganes',
+        'real valladolid','valladolid',
       ]);
       const n = s => (s||'').toLowerCase().replace(/[^a-z\s]/g,'').trim();
       const isLaLiga = lg.key.includes('la_liga');
@@ -3491,12 +3495,12 @@ async function buildSoccer(force) {
       const today = events.filter(e=>{
         const d=new Date(e.commence_time);
         if (!(d>=now && d<=new Date(now.getTime()+4*24*60*60*1000))) return false;
-        // Filter out segunda teams from La Liga feed
+        // Filter out known segunda división teams from La Liga feed
         if (isLaLiga) {
           const h = n(e.home_team), a = n(e.away_team);
-          const inPrimera = t => LA_LIGA_PRIMERA.has(t) ||
-            [...LA_LIGA_PRIMERA].some(k => t.includes(k) || k.includes(t));
-          if (!inPrimera(h) && !inPrimera(a)) return false; // both teams unknown = segunda
+          const isSegunda = t => SEGUNDA_BLOCK.has(t) ||
+            [...SEGUNDA_BLOCK].some(k => t.includes(k) || k.includes(t));
+          if (isSegunda(h) || isSegunda(a)) return false; // either team is segunda = remove
         }
         return true;
       });
