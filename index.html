@@ -3593,8 +3593,10 @@ async function buildSoccer(force) {
           const aAttack = (awayForm.awayGames >= 3 && awayForm.awayGoalsFor != null) ? awayForm.awayGoalsFor : awayForm.goalsFor;
           const homeDefense = (homeForm.homeGames >= 3 && homeForm.homeGoalsAg != null) ? homeForm.homeGoalsAg : homeForm.goalsAgainst;
 
-          const formHomeXG = (hAttack != null && awayDefense != null) ? hAttack * (awayDefense / leagueAvgGoals) : null;
-          const formAwayXG = (aAttack != null && homeDefense != null) ? aAttack * (homeDefense / leagueAvgGoals) : null;
+          // Apply home advantage multiplier (same as independentXG path: 1.06 home / 0.94 away)
+          const HOME_ADV = 1.06, AWAY_ADV = 0.94;
+          const formHomeXG = (hAttack != null && awayDefense != null) ? hAttack * (awayDefense / leagueAvgGoals) * HOME_ADV : null;
+          const formAwayXG = (aAttack != null && homeDefense != null) ? aAttack * (homeDefense / leagueAvgGoals) * AWAY_ADV : null;
 
           if (formHomeXG && formAwayXG && !isNaN(formHomeXG) && !isNaN(formAwayXG)) {
             // Blend 55% form, 45% odds (form is less reliable than xG)
@@ -3607,8 +3609,9 @@ async function buildSoccer(force) {
             homeXG = oddsXG.homeXG;
             awayXG = oddsXG.awayXG;
           }
-          homeXG = Math.max(0.4, Math.min(3.5, homeXG));
-          awayXG = Math.max(0.4, Math.min(3.5, awayXG));
+          // Match clamping to other paths: home [0.3–4.0], away [0.15–3.5]
+          homeXG = Math.max(0.3, Math.min(4.0, homeXG));
+          awayXG = Math.max(0.15, Math.min(3.5, awayXG));
         }
         // PATH 3: Odds-only (last resort — circular but better than nothing)
         else {
