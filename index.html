@@ -314,13 +314,17 @@ const ESPN_STAT_MAP = {
   // MLB pitchers
   pitcher_strikeouts:      { mlb: 'strikeouts' },
   pitcher_earned_runs:     { mlb: 'earnedRuns' },
+  // Soccer player props (US books — O/U markets)
+  player_shots:            { soccer: 'shots' },
+  player_shots_on_target:  { soccer: 'shots_on_target' },
 };
 
 const ESPN_LEAGUE_CFG = {
-  nba: { sport: 'basketball',       league: 'nba' },
-  nfl: { sport: 'americanfootball', league: 'nfl' },
-  nhl: { sport: 'hockey',           league: 'nhl' },
-  mlb: { sport: 'baseball',         league: 'mlb' },
+  nba:    { sport: 'basketball',       league: 'nba'   },
+  nfl:    { sport: 'americanfootball', league: 'nfl'   },
+  nhl:    { sport: 'hockey',           league: 'nhl'   },
+  mlb:    { sport: 'baseball',         league: 'mlb'   },
+  soccer: { sport: 'soccer',           league: 'eng.1' }, // used for soccer shot props
 };
 
 // Persistent caches — survive page refresh, avoid re-fetching ESPN data
@@ -887,6 +891,25 @@ async function getStatSignal(leagueShort, playerName, market, line, isHomeGame =
   } else if (leagueShort === 'nhl') {
     // NHL gamelog CORS-blocked from browser — use our Render proxy instead
     entries = await nhlProxyGamelog(playerName, statKey);
+  } else if (leagueShort === 'soccer') {
+    // Soccer shot props — Statmuse FC gamelog via proxy
+    try {
+      const ck = 'soccer_' + playerName.toLowerCase().replace(/\s+/g, '_');
+      const cached = getGamelogCache(ck);
+      let games = cached;
+      if (!games) {
+        const r = await fetch(`${NBA_PROXY}/api/soccer/player/${encodeURIComponent(playerName)}/gamelog/statmuse`,
+          { signal: AbortSignal.timeout(15000) });
+        if (r.ok) {
+          const d = await r.json();
+          if (d.games && d.games.length >= 3) { games = d.games; setGamelogCache(ck, games); }
+        }
+      }
+      if (games) {
+        const field = statKey === 'shots_on_target' ? 'shots_on_target' : 'shots';
+        entries = games.map(g => ({ val: g[field] ?? 0 }));
+      }
+    } catch {}
   } else {
     // NFL — still uses ESPN (off-season)
     const athleteId = await espnAthleteId(cfg.sport, cfg.league, playerName);
@@ -1362,19 +1385,36 @@ function saveOpeningOddsForPick(pickId, overOdds, underOdds, pickedDirection) {
   } catch {}
 }
 
-// Returns CLV label for history display — compares pick odds to closing odds
+// Saves closing line odds before game start (called from renderProps when game is imminent)
+function saveClosingOddsForPick(pickId, closeOver, closeUnder) {
+  try {
+    const stored = JSON.parse(localStorage.getItem(CLV_KEY)) || {};
+    if (stored[pickId]) {
+      stored[pickId].closeOver  = closeOver;
+      stored[pickId].closeUnder = closeUnder;
+      stored[pickId].closedAt   = Date.now();
+      localStorage.setItem(CLV_KEY, JSON.stringify(stored));
+    }
+  } catch {}
+}
+
+// Returns CLV label for history display — compares opening to closing odds
+// pickId MUST match the key used in saveOpeningOddsForPick: dateYYYY-MM-DD_player_market (no spaces/special chars)
 function getCLV(pickId, closeOver, closeUnder) {
   try {
     const stored = JSON.parse(localStorage.getItem(CLV_KEY)) || {};
     const opening = stored[pickId];
     if (!opening) return null;
     const dir = opening.pickedDirection;
-    const openOdds  = dir === 'OVER' ? opening.openOver  : opening.openUnder;
-    const closeOdds = dir === 'OVER' ? closeOver         : closeUnder;
+    const openOdds = dir === 'OVER' ? opening.openOver : opening.openUnder;
+    // Use passed-in closing odds first, then fall back to stored closing odds
+    const co = closeOver  || opening.closeOver;
+    const cu = closeUnder || opening.closeUnder;
+    const closeOdds = dir === 'OVER' ? co : cu;
     if (!openOdds || !closeOdds) return null;
     const openProb  = 1 / openOdds;
     const closeProb = 1 / closeOdds;
-    const clv = (openProb - closeProb) * 100; // positive = beat the close
+    const clv = (openProb - closeProb) * 100; // positive = you got better price than closing
     if (Math.abs(clv) < 1) return null;
     return {
       clv,
@@ -2681,11 +2721,17 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
 
   // Save opening lines for CLV tracking (first time we see these lines today)
   if (eventId) {
+    const hoursToGame = gameDate ? (new Date(gameDate).getTime() - Date.now()) / 3600000 : 99;
     candidates.forEach(p => {
       saveOpeningLine(eventId, p.player, p.market, p.bestOver, p.bestUnder);
       const pickId = `${todayET()}_${p.player}_${p.market}`.replace(/\W+/g,'_');
       const c = propConf(p.bestOver, p.bestUnder);
       if (c) saveOpeningOddsForPick(pickId, p.bestOver, p.bestUnder, c.pick);
+      // Snapshot closing odds when game is within 3 hours — this is the "near-closing" line
+      // Later refreshes overwrite with even fresher prices, always moving toward true close
+      if (hoursToGame >= 0 && hoursToGame < 3) {
+        saveClosingOddsForPick(pickId, p.bestOver, p.bestUnder);
+      }
     });
   }
 
@@ -3465,17 +3511,19 @@ async function buildSoccer(force) {
 
       const prefetched = await Promise.all(today.map(async ev => {
         const home = ev.home_team, away = ev.away_team;
-        // Fetch BTTS/DNB, home form, away form, goal scorers all in parallel
-        const [extraData, hForm, aForm, scorerData] = await Promise.all([
+        // Fetch BTTS/DNB, home form, away form, goal scorers + shot props all in parallel
+        const [extraData, hForm, aForm, scorerData, shotData] = await Promise.all([
           ev.id ? fetchEventProps(lg.key, ev.id, 'btts,draw_no_bet', 'uk', force).catch(() => null) : Promise.resolve(null),
           fetchTeamForm(espnLeague.sport, espnLeague.league, home).catch(() => null),
           fetchTeamForm(espnLeague.sport, espnLeague.league, away).catch(() => null),
           (lg.props && ev.id) ? fetchEventProps(lg.key, ev.id, 'player_goal_scorer_anytime', 'uk,eu,au', force).catch(() => null) : Promise.resolve(null),
+          // Shot props — US books only (DraftKings/FanDuel offer these for EPL + La Liga)
+          (lg.props && ev.id) ? fetchEventProps(lg.key, ev.id, 'player_shots_on_target,player_shots', 'us', force).catch(() => null) : Promise.resolve(null),
         ]);
-        return { ev, extraData, homeForm: hForm, awayForm: aForm, scorerData };
+        return { ev, extraData, homeForm: hForm, awayForm: aForm, scorerData, shotData };
       }));
 
-      for (const { ev, extraData, homeForm, awayForm, scorerData } of prefetched) {
+      for (const { ev, extraData, homeForm, awayForm, scorerData, shotData } of prefetched) {
         const h2h = bestOdds(ev,'h2h');
         const home=ev.home_team, away=ev.away_team;
         const hO=h2h[home], aO=h2h[away], dO=h2h['Draw'];
@@ -3630,6 +3678,20 @@ async function buildSoccer(force) {
           } catch(e) {
             html += `<div class="no-games" style="margin-top:8px">Goal scorer odds unavailable</div>`;
           }
+        }
+
+        // Shot props (US books) — player shots / shots on target over/under
+        if (lg.props && shotData && (shotData.bookmakers || []).length > 0) {
+          try {
+            // Pass 'soccer' as sportLabel so leagueShort resolves and Statmuse gamelog is used
+            const shotHtml = await renderProps(shotData, `${home} vs ${away}`, 'soccer', ev.id, ev.commence_time, home);
+            if (shotHtml && shotHtml.trim()) {
+              html += `<div style="margin-top:6px;padding:6px 0;border-top:1px solid #1a1a1a">
+                <div style="font-size:0.7em;color:#555;margin-bottom:4px;padding:0 4px">⚽ SHOT PROPS (US books)</div>
+                ${shotHtml}
+              </div>`;
+            }
+          } catch(e) { /* shot props optional — fail silently */ }
         }
 
         html += '</div>';
@@ -4087,10 +4149,14 @@ function buildHistoryTab() {
         <div style="font-size:0.72em;color:#555;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">CLV Summary</div>
         ${(() => {
           const clvPicks = settled.filter(p => {
-            const clv = getCLV(p.id, null, null);
+            const ck = `${dateToET(p.date)}_${p.player}_${p.market}`.replace(/\W+/g,'_');
+            const clv = getCLV(ck, null, null);
             return clv && clv.clv !== 0;
           });
-          const clvValues = clvPicks.map(p => getCLV(p.id, null, null).clv);
+          const clvValues = clvPicks.map(p => {
+            const ck = `${dateToET(p.date)}_${p.player}_${p.market}`.replace(/\W+/g,'_');
+            return getCLV(ck, null, null).clv;
+          });
           const avgCLV = clvValues.length ? (clvValues.reduce((a,b) => a+b, 0) / clvValues.length) : null;
           const positive = clvValues.filter(v => v > 0).length;
           if (avgCLV === null) return '<div style="font-size:0.82em;color:#333">No CLV data yet</div>';
@@ -4209,7 +4275,7 @@ function buildHistoryTab() {
         <td style="color:#bbb">${infoCell}${safeTag}${parlayTag}</td>
         <td>${pickCell}</td>
         <td>${resHtml}</td>
-        <td style="font-size:0.72em;color:${(() => { const clv = getCLV(p.id, null, null); return clv ? (clv.clv > 0 ? '#00ff88' : '#ff4444') : '#333'; })()}">${(() => { const clv = getCLV(p.id, null, null); return clv ? clv.label.split('(')[0].trim() : '—'; })()}</td>
+        <td style="font-size:0.72em;color:${(() => { const ck=`${dateToET(p.date)}_${p.player}_${p.market}`.replace(/\W+/g,'_'); const clv=getCLV(ck,null,null); return clv?(clv.clv>0?'#00ff88':'#ff4444'):'#333'; })()}">${(() => { const ck=`${dateToET(p.date)}_${p.player}_${p.market}`.replace(/\W+/g,'_'); const clv=getCLV(ck,null,null); return clv?clv.label.split('(')[0].trim():'—'; })()}</td>
         <td style="font-size:0.75em;color:${p.autoGraded?'#00ccff':'#444'}">${p.autoGraded?'🤖 Auto':'✋ Manual'}</td>
       </tr>`;
     });
