@@ -2349,7 +2349,8 @@ async function fetchEventProps(sport, eventId, markets, region, force=false) {
   updateTokens(res);
   if (!res.ok) throw new Error(`API ${res.status}`);
   const data = await res.json();
-  setCache(ck, data);
+  // Only cache if books returned actual props — empty = pre-game state, re-fetch every time
+  if ((data.bookmakers || []).length > 0) setCache(ck, data);
   return data;
 }
 
