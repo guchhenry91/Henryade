@@ -1551,7 +1551,7 @@ function propScore(pct, bookCount, vig, direction, calib, statsSignal = 0, lineM
 
 // ── Self-improvement: pick history & calibration ─────────────────────────────
 const HISTORY_KEY   = 'bm_picks_v1';
-const MIN_CALIBRATE = 10;  // picks with results needed before calibration kicks in
+const MIN_CALIBRATE = 30;  // picks with results needed before calibration kicks in
 
 function getHistory() {
   try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; } catch { return []; }
@@ -2005,12 +2005,21 @@ async function autoGrade(forceAll = false) {
           } else {
             // Grade player prop from box score summary
             const statKey = (MARKET_STAT_KEY[pick.market] || {})[grp.league];
-            if (!statKey) continue;
+            if (!statKey) {
+              const hp = history.find(x => x.id === pick.id);
+              if (hp && !hp.gradeError) hp.gradeError = `No stat key for ${pick.market}`;
+              continue;
+            }
 
             const sumRes = await fetch(
               `https://site.api.espn.com/apis/site/v2/sports/${grp.cfg.sport}/${grp.cfg.league}/summary?event=${matchEv.id}`
             );
-            if (!sumRes.ok) { console.warn(`Auto-grade: ESPN summary failed for event ${matchEv.id}`); continue; }
+            if (!sumRes.ok) {
+              const hp = history.find(x => x.id === pick.id);
+              if (hp && !hp.gradeError) hp.gradeError = `ESPN summary fetch failed for event ${matchEv.id}`;
+              console.warn(`Auto-grade: ESPN summary failed for event ${matchEv.id}`);
+              continue;
+            }
             const summary    = await sumRes.json();
             const actualStat = playerStatFromSummary(summary, pick.player, statKey);
             if (actualStat === null) {
@@ -2156,12 +2165,34 @@ function getConfidenceDecay(sportLabel) {
   if (last7.length >= 7 && last7Losses >= 6) {
     return { multiplier: 0.80, label: `⚠️ ${sportClean} cooling: ${7 - last7Losses}W/${last7Losses}L last 7 — exposure reduced 20%` };
   }
-  // Opposite: if winning streak, slight boost
-  const last7Wins = last7.filter(p => p.result === 'W').length;
-  if (last7.length >= 7 && last7Wins >= 6) {
-    return { multiplier: 1.10, label: `🔥 ${sportClean} hot: ${last7Wins}W/${7 - last7Wins}L last 7 — slight boost` };
-  }
   return { multiplier: 1.0, label: null };
+}
+
+function teamAbbrevCandidates(teamName) {
+  const words = (teamName || '')
+    .toUpperCase()
+    .replace(/[^A-Z\s]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean);
+  const candidates = new Set();
+  if (!words.length) return candidates;
+  candidates.add(words[0].slice(0, 3));
+  candidates.add(words.map(w => w[0]).join(''));
+  if (words.length >= 2) {
+    candidates.add((words[0][0] || '') + (words[1][0] || '') + (words[words.length - 1][0] || ''));
+    candidates.add((words[0].slice(0, 2) + (words[words.length - 1][0] || '')).slice(0, 3));
+  }
+  return candidates;
+}
+
+function inferIsHomeGame(playerTeamAbbrev, homeTeamName, awayTeamName) {
+  const abbrev = (playerTeamAbbrev || '').toUpperCase().replace(/[^A-Z]/g, '');
+  if (!abbrev) return null;
+  const homeMatches = teamAbbrevCandidates(homeTeamName).has(abbrev);
+  const awayMatches = teamAbbrevCandidates(awayTeamName).has(abbrev);
+  if (homeMatches && !awayMatches) return true;
+  if (awayMatches && !homeMatches) return false;
+  return null;
 }
 
 // ── PHASE 3: Model Drift Detection ──────────────────────────────────────────
@@ -2752,7 +2783,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     const hoursToGame = gameDate ? (new Date(gameDate).getTime() - Date.now()) / 3600000 : 99;
     candidates.forEach(p => {
       saveOpeningLine(eventId, p.player, p.market, p.bestOver, p.bestUnder);
-      const pickId = `${todayET()}_${p.player}_${p.market}`.replace(/\W+/g,'_');
+      const pickId = `${todayET()}_${eventId || 'noid'}_${p.player}_${p.market}_${p.line}`.replace(/\W+/g,'_');
       const c = propConf(p.bestOver, p.bestUnder);
       if (c) saveOpeningOddsForPick(pickId, p.bestOver, p.bestUnder, c.pick);
       // Snapshot closing odds when game is within 3 hours — this is the "near-closing" line
@@ -2825,10 +2856,14 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
           // Tier 3: Strong odds (65-75%) + very strong stats (>75%) → flip
           // Tier 4: Very strong odds (>75%) + extreme stats (>80%) + high hit rate → flip
           const shouldFlip =
-            (oddsLean < 57  && statsProb >= 55) ||
-            (oddsLean < 65  && statsProb >= 65) ||
-            (oddsLean < 75  && statsProb >= 75) ||
-            (oddsLean < 85  && statsProb >= 80 && statResult.actualHitRate >= 0.75);
+            !statResult.hasDataGap &&
+            statResult.games >= 5 &&
+            (
+              (oddsLean < 57  && statsProb >= 58) ||
+              (oddsLean < 65  && statsProb >= 68) ||
+              (oddsLean < 75  && statsProb >= 78) ||
+              (oddsLean < 85  && statsProb >= 82 && statResult.actualHitRate >= 0.75)
+            );
 
           if (shouldFlip) {
             c.pick = statsDirection;
@@ -2902,13 +2937,10 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       // Build our OWN projected stat line, then calculate P(OVER) from that.
       // This is independent of book odds — we compare our number to theirs for edge.
       // Detect home/away from player's team abbreviation vs match home team
-      let isHomeGame = null;
-      if (statResult && statResult.playerTeamAbbrev && homeTeamName) {
-        const abbrev = statResult.playerTeamAbbrev.toUpperCase();
-        const homeName = homeTeamName.toUpperCase();
-        // Check if home team name contains the abbreviation (e.g., "Boston Celtics" contains "BOS")
-        isHomeGame = homeName.includes(abbrev) || abbrev.includes(homeName.split(' ').pop()?.slice(0,3)?.toUpperCase());
-      }
+      const awayTeamName = (matchLabel.split(' vs ')[1] || '').trim();
+      const isHomeGame = statResult && statResult.playerTeamAbbrev
+        ? inferIsHomeGame(statResult.playerTeamAbbrev, homeTeamName, awayTeamName)
+        : null;
       const playerProjection = projectPlayerStat(statResult, gameOppFactor, restResult, isHomeGame, sportLabel || '');
 
       const bookProb = c.pick === 'OVER'
@@ -2985,7 +3017,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       // NHL/MLB OVERs at 65%. UNDERs at 60% for all (83% WR confirmed).
       // NBA OVERs raised to 78% — only pass if model is very confident
       const minHitProb = isOver
-        ? (isNBA ? 0.78 : 0.65)
+        ? (isNBA ? 0.68 : 0.65)
         : 0.60;                               // UNDERs ride at 60%
 
       if (p.statResult) {
@@ -3042,8 +3074,8 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       if (p.dataFlags && p.dataFlags.some(f =>
         /stats data \d+d old/i.test(f) && parseInt(f.match(/(\d+)d/)?.[1]) >= 7 ||  // 7d+ stale stats
         /only [12] games? of data/i.test(f) ||                                       // 1-2 games only
-        /edge \+\d+% is unusually high/i.test(f)                                     // edge 20%+ suspicious
-        // NOTE: "no player stats loaded" is no longer a hard kill — odds-only picks allowed at lower confidence
+        /edge \+\d+% is unusually high/i.test(f) ||                                  // edge 20%+ suspicious
+        /no player stats loaded/i.test(f)                                            // no stats = odds-only, too risky
       )) return false;
       return true;
     })
