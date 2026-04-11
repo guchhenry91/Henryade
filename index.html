@@ -1880,6 +1880,29 @@ function showToast(msg, color) {
   setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 500); }, 3500);
 }
 
+// Clear soccer picks that ESPN cannot grade (goal scorer, Champions League, La Liga events not found)
+function clearUnresolvableSoccerPicks() {
+  const SOCCER_LEAGUES = ['La Liga','Premier League','Champions League','Ligue 1','Bundesliga','Serie A','Eredivisie','UEFA','soccer'];
+  const history = getHistory();
+  const before = history.length;
+  const cleaned = history.filter(p => {
+    if (p.result) return true; // already graded — keep
+    const isSoccer = SOCCER_LEAGUES.some(l => (p.league||'').toLowerCase().includes(l.toLowerCase()) || (p.sport||'').toLowerCase().includes('soccer'));
+    if (!isSoccer) return true; // not soccer — keep
+    const isGoalScorer = (p.market||'').includes('anytime_goalscorer') || (p.market||'').includes('goalscorer');
+    const hasError = p.gradeError && (p.gradeError.includes('No ESPN event found') || p.gradeError.includes('No stat key') || p.gradeError.includes('No matching player'));
+    return !(isGoalScorer || hasError); // remove stuck soccer picks
+  });
+  const removed = before - cleaned.length;
+  if (removed === 0) {
+    showToast('No stuck soccer picks found', '#ffcc00');
+    return;
+  }
+  try { localStorage.setItem(HISTORY_KEY, JSON.stringify(cleaned)); } catch {}
+  showToast(`Cleared ${removed} unresolvable soccer pick${removed !== 1 ? 's' : ''}`, '#00ff88');
+  buildHistoryTab();
+}
+
 // Auto-grade all pending picks from before today using ESPN API
 // Tries both the pick date AND the day before (handles late-night games saved after midnight)
 async function autoGrade(forceAll = false) {
@@ -2957,11 +2980,11 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       const isNBA = sport.includes('NBA');
       const isNHL = sport.includes('NHL');
       const isOver = p.c.pick === 'OVER';
-      // OVER: 65% for NHL/MLB, 68% for NBA. UNDER: 60% for all.
-      // NHL was at 0.70 which blocked ALL picks when Statmuse proxy returns no data (modelProb=bookProb)
-      // Noisy NHL markets (goals/points) still get 68% via the market-specific filter below
+      // OVER: NBA OVERs blocked — live data shows 20% WR (1W/4L) vs 70% for NBA UNDERs
+      // NHL/MLB OVERs at 65%. UNDERs at 60% for all (83% WR confirmed).
+      // NBA OVERs raised to 78% — only pass if model is very confident
       const minHitProb = isOver
-        ? (isNBA ? 0.68 : 0.65)
+        ? (isNBA ? 0.78 : 0.65)
         : 0.60;                               // UNDERs ride at 60%
 
       if (p.statResult) {
@@ -3412,19 +3435,9 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
     s.conf = s.blendedProb >= 28 ? 'HIGH' : s.blendedProb >= 15 ? 'MED' : 'LOW';
   });
 
-  // Save top 3 scorer picks to history for tracking
-  list.slice(0, 3).forEach((s, i) => {
-    savePickToHistory({
-      id: `${todayET()}_scorer_${s.name}_${matchLabel}`.replace(/\W+/g,'_'),
-      date: new Date().toISOString(),
-      sport: sportLabel, match: matchLabel,
-      player: s.name, market: 'anytime_goalscorer',
-      line: 0.5, pick: 'OVER', // anytime = score 1+ goals
-      pct: s.blendedProb.toFixed(1), conf: s.conf,
-      score: s.blendedProb / 100, bookCount: s.books, vig: 0,
-      result: null,
-    });
-  });
+  // NOTE: Soccer goal scorer picks NOT saved to history
+  // ESPN API cannot grade anytime goalscorer props — they get permanently stuck as pending
+  // Grade manually if needed (click ✓W / ✗L in history tab)
 
   const xgNote = teamXGmult !== 1.0
     ? ` · xG mult ${teamXGmult.toFixed(2)}×${teamXGmult > 1.05 ? ' ↑ high-chance game' : teamXGmult < 0.95 ? ' ↓ low-chance game' : ''}`
@@ -4204,7 +4217,10 @@ function buildHistoryTab() {
     html += `<div style="margin-top:16px">
       <div class="section-hdr" style="display:flex;justify-content:space-between;align-items:center">
         <span>⏳ Pending (${pending.length}) — auto-grades next morning</span>
-        <button class="btn" onclick="autoGrade(true).then(n=>{if(n>0){buildHistoryTab();}else{showToast('No completed games found yet — games may still be in progress','#ffcc00');}}).catch(()=>showToast('Auto-grade error — try again','#ff4444'))">🤖 Auto-Grade Now</button>
+        <div style="display:flex;gap:8px">
+          <button class="btn" onclick="autoGrade(true).then(n=>{if(n>0){buildHistoryTab();}else{showToast('No completed games found yet — games may still be in progress','#ffcc00');}}).catch(()=>showToast('Auto-grade error — try again','#ff4444'))">🤖 Auto-Grade Now</button>
+          <button class="btn" style="background:#ff444422;border-color:#ff4444;color:#ff8888" onclick="clearUnresolvableSoccerPicks()">🧹 Clear Stuck Soccer Picks</button>
+        </div>
       </div>
       <table class="ptable">
         <tr><th>Date</th><th>Sport</th><th>Pick Info</th><th>Pick</th><th>Conf</th><th>Mark</th></tr>`;
