@@ -3026,8 +3026,8 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       // NHL/MLB OVERs at 65%. UNDERs at 60% for all (83% WR confirmed).
       // NBA OVERs raised to 78% — only pass if model is very confident
       const minHitProb = isOver
-        ? (isNBA ? 0.68 : 0.63)  // OVERs: 63% general (was 65%), NBA stays 68%
-        : 0.63;                   // UNDERs raised 60%→63% — reduce UNDER flood, keep only strong ones
+        ? (isNBA ? 0.68 : 0.65)  // OVERs: 65% general, NBA 68% (harder bar than UNDER)
+        : 0.63;                   // UNDERs at 63% — reduced UNDER flood, keep only strong ones
 
       if (p.statResult) {
         // USE FINAL MODEL PROBABILITY (includes projection adjustments) not raw stats
@@ -3040,6 +3040,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
         if (p.statResult.actualHitRate != null) {
           const actualForDir = p.c.pick === 'OVER' ? p.statResult.actualHitRate : (1 - p.statResult.actualHitRate);
           if (actualForDir <= 0.20) return false; // 0/5 or 1/5 = too low, kill
+          if (p.c.pick === 'UNDER' && actualForDir < 0.60) return false; // UNDER quality gate: L5 must be 60%+ for direction
         }
 
         // Variance gate for NBA/NHL: block volatile players (variance > 2× mean)
@@ -3058,7 +3059,9 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       }
 
       // NBA high-variance markets: points/assists/threes are noisier than rebounds/blocks
-      const isHighVarNBA = isNBA &&
+      // Only apply elevated threshold when stat data is present — if proxy is cold/no stats,
+      // fall through to standard edge check so these markets aren't blanket-blocked
+      const isHighVarNBA = isNBA && p.statResult &&
         ['player_points', 'player_assists', 'player_threes'].includes(p.market);
       if (isHighVarNBA) {
         if ((p.modelProb || 0) < 0.67) return false; // 67% for noisy NBA markets (was 70%, too tight)
