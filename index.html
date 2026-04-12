@@ -3026,8 +3026,8 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       // NHL/MLB OVERs at 65%. UNDERs at 60% for all (83% WR confirmed).
       // NBA OVERs raised to 78% — only pass if model is very confident
       const minHitProb = isOver
-        ? (isNBA ? 0.68 : 0.65)
-        : 0.60;                               // UNDERs ride at 60%
+        ? (isNBA ? 0.68 : 0.63)  // OVERs: 63% general (was 65%), NBA stays 68%
+        : 0.63;                   // UNDERs raised 60%→63% — reduce UNDER flood, keep only strong ones
 
       if (p.statResult) {
         // USE FINAL MODEL PROBABILITY (includes projection adjustments) not raw stats
@@ -3130,43 +3130,50 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     return injuryNote + `<div class="no-games" style="font-size:0.78em">No qualifying player props. <span style="color:#444">${debugMsg}</span></div>`;
   }
 
-  // ── SAFE PICKS: STRICT — only the most winnable props. Previous 2/4 rate was too loose. ──
+  // ── SAFE PICKS: STRICT — only the most winnable props ──
+  // Safe bet losses trace to: walks (binary/random), hits_runs_rbis (3-stat composite),
+  // NHL SOG (too volatile). Fix: block those markets, raise book consensus, tighten L5 requirement.
+  const SAFE_BLOCKED_MARKETS = new Set([
+    'batter_walks',           // binary event — batter gets a walk or doesn't, 50/50 noise
+    'batter_hits_runs_rbis',  // 3-stat composite — too much variance, swings wildly
+    'batter_strikeouts',      // highly pitcher-dependent, batter has little control
+    'pitcher_earned_runs',    // extremely matchup/bullpen dependent
+    'player_shots_on_goal',   // NHL SOG — all 3 recent safe-bet losses were this market
+    'player_turnovers',       // situational/garbage-time dependent
+  ]);
   const safePicks = scored.filter(p => {
-    if (p.c.conf === 'LOW') return false;                // no LOW confidence picks (14.3% WR)
-    if (!p.statResult) return false;                     // must have stats
+    if (p.c.conf === 'LOW') return false;                 // no LOW confidence picks
+    if (!p.statResult) return false;                      // must have stats
     if (p.statResult.hitProbOver == null) return false;   // must have distribution data
     if (p.statResult.actualHitRate == null) return false; // must have actual hit rate
-    if (p.bookCount < 3) return false;                   // 3+ books agree (tightened from 2)
-    if (p.vig < 0) return false;                         // no negative vig
-    if (p.vig > 0.10) return false;                      // vig under 10% (tightened from MAX_VIG 15%)
-    if (p.edge > 18) return false;                       // edge under 18% (tightened from 25%)
-    if (p.edge < 3) return false;                        // must have 3%+ real edge (not noise)
-    if (p.dataQuality === 'danger') return false;        // no danger-flagged picks
-    if (p.statResult.hasDataGap) return false;           // no gapped data
+    if (p.bookCount < 4) return false;                    // 4+ books agree (raised from 3)
+    if (p.vig < 0) return false;                          // no negative vig
+    if (p.vig > 0.08) return false;                       // vig under 8% (tightened from 10%)
+    if (p.edge > 18) return false;                        // edge under 18%
+    if (p.edge < 3) return false;                         // must have 3%+ real edge
+    if (p.dataQuality === 'danger') return false;         // no danger-flagged picks
+    if (p.statResult.hasDataGap) return false;            // no gapped data
+    if (SAFE_BLOCKED_MARKETS.has(p.market)) return false; // exclude volatile/binary markets
 
-    // Model probability must be 65%+ — USE FINAL modelProb (includes projection adjustments)
+    // Model probability must be 70%+ for safe bets (raised from 65%)
     const modelHitProb = p.modelProb || (p.c.pick === 'OVER' ? p.statResult.hitProbOver : p.statResult.hitProbUnder);
-    if (modelHitProb < 0.65) return false;
+    if (modelHitProb < 0.70) return false;
 
-    // Actual hit rate must be 75%+ in L5 (tightened from 60% — need 4/5 or 5/5 games hitting)
+    // Actual L5 hit rate must be 80%+ — need 4/5 or 5/5 games (raised from 75%)
     const actualHitForDir = p.c.pick === 'OVER' ? p.statResult.actualHitRate : (1 - p.statResult.actualHitRate);
-    if (actualHitForDir < 0.75) return false;
+    if (actualHitForDir < 0.80) return false;
 
-    // Model and actual must agree closely (tightened from 40% gap to 25%)
-    if (Math.abs(modelHitProb - actualHitForDir) > 0.25) return false;
+    // Model and actual must agree closely
+    if (Math.abs(modelHitProb - actualHitForDir) > 0.20) return false;
 
-    // Must be consistent (not volatile) — volatile players are unpredictable
+    // Must be consistent (not volatile)
     if (p.statResult.consistencyTag === '🎲 Volatile') return false;
-
-    // NHL shots on goal excluded from safe bets — all 3 recent safe-bet losses were NHL SOG
-    const isNHL = (sportLabel || '').toUpperCase().includes('NHL') || p.league === 'nhl';
-    if (isNHL && p.market === 'player_shots_on_goal') return false;
 
     // Suspicious edge combos
     if (p.edge > 15 && parseFloat(p.c.pct) < 53) return false;
 
     return true;
-  }).slice(0, 3);
+  }).slice(0, 2); // cap at 2 safe picks — fewer but higher quality
 
   // Collect safe picks for the global 💰 Safe Bets tab (dedup by player+market+match)
   safePicks.forEach(p => {
