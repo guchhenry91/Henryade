@@ -3022,7 +3022,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       const sl = (sportLabel||'').toUpperCase();
       const isColdProxy = !p.statResult && (sl.includes('NBA') || sl.includes('NHL') || sl.includes('SOCCER'));
       if (isColdProxy) return p.bookProb >= 0.54;
-      return p.score >= 0.25;
+      return p.score >= 0.12; // lowered 0.25→0.12: 2-book games with moderate stats signal (0.15-0.18) were failing
     })
     // ── Hard gate: block negative edge and low hit probability picks ──
     .filter(p => {
@@ -3116,14 +3116,16 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     })
     .sort((a, b) => b.score - a.score);
 
-  // Drop LOW confidence picks entirely — 169-pick data shows 14.3% win rate (1W/6L).
-  // Cold-proxy exception (NBA/NHL/Soccer): allow LOW conf if bookProb >= 0.54 (book shows conviction)
-  // Prioritize HIGH first, then MED backfill. Take up to 5 total.
+  // Drop LOW confidence picks — except when model probability is strong (63%+).
+  // Book implied prob (which sets conf) is vig-adjusted: NHL props at -115 → 53.5% → LOW conf.
+  // But if the model says 65%+ hit probability, the pick is good regardless of book juice level.
+  // Cold-proxy exception still applies when stats didn't load at all.
   const _sl = (sportLabel||'').toUpperCase();
   const isColdProxyContext = _sl.includes('NBA') || _sl.includes('NHL') || _sl.includes('SOCCER');
   const qualifiedPicks = scored.filter(p => {
     if (p.c.conf !== 'LOW') return true;
-    return isColdProxyContext && !p.statResult && p.bookProb >= 0.54;
+    if (isColdProxyContext && !p.statResult && p.bookProb >= 0.54) return true; // cold proxy
+    return (p.modelProb || 0) >= 0.63; // model quality gate: override LOW conf when model is confident
   });
   const highPicks = qualifiedPicks.filter(p => p.c.conf === 'HIGH');
   const medPicks  = qualifiedPicks.filter(p => p.c.conf === 'MED');
