@@ -2473,10 +2473,17 @@ function winnerBox(home, away, homeOdds, awayOdds, drawOdds, eventDate, sportLab
   else if (ap>=hp && ap>=dp) { winnerName=away; winnerPct=ap; }
   else { winnerName='Draw'; winnerPct=dp; }
 
-  const conf = winnerPct>=65 ? 'HIGH' : winnerPct>=55 ? 'MED' : 'LOW';
+  // NHL needs higher bar — hockey is high variance (goalie swings, 1-goal games, shootouts).
+  // Data shows 2W/5L (40%) on standard 65% threshold. Raise to 70% HIGH, 62% MED.
+  // Don't save LOW conf NHL winners to history — they're coin flips and pollute calibration.
+  const isNHL = (sportLabel||'').toUpperCase().includes('NHL');
+  const conf = isNHL
+    ? (winnerPct>=70 ? 'HIGH' : winnerPct>=62 ? 'MED' : 'LOW')
+    : (winnerPct>=65 ? 'HIGH' : winnerPct>=55 ? 'MED' : 'LOW');
 
   // Save this pick to the grading history so it can be auto-graded tomorrow
-  if (sportLabel && eventDate) {
+  // Skip LOW conf NHL winners — coin flips, not real signal
+  if (sportLabel && eventDate && (!isNHL || conf !== 'LOW')) {
     savePickToHistory({
       id:     `${dateToET(eventDate)}_${eventId || 'noid'}_match_${home}_${away}`.replace(/\W+/g, '_'),
       eventId: eventId || null,
