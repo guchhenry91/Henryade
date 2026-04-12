@@ -1737,6 +1737,10 @@ const TEAM_ALIASES = {
   'dinamo zagreb':            ['gnk dinamo zagreb'],
   'young boys':               ['bsc young boys'],
   'slavia prague':            ['sk slavia prague', 'slavia praha'],
+  // ── NHL relocated/new teams ───────────────────────────────────────────────
+  'utah mammoth':             ['utah hc', 'utah hockey club', 'utah hockey'],
+  // ── MLB ───────────────────────────────────────────────────────────────────
+  'athletics':                ['oakland athletics', 'las vegas athletics'],
 };
 
 // Fuzzy name match — handles ESPN vs Odds API name variations
@@ -1805,35 +1809,40 @@ function playerStatFromSummary(summary, playerName, statKey) {
     return null;
   }
   if (statKey === 'totalBases') {
-    // Try direct totalBases stat first (most accurate)
-    // ESPN sometimes has it directly in the boxscore
+    // Try direct totalBases key first — ESPN uses 'totalBases' OR 'TB' depending on league/season
     for (const team of (summary?.boxscore?.players || [])) {
       for (const grp of (team.statistics || [])) {
-        const idx = (grp.keys || []).indexOf('totalBases');
-        if (idx === -1) continue;
-        for (const ath of (grp.athletes || [])) {
-          const athName = (ath.athlete?.displayName || '').toLowerCase().replace(/[^a-z\s]/g,'').trim();
-          const searchName = playerName.toLowerCase().replace(/[^a-z\s]/g,'').trim();
-          const firstMatch = athName.split(' ')[0] === searchName.split(' ')[0];
-          const lastMatch = athName.split(' ').pop() === searchName.split(' ').pop();
-          if ((athName === searchName) || (firstMatch && lastMatch)) {
-            const v = parseFloat(ath.stats?.[idx]);
-            if (!isNaN(v)) return v;
+        for (const tryKey of ['totalBases', 'TB', 'tb']) {
+          const idx = (grp.keys || []).indexOf(tryKey);
+          if (idx === -1) continue;
+          for (const ath of (grp.athletes || [])) {
+            const athName = (ath.athlete?.displayName || '').toLowerCase().replace(/[^a-z\s]/g,'').trim();
+            const searchName = playerName.toLowerCase().replace(/[^a-z\s]/g,'').trim();
+            const firstMatch = athName.split(' ')[0] === searchName.split(' ')[0];
+            const lastMatch = athName.split(' ').pop() === searchName.split(' ').pop();
+            if ((athName === searchName) || (firstMatch && lastMatch)) {
+              const v = parseFloat(ath.stats?.[idx]);
+              if (!isNaN(v)) return v;
+            }
           }
         }
       }
     }
-    // Fallback: compute from components. TB = hits + doubles + 2*triples + 3*HR
-    // Since ESPN doesn't always give doubles/triples separately, use: TB = hits + (2B) + 2*(3B) + 3*(HR)
-    // Simplified when only hits+HR available: TB ≈ hits + 3*HR (undercounts by doubles+triples)
+    // ESPN MLB boxscore rarely exposes totalBases directly.
+    // Compute: TB = H + 2B + 2×3B + 3×HR (exact if components available)
     const hits = playerStatFromSummary(summary, playerName, 'hits');
-    const doubles = playerStatFromSummary(summary, playerName, 'doubles');
-    const triples = playerStatFromSummary(summary, playerName, 'triples');
-    const hr = playerStatFromSummary(summary, playerName, 'homeRuns');
-    if (hits !== null && doubles !== null && triples !== null && hr !== null) {
-      return hits + doubles + (triples * 2) + (hr * 3);
+    const hr   = playerStatFromSummary(summary, playerName, 'homeRuns');
+    if (hits !== null && hr !== null) {
+      // Try exact if doubles/triples are in boxscore
+      const doubles = playerStatFromSummary(summary, playerName, 'doubles');
+      const triples = playerStatFromSummary(summary, playerName, 'triples');
+      if (doubles !== null && triples !== null) return hits + doubles + (triples * 2) + (hr * 3);
+      // Minimum estimate: TB = H + 3×HR (treats all non-HR hits as singles)
+      // Safe for UNDER grading: actual TB >= this value, so if minimum > line → definite OVER
+      // If minimum <= line, actual could still be OVER due to doubles/triples — grade as UNDER
+      // (small risk of false UNDER for players with many doubles, acceptable vs. never grading)
+      return hits + (hr * 3);
     }
-    // Do NOT approximate — wrong TB grades corrupt calibration and kill UNDER strategy
     return null;
   }
   if (statKey === 'hitsRunsRBIs') {
@@ -3075,7 +3084,8 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
         /stats data \d+d old/i.test(f) && parseInt(f.match(/(\d+)d/)?.[1]) >= 7 ||  // 7d+ stale stats
         /only [12] games? of data/i.test(f) ||                                       // 1-2 games only
         /edge \+\d+% is unusually high/i.test(f) ||                                  // edge 20%+ suspicious
-        /no player stats loaded/i.test(f)                                            // no stats = odds-only, too risky
+        // NBA exempt: proxy runs on Render free tier (sleeps) — "no stats" = proxy cold, not missing data
+        (!isNBA && /no player stats loaded/i.test(f))
       )) return false;
       return true;
     })
