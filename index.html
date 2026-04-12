@@ -2070,7 +2070,8 @@ function getCalibration() {
   if (settled.length < MIN_CALIBRATE) return base;
 
   const wr = arr => arr.length ? arr.filter(x => x.result === 'W').length / arr.length : 0.5;
-  const factor = w => Math.max(0.65, Math.min(1.25, 1.0 + (w - 0.5) * 0.5));
+  // Tighter floor: 0.65→0.85 prevents calibration from crushing OVER scores below score threshold
+  const factor = w => Math.max(0.85, Math.min(1.15, 1.0 + (w - 0.5) * 0.3));
 
   const overPicks  = settled.filter(p => p.pick === 'OVER');
   const underPicks = settled.filter(p => p.pick === 'UNDER');
@@ -2878,6 +2879,9 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
             c.pick = statsDirection;
             c.pct  = statsProb.toFixed(1);
             c.conf = statsProb >= 75 ? 'HIGH' : statsProb >= 65 ? 'MED' : 'LOW';
+            // Swap op/up so bookProb reflects the new direction — prevents edge spiking 20%+
+            // and triggering the "unusually high edge" kill gate
+            const tmpOp = c.op; c.op = c.up; c.up = tmpOp;
             flipped = true;
           } else if (disagreement >= 30) {
             // Can't flip (odds too strong) but flag the disagreement
@@ -3011,18 +3015,20 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     .filter(p => p.vig <= MAX_VIG)
     .filter(p => parseFloat(p.c.pct) <= 80) // raised from 72 — some 73-80% picks have genuine edge
     // Removed hard 53% floor — score threshold (0.50) and edge already filter bad picks
-    // NBA cold-proxy fallback: stats don't load from Render free tier until warmed up.
-    // When no statResult, score≈0.08 and edge≈1.2% (both derived from book data only).
-    // Use bookProb >= 0.54 as the entry gate instead — at least one book at ~-117 or shorter.
+    // Cold-proxy fallback: NBA + NHL stats come from Render free tier (sleeps between requests).
+    // Soccer stats come from Statmuse proxy (also cold). Without stats, score≈0.08 and edge≈1.2%.
+    // Use bookProb >= 0.54 as the entry gate — at least one book at ~-117 or shorter.
     .filter(p => {
-      const isNBA = (sportLabel||'').toUpperCase().includes('NBA');
-      if (isNBA && !p.statResult) return p.bookProb >= 0.54;
+      const sl = (sportLabel||'').toUpperCase();
+      const isColdProxy = !p.statResult && (sl.includes('NBA') || sl.includes('NHL') || sl.includes('SOCCER'));
+      if (isColdProxy) return p.bookProb >= 0.54;
       return p.score >= 0.25;
     })
     // ── Hard gate: block negative edge and low hit probability picks ──
     .filter(p => {
-      const isNBA = (sportLabel||'').toUpperCase().includes('NBA');
-      if (isNBA && !p.statResult) return true; // bookProb gate upstream handles quality
+      const sl = (sportLabel||'').toUpperCase();
+      const isColdProxy = !p.statResult && (sl.includes('NBA') || sl.includes('NHL') || sl.includes('SOCCER'));
+      if (isColdProxy) return true; // bookProb gate upstream handles quality
       return p.edge >= 3;
     })
     .filter(p => {
@@ -3092,26 +3098,32 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     })
     // ── Hard gate: block picks with critical data quality issues ──
     .filter(p => {
+      // isNBA must be re-declared here — each .filter() is a separate closure
+      const sl = (sportLabel||'').toUpperCase();
+      const isNBA = sl.includes('NBA');
+      const isNHL = sl.includes('NHL');
+      const isSoccer = sl.includes('SOCCER');
       if (p.dataQuality === 'danger') return false; // 2+ flags = kill
       // Block specific critical flags even with only 1
       if (p.dataFlags && p.dataFlags.some(f =>
         /stats data \d+d old/i.test(f) && parseInt(f.match(/(\d+)d/)?.[1]) >= 7 ||  // 7d+ stale stats
         /only [12] games? of data/i.test(f) ||                                       // 1-2 games only
         /edge \+\d+% is unusually high/i.test(f) ||                                  // edge 20%+ suspicious
-        // NBA exempt: proxy runs on Render free tier (sleeps) — "no stats" = proxy cold, not missing data
-        (!isNBA && /no player stats loaded/i.test(f))
+        // NBA/NHL/Soccer exempt: all use proxies that sleep on free tier — "no stats" = proxy cold
+        (!isNBA && !isNHL && !isSoccer && /no player stats loaded/i.test(f))
       )) return false;
       return true;
     })
     .sort((a, b) => b.score - a.score);
 
   // Drop LOW confidence picks entirely — 169-pick data shows 14.3% win rate (1W/6L).
-  // NBA cold-proxy exception: allow LOW conf if bookProb >= 0.54 (book shows conviction)
+  // Cold-proxy exception (NBA/NHL/Soccer): allow LOW conf if bookProb >= 0.54 (book shows conviction)
   // Prioritize HIGH first, then MED backfill. Take up to 5 total.
-  const isNBAContext = (sportLabel||'').toUpperCase().includes('NBA');
+  const _sl = (sportLabel||'').toUpperCase();
+  const isColdProxyContext = _sl.includes('NBA') || _sl.includes('NHL') || _sl.includes('SOCCER');
   const qualifiedPicks = scored.filter(p => {
     if (p.c.conf !== 'LOW') return true;
-    return isNBAContext && !p.statResult && p.bookProb >= 0.54;
+    return isColdProxyContext && !p.statResult && p.bookProb >= 0.54;
   });
   const highPicks = qualifiedPicks.filter(p => p.c.conf === 'HIGH');
   const medPicks  = qualifiedPicks.filter(p => p.c.conf === 'MED');
