@@ -3011,9 +3011,20 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     .filter(p => p.vig <= MAX_VIG)
     .filter(p => parseFloat(p.c.pct) <= 80) // raised from 72 — some 73-80% picks have genuine edge
     // Removed hard 53% floor — score threshold (0.50) and edge already filter bad picks
-    .filter(p => p.score >= 0.25) // post-regression threshold: shows quality picks without over-filtering
+    // NBA cold-proxy fallback: stats don't load from Render free tier until warmed up.
+    // When no statResult, score≈0.08 and edge≈1.2% (both derived from book data only).
+    // Use bookProb >= 0.54 as the entry gate instead — at least one book at ~-117 or shorter.
+    .filter(p => {
+      const isNBA = (sportLabel||'').toUpperCase().includes('NBA');
+      if (isNBA && !p.statResult) return p.bookProb >= 0.54;
+      return p.score >= 0.25;
+    })
     // ── Hard gate: block negative edge and low hit probability picks ──
-    .filter(p => p.edge >= 3) // minimum 3% edge — tiny edges aren't real edge, just noise
+    .filter(p => {
+      const isNBA = (sportLabel||'').toUpperCase().includes('NBA');
+      if (isNBA && !p.statResult) return true; // bookProb gate upstream handles quality
+      return p.edge >= 3;
+    })
     .filter(p => {
       // Split OVER/UNDER thresholds — UNDERs win at 69%, OVERs at 46%
       // Public bets OVERs for entertainment, books juice them → structural UNDER edge
@@ -3095,8 +3106,13 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
     .sort((a, b) => b.score - a.score);
 
   // Drop LOW confidence picks entirely — 169-pick data shows 14.3% win rate (1W/6L).
+  // NBA cold-proxy exception: allow LOW conf if bookProb >= 0.54 (book shows conviction)
   // Prioritize HIGH first, then MED backfill. Take up to 5 total.
-  const qualifiedPicks = scored.filter(p => p.c.conf !== 'LOW');
+  const isNBAContext = (sportLabel||'').toUpperCase().includes('NBA');
+  const qualifiedPicks = scored.filter(p => {
+    if (p.c.conf !== 'LOW') return true;
+    return isNBAContext && !p.statResult && p.bookProb >= 0.54;
+  });
   const highPicks = qualifiedPicks.filter(p => p.c.conf === 'HIGH');
   const medPicks  = qualifiedPicks.filter(p => p.c.conf === 'MED');
 
