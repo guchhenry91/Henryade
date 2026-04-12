@@ -2443,7 +2443,8 @@ function propConf(overOdds, underOdds) {
   const op=(oi/tot)*100, up=(ui/tot)*100;
   const pick = op>=up ? 'OVER' : 'UNDER';
   const pct  = Math.max(op, up);
-  const conf = pct>=65 ? 'HIGH' : pct>=55 ? 'MED' : 'LOW';
+  // 52%+ = MED: standard -108 juice props shouldn't be LOW — they're the market norm
+  const conf = pct>=65 ? 'HIGH' : pct>=52 ? 'MED' : 'LOW';
   return { pick, pct: pct.toFixed(1), conf, op: op.toFixed(1), up: up.toFixed(1) };
 }
 
@@ -3022,7 +3023,7 @@ async function renderProps(propData, matchLabel, sportLabel, eventId = '', gameD
       const sl = (sportLabel||'').toUpperCase();
       const isColdProxy = !p.statResult && (sl.includes('NBA') || sl.includes('NHL') || sl.includes('SOCCER'));
       if (isColdProxy) return p.bookProb >= 0.54;
-      return p.score >= 0.12; // lowered 0.25→0.12: 2-book games with moderate stats signal (0.15-0.18) were failing
+      return p.score >= 0.05; // lowered 0.12→0.05: high vig (8-10%) on 2-book games crushes score to 0.07
     })
     // ── Hard gate: block negative edge and low hit probability picks ──
     .filter(p => {
