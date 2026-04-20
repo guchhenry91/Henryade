@@ -435,8 +435,15 @@ function poll(){
   setTimeout(tick,1000);
 })();
 
-poll();
-setInterval(poll,POLL_MS);
+// Render static data immediately — page is never blank
+renderCard('main', STATIC.main, null);
+renderCard('ops',  STATIC.ops,  null);
+renderCard('intel',STATIC.intel,null);
+renderFeed(STATIC_FEED);
+
+// Then start live polling — updates cards silently in background
+setTimeout(poll, 500);
+setInterval(poll, POLL_MS);
 </script>
 </body>
 </html>
