@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>OpenClaw — Mission Control</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#08080d;--bg2:#111118;
+  --b:#252533;--b2:#343448;
+  --t1:#f0f0f5;--t2:#b0b0c8;--t3:#5a5a78;
+  --green:#6ee7b7;--amber:#fbbf24;--red:#f87171;--cyan:#22d3ee;--violet:#a78bfa;--blue:#60a5fa;
+  --mono:'IBM Plex Mono',monospace;--sans:'DM Sans',sans-serif;
+  --rad:12px;--rad-lg:18px;
+}
+html{font-size:14px;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);background:var(--bg);color:var(--t1);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-repeat:repeat;opacity:.35}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--b2);border-radius:2px}
+.shell{max-width:1400px;margin:0 auto;padding:1.5rem 1rem 4rem}
+
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.75rem;gap:1rem;flex-wrap:wrap}
+.hdr-left{display:flex;align-items:center;gap:.85rem}
+.logo{width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,var(--green),#059669);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#08080d;box-shadow:0 0 20px rgba(110,231,183,.18);flex-shrink:0}
+.hdr-title{font-size:1.3rem;font-weight:700;letter-spacing:-.02em}
+.hdr-title span{font-family:var(--mono);font-size:.65em;font-weight:500;color:var(--green);margin-left:.4rem;opacity:.7}
+.hdr-right{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.pill{font-family:var(--mono);font-size:.6rem;padding:.25rem .55rem;border-radius:20px;border:1px solid var(--b);background:var(--bg2);color:var(--t3);display:flex;align-items:center;gap:.35rem;white-space:nowrap}
+.pill.live{border-color:rgba(110,231,183,.3);color:var(--green)}
+.pill.live .dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);animation:blink 1.8s infinite}
+.pill.err{border-color:rgba(248,113,113,.3);color:var(--red)}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.clock{font-family:var(--mono);font-size:.65rem;color:var(--t3)}
+
+.sysbar{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.5rem;margin-bottom:1.75rem}
+.sb{background:var(--bg2);border:1px solid var(--b);border-radius:var(--rad);padding:.7rem .9rem}
+.sb-v{font-size:1.2rem;font-weight:700;line-height:1}
+.sb-l{font-family:var(--mono);font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);margin-top:.15rem}
+.sb-s{font-family:var(--mono);font-size:.58rem;margin-top:.15rem}
+.ok{color:var(--green)}.wn{color:var(--amber)}.er{color:var(--red)}.mu{color:var(--t3)}
+
+.sec{font-family:var(--mono);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--t3);margin-bottom:.85rem;display:flex;align-items:center;gap:10px}
+.sec::after{content:'';flex:1;height:1px;background:var(--b)}
+
+.agent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.75rem}
+@media(max-width:900px){.agent-grid{grid-template-columns:1fr}}
+
+.ac{border-radius:var(--rad-lg);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s}
+.ac:hover{transform:translateY(-2px)}
+.ac-main {border:1px solid rgba(34,211,238,.25);background:linear-gradient(160deg,rgba(34,211,238,.05) 0%,var(--bg2) 60%)}
+.ac-ops  {border:1px solid rgba(96,165,250,.22);background:linear-gradient(160deg,rgba(96,165,250,.05) 0%,var(--bg2) 60%)}
+.ac-intel{border:1px solid rgba(167,139,250,.22);background:linear-gradient(160deg,rgba(167,139,250,.05) 0%,var(--bg2) 60%)}
+
+.ac-top{padding:1.1rem 1.2rem .9rem;border-bottom:1px solid var(--b);display:flex;align-items:center;gap:.85rem}
+.ac-ic{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.ac-main  .ac-ic{background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.2)}
+.ac-ops   .ac-ic{background:rgba(96,165,250,.1);border:1px solid rgba(96,165,250,.2)}
+.ac-intel .ac-ic{background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2)}
+.ac-meta{flex:1;min-width:0}
+.ac-name{font-weight:700;font-size:.95rem;display:flex;align-items:center;gap:.5rem}
+.ac-main  .ac-name{color:var(--cyan)}
+.ac-ops   .ac-name{color:var(--blue)}
+.ac-intel .ac-name{color:var(--violet)}
+.sdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.sdot.active{background:var(--green);box-shadow:0 0 8px var(--green);animation:blink 2s infinite}
+.sdot.idle{background:var(--amber);opacity:.8}
+.sdot.offline{background:var(--red);opacity:.7}
+.sdot.unknown{background:var(--t3)}
+.ac-topic{font-family:var(--mono);font-size:.58rem;color:var(--t3);margin-top:.15rem}
+.stag{font-family:var(--mono);font-size:.55rem;padding:.15rem .4rem;border-radius:4px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;flex-shrink:0}
+.stag.active {background:rgba(110,231,183,.12);color:var(--green);border:1px solid rgba(110,231,183,.25)}
+.stag.idle   {background:rgba(251,191,36,.1);color:var(--amber);border:1px solid rgba(251,191,36,.2)}
+.stag.offline{background:rgba(248,113,113,.1);color:var(--red);border:1px solid rgba(248,113,113,.2)}
+.stag.unknown{background:rgba(90,90,120,.1);color:var(--t3);border:1px solid var(--b)}
+
+.ac-bar{height:2px;background:var(--b)}
+.ac-bar-fill{height:100%;transition:width 1.2s ease}
+.ac-main  .ac-bar-fill{background:linear-gradient(90deg,var(--cyan),#06b6d4)}
+.ac-ops   .ac-bar-fill{background:linear-gradient(90deg,var(--blue),#2563eb)}
+.ac-intel .ac-bar-fill{background:linear-gradient(90deg,var(--violet),#7c3aed)}
+
+.ac-body{padding:1rem 1.2rem;flex:1;display:flex;flex-direction:column;gap:.9rem}
+.ct-label{font-family:var(--mono);font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;color:var(--t3);margin-bottom:.3rem}
+.ct-val{font-size:.82rem;color:var(--t1);line-height:1.45;min-height:2.6rem}
+.ct-val.empty{color:var(--t3);font-style:italic}
+.lm-box{background:var(--bg);border:1px solid var(--b);border-radius:8px;padding:.6rem .75rem}
+.lm-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.3rem}
+.lm-label{font-family:var(--mono);font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t3)}
+.lm-ts{font-family:var(--mono);font-size:.5rem;color:var(--t3)}
+.lm-txt{font-size:.74rem;color:var(--t2);line-height:1.4}
+.lm-txt.empty{color:var(--t3);font-style:italic}
+.tq{display:flex;flex-direction:column;gap:.3rem}
+.tq-item{display:flex;align-items:flex-start;gap:.45rem;font-size:.7rem}
+.tq-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.tq-dot.done{background:var(--t3);opacity:.4}
+.tq-dot.active{background:var(--green);box-shadow:0 0 5px var(--green)}
+.tq-dot.pending{background:var(--amber);opacity:.6}
+.tq-dot.known{background:var(--blue);opacity:.6}
+.tq-txt{color:var(--t2);flex:1;line-height:1.35}
+.tq-tag{font-family:var(--mono);font-size:.5rem;color:var(--t3);flex-shrink:0;padding-left:.35rem}
+.stuck{background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.2);border-radius:8px;padding:.45rem .75rem;font-family:var(--mono);font-size:.62rem;color:var(--red);display:none}
+.stuck.show{display:block}
+
+.feed-wrap{background:var(--bg2);border:1px solid var(--b);border-radius:var(--rad-lg);overflow:hidden;margin-bottom:1.75rem}
+.feed-hdr{padding:.75rem 1.1rem;border-bottom:1px solid var(--b);display:flex;align-items:center;justify-content:space-between}
+.feed-title{font-weight:600;font-size:.8rem;display:flex;align-items:center;gap:.45rem}
+.feed-rdot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:blink 1.5s infinite}
+.feed-count{font-family:var(--mono);font-size:.55rem;color:var(--t3)}
+.feed-body{max-height:300px;overflow-y:auto}
+.fe{padding:.55rem 1.1rem;border-bottom:1px solid rgba(37,37,51,.6);display:grid;grid-template-columns:52px 130px 1fr;gap:.5rem;align-items:start;transition:background .12s}
+.fe:hover{background:rgba(255,255,255,.012)}
+.fe:last-child{border-bottom:none}
+.fe-ts{font-family:var(--mono);font-size:.55rem;color:var(--t3);padding-top:1px}
+.fe-agent{font-family:var(--mono);font-size:.55rem;font-weight:600;padding-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fe-msg{font-size:.7rem;color:var(--t2);line-height:1.4}
+
+.api-bar{background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.18);border-radius:8px;padding:.5rem 1rem;font-family:var(--mono);font-size:.62rem;color:var(--red);margin-bottom:1.25rem;display:none}
+.api-bar.show{display:block}
+.retired{background:rgba(37,37,51,.4);border:1px solid var(--b);border-radius:var(--rad);padding:.75rem 1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+.retired-label{font-family:var(--mono);font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);flex-shrink:0}
+.rt{font-family:var(--mono);font-size:.58rem;padding:.18rem .45rem;border-radius:4px;background:rgba(90,90,120,.1);color:var(--t3);border:1px solid var(--b)}
+.footer{text-align:center;padding:1.5rem 0 .5rem;font-family:var(--mono);font-size:.52rem;color:var(--t3);letter-spacing:.12em;text-transform:uppercase}
+
+@media(max-width:600px){
+  .hdr-right{display:none}
+  .sysbar{grid-template-columns:repeat(3,1fr)}
+  .sb-v{font-size:1rem}
+  .feed-body{max-height:250px}
+  .fe{grid-template-columns:48px 90px 1fr}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+<header class="hdr">
+  <div class="hdr-left">
+    <div class="logo">&#9672;</div>
+    <div class="hdr-title">Mission Control <span>v7</span></div>
+  </div>
+  <div class="hdr-right">
+    <div class="pill live" id="conn-pill"><span class="dot"></span><span id="conn-txt">connecting</span></div>
+    <div class="pill">baseline 2026.4.15</div>
+    <div class="clock" id="clock">—</div>
+  </div>
+</header>
+
+<div class="api-bar" id="api-bar">&#9888; API unreachable — showing last known state. Retrying every 5s</div>
+
+<div class="sec">System Health</div>
+<div class="sysbar">
+  <div class="sb"><div class="sb-v ok">3</div><div class="sb-l">Agents</div><div class="sb-s ok">live runtime</div></div>
+  <div class="sb"><div class="sb-v ok">5.6Gi</div><div class="sb-l">RAM Free</div><div class="sb-s ok">2.1Gi used</div></div>
+  <div class="sb"><div class="sb-v wn">69%</div><div class="sb-l">Disk Used</div><div class="sb-s wn">30G free</div></div>
+  <div class="sb"><div class="sb-v ok">PM2</div><div class="sb-l">openclaw</div><div class="sb-s ok">running</div></div>
+  <div class="sb"><div class="sb-v ok">OK</div><div class="sb-l">Telegram</div><div class="sb-s ok">CDP healthy</div></div>
+  <div class="sb"><div class="sb-v er">Off</div><div class="sb-l">Memory-Core</div><div class="sb-s er">disabled</div></div>
+  <div class="sb"><div class="sb-v mu" id="sh-load">—</div><div class="sb-l">Load Avg</div><div class="sb-s mu">updating</div></div>
+</div>
+
+<div class="sec">Agent Fleet — Live</div>
+<div class="agent-grid">
+
+  <div class="ac ac-main">
+    <div class="ac-top">
+      <div class="ac-ic">&#129504;</div>
+      <div class="ac-meta">
+        <div class="ac-name"><span class="sdot unknown" id="dot-main"></span>main</div>
+        <div class="ac-topic">Mission Control · runtime authority</div>
+      </div>
+      <span class="stag unknown" id="badge-main">—</span>
+    </div>
+    <div class="ac-bar"><div class="ac-bar-fill" id="bar-main" style="width:0%"></div></div>
+    <div class="ac-body">
+      <div class="stuck" id="stuck-main">&#9888; No activity detected — agent may be stuck</div>
+      <div><div class="ct-label">Current Task</div><div class="ct-val empty" id="task-main">Waiting for data</div></div>
+      <div class="lm-box">
+        <div class="lm-top"><span class="lm-label">Last Message</span><span class="lm-ts" id="lm-ts-main">—</span></div>
+        <div class="lm-txt empty" id="lm-main">No messages yet</div>
+      </div>
+      <div class="tq" id="tq-main"></div>
+    </div>
+  </div>
+
+  <div class="ac ac-ops">
+    <div class="ac-top">
+      <div class="ac-ic">&#128296;</div>
+      <div class="ac-meta">
+        <div class="ac-name"><span class="sdot unknown" id="dot-ops"></span>ops-execution</div>
+        <div class="ac-topic">Telegram · Topic 4384</div>
+      </div>
+      <span class="stag unknown" id="badge-ops">—</span>
+    </div>
+    <div class="ac-bar"><div class="ac-bar-fill" id="bar-ops" style="width:0%"></div></div>
+    <div class="ac-body">
+      <div class="stuck" id="stuck-ops">&#9888; No activity detected — agent may be stuck</div>
+      <div><div class="ct-label">Current Task</div><div class="ct-val empty" id="task-ops">Waiting for data</div></div>
+      <div class="lm-box">
+        <div class="lm-top"><span class="lm-label">Last Message</span><span class="lm-ts" id="lm-ts-ops">—</span></div>
+        <div class="lm-txt empty" id="lm-ops">No messages yet</div>
+      </div>
+      <div class="tq" id="tq-ops"></div>
+    </div>
+  </div>
+
+  <div class="ac ac-intel">
+    <div class="ac-top">
+      <div class="ac-ic">&#128202;</div>
+      <div class="ac-meta">
+        <div class="ac-name"><span class="sdot unknown" id="dot-intel"></span>intelligence-execution</div>
+        <div class="ac-topic">Telegram · Topic 4298</div>
+      </div>
+      <span class="stag unknown" id="badge-intel">—</span>
+    </div>
+    <div class="ac-bar"><div class="ac-bar-fill" id="bar-intel" style="width:0%"></div></div>
+    <div class="ac-body">
+      <div class="stuck" id="stuck-intel">&#9888; No activity detected — agent may be stuck</div>
+      <div><div class="ct-label">Current Task</div><div class="ct-val empty" id="task-intel">Waiting for data</div></div>
+      <div class="lm-box">
+        <div class="lm-top"><span class="lm-label">Last Message</span><span class="lm-ts" id="lm-ts-intel">—</span></div>
+        <div class="lm-txt empty" id="lm-intel">No messages yet</div>
+      </div>
+      <div class="tq" id="tq-intel"></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="sec">Activity Feed</div>
+<div class="feed-wrap">
+  <div class="feed-hdr">
+    <div class="feed-title"><span class="feed-rdot"></span> Live Stream</div>
+    <span class="feed-count" id="feed-count">—</span>
+  </div>
+  <div class="feed-body" id="feed-body"></div>
+</div>
+
+<div class="sec">Retired Lanes</div>
+<div class="retired">
+  <span class="retired-label">archived · not active</span>
+  <span class="rt">ops (old)</span>
+  <span class="rt">service-manager</span>
+  <span class="rt">sports-prediction</span>
+  <span class="rt">betting-intelligence</span>
+  <span class="rt">job-seeker</span>
+  <span class="rt">tiktok-content</span>
+</div>
+
+<div class="footer">OpenClaw Mission Control v7 · Built by Henry · baseline 2026.4.15</div>
+</div>
+
+<script>
+var POLL_MS = 5000;
+var STUCK_MS = 300000;
+var lastSeen = {main:0, ops:0, intel:0};
+
+var AGENT_COLOR = {
+  'main':'var(--cyan)', 'ops-execution':'var(--blue)',
+  'intelligence-execution':'var(--violet)', 'system':'var(--green)'
+};
+
+var STATIC = {
+  main:{status:'active',current_task:'Mission control, routing, and ecosystem oversight',tasks:[
+    {s:'done',t:'OpenClaw upgraded and verified on 2026.4.15 baseline',a:'stable'},
+    {s:'done',t:'Nightly backup durability — verified archives active',a:'stable'},
+    {s:'active',t:'Mission control, routing, and ecosystem oversight',a:'active'},
+    {s:'known',t:'memory-core unavailable — disabled in config',a:'known'}
+  ]},
+  ops:{status:'idle',current_task:'Bound to topic 4384 — awaiting live no-mention proof',tasks:[
+    {s:'done',t:'Binding configured to topic 4384',a:'done'},
+    {s:'done',t:'Backup monitoring and runtime health in scope',a:'stable'},
+    {s:'pending',t:'Live proof of no-mention response in topic 4384',a:'open'}
+  ]},
+  intel:{status:'active',current_task:'bovada_props.py — awaiting full end-to-end runtime proof',tasks:[
+    {s:'done',t:'Intel trigger scripts repaired to current CLI shape',a:'done'},
+    {s:'done',t:'bovada_props.py reduction pass applied and compile-clean',a:'done'},
+    {s:'pending',t:'Full end-to-end prop run validation still needed',a:'open'},
+    {s:'known',t:'Statmuse cross-reference path is main runtime bottleneck',a:'known'}
+  ]}
+};
+
+var STATIC_FEED = [
+  {time:new Date().toISOString(),agent:'System',message:'API unreachable — showing last known static state'},
+  {time:new Date(Date.now()-3600000).toISOString(),agent:'main',message:'Dashboard rebuilt to reflect live 3-agent architecture only'},
+  {time:new Date(Date.now()-7200000).toISOString(),agent:'intelligence-execution',message:'bovada_props.py reduction pass: fewer games, filtered lines, capped Statmuse candidates'},
+  {time:new Date(Date.now()-10800000).toISOString(),agent:'ops-execution',message:'Topic 4384 binding confirmed — requireMention=false; live no-mention proof still pending'},
+  {time:new Date(Date.now()-14400000).toISOString(),agent:'System',message:'OpenClaw 2026.4.15 verified: Telegram OK, gateway OK, CDP OK at 127.0.0.1:18800'},
+  {time:new Date(Date.now()-18000000).toISOString(),agent:'System',message:'Nightly backup complete — verified archive written, latest symlink updated'}
+];
+
+function ago(iso){
+  if(!iso) return '—';
+  var m=Math.floor((Date.now()-new Date(iso).getTime())/60000);
+  if(m<1) return 'just now';
+  if(m<60) return m+'m ago';
+  return Math.floor(m/60)+'h ago';
+}
+
+function fmtTime(iso){
+  if(!iso) return '—';
+  return new Date(iso).toISOString().slice(11,16)+' UTC';
+}
+
+function renderCard(elKey, data, lastMsg){
+  var status=(data&&data.status)||'unknown';
+  var isBusy=status==='active'||status==='busy';
+  var isIdle=status==='idle';
+
+  var dot=document.getElementById('dot-'+elKey);
+  if(dot) dot.className='sdot '+(isBusy?'active':isIdle?'idle':status==='error'?'offline':'unknown');
+
+  var badge=document.getElementById('badge-'+elKey);
+  if(badge){badge.textContent=status;badge.className='stag '+(isBusy?'active':isIdle?'idle':status==='error'?'offline':'unknown');}
+
+  var bar=document.getElementById('bar-'+elKey);
+  if(bar) bar.style.width=(isBusy?75:isIdle?38:12)+'%';
+
+  var taskEl=document.getElementById('task-'+elKey);
+  if(taskEl){
+    var task=(data&&(data.current_task||data.task))||'';
+    taskEl.textContent=task||'No active task';
+    taskEl.className='ct-val'+(task?'':' empty');
+  }
+
+  var lmEl=document.getElementById('lm-'+elKey);
+  var lmTs=document.getElementById('lm-ts-'+elKey);
+  if(lmEl){
+    if(lastMsg&&lastMsg.message){
+      lmEl.textContent=lastMsg.message;
+      lmEl.className='lm-txt';
+      if(lmTs) lmTs.textContent=ago(lastMsg.time);
+      var k=elKey==='main'?'main':elKey==='ops'?'ops':'intel';
+      if(lastMsg.time) lastSeen[k]=new Date(lastMsg.time).getTime();
+    } else {
+      lmEl.textContent='No messages yet';
+      lmEl.className='lm-txt empty';
+      if(lmTs) lmTs.textContent='—';
+    }
+  }
+
+  var tqEl=document.getElementById('tq-'+elKey);
+  if(tqEl){
+    var tasks=(data&&data.tasks)||[];
+    tqEl.textContent='';
+    tasks.forEach(function(t){
+      var row=document.createElement('div'); row.className='tq-item';
+      var d=document.createElement('div'); d.className='tq-dot '+(t.s||'known');
+      var tx=document.createElement('span'); tx.className='tq-txt'; tx.textContent=t.t||'';
+      var tg=document.createElement('span'); tg.className='tq-tag'; tg.textContent=t.a||'';
+      row.appendChild(d); row.appendChild(tx); row.appendChild(tg);
+      tqEl.appendChild(row);
+    });
+  }
+
+  var stuckEl=document.getElementById('stuck-'+elKey);
+  if(stuckEl&&isBusy){
+    var k2=elKey==='main'?'main':elKey==='ops'?'ops':'intel';
+    stuckEl.className='stuck'+(lastSeen[k2]&&(Date.now()-lastSeen[k2]>STUCK_MS)?' show':'');
+  }
+}
+
+function renderFeed(events){
+  var body=document.getElementById('feed-body');
+  var count=document.getElementById('feed-count');
+  if(!body||!events||!events.length) return;
+  body.textContent='';
+  events.slice(0,60).forEach(function(e){
+    var agentId=String(e.agent||'system').toLowerCase().replace(/\s+/g,'-');
+    var color=AGENT_COLOR[agentId]||'var(--t2)';
+    var row=document.createElement('div'); row.className='fe';
+    var ts=document.createElement('span'); ts.className='fe-ts'; ts.textContent=fmtTime(e.time);
+    var ag=document.createElement('span'); ag.className='fe-agent'; ag.textContent=e.agent||'system'; ag.style.color=color;
+    var msg=document.createElement('span'); msg.className='fe-msg'; msg.textContent=e.message||'';
+    row.appendChild(ts); row.appendChild(ag); row.appendChild(msg);
+    body.appendChild(row);
+  });
+  if(count) count.textContent=events.length+' event'+(events.length!==1?'s':'');
+}
+
+function setConn(ok){
+  var pill=document.getElementById('conn-pill');
+  var txt=document.getElementById('conn-txt');
+  var bar=document.getElementById('api-bar');
+  if(pill) pill.className='pill '+(ok?'live':'err');
+  if(txt) txt.textContent=ok?'live':'offline';
+  if(bar) bar.className='api-bar'+(ok?'':' show');
+}
+
+function poll(){
+  Promise.all([
+    fetch('/api/agents').then(function(r){return r.ok?r.json():Promise.reject();}),
+    fetch('/api/feed').then(function(r){return r.ok?r.json():Promise.reject();})
+  ]).then(function(res){
+    setConn(true);
+    var agents=(res[0].agents||[]);
+    var events=(res[1].events||[]);
+    var byId={};
+    agents.forEach(function(a){byId[a.id]=a;});
+    var lastMsg={};
+    events.forEach(function(e){
+      var id=String(e.agent||'').toLowerCase().replace(/\s+/g,'-');
+      if(!lastMsg[id]||new Date(e.time)>new Date(lastMsg[id].time)) lastMsg[id]=e;
+    });
+    renderCard('main', byId['main']||STATIC.main, lastMsg['main']);
+    renderCard('ops',  byId['ops-execution']||STATIC.ops, lastMsg['ops-execution']);
+    renderCard('intel',byId['intelligence-execution']||STATIC.intel, lastMsg['intelligence-execution']);
+    renderFeed(events.length?events:STATIC_FEED);
+  }).catch(function(){
+    setConn(false);
+    renderCard('main', STATIC.main, null);
+    renderCard('ops',  STATIC.ops,  null);
+    renderCard('intel',STATIC.intel,null);
+    renderFeed(STATIC_FEED);
+  });
+}
+
+(function tick(){
+  var el=document.getElementById('clock');
+  if(el) el.textContent=new Date().toISOString().slice(0,19).replace('T',' ')+' UTC';
+  setTimeout(tick,1000);
+})();
+
+poll();
+setInterval(poll,POLL_MS);
+</script>
+</body>
+</html>

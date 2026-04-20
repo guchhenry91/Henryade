@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adegboyega Ogidan — IT Support CV</title>
+<style>
+  /* ── Reset ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ── Base ── */
+  body {
+    font-family: 'Calibri', 'Arial', sans-serif;
+    font-size: 10.5pt;
+    color: #1a1a1a;
+    background: #fff;
+    line-height: 1.45;
+  }
+
+  /* ── Page wrapper ── */
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 28px 36px 28px 36px;
+  }
+
+  /* ── Header ── */
+  .header {
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #1a5276;
+    padding-bottom: 8px;
+  }
+  .header h1 {
+    font-size: 22pt;
+    font-weight: 700;
+    color: #1a5276;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .contact-line {
+    font-size: 9.5pt;
+    color: #333;
+    margin-top: 3px;
+  }
+  .contact-line a {
+    color: #1a5276;
+    text-decoration: none;
+  }
+
+  /* ── Section headings ── */
+  h2 {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #1a5276;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #1a5276;
+    padding-bottom: 2px;
+    margin-top: 11px;
+    margin-bottom: 5px;
+  }
+
+  /* ── Summary ── */
+  .summary p {
+    font-size: 10pt;
+    color: #222;
+  }
+
+  /* ── Skills grid ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px 12px;
+  }
+  .skills-grid .skill-item {
+    font-size: 9.8pt;
+    padding: 1px 0;
+    padding-left: 10px;
+    position: relative;
+  }
+  .skills-grid .skill-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1a5276;
+    font-weight: bold;
+  }
+
+  /* ── Experience ── */
+  .job {
+    margin-bottom: 9px;
+  }
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+  .job-title {
+    font-weight: 700;
+    font-size: 10.5pt;
+  }
+  .job-company {
+    font-weight: 700;
+    color: #1a5276;
+  }
+  .job-date {
+    font-size: 9.5pt;
+    color: #555;
+    white-space: nowrap;
+  }
+  .job-meta {
+    font-size: 9.2pt;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 3px;
+  }
+  ul.bullets {
+    margin-left: 14px;
+    margin-top: 2px;
+  }
+  ul.bullets li {
+    font-size: 10pt;
+    margin-bottom: 2px;
+  }
+
+  /* ── Career break ── */
+  .career-break {
+    margin-bottom: 8px;
+  }
+  .break-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .break-title {
+    font-weight: 700;
+    font-size: 10.2pt;
+    color: #444;
+  }
+  .break-date {
+    font-size: 9.5pt;
+    color: #555;
+  }
+  .break-desc {
+    font-size: 9.8pt;
+    color: #555;
+    margin-top: 1px;
+    padding-left: 2px;
+  }
+
+  /* ── Education & Certs ── */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px 20px;
+  }
+  .edu-item {
+    font-size: 10pt;
+    padding-left: 10px;
+    position: relative;
+  }
+  .edu-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1a5276;
+    font-weight: bold;
+  }
+
+  /* ── Print styles ── */
+  @media print {
+    body { font-size: 10pt; }
+    .page { padding: 16px 28px; max-width: 100%; }
+    h2 { margin-top: 9px; }
+    .job { margin-bottom: 7px; }
+    @page {
+      size: A4;
+      margin: 12mm 14mm;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── HEADER ── -->
+  <div class="header">
+    <h1>Adegboyega Ogidan</h1>
+    <div class="contact-line">
+      London, United Kingdom &nbsp;|&nbsp; 07506 293 448 &nbsp;|&nbsp;
+      <a href="mailto:adegboyega.ogidan@gmail.com">adegboyega.ogidan@gmail.com</a>
+      &nbsp;|&nbsp;
+      <a href="https://linkedin.com/in/adegboyega-ogidan">linkedin.com/in/adegboyega-ogidan</a>
+    </div>
+  </div>
+
+  <!-- ── PROFESSIONAL SUMMARY ── -->
+  <h2>Professional Summary</h2>
+  <div class="summary">
+    <p>
+      IT Support professional with 6+ years of hands-on experience across service desk, desktop support, and 24/7 operational environments.
+      Skilled in Windows 10/11, Active Directory, Microsoft 365, ServiceNow, Jira, endpoint deployment, VPN support, and user administration.
+      Strong track record resolving high ticket volumes, supporting enterprise users, and working effectively within SLA-driven environments.
+      ITIL 4 Foundation and CompTIA A+ certified, with continued development in Azure fundamentals and endpoint management.
+    </p>
+  </div>
+
+  <!-- ── CORE SKILLS ── -->
+  <h2>Core Skills</h2>
+  <div class="skills-grid">
+    <span class="skill-item">1st &amp; 2nd Line IT Support</span>
+    <span class="skill-item">Endpoint Build, Deployment &amp; Imaging</span>
+    <span class="skill-item">TCP/IP, DNS &amp; DHCP</span>
+    <span class="skill-item">Windows 10/11 Support</span>
+    <span class="skill-item">Laptop/PC Rebuilds &amp; Hardware Support</span>
+    <span class="skill-item">Network Troubleshooting</span>
+    <span class="skill-item">Active Directory / User Administration</span>
+    <span class="skill-item">User Onboarding &amp; Offboarding (JML)</span>
+    <span class="skill-item">Knowledge Base &amp; Runbooks</span>
+    <span class="skill-item">Microsoft 365</span>
+    <span class="skill-item">Remote Support Tools &amp; VPN</span>
+    <span class="skill-item">ServiceNow &amp; Jira</span>
+    <span class="skill-item">Desktop &amp; Desk-Side Support</span>
+    <span class="skill-item">Printer / Peripheral Support</span>
+    <span class="skill-item">Intune / Entra ID (Exposure)</span>
+  </div>
+
+  <!-- ── PROFESSIONAL EXPERIENCE ── -->
+  <h2>Professional Experience</h2>
+
+  <!-- Hachette -->
+  <div class="job">
+    <div class="job-header">
+      <span><span class="job-company">Hachette UK</span> &nbsp;—&nbsp; <span class="job-title">1st Line IT Support Engineer (Contract)</span></span>
+      <span class="job-date">Sep 2025 – Oct 2025</span>
+    </div>
+    <div class="job-meta">London &nbsp;|&nbsp; Major international publisher &nbsp;|&nbsp; 400+ staff</div>
+    <ul class="bullets">
+      <li>Resolved 30+ tickets per day across Windows 10/11 and Microsoft 365 for 400+ users while maintaining strong SLA performance.</li>
+      <li>Managed joiner, mover, and leaver account activity in Active Directory, ensuring accurate access and smooth handovers.</li>
+      <li>Built and deployed endpoint devices, supported user setup, and documented incidents and fixes in ServiceNow.</li>
+    </ul>
+  </div>
+
+  <!-- Career Break -->
+  <div class="career-break">
+    <div class="break-header">
+      <span class="break-title">Career Break / Professional Development</span>
+      <span class="break-date">Nov 2025 – Present</span>
+    </div>
+    <div class="break-desc">Pursuing permanent IT support opportunities while continuing development in Azure fundamentals, Microsoft 365, and endpoint management.</div>
+  </div>
+
+  <!-- Sky -->
+  <div class="job">
+    <div class="job-header">
+      <span><span class="job-company">Sky</span> &nbsp;—&nbsp; <span class="job-title">Platform Operations Analyst</span></span>
+      <span class="job-date">Sep 2024 – Jul 2025</span>
+    </div>
+    <div class="job-meta">London &nbsp;|&nbsp; 24/7 broadcast and digital operations environment</div>
+    <ul class="bullets">
+      <li>Monitored and triaged 50+ system alerts and incidents per shift across Windows-based platforms in a high-availability environment.</li>
+      <li>Coordinated with infrastructure, network, and engineering teams during major incidents to support timely resolution.</li>
+      <li>Logged and progressed tickets in ServiceNow and Jira; produced clear handovers and incident reports across shifts.</li>
+    </ul>
+  </div>
+
+  <!-- Career Break 2 -->
+  <div class="career-break">
+    <div class="break-header">
+      <span class="break-title">Career Break / Job Search and Development</span>
+      <span class="break-date">Oct 2023 – Aug 2024</span>
+    </div>
+    <div class="break-desc">Focused on job search activity and self-directed development in ITIL practices, Microsoft 365 administration, and support operations.</div>
+  </div>
+
+  <!-- CompuCom -->
+  <div class="job">
+    <div class="job-header">
+      <span><span class="job-company">CompuCom</span> &nbsp;—&nbsp; <span class="job-title">IT Support Technician</span></span>
+      <span class="job-date">Nov 2021 – Sep 2023</span>
+    </div>
+    <div class="job-meta">Remote / On-site &nbsp;|&nbsp; Global managed services provider</div>
+    <ul class="bullets">
+      <li>Delivered 1st and 2nd line support to 1,000+ enterprise users across Windows devices, Android hardware, and end-user support channels.</li>
+      <li>Resolved 40+ tickets per day through structured troubleshooting, clear documentation, and effective escalation to 3rd line teams.</li>
+      <li>Maintained accurate ITSM records to support service reporting, trend analysis, and problem management.</li>
+    </ul>
+  </div>
+
+  <!-- Hard Rock -->
+  <div class="job">
+    <div class="job-header">
+      <span><span class="job-company">Hard Rock Cafe</span> &nbsp;—&nbsp; <span class="job-title">IT Technician</span></span>
+      <span class="job-date">Apr 2019 – Oct 2021</span>
+    </div>
+    <div class="job-meta">Hospitality technology support</div>
+    <ul class="bullets">
+      <li>Provided on-site support for POS systems, endpoints, printers, and network-connected devices in a fast-paced hospitality environment.</li>
+      <li>Configured and deployed endpoint devices, managed asset records, and carried out hardware troubleshooting and device swaps.</li>
+      <li>Assisted with user onboarding, site connectivity, and day-to-day tech support across business-critical operations.</li>
+    </ul>
+  </div>
+
+  <!-- AT&T -->
+  <div class="job">
+    <div class="job-header">
+      <span><span class="job-company">AT&amp;T</span> &nbsp;—&nbsp; <span class="job-title">Field Technician</span></span>
+      <span class="job-date">May 2015 – Apr 2017</span>
+    </div>
+    <div class="job-meta">USA &nbsp;|&nbsp; Telecommunications field support</div>
+    <ul class="bullets">
+      <li>Installed and supported broadband, TV, and related customer equipment, applying fault diagnosis, first-time fix principles, and customer-facing support skills.</li>
+    </ul>
+  </div>
+
+  <!-- ── EDUCATION & CERTIFICATIONS ── -->
+  <h2>Education &amp; Certifications</h2>
+  <div class="edu-grid">
+    <span class="edu-item">Associate of Arts &nbsp;|&nbsp; Miami Dade College</span>
+    <span class="edu-item">CompTIA A+</span>
+    <span class="edu-item">ITIL 4 Foundation</span>
+    <span class="edu-item">Azure Fundamentals &nbsp;(in progress)</span>
+  </div>
+
+</div>
+</body>
+</html>
