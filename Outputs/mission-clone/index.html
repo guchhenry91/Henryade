@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>OpenClaw — Mission Control</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -390,10 +393,18 @@ function setConn(ok){
   if(bar) bar.className='api-bar'+(ok?'':' show');
 }
 
+function fetchWithTimeout(url, ms){
+  var ctrl = new AbortController();
+  var tid = setTimeout(function(){ ctrl.abort(); }, ms);
+  return fetch(url, {signal: ctrl.signal})
+    .then(function(r){ clearTimeout(tid); return r.ok ? r.json() : Promise.reject(); })
+    .catch(function(e){ clearTimeout(tid); return Promise.reject(e); });
+}
+
 function poll(){
   Promise.all([
-    fetch('/api/agents').then(function(r){return r.ok?r.json():Promise.reject();}),
-    fetch('/api/feed').then(function(r){return r.ok?r.json():Promise.reject();})
+    fetchWithTimeout('/api/agents', 4000),
+    fetchWithTimeout('/api/feed', 4000)
   ]).then(function(res){
     setConn(true);
     var agents=(res[0].agents||[]);
