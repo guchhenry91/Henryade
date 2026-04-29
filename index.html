@@ -222,8 +222,9 @@
 <div id="tab-bankroll" class="tab-content"><div class="loading" style="color:#555">Load sport tabs first — bankroll tracker needs picks</div></div>
 
 <script>
-const API_KEY = '17b4d42651ab4e81ef298300544f5a21';
+const API_KEY = 'e79df70dfb200aa30fb99b86b5aa0c61';
 const BASE    = 'https://api.the-odds-api.com/v4';
+const MLB_ONLY = true; // free-tier key — only MLB fetches; other tabs disabled
 const CACHE_TTL    = 3 * 60 * 60 * 1000; // 3hrs — lines move fast, keep data fresh without hammering the API
 
 // ── All dates use US Eastern timezone (matches ESPN + US sportsbooks) ─────────
@@ -2260,6 +2261,19 @@ function showTab(name, e) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   if (e && e.target) e.target.classList.add('active');
   document.getElementById('tab-' + name).classList.add('active');
+
+  // MLB-only mode: block fetches for everything except MLB / non-API tabs
+  if (MLB_ONLY && (name === 'soccer' || (SPORT_TABS[name] && name !== 'mlb'))) {
+    const sportName = SPORT_TABS[name]?.label || (name === 'soccer' ? '⚽ Soccer' : name.toUpperCase());
+    const tabEl = document.getElementById('tab-' + name);
+    tabEl.replaceChildren();
+    const msg = document.createElement('div');
+    msg.className = 'loading';
+    msg.style.color = '#888';
+    msg.textContent = `${sportName} disabled — free-tier API key only supports MLB. Upgrade the key to re-enable.`;
+    tabEl.appendChild(msg);
+    return;
+  }
 
   // Lazy load — only fetch when first clicked, not on startup
   if (!loadedTabs.has(name)) {
@@ -4964,15 +4978,42 @@ async function refreshAll(force=false) {
   // Sport tabs are lazy — show "Click to load" placeholder, only fetch on click
   Object.keys(SPORT_TABS).forEach(k=>{
     const sportName = SPORT_TABS[k]?.label || k.toUpperCase();
-    document.getElementById('tab-'+k).innerHTML =
-      `<div class="loading" style="color:#888;cursor:pointer" onclick="showTab('${k}')">Click ${sportName} tab to load picks</div>`;
+    const tabEl = document.getElementById('tab-'+k);
+    tabEl.replaceChildren();
+    const msg = document.createElement('div');
+    msg.className = 'loading';
+    msg.style.color = '#888';
+    if (MLB_ONLY && k !== 'mlb') {
+      msg.textContent = `${sportName} disabled — free-tier API key only supports MLB.`;
+    } else {
+      msg.style.cursor = 'pointer';
+      msg.onclick = () => showTab(k);
+      msg.textContent = `Click ${sportName} tab to load picks`;
+    }
+    tabEl.appendChild(msg);
   });
 
-  // Soccer loads on startup (feeds the All Value Bets tab)
-  document.getElementById('tab-soccer').innerHTML='<div class="loading">⚽ Fetching odds for 5 leagues...</div>';
   document.getElementById('all-loading') && (document.getElementById('all-loading').style.display='block');
-  loadedTabs.add('soccer');
-  await buildSoccer(force);
+
+  if (MLB_ONLY) {
+    // Free-tier key: skip soccer auto-fetch, auto-load MLB instead
+    const soccerEl = document.getElementById('tab-soccer');
+    soccerEl.replaceChildren();
+    const sMsg = document.createElement('div');
+    sMsg.className = 'loading';
+    sMsg.style.color = '#888';
+    sMsg.textContent = '⚽ Soccer disabled — free-tier API key only supports MLB.';
+    soccerEl.appendChild(sMsg);
+
+    document.getElementById('tab-mlb').innerHTML = '<div class="loading">⚾ Fetching MLB odds & player stats...</div>';
+    loadedTabs.add('mlb');
+    await buildSportTab('mlb', force);
+  } else {
+    // Soccer loads on startup (feeds the All Value Bets tab)
+    document.getElementById('tab-soccer').innerHTML='<div class="loading">⚽ Fetching odds for 5 leagues...</div>';
+    loadedTabs.add('soccer');
+    await buildSoccer(force);
+  }
   buildAllTab();
   buildSafeTab();
   buildParlayTab();
