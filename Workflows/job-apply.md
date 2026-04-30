@@ -1,154 +1,104 @@
-# Job Application Workflow — Daily Runner
+# Daily Job Apply — Field Service Technician (London, £30–34k)
 
-## Overview
-Automated daily job application workflow for Adegboyega Ogidan.
-Target: 20 applications per day, Monday–Friday.
-Start date: Monday 6 April 2026.
+This is a plain-English recipe for the daily job search. It mirrors the remote routine (`Daily-FieldService-Job-Applications`) so I can run it manually if needed.
 
----
-
-## Candidate Profile
+## Candidate
 
 - **Name:** Adegboyega Ogidan
 - **Email:** Adegboyega.Ogid@yahoo.com
 - **Phone:** 07506 293 448
-- **Location:** Dagenham, London
-- **LinkedIn:** linkedin.com/in/adegboyega-ogidan-a81897217
-- **Salary minimum:** £33,000
-- **CVs:**
-  - IT/Service Desk roles → `resources/ADE_IT_Black.pdf`
-  - Platform Ops/Broadcast roles → `resources/ADE_Broadcast_CV.pdf`
+- **Location:** Dagenham RM10, East London
+- **Target role:** Field Service Technician / Field Service Engineer / Mobile Engineer / On-site Technician
+- **Salary band:** £30,000 – £34,000 (hard min £30k)
+- **Background:** 10+ years IT support, on-site troubleshooting, hardware, M365, AD, ITIL, CompTIA A+
+- **Right to work:** UK
+- **Notice:** Immediately available
 
----
+## Hard freshness rule — read first
 
-## Target Roles
+ONLY include jobs posted within the last 48 HOURS from today.
 
-Search for these job titles (use variations):
-- 1st Line IT Support Engineer
-- 2nd Line IT Support Engineer
-- IT Support Analyst
-- Service Desk Analyst
-- Service Desk Engineer
-- Helpdesk Analyst / IT Helpdesk Officer
-- IT Technician
-- Desktop Support Engineer
-- Platform Operations Analyst (use Broadcast CV)
-- NOC Analyst (use Broadcast CV)
+- Acceptable: 'today', 'just posted', 'new', '1 hour ago', '12 hours ago', '1 day ago', '2 days ago'
+- REJECT: '3 days ago' or older, anything '4 days ago', 'last week', expired/closed listings, or any listing without a visible posted date.
 
----
+Quality over volume: 5 fresh jobs > 30 stale ones.
 
-## Search Parameters
+## Step 1 — LinkedIn (48h filter)
 
-| Parameter | Value |
-|---|---|
-| Location | London (within ~1hr commute of Dagenham RM10) |
-| Salary | £33,000 minimum |
-| Job type | Full-time, Contract, Temp-to-perm |
-| Date posted | **Last 48 hours — HARD FILTER. Skip anything older.** |
-| Platforms | LinkedIn Easy Apply, Reed, TotalJobs |
+Fetch (fall back to WebSearch on 403):
 
-### Exclude:
-- Roles below £33,000
-- Roles MUST be inside London — no exceptions (no Watford, Slough, Reading, Croydon outskirts, etc.)
-- Senior Manager / Head of IT roles (overqualified mismatch)
-- **Anything posted >48h ago. Anything tagged "Expired", "Closing today", or "Closed". Anything without a visible posted date.**
+- https://www.linkedin.com/jobs/search/?keywords=Field+Service+Technician&location=London&f_TPR=r172800&f_AL=true&sortBy=DD
+- https://www.linkedin.com/jobs/search/?keywords=Field+Service+Engineer&location=London&f_TPR=r172800&f_AL=true&sortBy=DD
+- https://www.linkedin.com/jobs/search/?keywords=Mobile+Engineer&location=London&f_TPR=r172800&f_AL=true&sortBy=DD
+- https://www.linkedin.com/jobs/search/?keywords=Onsite+Technician&location=London&f_TPR=r172800&f_AL=true&sortBy=DD
 
----
+`f_TPR=r172800` = posted ≤48h. Do not widen.
 
-## Freshness Validation (MANDATORY before logging)
+## Step 2 — Reed (LastThreeDays + manual filter to ≤48h)
 
-Before adding any job to the application log, the agent MUST:
+- https://www.reed.co.uk/jobs/field-service-technician-jobs-in-london?datecreatedoffset=LastThreeDays&salaryFrom=30000&fulltime=True
+- https://www.reed.co.uk/jobs/field-service-engineer-jobs-in-london?datecreatedoffset=LastThreeDays&salaryFrom=30000&fulltime=True
+- https://www.reed.co.uk/jobs/mobile-engineer-jobs-in-london?datecreatedoffset=LastThreeDays&salaryFrom=30000&fulltime=True
 
-1. **Read the posted date** from the listing page (e.g. "Posted 1 day ago", "Posted today", or absolute date).
-2. **Reject if older than 48 hours** from current run time.
-3. **Reject if any expiry indicator is visible:** "Expired", "No longer accepting applications", "Closed", "Closing today".
-4. **If posted date is missing or ambiguous, SKIP the role** — do not guess.
-5. Log the posted date in the CSV `Notes` column as `Posted: <date or "X hours ago">` for audit.
+Manually skip anything '3 days ago'. Reed only accepts these `datecreatedoffset` values: Today, Yesterday, LastThreeDays, LastWeek.
 
-Only after a job passes ALL four checks may it be applied to and logged.
+## Step 3 — TotalJobs (postedWithin=2 = 48h)
 
----
+- https://www.totaljobs.com/jobs/field-service-technician/in-london?postedWithin=2&salary=30000&salarytype=annual
+- https://www.totaljobs.com/jobs/field-service-engineer/in-london?postedWithin=2&salary=30000&salarytype=annual
+- https://www.totaljobs.com/jobs/mobile-engineer/in-london?postedWithin=2&salary=30000&salarytype=annual
 
-## Daily Steps
+## Step 4 — Indeed (fromage=2 = 48h)
 
-### Step 1 — LinkedIn Easy Apply (48h freshness REQUIRED)
+- https://uk.indeed.com/jobs?q=Field+Service+Technician+%C2%A330000&l=London&fromage=2
+- https://uk.indeed.com/jobs?q=Field+Service+Engineer&l=London&fromage=2
 
-**Use this URL — `f_TPR=r172800` is the 48-hour filter:**
+## Step 5 — Per-job validation (every job, every check)
+
+1. Posted date ≤48h from today, visible on listing → else SKIP.
+2. No expiry indicator ('Expired', 'Closed', 'No longer accepting', 'Closing today') → else SKIP.
+3. London / Greater London commutable from Dagenham RM10 within ~1hr → else SKIP.
+4. Salary stated ≥£30,000 OR not stated and title clearly indicates field-service tech level → else SKIP.
+5. Title matches: Field Service Technician, Field Service Engineer, Mobile Engineer, On-site Technician, Field Technician, IT Field Engineer.
+6. Not Senior Manager / Head of / Director level.
+7. Not already in `Outputs/job-applications-log.csv` (check Job URL column).
+
+ALL seven must pass.
+
+## Step 6 — Log qualifying jobs
+
+Append to `Outputs/job-applications-log.csv` with columns:
+
+`Date,Job Title,Company,Platform,Salary,Location,Applied (Y/N),Application Method,Job URL,Notes`
+
+- Date = today
+- Applied = N
+- Application Method = "Needs manual apply"
+- Notes MUST include: `Posted: <exact phrasing or date from listing>`
+- If salary not stated: prepend `Not stated - verify before applying. ` to Notes
+
+## Step 7 — Commit
+
 ```
-https://www.linkedin.com/jobs/search/?keywords=IT%20Support%20OR%20Service%20Desk%20OR%20Helpdesk&location=London&f_AL=true&f_TPR=r172800&f_SB2=4
-```
-- `f_TPR=r172800` → posted within 48h (use `r86400` for strict 24h)
-- `f_AL=true` → Easy Apply only
-- `f_SB2=4` → £30k+ salary band (LinkedIn's closest filter, then verify £33k in listing)
-
-1. Open the URL above
-2. For each result: open the listing, **verify posted date ≤48h** and salary ≥£33k
-3. Apply to up to 10 roles using Easy Apply
-4. Use pre-filled profile data + attach `resources/ADE_IT_Black.pdf`
-5. Log to `Outputs/job-applications-log.csv` with `Posted: <date>` in Notes
-
-### Step 2 — Reed (48h freshness REQUIRED)
-
-**Use this URL — `datecreatedoffset=LastThreeDays` is the closest Reed offers, then filter manually:**
-```
-https://www.reed.co.uk/jobs/it-support-engineer-jobs-in-london?datecreatedoffset=LastThreeDays&salaryfrom=33000
-```
-- Acceptable values: `Today`, `Yesterday`, `LastThreeDays` — NEVER use `LastWeek` or wider
-- After loading, manually skip any listing showing >48h ago
-
-1. Open the URL above (and the same URL with keyword swaps for "service-desk-analyst", "2nd-line-support")
-2. For each: verify "Posted today" or "Posted 1 day ago" or "Posted 2 days ago" ONLY
-3. Apply to up to 5 roles via Reed Direct Apply
-4. Attach `resources/ADE_IT_Black.pdf`
-5. Log with `Posted: <date>` in Notes
-
-### Step 3 — TotalJobs (48h freshness REQUIRED)
-
-**Use this URL — `postedwithin=2` is the 2-day filter:**
-```
-https://www.totaljobs.com/jobs/it-support/in-london?salary=33000&salarytype=annual&postedwithin=2
-```
-- `postedwithin=1` → 24h, `postedwithin=2` → 48h, `postedwithin=3` → 72h (DO NOT exceed 2)
-
-1. Open the URL above (also try `service-desk-analyst`, `2nd-line-support` keyword swaps)
-2. For each: verify posted date ≤48h
-3. Apply to up to 5 roles
-4. Attach `resources/ADE_IT_Black.pdf`
-5. Log with `Posted: <date>` in Notes
-
----
-
-## Application Log Format
-
-Save to: `Outputs/job-applications-log.csv`
-
-Columns:
-```
-Date, Job Title, Company, Platform, Salary, Location, Applied (Y/N), CV Used, Notes
+git add Outputs/job-applications-log.csv
+git commit -m "Job applications log — [TODAY DATE] — [N] fresh roles (≤48h)"
+git push origin main
 ```
 
----
+## Step 8 — Gmail draft summary
 
-## Cover Letter Template
+Create draft to `guchhenry91@gmail.com`:
 
-Use this as a base — personalise the company name and role title each time:
+- Subject: `Job Shortlist [TODAY DATE] — [N] fresh Field Service roles (posted ≤48h)`
+- Body: For each logged job: Title, Company, Salary, Location, Posted-date, URL. State the freshness window (≤48h) at the top. End with manual-apply links.
 
-> Dear Hiring Manager,
->
-> I'm applying for the [ROLE TITLE] position at [COMPANY]. With 10+ years of IT support experience across enterprise and 24/7 service desk environments — including roles at Sky and Hachette UK — I'm confident I can deliver reliable, SLA-driven support from day one.
->
-> My background covers Windows 10/11, Active Directory, Microsoft 365, ServiceNow, and ITIL-aligned incident management. I'm based in East London and available immediately.
->
-> Please find my CV attached. I'd welcome the opportunity to discuss further.
->
-> Kind regards,
-> Adegboyega Ogidan
-> 07506 293 448 | Adegboyega.Ogid@yahoo.com
+## Step 9 — Print summary
 
----
+- Total scanned
+- Total logged (passed all 7 checks)
+- Total skipped, by reason: stale (>48h) / expired / wrong location / low salary / wrong title / duplicate / missing date
+- Any 403 errors and fallback used
 
-## Notes
-- Always check if role is "Easy Apply" before opening full application
-- If application asks for right to work: Yes (UK)
-- Notice period: Available immediately
-- Preferred shift: Any (available for 24/7 roles)
+## Goal
+
+If a search returns zero ≤48h jobs, log zero and report it honestly. Do NOT pad with stale roles.
