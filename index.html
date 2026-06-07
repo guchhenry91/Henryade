@@ -222,7 +222,7 @@
 <div id="tab-bankroll" class="tab-content"><div class="loading" style="color:#555">Load sport tabs first — bankroll tracker needs picks</div></div>
 
 <script>
-const API_KEY = '9920ed55a4e3d22e287feb45439376da';
+let API_KEY = ''; // loaded from proxy /api/config at startup
 const BASE    = 'https://api.the-odds-api.com/v4';
 const MLB_ONLY = false; // free-tier key — only MLB fetches; other tabs disabled
 const CACHE_TTL    = 3 * 60 * 60 * 1000; // 3hrs — lines move fast, keep data fresh without hammering the API
@@ -5141,7 +5141,12 @@ const _proxyWarm = new Promise(resolve => {
   });
 });
 
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
+  // Fetch odds API key from proxy on startup
+  try {
+    const _cfg = await fetch('https://nba-stats-proxy-9kur.onrender.com/api/config');
+    if (_cfg.ok) { const _j = await _cfg.json(); if (_j.oddsKey) API_KEY = _j.oddsKey; }
+  } catch(e) { console.warn('Config fetch failed:', e); }
   refreshAll(false);
   autoGrade().then(n => {
     // Retry after 30s for any picks ESPN hadn't processed yet on first pass
