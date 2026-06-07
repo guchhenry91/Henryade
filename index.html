@@ -224,7 +224,6 @@
 <script>
 let API_KEY = ''; // loaded from proxy /api/config at startup
 const BASE    = 'https://api.the-odds-api.com/v4';
-const MLB_ONLY = false; // free-tier key — only MLB fetches; other tabs disabled
 const CACHE_TTL    = 3 * 60 * 60 * 1000; // 3hrs — lines move fast, keep data fresh without hammering the API
 
 // ── All dates use US Eastern timezone (matches ESPN + US sportsbooks) ─────────
@@ -588,7 +587,7 @@ function _mlbExtractFromStatmuse(games, statKey) {
     else if (statKey === 'RBIs')         val = g.RBIs;
     else if (statKey === 'runs')         val = g.runs;
     else if (statKey === 'totalBases')   val = g.totalBases;
-    else if (statKey === 'strikeOuts')   val = g.strikeouts;
+    else if (statKey === 'strikeouts')   val = g.strikeouts;
     else if (statKey === 'baseOnBalls')  val = g.walks;
     else if (statKey === 'hitsRunsRBIs') val = g.hitsRunsRBIs;
     else continue;
@@ -766,7 +765,7 @@ async function espnPlayerGamelog(sport, league, athleteId, statKey) {
             const r = parseFloat((ev.stats||[])[rIdx]) || 0;
             const rbi = parseFloat((ev.stats||[])[rbiIdx]) || 0;
             const evInfo = eventsMap[ev.eventId] || {};
-            const isHome = evInfo.homeTeamId ? true : (ev.atVs !== '@');
+            const isHome = ev.atVs !== '@';
             const gameDate = evInfo.gameDate || null;
             entries.push({ val: h + r + rbi, isHome, gameDate });
           }
@@ -799,9 +798,7 @@ async function espnPlayerGamelog(sport, league, athleteId, statKey) {
           if (isNaN(val)) continue;
 
           const evInfo = eventsMap[ev.eventId] || {};
-          const isHome = evInfo.homeTeamId
-            ? true
-            : (ev.atVs !== '@');
+          const isHome = ev.atVs !== '@';
           const gameDate = evInfo.gameDate || null;
           entries.push({ val, isHome, gameDate });
         }
@@ -2247,8 +2244,13 @@ function showTab(name, e) {
   if (e && e.target) e.target.classList.add('active');
   document.getElementById('tab-' + name).classList.add('active');
 
-  // Out-of-season tabs: NBA/NFL/NHL show friendly message
-  const OUT_OF_SEASON = ['nba','nfl','nhl'];
+  // Out-of-season tabs: date-aware — show friendly message only when truly off
+  // NBA/NHL: off Jul–Sep (months 6–8); NFL: off Mar–Aug (months 2–7)
+  const _mo = new Date().getMonth(); // 0=Jan … 11=Dec
+  const OUT_OF_SEASON = [
+    ...(_mo >= 6 && _mo <= 8 ? ['nba','nhl'] : []),  // Jul–Sep: NBA/NHL off
+    ...(_mo >= 2 && _mo <= 7 ? ['nfl'] : []),          // Mar–Aug: NFL off
+  ];
   if (OUT_OF_SEASON.includes(name)) {
     const sportName = SPORT_TABS[name]?.label || name.toUpperCase();
     const tabEl = document.getElementById('tab-' + name);
@@ -2715,9 +2717,10 @@ async function fetchTeamForm(sport, league, teamName) {
   // Use Render proxy for soccer (TheSportsDB real-time data)
   if (sport === 'soccer') {
     try {
-      const proxyLeague = SOCCER_LEAGUE_MAP[league] || 'epl';
+      const proxyLeague = SOCCER_LEAGUE_MAP[league];
+      if (!proxyLeague) return null; // unknown league (WC/qualifiers) — skip rather than fetch wrong EPL data
       const ctrl = new AbortController();
-      const timer = setTimeout(() => ctrl.abort(), 60000);
+      const timer = setTimeout(() => ctrl.abort(), 15000);
       let res;
       try {
         res = await fetch(`${NBA_PROXY}/api/soccer/team/${encodeURIComponent(teamName)}/form?league=${proxyLeague}`, { signal: ctrl.signal });
@@ -3566,8 +3569,6 @@ async function buildSoccer(force) {
 
   const leagues = [
     { key:'soccer_fifa_world_cup', label:'🌍 FIFA World Cup', props:true },
-    { key:'soccer_fifa_world_cup_qualifiers_europe', label:'🌍 WC Qualifiers (EUR)', props:false },
-    { key:'soccer_fifa_world_cup_qualifiers_south_america', label:'🌍 WC Qualifiers (CONMEBOL)', props:false },
   ];
 
   let html = '';
@@ -4963,13 +4964,9 @@ async function refreshAll(force=false) {
     const msg = document.createElement('div');
     msg.className = 'loading';
     msg.style.color = '#888';
-    if (false) { // out-of-season handled in showTab
-      msg.textContent = `${sportName} disabled — free-tier API key only supports MLB.`;
-    } else {
-      msg.style.cursor = 'pointer';
-      msg.onclick = () => showTab(k);
-      msg.textContent = `Click ${sportName} tab to load picks`;
-    }
+    msg.style.cursor = 'pointer';
+    msg.onclick = () => showTab(k);
+    msg.textContent = `Click ${sportName} tab to load picks`;
     tabEl.appendChild(msg);
   });
 
