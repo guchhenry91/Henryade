@@ -193,6 +193,7 @@
     <div class="token-info">Used: <span id="tokensUsed">—</span></div>
     <div class="cache-info" id="cacheStatus">Cache: checking...</div>
     <button class="btn" onclick="refreshAll(false)">↻ Cache</button>
+    <button class="btn" onclick="clearGamelogCache();refreshAll(false)" title="Clear player stat cache and re-fetch from ESPN (no token cost)">🔄 Stats</button>
     <button class="btn btn-danger" onclick="if(_tokensLeft!==null&&_tokensLeft<=TOKEN_WARN){if(!confirm(`Only ${_tokensLeft} tokens left. Hard refresh will use ~10 tokens. Continue?`))return;}refreshAll(true)">⚡ Refresh</button>
   </div>
 </header>
@@ -380,7 +381,7 @@ const NBA_PROXY = 'https://nba-stats-proxy-9kur.onrender.com';
 // ── Gamelog cache — 12-hour TTL, persisted in localStorage ──────────────────
 // Prevents re-fetching same player on every tab click (biggest speed win)
 // Also deduplicates in-flight: LeBron points + LeBron rebounds = 1 proxy call
-const GAMELOG_TTL = 12 * 60 * 60 * 1000; // 12 hours
+const GAMELOG_TTL = 2 * 60 * 60 * 1000; // 2 hours (ESPN is free/public — no token cost)
 const _gamelogInFlight = {}; // key → Promise (dedup concurrent requests)
 
 function getGamelogCache(key) {
@@ -2294,6 +2295,12 @@ function getCache(k)   {
   } catch { return null; }
 }
 function setCache(k,d) { try { localStorage.setItem(cacheKey(k), JSON.stringify({ts:Date.now(),data:d})); } catch {} }
+function clearGamelogCache(){
+  Object.keys(localStorage)
+    .filter(k => k.startsWith('gl_'))
+    .forEach(k => localStorage.removeItem(k));
+  Object.keys(_gamelogInFlight).forEach(k => delete _gamelogInFlight[k]);
+}
 function clearAllCache(){
   // Clear odds cache (bm_ prefix) and gamelog cache (gl_ prefix)
   Object.keys(localStorage)
