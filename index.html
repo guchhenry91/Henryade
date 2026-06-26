@@ -2383,19 +2383,46 @@ async function fetchEvents(sport, force=false) {
   return data;
 }
 
+// Prop fetch throttle — max 3 concurrent to avoid 429s from the Odds API rate limiter
+let _propSlots = 3;
+const _propQueue = [];
+function _runPropQueue() {
+  while (_propSlots > 0 && _propQueue.length > 0) {
+    const { run, resolve, reject } = _propQueue.shift();
+    _propSlots--;
+    run().then(v => { _propSlots++; _runPropQueue(); resolve(v); })
+         .catch(e => { _propSlots++; _runPropQueue(); reject(e); });
+  }
+}
+function _queuedFetch(fn) {
+  return new Promise((resolve, reject) => { _propQueue.push({ run: fn, resolve, reject }); _runPropQueue(); });
+}
+
 async function fetchEventProps(sport, eventId, markets, region, force=false) {
   const ck = `props_${eventId}_${markets}`;
   const cached = getCache(ck);
   if (!tokensSafe()) return cached || { bookmakers: [] };
   if (cached && !force) return cached;
-  const url = `${BASE}/sports/${sport}/events/${eventId}/odds?apiKey=${API_KEY}&regions=${region}&markets=${markets}&oddsFormat=decimal`;
-  const res = await fetch(url);
-  updateTokens(res);
-  if (!res.ok) throw new Error(`API ${res.status}`);
-  const data = await res.json();
-  // Only cache if books returned actual props — empty = pre-game state, re-fetch every time
-  if ((data.bookmakers || []).length > 0) setCache(ck, data);
-  return data;
+  // Check short-TTL empty-result cache (15 min) — prevents re-fetching pre-game blanks
+  const emptyCk = `props_empty_${eventId}_${markets}`;
+  const emptyTs = localStorage.getItem(emptyCk);
+  if (emptyTs && !force && Date.now() - Number(emptyTs) < 15 * 60 * 1000) return { bookmakers: [] };
+
+  return _queuedFetch(async () => {
+    const url = `${BASE}/sports/${sport}/events/${eventId}/odds?apiKey=${API_KEY}&regions=${region}&markets=${markets}&oddsFormat=decimal`;
+    const res = await fetch(url);
+    updateTokens(res);
+    if (!res.ok) throw new Error(`API ${res.status}`);
+    const data = await res.json();
+    if ((data.bookmakers || []).length > 0) {
+      setCache(ck, data);
+      localStorage.removeItem(emptyCk);
+    } else {
+      // Cache empty result for 15 min so we don't burn tokens on pre-game blanks
+      try { localStorage.setItem(emptyCk, String(Date.now())); } catch {}
+    }
+    return data;
+  });
 }
 
 // ── Poisson model ─────────────────────────────────────────────────────────────
@@ -3629,16 +3656,19 @@ async function buildSoccer(force) {
       const leagueXGKey = xgLeagueMap[lg.key] || null;
       const leagueXG = leagueXGKey ? xgData[leagueXGKey] : null;
 
+      // World Cup has no US shot-prop markets — skip those calls to save API tokens
+      const isWorldCup = lg.key.includes('world_cup') || lg.key.includes('fifa');
       const prefetched = await Promise.all(today.map(async ev => {
         const home = ev.home_team, away = ev.away_team;
         // Fetch BTTS/DNB, home form, away form, goal scorers + shot props all in parallel
+        // (throttled to 3 concurrent via _propSlots queue — prevents 429 rate-limit errors)
         const [extraData, hForm, aForm, scorerData, shotData] = await Promise.all([
           ev.id ? fetchEventProps(lg.key, ev.id, 'btts,draw_no_bet', 'uk', force).catch(() => null) : Promise.resolve(null),
           fetchTeamForm(espnLeague.sport, espnLeague.league, home).catch(() => null),
           fetchTeamForm(espnLeague.sport, espnLeague.league, away).catch(() => null),
           (lg.props && ev.id) ? fetchEventProps(lg.key, ev.id, 'player_goal_scorer_anytime', 'uk,eu,au', force).catch(() => null) : Promise.resolve(null),
-          // Shot props — US books only (DraftKings/FanDuel offer these for EPL + La Liga)
-          (lg.props && ev.id) ? fetchEventProps(lg.key, ev.id, 'player_shots_on_target,player_shots', 'us', force).catch(() => null) : Promise.resolve(null),
+          // Shot props — US books only (EPL/La Liga). Skip for World Cup — no coverage.
+          (lg.props && ev.id && !isWorldCup) ? fetchEventProps(lg.key, ev.id, 'player_shots_on_target,player_shots', 'us', force).catch(() => null) : Promise.resolve(null),
         ]);
         return { ev, extraData, homeForm: hForm, awayForm: aForm, scorerData, shotData };
       }));
@@ -3760,8 +3790,8 @@ async function buildSoccer(force) {
         html += `<div class="match-card">
           <div class="match-title"><span>${home} vs ${away}</span><span class="match-time">${gameDate(ev.commence_time)}</span></div>
           <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px;font-size:0.78em">
-            <div><span style="color:#888">${home.split(' ').pop()}:</span> ${teamXGTag(homeTeamXG, homeForm)}</div>
-            <div><span style="color:#888">${away.split(' ').pop()}:</span> ${teamXGTag(awayTeamXG, awayForm)}</div>
+            ${teamXGTag(homeTeamXG, homeForm) ? `<div><span style="color:#888">${home.split(' ').pop()}:</span> ${teamXGTag(homeTeamXG, homeForm)}</div>` : ''}
+            ${teamXGTag(awayTeamXG, awayForm) ? `<div><span style="color:#888">${away.split(' ').pop()}:</span> ${teamXGTag(awayTeamXG, awayForm)}</div>` : ''}
             <div style="margin-left:auto"><span style="color:${sourceColor};font-size:0.72em;font-weight:600;background:${sourceColor}12;padding:2px 8px;border-radius:8px;border:1px solid ${sourceColor}30">${sourceLabel}</span>
               <span style="color:#444;font-size:0.68em;margin-left:4px">hXG:${homeXG.toFixed(2)} aXG:${awayXG.toFixed(2)} rho:${rho}</span>
             </div>
