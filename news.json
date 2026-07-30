@@ -1,6 +1,6 @@
 {
- "updated": "2026-07-30T22:09:32.036141+00:00",
- "updated_unix": 1785449372,
+ "updated": "2026-07-30T23:34:16.522777+00:00",
+ "updated_unix": 1785454456,
  "source": "espn",
  "leagues": {
   "epl": {
@@ -350,46 +350,46 @@
    "name": "NFL",
    "headlines": [
     {
-     "title": "2026 Green Bay Packers training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Packers training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-07-30T22:08:13Z",
+     "title": "2026 Seattle Seahawks training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Seahawks training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-07-30T23:27:01Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49376941/green-bay-packers-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/49427699/seattle-seahawks-training-camp-2026-intel-updates"
     },
     {
-     "title": "Giants have spoken with Cam Skattebo after Fanatics Fest flip",
-     "desc": "Giants coach John Harbaugh and general manager Joe Schoen have had conversations with running back Cam Skattebo following his backflip at Fanatics Fest two weeks ago.",
-     "published": "2026-07-30T22:05:57Z",
+     "title": "Tyler Allgeier 'building' relationship with rookie RB Jeremiyah Love",
+     "desc": "Cardinals running back Tyler Allgeier doesn't think there's a point in \"being a jerk\" about being on the wrong end of his team drafting a running back in the first round with him already on the roster, he said Thursday.",
+     "published": "2026-07-30T23:33:07Z",
      "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49491778/giants-spoken-cam-skattebo-fanatics-fest-flip"
+     "link": "https://www.espn.com/nfl/story/_/id/49492396/tyler-allgeier-building-relationship-rookie-rb-jeremiyah-love"
     },
     {
-     "title": "2026 New York Jets training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Jets training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-07-30T21:50:06Z",
+     "title": "2026 NFL training camp: Latest news, intel for all 32 teams",
+     "desc": "Get all the news, intel and insights on NFL training camps from our team of reporters in the field.",
+     "published": "2026-07-30T23:12:41Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49419756/new-york-jets-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/49368181/training-camp-2026-latest-news-intel-updates-buzz-all-32-teams"
     },
     {
-     "title": "2026 Los Angeles Chargers training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Chargers training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-07-30T21:20:26Z",
+     "title": "2026 Arizona Cardinals training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Cardinals training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-07-30T23:19:12Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49424976/los-angeles-chargers-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/49426382/arizona-cardinals-training-camp-2026-intel-updates"
     },
     {
-     "title": "2026 Pittsburgh Steelers training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Steelers training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-07-30T21:15:27Z",
+     "title": "2026 Carolina Panthers training camp: Latest intel, updates",
+     "desc": "Follow our updates from Panthers training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-07-30T23:07:22Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49449169/pittsburgh-steelers-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/49377273/carolina-panthers-training-camp-2026-intel-updates"
     },
     {
-     "title": "Mike Clay's early 2026 fantasy football PPR rankings",
-     "desc": "Position-by-position rankings for the 2026 fantasy season, updated throughout the summer.",
-     "published": "2026-07-30T21:14:15Z",
+     "title": "2026 New Orleans Saints training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Saints training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-07-30T22:52:54Z",
      "type": "Story",
-     "link": "https://www.espn.com/fantasy/football/story/_/id/47513496/2026-fantasy-football-rankings-ppr-mike-clay"
+     "link": "https://www.espn.com/nfl/story/_/id/49424731/new-orleans-saints-training-camp-2026-intel-updates"
     }
    ],
    "injuries": {
@@ -778,7 +778,7 @@
      {
       "player": "Tyler Bass",
       "status": "Active",
-      "detail": "Bass noted Thursday that he's fully healthy after recovering from a pelvic injury that cost him the entire 2025 season,   Matt Parrino of Syracuse.com reports."
+      "detail": "Bass noted Thursday that he's fully healthy after recovering from a pelvic injury that cost him the entire 2025 season, Matt Parrino of Syracuse.com reports."
      },
      {
       "player": "Tyrell Shavers",
@@ -1538,6 +1538,11 @@
     ],
     "Denver Broncos": [
      {
+      "player": "Blake Cotton",
+      "status": "Questionable",
+      "detail": "questionable"
+     },
+     {
       "player": "Drew Sanders",
       "status": "Active",
       "detail": ""
@@ -1656,11 +1661,6 @@
       "player": "Joseph Manjack IV",
       "status": "Active",
       "detail": "Manjack signed with the Broncos as an undrafted free agent Friday."
-     },
-     {
-      "player": "Kolbe Katsis",
-      "status": "Active",
-      "detail": "Katsis signed with the Broncos as an undrafted free agent Friday."
      }
     ],
     "Detroit Lions": [
@@ -1792,9 +1792,19 @@
     ],
     "Green Bay Packers": [
      {
+      "player": "Jager Burton",
+      "status": "Active",
+      "detail": "Burton is missing the Packers' training camp practice Thursday after pulling a muscle while doing drills, Tom Silverstein of the Milwaukee Journal Sentinel reports."
+     },
+     {
       "player": "Keisean Nixon",
-      "status": "Questionable",
-      "detail": "Nixon (undisclosed) pulled a muscle during Thursday's practice and did not finish the session, Tom Silverstein of the Milwaukee Journal Sentinel reports."
+      "status": "Active",
+      "detail": ""
+     },
+     {
+      "player": "Donovan Jennings",
+      "status": "Active",
+      "detail": ""
      },
      {
       "player": "Jayden Reed",
@@ -1905,19 +1915,19 @@
       "player": "Jordan Love",
       "status": "Active",
       "detail": "Love said Thursday that the Packers still \"have some great weapons\" after losing WRs Romeo Doubs and Dontayvion Wicks this offseason, Ian Rapoport of NFL Network reports."
-     },
-     {
-      "player": "Luke Lachey",
-      "status": "Active",
-      "detail": "Green Bay signed Lachey to a contract Monday."
-     },
-     {
-      "player": "Christian Watson",
-      "status": "Active",
-      "detail": "Watson and the Packers have reached agreement on a four-year contract extension, Adam Schefter of ESPN reports."
      }
     ],
     "Houston Texans": [
+     {
+      "player": "Layne Pryor",
+      "status": "Active",
+      "detail": "Pryor was on the field participating in Thursday's practice, Ashley Landis of hjnews.com reports."
+     },
+     {
+      "player": "Azeez Al-Shaair",
+      "status": "Active",
+      "detail": "Al-Shaair was on the field participating in Thursday's practice, Ashley Landis of hjnews.com reports."
+     },
      {
       "player": "Jake Hansen",
       "status": "Questionable",
@@ -2019,11 +2029,6 @@
       "detail": "Bond, who was a sixth-round selection in April's NFL Draft, \"turned heads\" during OTAs, DJ Bien-Aime of ESPN.com reports."
      },
      {
-      "player": "Layne Pryor",
-      "status": "Questionable",
-      "detail": "Pryor didn't practice Wednesday due to a quadriceps injury, Aaron Wilson of KPRC 2 Houston reports."
-     },
-     {
       "player": "Trent Brown",
       "status": "Active",
       "detail": "Brown (ankle) participated in Houston's minicamp practice Tuesday, Jonathan M. Alexander of the Houston Chronicle reports."
@@ -2037,14 +2042,24 @@
       "player": "Jaylin Smith",
       "status": "Active",
       "detail": "Smith (knee) is participating in OTAs this week, Aaron Wilson of KPRC 2 Houston reports."
-     },
-     {
-      "player": "Cade Stover",
-      "status": "Active",
-      "detail": "Stover (knee) is participating in the Texans' OTAs, Aaron Wilson of KPRC 2 Houston reports."
      }
     ],
     "Indianapolis Colts": [
+     {
+      "player": "Anthony Richardson Sr.",
+      "status": "Active",
+      "detail": "Richardson is in a competition for the backup quarterback role in Indianapolis ahead of the 2026 campaign, JJ Stankevitz of the Colts' official website reports."
+     },
+     {
+      "player": "Charvarius Ward",
+      "status": "Active",
+      "detail": "Ward is particpating in the Colts' training camp activities, James Boyd of The Athletic reports."
+     },
+     {
+      "player": "Liam Clifford",
+      "status": "Active",
+      "detail": "The Colts signed Clifford to a contract Thursday."
+     },
      {
       "player": "Daniel Jones",
       "status": "Active",
@@ -2054,11 +2069,6 @@
       "player": "Jonathan Taylor",
       "status": "Active",
       "detail": "Taylor participated in Wednesday's practice, Mike Chappell of Fox 59 News Indianapolis reports."
-     },
-     {
-      "player": "Anthony Richardson Sr.",
-      "status": "Active",
-      "detail": "Though Richardson's trade request is still on the table, GM Chris Ballard's stance regarding the QB's status remains unchanged, Kevin Bowen of 1075thefan.com reports."
      },
      {
       "player": "Alec Pierce",
@@ -2116,11 +2126,6 @@
       "detail": "Shrader (knee) went three of five on kicks during Thursday's minicamp session, Kevin Bowen 93.5 The Fan in Indianapolis reports."
      },
      {
-      "player": "Charvarius Ward",
-      "status": "Questionable",
-      "detail": "Ward (back) did not participate during the Colts' minicamp session Tuesday, Mike Chappell of Fox 59 News Indianapolis reports."
-     },
-     {
       "player": "Will Mallory",
       "status": "Active",
       "detail": "Mallory (lung) is participating during the Colts' OTAs, Kevin Bowen of 107.5 The Fan reports."
@@ -2164,14 +2169,14 @@
       "player": "Seth McGowan",
       "status": "Active",
       "detail": "The Colts selected McGowan in the seventh round of the 2026 NFL Draft, 237th overall."
-     },
-     {
-      "player": "Caden Curry",
-      "status": "Active",
-      "detail": "The Colts selected Curry in the sixth round of the 2026 NFL Draft, 214th overall."
      }
     ],
     "Jacksonville Jaguars": [
+     {
+      "player": "Jack Kiser",
+      "status": "Questionable",
+      "detail": "Kiser (knee) was not present during Thursday's practice, Ryan O'Halloran of The Florida Times-Union reports."
+     },
      {
       "player": "Chris Rodriguez Jr.",
       "status": "Questionable",
@@ -2291,11 +2296,6 @@
       "player": "Ethan Conner",
       "status": "Active",
       "detail": "The Jaguars signed Connor as an undrafted free agent Sunday."
-     },
-     {
-      "player": "Brady Boyd",
-      "status": "Active",
-      "detail": "The Jaguars signed Boyd as an undrafted free agent Sunday."
      }
     ],
     "Kansas City Chiefs": [
@@ -2681,6 +2681,11 @@
     ],
     "Los Angeles Rams": [
      {
+      "player": "Alaric Jackson",
+      "status": "Questionable",
+      "detail": "Jackson missed practice Wednesday due to management of his blood clot issue, Stu Jackson and Zach Edwards of the Rams' official site report."
+     },
+     {
       "player": "Puka Nacua",
       "status": "Active",
       "detail": "Nacua has been the star of Rams training camp through four practices, Nate Atkins of The Athletic reports."
@@ -2694,11 +2699,6 @@
       "player": "Jordan Whittington",
       "status": "Active",
       "detail": "Whittington looks like the early leader in the competition for the Rams' No. 3 receiver job, according to Cameron DaSilva of Rams Wire."
-     },
-     {
-      "player": "Alaric Jackson",
-      "status": "Questionable",
-      "detail": "questionable"
      },
      {
       "player": "Blake Hance",
@@ -4205,6 +4205,11 @@
     ],
     "Tennessee Titans": [
      {
+      "player": "JC Latham",
+      "status": "Active",
+      "detail": "Tennessee took Latham (undisclosed) off its active/PUP list Thursday, Buck Reising of WGFX-FM reports."
+     },
+     {
       "player": "Oluwafemi Oladejo",
       "status": "Active",
       "detail": "Oladejo passed his conditioning test and is participating in the Titans' training camp activities, Jim Wyatt of the team's official site reports."
@@ -4213,11 +4218,6 @@
       "player": "Mitchell Trubisky",
       "status": "Active",
       "detail": "Trusbisky (tightness) returned to practice Thursday, Turron Davenport of ESPN.com reports."
-     },
-     {
-      "player": "JC Latham",
-      "status": "Active",
-      "detail": ""
      },
      {
       "player": "Calvin Ridley",
@@ -5390,11 +5390,6 @@
       "player": "Nikita Zadorov",
       "status": "Out",
       "detail": "out"
-     },
-     {
-      "player": "Dans Locmelis",
-      "status": "Out",
-      "detail": "Locmelis will undergo season-ending shoulder surgery next week, Mark Divver of the New England Hockey Journal reports."
      }
     ],
     "Buffalo Sabres": [
@@ -5429,31 +5424,6 @@
       "player": "Yan Kuznetsov",
       "status": "Out",
       "detail": "Kuznetsov (upper body) will miss the rest of the 2025-26 regular season, according to Pat Steinberg of Sportsnet 960 The Fan on Tuesday."
-     },
-     {
-      "player": "Joel Hanley",
-      "status": "Out",
-      "detail": "out"
-     },
-     {
-      "player": "Samuel Honzek",
-      "status": "Injured Reserve",
-      "detail": "Honzek (upper body) will not return this season, per Pat Steinberg of Sportsnet 960 The Fan on Friday."
-     },
-     {
-      "player": "Jonathan Huberdeau",
-      "status": "Injured Reserve",
-      "detail": "Huberdeau (hip) was put on injured reserve Saturday, per the NHL media site."
-     },
-     {
-      "player": "Jake Bean",
-      "status": "Injured Reserve",
-      "detail": "Bean (undisclosed) will need to undergo surgery and is expected to be sidelined indefinitely, Pat Steinberg of Sportsnet 960 The Fan reports Thursday."
-     },
-     {
-      "player": "Henry Mews",
-      "status": "Out",
-      "detail": "out"
      }
     ],
     "Carolina Hurricanes": [
@@ -5473,21 +5443,6 @@
       "player": "Connor Bedard",
       "status": "Out",
       "detail": "Bedard (shoulder) signed a five-year, $75 million contract with Chicago on Saturday."
-     },
-     {
-      "player": "Matt Grzelcyk",
-      "status": "Out",
-      "detail": "Grzelcyk (upper body) will miss the remainder of the 2025-26 regular season, according to Ben Pope of the Chicago Sun-Times on Tuesday."
-     },
-     {
-      "player": "Artyom Levshunov",
-      "status": "Out",
-      "detail": "Levshunov (hand) will not play again in 2025-26, according to Ben Pope of the Chicago Sun-Times on Tuesday."
-     },
-     {
-      "player": "Ryan Ellis",
-      "status": "Injured Reserve",
-      "detail": "Ellis (back) and his contract have been traded to Chicago from San Jose, along with Jake Furlong and a 2028 fourth-round pick in exchange for Laurent Brossoit, Nolan Allan and a 2028 seventh-round pick Thursday."
      }
     ],
     "Colorado Avalanche": [
@@ -5548,11 +5503,6 @@
       "player": "Adam Henrique",
       "status": "Out",
       "detail": "out"
-     },
-     {
-      "player": "Mattias Janmark",
-      "status": "Injured Reserve",
-      "detail": "Janmark (undisclosed) underwent season-ending surgery on Friday, per Mark Spector of Sportsnet."
      }
     ],
     "Florida Panthers": [
@@ -5597,31 +5547,9 @@
       "detail": "out"
      },
      {
-      "player": "Jonah Gadjovich",
-      "status": "Injured Reserve",
-      "detail": "Gadjovich (upper body) is not expected to suit up again this season, per Jameson Olive of the Panthers' official site on Tuesday."
-     },
-     {
-      "player": "Niko Mikkola",
-      "status": "Injured Reserve",
-      "detail": "ir"
-     },
-     {
       "player": "Uvis Balinskis",
       "status": "Out",
       "detail": "Balinskis (lower body) has a fracture and is slated to miss 4-6 weeks, Jameson Olive of the Panthers' official site reports Monday."
-     },
-     {
-      "player": "Brad Marchand",
-      "status": "Injured Reserve",
-      "detail": "Marchand landed on injured reserve Tuesday, per the NHL media site."
-     }
-    ],
-    "Los Angeles Kings": [
-     {
-      "player": "Kevin Fiala",
-      "status": "Injured Reserve",
-      "detail": "Fiala (lower leg fracture) won't be available before training camp for the 2026-27 campaign, per John Hoven of SiriusXM NHL Network Radio."
      }
     ],
     "Minnesota Wild": [
@@ -5668,19 +5596,9 @@
       "detail": "out"
      },
      {
-      "player": "Brett Pesce",
-      "status": "Injured Reserve",
-      "detail": "ir-lt"
-     },
-     {
       "player": "Luke Hughes",
       "status": "Out",
       "detail": "Hughes (undisclosed)  will undergo a procedure and will miss the remainder of the season, it was announced Thursday."
-     },
-     {
-      "player": "Stefan Noesen",
-      "status": "Injured Reserve",
-      "detail": "Noesen (knee) has been ruled out for the rest of the season, Kristy Flannery of The Hockey News reports Sunday."
      }
     ],
     "New York Islanders": [
@@ -5708,18 +5626,6 @@
       "player": "Alexander Romanov",
       "status": "Injured Reserve",
       "detail": "Romanov (shoulder) will miss the final two games of the regular season, according to Stefen Rosner of NHL.com on Sunday."
-     },
-     {
-      "player": "Pierre Engvall",
-      "status": "Injured Reserve",
-      "detail": "Engvall (ankle) will miss the remainder of the 2025-26 campaign, per Stefen Rosner of NHL.com."
-     }
-    ],
-    "New York Rangers": [
-     {
-      "player": "Matt Rempe",
-      "status": "Injured Reserve",
-      "detail": "Rempe (thumb) probably won't be ready to return before the end of the 2025-26 regular season, according to Vince Z. Mercogliano of The Athletic on Monday."
      }
     ],
     "Ottawa Senators": [
@@ -5749,23 +5655,6 @@
       "player": "Owen Tippett",
       "status": "Out",
       "detail": "Tippett (undisclosed) was contending with several injuries, including a sports hernia, during the 2026 postseason, Kevin Kurz of The Athletic reports Monday."
-     },
-     {
-      "player": "Ty Murchison",
-      "status": "Out",
-      "detail": "out"
-     }
-    ],
-    "Pittsburgh Penguins": [
-     {
-      "player": "Caleb Jones",
-      "status": "Injured Reserve",
-      "detail": "ir"
-     },
-     {
-      "player": "Filip Hallander",
-      "status": "Injured Reserve",
-      "detail": "Hallander (leg) was recalled from his conditioning stint with AHL Wilkes-Barre/Scranton on Friday, Seth Rorabaugh of Tribune-Review Sports reports."
      }
     ],
     "San Jose Sharks": [
@@ -5826,16 +5715,6 @@
       "player": "Dakota Joshua",
       "status": "Out",
       "detail": "Joshua (upper body) will not return to the lineup for the rest of the season, according to David Alter of The Hockey News on Saturday."
-     },
-     {
-      "player": "Auston Matthews",
-      "status": "Out",
-      "detail": "Matthews underwent successful MCL knee repair surgery Thursday."
-     },
-     {
-      "player": "Chris Tanev",
-      "status": "Injured Reserve",
-      "detail": "Tanev underwent core muscle surgery Wednesday and will miss the remainder of the 2025-26 campaign."
      }
     ],
     "Utah Mammoth": [
@@ -5850,21 +5729,6 @@
       "player": "Evander Kane",
       "status": "Out",
       "detail": "Kane (upper body) will most likely miss the Canucks' final two games of the 2025-26 season, Farhan Lalji of TSN reports."
-     },
-     {
-      "player": "Thatcher Demko",
-      "status": "Injured Reserve",
-      "detail": "Demko was placed on long-term injured reserve Tuesday."
-     },
-     {
-      "player": "Jonathan Lekkerimaki",
-      "status": "Out",
-      "detail": "Lekkerimaki underwent successful shoulder surgery Friday."
-     },
-     {
-      "player": "Filip Chytil",
-      "status": "Injured Reserve",
-      "detail": "ir"
      },
      {
       "player": "Derek Forbort",
@@ -5890,11 +5754,6 @@
      },
      {
       "player": "Charlie Lindgren",
-      "status": "Out",
-      "detail": "out"
-     },
-     {
-      "player": "Eriks Mateiko",
       "status": "Out",
       "detail": "out"
      }
@@ -5939,9 +5798,16 @@
     {
      "title": "Tristan Peters' bases-loaded walk in 11th lifts White Sox over Yankees 2-1",
      "desc": "— Tristan Peters drew a bases-loaded walk in the 11th inning to force in automatic runner Chase Meidroth and the Chicago White Sox edged the Yankees 2-1 on Thursday, beating New York in extra innings for a second straight game.",
-     "published": "2026-07-30T21:58:29Z",
+     "published": "2026-07-30T22:15:29Z",
      "type": "Recap",
      "link": "http://www.espn.com/mlb/recap?gameId=401816328"
+    },
+    {
+     "title": "Chicago Cubs vs. St. Louis Cardinals: Game Highlights",
+     "desc": "Chicago Cubs vs. St. Louis Cardinals: Game Highlights",
+     "published": "2026-07-30T22:34:00Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49491785/game-highlights"
     },
     {
      "title": "White Sox walk off the Yankees for the second game in a row",
@@ -5960,7 +5826,7 @@
     {
      "title": "Twins' Kody Clemens blasts walk-off grand slam vs. Royals",
      "desc": "Kody Clemens hit a grand slam with two outs and two strikes in the ninth as the Twins beat the Royals 4-3 after being no-hit by Noah Cameron through six innings.",
-     "published": "2026-07-30T20:56:37Z",
+     "published": "2026-07-30T23:33:14Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/mlb/story/_/id/49491240/twins-kody-clemens-blasts-walk-grand-slam-vs-royals"
     },
@@ -5970,13 +5836,6 @@
      "published": "2026-07-30T20:51:13Z",
      "type": "Media",
      "link": "https://www.espn.com/video/clip/_/id/49491027/twins-take-series-royals-walk-grand-slam"
-    },
-    {
-     "title": "Fantasy baseball lineup advice for Friday: Mize poised for a standout performance?",
-     "desc": "Everything you need to know to set your fantasy baseball lineups for Friday's MLB action.",
-     "published": "2026-07-30T20:14:04Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/baseball/story/_/id/49490410/fantasy-baseball-pitcher-rankings-lineup-advice-tips-mlb-daily-notes-july-31-games"
     }
    ],
    "injuries": {
@@ -6052,11 +5911,6 @@
       "player": "Mark Leiter Jr.",
       "status": "60-Day-IL",
       "detail": "Leiter will undergo surgery Tuesday to address a right hip impingement and is expected to miss the remainder of the season, Martin Gallegos of MLB.com reports."
-     },
-     {
-      "player": "Nick Kurtz",
-      "status": "Day-To-Day",
-      "detail": "Athletics manager Mark Kotsay said Wednesday that Kurtz will undergo an MRI on Thursday after X-rays on his left forearm were \"kind of unclear,\" Martin Gallegos of MLB.com reports."
      },
      {
       "player": "Shea Langeliers",
