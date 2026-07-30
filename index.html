@@ -270,7 +270,7 @@ const SPORT_TABS = {
   },
   nfl: {
     key: 'americanfootball_nfl', label: '🏈 NFL', region: 'us',
-    props: 'player_pass_yds,player_rush_yds,player_receiving_yds,player_pass_tds,player_receptions'
+    props: 'player_pass_yds,player_rush_yds,player_receiving_yds,player_pass_tds,player_receptions,player_anytime_td,player_pass_attempts,player_rush_attempts,player_kicking_points'
   },
   nhl: {
     key: 'icehockey_nhl', label: '🏒 NHL', region: 'us',
@@ -300,6 +300,10 @@ const ESPN_STAT_MAP = {
   player_receiving_yds:    { nfl: 'receivingYards' },
   player_pass_tds:         { nfl: 'passingTouchdowns' },
   player_receptions:       { nfl: 'receptions' },
+  player_anytime_td:       { nfl: 'touchdowns' },
+  player_pass_attempts:    { nfl: 'passingAttempts' },
+  player_rush_attempts:    { nfl: 'rushingAttempts' },
+  player_kicking_points:   { nfl: 'kickingPoints' },
   // NHL — v3 uses shotsTotal not shots, powerPlayGoals+Assists for PPP
   player_shots_on_goal:    { nhl: 'shotsTotal' },
   player_goals:            { nhl: 'goals' },
@@ -1593,6 +1597,10 @@ const MARKET_STAT_KEY = {
   player_receiving_yds:    { nfl: 'receivingYards'                                     },
   player_pass_tds:         { nfl: 'passingTouchdowns'                                  },
   player_receptions:       { nfl: 'receptions'                                         },
+  player_anytime_td:       { nfl: 'touchdowns'                                         },
+  player_pass_attempts:    { nfl: 'passingAttempts'                                    },
+  player_rush_attempts:    { nfl: 'rushingAttempts'                                    },
+  player_kicking_points:   { nfl: 'kickingPoints'                                      },
   player_shots_on_goal:    { nhl: 'shotsTotal'                                         },
   player_goals:            { nhl: 'goals'                                              },
   player_power_play_points:{ nhl: '_nhl_pp_points'                                     }, // special: goals+assists in PP, handled below
@@ -2251,7 +2259,7 @@ function showTab(name, e) {
   const _mo = new Date().getMonth(); // 0=Jan … 11=Dec
   const OUT_OF_SEASON = [
     ...(_mo >= 6 && _mo <= 8 ? ['nba','nhl'] : []),  // Jul–Sep: NBA/NHL off
-    ...(_mo >= 2 && _mo <= 7 ? ['nfl'] : []),          // Mar–Aug: NFL off
+    ...(_mo >= 2 && _mo <= 6 ? ['nfl'] : []),          // Mar–Jul: NFL off (Aug opens for preseason)
   ];
   if (OUT_OF_SEASON.includes(name)) {
     const sportName = SPORT_TABS[name]?.label || name.toUpperCase();
@@ -3603,14 +3611,27 @@ async function buildSoccer(force) {
   try { await Promise.race([_proxyWarm, new Promise(r => setTimeout(r, 20000))]); } catch {}
 
   const leagues = [
-    { key:'soccer_fifa_world_cup', label:'🌍 FIFA World Cup', props:true },
+    { key:'soccer_epl',                  label:'🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League',    props:true },
+    { key:'soccer_spain',                label:'🇪🇸 La Liga',            props:true },
+    { key:'soccer_germany',              label:'🇩🇪 Bundesliga',         props:true },
+    { key:'soccer_italy',                label:'🇮🇹 Serie A',            props:true },
+    { key:'soccer_france',               label:'🇫🇷 Ligue 1',            props:true },
+    { key:'soccer_uefa_champs_league',   label:'⭐ Champions League',    props:true },
+    { key:'soccer_uefa_europa_league',   label:'🟠 Europa League',       props:true },
+    { key:'soccer_fifa_world_cup',       label:'🌍 FIFA World Cup',      props:true },
   ];
 
   let html = '';
 
   // Fetch all league odds in parallel (removes 2s of sequential delays)
   // Also pre-fetch team xG data for leagues that have Understat coverage
-  const xgLeagueMap = {}; // World Cup only
+  const xgLeagueMap = {
+    'soccer_epl':      'epl',
+    'soccer_spain':    'laliga',
+    'soccer_germany':  'bundesliga',
+    'soccer_italy':    'seriea',
+    'soccer_france':   'ligue1',
+  };
   const [leagueOdds, ...xgResults] = await Promise.all([
     Promise.all(leagues.map(lg => apiFetch(lg.key, 'h2h,totals', 'uk', force).catch(() => []))),
     ...Object.values(xgLeagueMap).map(k => fetchLeagueTeamXG(k).catch(() => null)),
@@ -3655,10 +3676,14 @@ async function buildSoccer(force) {
       if (!today.length) { html+='<div class="no-games">No matches in next 4 days.</div></div>'; continue; }
 
       // Pre-fetch ALL per-event data in parallel for this league (massive speed boost)
-      const espnLeague = lg.key.includes('epl') ? {sport:'soccer',league:'eng.1'}
-        : lg.key.includes('fa_cup') ? {sport:'soccer',league:'eng.fa'}
-        : lg.key.includes('champs') ? {sport:'soccer',league:'uefa.champions'}
-        : lg.key.includes('la_liga') ? {sport:'soccer',league:'esp.1'}
+      const espnLeague = lg.key.includes('epl')     ? {sport:'soccer',league:'eng.1'}
+        : lg.key.includes('fa_cup')   ? {sport:'soccer',league:'eng.fa'}
+        : lg.key.includes('champs')   ? {sport:'soccer',league:'uefa.champions'}
+        : lg.key.includes('europa')   ? {sport:'soccer',league:'uefa.europa'}
+        : lg.key.includes('spain')    ? {sport:'soccer',league:'esp.1'}
+        : lg.key.includes('germany')  ? {sport:'soccer',league:'ger.1'}
+        : lg.key.includes('italy')    ? {sport:'soccer',league:'ita.1'}
+        : lg.key.includes('france')   ? {sport:'soccer',league:'fra.1'}
         : {sport:'soccer',league:'fifa.world'};
       const leagueXGKey = xgLeagueMap[lg.key] || null;
       const leagueXG = leagueXGKey ? xgData[leagueXGKey] : null;
