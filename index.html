@@ -207,6 +207,7 @@
   <div class="tab" onclick="showTab('nfl',event)">🏈 NFL</div>
   <div class="tab" onclick="showTab('nhl',event)">🏒 NHL</div>
   <div class="tab" onclick="showTab('mlb',event)">⚾ MLB</div>
+  <div class="tab" onclick="showTab('news',event)">📰 News <span id="news-dot" style="display:none;color:#00ff88">●</span></div>
   <div class="tab" onclick="showTab('history',event)">📊 History</div>
   <div class="tab" onclick="showTab('bankroll',event)">💼 Bankroll</div>
 </div>
@@ -219,6 +220,7 @@
 <div id="tab-nfl"    class="tab-content"><div class="loading" style="color:#555">Click 🏈 NFL tab to load picks</div></div>
 <div id="tab-nhl"    class="tab-content"><div class="loading" style="color:#555">Click 🏒 NHL tab to load picks</div></div>
 <div id="tab-mlb"     class="tab-content"><div class="loading" style="color:#555">Click ⚾ MLB tab to load picks</div></div>
+<div id="tab-news"     class="tab-content"><div class="loading" style="color:#555">Click 📰 News tab for team news, injuries & lineups</div></div>
 <div id="tab-history"  class="tab-content"><div class="loading" style="color:#555">Click 📊 History tab to view picks</div></div>
 <div id="tab-bankroll" class="tab-content"><div class="loading" style="color:#555">Load sport tabs first — bankroll tracker needs picks</div></div>
 
@@ -2287,6 +2289,8 @@ function showTab(name, e) {
       buildBankrollTab();
     } else if (name === 'history') {
       buildHistoryTab();
+    } else if (name === 'news') {
+      buildNewsTab();
     } else if (SPORT_TABS[name]) {
       const sportName = SPORT_TABS[name].label || name.toUpperCase();
       document.getElementById('tab-' + name).innerHTML = `<div class="loading">${sportName} — Fetching odds & player stats...</div>`;
@@ -3445,6 +3449,27 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
     .sort((a,b) => b.prob - a.prob)
     .slice(0, 20); // Wider pool (was 10) — form/xG reranking can promote longer-priced names
 
+  // ── News-feed filter: drop injured/benched players before we spend effort on them ──
+  // Uses auto-updated news.json (injuries always; confirmed XI on game day).
+  const _newsKey = espnLeague ? NEWS_LEAGUE_KEY[espnLeague.league] : null;
+  let newsFilterNote = '';
+  if (_newsKey && NEWS) {
+    const parts = (matchLabel || '').split(' vs ');
+    const xi = parts.length === 2 ? newsConfirmedXI(parts[0], parts[1], _newsKey) : null;
+    const before = list.length;
+    const dropped = [];
+    list = list.filter(s => {
+      if (newsPlayerOut(s.name, _newsKey)) { dropped.push(`${s.name} (injured)`); return false; }
+      // If a confirmed XI exists and this player isn't in it, they're benched — drop.
+      if (xi && !xi.has(_newsNorm(s.name))) { dropped.push(`${s.name} (not in XI)`); return false; }
+      return true;
+    });
+    if (dropped.length) {
+      newsFilterNote = `<div style="font-size:0.68em;color:#ff8888;margin:4px 0">📰 Dropped ${dropped.length}: ${dropped.slice(0,5).join(', ')}${dropped.length>5?'…':''}</div>`;
+    }
+    if (xi) newsFilterNote += `<div style="font-size:0.68em;color:#00ff88;margin:2px 0">✅ Confirmed XI applied</div>`;
+  }
+
   // Fetch player stats — three-tier:
   //   1. Statmuse FC per-player (last 5 games xG/shots — freshest, any league)
   //   2. Understat season-level (EPL + La Liga only — deeper sample)
@@ -3599,6 +3624,7 @@ async function renderGoalScorers(propData, sportLabel, matchLabel, espnLeague, h
     </tr>`;
   });
   html += '</table>';
+  if (newsFilterNote) html += newsFilterNote;
   return html;
 }
 
@@ -3974,6 +4000,137 @@ async function buildSportTab(name, force) {
   } catch(e) {
     container.innerHTML = `<div class="error">⚠ ${s.label} error: ${e.message}</div>`;
   }
+}
+
+// ── NEWS FEED ─────────────────────────────────────────────────────────────────
+// Auto-updated by GitHub Actions (news_feed.py) every ~30 min: team news,
+// transfers, injuries, and game-day confirmed lineups. Feeds the model so it can
+// drop goal-scorer picks for injured / benched players.
+let NEWS = null;
+
+// Map soccer ESPN league id → news.json league key (matches news_feed.py)
+const NEWS_LEAGUE_KEY = {
+  'eng.1':'epl','esp.1':'laliga','ger.1':'bundesliga','ita.1':'seriea',
+  'fra.1':'ligue1','uefa.champions':'ucl','uefa.europa':'europa',
+};
+
+async function loadNews() {
+  try {
+    // Cache-bust so a fresh deploy is picked up; fall back silently if absent
+    const r = await fetch(`./news.json?t=${Math.floor(Date.now()/60000)}`);
+    if (!r.ok) return;
+    NEWS = await r.json();
+    const dot = document.getElementById('news-dot');
+    if (dot && NEWS) dot.style.display = 'inline';
+  } catch { /* no news.json yet — model runs without it */ }
+}
+
+const _newsNorm = s => (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z\s]/g,'').trim();
+
+// Injury status for a player from the news feed, or null. Returns 'out'|'doubtful'|'day-to-day'|...
+function newsInjuryStatus(playerName, leagueKey) {
+  if (!NEWS || !leagueKey) return null;
+  const lg = NEWS.leagues && NEWS.leagues[leagueKey];
+  if (!lg || !lg.injuries) return null;
+  const pn = _newsNorm(playerName);
+  for (const team of Object.keys(lg.injuries)) {
+    for (const inj of lg.injuries[team]) {
+      const inm = _newsNorm(inj.player);
+      if (inm && (inm === pn || (pn.split(' ').pop() === inm.split(' ').pop() && pn.split(' ')[0] === inm.split(' ')[0]))) {
+        return (inj.status || '').toLowerCase();
+      }
+    }
+  }
+  return null;
+}
+
+// A player is unavailable if the feed marks them out/injured/suspended.
+function newsPlayerOut(playerName, leagueKey) {
+  const st = newsInjuryStatus(playerName, leagueKey);
+  if (!st) return false;
+  return /out|injured|suspend|doubtful/.test(st);
+}
+
+// Confirmed starting XI (Set of normalized names) for a fixture, or null if not posted yet.
+// Looks up the game by team names within the league's lineups.
+function newsConfirmedXI(homeTeam, awayTeam, leagueKey) {
+  if (!NEWS || !leagueKey) return null;
+  const lg = NEWS.leagues && NEWS.leagues[leagueKey];
+  if (!lg || !lg.lineups) return null;
+  const h = _newsNorm(homeTeam), a = _newsNorm(awayTeam);
+  for (const eid of Object.keys(lg.lineups)) {
+    const L = lg.lineups[eid];
+    if (!L.confirmed) continue;
+    const nm = _newsNorm(L.name); // "Away at Home" / "Home vs Away"
+    const teamsHit = (nm.includes(h.split(' ').pop()) && nm.includes(a.split(' ').pop()));
+    if (!teamsHit) continue;
+    const xi = new Set();
+    (L.sides||[]).forEach(s => (s.xi||[]).forEach(p => xi.add(_newsNorm(p))));
+    if (xi.size >= 11) return xi;
+  }
+  return null;
+}
+
+function buildNewsTab() {
+  const c = document.getElementById('tab-news');
+  if (!NEWS) {
+    loadNews().then(() => { if (NEWS) buildNewsTab(); });
+    c.innerHTML = '<div class="loading" style="color:#555">📰 Loading news feed… (auto-updates every 30 min)</div>';
+    return;
+  }
+  const ago = NEWS.updated_unix ? Math.round((Date.now()/1000 - NEWS.updated_unix)/60) : null;
+  let html = `<div class="value-box"><h3>📰 NEWS FEED</h3>
+    <p style="color:#666;font-size:0.78em">Auto-collected from ESPN${ago!=null?` · updated ${ago} min ago`:''}. Team news, transfers, injuries, and game-day lineups. The model drops goal-scorer picks for injured or benched players.</p></div>`;
+
+  // Order: soccer leagues first (in-season focus), then US sports
+  const order = ['epl','laliga','bundesliga','seriea','ligue1','ucl','europa','nfl','nba','nhl','mlb'];
+  const leagues = NEWS.leagues || {};
+  for (const key of order) {
+    const lg = leagues[key];
+    if (!lg) continue;
+    const injTeams = Object.keys(lg.injuries||{});
+    const lineups = Object.keys(lg.lineups||{});
+    const hasContent = (lg.headlines||[]).length || injTeams.length || lineups.length;
+    if (!hasContent) continue;
+
+    html += `<div class="sport-section"><div class="sport-title">${lg.name}</div>`;
+
+    // Confirmed lineups (game day) — highest value, show first
+    if (lineups.length) {
+      html += `<div style="margin:6px 0"><div style="color:#00ff88;font-size:0.8em;font-weight:600">✅ Lineups</div>`;
+      lineups.forEach(eid => {
+        const L = lg.lineups[eid];
+        html += `<div style="font-size:0.74em;color:#aaa;margin:4px 0"><b>${L.name}</b> ${L.confirmed?'<span style="color:#00ff88">confirmed</span>':'<span style="color:#ffcc00">probable</span>'}`;
+        (L.sides||[]).forEach(s => {
+          if ((s.xi||[]).length) html += `<div style="color:#666;margin-left:8px">${s.team}${s.formation?` (${s.formation})`:''}: ${s.xi.join(', ')}</div>`;
+        });
+        html += `</div>`;
+      });
+      html += `</div>`;
+    }
+
+    // Injuries
+    if (injTeams.length) {
+      html += `<div style="margin:6px 0"><div style="color:#ff6666;font-size:0.8em;font-weight:600">🚑 Injuries</div>`;
+      injTeams.slice(0,20).forEach(team => {
+        const players = lg.injuries[team].map(i => `${i.player}${i.status?` <span style="color:#888">(${i.status})</span>`:''}`).join(', ');
+        html += `<div style="font-size:0.73em;color:#999;margin:2px 0"><span style="color:#ccc">${team}:</span> ${players}</div>`;
+      });
+      html += `</div>`;
+    }
+
+    // Headlines
+    if ((lg.headlines||[]).length) {
+      html += `<div style="margin:6px 0"><div style="color:#888;font-size:0.8em;font-weight:600">📰 Headlines</div>`;
+      lg.headlines.slice(0,6).forEach(a => {
+        const link = a.link ? `href="${a.link}" target="_blank" rel="noopener"` : '';
+        html += `<div style="font-size:0.74em;margin:3px 0"><a ${link} style="color:#66aaff;text-decoration:none">${a.title}</a></div>`;
+      });
+      html += `</div>`;
+    }
+    html += `</div>`;
+  }
+  c.innerHTML = html;
 }
 
 // ── HISTORY & CALIBRATION TAB ─────────────────────────────────────────────────
@@ -5214,6 +5371,7 @@ window.addEventListener('load', async () => {
     const _cfg = await fetch('https://nba-stats-proxy-9kur.onrender.com/api/config');
     if (_cfg.ok) { const _j = await _cfg.json(); if (_j.oddsKey) API_KEY = _j.oddsKey; }
   } catch(e) { console.warn('Config fetch failed:', e); }
+  loadNews();  // pull auto-updated news.json (team news, injuries, lineups)
   refreshAll(false);
   autoGrade().then(n => {
     // Retry after 30s for any picks ESPN hadn't processed yet on first pass

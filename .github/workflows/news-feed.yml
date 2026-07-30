@@ -1,0 +1,51 @@
+name: News Feed
+
+# Auto-collects team news, transfers, injuries, and game-day lineups into news.json.
+# Runs every 30 min unattended. Commits only when the data actually changed, so a
+# push (and Render redeploy) happens just when there's something new.
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # every 30 minutes (UTC); GitHub may delay under load
+  workflow_dispatch: {}       # allow manual runs from the Actions tab
+
+# Never let two runs overlap or race on a push.
+concurrency:
+  group: news-feed
+  cancel-in-progress: false
+
+permissions:
+  contents: write             # needed to commit + push news.json
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Collect news
+        run: python news_feed.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "henryade-newsbot"
+          git config user.email "actions@github.com"
+          if git diff --quiet -- news.json; then
+            echo "No news changes — nothing to commit."
+            exit 0
+          fi
+          git add news.json
+          git commit -m "chore(news): auto-update $(date -u +'%Y-%m-%d %H:%M UTC')"
+          # Rebase on any concurrent pushes, then push (retry once).
+          git pull --rebase --autostash origin main || true
+          git push origin HEAD:main || (git pull --rebase --autostash origin main && git push origin HEAD:main)
