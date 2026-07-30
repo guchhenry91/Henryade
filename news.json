@@ -1,6 +1,6 @@
 {
- "updated": "2026-07-30T22:07:39.686791+00:00",
- "updated_unix": 1785449259,
+ "updated": "2026-07-30T22:09:32.036141+00:00",
+ "updated_unix": 1785449372,
  "source": "espn",
  "leagues": {
   "epl": {
@@ -350,6 +350,13 @@
    "name": "NFL",
    "headlines": [
     {
+     "title": "2026 Green Bay Packers training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Packers training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-07-30T22:08:13Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49376941/green-bay-packers-training-camp-2026-intel-updates"
+    },
+    {
      "title": "Giants have spoken with Cam Skattebo after Fanatics Fest flip",
      "desc": "Giants coach John Harbaugh and general manager Joe Schoen have had conversations with running back Cam Skattebo following his backflip at Fanatics Fest two weeks ago.",
      "published": "2026-07-30T22:05:57Z",
@@ -383,13 +390,6 @@
      "published": "2026-07-30T21:14:15Z",
      "type": "Story",
      "link": "https://www.espn.com/fantasy/football/story/_/id/47513496/2026-fantasy-football-rankings-ppr-mike-clay"
-    },
-    {
-     "title": "Fantasy football 2026 defensive depth charts",
-     "desc": "Your guide to each NFL team's most valuable fantasy defensive players for the 2026 season.",
-     "published": "2026-07-30T21:09:49Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/football/story/_/id/47879765/fantasy-football-2026-defensive-depth-charts"
     }
    ],
    "injuries": {

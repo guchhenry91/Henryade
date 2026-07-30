@@ -199,6 +199,18 @@ def main():
         "leagues": leagues,
     }
 
+    # Only rewrite when the actual CONTENT changed (ignore the timestamp), so the
+    # GitHub Action commits + redeploys Render only when there's real news — not
+    # every 30 min just because the clock moved.
+    try:
+        with open("news.json", encoding="utf-8") as f:
+            existing = json.load(f)
+        if existing.get("leagues") == leagues:
+            print("news_feed: content unchanged — keeping existing news.json")
+            return 0
+    except (FileNotFoundError, ValueError):
+        pass
+
     with open("news.json", "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=1)
     print(f"news_feed: wrote news.json ({len(leagues)} leagues)")
