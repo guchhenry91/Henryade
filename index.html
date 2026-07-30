@@ -3812,7 +3812,13 @@ async function buildSoccer(force) {
         // Display team xG info (independent or form-based)
         const teamXGTag = (teamXG, form) => {
           if (teamXG) {
-            return `<span style="font-size:0.7em;color:#555"><span style="color:#00ccff">xG ${teamXG.xg_per_game}</span>/${teamXG.xga_per_game}xGA &nbsp;R5: ${teamXG.recent5_xg}/${teamXG.recent5_xga} &nbsp;(${teamXG.games}gp)</span>`;
+            // Show data basis so early-season blended/last-season numbers are transparent
+            const basis = teamXG.data_basis;
+            const basisTag = basis === 'last_season' ? ' <span style="color:#ffcc00">(last season)</span>'
+              : basis === 'blended' ? ` <span style="color:#88bbff">(blended, ${teamXG.games}gp)</span>`
+              : '';
+            const gpLabel = basis === 'last_season' || basis === 'blended' ? '' : ` &nbsp;(${teamXG.games}gp)`;
+            return `<span style="font-size:0.7em;color:#555"><span style="color:#00ccff">xG ${teamXG.xg_per_game}</span>/${teamXG.xga_per_game}xGA &nbsp;R5: ${teamXG.recent5_xg}/${teamXG.recent5_xga}${gpLabel}${basisTag}</span>`;
           }
           if (!form) return '';
           return `<span style="font-size:0.7em;color:#555">${form.wins}W-${form.draws}D-${form.losses}L &nbsp;${form.goalsFor.toFixed(1)}gf/${form.goalsAgainst.toFixed(1)}ga (L${form.games})</span>`;
