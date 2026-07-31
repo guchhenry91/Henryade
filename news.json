@@ -1,6 +1,6 @@
 {
- "updated": "2026-07-30T23:34:16.522777+00:00",
- "updated_unix": 1785454456,
+ "updated": "2026-07-31T03:26:04.598220+00:00",
+ "updated_unix": 1785468364,
  "source": "espn",
  "leagues": {
   "epl": {
@@ -350,46 +350,46 @@
    "name": "NFL",
    "headlines": [
     {
-     "title": "2026 Seattle Seahawks training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Seahawks training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-07-30T23:27:01Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49427699/seattle-seahawks-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "Tyler Allgeier 'building' relationship with rookie RB Jeremiyah Love",
-     "desc": "Cardinals running back Tyler Allgeier doesn't think there's a point in \"being a jerk\" about being on the wrong end of his team drafting a running back in the first round with him already on the roster, he said Thursday.",
-     "published": "2026-07-30T23:33:07Z",
+     "title": "Sources: Deebo Samuel returning to 49ers on 1-year deal",
+     "desc": "Free agent Deebo Samuel is signing back with the 49ers on a 1-year deal that could be worth up to $7 million, sources told NFL Network's Ian Rapoport.",
+     "published": "2026-07-31T02:28:30Z",
      "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49492396/tyler-allgeier-building-relationship-rookie-rb-jeremiyah-love"
+     "link": "https://www.espn.com/nfl/story/_/id/49493047/sources-deebo-samuel-returning-49ers-1-year-deal"
     },
     {
-     "title": "2026 NFL training camp: Latest news, intel for all 32 teams",
-     "desc": "Get all the news, intel and insights on NFL training camps from our team of reporters in the field.",
-     "published": "2026-07-30T23:12:41Z",
+     "title": "2026 NFL free agency: Ranking best players still available",
+     "desc": "Where could Joey Bosa and Stefon Diggs land? Let's stack the top free agents who are still available and looking for new contracts.",
+     "published": "2026-07-31T01:19:02Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49368181/training-camp-2026-latest-news-intel-updates-buzz-all-32-teams"
+     "link": "https://www.espn.com/nfl/story/_/id/48162895/2026-nfl-free-agency-ranking-best-remaining-available-unsigned-players"
     },
     {
-     "title": "2026 Arizona Cardinals training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Cardinals training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-07-30T23:19:12Z",
+     "title": "History of Super Bowl in Los Angeles: The birthplace of the big game",
+     "desc": "We look back at the previous eight Super Bowls in the L.A. market ahead of Super Bowl LXI on ESPN (Feb. 14).",
+     "published": "2026-07-31T00:26:48Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49426382/arizona-cardinals-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/33189973/the-history-super-bowl-los-angeles-starting-tradition-one-perfect-season-dynasties-action"
     },
     {
-     "title": "2026 Carolina Panthers training camp: Latest intel, updates",
-     "desc": "Follow our updates from Panthers training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-07-30T23:07:22Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49377273/carolina-panthers-training-camp-2026-intel-updates"
+     "title": "Cristina Ulbrich, wife of Falcons' DC, dies from cancer",
+     "desc": "Cristina Ulbrich, the wife of Falcons defensive coordinator Jeff Ulbrich, died from cancer Thursday, the team announced.",
+     "published": "2026-07-31T01:12:21Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/nfl/story/_/id/49492725/cristina-ulbrich-wife-falcons-dc-dies-cancer"
     },
     {
-     "title": "2026 New Orleans Saints training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Saints training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-07-30T22:52:54Z",
+     "title": "Cowboys' Dak Prescott not shying away from setting lofty goals",
+     "desc": "QB Dak Prescott said he isn't going to shy away from discussing what he thinks the Cowboys can accomplish this season. \"Let's be the greatest offense there is,\" he said.",
+     "published": "2026-07-31T00:34:37Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/nfl/story/_/id/49492624/cowboys-dak-prescott-not-going-shy-away-lofty-goals"
+    },
+    {
+     "title": "2026 Dallas Cowboys training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Cowboys training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-07-31T00:39:39Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49424731/new-orleans-saints-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/49376535/dallas-cowboys-training-camp-2026-intel-updates"
     }
    ],
    "injuries": {
@@ -776,6 +776,11 @@
     ],
     "Buffalo Bills": [
      {
+      "player": "Dante Pettis",
+      "status": "Active",
+      "detail": "The Bills signed Pettis to a contract Thursday."
+     },
+     {
       "player": "Tyler Bass",
       "status": "Active",
       "detail": "Bass noted Thursday that he's fully healthy after recovering from a pelvic injury that cost him the entire 2025 season, Matt Parrino of Syracuse.com reports."
@@ -894,11 +899,6 @@
       "player": "Mike Danna",
       "status": "Active",
       "detail": "The Bills signed Danna on Monday."
-     },
-     {
-      "player": "Ja'Mori Maclin",
-      "status": "Active",
-      "detail": "The Bills signed Maclin as an undrafted free agent Friday, Alec White and Maddy Glab of the team's official site report."
      }
     ],
     "Carolina Panthers": [
@@ -1284,9 +1284,14 @@
     ],
     "Cleveland Browns": [
      {
+      "player": "Mike Hall Jr.",
+      "status": "Active",
+      "detail": "Hall (knee) is participating in training camp."
+     },
+     {
       "player": "Carson Schwesinger",
       "status": "Active",
-      "detail": "Schwesinger is on the field participating in the Browns' training camp activities."
+      "detail": "Schwesinger (ankle) is on the field participating at Browns training camp."
      },
      {
       "player": "Shedeur Sanders",
@@ -1382,11 +1387,6 @@
       "player": "Mason Graham",
       "status": "Questionable",
       "detail": "Graham (lower leg) was not participating during the Browns' minicamp session Tuesday, Daniel Oyefusi of ESPN.com reports."
-     },
-     {
-      "player": "Mike Hall Jr.",
-      "status": "Questionable",
-      "detail": "Hall was helped off the field by trainers after sustaining a right leg injury during Cleveland's OTAs on Wednesday, Chris Easterling of the Akron Beacon Journal reports."
      },
      {
       "player": "Aaron Anderson",
@@ -1538,14 +1538,9 @@
     ],
     "Denver Broncos": [
      {
-      "player": "Blake Cotton",
-      "status": "Questionable",
-      "detail": "questionable"
-     },
-     {
       "player": "Drew Sanders",
       "status": "Active",
-      "detail": ""
+      "detail": "Sanders (ankle) is participating at the Broncos' training camp, Parker Gabriel of The Denver Post reports."
      },
      {
       "player": "Bo Nix",
@@ -1661,9 +1656,24 @@
       "player": "Joseph Manjack IV",
       "status": "Active",
       "detail": "Manjack signed with the Broncos as an undrafted free agent Friday."
+     },
+     {
+      "player": "Kolbe Katsis",
+      "status": "Active",
+      "detail": "Katsis signed with the Broncos as an undrafted free agent Friday."
      }
     ],
     "Detroit Lions": [
+     {
+      "player": "Colby Sorsdal",
+      "status": "Active",
+      "detail": "Sorsdal (undisclosed) is participating at the Lions' training camp, Benjamin Raven of MLive.com reports."
+     },
+     {
+      "player": "Ennis Rakestraw Jr.",
+      "status": "Active",
+      "detail": "Rakestraw (shoulder) is participating during training camp, Nolan Bianchi of The Detroit News reports."
+     },
      {
       "player": "Levi Onwuzurike",
       "status": "Active",
@@ -1672,17 +1682,7 @@
      {
       "player": "Alim McNeill",
       "status": "Active",
-      "detail": "McNeill passed his conditioning test and is participating in training camp, Tim Twentyman of the Lions' official site reports."
-     },
-     {
-      "player": "Colby Sorsdal",
-      "status": "Active",
-      "detail": ""
-     },
-     {
-      "player": "Ennis Rakestraw Jr.",
-      "status": "Active",
-      "detail": ""
+      "detail": "McNeill (abdomen) passed his conditioning test and is participating in training camp, Tim Twentyman of the Lions' official site reports."
      },
      {
       "player": "Jahmyr Gibbs",
@@ -1792,19 +1792,19 @@
     ],
     "Green Bay Packers": [
      {
-      "player": "Jager Burton",
+      "player": "Donovan Jennings",
       "status": "Active",
+      "detail": "Jennings (neck) is participating at the Packers' training camp, Bill Huber of Sports Illustrated reports."
+     },
+     {
+      "player": "Jager Burton",
+      "status": "Questionable",
       "detail": "Burton is missing the Packers' training camp practice Thursday after pulling a muscle while doing drills, Tom Silverstein of the Milwaukee Journal Sentinel reports."
      },
      {
       "player": "Keisean Nixon",
       "status": "Active",
-      "detail": ""
-     },
-     {
-      "player": "Donovan Jennings",
-      "status": "Active",
-      "detail": ""
+      "detail": "Nixon was back on the practice field to finish out Thursday's session, Ryan Wood of USA Today reports."
      },
      {
       "player": "Jayden Reed",
@@ -1882,11 +1882,6 @@
       "detail": "The Packers signed Yassmin to a one-year contract Tuesday."
      },
      {
-      "player": "Lenny Krieg",
-      "status": "Active",
-      "detail": "The Packers signed Krieg to a one-year contract Tuesday, Bill Huber of Sports Illustrated reports."
-     },
-     {
       "player": "Kamal Hadden",
       "status": "Out",
       "detail": "Hadden (lower leg) was put on the active/PUP list by the Packers on Monday, Matt Schneidman of The Athletic reports."
@@ -1915,23 +1910,28 @@
       "player": "Jordan Love",
       "status": "Active",
       "detail": "Love said Thursday that the Packers still \"have some great weapons\" after losing WRs Romeo Doubs and Dontayvion Wicks this offseason, Ian Rapoport of NFL Network reports."
+     },
+     {
+      "player": "Luke Lachey",
+      "status": "Active",
+      "detail": "Green Bay signed Lachey to a contract Monday."
      }
     ],
     "Houston Texans": [
      {
+      "player": "Jake Hansen",
+      "status": "Questionable",
+      "detail": "Hansen (lower body) was carted off the field from practice Thursday, Aaron Wilson of KPRC 2 Houston reports."
+     },
+     {
       "player": "Layne Pryor",
       "status": "Active",
-      "detail": "Pryor was on the field participating in Thursday's practice, Ashley Landis of hjnews.com reports."
+      "detail": "Pryor (quadriceps) was on the field participating in Thursday's practice, Ashley Landis of hjnews.com reports."
      },
      {
       "player": "Azeez Al-Shaair",
       "status": "Active",
-      "detail": "Al-Shaair was on the field participating in Thursday's practice, Ashley Landis of hjnews.com reports."
-     },
-     {
-      "player": "Jake Hansen",
-      "status": "Questionable",
-      "detail": "The Texans waived Hansen (chest) on Wednesday."
+      "detail": "Al-Shaair (thumb) was on the field participating in Thursday's practice, Ashley Landis of hjnews.com reports."
      },
      {
       "player": "M.J. Stewart",
@@ -2046,6 +2046,11 @@
     ],
     "Indianapolis Colts": [
      {
+      "player": "Riley Leonard",
+      "status": "Active",
+      "detail": "Leonard is in a competition for the No. 2 quarterback role in Indianapolis in 2026, JJ Stankevitz of the Colts' official website reports."
+     },
+     {
       "player": "Anthony Richardson Sr.",
       "status": "Active",
       "detail": "Richardson is in a competition for the backup quarterback role in Indianapolis ahead of the 2026 campaign, JJ Stankevitz of the Colts' official website reports."
@@ -2053,7 +2058,7 @@
      {
       "player": "Charvarius Ward",
       "status": "Active",
-      "detail": "Ward is particpating in the Colts' training camp activities, James Boyd of The Athletic reports."
+      "detail": "Ward (back) is participating in the Colts' training camp activities, James Boyd of The Athletic reports."
      },
      {
       "player": "Liam Clifford",
@@ -2104,11 +2109,6 @@
       "player": "Daniel Scott",
       "status": "Active",
       "detail": "Scott participated in the Colts' minicamp practice Thursday."
-     },
-     {
-      "player": "Riley Leonard",
-      "status": "Active",
-      "detail": "Leonard competed with Anthony Richardson for the No. 2 quarterback role during the Colts' recent minicamp and remains in contention to serve as the primary backup to Daniel Jones (Achilles), Joel A. Erickson of the IndyStar reports."
      },
      {
       "player": "Sauce Gardner",
@@ -2306,8 +2306,8 @@
      },
      {
       "player": "Jake Briningstool",
-      "status": "Questionable",
-      "detail": "Briningstool (hamstring) is participating in training camp, Jared Sapp arrowheadpride.com reports."
+      "status": "Active",
+      "detail": "Briningstool (hamstring) is participating in training camp, Jared Sapp of ArrowheadPride.com reports."
      },
      {
       "player": "Travis Kelce",
@@ -2935,6 +2935,11 @@
     ],
     "Minnesota Vikings": [
      {
+      "player": "Christian Darrisaw",
+      "status": "Questionable",
+      "detail": "Darrisaw (knee) told reporters Thursday that he hasn't felt this good \"in two years,\" per Kevin Seifert of ESPN.com."
+     },
+     {
       "player": "Myles Price",
       "status": "Active",
       "detail": "Price passed his conditioning test and is good to go for training camp, Alec Lewis of The Athletic reports."
@@ -3003,11 +3008,6 @@
       "player": "Marshall Lang",
       "status": "Active",
       "detail": "Minnesota signed Lang on Tuesday."
-     },
-     {
-      "player": "Christian Darrisaw",
-      "status": "Questionable",
-      "detail": "Darrisaw (knee) \"looks unbelievable\" while participating in Minnesota's minicamp, Ben Goessling of The Minnesota Star Tribune reports."
      },
      {
       "player": "Trayvon Rudolph",
@@ -3195,8 +3195,8 @@
      },
      {
       "player": "Kool-Aid McKinstry",
-      "status": "Active",
-      "detail": "McKinstry left practice early after a minor ankle roll, Nick Underhill of NewOrleans.Football reports."
+      "status": "Questionable",
+      "detail": "McKinstry left Thursday's practice early after a minor ankle roll, Nick Underhill of NewOrleans.Football reports."
      },
      {
       "player": "Bub Means",
@@ -3316,6 +3316,11 @@
     ],
     "New York Giants": [
      {
+      "player": "Anfernee Orji",
+      "status": "Active",
+      "detail": "The Giants signed Orji (knee) Thursday, Dan Salomone of the Giants' official site reports."
+     },
+     {
       "player": "Malik Nabers",
       "status": "Questionable",
       "detail": "Nabers (knee) said Thursday that he \"felt great\" after practicing Wednesday for the first time since having his torn ACL surgically repaired in October, Matt Citak of the Giants' official site reports."
@@ -3434,11 +3439,6 @@
       "player": "Josh Tupou",
       "status": "Active",
       "detail": "The Giants signed Tupou on Wednesday, Dan Salomone of the Giants' official site reports."
-     },
-     {
-      "player": "Evan Neal",
-      "status": "Active",
-      "detail": "Neal (neck) was working on the third-team offense Thursday, Ryan Dunleavy of the New York Post reports."
      }
     ],
     "New York Jets": [
@@ -3572,7 +3572,7 @@
      {
       "player": "Zack Baun",
       "status": "Active",
-      "detail": "Coach Vic Fangio says Baun will be the green dot for the 2026 season, EJ Smith of The Philadelphia Inquirer reports."
+      "detail": "Coach Vic Fangio says Baun will sport the green dot for the Eagles' defense during the 2026 season, EJ Smith of The Philadelphia Inquirer reports."
      },
      {
       "player": "Eli Stowers",
@@ -3824,6 +3824,21 @@
     ],
     "San Francisco 49ers": [
      {
+      "player": "Deebo Samuel",
+      "status": "Active",
+      "detail": "Samuel and the 49ers agreed on a one-year, $7 million contract Thursday, Ian Rapoport of NFL Network reports."
+     },
+     {
+      "player": "Andrew Farmer II",
+      "status": "Injured Reserve",
+      "detail": "San Francisco placed Farmer (back) on its injured-reserve list Thursday, Aaron Wilson of KPRC 2 Houston reports."
+     },
+     {
+      "player": "William Bradley-King",
+      "status": "Injured Reserve",
+      "detail": "San Francisco placed Bradley-King (undisclosed) on its injured-reserve list Thursday, Aaron Wilson of KPRC 2 Houston reports."
+     },
+     {
       "player": "Mac Jones",
       "status": "Active",
       "detail": "Jones (undisclosed) has passed his conditioning test and is cleared for participation in training camp, Vic Tafur and Matt Barrows of The Athletic report."
@@ -3932,28 +3947,13 @@
       "player": "Sincere McCormick",
       "status": "Active",
       "detail": "McCormick signed a one-year deal with the 49ers on Wednesday."
-     },
-     {
-      "player": "Mike Evans",
-      "status": "Active",
-      "detail": "Evans is making a strong impression at voluntary OTAs and feels rejuvenated after an injury-plagued 2025, Matt Barrows of The Athletic reports."
-     },
-     {
-      "player": "Ashtyn Davis",
-      "status": "Active",
-      "detail": "The 49ers signed Davis on Tuesday."
-     },
-     {
-      "player": "Darrick Forrest",
-      "status": "Injured Reserve",
-      "detail": "San Francisco placed Forrest (undisclosed) on its injured reserve list Thursday."
      }
     ],
     "Seattle Seahawks": [
      {
       "player": "Deven Eastern",
       "status": "Active",
-      "detail": ""
+      "detail": "Eastern (undisclosed) passed his physical and was taken off the Seahawks' active/PUP list Thursday."
      },
      {
       "player": "Kyre Duplessis",
@@ -4080,7 +4080,7 @@
      {
       "player": "Ko Kieft",
       "status": "Active",
-      "detail": "Kieft is on the field participating in the Buccaneers' training camp activities."
+      "detail": "Kieft (leg) is on the field participating in the Buccaneers' training camp activities."
      },
      {
       "player": "Baker Mayfield",
@@ -4212,7 +4212,7 @@
      {
       "player": "Oluwafemi Oladejo",
       "status": "Active",
-      "detail": "Oladejo passed his conditioning test and is participating in the Titans' training camp activities, Jim Wyatt of the team's official site reports."
+      "detail": "Oladejo (hamstring) passed his conditioning test and is participating in the Titans' training camp activities, Jim Wyatt of the team's official site reports."
      },
      {
       "player": "Mitchell Trubisky",
@@ -4463,6 +4463,13 @@
    "name": "NBA",
    "headlines": [
     {
+     "title": "Blazers, Portland officials meet to discuss Moda Center revamp, lease",
+     "desc": "Representatives from the Trail Blazers met with Portland city councilors to discuss a new lease and the commitment of public funds to renovate the aging Moda Center.",
+     "published": "2026-07-31T00:49:14Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/nba/story/_/id/49492637/blazers-brass-portland-officials-meet-discuss-moda-center-renovation-lease"
+    },
+    {
      "title": "2026 NBA buzz: Latest free agency and trade updates",
      "desc": "We're tracking deals, trades and buzz across the NBA, including the latest on free agents such as DeMar DeRozan.",
      "published": "2026-07-30T21:23:00Z",
@@ -4496,13 +4503,6 @@
      "published": "2026-07-30T19:13:15Z",
      "type": "Story",
      "link": "https://www.espn.com/nba/story/_/id/49473905/warriors-running-back-steph-curry-era-enters-another-crossroads﻿-lebron-james-offseason"
-    },
-    {
-     "title": "Egusi, Nigerians, and Ewing - Washington feels like home for Wizards rookie Felix Okpara",
-     "desc": "For 22-year-old center Felix Okpara, Washington is going to mean way more than the city where his NBA career begins. It is also home to one of the largest Nigerian and African communities in the United States.",
-     "published": "2026-07-30T09:52:24Z",
-     "type": "Story",
-     "link": "https://www.espn.com/espn/story/_/id/49486953/egusi-nigerians-ewing-washington-feels-home-wizards-rookie-felix-okpara"
     }
    ],
    "injuries": {
@@ -5390,6 +5390,11 @@
       "player": "Nikita Zadorov",
       "status": "Out",
       "detail": "out"
+     },
+     {
+      "player": "Dans Locmelis",
+      "status": "Out",
+      "detail": "Locmelis will undergo season-ending shoulder surgery next week, Mark Divver of the New England Hockey Journal reports."
      }
     ],
     "Buffalo Sabres": [
@@ -5424,6 +5429,31 @@
       "player": "Yan Kuznetsov",
       "status": "Out",
       "detail": "Kuznetsov (upper body) will miss the rest of the 2025-26 regular season, according to Pat Steinberg of Sportsnet 960 The Fan on Tuesday."
+     },
+     {
+      "player": "Joel Hanley",
+      "status": "Out",
+      "detail": "out"
+     },
+     {
+      "player": "Samuel Honzek",
+      "status": "Injured Reserve",
+      "detail": "Honzek (upper body) will not return this season, per Pat Steinberg of Sportsnet 960 The Fan on Friday."
+     },
+     {
+      "player": "Jonathan Huberdeau",
+      "status": "Injured Reserve",
+      "detail": "Huberdeau (hip) was put on injured reserve Saturday, per the NHL media site."
+     },
+     {
+      "player": "Jake Bean",
+      "status": "Injured Reserve",
+      "detail": "Bean (undisclosed) will need to undergo surgery and is expected to be sidelined indefinitely, Pat Steinberg of Sportsnet 960 The Fan reports Thursday."
+     },
+     {
+      "player": "Henry Mews",
+      "status": "Out",
+      "detail": "out"
      }
     ],
     "Carolina Hurricanes": [
@@ -5443,6 +5473,21 @@
       "player": "Connor Bedard",
       "status": "Out",
       "detail": "Bedard (shoulder) signed a five-year, $75 million contract with Chicago on Saturday."
+     },
+     {
+      "player": "Matt Grzelcyk",
+      "status": "Out",
+      "detail": "Grzelcyk (upper body) will miss the remainder of the 2025-26 regular season, according to Ben Pope of the Chicago Sun-Times on Tuesday."
+     },
+     {
+      "player": "Artyom Levshunov",
+      "status": "Out",
+      "detail": "Levshunov (hand) will not play again in 2025-26, according to Ben Pope of the Chicago Sun-Times on Tuesday."
+     },
+     {
+      "player": "Ryan Ellis",
+      "status": "Injured Reserve",
+      "detail": "Ellis (back) and his contract have been traded to Chicago from San Jose, along with Jake Furlong and a 2028 fourth-round pick in exchange for Laurent Brossoit, Nolan Allan and a 2028 seventh-round pick Thursday."
      }
     ],
     "Colorado Avalanche": [
@@ -5503,6 +5548,11 @@
       "player": "Adam Henrique",
       "status": "Out",
       "detail": "out"
+     },
+     {
+      "player": "Mattias Janmark",
+      "status": "Injured Reserve",
+      "detail": "Janmark (undisclosed) underwent season-ending surgery on Friday, per Mark Spector of Sportsnet."
      }
     ],
     "Florida Panthers": [
@@ -5547,9 +5597,31 @@
       "detail": "out"
      },
      {
+      "player": "Jonah Gadjovich",
+      "status": "Injured Reserve",
+      "detail": "Gadjovich (upper body) is not expected to suit up again this season, per Jameson Olive of the Panthers' official site on Tuesday."
+     },
+     {
+      "player": "Niko Mikkola",
+      "status": "Injured Reserve",
+      "detail": "ir"
+     },
+     {
       "player": "Uvis Balinskis",
       "status": "Out",
       "detail": "Balinskis (lower body) has a fracture and is slated to miss 4-6 weeks, Jameson Olive of the Panthers' official site reports Monday."
+     },
+     {
+      "player": "Brad Marchand",
+      "status": "Injured Reserve",
+      "detail": "Marchand landed on injured reserve Tuesday, per the NHL media site."
+     }
+    ],
+    "Los Angeles Kings": [
+     {
+      "player": "Kevin Fiala",
+      "status": "Injured Reserve",
+      "detail": "Fiala (lower leg fracture) won't be available before training camp for the 2026-27 campaign, per John Hoven of SiriusXM NHL Network Radio."
      }
     ],
     "Minnesota Wild": [
@@ -5599,6 +5671,11 @@
       "player": "Luke Hughes",
       "status": "Out",
       "detail": "Hughes (undisclosed)  will undergo a procedure and will miss the remainder of the season, it was announced Thursday."
+     },
+     {
+      "player": "Stefan Noesen",
+      "status": "Injured Reserve",
+      "detail": "Noesen (knee) has been ruled out for the rest of the season, Kristy Flannery of The Hockey News reports Sunday."
      }
     ],
     "New York Islanders": [
@@ -5626,6 +5703,18 @@
       "player": "Alexander Romanov",
       "status": "Injured Reserve",
       "detail": "Romanov (shoulder) will miss the final two games of the regular season, according to Stefen Rosner of NHL.com on Sunday."
+     },
+     {
+      "player": "Pierre Engvall",
+      "status": "Injured Reserve",
+      "detail": "Engvall (ankle) will miss the remainder of the 2025-26 campaign, per Stefen Rosner of NHL.com."
+     }
+    ],
+    "New York Rangers": [
+     {
+      "player": "Matt Rempe",
+      "status": "Injured Reserve",
+      "detail": "Rempe (thumb) probably won't be ready to return before the end of the 2025-26 regular season, according to Vince Z. Mercogliano of The Athletic on Monday."
      }
     ],
     "Ottawa Senators": [
@@ -5655,6 +5744,23 @@
       "player": "Owen Tippett",
       "status": "Out",
       "detail": "Tippett (undisclosed) was contending with several injuries, including a sports hernia, during the 2026 postseason, Kevin Kurz of The Athletic reports Monday."
+     },
+     {
+      "player": "Ty Murchison",
+      "status": "Out",
+      "detail": "out"
+     }
+    ],
+    "Pittsburgh Penguins": [
+     {
+      "player": "Caleb Jones",
+      "status": "Injured Reserve",
+      "detail": "ir"
+     },
+     {
+      "player": "Filip Hallander",
+      "status": "Injured Reserve",
+      "detail": "Hallander (leg) was recalled from his conditioning stint with AHL Wilkes-Barre/Scranton on Friday, Seth Rorabaugh of Tribune-Review Sports reports."
      }
     ],
     "San Jose Sharks": [
@@ -5715,6 +5821,16 @@
       "player": "Dakota Joshua",
       "status": "Out",
       "detail": "Joshua (upper body) will not return to the lineup for the rest of the season, according to David Alter of The Hockey News on Saturday."
+     },
+     {
+      "player": "Auston Matthews",
+      "status": "Out",
+      "detail": "Matthews underwent successful MCL knee repair surgery Thursday."
+     },
+     {
+      "player": "Chris Tanev",
+      "status": "Injured Reserve",
+      "detail": "Tanev underwent core muscle surgery Wednesday and will miss the remainder of the 2025-26 campaign."
      }
     ],
     "Utah Mammoth": [
@@ -5729,6 +5845,21 @@
       "player": "Evander Kane",
       "status": "Out",
       "detail": "Kane (upper body) will most likely miss the Canucks' final two games of the 2025-26 season, Farhan Lalji of TSN reports."
+     },
+     {
+      "player": "Thatcher Demko",
+      "status": "Injured Reserve",
+      "detail": "Demko was placed on long-term injured reserve Tuesday."
+     },
+     {
+      "player": "Jonathan Lekkerimaki",
+      "status": "Out",
+      "detail": "Lekkerimaki underwent successful shoulder surgery Friday."
+     },
+     {
+      "player": "Filip Chytil",
+      "status": "Injured Reserve",
+      "detail": "ir"
      },
      {
       "player": "Derek Forbort",
@@ -5754,6 +5885,11 @@
      },
      {
       "player": "Charlie Lindgren",
+      "status": "Out",
+      "detail": "out"
+     },
+     {
+      "player": "Eriks Mateiko",
       "status": "Out",
       "detail": "out"
      }
@@ -5796,46 +5932,46 @@
    "name": "MLB",
    "headlines": [
     {
-     "title": "Tristan Peters' bases-loaded walk in 11th lifts White Sox over Yankees 2-1",
-     "desc": "— Tristan Peters drew a bases-loaded walk in the 11th inning to force in automatic runner Chase Meidroth and the Chicago White Sox edged the Yankees 2-1 on Thursday, beating New York in extra innings for a second straight game.",
-     "published": "2026-07-30T22:15:29Z",
+     "title": "Robert has a 2-run single in the 8th to lift the Mets past the Marlins, 4-2",
+     "desc": "— Luis Robert Jr. had a two-run single to cap an eighth-inning rally in the New York Mets' 4-2 victory over the Miami Marlins on Thursday night.",
+     "published": "2026-07-31T03:16:30Z",
      "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816328"
+     "link": "http://www.espn.com/mlb/recap?gameId=401816322"
     },
     {
-     "title": "Chicago Cubs vs. St. Louis Cardinals: Game Highlights",
-     "desc": "Chicago Cubs vs. St. Louis Cardinals: Game Highlights",
-     "published": "2026-07-30T22:34:00Z",
+     "title": "Pittsburgh Pirates vs. Cincinnati Reds: Game Highlights",
+     "desc": "Pittsburgh Pirates vs. Cincinnati Reds: Game Highlights",
+     "published": "2026-07-31T03:16:40Z",
      "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49491785/game-highlights"
+     "link": "https://www.espn.com/video/clip/_/id/49493454/game-highlights"
     },
     {
-     "title": "White Sox walk off the Yankees for the second game in a row",
-     "desc": "White Sox walk off the Yankees for the second game in a row",
-     "published": "2026-07-30T21:56:12Z",
+     "title": "Miami Marlins vs. New York Mets: Game Highlights",
+     "desc": "Miami Marlins vs. New York Mets: Game Highlights",
+     "published": "2026-07-31T03:04:11Z",
      "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49491761/white-sox-walk-yankees-second-game-row"
+     "link": "https://www.espn.com/video/clip/_/id/49493447/game-highlights"
     },
     {
-     "title": "Bregman lifts Cubs to 4-2 victory over Cardinals in 10 innings.",
-     "desc": "— Alex Bregman drove in the go-ahead run with a 10th-inning double and the Chicago Cubs went on to a 4-2 win over the St. Louis Cardinals on Thursday.",
-     "published": "2026-07-30T21:39:29Z",
+     "title": "Elly De La Cruz scores in the ninth as the Reds beat the Pirates 3-2",
+     "desc": "— Elly De La Cruz scored on fielder's choice in the ninth inning to lift the Cincinnati Reds to a 3-2 victory over the Pittsburgh Pirates on Thursday night in the opening game of a four-game series.",
+     "published": "2026-07-31T02:29:30Z",
      "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816326"
+     "link": "http://www.espn.com/mlb/recap?gameId=401816323"
     },
     {
-     "title": "Twins' Kody Clemens blasts walk-off grand slam vs. Royals",
-     "desc": "Kody Clemens hit a grand slam with two outs and two strikes in the ninth as the Twins beat the Royals 4-3 after being no-hit by Noah Cameron through six innings.",
-     "published": "2026-07-30T23:33:14Z",
+     "title": "Injury-hampered Orioles trade for Tigers catcher Jake Rogers",
+     "desc": "The Orioles, riddled by injuries at the catcher position, acquired Jake Rogers from the Tigers in exchange for minor league right-hander Zane Barnhart.",
+     "published": "2026-07-31T02:25:36Z",
      "type": "HeadlineNews",
-     "link": "https://www.espn.com/mlb/story/_/id/49491240/twins-kody-clemens-blasts-walk-grand-slam-vs-royals"
+     "link": "https://www.espn.com/mlb/story/_/id/49493298/injury-hampered-orioles-trade-tigers-catcher-jake-rogers"
     },
     {
-     "title": "Twins take the series over the Royals after walk-off grand slam",
-     "desc": "Twins take the series over the Royals after walk-off grand slam",
-     "published": "2026-07-30T20:51:13Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49491027/twins-take-series-royals-walk-grand-slam"
+     "title": "2026 MLB trade deadline tracker: Rumors, news, analysis",
+     "desc": "Which contenders will make the biggest splash? Here's what we're hearing as 6 p.m. ET on Aug. 3 approaches.",
+     "published": "2026-07-31T01:58:05Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/49410877/2026-mlb-trade-deadline-tracker-rumors-alerts-news-latest-updates-analysis"
     }
    ],
    "injuries": {
@@ -6066,7 +6202,12 @@
      {
       "player": "Curtis Mead",
       "status": "10-Day-IL",
-      "detail": "Mead isn't expected to undergo surgery to repair his fractured left wrist, Chris Cotillo of MassLive.com reports."
+      "detail": "Mead has a nondisplaced left wrist fracture and will be reimaged in four weeks, Ian Browne of MLB.com reports."
+     },
+     {
+      "player": "Roman Anthony",
+      "status": "60-Day-IL",
+      "detail": "Anthony (finger) has started swinging a bat again, Christopher Smith of MassLive.com reports."
      },
      {
       "player": "Marcelo Mayer",
@@ -6102,11 +6243,6 @@
       "player": "Johan Oviedo",
       "status": "60-Day-IL",
       "detail": "Oviedo (elbow) will throw a bullpen session next week, Chris Cotillo of MassLive.com reports."
-     },
-     {
-      "player": "Roman Anthony",
-      "status": "60-Day-IL",
-      "detail": "Interim manager Chad Tracy confirmed Thursday that Anthony's (finger) recent follow-up appointment with Dr. Gary Lourie revealed no new information about his injury, and the outfielder will continue to rehab at the Red Sox's complex in Florida through at least the All-Star break, Chris Cotillo of MassLive.com reports."
      },
      {
       "player": "Kutter Crawford",
@@ -6554,6 +6690,11 @@
     ],
     "Los Angeles Dodgers": [
      {
+      "player": "Shohei Ohtani",
+      "status": "Day-To-Day",
+      "detail": "Ohtani is not in the starting lineup Thursday against Seattle as a result of left knee soreness, Maddie Lee of the Los Angeles Times reports."
+     },
+     {
       "player": "Blake Snell",
       "status": "60-Day-IL",
       "detail": "Snell (elbow) struck out nine and allowed one hit and no walks four scoreless innings Wednesday in a rehab start with Single-A Ontario."
@@ -6660,7 +6801,7 @@
      {
       "player": "Kyle Harrison",
       "status": "15-Day-IL",
-      "detail": "Harrison (forearm) said that he expects to make a rehab start Thursday with High-A Wisconsin before returning from the 15-day injured list the following week, Curt Hogg of the Milwaukee Journal Sentinel reports."
+      "detail": "Harrison (forearm) pitched 5.2 scoreless innings, surrendering one hit and three walks while striking out five batters in Thursday night's rehab start with High-A Wisconsin."
      },
      {
       "player": "Sal Frelick",
