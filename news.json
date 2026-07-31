@@ -1,52 +1,52 @@
 {
- "updated": "2026-07-31T09:49:10.258740+00:00",
- "updated_unix": 1785491350,
+ "updated": "2026-07-31T12:04:20.094420+00:00",
+ "updated_unix": 1785499460,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
     {
-     "title": "Premier League 2026-27 kits: Ranking every jersey released",
-     "desc": "It's still a few weeks before the new Premier League season begins, but plenty of top clubs have already released some of their 2026-27 kits.",
-     "published": "2026-07-31T08:20:26Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49163915/premier-league-202627-kits-ranking-every-jersey-released-arsenal-chelsea-liverpool-man-city-man-united-tottenham"
+     "title": "Wojciech Szczesny: It 'hurts' to have missed out on winning a Premier League with Arsenal",
+     "desc": "Veteran Barcelona goalkeeper Wojciech Szczesny admits it \"still hurts\" to have missed out on a Premier League title during his time at Arsenal.",
+     "published": "2026-07-31T11:57:04Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49495591/wojciech-szczesny-arsenal-premier-league-title-barcelona-birmingham-preseason-friendly"
     },
     {
-     "title": "Bee-utiful! Haaland unveils Man City's new 2026-27 away kit",
-     "desc": "You could say that there is already plenty of buzz surrounding Manchester City's new away kit -- if you'll excuse the woeful pun.",
-     "published": "2026-07-31T08:06:06Z",
+     "title": "Explaining each top Premier League team's transfer strategy",
+     "desc": "Manchester United opted for affordable options, while Chelsea, Man City and Spurs all spent big. Here's the thinking behind the summer's transfer action so far.",
+     "published": "2026-07-31T11:30:22Z",
      "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49494743/erling-haaland-unveils-manchester-city-new-2026-27-away-kit"
+     "link": "https://www.espn.com/soccer/story/_/id/49479946/explaining-top-premier-league-team-transfer-strategy"
     },
     {
      "title": "Transfer rumors, news: Man United looking at pair of Serie A wingers",
      "desc": "Manchester United are looking at a pair of wingers in Serie A, while the USMNT's Gio Reyna is attracting interest from Strasbourg. Transfer Talk has the latest.",
-     "published": "2026-07-31T07:53:26Z",
+     "published": "2026-07-31T11:45:54Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49494536/transfer-rumors-news-man-united-looking-pair-serie-wingers"
     },
     {
-     "title": "Premier League preseason friendlies 2026-27: Fixtures, UK kick-off times and summer tour schedule",
-     "desc": "Premier League clubs have confirmed their preseason schedules ahead of the new campaign, with the 2026-27 season kicking off on Aug. 21.",
-     "published": "2026-07-31T06:36:59Z",
+     "title": "Summer transfer window: Grading big signings in men's soccer",
+     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
+     "published": "2026-07-31T10:51:39Z",
      "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49154575/premier-league-preseason-friendlies-202627-fixtures-uk-kickoff-s-summer-tour-schedule-chelsea-liverpool-arsenal-man-united-man-city-spurs"
+     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
     {
-     "title": "Premier League, EFL summer transfer window 2026 dates: When is Deadline Day?",
-     "desc": "Everything that Premier League and EFL supporters need to know about the 2026 summer transfer window, and key dates around it.",
-     "published": "2026-07-31T06:35:46Z",
+     "title": "Sandro Tonali: 'I know I have a lot of pressure, but I have to play like a normal Tottenham player'",
+     "desc": "Sandro Tonali has opened up about his £100 million ($133 million) move to Tottenham Hotspur from Newcastle this summer, naming head coach Roberto De Zerbi as a key figure in the transfer.",
+     "published": "2026-07-31T11:40:52Z",
      "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/48944912/premier-league-efl-summer-transfer-window-2026-dates-does-open-deadline-day"
+     "link": "https://www.espn.com/soccer/story/_/id/49495328/sandro-tonali-tottenham-premier-league-newcastle"
     },
     {
-     "title": "Premier League 2026 summer transfers: All confirmed ins, outs for every club",
-     "desc": "Here's every Premier League in and out before the 2026-27 season begins.",
-     "published": "2026-07-31T06:35:28Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/48955344/premier-league-2026-summer-transfers-all-confirmed-ins-outs-every-club"
+     "title": "Liverpool vs. Leeds: TV channel, how to watch in UK, kickoff time, live stream, team news",
+     "desc": "Liverpool and Leeds will continue their preparation for the Premier League season when they meet in Chicago.",
+     "published": "2026-07-31T10:45:40Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49495161/liverpool-vs-leeds-tv-channel-how-watch-uk-kickoff-live-stream-team-news"
     }
    ],
    "injuries": {},
@@ -56,18 +56,18 @@
    "name": "La Liga",
    "headlines": [
     {
+     "title": "Summer transfer window: Grading big signings in men's soccer",
+     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
+     "published": "2026-07-31T10:51:39Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
+    },
+    {
      "title": "Real Madrid sign forward Carlos Espí from Levante",
      "desc": "Real Madrid have signed forward Carlos Espí from Levante on a five-year contract, the club announced on Thursday.",
      "published": "2026-07-30T21:54:38Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49491762/real-madrid-transfer-carlos-espi-levante"
-    },
-    {
-     "title": "Summer transfer window: Grading big signings in men's soccer",
-     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-07-30T20:32:17Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
     {
      "title": "Fulham agree £34m fee with Real Madrid for Gonzalo García, deal for César Palacios also close - sources",
@@ -107,7 +107,7 @@
     {
      "title": "Summer transfer window: Grading big signings in men's soccer",
      "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-07-30T20:32:17Z",
+     "published": "2026-07-31T10:51:39Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
@@ -156,14 +156,14 @@
     {
      "title": "Transfer rumors, news: Man United looking at pair of Serie A wingers",
      "desc": "Manchester United are looking at a pair of wingers in Serie A, while the USMNT's Gio Reyna is attracting interest from Strasbourg. Transfer Talk has the latest.",
-     "published": "2026-07-31T07:53:26Z",
+     "published": "2026-07-31T11:45:54Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49494536/transfer-rumors-news-man-united-looking-pair-serie-wingers"
     },
     {
      "title": "Summer transfer window: Grading big signings in men's soccer",
      "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-07-30T20:32:17Z",
+     "published": "2026-07-31T10:51:39Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
@@ -203,18 +203,18 @@
    "name": "Ligue 1",
    "headlines": [
     {
+     "title": "Summer transfer window: Grading big signings in men's soccer",
+     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
+     "published": "2026-07-31T10:51:39Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
+    },
+    {
      "title": "Transfer rumors, news: Man City eye Bouaddi as potential Rodri replacement",
      "desc": "Manchester City are reportedly looking to sign Ayyoub Bouaddi from Lille. Transfer Talk has the latest.",
      "published": "2026-07-30T21:18:07Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49486441/transfer-rumors-news-real-madrid-confident-signing-spain-captain-manchester-city-midfielder-rodri"
-    },
-    {
-     "title": "Summer transfer window: Grading big signings in men's soccer",
-     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-07-30T20:32:17Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
     {
      "title": "Manchester City working on deal to sign Marseille's Gerónimo Rulli - sources",
@@ -350,46 +350,46 @@
    "name": "NFL",
    "headlines": [
     {
+     "title": "2026 Fantasy Football Draft Guide: Rankings, mock drafts and analysis",
+     "desc": "Your one-stop shop as you prep for draft season, including rankings, projections and analysis.",
+     "published": "2026-07-31T10:39:50Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/football/story/_/page/FFDraftGuide26-48677635/2026-fantasy-football-rankings-mock-draft-cheat-sheets-sleepers"
+    },
+    {
+     "title": "The Playbook: Planning a winning fantasy football draft strategy",
+     "desc": "Mike Clay goes position by position and lays out a successful approach for 2026 fantasy football drafts.",
+     "published": "2026-07-31T10:37:34Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/football/story/_/id/49473842/2026-fantasy-football-draft-strategy-how-draft"
+    },
+    {
+     "title": "Tracking 2026 NFL hold-ins: Robinson, Gibbs, Vea and Tuipulotu",
+     "desc": "Here is the latest on Falcons' Bijan Robinson, Lions' Jahmyr Gibbs, Bucs' Vita Vea and Chargers' Tuli Tuipulotu.",
+     "published": "2026-07-31T10:29:42Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49490010/2026-training-camp-holdin-tracking-updates-bijan-robinson-jahmyr-gibbs-vita-vea-tuli-tuipulotu"
+    },
+    {
+     "title": "Anatomy of an NFL holdout: What it's like for players, agents, teams",
+     "desc": "Holdouts can be brutal. Here are some notable stories from each side of the bargaining table.",
+     "published": "2026-07-31T10:05:05Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/45789518/nfl-training-camp-holdouts-trey-hendrickson-terry-mclaurin"
+    },
+    {
+     "title": "Every NFL team's best training camp, preseason riser ever",
+     "desc": "Let's look back to when 32 NFL players kick-started their careers with strong performances in training camp and the preseason -- one from each team.",
+     "published": "2026-07-31T10:00:07Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49464348/nfl-training-camps-preseason-risers-history-davis-cruz-crosby"
+    },
+    {
      "title": "Sources: Deebo Samuel returning to 49ers on 1-year deal",
      "desc": "Free agent Deebo Samuel is signing back with the 49ers on a 1-year deal that could be worth up to $7 million, sources told NFL Network's Ian Rapoport.",
      "published": "2026-07-31T06:49:37Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/nfl/story/_/id/49493047/sources-deebo-samuel-returning-49ers-1-year-deal"
-    },
-    {
-     "title": "2026 NFL free agency: Ranking best players still available",
-     "desc": "Where could Joey Bosa and Stefon Diggs land? Let's stack the top free agents who are still available and looking for new contracts.",
-     "published": "2026-07-31T01:19:02Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/48162895/2026-nfl-free-agency-ranking-best-remaining-available-unsigned-players"
-    },
-    {
-     "title": "History of Super Bowl in Los Angeles: The birthplace of the big game",
-     "desc": "We look back at the previous eight Super Bowls in the L.A. market ahead of Super Bowl LXI on ESPN (Feb. 14).",
-     "published": "2026-07-31T00:26:48Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/33189973/the-history-super-bowl-los-angeles-starting-tradition-one-perfect-season-dynasties-action"
-    },
-    {
-     "title": "Cristina Ulbrich, wife of Falcons' DC, dies from cancer",
-     "desc": "Cristina Ulbrich, the wife of Falcons defensive coordinator Jeff Ulbrich, died from cancer Thursday, the team announced.",
-     "published": "2026-07-31T01:12:21Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49492725/cristina-ulbrich-wife-falcons-dc-dies-cancer"
-    },
-    {
-     "title": "Cowboys' Dak Prescott not shying away from setting lofty goals",
-     "desc": "QB Dak Prescott said he isn't going to shy away from discussing what he thinks the Cowboys can accomplish this season. \"Let's be the greatest offense there is,\" he said.",
-     "published": "2026-07-31T00:34:37Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49492624/cowboys-dak-prescott-not-going-shy-away-lofty-goals"
-    },
-    {
-     "title": "2026 Dallas Cowboys training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Cowboys training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-07-31T00:39:39Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49376535/dallas-cowboys-training-camp-2026-intel-updates"
     }
    ],
    "injuries": {
@@ -4463,6 +4463,13 @@
    "name": "NBA",
    "headlines": [
     {
+     "title": "Stacking which teams can keep the NBA's parity run going",
+     "desc": "The NBA has seen eight different champions in eight years. Which of the other 22 teams can make it 9-for-9, and which ones are a long way off?",
+     "published": "2026-07-31T11:17:11Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nba/story/_/id/49470460/stacking-which-teams-keep-nba-parity-run-going"
+    },
+    {
      "title": "Egusi, Nigerians, and Ewing - Washington feels like home for Wizards rookie Felix Okpara",
      "desc": "For 22-year-old center Felix Okpara, Washington is going to mean way more than the city where his NBA career begins. It is also home to one of the largest Nigerian and African communities in the United States.",
      "published": "2026-07-31T06:11:51Z",
@@ -4496,13 +4503,6 @@
      "published": "2026-07-30T15:26:13Z",
      "type": "Media",
      "link": "https://www.espn.com/video/clip/_/id/49488800/joel-embiid-lebron-james"
-    },
-    {
-     "title": "Sources: No plans for NBA Middle East games due to war",
-     "desc": "The NBA will not play any preseason games in the Middle East for the first time in five years, sources told ESPN, due to the ongoing war in the region.",
-     "published": "2026-07-30T13:52:30Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/nba/story/_/id/49487022/sources-no-plans-nba-middle-east-games-due-ongoing-crisis"
     }
    ],
    "injuries": {
@@ -5932,6 +5932,27 @@
    "name": "MLB",
    "headlines": [
     {
+     "title": "Kody Clemens hits a walk-off grand slam with 2 outs in the 9th to send the Twins past the Royals 4-3",
+     "desc": "— Kody Clemens hit a game-ending grand slam with two outs in the ninth inning as the Minnesota Twins beat the Kansas City Royals 4-3 on...",
+     "published": "2026-07-31T11:18:50Z",
+     "type": "Recap",
+     "link": "http://www.espn.com/mlb/recap?gameId=401816327"
+    },
+    {
+     "title": "MLB betting tips for Friday: When will last place Toronto's woes Cease?",
+     "desc": "All of the odds, recommended prop bets and trends in baseball for Friday, July 31.",
+     "published": "2026-07-31T11:17:30Z",
+     "type": "Story",
+     "link": "https://www.espn.com/espn/betting/story/_/id/49495366/mlb-betting-tips-odds-lines-2026-friday-july-31"
+    },
+    {
+     "title": "MLB trade deadline dominoes for 10 biggest names on 2026 market",
+     "desc": "Based on what ESPN's Jeff Passan is hearing, we predict where the top trade candidates will land -- and how they impact each other.",
+     "published": "2026-07-31T10:48:41Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/49489686/mlb-trade-deadline-2026-dominoes-market-skubal-peralta-gausman-arraez-holmes"
+    },
+    {
      "title": "Pirates bring 3-game losing streak into matchup with the Reds",
      "desc": "Pittsburgh Pirates (55-55, third in the NL Central) vs. Cincinnati Reds (51-57, fifth in the NL Central)",
      "published": "2026-07-31T08:02:22Z",
@@ -5951,27 +5972,6 @@
      "published": "2026-07-31T08:02:13Z",
      "type": "Preview",
      "link": "http://www.espn.com/mlb/preview?gameId=401816333"
-    },
-    {
-     "title": "Mariners host the Twins to open 3-game series",
-     "desc": "Minnesota Twins (55-55, third in the AL Central) vs. Seattle Mariners (53-57, third in the AL West)",
-     "published": "2026-07-31T08:02:10Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816345"
-    },
-    {
-     "title": "Braves host the Nationals, try to continue home win streak",
-     "desc": "Washington Nationals (55-55, fourth in the NL East) vs. Atlanta Braves (64-45, first in the NL East)",
-     "published": "2026-07-31T08:02:06Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816338"
-    },
-    {
-     "title": "Dodgers take on the Red Sox in first of 3-game series",
-     "desc": "Boston Red Sox (57-51, third in the AL East) vs. Los Angeles Dodgers (69-40, first in the NL West)",
-     "published": "2026-07-31T08:02:01Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816342"
     }
    ],
    "injuries": {
