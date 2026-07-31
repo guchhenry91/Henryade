@@ -1,52 +1,52 @@
 {
- "updated": "2026-07-31T06:31:25.380617+00:00",
- "updated_unix": 1785479485,
+ "updated": "2026-07-31T09:49:10.258740+00:00",
+ "updated_unix": 1785491350,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
     {
-     "title": "Lukas Nmecha opens the scoring from distance for Leeds",
-     "desc": "Lukas Nmecha opens the scoring from distance for Leeds",
-     "published": "2026-07-31T05:44:29Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49492989/lukas-nmecha-opens-scoring-distance-leeds"
-    },
-    {
-     "title": "Transfer rumors, news: Man City eye Bouaddi as potential Rodri replacement",
-     "desc": "Manchester City are reportedly looking to sign Ayyoub Bouaddi from Lille. Transfer Talk has the latest.",
-     "published": "2026-07-30T21:18:07Z",
+     "title": "Premier League 2026-27 kits: Ranking every jersey released",
+     "desc": "It's still a few weeks before the new Premier League season begins, but plenty of top clubs have already released some of their 2026-27 kits.",
+     "published": "2026-07-31T08:20:26Z",
      "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49486441/transfer-rumors-news-real-madrid-confident-signing-spain-captain-manchester-city-midfielder-rodri"
+     "link": "https://www.espn.com/soccer/story/_/id/49163915/premier-league-202627-kits-ranking-every-jersey-released-arsenal-chelsea-liverpool-man-city-man-united-tottenham"
     },
     {
-     "title": "Summer transfer window: Grading big signings in men's soccer",
-     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-07-30T20:32:17Z",
+     "title": "Bee-utiful! Haaland unveils Man City's new 2026-27 away kit",
+     "desc": "You could say that there is already plenty of buzz surrounding Manchester City's new away kit -- if you'll excuse the woeful pun.",
+     "published": "2026-07-31T08:06:06Z",
      "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
+     "link": "https://www.espn.com/soccer/story/_/id/49494743/erling-haaland-unveils-manchester-city-new-2026-27-away-kit"
     },
     {
-     "title": "Iraola: Isak is going to be massive for Liverpool next season",
-     "desc": "Iraola: Isak is going to be massive for Liverpool next season",
-     "published": "2026-07-30T19:59:39Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49490867/isak-going-massive-liverpool-next-season"
+     "title": "Transfer rumors, news: Man United looking at pair of Serie A wingers",
+     "desc": "Manchester United are looking at a pair of wingers in Serie A, while the USMNT's Gio Reyna is attracting interest from Strasbourg. Transfer Talk has the latest.",
+     "published": "2026-07-31T07:53:26Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49494536/transfer-rumors-news-man-united-looking-pair-serie-wingers"
     },
     {
-     "title": "Fulham agree £34m fee with Real Madrid for Gonzalo García, deal for César Palacios also close - sources",
-     "desc": "Real Madrid have agreed a deal with Fulham for forward Gonzalo García to join the Premier League club, sources have told ESPN, and are close to another which will see midfielder César Palacios make the same move.",
-     "published": "2026-07-30T21:56:48Z",
+     "title": "Premier League preseason friendlies 2026-27: Fixtures, UK kick-off times and summer tour schedule",
+     "desc": "Premier League clubs have confirmed their preseason schedules ahead of the new campaign, with the 2026-27 season kicking off on Aug. 21.",
+     "published": "2026-07-31T06:36:59Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49154575/premier-league-preseason-friendlies-202627-fixtures-uk-kickoff-s-summer-tour-schedule-chelsea-liverpool-arsenal-man-united-man-city-spurs"
+    },
+    {
+     "title": "Premier League, EFL summer transfer window 2026 dates: When is Deadline Day?",
+     "desc": "Everything that Premier League and EFL supporters need to know about the 2026 summer transfer window, and key dates around it.",
+     "published": "2026-07-31T06:35:46Z",
      "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49488247/fulham-agree-deal-gonzalo-garcia-real-madrid-34-million-cesar-palacios"
+     "link": "https://www.espn.com/soccer/story/_/id/48944912/premier-league-efl-summer-transfer-window-2026-dates-does-open-deadline-day"
     },
     {
-     "title": "John Stones joins Inter Milan on free transfer after Man City exit",
-     "desc": "England defender John Stones joined Serie A champions Inter Milan on Thursday, after a decade and numerous titles at Manchester City.",
-     "published": "2026-07-30T22:06:03Z",
+     "title": "Premier League 2026 summer transfers: All confirmed ins, outs for every club",
+     "desc": "Here's every Premier League in and out before the 2026-27 season begins.",
+     "published": "2026-07-31T06:35:28Z",
      "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49464977/john-stones-joins-inter-milan-free-transfer-man-city-exit"
+     "link": "https://www.espn.com/soccer/story/_/id/48955344/premier-league-2026-summer-transfers-all-confirmed-ins-outs-every-club"
     }
    ],
    "injuries": {},
@@ -154,6 +154,13 @@
    "name": "Serie A",
    "headlines": [
     {
+     "title": "Transfer rumors, news: Man United looking at pair of Serie A wingers",
+     "desc": "Manchester United are looking at a pair of wingers in Serie A, while the USMNT's Gio Reyna is attracting interest from Strasbourg. Transfer Talk has the latest.",
+     "published": "2026-07-31T07:53:26Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49494536/transfer-rumors-news-man-united-looking-pair-serie-wingers"
+    },
+    {
      "title": "Summer transfer window: Grading big signings in men's soccer",
      "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
      "published": "2026-07-30T20:32:17Z",
@@ -187,13 +194,6 @@
      "published": "2026-07-21T10:38:47Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49415973/christian-pulisic-ac-milan-2026-27-away-kit-champions-league-final-liverpool"
-    },
-    {
-     "title": "Transfer rumors, news: USMNT's Balogun targeted by Juve, Dortmund",
-     "desc": "United States striker Folarin Balogun could be on the move this summer. Transfer Talk has the latest.",
-     "published": "2026-07-18T23:15:40Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49389509/transfer-rumors-news-barcelona-real-madrid-atletico-inter-milan-tottenham-argentina-cristian-romero"
     }
    ],
    "injuries": {},
@@ -352,7 +352,7 @@
     {
      "title": "Sources: Deebo Samuel returning to 49ers on 1-year deal",
      "desc": "Free agent Deebo Samuel is signing back with the 49ers on a 1-year deal that could be worth up to $7 million, sources told NFL Network's Ian Rapoport.",
-     "published": "2026-07-31T02:28:30Z",
+     "published": "2026-07-31T06:49:37Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/nfl/story/_/id/49493047/sources-deebo-samuel-returning-49ers-1-year-deal"
     },
@@ -5390,6 +5390,11 @@
       "player": "Nikita Zadorov",
       "status": "Out",
       "detail": "out"
+     },
+     {
+      "player": "Dans Locmelis",
+      "status": "Out",
+      "detail": "Locmelis will undergo season-ending shoulder surgery next week, Mark Divver of the New England Hockey Journal reports."
      }
     ],
     "Buffalo Sabres": [
@@ -5424,6 +5429,31 @@
       "player": "Yan Kuznetsov",
       "status": "Out",
       "detail": "Kuznetsov (upper body) will miss the rest of the 2025-26 regular season, according to Pat Steinberg of Sportsnet 960 The Fan on Tuesday."
+     },
+     {
+      "player": "Joel Hanley",
+      "status": "Out",
+      "detail": "out"
+     },
+     {
+      "player": "Samuel Honzek",
+      "status": "Injured Reserve",
+      "detail": "Honzek (upper body) will not return this season, per Pat Steinberg of Sportsnet 960 The Fan on Friday."
+     },
+     {
+      "player": "Jonathan Huberdeau",
+      "status": "Injured Reserve",
+      "detail": "Huberdeau (hip) was put on injured reserve Saturday, per the NHL media site."
+     },
+     {
+      "player": "Jake Bean",
+      "status": "Injured Reserve",
+      "detail": "Bean (undisclosed) will need to undergo surgery and is expected to be sidelined indefinitely, Pat Steinberg of Sportsnet 960 The Fan reports Thursday."
+     },
+     {
+      "player": "Henry Mews",
+      "status": "Out",
+      "detail": "out"
      }
     ],
     "Carolina Hurricanes": [
@@ -5443,6 +5473,21 @@
       "player": "Connor Bedard",
       "status": "Out",
       "detail": "Bedard (shoulder) signed a five-year, $75 million contract with Chicago on Saturday."
+     },
+     {
+      "player": "Matt Grzelcyk",
+      "status": "Out",
+      "detail": "Grzelcyk (upper body) will miss the remainder of the 2025-26 regular season, according to Ben Pope of the Chicago Sun-Times on Tuesday."
+     },
+     {
+      "player": "Artyom Levshunov",
+      "status": "Out",
+      "detail": "Levshunov (hand) will not play again in 2025-26, according to Ben Pope of the Chicago Sun-Times on Tuesday."
+     },
+     {
+      "player": "Ryan Ellis",
+      "status": "Injured Reserve",
+      "detail": "Ellis (back) and his contract have been traded to Chicago from San Jose, along with Jake Furlong and a 2028 fourth-round pick in exchange for Laurent Brossoit, Nolan Allan and a 2028 seventh-round pick Thursday."
      }
     ],
     "Colorado Avalanche": [
@@ -5503,6 +5548,11 @@
       "player": "Adam Henrique",
       "status": "Out",
       "detail": "out"
+     },
+     {
+      "player": "Mattias Janmark",
+      "status": "Injured Reserve",
+      "detail": "Janmark (undisclosed) underwent season-ending surgery on Friday, per Mark Spector of Sportsnet."
      }
     ],
     "Florida Panthers": [
@@ -5547,9 +5597,31 @@
       "detail": "out"
      },
      {
+      "player": "Jonah Gadjovich",
+      "status": "Injured Reserve",
+      "detail": "Gadjovich (upper body) is not expected to suit up again this season, per Jameson Olive of the Panthers' official site on Tuesday."
+     },
+     {
+      "player": "Niko Mikkola",
+      "status": "Injured Reserve",
+      "detail": "ir"
+     },
+     {
       "player": "Uvis Balinskis",
       "status": "Out",
       "detail": "Balinskis (lower body) has a fracture and is slated to miss 4-6 weeks, Jameson Olive of the Panthers' official site reports Monday."
+     },
+     {
+      "player": "Brad Marchand",
+      "status": "Injured Reserve",
+      "detail": "Marchand landed on injured reserve Tuesday, per the NHL media site."
+     }
+    ],
+    "Los Angeles Kings": [
+     {
+      "player": "Kevin Fiala",
+      "status": "Injured Reserve",
+      "detail": "Fiala (lower leg fracture) won't be available before training camp for the 2026-27 campaign, per John Hoven of SiriusXM NHL Network Radio."
      }
     ],
     "Minnesota Wild": [
@@ -5599,6 +5671,11 @@
       "player": "Luke Hughes",
       "status": "Out",
       "detail": "Hughes (undisclosed)  will undergo a procedure and will miss the remainder of the season, it was announced Thursday."
+     },
+     {
+      "player": "Stefan Noesen",
+      "status": "Injured Reserve",
+      "detail": "Noesen (knee) has been ruled out for the rest of the season, Kristy Flannery of The Hockey News reports Sunday."
      }
     ],
     "New York Islanders": [
@@ -5626,6 +5703,18 @@
       "player": "Alexander Romanov",
       "status": "Injured Reserve",
       "detail": "Romanov (shoulder) will miss the final two games of the regular season, according to Stefen Rosner of NHL.com on Sunday."
+     },
+     {
+      "player": "Pierre Engvall",
+      "status": "Injured Reserve",
+      "detail": "Engvall (ankle) will miss the remainder of the 2025-26 campaign, per Stefen Rosner of NHL.com."
+     }
+    ],
+    "New York Rangers": [
+     {
+      "player": "Matt Rempe",
+      "status": "Injured Reserve",
+      "detail": "Rempe (thumb) probably won't be ready to return before the end of the 2025-26 regular season, according to Vince Z. Mercogliano of The Athletic on Monday."
      }
     ],
     "Ottawa Senators": [
@@ -5655,6 +5744,23 @@
       "player": "Owen Tippett",
       "status": "Out",
       "detail": "Tippett (undisclosed) was contending with several injuries, including a sports hernia, during the 2026 postseason, Kevin Kurz of The Athletic reports Monday."
+     },
+     {
+      "player": "Ty Murchison",
+      "status": "Out",
+      "detail": "out"
+     }
+    ],
+    "Pittsburgh Penguins": [
+     {
+      "player": "Caleb Jones",
+      "status": "Injured Reserve",
+      "detail": "ir"
+     },
+     {
+      "player": "Filip Hallander",
+      "status": "Injured Reserve",
+      "detail": "Hallander (leg) was recalled from his conditioning stint with AHL Wilkes-Barre/Scranton on Friday, Seth Rorabaugh of Tribune-Review Sports reports."
      }
     ],
     "San Jose Sharks": [
@@ -5715,6 +5821,16 @@
       "player": "Dakota Joshua",
       "status": "Out",
       "detail": "Joshua (upper body) will not return to the lineup for the rest of the season, according to David Alter of The Hockey News on Saturday."
+     },
+     {
+      "player": "Auston Matthews",
+      "status": "Out",
+      "detail": "Matthews underwent successful MCL knee repair surgery Thursday."
+     },
+     {
+      "player": "Chris Tanev",
+      "status": "Injured Reserve",
+      "detail": "Tanev underwent core muscle surgery Wednesday and will miss the remainder of the 2025-26 campaign."
      }
     ],
     "Utah Mammoth": [
@@ -5729,6 +5845,21 @@
       "player": "Evander Kane",
       "status": "Out",
       "detail": "Kane (upper body) will most likely miss the Canucks' final two games of the 2025-26 season, Farhan Lalji of TSN reports."
+     },
+     {
+      "player": "Thatcher Demko",
+      "status": "Injured Reserve",
+      "detail": "Demko was placed on long-term injured reserve Tuesday."
+     },
+     {
+      "player": "Jonathan Lekkerimaki",
+      "status": "Out",
+      "detail": "Lekkerimaki underwent successful shoulder surgery Friday."
+     },
+     {
+      "player": "Filip Chytil",
+      "status": "Injured Reserve",
+      "detail": "ir"
      },
      {
       "player": "Derek Forbort",
@@ -5754,6 +5885,11 @@
      },
      {
       "player": "Charlie Lindgren",
+      "status": "Out",
+      "detail": "out"
+     },
+     {
+      "player": "Eriks Mateiko",
       "status": "Out",
       "detail": "out"
      }
@@ -5796,46 +5932,46 @@
    "name": "MLB",
    "headlines": [
     {
-     "title": "2026 MLB trade deadline grades: Report cards for every deal",
-     "desc": "Trade season has officially begun! Here's our running scorecard for every big move before the Aug. 3 deadline arrives.",
-     "published": "2026-07-31T05:45:58Z",
-     "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49454655/2026-mlb-trade-deadline-grades-analysis-report-cards-every-deal"
+     "title": "Pirates bring 3-game losing streak into matchup with the Reds",
+     "desc": "Pittsburgh Pirates (55-55, third in the NL Central) vs. Cincinnati Reds (51-57, fifth in the NL Central)",
+     "published": "2026-07-31T08:02:22Z",
+     "type": "Preview",
+     "link": "http://www.espn.com/mlb/preview?gameId=401816336"
     },
     {
-     "title": "2026 MLB ABS challenge system tracker: Team, player rankings",
-     "desc": "The ABS challenge system leaderboard ranks batters, catchers, teams and umpires throughout the MLB season.",
-     "published": "2026-07-31T05:39:05Z",
-     "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/48305211/2026-mlb-abs-challenge-system-tracker-team-player-rankings"
+     "title": "Phillies play the Orioles looking to break road skid",
+     "desc": "Philadelphia Phillies (57-52, second in the NL East) vs. Baltimore Orioles (53-56, fourth in the AL East)",
+     "published": "2026-07-31T08:02:18Z",
+     "type": "Preview",
+     "link": "http://www.espn.com/mlb/preview?gameId=401816335"
     },
     {
-     "title": "Rushing and Hernández go deep as the Dodgers beat the Mariners 6-2",
-     "desc": "— Dalton Rushing hit a three-run homer, Teoscar Hernández added a solo shot and the Los Angeles Dodgers beat the Seattle Mariners 6-2 on Thursday night.",
-     "published": "2026-07-31T05:57:28Z",
-     "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816330"
+     "title": "White Sox visit the Rays to begin 3-game series",
+     "desc": "Chicago White Sox (57-51, first in the AL Central) vs. Tampa Bay Rays (64-44, first in the AL East)",
+     "published": "2026-07-31T08:02:13Z",
+     "type": "Preview",
+     "link": "http://www.espn.com/mlb/preview?gameId=401816333"
     },
     {
-     "title": "Seattle Mariners vs. Los Angeles Dodgers: Game Highlights",
-     "desc": "Seattle Mariners vs. Los Angeles Dodgers: Game Highlights",
-     "published": "2026-07-31T05:03:21Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49493946/game-highlights"
+     "title": "Mariners host the Twins to open 3-game series",
+     "desc": "Minnesota Twins (55-55, third in the AL Central) vs. Seattle Mariners (53-57, third in the AL West)",
+     "published": "2026-07-31T08:02:10Z",
+     "type": "Preview",
+     "link": "http://www.espn.com/mlb/preview?gameId=401816345"
     },
     {
-     "title": "San Francisco Giants vs. San Diego Padres: Game Highlights",
-     "desc": "San Francisco Giants vs. San Diego Padres: Game Highlights",
-     "published": "2026-07-31T04:51:33Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49493889/game-highlights"
+     "title": "Braves host the Nationals, try to continue home win streak",
+     "desc": "Washington Nationals (55-55, fourth in the NL East) vs. Atlanta Braves (64-45, first in the NL East)",
+     "published": "2026-07-31T08:02:06Z",
+     "type": "Preview",
+     "link": "http://www.espn.com/mlb/preview?gameId=401816338"
     },
     {
-     "title": "Rookie Susac homers again, Ray wins his 7th straight decision as Giants beat Padres 4-1",
-     "desc": "— Rookie Daniel Susac hit a two-run home run and had three RBI, and Robbie Ray pitched six impressive innings to win his seventh straight decision and lead the San Francisco Giants to a 4-1 victory over the San Diego Padres on Thursday nigh",
-     "published": "2026-07-31T04:41:30Z",
-     "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816331"
+     "title": "Dodgers take on the Red Sox in first of 3-game series",
+     "desc": "Boston Red Sox (57-51, third in the AL East) vs. Los Angeles Dodgers (69-40, first in the NL West)",
+     "published": "2026-07-31T08:02:01Z",
+     "type": "Preview",
+     "link": "http://www.espn.com/mlb/preview?gameId=401816342"
     }
    ],
    "injuries": {
@@ -6794,9 +6930,14 @@
     ],
     "New York Yankees": [
      {
+      "player": "Carlos Rodon",
+      "status": "15-Day-IL",
+      "detail": "Rodon (elbow) threw a \"two up\" session of about 30 pitches that went well Wednesday, and manager Aaron Boone said it's unclear if he'll next make a minor-league rehab start, MLB.com reports."
+     },
+     {
       "player": "Jazz Chisholm Jr.",
       "status": "Day-To-Day",
-      "detail": "Chisholm went 2-for-4 with a double, two runs, two RBI and two stolen bases in Monday's 9-5 win over the White Sox."
+      "detail": "Chisholm (leg), who was removed from Thursday's game against the White Sox in the 11th inning, was dealing with cramping, MLB.com reports."
      },
      {
       "player": "Aaron Judge",
@@ -6812,11 +6953,6 @@
       "player": "Clarke Schmidt",
       "status": "60-Day-IL",
       "detail": "Schmidt (elbow) is scheduled to pitch a live bullpen session Sunday, Gary Phillips of the New York Daily News reports."
-     },
-     {
-      "player": "Carlos Rodon",
-      "status": "15-Day-IL",
-      "detail": "Rodon (elbow) is expected to throw a two-up side session Saturday, Gary Phillips of the New York Daily News reports."
      },
      {
       "player": "Giancarlo Stanton",
