@@ -1,11 +1,18 @@
 {
- "updated": "2026-07-31T03:26:04.598220+00:00",
- "updated_unix": 1785468364,
+ "updated": "2026-07-31T06:31:25.380617+00:00",
+ "updated_unix": 1785479485,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
+    {
+     "title": "Lukas Nmecha opens the scoring from distance for Leeds",
+     "desc": "Lukas Nmecha opens the scoring from distance for Leeds",
+     "published": "2026-07-31T05:44:29Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49492989/lukas-nmecha-opens-scoring-distance-leeds"
+    },
     {
      "title": "Transfer rumors, news: Man City eye Bouaddi as potential Rodri replacement",
      "desc": "Manchester City are reportedly looking to sign Ayyoub Bouaddi from Lille. Transfer Talk has the latest.",
@@ -40,13 +47,6 @@
      "published": "2026-07-30T22:06:03Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49464977/john-stones-joins-inter-milan-free-transfer-man-city-exit"
-    },
-    {
-     "title": "Liverpool's Joe Gomez to miss start of Premier League season",
-     "desc": "Liverpool head coach Andoni Iraola has confirmed defender Joe Gomez will miss the start of the new season after picking up a muscle injury during the Reds' preseason tour of the U.S.",
-     "published": "2026-07-30T18:16:23Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49490020/liverpool-joe-gomez-injury-start-premier-league-season"
     }
    ],
    "injuries": {},
@@ -2048,12 +2048,12 @@
      {
       "player": "Riley Leonard",
       "status": "Active",
-      "detail": "Leonard is in a competition for the No. 2 quarterback role in Indianapolis in 2026, JJ Stankevitz of the Colts' official website reports."
+      "detail": "Leonard is in a competition for the No. 2 quarterback role in Indianapolis in 2026, JJ Stankevitz of the Colts' official site reports."
      },
      {
       "player": "Anthony Richardson Sr.",
       "status": "Active",
-      "detail": "Richardson is in a competition for the backup quarterback role in Indianapolis ahead of the 2026 campaign, JJ Stankevitz of the Colts' official website reports."
+      "detail": "Richardson is in a competition for the backup quarterback role in Indianapolis ahead of the 2026 campaign, JJ Stankevitz of the Colts' official site reports."
      },
      {
       "player": "Charvarius Ward",
@@ -2302,7 +2302,7 @@
      {
       "player": "Justin Fields",
       "status": "Active",
-      "detail": "Fields had an impressive practice Thursday, making difficult throws into tight coverage, according to Matt McMullen of chiefs.com."
+      "detail": "Fields had an impressive practice Thursday, making difficult throws into tight coverage, according to Matt McMullen of the Chiefs' official site."
      },
      {
       "player": "Jake Briningstool",
@@ -4463,6 +4463,13 @@
    "name": "NBA",
    "headlines": [
     {
+     "title": "Egusi, Nigerians, and Ewing - Washington feels like home for Wizards rookie Felix Okpara",
+     "desc": "For 22-year-old center Felix Okpara, Washington is going to mean way more than the city where his NBA career begins. It is also home to one of the largest Nigerian and African communities in the United States.",
+     "published": "2026-07-31T06:11:51Z",
+     "type": "Story",
+     "link": "https://www.espn.com/espn/story/_/id/49486953/egusi-nigerians-ewing-washington-feels-home-wizards-rookie-felix-okpara"
+    },
+    {
      "title": "Blazers, Portland officials meet to discuss Moda Center revamp, lease",
      "desc": "Representatives from the Trail Blazers met with Portland city councilors to discuss a new lease and the commitment of public funds to renovate the aging Moda Center.",
      "published": "2026-07-31T00:49:14Z",
@@ -4496,13 +4503,6 @@
      "published": "2026-07-30T13:52:30Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/nba/story/_/id/49487022/sources-no-plans-nba-middle-east-games-due-ongoing-crisis"
-    },
-    {
-     "title": "The Warriors are standing pat as the Curry era reaches another crossroads﻿",
-     "desc": "LeBron James chose elsewhere, major upgrades never materialized and Golden State is again banking on continuity.",
-     "published": "2026-07-30T19:13:15Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nba/story/_/id/49473905/warriors-running-back-steph-curry-era-enters-another-crossroads﻿-lebron-james-offseason"
     }
    ],
    "injuries": {
@@ -5310,6 +5310,13 @@
    "name": "NHL",
    "headlines": [
     {
+     "title": "Swedish Elite League team rescinds Foote deal amid fan uproar",
+     "desc": "Färjestad BK of the Swedish Elite League announced Thursday it was not going to honor Cal Foote's contract after conversations with stakeholders.",
+     "published": "2026-07-31T03:31:08Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/nhl/story/_/id/49493480/swedish-elite-league-team-rescinds-foote-deal-amid-fan-uproar"
+    },
+    {
      "title": "IIHF says Russia still from 4 world tournaments in 2027",
      "desc": "The International Ice Hockey Federation said Russia will not be allowed to participate in four tournaments next year after a review by the organization's council.",
      "published": "2026-07-30T20:38:27Z",
@@ -5343,13 +5350,6 @@
      "published": "2026-07-28T17:33:42Z",
      "type": "Story",
      "link": "https://www.espn.com/nhl/story/_/id/49235590/nhl-free-agency-tracker-2026-contracts-teams-analysis-updates"
-    },
-    {
-     "title": "Canucks' Cammi Granato shifts from assistant GM to adviser role",
-     "desc": "Hockey Hall of Fame player Cammi Granato is changing roles within the Canucks' front office.",
-     "published": "2026-07-25T18:25:56Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/nhl/story/_/id/49442127/canucks-cammi-granato-shifts-assistant-gm-adviser-role"
     }
    ],
    "injuries": {
@@ -5390,11 +5390,6 @@
       "player": "Nikita Zadorov",
       "status": "Out",
       "detail": "out"
-     },
-     {
-      "player": "Dans Locmelis",
-      "status": "Out",
-      "detail": "Locmelis will undergo season-ending shoulder surgery next week, Mark Divver of the New England Hockey Journal reports."
      }
     ],
     "Buffalo Sabres": [
@@ -5429,31 +5424,6 @@
       "player": "Yan Kuznetsov",
       "status": "Out",
       "detail": "Kuznetsov (upper body) will miss the rest of the 2025-26 regular season, according to Pat Steinberg of Sportsnet 960 The Fan on Tuesday."
-     },
-     {
-      "player": "Joel Hanley",
-      "status": "Out",
-      "detail": "out"
-     },
-     {
-      "player": "Samuel Honzek",
-      "status": "Injured Reserve",
-      "detail": "Honzek (upper body) will not return this season, per Pat Steinberg of Sportsnet 960 The Fan on Friday."
-     },
-     {
-      "player": "Jonathan Huberdeau",
-      "status": "Injured Reserve",
-      "detail": "Huberdeau (hip) was put on injured reserve Saturday, per the NHL media site."
-     },
-     {
-      "player": "Jake Bean",
-      "status": "Injured Reserve",
-      "detail": "Bean (undisclosed) will need to undergo surgery and is expected to be sidelined indefinitely, Pat Steinberg of Sportsnet 960 The Fan reports Thursday."
-     },
-     {
-      "player": "Henry Mews",
-      "status": "Out",
-      "detail": "out"
      }
     ],
     "Carolina Hurricanes": [
@@ -5473,21 +5443,6 @@
       "player": "Connor Bedard",
       "status": "Out",
       "detail": "Bedard (shoulder) signed a five-year, $75 million contract with Chicago on Saturday."
-     },
-     {
-      "player": "Matt Grzelcyk",
-      "status": "Out",
-      "detail": "Grzelcyk (upper body) will miss the remainder of the 2025-26 regular season, according to Ben Pope of the Chicago Sun-Times on Tuesday."
-     },
-     {
-      "player": "Artyom Levshunov",
-      "status": "Out",
-      "detail": "Levshunov (hand) will not play again in 2025-26, according to Ben Pope of the Chicago Sun-Times on Tuesday."
-     },
-     {
-      "player": "Ryan Ellis",
-      "status": "Injured Reserve",
-      "detail": "Ellis (back) and his contract have been traded to Chicago from San Jose, along with Jake Furlong and a 2028 fourth-round pick in exchange for Laurent Brossoit, Nolan Allan and a 2028 seventh-round pick Thursday."
      }
     ],
     "Colorado Avalanche": [
@@ -5548,11 +5503,6 @@
       "player": "Adam Henrique",
       "status": "Out",
       "detail": "out"
-     },
-     {
-      "player": "Mattias Janmark",
-      "status": "Injured Reserve",
-      "detail": "Janmark (undisclosed) underwent season-ending surgery on Friday, per Mark Spector of Sportsnet."
      }
     ],
     "Florida Panthers": [
@@ -5597,31 +5547,9 @@
       "detail": "out"
      },
      {
-      "player": "Jonah Gadjovich",
-      "status": "Injured Reserve",
-      "detail": "Gadjovich (upper body) is not expected to suit up again this season, per Jameson Olive of the Panthers' official site on Tuesday."
-     },
-     {
-      "player": "Niko Mikkola",
-      "status": "Injured Reserve",
-      "detail": "ir"
-     },
-     {
       "player": "Uvis Balinskis",
       "status": "Out",
       "detail": "Balinskis (lower body) has a fracture and is slated to miss 4-6 weeks, Jameson Olive of the Panthers' official site reports Monday."
-     },
-     {
-      "player": "Brad Marchand",
-      "status": "Injured Reserve",
-      "detail": "Marchand landed on injured reserve Tuesday, per the NHL media site."
-     }
-    ],
-    "Los Angeles Kings": [
-     {
-      "player": "Kevin Fiala",
-      "status": "Injured Reserve",
-      "detail": "Fiala (lower leg fracture) won't be available before training camp for the 2026-27 campaign, per John Hoven of SiriusXM NHL Network Radio."
      }
     ],
     "Minnesota Wild": [
@@ -5671,11 +5599,6 @@
       "player": "Luke Hughes",
       "status": "Out",
       "detail": "Hughes (undisclosed)  will undergo a procedure and will miss the remainder of the season, it was announced Thursday."
-     },
-     {
-      "player": "Stefan Noesen",
-      "status": "Injured Reserve",
-      "detail": "Noesen (knee) has been ruled out for the rest of the season, Kristy Flannery of The Hockey News reports Sunday."
      }
     ],
     "New York Islanders": [
@@ -5703,18 +5626,6 @@
       "player": "Alexander Romanov",
       "status": "Injured Reserve",
       "detail": "Romanov (shoulder) will miss the final two games of the regular season, according to Stefen Rosner of NHL.com on Sunday."
-     },
-     {
-      "player": "Pierre Engvall",
-      "status": "Injured Reserve",
-      "detail": "Engvall (ankle) will miss the remainder of the 2025-26 campaign, per Stefen Rosner of NHL.com."
-     }
-    ],
-    "New York Rangers": [
-     {
-      "player": "Matt Rempe",
-      "status": "Injured Reserve",
-      "detail": "Rempe (thumb) probably won't be ready to return before the end of the 2025-26 regular season, according to Vince Z. Mercogliano of The Athletic on Monday."
      }
     ],
     "Ottawa Senators": [
@@ -5744,23 +5655,6 @@
       "player": "Owen Tippett",
       "status": "Out",
       "detail": "Tippett (undisclosed) was contending with several injuries, including a sports hernia, during the 2026 postseason, Kevin Kurz of The Athletic reports Monday."
-     },
-     {
-      "player": "Ty Murchison",
-      "status": "Out",
-      "detail": "out"
-     }
-    ],
-    "Pittsburgh Penguins": [
-     {
-      "player": "Caleb Jones",
-      "status": "Injured Reserve",
-      "detail": "ir"
-     },
-     {
-      "player": "Filip Hallander",
-      "status": "Injured Reserve",
-      "detail": "Hallander (leg) was recalled from his conditioning stint with AHL Wilkes-Barre/Scranton on Friday, Seth Rorabaugh of Tribune-Review Sports reports."
      }
     ],
     "San Jose Sharks": [
@@ -5821,16 +5715,6 @@
       "player": "Dakota Joshua",
       "status": "Out",
       "detail": "Joshua (upper body) will not return to the lineup for the rest of the season, according to David Alter of The Hockey News on Saturday."
-     },
-     {
-      "player": "Auston Matthews",
-      "status": "Out",
-      "detail": "Matthews underwent successful MCL knee repair surgery Thursday."
-     },
-     {
-      "player": "Chris Tanev",
-      "status": "Injured Reserve",
-      "detail": "Tanev underwent core muscle surgery Wednesday and will miss the remainder of the 2025-26 campaign."
      }
     ],
     "Utah Mammoth": [
@@ -5845,21 +5729,6 @@
       "player": "Evander Kane",
       "status": "Out",
       "detail": "Kane (upper body) will most likely miss the Canucks' final two games of the 2025-26 season, Farhan Lalji of TSN reports."
-     },
-     {
-      "player": "Thatcher Demko",
-      "status": "Injured Reserve",
-      "detail": "Demko was placed on long-term injured reserve Tuesday."
-     },
-     {
-      "player": "Jonathan Lekkerimaki",
-      "status": "Out",
-      "detail": "Lekkerimaki underwent successful shoulder surgery Friday."
-     },
-     {
-      "player": "Filip Chytil",
-      "status": "Injured Reserve",
-      "detail": "ir"
      },
      {
       "player": "Derek Forbort",
@@ -5885,11 +5754,6 @@
      },
      {
       "player": "Charlie Lindgren",
-      "status": "Out",
-      "detail": "out"
-     },
-     {
-      "player": "Eriks Mateiko",
       "status": "Out",
       "detail": "out"
      }
@@ -5932,46 +5796,46 @@
    "name": "MLB",
    "headlines": [
     {
-     "title": "Robert has a 2-run single in the 8th to lift the Mets past the Marlins, 4-2",
-     "desc": "— Luis Robert Jr. had a two-run single to cap an eighth-inning rally in the New York Mets' 4-2 victory over the Miami Marlins on Thursday night.",
-     "published": "2026-07-31T03:16:30Z",
-     "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816322"
-    },
-    {
-     "title": "Pittsburgh Pirates vs. Cincinnati Reds: Game Highlights",
-     "desc": "Pittsburgh Pirates vs. Cincinnati Reds: Game Highlights",
-     "published": "2026-07-31T03:16:40Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49493454/game-highlights"
-    },
-    {
-     "title": "Miami Marlins vs. New York Mets: Game Highlights",
-     "desc": "Miami Marlins vs. New York Mets: Game Highlights",
-     "published": "2026-07-31T03:04:11Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49493447/game-highlights"
-    },
-    {
-     "title": "Elly De La Cruz scores in the ninth as the Reds beat the Pirates 3-2",
-     "desc": "— Elly De La Cruz scored on fielder's choice in the ninth inning to lift the Cincinnati Reds to a 3-2 victory over the Pittsburgh Pirates on Thursday night in the opening game of a four-game series.",
-     "published": "2026-07-31T02:29:30Z",
-     "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816323"
-    },
-    {
-     "title": "Injury-hampered Orioles trade for Tigers catcher Jake Rogers",
-     "desc": "The Orioles, riddled by injuries at the catcher position, acquired Jake Rogers from the Tigers in exchange for minor league right-hander Zane Barnhart.",
-     "published": "2026-07-31T02:25:36Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/mlb/story/_/id/49493298/injury-hampered-orioles-trade-tigers-catcher-jake-rogers"
-    },
-    {
-     "title": "2026 MLB trade deadline tracker: Rumors, news, analysis",
-     "desc": "Which contenders will make the biggest splash? Here's what we're hearing as 6 p.m. ET on Aug. 3 approaches.",
-     "published": "2026-07-31T01:58:05Z",
+     "title": "2026 MLB trade deadline grades: Report cards for every deal",
+     "desc": "Trade season has officially begun! Here's our running scorecard for every big move before the Aug. 3 deadline arrives.",
+     "published": "2026-07-31T05:45:58Z",
      "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49410877/2026-mlb-trade-deadline-tracker-rumors-alerts-news-latest-updates-analysis"
+     "link": "https://www.espn.com/mlb/story/_/id/49454655/2026-mlb-trade-deadline-grades-analysis-report-cards-every-deal"
+    },
+    {
+     "title": "2026 MLB ABS challenge system tracker: Team, player rankings",
+     "desc": "The ABS challenge system leaderboard ranks batters, catchers, teams and umpires throughout the MLB season.",
+     "published": "2026-07-31T05:39:05Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/48305211/2026-mlb-abs-challenge-system-tracker-team-player-rankings"
+    },
+    {
+     "title": "Rushing and Hernández go deep as the Dodgers beat the Mariners 6-2",
+     "desc": "— Dalton Rushing hit a three-run homer, Teoscar Hernández added a solo shot and the Los Angeles Dodgers beat the Seattle Mariners 6-2 on Thursday night.",
+     "published": "2026-07-31T05:57:28Z",
+     "type": "Recap",
+     "link": "http://www.espn.com/mlb/recap?gameId=401816330"
+    },
+    {
+     "title": "Seattle Mariners vs. Los Angeles Dodgers: Game Highlights",
+     "desc": "Seattle Mariners vs. Los Angeles Dodgers: Game Highlights",
+     "published": "2026-07-31T05:03:21Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49493946/game-highlights"
+    },
+    {
+     "title": "San Francisco Giants vs. San Diego Padres: Game Highlights",
+     "desc": "San Francisco Giants vs. San Diego Padres: Game Highlights",
+     "published": "2026-07-31T04:51:33Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49493889/game-highlights"
+    },
+    {
+     "title": "Rookie Susac homers again, Ray wins his 7th straight decision as Giants beat Padres 4-1",
+     "desc": "— Rookie Daniel Susac hit a two-run home run and had three RBI, and Robbie Ray pitched six impressive innings to win his seventh straight decision and lead the San Francisco Giants to a 4-1 victory over the San Diego Padres on Thursday nigh",
+     "published": "2026-07-31T04:41:30Z",
+     "type": "Recap",
+     "link": "http://www.espn.com/mlb/recap?gameId=401816331"
     }
    ],
    "injuries": {
