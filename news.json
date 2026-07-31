@@ -1,15 +1,22 @@
 {
- "updated": "2026-07-31T17:06:25.097645+00:00",
- "updated_unix": 1785517585,
+ "updated": "2026-07-31T18:54:45.446116+00:00",
+ "updated_unix": 1785524085,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
     {
-     "title": "Chelsea and Ukraine's Mykhailo Mudryk free to return to playing after doping ban resolved",
+     "title": "Transfer rumors, news: Newcastle accept €90m Arsenal offer for Guimarães",
+     "desc": "Arsenal are reportedly looking for confident that they will sign Bruno Guimarães from Newcastle United. Transfer Talk has the latest.",
+     "published": "2026-07-31T18:05:15Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49494536/transfer-rumors-news-man-united-looking-pair-serie-wingers"
+    },
+    {
+     "title": "Chelsea's Mykhailo Mudryk cleared to play after doping ban resolved",
      "desc": "Chelsea winger Mykhailo Mudryk can return to playing immediately after the Football Association and the World Anti-Doping Agency \"resolved his appeal\" against a ban for failing a doping test.",
-     "published": "2026-07-31T16:52:41Z",
+     "published": "2026-07-31T17:25:08Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49497099/mykhailo-mudryk-doping-ban-chelsea-ukraine"
     },
@@ -40,13 +47,6 @@
      "published": "2026-07-31T14:39:43Z",
      "type": "Media",
      "link": "https://www.espn.com/video/clip/_/id/49496659/how-chelsea-ban-affect-club-moving-forward"
-    },
-    {
-     "title": "Transfer rumors, news: Man United looking at pair of Serie A wingers",
-     "desc": "Manchester United are looking at a pair of wingers in Serie A, while the USMNT's Gio Reyna is attracting interest from Strasbourg. Transfer Talk has the latest.",
-     "published": "2026-07-31T14:28:48Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49494536/transfer-rumors-news-man-united-looking-pair-serie-wingers"
     }
    ],
    "injuries": {},
@@ -55,6 +55,13 @@
   "laliga": {
    "name": "La Liga",
    "headlines": [
+    {
+     "title": "Barcelona sign teenage winger Jesse Bisiwu from Club Brugge",
+     "desc": "Barcelona's attacking revamp has continued with the signing of young Belgian winger Jesse Bisiwu from Club Brugge.",
+     "published": "2026-07-31T18:31:11Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49495707/barcelona-transfers-jesse-bisiwu-la-liga-club-brugge"
+    },
     {
      "title": "Summer transfer window: Grading big signings in men's soccer",
      "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
@@ -89,13 +96,6 @@
      "published": "2026-07-30T17:04:21Z",
      "type": "Media",
      "link": "https://www.espn.com/video/clip/_/id/49489650/atletico-madrid-deeply-upset-barcelona-alvarez"
-    },
-    {
-     "title": "How will Man City lineup if Rodri leaves for Real Madrid?",
-     "desc": "How will Man City lineup if Rodri leaves for Real Madrid?",
-     "published": "2026-07-29T16:47:21Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49480773/how-man-city-lineup-rodri-leaves-real-madrid"
     }
    ],
    "injuries": {},
@@ -154,13 +154,6 @@
    "name": "Serie A",
    "headlines": [
     {
-     "title": "Transfer rumors, news: Man United looking at pair of Serie A wingers",
-     "desc": "Manchester United are looking at a pair of wingers in Serie A, while the USMNT's Gio Reyna is attracting interest from Strasbourg. Transfer Talk has the latest.",
-     "published": "2026-07-31T14:28:48Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49494536/transfer-rumors-news-man-united-looking-pair-serie-wingers"
-    },
-    {
      "title": "John Stones 'thrilled' to be living dream of playing abroad following Inter Milan move",
      "desc": "John Stones has said he is thrilled to have joined Inter Milan and be fulfilling a lifelong dream of playing abroad after a decade of success with Manchester City.",
      "published": "2026-07-31T14:02:59Z",
@@ -194,6 +187,13 @@
      "published": "2026-07-22T07:08:58Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49415757/10-transfer-storylines-missed-world-cup"
+    },
+    {
+     "title": "Pulisic unveils AC Milan 2026-27 away kit inspired by Champions League final clashes with Liverpool",
+     "desc": "AC Milan have rolled out their new away kit, which harks back the two Champions League finals the club played against Liverpool in 2005 and 2007.",
+     "published": "2026-07-21T10:38:47Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49415973/christian-pulisic-ac-milan-2026-27-away-kit-champions-league-final-liverpool"
     }
    ],
    "injuries": {},
@@ -350,46 +350,46 @@
    "name": "NFL",
    "headlines": [
     {
-     "title": "Tua Tagovailoa not fretting back issue, unsure on full return",
-     "desc": "Quarterback Tua Tagovailoa (back) says he believes the Falcons are keeping him out for precautionary reasons and if it was a game week, he would likely be ready to go.",
-     "published": "2026-07-31T17:04:16Z",
+     "title": "2026 Chicago Bears training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Bears training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-07-31T18:33:45Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49448378/chicago-bears-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "Fantasy football Knockout league rankings: The 252 players to draft",
+     "desc": "Rankings for knockout leagues, where the lowest-scoring team is eliminated and the last team standing wins.",
+     "published": "2026-07-31T18:10:12Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/football/story/_/id/49309401/fantasy-football-knockout-rankings-top-200"
+    },
+    {
+     "title": "2026 Baltimore Ravens training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Ravens training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-07-31T18:17:41Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49434567/baltimore-ravens-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "Jaguars' Travis Hunter feeling faster even with weight gain",
+     "desc": "Travis Hunter is 10 pounds heavier than his rookie season but faster than he has ever been.",
+     "published": "2026-07-31T18:40:24Z",
      "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49497586/tua-tagovailoa-not-fretting-back-issue-unsure-full-return"
+     "link": "https://www.espn.com/nfl/story/_/id/49498108/jaguars-travis-hunter-feeling-faster-even-weight-gain"
     },
     {
-     "title": "2026 Jacksonville Jaguars training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Jaguars training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-07-31T16:52:03Z",
+     "title": "2026 Cincinnati Bengals training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Bengals training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-07-31T18:06:55Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49427691/jacksonville-jaguars-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/49448120/cincinnati-bengals-training-camp-2026-intel-updates"
     },
     {
-     "title": "2026 Houston Texans training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Houston Texans training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-07-31T16:48:06Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49419567/houston-texans-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "2026 Miami Dolphins training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Dolphins training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-07-31T16:45:18Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49410015/miami-dolphins-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "Why Schefter has high hopes for the Saints this season",
-     "desc": "Why Schefter has high hopes for the Saints this season",
-     "published": "2026-07-31T16:39:01Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49497392/why-schefter-high-hopes-saints-season"
-    },
-    {
-     "title": "Tracking 2026 NFL hold-ins: Robinson, Gibbs, Vea and Tuipulotu",
-     "desc": "Here is the latest on Falcons' Bijan Robinson, Lions' Jahmyr Gibbs, Bucs' Vita Vea and Chargers' Tuli Tuipulotu.",
-     "published": "2026-07-31T16:32:53Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49490010/2026-training-camp-holdin-tracking-updates-bijan-robinson-jahmyr-gibbs-vita-vea-tuli-tuipulotu"
+     "title": "Ben Johnson: Bears motivated to spurn 'regression' label",
+     "desc": "Ben Johnson said his team has been perceived as the \"No. 1 regression candidate\" next season, giving the Bears plenty of motivation heading into next season.",
+     "published": "2026-07-31T18:19:12Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/nfl/story/_/id/49497927/ben-johnson-bears-motivated-spurn-regression-label"
     }
    ],
    "injuries": {
@@ -522,14 +522,14 @@
     ],
     "Atlanta Falcons": [
      {
+      "player": "Tua Tagovailoa",
+      "status": "Questionable",
+      "detail": "Tagovailoa (back) did not take part in team drills Friday due to a \"precautionary thing\" related to back tightness and said he is unsure when he will be fully cleared for on-field activities, Marc Raimondi of ESPN reports."
+     },
+     {
       "player": "Jahan Dotson",
       "status": "Active",
       "detail": "Dotson is playing with Atlanta's first-team offense at training camp, Will McFadden of the Falcons' official site reports."
-     },
-     {
-      "player": "Tua Tagovailoa",
-      "status": "Questionable",
-      "detail": "Tagovailoa (back) is doing individual drills at Thursday's practice, Marc Raimondi of ESPN.com reports."
      },
      {
       "player": "Drake London",
@@ -649,6 +649,16 @@
     ],
     "Baltimore Ravens": [
      {
+      "player": "Bilhal Kone",
+      "status": "Active",
+      "detail": ""
+     },
+     {
+      "player": "Adisa Isaac",
+      "status": "Active",
+      "detail": ""
+     },
+     {
       "player": "Broderick Washington Jr.",
       "status": "Active",
       "detail": "Washington (Achilles) is participating at the Ravens' training camp, Josh Reed of Sports Illustrated reports."
@@ -667,16 +677,6 @@
       "player": "Corey Bullock",
       "status": "Out",
       "detail": "The Ravens placed Bullock (undisclosed) on the active/non-football illness list Saturday, Jonas Shaffer of TheBaltimoreBanner.com reports."
-     },
-     {
-      "player": "Bilhal Kone",
-      "status": "Out",
-      "detail": "The Ravens placed Kone (knee) on the active/PUP list Saturday, Clifton Brown of the team's official site reports."
-     },
-     {
-      "player": "Adisa Isaac",
-      "status": "Out",
-      "detail": "The Ravens placed Isaac (elbow) on the active/PUP list Saturday, Clifton Brown of the team's official site reports."
      },
      {
       "player": "Hakeem Adeniji",
@@ -1284,6 +1284,16 @@
     ],
     "Cleveland Browns": [
      {
+      "player": "Shedeur Sanders",
+      "status": "Active",
+      "detail": "Sanders continues to rotate first-team reps with Deshaun Watson, and the former is lined up to work with the starters in Cleveland's first padded practice Monday, Daniel Oyefusi of ESPN.com reports."
+     },
+     {
+      "player": "Deshaun Watson",
+      "status": "Active",
+      "detail": "Watson will continue to rotate first-team reps with Shedeur Sanders as the Browns begin practicing in pads, Daniel Oyefusi of ESPN.com reports."
+     },
+     {
       "player": "Quinshon Judkins",
       "status": "Active",
       "detail": "Browns running backs coach Duce Staley said Friday that the \"sky's the limit\" for Judkins, Scott Petrak of the Elyria Chronicle-Telegram reports."
@@ -1304,11 +1314,6 @@
       "detail": "Schwesinger (ankle) is on the field participating at Browns training camp."
      },
      {
-      "player": "Shedeur Sanders",
-      "status": "Active",
-      "detail": "Sanders is taking first-team reps at Thursday's practice, Scott Petrak of the Elyria Chronicle-Telegram reports."
-     },
-     {
       "player": "Luke Wypler",
       "status": "Active",
       "detail": "Wypler (knee) participated in Cleveland's training camp Wednesday, Ashley Bastock of Clevland.com reports."
@@ -1322,11 +1327,6 @@
       "player": "Dawand Jones",
       "status": "Active",
       "detail": "Jones (knee) got reps as the starting left tackle during Cleveland's training camp Wednesday, Daniel Oyefusi of ESPN reports."
-     },
-     {
-      "player": "Deshaun Watson",
-      "status": "Active",
-      "detail": "Watson took all the first-team QB reps during Wednesday's practice, Daniel Oyefusi of ESPN reports."
      },
      {
       "player": "Jerry Jeudy",
@@ -1667,7 +1667,7 @@
      {
       "player": "Brock Wright",
       "status": "Active",
-      "detail": ""
+      "detail": "Wright (neck) has been taking part in training camp, Jacob Richman of MLive.com reports."
      },
      {
       "player": "Jimmy Rolder",
@@ -2046,6 +2046,16 @@
     ],
     "Indianapolis Colts": [
      {
+      "player": "Spencer Shrader",
+      "status": "Active",
+      "detail": "Shrader went 5-for-6 on field-goal attempts at Friday's training-camp practice while Blake Grupe made all six of his attempts, Abby Halpin of the Colts' official site reports."
+     },
+     {
+      "player": "Blake Grupe",
+      "status": "Active",
+      "detail": "Grupe made all six of his field-goal attempts Friday while Spencer Shrader went 5-for-6, Abby Halpin of the Colts' official site reports."
+     },
+     {
       "player": "CJ Allen",
       "status": "Active",
       "detail": "Allen (calf) will practice Friday after being removed from the active/PUP list, JJ Stankevitz of the Colts' official site reports."
@@ -2091,11 +2101,6 @@
       "detail": "Buckner (neck) has been cleared to practice, James Boyd of The Athletic reports."
      },
      {
-      "player": "Blake Grupe",
-      "status": "Active",
-      "detail": "Grupe is set to compete against Spencer Shrader (knee) for the Colts' kicking job, Paul Bretl of USA Today reports."
-     },
-     {
       "player": "DJ Giddens",
       "status": "Active",
       "detail": "After a quiet rookie season, Giddens will compete against Seth McGowan for the backup running back role behind Jonathan Taylor for the 2026 season, Paul Pretl of USA Today reports."
@@ -2119,11 +2124,6 @@
       "player": "Ashton Dulin",
       "status": "Active",
       "detail": "Dulin has impressed at OTAs and mandatory minicamp and is making a push for the No. 3 wide receiver role behind Alec Pierce (ankle) and Josh Downs, James Boyd of The Athletic reports."
-     },
-     {
-      "player": "Spencer Shrader",
-      "status": "Questionable",
-      "detail": "Shrader (knee) went three of five on kicks during Thursday's minicamp session, Kevin Bowen 93.5 The Fan in Indianapolis reports."
      },
      {
       "player": "Will Mallory",
@@ -2173,8 +2173,23 @@
     ],
     "Jacksonville Jaguars": [
      {
+      "player": "Danny Striggow",
+      "status": "Active",
+      "detail": ""
+     },
+     {
+      "player": "Jalen McLeod",
+      "status": "Active",
+      "detail": ""
+     },
+     {
+      "player": "Jourdan Lewis",
+      "status": "Active",
+      "detail": ""
+     },
+     {
       "player": "Travis Hunter",
-      "status": "Questionable",
+      "status": "Active",
       "detail": "Hunter (knee) said Friday that he has put on 10 pounds of muscle and is running 21-22.5 miles per hour, NFL reporter Jordan Schultz reports."
      },
      {
@@ -2248,11 +2263,6 @@
       "detail": "Matiscik signed a two-year, $3.8 million extension with the Jaguars on Wednesday, Ian Rapoport of NFL Network reports."
      },
      {
-      "player": "Jourdan Lewis",
-      "status": "Questionable",
-      "detail": "Lewis (foot) didn't participate in OTAs on Monday but instead worked on the side, Demetrius Harvey of The Florida Times-Union reports."
-     },
-     {
       "player": "LeQuint Allen Jr.",
       "status": "Active",
       "detail": "As the coming season approaches, Allen appears on track to maintain a role on passing downs, John Shipley of Sports Illustrated reports."
@@ -2286,19 +2296,24 @@
       "player": "Ben Patterson",
       "status": "Active",
       "detail": "The Jaguars signed Patterson as an undrafted free agent Sunday."
-     },
-     {
-      "player": "Michael Wortham",
-      "status": "Active",
-      "detail": "The Jaguars signed Wortham as an undrafted free agent Sunday."
-     },
-     {
-      "player": "Ethan Conner",
-      "status": "Active",
-      "detail": "The Jaguars signed Connor as an undrafted free agent Sunday."
      }
     ],
     "Kansas City Chiefs": [
+     {
+      "player": "Rashee Rice",
+      "status": "Active",
+      "detail": "Rice (knee) is being eased back into the mix during training camp,  Jesse Newell of The Athletic reports."
+     },
+     {
+      "player": "Trey Smith",
+      "status": "Active",
+      "detail": ""
+     },
+     {
+      "player": "Felix Anudike-Uzomah",
+      "status": "Active",
+      "detail": ""
+     },
      {
       "player": "Ashton Gillotte",
       "status": "Questionable",
@@ -2348,11 +2363,6 @@
       "player": "Omarr Norman-Lott",
       "status": "Out",
       "detail": "The Chiefs placed Norman-Lott (knee) on the active/PUP list Saturday."
-     },
-     {
-      "player": "Rashee Rice",
-      "status": "Active",
-      "detail": "Rice (knee) has been cleared to practice ahead of training camp, Matt McMullen of the Chiefs' official site reports."
      },
      {
       "player": "Tyquan Thornton",
@@ -2413,23 +2423,18 @@
       "player": "EJ Smith",
       "status": "Active",
       "detail": "The Chiefs signed Smith as an undrafted free agent Friday."
-     },
-     {
-      "player": "Jaydn Ott",
-      "status": "Active",
-      "detail": "The Chiefs signed Ott as an undrafted free agent Friday."
-     },
-     {
-      "player": "Omari Evans",
-      "status": "Active",
-      "detail": "The Chiefs signed Evans as an undrafted free agent Friday."
      }
     ],
     "Las Vegas Raiders": [
      {
       "player": "Jermod McCoy",
+      "status": "Questionable",
+      "detail": "questionable"
+     },
+     {
+      "player": "Matt Gay",
       "status": "Active",
-      "detail": "McCoy (knee) does not have any reported limitations to begin the Raiders' training camp, Paul Gutierrez of the team's official site reports."
+      "detail": "Gay worked as the first-team kicker at Friday's training camp practice and made all of his attempts, Sam Warren of the Athletic reports."
      },
      {
       "player": "Fernando Mendoza",
@@ -2460,11 +2465,6 @@
       "player": "Deven Thompkins",
       "status": "Active",
       "detail": "Thompkins signed with the Raiders on Monday."
-     },
-     {
-      "player": "Matt Gay",
-      "status": "Active",
-      "detail": "Gay is set to compete with Kansei Matsuzawa for the Raiders' kicking role in training camp, Ryan McFadden of ESPN.com reports."
      },
      {
       "player": "Mike Washington Jr.",
@@ -2554,6 +2554,11 @@
     ],
     "Los Angeles Chargers": [
      {
+      "player": "Rashawn Slater",
+      "status": "Active",
+      "detail": ""
+     },
+     {
       "player": "Joe Alt",
       "status": "Active",
       "detail": "Alt (ankle) told reporters Tuesday that he is \"ready to rock and roll\" for training camp, Eric Smith of the Chargers' official site reports."
@@ -2597,11 +2602,6 @@
       "player": "Justin Herbert",
       "status": "Active",
       "detail": "Herbert said Tuesday that a priority during OTAs has been to overhaul his footwork under the direction of new offensive coordinator Mike McDaniel, Kris Rhim of ESPN reports."
-     },
-     {
-      "player": "Rashawn Slater",
-      "status": "Questionable",
-      "detail": "Slater (kneecap) said Wednesday that he should be cleared for training camp, Alex Insdorf of BoltBeat.com reports."
      },
      {
       "player": "Tre' Harris",
@@ -2935,6 +2935,11 @@
     ],
     "Minnesota Vikings": [
      {
+      "player": "Christian Darrisaw",
+      "status": "Active",
+      "detail": ""
+     },
+     {
       "player": "Caleb Banks",
       "status": "Active",
       "detail": ""
@@ -2943,11 +2948,6 @@
       "player": "Kyler Murray",
       "status": "Active",
       "detail": "Murray continued to split first-team reps with J.J. McCarthy on Thursday, Rob Kleifield of the Vikings' official site reports."
-     },
-     {
-      "player": "Christian Darrisaw",
-      "status": "Questionable",
-      "detail": "Darrisaw (knee) told reporters Thursday that he hasn't felt this good \"in two years,\" per Kevin Seifert of ESPN.com."
      },
      {
       "player": "Myles Price",
@@ -3824,6 +3824,11 @@
     ],
     "San Francisco 49ers": [
      {
+      "player": "Alfred Collins",
+      "status": "Active",
+      "detail": ""
+     },
+     {
       "player": "Tanner McLachlan",
       "status": "Questionable",
       "detail": "questionable"
@@ -3912,11 +3917,6 @@
       "player": "Nick Bosa",
       "status": "Questionable",
       "detail": "Bosa (knee) wasn't placed on the PUP list ahead of the start of San Francisco's training camp, Matt Barrows of The Athletic reports."
-     },
-     {
-      "player": "Alfred Collins",
-      "status": "Out",
-      "detail": "The 49ers placed Collins (shoulder) on the active/PUP list Saturday, Matt Maiocco of NBC Sports Bay Area reports."
      },
      {
       "player": "Isaac Guerendo",
@@ -4465,7 +4465,7 @@
     {
      "title": "Sources: Wembanyama lands signature shoe line in Nike deal",
      "desc": "Spurs star Victor Wembanyama signed a new, long-term deal with Nike that includes a signature sneaker, sources told ESPN's Shams Charania.",
-     "published": "2026-07-31T16:56:17Z",
+     "published": "2026-07-31T17:17:02Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/nba/story/_/id/49497562/sources-wembanyama-lands-signature-shoe-line-nike-deal"
     },
@@ -5796,6 +5796,20 @@
    "name": "MLB",
    "headlines": [
     {
+     "title": "2026 MLB trade deadline tracker: Rumors, news, analysis",
+     "desc": "Which contenders will make the biggest splash? Here's what we're hearing as 6 p.m. ET on Monday approaches.",
+     "published": "2026-07-31T18:47:56Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/49410877/2026-mlb-trade-deadline-tracker-rumors-alerts-news-latest-updates-analysis"
+    },
+    {
+     "title": "Cubs RHP Hollowell on IL; closer Palencia nears return",
+     "desc": "The Cubs placed reliever Gavin Hollowell on the 15-day IL with right shoulder inflammation and recalled left-hander Antoine Kelly from Triple-A Iowa.",
+     "published": "2026-07-31T18:34:44Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/mlb/story/_/id/49498209/cubs-rhp-hollowell-il-closer-palencia-nears-return"
+    },
+    {
      "title": "Passan: Dodgers don't 'really need' Tarik Skubal",
      "desc": "Passan: Dodgers don't 'really need' Tarik Skubal",
      "published": "2026-07-31T17:03:17Z",
@@ -5822,20 +5836,6 @@
      "published": "2026-07-31T14:55:18Z",
      "type": "Story",
      "link": "https://www.espn.com/fantasy/baseball/story/_/id/49482023/fantasy-baseball-forecaster-espn-2026-mlb-starting-pitcher-hitter-ranks-week-18-august-3-9"
-    },
-    {
-     "title": "Fantasy baseball forecaster: Team hitting ratings",
-     "desc": "Stay ahead of the game and optimize your fantasy baseball hitters with our forecaster, which provides a rolling 10-day outlook of every team's hitting matchups as well as the potential for stolen bases.",
-     "published": "2026-07-31T12:28:13Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/baseball/story/_/id/31165089/fantasy-baseball-forecaster-team-hitting-stolen-base-ratings-platoon-matchups-daily-weekly-leagues"
-    },
-    {
-     "title": "Fantasy baseball forecaster: Pitcher projections for the next 10 days",
-     "desc": "Keep up to date on who is pitching -- and how well they're expected to do -- with our forecaster, which provides a rolling 10-day outlook of every team's probable starting pitchers with game score projections.",
-     "published": "2026-07-31T12:28:09Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/baseball/story/_/id/31165100/fantasy-baseball-forecaster-probable-starting-pitcher-projections-matchups-daily-weekly-leagues"
     }
    ],
    "injuries": {
@@ -5843,7 +5843,7 @@
      {
       "player": "Michael Soroka",
       "status": "15-Day-IL",
-      "detail": "Soroka (glute) threw a bullpen session Monday, MLB.com reports."
+      "detail": "Soroka (glute) will begin a rehab assignment with Triple-A Reno on Tuesday, John Gambadoro of Arizona Sports 98.7 FM reports."
      },
      {
       "player": "Zac Gallen",
@@ -6066,7 +6066,7 @@
      {
       "player": "Roman Anthony",
       "status": "60-Day-IL",
-      "detail": "Anthony (finger) has started swinging a bat again, Christopher Smith of MassLive.com reports."
+      "detail": "Interim Red Sox manager Chad Tracy said Thursday that Anthony (finger) has started swinging a bat again, Christopher Smith of MassLive.com reports."
      },
      {
       "player": "Marcelo Mayer",
@@ -6116,6 +6116,11 @@
     ],
     "Chicago Cubs": [
      {
+      "player": "Justin Steele",
+      "status": "60-Day-IL",
+      "detail": "Steele (elbow) will have some flat-ground work and then throw 20 pitches off the mound Saturday, Tony Andracki of Marquee Sports Network reports."
+     },
+     {
       "player": "Gavin Hollowell",
       "status": "15-Day-IL",
       "detail": "The Cubs placed Hollowell on the 15-day injured list Friday with right shoulder inflammation, Taylor McGregor of Marquee Sports Network reports."
@@ -6164,11 +6169,6 @@
       "player": "Matt Shaw",
       "status": "10-Day-IL",
       "detail": "Shaw is still feeling discomfort related to his left hand sprain and has yet to resume swinging a bat, Vinnie Duber of the Chicago Sun-Times reports."
-     },
-     {
-      "player": "Justin Steele",
-      "status": "60-Day-IL",
-      "detail": "Steele (elbow) was cleared to begin ramping up his throwing program Tuesday, Meghan Montemurro of the Chicago Tribune reports."
      },
      {
       "player": "Riley Martin",
@@ -6284,14 +6284,14 @@
     ],
     "Colorado Rockies": [
      {
+      "player": "Brenton Doyle",
+      "status": "10-Day-IL",
+      "detail": "The Rockies will activate Doyle (groin) from the 10-day injured list prior to Friday's game against the Royals, Thomas Harding of MLB.com reports."
+     },
+     {
       "player": "Kyle Karros",
       "status": "Day-To-Day",
       "detail": "Karros (biceps) remains out of the lineup for Wednesday's contest in San Diego."
-     },
-     {
-      "player": "Brenton Doyle",
-      "status": "10-Day-IL",
-      "detail": "Doyle (groin/oblique) has been cleared to resume a rehab assignment, Patrick Lyons of JustBaseball.com reports."
      },
      {
       "player": "Jeff Criswell",
@@ -6556,7 +6556,7 @@
      {
       "player": "Shohei Ohtani",
       "status": "Day-To-Day",
-      "detail": "Manager Dave Roberts said after Thursday's 6-2 win over the Mariners that he expects Ohtani (knee) to return to the lineup as the Dodgers' designated hitter and leadoff batter in Friday's series opener versus the Red Sox, Fabian Ardaya of The Athletic reports."
+      "detail": "Manager Dave Roberts said Thursday that he expects Ohtani (knee) to return to the lineup as the designated hitter and leadoff batter in Friday's series opener versus the Red Sox, Fabian Ardaya of The Athletic reports."
      },
      {
       "player": "Blake Snell",
@@ -7049,7 +7049,7 @@
     "Tampa Bay Rays": [
      {
       "player": "Shane McClanahan",
-      "status": "Day-To-Day",
+      "status": "15-Day-IL",
       "detail": "McClanahan was pulled from Thursday's start versus the Rangers in the fourth inning with left mid-back tightness, Ryan Bass of Rays.tv reports."
      },
      {
