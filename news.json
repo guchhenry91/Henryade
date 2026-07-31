@@ -1,11 +1,32 @@
 {
- "updated": "2026-07-31T12:04:20.094420+00:00",
- "updated_unix": 1785499460,
+ "updated": "2026-07-31T15:00:29.252106+00:00",
+ "updated_unix": 1785510029,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
+    {
+     "title": "How will Chelsea's ban affect the club moving forward?",
+     "desc": "How will Chelsea's ban affect the club moving forward?",
+     "published": "2026-07-31T14:39:43Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49496659/how-chelsea-ban-affect-club-moving-forward"
+    },
+    {
+     "title": "Transfer rumors, news: Man United looking at pair of Serie A wingers",
+     "desc": "Manchester United are looking at a pair of wingers in Serie A, while the USMNT's Gio Reyna is attracting interest from Strasbourg. Transfer Talk has the latest.",
+     "published": "2026-07-31T14:28:48Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49494536/transfer-rumors-news-man-united-looking-pair-serie-wingers"
+    },
+    {
+     "title": "Newcastle head to Spain amid Eddie Howe, Matthias Jaissle uncertainty",
+     "desc": "Newcastle players headed to a preseason training camp in Spain on Friday amid uncertainty over their coach less than a month before the start of the Premier League season.",
+     "published": "2026-07-31T13:00:22Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49496128/newcastle-head-spain-amid-eddie-howe-matthias-jaissle-uncertainty"
+    },
     {
      "title": "Wojciech Szczesny: It 'hurts' to have missed out on winning a Premier League with Arsenal",
      "desc": "Veteran Barcelona goalkeeper Wojciech Szczesny admits it \"still hurts\" to have missed out on a Premier League title during his time at Arsenal.",
@@ -16,16 +37,9 @@
     {
      "title": "Explaining each top Premier League team's transfer strategy",
      "desc": "Manchester United opted for affordable options, while Chelsea, Man City and Spurs all spent big. Here's the thinking behind the summer's transfer action so far.",
-     "published": "2026-07-31T11:30:22Z",
+     "published": "2026-07-31T12:35:24Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49479946/explaining-top-premier-league-team-transfer-strategy"
-    },
-    {
-     "title": "Transfer rumors, news: Man United looking at pair of Serie A wingers",
-     "desc": "Manchester United are looking at a pair of wingers in Serie A, while the USMNT's Gio Reyna is attracting interest from Strasbourg. Transfer Talk has the latest.",
-     "published": "2026-07-31T11:45:54Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49494536/transfer-rumors-news-man-united-looking-pair-serie-wingers"
     },
     {
      "title": "Summer transfer window: Grading big signings in men's soccer",
@@ -33,20 +47,6 @@
      "published": "2026-07-31T10:51:39Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
-    },
-    {
-     "title": "Sandro Tonali: 'I know I have a lot of pressure, but I have to play like a normal Tottenham player'",
-     "desc": "Sandro Tonali has opened up about his £100 million ($133 million) move to Tottenham Hotspur from Newcastle this summer, naming head coach Roberto De Zerbi as a key figure in the transfer.",
-     "published": "2026-07-31T11:40:52Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49495328/sandro-tonali-tottenham-premier-league-newcastle"
-    },
-    {
-     "title": "Liverpool vs. Leeds: TV channel, how to watch in UK, kickoff time, live stream, team news",
-     "desc": "Liverpool and Leeds will continue their preparation for the Premier League season when they meet in Chicago.",
-     "published": "2026-07-31T10:45:40Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49495161/liverpool-vs-leeds-tv-channel-how-watch-uk-kickoff-live-stream-team-news"
     }
    ],
    "injuries": {},
@@ -156,9 +156,16 @@
     {
      "title": "Transfer rumors, news: Man United looking at pair of Serie A wingers",
      "desc": "Manchester United are looking at a pair of wingers in Serie A, while the USMNT's Gio Reyna is attracting interest from Strasbourg. Transfer Talk has the latest.",
-     "published": "2026-07-31T11:45:54Z",
+     "published": "2026-07-31T14:28:48Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49494536/transfer-rumors-news-man-united-looking-pair-serie-wingers"
+    },
+    {
+     "title": "John Stones 'thrilled' to be living dream of playing abroad following Inter Milan move",
+     "desc": "John Stones has said he is thrilled to have joined Inter Milan and be fulfilling a lifelong dream of playing abroad after a decade of success with Manchester City.",
+     "published": "2026-07-31T14:02:59Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49496330/john-stones-inter-milan-italy-man-city-transfers-serie-a"
     },
     {
      "title": "Summer transfer window: Grading big signings in men's soccer",
@@ -187,13 +194,6 @@
      "published": "2026-07-22T07:08:58Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49415757/10-transfer-storylines-missed-world-cup"
-    },
-    {
-     "title": "Pulisic unveils AC Milan 2026-27 away kit inspired by Champions League final clashes with Liverpool",
-     "desc": "AC Milan have rolled out their new away kit, which harks back the two Champions League finals the club played against Liverpool in 2005 and 2007.",
-     "published": "2026-07-21T10:38:47Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49415973/christian-pulisic-ac-milan-2026-27-away-kit-champions-league-final-liverpool"
     }
    ],
    "injuries": {},
@@ -350,46 +350,46 @@
    "name": "NFL",
    "headlines": [
     {
-     "title": "2026 Fantasy Football Draft Guide: Rankings, mock drafts and analysis",
-     "desc": "Your one-stop shop as you prep for draft season, including rankings, projections and analysis.",
-     "published": "2026-07-31T10:39:50Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/football/story/_/page/FFDraftGuide26-48677635/2026-fantasy-football-rankings-mock-draft-cheat-sheets-sleepers"
+     "title": "Evan Cohen puzzled why Cowboys are in Super Bowl conversation",
+     "desc": "Evan Cohen puzzled why Cowboys are in Super Bowl conversation  ",
+     "published": "2026-07-31T14:38:57Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49496600/evan-cohen-puzzled-why-cowboys-super-bowl-conversation"
     },
     {
-     "title": "The Playbook: Planning a winning fantasy football draft strategy",
-     "desc": "Mike Clay goes position by position and lays out a successful approach for 2026 fantasy football drafts.",
-     "published": "2026-07-31T10:37:34Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/football/story/_/id/49473842/2026-fantasy-football-draft-strategy-how-draft"
+     "title": "How will Lamar Jackson affect the Ravens' running game this season?",
+     "desc": "How will Lamar Jackson affect the Ravens' running game this season?",
+     "published": "2026-07-31T14:27:27Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49496459/how-lamar-jackson-affect-ravens-running-game-season"
     },
     {
      "title": "Tracking 2026 NFL hold-ins: Robinson, Gibbs, Vea and Tuipulotu",
      "desc": "Here is the latest on Falcons' Bijan Robinson, Lions' Jahmyr Gibbs, Bucs' Vita Vea and Chargers' Tuli Tuipulotu.",
-     "published": "2026-07-31T10:29:42Z",
+     "published": "2026-07-31T14:29:05Z",
      "type": "Story",
      "link": "https://www.espn.com/nfl/story/_/id/49490010/2026-training-camp-holdin-tracking-updates-bijan-robinson-jahmyr-gibbs-vita-vea-tuli-tuipulotu"
     },
     {
-     "title": "Anatomy of an NFL holdout: What it's like for players, agents, teams",
-     "desc": "Holdouts can be brutal. Here are some notable stories from each side of the bargaining table.",
-     "published": "2026-07-31T10:05:05Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/45789518/nfl-training-camp-holdouts-trey-hendrickson-terry-mclaurin"
+     "title": "Why Graziano believes Chiefs could see a Week 1 return for Mahomes",
+     "desc": "Why Graziano believes Chiefs could see a Week 1 return for Mahomes",
+     "published": "2026-07-31T13:46:42Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49496406/why-graziano-believes-chiefs-see-week-1-return-mahomes"
     },
     {
-     "title": "Every NFL team's best training camp, preseason riser ever",
-     "desc": "Let's look back to when 32 NFL players kick-started their careers with strong performances in training camp and the preseason -- one from each team.",
-     "published": "2026-07-31T10:00:07Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49464348/nfl-training-camps-preseason-risers-history-davis-cruz-crosby"
+     "title": "Jason McCourty: Rome Odunze doesn't have to be WR1 for Bears",
+     "desc": "Jason McCourty: Rome Odunze doesn't have to be WR1 for Bears",
+     "published": "2026-07-31T13:45:47Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49496397/rome-odunze-wr1-bears"
     },
     {
-     "title": "Sources: Deebo Samuel returning to 49ers on 1-year deal",
-     "desc": "Free agent Deebo Samuel is signing back with the 49ers on a 1-year deal that could be worth up to $7 million, sources told NFL Network's Ian Rapoport.",
-     "published": "2026-07-31T06:49:37Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49493047/sources-deebo-samuel-returning-49ers-1-year-deal"
+     "title": "Can Caleb Downs solve the Cowboys' defensive struggles?",
+     "desc": "Can Caleb Downs solve the Cowboys' defensive struggles?",
+     "published": "2026-07-31T12:54:41Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49496155/can-caleb-downs-solve-cowboys-defensive-struggles"
     }
    ],
    "injuries": {
@@ -1030,6 +1030,11 @@
     ],
     "Chicago Bears": [
      {
+      "player": "Kyle Monangai",
+      "status": "Questionable",
+      "detail": "Monangai was absent from Friday's practice due to an undisclosed reason, Patrick Finley of the Chicago Sun-Times reports."
+     },
+     {
       "player": "Rome Odunze",
       "status": "Active",
       "detail": "Odunze said Thursday that his foot \"feels great\" at the beginning of training camp, Courtney Cronin of ESPN.com reports."
@@ -1108,11 +1113,6 @@
       "player": "Caleb Williams",
       "status": "Active",
       "detail": "Williams appears poised to make a leap in his second season with coach Ben Johnson in 2026, Alyssa Barbieri of Bears Wire reports."
-     },
-     {
-      "player": "Kyle Monangai",
-      "status": "Active",
-      "detail": "Monangai remains positioned for a key complementary role behind D'Andre Swift as training camp approaches, Mike Moraitis of SI.com reports."
      },
      {
       "player": "D'Andre Swift",
@@ -1665,6 +1665,16 @@
     ],
     "Detroit Lions": [
      {
+      "player": "Jimmy Rolder",
+      "status": "Questionable",
+      "detail": "questionable"
+     },
+     {
+      "player": "Christian Mahogany",
+      "status": "Active",
+      "detail": ""
+     },
+     {
       "player": "Colby Sorsdal",
       "status": "Active",
       "detail": "Sorsdal (undisclosed) is participating at the Lions' training camp, Benjamin Raven of MLive.com reports."
@@ -1681,7 +1691,7 @@
      },
      {
       "player": "Alim McNeill",
-      "status": "Active",
+      "status": "Questionable",
       "detail": "McNeill (abdomen) passed his conditioning test and is participating in training camp, Tim Twentyman of the Lions' official site reports."
      },
      {
@@ -1693,11 +1703,6 @@
       "player": "Giovanni Manu",
       "status": "Out",
       "detail": "The Lions placed Manu (knee) on the active/non-football injury list Wednesday."
-     },
-     {
-      "player": "Christian Mahogany",
-      "status": "Out",
-      "detail": "The Lions placed Mahogany (undisclosed) on the active/non-football injury list Tuesday."
      },
      {
       "player": "Christian Izien",
@@ -1783,11 +1788,6 @@
       "player": "Penei Sewell",
       "status": "Active",
       "detail": ""
-     },
-     {
-      "player": "Jack Campbell",
-      "status": "Active",
-      "detail": "Campbell is signing a four-year, $81 million extension with the Lions, Ian Rapoport of NFL Network reports."
      }
     ],
     "Green Bay Packers": [
@@ -2046,6 +2046,11 @@
     ],
     "Indianapolis Colts": [
      {
+      "player": "CJ Allen",
+      "status": "Active",
+      "detail": ""
+     },
+     {
       "player": "Riley Leonard",
       "status": "Active",
       "detail": "Leonard is in a competition for the No. 2 quarterback role in Indianapolis in 2026, JJ Stankevitz of the Colts' official site reports."
@@ -2084,11 +2089,6 @@
       "player": "DeForest Buckner",
       "status": "Active",
       "detail": "Buckner (neck) has been cleared to practice, James Boyd of The Athletic reports."
-     },
-     {
-      "player": "CJ Allen",
-      "status": "Out",
-      "detail": "Allen (calf) was placed on the active/PUP list by the Colts on Monday, Stephen Holder of ESPN.com reports."
      },
      {
       "player": "Blake Grupe",
@@ -3697,6 +3697,16 @@
     ],
     "Pittsburgh Steelers": [
      {
+      "player": "Rico Dowdle",
+      "status": "Active",
+      "detail": "Dowdle and Jaylen Warren split first-team running back reps across the Steelers' first two training camp practices, Daniel Chavkin of SportsNet Pittsburgh reports."
+     },
+     {
+      "player": "Jaylen Warren",
+      "status": "Active",
+      "detail": "Warren and Rico Dowdle split first-team running back reps across the Steelers' first two training camp practices, Daniel Chavkin of SportsNet Pittsburgh reports."
+     },
+     {
       "player": "Mason Rudolph",
       "status": "Active",
       "detail": "Rudolph is set to receive a fair share of the quarterback reps during training camp, Mike DeFabo of The Athletic reports."
@@ -3767,11 +3777,6 @@
       "detail": "Bernard, who showed \"confident hands and good body control\" during OTAs and minicamp, per Mike DeFabo of The Athletic, figures to compete with Roman Wilson this summer for work behind DK Metcalf and Michael Pittman in three-receiver sets."
      },
      {
-      "player": "Rico Dowdle",
-      "status": "Active",
-      "detail": "Dowdle, who signed with the Steelers in March, is set to work in tandem with Jaylen Warren this coming season, Kevin Hutchinson of steelersnow.com reports."
-     },
-     {
       "player": "Jacoby Windmon",
       "status": "Active",
       "detail": "Pittsburgh signed Windmon on Tuesday, Adam Schefter of ESPN reports."
@@ -3805,11 +3810,6 @@
       "player": "Nick Herbig",
       "status": "Active",
       "detail": "Pittsburgh signed Herbig to a four-year, $100 million contract extension Tuesday, Adam Schefter of ESPN reports."
-     },
-     {
-      "player": "Jaylen Warren",
-      "status": "Active",
-      "detail": "Warren said Thursday that he's down to 205 pounds this season, Chris Adamski of TribLive.com reports."
      },
      {
       "player": "Dean Lowry",
@@ -3951,6 +3951,11 @@
     ],
     "Seattle Seahawks": [
      {
+      "player": "Jadarian Price",
+      "status": "Active",
+      "detail": "Price got the opening first-team backfield reps during Seattle's first full-team scrimmage Thursday, Gregg Bell of The News Tribune reports."
+     },
+     {
       "player": "Deven Eastern",
       "status": "Active",
       "detail": "Eastern (undisclosed) passed his physical and was taken off the Seahawks' active/PUP list Thursday."
@@ -3979,11 +3984,6 @@
       "player": "George Holani",
       "status": "Active",
       "detail": "Holani and rookie first-round pick Jadarian Price have split first-team reps during the early days of training camp, Gregg Bell of The News Tribune reports."
-     },
-     {
-      "player": "Jadarian Price",
-      "status": "Active",
-      "detail": "Price is sharing first-team backfield work with George Holani early in Seahawks training camp, Gregg Bell of The News Tribune reports."
      },
      {
       "player": "AJ Barner",
@@ -5310,6 +5310,13 @@
    "name": "NHL",
    "headlines": [
     {
+     "title": "NHL rookie roundtable: Gavin McKenna and other top rookies answer burning questions",
+     "desc": "How would you want people to describe your game? Most embarrassing hockey story?  We got the answers to those questions and more from some of the NHL's top rookies.",
+     "published": "2026-07-31T12:08:02Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nhl/story/_/id/49488419/nhl-rookie-roundtable-gavin-mckenna-porter-martone-other-top-rookies-answer-burning-questions"
+    },
+    {
      "title": "Swedish Elite League team rescinds Foote deal amid fan uproar",
      "desc": "Färjestad BK of the Swedish Elite League announced Thursday it was not going to honor Cal Foote's contract after conversations with stakeholders.",
      "published": "2026-07-31T03:31:08Z",
@@ -5333,7 +5340,7 @@
     {
      "title": "No. 1 2026 NHL draft pick Gavin McKenna sets rookie season goals",
      "desc": "Gavin McKenna, the No. 1 pick of the 2026 NHL Draft, outlined his season goals on Wednesday at the NHLPA Rookie Showcase.",
-     "published": "2026-07-29T21:56:16Z",
+     "published": "2026-07-31T12:10:36Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/nhl/story/_/id/49482822/no1-2026-nhl-draft-pick-gavin-mckenna-sets-rookie-season-goals"
     },
@@ -5343,13 +5350,6 @@
      "published": "2026-07-29T23:04:22Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/nhl/story/_/id/49480184/sharks-sign-macklin-celebrini-five-year-94m-extension"
-    },
-    {
-     "title": "2026 NHL free agency tracker: News, contracts, grades, buzz",
-     "desc": "Get up to speed on all the latest veteran additions teams are making beginning on June 30.",
-     "published": "2026-07-28T17:33:42Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nhl/story/_/id/49235590/nhl-free-agency-tracker-2026-contracts-teams-analysis-updates"
     }
    ],
    "injuries": {
@@ -5932,46 +5932,46 @@
    "name": "MLB",
    "headlines": [
     {
+     "title": "Fantasy baseball: Ohtani still sore, expected to swing bat for Dodgers and more Friday news",
+     "desc": "All of the important fantasy spin and actionable takeaways resulting from the latest baseball news.",
+     "published": "2026-07-31T14:34:30Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/baseball/story/_/id/48297021/espn-fantasy-baseball-buzz-injuries-promotions-demotions-trades-prospects-lineup-changes-mlb-news-analysis-2026"
+    },
+    {
+     "title": "Fantasy Baseball Forecaster Week 18: Aug. 3-9",
+     "desc": "Set your lineups for the weeks ahead in fantasy baseball with our preview featuring pitcher rankings, hitter ratings and schedule observations.",
+     "published": "2026-07-31T14:55:18Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/baseball/story/_/id/49482023/fantasy-baseball-forecaster-espn-2026-mlb-starting-pitcher-hitter-ranks-week-18-august-3-9"
+    },
+    {
+     "title": "Fantasy baseball forecaster: Team hitting ratings",
+     "desc": "Stay ahead of the game and optimize your fantasy baseball hitters with our forecaster, which provides a rolling 10-day outlook of every team's hitting matchups as well as the potential for stolen bases.",
+     "published": "2026-07-31T12:28:13Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/baseball/story/_/id/31165089/fantasy-baseball-forecaster-team-hitting-stolen-base-ratings-platoon-matchups-daily-weekly-leagues"
+    },
+    {
+     "title": "Fantasy baseball forecaster: Pitcher projections for the next 10 days",
+     "desc": "Keep up to date on who is pitching -- and how well they're expected to do -- with our forecaster, which provides a rolling 10-day outlook of every team's probable starting pitchers with game score projections.",
+     "published": "2026-07-31T12:28:09Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/baseball/story/_/id/31165100/fantasy-baseball-forecaster-probable-starting-pitcher-projections-matchups-daily-weekly-leagues"
+    },
+    {
+     "title": "Fantasy Baseball Reliever Depth Chart",
+     "desc": "Our updated reliever depth chart displays the closer hierarchy for each team, as well as the fatigue factor in each MLB bullpen.",
+     "published": "2026-07-31T12:24:22Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/baseball/flb/story?page=REcloserorgchart"
+    },
+    {
      "title": "Kody Clemens hits a walk-off grand slam with 2 outs in the 9th to send the Twins past the Royals 4-3",
      "desc": "— Kody Clemens hit a game-ending grand slam with two outs in the ninth inning as the Minnesota Twins beat the Kansas City Royals 4-3 on...",
      "published": "2026-07-31T11:18:50Z",
      "type": "Recap",
      "link": "http://www.espn.com/mlb/recap?gameId=401816327"
-    },
-    {
-     "title": "MLB betting tips for Friday: When will last place Toronto's woes Cease?",
-     "desc": "All of the odds, recommended prop bets and trends in baseball for Friday, July 31.",
-     "published": "2026-07-31T11:17:30Z",
-     "type": "Story",
-     "link": "https://www.espn.com/espn/betting/story/_/id/49495366/mlb-betting-tips-odds-lines-2026-friday-july-31"
-    },
-    {
-     "title": "MLB trade deadline dominoes for 10 biggest names on 2026 market",
-     "desc": "Based on what ESPN's Jeff Passan is hearing, we predict where the top trade candidates will land -- and how they impact each other.",
-     "published": "2026-07-31T10:48:41Z",
-     "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49489686/mlb-trade-deadline-2026-dominoes-market-skubal-peralta-gausman-arraez-holmes"
-    },
-    {
-     "title": "Pirates bring 3-game losing streak into matchup with the Reds",
-     "desc": "Pittsburgh Pirates (55-55, third in the NL Central) vs. Cincinnati Reds (51-57, fifth in the NL Central)",
-     "published": "2026-07-31T08:02:22Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816336"
-    },
-    {
-     "title": "Phillies play the Orioles looking to break road skid",
-     "desc": "Philadelphia Phillies (57-52, second in the NL East) vs. Baltimore Orioles (53-56, fourth in the AL East)",
-     "published": "2026-07-31T08:02:18Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816335"
-    },
-    {
-     "title": "White Sox visit the Rays to begin 3-game series",
-     "desc": "Chicago White Sox (57-51, first in the AL Central) vs. Tampa Bay Rays (64-44, first in the AL East)",
-     "published": "2026-07-31T08:02:13Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816333"
     }
    ],
    "injuries": {
@@ -6067,11 +6067,6 @@
       "player": "Zack Gelof",
       "status": "10-Day-IL",
       "detail": "Gelof (knee) is continuing a running progression and participating in baseball activities, per MLB.com."
-     },
-     {
-      "player": "Jeffrey Springs",
-      "status": "Day-To-Day",
-      "detail": "Springs (hip) is expected to be available the next time his turn in the rotation comes up Friday versus the Tigers in Sacramento, Martin Gallegos of MLB.com reports."
      },
      {
       "player": "Joshua Kuroda-Grauer",
@@ -6692,7 +6687,7 @@
      {
       "player": "Shohei Ohtani",
       "status": "Day-To-Day",
-      "detail": "Ohtani is not in the starting lineup Thursday against Seattle as a result of left knee soreness, Maddie Lee of the Los Angeles Times reports."
+      "detail": "Manager Dave Roberts said after Thursday's 6-2 win over the Mariners that he expects Ohtani (knee) to return to the lineup as the Dodgers' designated hitter and leadoff batter in Friday's series opener versus the Red Sox, Fabian Ardaya of The Athletic reports."
      },
      {
       "player": "Blake Snell",
@@ -7236,6 +7231,11 @@
     ],
     "Texas Rangers": [
      {
+      "player": "Cody Bradford",
+      "status": "60-Day-IL",
+      "detail": "Bradford (elbow) struck out seven and allowed four hits and no walks over four scoreless innings in a rehab start Thursday for Triple-A Round Rock."
+     },
+     {
       "player": "Josh Jung",
       "status": "10-Day-IL",
       "detail": "Rangers manager Skip Schumaker said Thursday that Jung's recovery from a left calf strain has \"not trended in the right direction,\" Evan Grant of The Dallas Morning News reports."
@@ -7248,7 +7248,7 @@
      {
       "player": "Jordan Montgomery",
       "status": "60-Day-IL",
-      "detail": "Montgomery (elbow) will make another rehab start Sunday, Jeff Wilson of AllDLLS.com reports."
+      "detail": "Montgomery (elbow) is scheduled to make another rehab start Sunday, Jeff Wilson of AllDLLS.com reports."
      },
      {
       "player": "Corey Seager",
@@ -7264,11 +7264,6 @@
       "player": "Danny Jansen",
       "status": "60-Day-IL",
       "detail": "Rangers manager Skip Schumaker said Saturday that Jansen (forearm) is dealing with setbacks that put his return in doubt, Evan Grant of the Dallas Morning News reports."
-     },
-     {
-      "player": "Cody Bradford",
-      "status": "60-Day-IL",
-      "detail": "Bradford (elbow) struck out four and allowed three hits and no walks across three innings in a rehab start Friday with Double-A Frisco."
      },
      {
       "player": "Jack Leiter",
