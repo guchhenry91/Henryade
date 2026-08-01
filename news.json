@@ -1,11 +1,18 @@
 {
- "updated": "2026-08-01T07:30:14.303828+00:00",
- "updated_unix": 1785569414,
+ "updated": "2026-08-01T09:34:42.153722+00:00",
+ "updated_unix": 1785576882,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
+    {
+     "title": "Transfer rumors, news: Bayern eye Man United's Sesko to replace Kane",
+     "desc": "Bayer Munich are still looking for a long-term successor to Harry Kane, and have Manchester United striker Benjamin Sesko on their shortlist. Transfer Talk has the latest.",
+     "published": "2026-08-01T08:46:07Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49503204/transfer-rumors-news-bayern-munich-eye-manchester-united-benjamin-sesko-replace-harry-kane"
+    },
     {
      "title": "Premier League preseason friendlies 2026-27: Fixtures, UK kick-off times and summer tour schedule",
      "desc": "Premier League clubs have confirmed their preseason schedules ahead of the new campaign, with the 2026-27 season kicking off on Aug. 21.",
@@ -40,13 +47,6 @@
      "published": "2026-08-01T06:18:51Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49495161/liverpool-vs-leeds-tv-channel-how-watch-uk-kickoff-live-stream-team-news"
-    },
-    {
-     "title": "Transfer rumors, news: Newcastle accept €90m Arsenal offer for Guimarães",
-     "desc": "Arsenal are reportedly looking for confident that they will sign Bruno Guimarães from Newcastle United. Transfer Talk has the latest.",
-     "published": "2026-07-31T18:05:15Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49494536/transfer-rumors-news-man-united-looking-pair-serie-wingers"
     }
    ],
    "injuries": {},
@@ -105,6 +105,13 @@
    "name": "Bundesliga",
    "headlines": [
     {
+     "title": "Transfer rumors, news: Bayern eye Man United's Sesko to replace Kane",
+     "desc": "Bayer Munich are still looking for a long-term successor to Harry Kane, and have Manchester United striker Benjamin Sesko on their shortlist. Transfer Talk has the latest.",
+     "published": "2026-08-01T08:46:07Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49503204/transfer-rumors-news-bayern-munich-eye-manchester-united-benjamin-sesko-replace-harry-kane"
+    },
+    {
      "title": "Summer transfer window: Grading big signings in men's soccer",
      "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
      "published": "2026-07-31T10:51:39Z",
@@ -138,13 +145,6 @@
      "published": "2026-07-24T16:40:32Z",
      "type": "Media",
      "link": "https://www.espn.com/video/clip/_/id/49440733/klopp-best-man-germany-job"
-    },
-    {
-     "title": "South Africa teen Emile Witbooi gaining interest from Europe's top leagues - Roc Nation Sports",
-     "desc": "Cape Town City attacking midfielder/winger Emile Witbooi is generating interest from England, Spain, Germany, France, Belgium and the US, as well as other African clubs, Roc Nation Sports International (RNSI) told ESPN.",
-     "published": "2026-07-24T07:21:38Z",
-     "type": "Story",
-     "link": "https://www.espn.com/espn/story/_/id/49430310/south-africa-teen-emile-witbooi-gaining-interest-europe-top-leagues-roc-nation-sports"
     }
    ],
    "injuries": {},
@@ -203,6 +203,13 @@
    "name": "Ligue 1",
    "headlines": [
     {
+     "title": "Man City want Ayyoub Bouaddi regardless of Rodri's future - sources",
+     "desc": "Manchester City will push ahead with a deal with Ayyoub Bouaddi regardless of doubts about Rodri's future at the Etihad Stadium, sources have told ESPN.",
+     "published": "2026-08-01T08:56:10Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49496505/man-city-ayyoub-bouaddi-transfer-news-rodri-real-madrid"
+    },
+    {
      "title": "Summer transfer window: Grading big signings in men's soccer",
      "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
      "published": "2026-07-31T10:51:39Z",
@@ -236,13 +243,6 @@
      "published": "2026-07-25T15:34:30Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49434125/mls-capitalize-world-cup-don-garber-commissioner"
-    },
-    {
-     "title": "South Africa teen Emile Witbooi gaining interest from Europe's top leagues - Roc Nation Sports",
-     "desc": "Cape Town City attacking midfielder/winger Emile Witbooi is generating interest from England, Spain, Germany, France, Belgium and the US, as well as other African clubs, Roc Nation Sports International (RNSI) told ESPN.",
-     "published": "2026-07-24T07:21:38Z",
-     "type": "Story",
-     "link": "https://www.espn.com/espn/story/_/id/49430310/south-africa-teen-emile-witbooi-gaining-interest-europe-top-leagues-roc-nation-sports"
     }
    ],
    "injuries": {},
@@ -5791,46 +5791,46 @@
    "name": "MLB",
    "headlines": [
     {
-     "title": "2026 MLB ABS challenge system tracker: Team, player rankings",
-     "desc": "The ABS challenge system leaderboard ranks batters, catchers, teams and umpires throughout the MLB season.",
-     "published": "2026-08-01T05:32:52Z",
-     "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/48305211/2026-mlb-abs-challenge-system-tracker-team-player-rankings"
+     "title": "Red Sox bring 3-game win streak into matchup with the Dodgers",
+     "desc": "Boston Red Sox (58-51, third in the AL East) vs. Los Angeles Dodgers (69-41, first in the NL West)",
+     "published": "2026-08-01T08:02:15Z",
+     "type": "Preview",
+     "link": "http://www.espn.com/mlb/preview?gameId=401816357"
     },
     {
-     "title": "Lewis hits tying homer in 7th and Keaschall provides go-ahead double as Twins beat Mariners 5-3",
-     "desc": "— Royce Lewis hit a tying home run in the seventh inning and Luke Keaschall smacked a go-ahead double as the surging Minnesota Twins beat the Seattle Mariners 5-3 on Friday night.",
-     "published": "2026-08-01T05:26:42Z",
-     "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816345"
+     "title": "Diamondbacks bring 3-game win streak into game against the Guardians",
+     "desc": "Arizona Diamondbacks (58-52, second in the NL West) vs. Cleveland Guardians (56-55, third in the AL Central)",
+     "published": "2026-08-01T08:02:12Z",
+     "type": "Preview",
+     "link": "http://www.espn.com/mlb/preview?gameId=401816347"
     },
     {
-     "title": "2026 MLB trade deadline grades: Report cards for every deal",
-     "desc": "Trade season has officially begun! Here's our running scorecard for every big move before Monday's deadline arrives.",
-     "published": "2026-08-01T06:11:45Z",
-     "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49454655/2026-mlb-trade-deadline-grades-analysis-report-cards-every-deal"
+     "title": "Rockies face the Royals with 1-0 series lead",
+     "desc": "Kansas City Royals (46-65, fifth in the AL Central) vs. Colorado Rockies (43-67, fifth in the NL West)",
+     "published": "2026-08-01T08:02:08Z",
+     "type": "Preview",
+     "link": "http://www.espn.com/mlb/preview?gameId=401816356"
     },
     {
-     "title": "Boston Red Sox vs. Los Angeles Dodgers: Game Highlights",
-     "desc": "Boston Red Sox vs. Los Angeles Dodgers: Game Highlights",
-     "published": "2026-08-01T05:28:42Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49502751/game-highlights"
+     "title": "White Sox take win streak into game against the Rays",
+     "desc": "Chicago White Sox (58-51, first in the AL Central) vs. Tampa Bay Rays (64-45, first in the AL East)",
+     "published": "2026-08-01T08:02:05Z",
+     "type": "Preview",
+     "link": "http://www.espn.com/mlb/preview?gameId=401816348"
     },
     {
-     "title": "Minnesota Twins vs. Seattle Mariners: Game Highlights",
-     "desc": "Minnesota Twins vs. Seattle Mariners: Game Highlights",
-     "published": "2026-08-01T05:18:07Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49502750/game-highlights"
+     "title": "Blue Jays bring 1-0 series lead over Cardinals into game 2",
+     "desc": "St. Louis Cardinals (54-56, fourth in the NL Central) vs. Toronto Blue Jays (51-59, fifth in the AL East)",
+     "published": "2026-08-01T08:02:01Z",
+     "type": "Preview",
+     "link": "http://www.espn.com/mlb/preview?gameId=401816352"
     },
     {
-     "title": "Rafaela has 2-run homer to spark a 5-run 7th as Red Sox rally past Dodgers, 9-4",
-     "desc": "— Ceddane Rafaela's go-ahead two-run homer highlighted a five-run seventh inning and the Boston Red Sox rallied after blowing an early lead to beat the Los Angeles Dodgers 9-4 on Friday night in the series opener.",
-     "published": "2026-08-01T05:09:35Z",
-     "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816342"
+     "title": "New York Mets host the Miami Marlins Saturday",
+     "desc": "Miami Marlins (56-55, third in the NL East) vs. New York Mets (47-64, fifth in the NL East)",
+     "published": "2026-08-01T08:01:57Z",
+     "type": "Preview",
+     "link": "http://www.espn.com/mlb/preview?gameId=401816349"
     }
    ],
    "injuries": {
