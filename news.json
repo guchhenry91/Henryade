@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-01T19:15:48.470199+00:00",
- "updated_unix": 1785611748,
+ "updated": "2026-08-01T20:27:31.915201+00:00",
+ "updated_unix": 1785616051,
  "source": "espn",
  "leagues": {
   "epl": {
@@ -350,46 +350,46 @@
    "name": "NFL",
    "headlines": [
     {
-     "title": "2026 Kansas City Chiefs training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Chiefs training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-01T19:11:02Z",
+     "title": "2026 Buffalo Bills training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Bills training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T20:19:33Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49447878/kansas-city-chiefs-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/49434544/buffalo-bills-training-camp-2026-intel-updates"
     },
     {
-     "title": "2026 Cincinnati Bengals training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Bengals training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-01T19:02:12Z",
+     "title": "2026 Tennessee Titans training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Titans training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T20:13:50Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49448120/cincinnati-bengals-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/49419824/tennessee-titans-training-camp-2026-intel-updates"
     },
     {
-     "title": "2026 NFL training camp: Latest news, intel for all 32 teams",
-     "desc": "Get all the news, intel and insights on NFL training camps from our team of reporters in the field.",
-     "published": "2026-08-01T18:59:30Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49368181/training-camp-2026-latest-news-intel-updates-buzz-all-32-teams"
-    },
-    {
-     "title": "2026 Chicago Bears training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Bears training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-01T19:10:41Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49448378/chicago-bears-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "2026 Houston Texans training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Houston Texans training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-01T18:23:30Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49419567/houston-texans-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "Bears CB Johnson views 2026 as 'definitely a contract year'",
-     "desc": "Bears cornerback Jaylon Johnson is approaching the 2026 season with his sights set on another payday.",
-     "published": "2026-08-01T18:27:52Z",
+     "title": "Confident Will Levis OK competing for Titans' backup QB spot",
+     "desc": "Tennessee Titans quarterback Will Levis, entering his fourth season, still believes he's \"a dang good quarterback\" in the NFL, he told reporters Saturday, as he continues to battle for the team's backup position behind former No. 1 overall ",
+     "published": "2026-08-01T20:12:05Z",
      "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49505992/bears-cb-johnson-views-2026-definitely-contract-year"
+     "link": "https://www.espn.com/nfl/story/_/id/49506954/confident-levis-ok-competing-titans-backup-qb-spot"
+    },
+    {
+     "title": "2026 Los Angeles Chargers training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Chargers training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T19:57:30Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49424976/los-angeles-chargers-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "Fantasy football Knockout league rankings: The 252 players to draft",
+     "desc": "Rankings for knockout leagues, where the lowest-scoring team is eliminated and the last team standing wins.",
+     "published": "2026-08-01T19:43:17Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/football/story/_/id/49309401/fantasy-football-knockout-rankings-top-200"
+    },
+    {
+     "title": "2026 New England Patriots training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Patriots training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T20:19:57Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49427703/new-england-patriots-training-camp-2026-intel-updates"
     }
    ],
    "injuries": {
@@ -397,7 +397,7 @@
      {
       "player": "PJ Mustipher",
       "status": "Injured Reserve",
-      "detail": "ir"
+      "detail": "The Cardinals placed Mustipher (foot) on injured reserve Saturday, Darren Urban of the team's official site reports."
      },
      {
       "player": "Jaden Davis",
@@ -522,6 +522,11 @@
     ],
     "Atlanta Falcons": [
      {
+      "player": "Matthew Bergeron",
+      "status": "Active",
+      "detail": "The Falcons signed Bergeron to a four-year $96 million contract extension Saturday, Will McFadden and Tori McElhaney of the team's official site report."
+     },
+     {
       "player": "Jawaan Taylor",
       "status": "Out",
       "detail": "Coach Kevin Stefanski said Friday that Taylor (elbow) is progressing well and that he hopes he can return in the next few days or weeks, Marc Raimondi of ESPN.com reports."
@@ -640,11 +645,6 @@
       "player": "Xavier Watts",
       "status": "Questionable",
       "detail": "Falcons head coach Kevin Stefanski said Wednesday at mandatory minicamp that Watts (undisclosed) is not practicing due to a minor injury, Marc Raimondi of ESPN.com reports."
-     },
-     {
-      "player": "Azeez Ojulari",
-      "status": "Active",
-      "detail": ""
      }
     ],
     "Baltimore Ravens": [
@@ -1413,12 +1413,12 @@
      {
       "player": "Zion Childress",
       "status": "Questionable",
-      "detail": "questionable"
+      "detail": "Childress (hamstring) is not participating in Saturday's practice session, Joe Hoyt of The Dallas Morning News reports"
      },
      {
       "player": "Jalen Thompson",
       "status": "Questionable",
-      "detail": "questionable"
+      "detail": "Thompson (hip) did not participate in Saturday's practice session, Joe Hoyt of The Dallas Morning News reports."
      },
      {
       "player": "P.J. Locke",
@@ -1921,7 +1921,7 @@
      {
       "player": "Jake Hansen",
       "status": "Questionable",
-      "detail": "Hansen (lower body) was carted off the field from practice Thursday, Aaron Wilson of KPRC 2 Houston reports."
+      "detail": "Hansen (ankle) is considered week-to-week, Jonathan M. Alexander of the Houston Chronicle reports."
      },
      {
       "player": "Layne Pryor",
@@ -2300,14 +2300,14 @@
     ],
     "Kansas City Chiefs": [
      {
+      "player": "Cyrus Allen",
+      "status": "Questionable",
+      "detail": "Allen was diagnosed with a shin bruise on his left leg that he suffered during Saturday's training camp practice, Adam Schefter of ESPN reports."
+     },
+     {
       "player": "Xavier Worthy",
       "status": "Questionable",
       "detail": "Worthy left Saturday's training camp practice due to a shoulder injury, Jesse Newell of The Athletic reports."
-     },
-     {
-      "player": "Cyrus Allen",
-      "status": "Questionable",
-      "detail": "Allen is being evaluated for a left lower-leg injury that he sustained during Saturday's training camp practice, Pete Sweeney of The Kansas City Star reports."
      },
      {
       "player": "Trey Smith",
@@ -3062,6 +3062,11 @@
     ],
     "New England Patriots": [
      {
+      "player": "Gabe Jacas",
+      "status": "Out",
+      "detail": "Jacas (knee) was a limited participant in Saturday's practice, Mike Reiss of ESPN.com reports."
+     },
+     {
       "player": "Lan Larison",
       "status": "Active",
       "detail": "Larison is battling rookies Jam Miller and Myles Montgomery for the third spot on the Patriots' running back depth chart, Evan Lazar of the Patriots' official site reports."
@@ -3120,11 +3125,6 @@
       "player": "Jeremiah Webb",
       "status": "Injured Reserve",
       "detail": "The Patriots placed Webb (arm) on injured reserve Sunday, Evan Lazar of the team's official site reports."
-     },
-     {
-      "player": "Gabe Jacas",
-      "status": "Out",
-      "detail": "The Patriots placed Jacas (knee) on the active/non-football injury list Sunday, Mike Reiss of ESPN reports."
      },
      {
       "player": "Kobe Prentice",
@@ -3572,22 +3572,22 @@
      {
       "player": "Jaeden Roberts",
       "status": "Questionable",
-      "detail": "questionable"
+      "detail": "Roberts (leg) was carted off the field during Saturday's practice session, Jeff McLane of The Philadelphia Inquirer reports."
      },
      {
       "player": "Keyshawn James-Newby",
       "status": "Questionable",
-      "detail": "questionable"
+      "detail": "James-Newby (undisclosed) was carted off the practice field during Saturday's session, Dave Zangaro of NBC Sports Philadelphia reports."
      },
      {
       "player": "Cole Wisniewski",
       "status": "Questionable",
-      "detail": "questionable"
+      "detail": "Wisniewski (hamstring) did not participate in Saturday's practice session, Zach Berman of The Athletic reports."
      },
      {
       "player": "Cameron Williams",
       "status": "Questionable",
-      "detail": "questionable"
+      "detail": "Williams (knee) did not participate in Saturday's practice session, Zach Berman of The Athletic reports."
      },
      {
       "player": "Jihaad Campbell",
@@ -3824,9 +3824,19 @@
     ],
     "San Francisco 49ers": [
      {
+      "player": "Keion White",
+      "status": "Questionable",
+      "detail": "White (groin) left Saturday's practice early, Nick Wagoner of ESPN.com reports."
+     },
+     {
       "player": "Romello Height",
       "status": "Questionable",
-      "detail": "questionable"
+      "detail": "Height (elbow) did not participate in Saturday's practice session, Nick Wagoner of ESPN.com reports."
+     },
+     {
+      "player": "Cameron Sample",
+      "status": "Questionable",
+      "detail": "Sample (knee) missed Saturday's practice session, David Lombardi of SFStandard.com reports."
      },
      {
       "player": "Mikail Kamara",
@@ -3837,11 +3847,6 @@
       "player": "De'Zhaun Stribling",
       "status": "Questionable",
       "detail": "Stribling will not participate in Saturday's training camp practice due to hamstring tightness, David Lombardi of SFStandard.com reports."
-     },
-     {
-      "player": "Cameron Sample",
-      "status": "Questionable",
-      "detail": "questionable"
      },
      {
       "player": "Ricky Pearsall",
@@ -3942,14 +3947,14 @@
       "player": "Isaac Guerendo",
       "status": "Out",
       "detail": "The 49ers placed Guerendo (pectoral) on the active/PUP list Saturday, Matt Maiocco of NBC Sports Bay Area reports."
-     },
-     {
-      "player": "Mykel Williams",
-      "status": "Out",
-      "detail": "The 49ers placed Williams (knee) on the active/PUP list Saturday, Matt Maiocco of NBC Sports Bay Area reports."
      }
     ],
     "Seattle Seahawks": [
+     {
+      "player": "Ja'Markis Weston",
+      "status": "Questionable",
+      "detail": "questionable"
+     },
      {
       "player": "Jadarian Price",
       "status": "Active",
@@ -4069,11 +4074,6 @@
       "player": "Robbie Ouzts",
       "status": "Active",
       "detail": "Ouzts (neck) was a full participant during Tuesday's OTAs, Cameron Van Til of Seattle Sports reports."
-     },
-     {
-      "player": "Irv Charles",
-      "status": "Active",
-      "detail": "The Jets traded Charles (knee) to the Seahawks on Wednesday in exchange for a 2028 conditional seventh-round pick, Rich Cimini of ESPN.com reports."
      }
     ],
     "Tampa Bay Buccaneers": [
@@ -5927,18 +5927,25 @@
    "name": "MLB",
    "headlines": [
     {
-     "title": "2026 MLB trade deadline grades: Report cards for every deal",
-     "desc": "Trade season has officially begun! Here's our running scorecard for every big move before Monday's deadline arrives.",
-     "published": "2026-08-01T19:08:12Z",
-     "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49454655/2026-mlb-trade-deadline-grades-analysis-report-cards-every-deal"
-    },
-    {
      "title": "2026 MLB trade deadline tracker: Rumors, news, analysis",
      "desc": "Which contenders will make the biggest splash? Here's what we're hearing as 6 p.m. ET on Monday approaches.",
-     "published": "2026-08-01T18:55:40Z",
+     "published": "2026-08-01T20:25:04Z",
      "type": "Story",
      "link": "https://www.espn.com/mlb/story/_/id/49410877/2026-mlb-trade-deadline-tracker-rumors-alerts-news-latest-updates-analysis"
+    },
+    {
+     "title": "Mariners place OF Luke Raley on IL with forearm strain",
+     "desc": "The Seattle Mariners placed outfielder Luke Raley on the 10-day injured list on Saturday due to a left forearm strain.",
+     "published": "2026-08-01T19:53:43Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/mlb/story/_/id/49506726/mariners-place-luke-raley-il-forearm-strain"
+    },
+    {
+     "title": "2026 MLB trade deadline grades: Report cards for every deal",
+     "desc": "Trade season has officially begun! Here's our running scorecard for every big move before Monday's deadline arrives.",
+     "published": "2026-08-01T19:24:21Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/49454655/2026-mlb-trade-deadline-grades-analysis-report-cards-every-deal"
     },
     {
      "title": "MLB trade deadline 2026: Ranking prospects who changed teams",
@@ -5960,13 +5967,6 @@
      "published": "2026-08-01T18:32:49Z",
      "type": "Story",
      "link": "https://www.espn.com/mlb/story/_/id/49082474/ranking-mlb-trade-deadline-candidates-top-100-skubal-chapman-peralta-arraez"
-    },
-    {
-     "title": "Fantasy baseball lineup advice for Sunday: Red-hot Lambert tops streaming options",
-     "desc": "Everything you need to know to set your fantasy baseball lineups for Sunday's MLB action.",
-     "published": "2026-08-01T15:40:19Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/baseball/story/_/id/49498643/fantasy-baseball-pitcher-rankings-lineup-advice-tips-mlb-daily-notes-august-2-games"
     }
    ],
    "injuries": {
@@ -6737,11 +6737,6 @@
       "detail": "Nardi (ribs) said Wednesday that he's about 2-to-3 weeks away from beginning a rehab assignment, Jordan McPherson of the Miami Herald reports."
      },
      {
-      "player": "Owen Caissie",
-      "status": "10-Day-IL",
-      "detail": "Caissie (calf) went 1-for-1 with two walks and a solo home run for Triple-A Jacksonville on Tuesday."
-     },
-     {
       "player": "Michael Petersen",
       "status": "Day-To-Day",
       "detail": "Petersen is still dealing with soreness in his right forearm after being struck by a comebacker during his relief appearance in Sunday's 5-3 loss to the Padres, Jordan McPherson of the Miami Herald reports."
@@ -6970,8 +6965,8 @@
     "Pittsburgh Pirates": [
      {
       "player": "Ryan O'Hearn",
-      "status": "Day-To-Day",
-      "detail": "O'Hearn went 1-for-2 with a grand slam, two walks and two runs scored Sunday against the Cubs."
+      "status": "10-Day-IL",
+      "detail": "The Pirates placed O'Hearn on the 10-day injured list Saturday with a left quad strain, Colin Beazley of the Pittsburgh Post-Gazette reports."
      },
      {
       "player": "Evan Sisk",
@@ -6987,11 +6982,6 @@
       "player": "Spencer Horwitz",
       "status": "10-Day-IL",
       "detail": "Horwitz (hamstring) was diagnosed with a concussion Tuesday after being hit in the helmet with a pitch while on a rehab assignment at Single-A Bradenton, Aiden Stepansky of MLB.com reports."
-     },
-     {
-      "player": "Rafael Flores Jr.",
-      "status": "7-Day IL",
-      "detail": "The Pirates placed Flores on the 7-day concussion injured list Friday."
      },
      {
       "player": "Chris Devenski",
