@@ -1,15 +1,29 @@
 {
- "updated": "2026-08-01T12:33:39.884047+00:00",
- "updated_unix": 1785587619,
+ "updated": "2026-08-01T14:36:34.965205+00:00",
+ "updated_unix": 1785594994,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
     {
+     "title": "Xabi Alonso: Chelsea 'very happy' about surprise return of Mykhailo Mudryk",
+     "desc": "Chelsea head coach Xabi Alonso has found his attacking stocks unexpectedly boosted just three weeks out from the Premier League season with the surprise return of full-back Mykhailo Mudryk from a doping ban.",
+     "published": "2026-08-01T14:21:13Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49504476/mykhailo-mudryk-chelsea-doping-ban-xabi-alonso"
+    },
+    {
+     "title": "Richarlison sometimes says he wants to leave Tottenham - Roberto De Zerbi",
+     "desc": "Tottenham manager Roberto De Zerbi has cast doubt on Richarlison's future at the club, saying sometimes the Brazil forward wants to leave.",
+     "published": "2026-08-01T14:07:21Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49504473/richarlison-somes-says-wants-leave-tottenham-roberto-de-zerbi"
+    },
+    {
      "title": "Transfer rumors, news: Bayern eye Man United's Sesko to replace Kane",
      "desc": "Bayer Munich are still looking for a long-term successor to Harry Kane, and have Manchester United striker Benjamin Sesko on their short list. Transfer Talk has the latest.",
-     "published": "2026-08-01T12:09:06Z",
+     "published": "2026-08-01T13:49:35Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49503204/transfer-rumors-news-bayern-munich-eye-manchester-united-benjamin-sesko-replace-harry-kane"
     },
@@ -23,7 +37,7 @@
     {
      "title": "Premier League 2026 summer transfers: All confirmed ins, outs for every club",
      "desc": "Here's every Premier League in and out before the 2026-27 season begins.",
-     "published": "2026-08-01T06:21:42Z",
+     "published": "2026-08-01T14:18:12Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/48955344/premier-league-2026-summer-transfers-all-confirmed-ins-outs-every-club"
     },
@@ -33,20 +47,6 @@
      "published": "2026-08-01T06:22:09Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/48944912/premier-league-efl-summer-transfer-window-2026-dates-does-open-deadline-day"
-    },
-    {
-     "title": "Who is Newcastle-linked Matthias Jaissle, the favourite to succeed Eddie Howe at St James' Park?",
-     "desc": "Al Ahli head coach Matthias Jaissle is reportedly set to replace Eddie Howe at Newcastle. But who is he?",
-     "published": "2026-08-01T06:19:20Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49487296/who-matthias-jaissle-newcastle-eddie-howe-al-ahli-st-james-park"
-    },
-    {
-     "title": "Liverpool vs. Leeds: TV channel, how to watch in UK, kickoff time, live stream, team news",
-     "desc": "Liverpool and Leeds will continue their preparation for the Premier League season when they meet in Chicago.",
-     "published": "2026-08-01T06:18:51Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49495161/liverpool-vs-leeds-tv-channel-how-watch-uk-kickoff-live-stream-team-news"
     }
    ],
    "injuries": {},
@@ -107,7 +107,7 @@
     {
      "title": "Transfer rumors, news: Bayern eye Man United's Sesko to replace Kane",
      "desc": "Bayer Munich are still looking for a long-term successor to Harry Kane, and have Manchester United striker Benjamin Sesko on their short list. Transfer Talk has the latest.",
-     "published": "2026-08-01T12:09:06Z",
+     "published": "2026-08-01T13:49:35Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49503204/transfer-rumors-news-bayern-munich-eye-manchester-united-benjamin-sesko-replace-harry-kane"
     },
@@ -350,6 +350,13 @@
    "name": "NFL",
    "headlines": [
     {
+     "title": "WR DeAndre Hopkins hired as Georgia Tech assistant WR coach",
+     "desc": "Five-time All-Pro wide receiver DeAndre Hopkins has joined Georgia Tech as assistant wide receivers coach but says he isn't retiring as a player yet.",
+     "published": "2026-08-01T14:03:43Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/college-football/story/_/id/49504555/wr-deandre-hopkins-hired-georgia-tech-assistant-wr-coach"
+    },
+    {
      "title": "'Excited' Lions welcome LaPorta back after long road from surgery",
      "desc": "LaPorta is expected to be a big part of the offense under new offensive coordinator Drew Petzing.",
      "published": "2026-08-01T10:00:03Z",
@@ -383,13 +390,6 @@
      "published": "2026-08-01T10:47:19Z",
      "type": "Story",
      "link": "https://www.espn.com/nfl/story/_/id/49500145/green-bay-packers-tucker-kraft-returns"
-    },
-    {
-     "title": "Sean McVay on Aaron Donald: 'Trending upwards'",
-     "desc": "Sean McVay on Aaron Donald: 'Trending upwards'",
-     "published": "2026-08-01T04:30:13Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49502485/trending-upwards"
     }
    ],
    "injuries": {
@@ -776,6 +776,11 @@
     ],
     "Buffalo Bills": [
      {
+      "player": "C.J. Gardner-Johnson",
+      "status": "Questionable",
+      "detail": "questionable"
+     },
+     {
       "player": "Dante Pettis",
       "status": "Active",
       "detail": "The Bills signed Pettis to a contract Thursday."
@@ -894,11 +899,6 @@
       "player": "Shane Zylstra",
       "status": "Active",
       "detail": "The Bills signed Zylstra to a one-year contract Tuesday."
-     },
-     {
-      "player": "Mike Danna",
-      "status": "Active",
-      "detail": "The Bills signed Danna on Monday."
      }
     ],
     "Carolina Panthers": [
@@ -3570,6 +3570,11 @@
     ],
     "Philadelphia Eagles": [
      {
+      "player": "Cameron Williams",
+      "status": "Questionable",
+      "detail": "questionable"
+     },
+     {
       "player": "Jihaad Campbell",
       "status": "Active",
       "detail": "Campbell is ready to take on a larger role on defense in the second year of his NFL career, Dave Spadaro of the Eagles' official site reports."
@@ -3688,11 +3693,6 @@
       "player": "Johnny Wilson",
       "status": "Active",
       "detail": "Wilson (knee) is participating in organized team activities, Glenn Erby of Eagles Wire reports."
-     },
-     {
-      "player": "Andrew Mukuba",
-      "status": "Active",
-      "detail": "Mukuba (ankle) participated in Philadelphia's OTAs on Wednesday, Brooks Kubena of The Athletic reports."
      }
     ],
     "Pittsburgh Steelers": [
@@ -5927,46 +5927,46 @@
    "name": "MLB",
    "headlines": [
     {
-     "title": "August 1 update! Ranking top 2026 MLB trade deadline candidates",
-     "desc": "Skubal to the ...? New difference-makers available? Here are the big names your team could be targeting, with a few new additions near the top.",
-     "published": "2026-08-01T12:18:29Z",
+     "title": "Brewers deal Yoho, Perkins to Guardians for Naylor, Heuer",
+     "desc": "The Guardians acquired relief help and outfield depth from the Brewers on Saturday, trading for right-handed pitcher Craig Yoho and switch hitter Blake Perkins in exchange for minor league catcher Bo Naylor and right-handed pitcher Codi Heu",
+     "published": "2026-08-01T14:21:55Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/mlb/story/_/id/49504640/brewers-deal-yoho-perkins-guardians-naylor-heuer"
+    },
+    {
+     "title": "MLB betting tips for Saturday: Back Jose Soriano to keep Brewers' bats in check",
+     "desc": "All of the odds, recommended prop bets and trends in baseball for Saturday, August 1.",
+     "published": "2026-08-01T14:03:25Z",
      "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49082474/ranking-mlb-trade-deadline-candidates-top-100-skubal-chapman-peralta-arraez"
+     "link": "https://www.espn.com/espn/betting/story/_/id/49497949/mlb-betting-tips-odds-lines-2026-saturday-august-1"
     },
     {
-     "title": "Red Sox bring 3-game win streak into matchup with the Dodgers",
-     "desc": "Boston Red Sox (58-51, third in the AL East) vs. Los Angeles Dodgers (69-41, first in the NL West)",
-     "published": "2026-08-01T08:02:15Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816357"
+     "title": "Fantasy baseball forecaster: Team hitting ratings",
+     "desc": "Stay ahead of the game and optimize your fantasy baseball hitters with our forecaster, which provides a rolling 10-day outlook of every team's hitting matchups as well as the potential for stolen bases.",
+     "published": "2026-08-01T13:40:16Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/baseball/story/_/id/31165089/fantasy-baseball-forecaster-team-hitting-stolen-base-ratings-platoon-matchups-daily-weekly-leagues"
     },
     {
-     "title": "Diamondbacks bring 3-game win streak into game against the Guardians",
-     "desc": "Arizona Diamondbacks (58-52, second in the NL West) vs. Cleveland Guardians (56-55, third in the AL Central)",
-     "published": "2026-08-01T08:02:12Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816347"
+     "title": "Fantasy baseball forecaster: Pitcher projections for the next 10 days",
+     "desc": "Keep up to date on who is pitching -- and how well they're expected to do -- with our forecaster, which provides a rolling 10-day outlook of every team's probable starting pitchers with game score projections.",
+     "published": "2026-08-01T13:39:38Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/baseball/story/_/id/31165100/fantasy-baseball-forecaster-probable-starting-pitcher-projections-matchups-daily-weekly-leagues"
     },
     {
-     "title": "Rockies face the Royals with 1-0 series lead",
-     "desc": "Kansas City Royals (46-65, fifth in the AL Central) vs. Colorado Rockies (43-67, fifth in the NL West)",
-     "published": "2026-08-01T08:02:08Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816356"
+     "title": "Fantasy Baseball Reliever Depth Chart",
+     "desc": "Our updated reliever depth chart displays the closer hierarchy for each team, as well as the fatigue factor in each MLB bullpen.",
+     "published": "2026-08-01T13:35:03Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/baseball/flb/story?page=REcloserorgchart"
     },
     {
-     "title": "White Sox take win streak into game against the Rays",
-     "desc": "Chicago White Sox (58-51, first in the AL Central) vs. Tampa Bay Rays (64-45, first in the AL East)",
-     "published": "2026-08-01T08:02:05Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816348"
-    },
-    {
-     "title": "Blue Jays bring 1-0 series lead over Cardinals into game 2",
-     "desc": "St. Louis Cardinals (54-56, fourth in the NL Central) vs. Toronto Blue Jays (51-59, fifth in the AL East)",
-     "published": "2026-08-01T08:02:01Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816352"
+     "title": "Fantasy baseball: O'Hearn hurts quad, Contreras exits after HBP to helmet and more Saturday news",
+     "desc": "All of the important fantasy spin and actionable takeaways resulting from the latest baseball news.",
+     "published": "2026-08-01T13:35:43Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/baseball/story/_/id/48297021/espn-fantasy-baseball-buzz-injuries-promotions-demotions-trades-prospects-lineup-changes-mlb-news-analysis-2026"
     }
    ],
    "injuries": {
@@ -6039,6 +6039,16 @@
     ],
     "Athletics": [
      {
+      "player": "J.T. Ginn",
+      "status": "15-Day-IL",
+      "detail": "Ginn is scheduled to throw a bullpen Saturday and could rejoin the Athletics' rotation next week if all goes well, Martin Gallegos of MLB.com reports."
+     },
+     {
+      "player": "Zack Gelof",
+      "status": "10-Day-IL",
+      "detail": "Gelof (knee) is expected to begin a rehab assignment Tuesday with Triple-A Las Vegas, per MLB.com."
+     },
+     {
       "player": "Mark Leiter Jr.",
       "status": "60-Day-IL",
       "detail": "Leiter will undergo surgery Tuesday to address a right hip impingement and is expected to miss the remainder of the season, Martin Gallegos of MLB.com reports."
@@ -6049,19 +6059,9 @@
       "detail": "The Athletics announced that Langeliers underwent a successful medial meniscectomy Tuesday in Los Angeles and also received a platelet-rich plasma injection for his right knee, Martin Gallegos of MLB.com reports."
      },
      {
-      "player": "J.T. Ginn",
-      "status": "15-Day-IL",
-      "detail": "Ginn (finger) threw a bullpen Monday and is scheduled to throw another one Wednesday, per MLB.com."
-     },
-     {
       "player": "Luis Severino",
       "status": "60-Day-IL",
       "detail": "Severino (shoulder) began a throwing progression Saturday, per MLB.com."
-     },
-     {
-      "player": "Zack Gelof",
-      "status": "10-Day-IL",
-      "detail": "Gelof (knee) is continuing a running progression and participating in baseball activities, per MLB.com."
      },
      {
       "player": "Joshua Kuroda-Grauer",
@@ -6381,19 +6381,19 @@
     ],
     "Cincinnati Reds": [
      {
-      "player": "Blake Dunn",
-      "status": "10-Day-IL",
-      "detail": "Dunn will undergo surgery on his right elbow Monday, C. Trent Rosecrans of The Athletic reports."
+      "player": "Tony Santillan",
+      "status": "15-Day-IL",
+      "detail": "Santillan (oblique) was cleared Friday to begin an expedited recovery program, MLB.com reports."
      },
      {
       "player": "Nick Lodolo",
       "status": "15-Day-IL",
-      "detail": "Lodolo (finger) is scheduled to throw live batting practice Friday, C. Trent Rosecrans of The Athletic reports."
+      "detail": "Lodolo (blister) threw 50 pitches over three simulated innings of live batting practice Friday, MLB.com reports."
      },
      {
-      "player": "Tony Santillan",
-      "status": "15-Day-IL",
-      "detail": "Santillan (oblique) will undergo additional imaging Friday, MLB.com reports."
+      "player": "Blake Dunn",
+      "status": "10-Day-IL",
+      "detail": "Dunn will undergo surgery on his right elbow Monday, C. Trent Rosecrans of The Athletic reports."
      },
      {
       "player": "Brandon Williamson",
