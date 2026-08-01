@@ -1,6 +1,6 @@
 {
- "updated": "2026-07-31T23:06:15.634556+00:00",
- "updated_unix": 1785539175,
+ "updated": "2026-08-01T01:04:52.741110+00:00",
+ "updated_unix": 1785546292,
  "source": "espn",
  "leagues": {
   "epl": {
@@ -350,6 +350,34 @@
    "name": "NFL",
    "headlines": [
     {
+     "title": "2026 Arizona Cardinals training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Cardinals training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T00:30:25Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49426382/arizona-cardinals-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "Cam Skattebo: No more backflip celebrations for now",
+     "desc": "Cam Skattebo: No more backflip celebrations for now",
+     "published": "2026-07-31T23:41:41Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49500874/no-more-backflip-celebrations-now"
+    },
+    {
+     "title": "2026 Minnesota Vikings training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Vikings training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T00:13:56Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49376202/minnesota-vikings-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "2026 Dallas Cowboys training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Cowboys training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-07-31T23:08:45Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49376535/dallas-cowboys-training-camp-2026-intel-updates"
+    },
+    {
      "title": "2026 New York Giants training camp: Latest intel, updates",
      "desc": "Follow our daily updates from Giants training camp, including intel on QBs, position battles and potential breakouts.",
      "published": "2026-07-31T22:37:53Z",
@@ -362,34 +390,6 @@
      "published": "2026-07-31T22:18:50Z",
      "type": "Story",
      "link": "https://www.espn.com/nfl/story/_/id/49449000/cleveland-browns-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "2026 NFL training camp: Latest news, intel for all 32 teams",
-     "desc": "Get all the news, intel and insights on NFL training camps from our team of reporters in the field.",
-     "published": "2026-07-31T22:14:42Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49368181/training-camp-2026-latest-news-intel-updates-buzz-all-32-teams"
-    },
-    {
-     "title": "Giants' Cam Skattebo admits doing 'dumb things,' will save backflips for TDs",
-     "desc": "Giants running back Cam Skattebo admitted Friday to sometimes doing \"dumb things,\" citing his recent backflip at Fanatics Fest, and said he met with coach John Harbaugh.",
-     "published": "2026-07-31T22:00:51Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49500174/giants-cam-skattebo-admits-doing-dumb-things-save-backflips-real-touchdowns"
-    },
-    {
-     "title": "2026 Kansas City Chiefs training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Chiefs training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-07-31T22:29:03Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49447878/kansas-city-chiefs-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "2026 Los Angeles Chargers training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Chargers training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-07-31T21:05:52Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49424976/los-angeles-chargers-training-camp-2026-intel-updates"
     }
    ],
    "injuries": {
@@ -1284,6 +1284,11 @@
     ],
     "Cleveland Browns": [
      {
+      "player": "Mason Graham",
+      "status": "Active",
+      "detail": "Graham (lower leg) is participating at the Browns' training camp, per Cleveland.com."
+     },
+     {
       "player": "Shedeur Sanders",
       "status": "Active",
       "detail": "Sanders continues to rotate first-team reps with Deshaun Watson, and the former is lined up to work with the starters in Cleveland's first padded practice Monday, Daniel Oyefusi of ESPN.com reports."
@@ -1297,11 +1302,6 @@
       "player": "Quinshon Judkins",
       "status": "Active",
       "detail": "Browns running backs coach Duce Staley said Friday that the \"sky's the limit\" for Judkins, Scott Petrak of the Elyria Chronicle-Telegram reports."
-     },
-     {
-      "player": "Mason Graham",
-      "status": "Active",
-      "detail": ""
      },
      {
       "player": "Mike Hall Jr.",
@@ -1665,14 +1665,24 @@
     ],
     "Detroit Lions": [
      {
+      "player": "Jimmy Rolder",
+      "status": "Questionable",
+      "detail": "Rolder left the Lions' training camp practice early with a leg injury Friday, Kory Woods of MLive.com reports."
+     },
+     {
+      "player": "Alim McNeill",
+      "status": "Questionable",
+      "detail": "McNeill left the Lions' training camp practice early with a neck injury Friday, Kory Woods of MLive.com reports."
+     },
+     {
+      "player": "Anthony Firkser",
+      "status": "Active",
+      "detail": "Detroit signed Firkser on Friday."
+     },
+     {
       "player": "Brock Wright",
       "status": "Active",
       "detail": "Wright (neck) has been taking part in training camp, Jacob Richman of MLive.com reports."
-     },
-     {
-      "player": "Jimmy Rolder",
-      "status": "Questionable",
-      "detail": "questionable"
      },
      {
       "player": "Christian Mahogany",
@@ -1693,11 +1703,6 @@
       "player": "Levi Onwuzurike",
       "status": "Active",
       "detail": "Onwuzurike passed his conditioning test and is participating in the Lions' training camp activities, John Maakaron of SI.com reports."
-     },
-     {
-      "player": "Alim McNeill",
-      "status": "Questionable",
-      "detail": "McNeill (abdomen) passed his conditioning test and is participating in training camp, Tim Twentyman of the Lions' official site reports."
      },
      {
       "player": "Jahmyr Gibbs",
@@ -1783,14 +1788,19 @@
       "player": "Tarik Black",
       "status": "Active",
       "detail": "The Lions signed Black on Wednesday."
-     },
-     {
-      "player": "Tay Martin",
-      "status": "Active",
-      "detail": "Martin signed with the Lions on Wednesday."
      }
     ],
     "Green Bay Packers": [
+     {
+      "player": "Edgerrin Cooper",
+      "status": "Active",
+      "detail": "Cooper (ankle) participated during the Packers' training camp practice Friday, Matt Schneidman of The Athletic reports."
+     },
+     {
+      "player": "Tucker Kraft",
+      "status": "Questionable",
+      "detail": "Kraft (knee), who was activated from the active/PUP list Friday, took part in individual drills at his first practice of Packers training camp, Matt Schneidman of The Athletic reports."
+     },
      {
       "player": "Trey Smack",
       "status": "Active",
@@ -1800,16 +1810,6 @@
       "player": "Brenden Rice",
       "status": "Questionable",
       "detail": "questionable"
-     },
-     {
-      "player": "Edgerrin Cooper",
-      "status": "Active",
-      "detail": ""
-     },
-     {
-      "player": "Tucker Kraft",
-      "status": "Questionable",
-      "detail": "Packers head coach Matt LaFleur said Friday that Kraft (ACL) is being brought off the active/PUP list and will practice in some capacity, Matt Schneidman of The Athletic reports."
      },
      {
       "player": "Cal Adomitis",
@@ -2046,6 +2046,11 @@
     ],
     "Indianapolis Colts": [
      {
+      "player": "Roydell Williams",
+      "status": "Active",
+      "detail": "Indianapolis signed Williams on Friday."
+     },
+     {
       "player": "DJ Giddens",
       "status": "Active",
       "detail": "With Jonathan Taylor being rested, Giddens took more first-team reps at Friday's practice, James Boyd of The Athletic reports."
@@ -2164,14 +2169,14 @@
       "player": "Deion Burks",
       "status": "Active",
       "detail": "The Colts selected Burks in the seventh round of the 2026 NFL Draft, 254th overall."
-     },
-     {
-      "player": "Seth McGowan",
-      "status": "Active",
-      "detail": "The Colts selected McGowan in the seventh round of the 2026 NFL Draft, 237th overall."
      }
     ],
     "Jacksonville Jaguars": [
+     {
+      "player": "Jourdan Lewis",
+      "status": "Active",
+      "detail": "Lewis (foot) has been a full participant in training camp practices, John Shipley of SI.com reports."
+     },
      {
       "player": "Danny Striggow",
       "status": "Active",
@@ -2179,11 +2184,6 @@
      },
      {
       "player": "Jalen McLeod",
-      "status": "Active",
-      "detail": ""
-     },
-     {
-      "player": "Jourdan Lewis",
       "status": "Active",
       "detail": ""
      },
@@ -2300,17 +2300,22 @@
     ],
     "Kansas City Chiefs": [
      {
+      "player": "Felix Anudike-Uzomah",
+      "status": "Active",
+      "detail": "Anudike-Uzomah is participating at the Chiefs' training camp, Charles Goldman of AtoZSports.com reports."
+     },
+     {
+      "player": "Mansoor Delane",
+      "status": "Questionable",
+      "detail": "Delane (shoulder) is wearing a non-contact yellow jersey during training camp practices, Matt Derrick of ChiefsDigest.com reports."
+     },
+     {
       "player": "Rashee Rice",
       "status": "Active",
       "detail": "Rice (knee) is being eased back into the mix during training camp,  Jesse Newell of The Athletic reports."
      },
      {
       "player": "Trey Smith",
-      "status": "Active",
-      "detail": ""
-     },
-     {
-      "player": "Felix Anudike-Uzomah",
       "status": "Active",
       "detail": ""
      },
@@ -2385,11 +2390,6 @@
       "detail": "Pline (upper body) signed with the Chiefs on Wednesday, Aaron Wilson of KPRC 2 Houston reports."
      },
      {
-      "player": "Mansoor Delane",
-      "status": "Questionable",
-      "detail": "questionable"
-     },
-     {
       "player": "Josh Simmons",
       "status": "Active",
       "detail": "Simmons was seen participating in the Chiefs' minicamp Friday, Jesse Newell of The Athletic reports."
@@ -2427,12 +2427,12 @@
     ],
     "Las Vegas Raiders": [
      {
-      "player": "Chris Collier",
+      "player": "Jermod McCoy",
       "status": "Questionable",
-      "detail": "questionable"
+      "detail": "McCoy (knee) is having his reps limited during the early portions of training camp, Ryan McFadden of ESPN.com reports."
      },
      {
-      "player": "Jermod McCoy",
+      "player": "Chris Collier",
       "status": "Questionable",
       "detail": "questionable"
      },
@@ -2935,12 +2935,12 @@
     ],
     "Minnesota Vikings": [
      {
-      "player": "Christian Darrisaw",
+      "player": "Caleb Banks",
       "status": "Active",
-      "detail": ""
+      "detail": "Banks (foot) is participating at the Vikings' training camp, Jason Harmon of Sports Illustrated reports."
      },
      {
-      "player": "Caleb Banks",
+      "player": "Christian Darrisaw",
       "status": "Active",
       "detail": ""
      },
@@ -3443,9 +3443,9 @@
     ],
     "New York Jets": [
      {
-      "player": "Gee Scott Jr.",
-      "status": "Questionable",
-      "detail": "questionable"
+      "player": "Cam Camper",
+      "status": "Active",
+      "detail": "The Jets signed Camper on Friday."
      },
      {
       "player": "Quincy Skinner Jr.",
@@ -3572,7 +3572,7 @@
      {
       "player": "Jihaad Campbell",
       "status": "Active",
-      "detail": ""
+      "detail": "Campbell is ready to take on a larger role on defense in the second year of his NFL career, Dave Spadaro of the Eagles' official site reports."
      },
      {
       "player": "Zack Baun",
@@ -3697,6 +3697,11 @@
     ],
     "Pittsburgh Steelers": [
      {
+      "player": "DeShon Elliott",
+      "status": "Active",
+      "detail": "Elliott (knee) took first-team reps in Friday's practice after being held out of Thursday's session, Andrew Vasquez of USA Today reports."
+     },
+     {
       "player": "Roman Wilson",
       "status": "Active",
       "detail": "Head coach Mike McCarthy envisions using Wilson all over the formation, Brian Batko of the Steelers' official site reports."
@@ -3815,28 +3820,33 @@
       "player": "Dean Lowry",
       "status": "Active",
       "detail": "Lowry signed a one-year deal with the Steelers on Tuesday."
-     },
-     {
-      "player": "Will Howard",
-      "status": "Active",
-      "detail": "Howard's chances of starting in 2026 have diminished, as Aaron Rodgers signed a one-year contract with the Steelers on Monday."
      }
     ],
     "San Francisco 49ers": [
      {
-      "player": "Ricky Pearsall",
-      "status": "Questionable",
-      "detail": "San Francisco assistant head coach Chris Foerster said Friday that the team is \"continuing to evaluate\" Pearsall (knee) after the wide receiver aggravated the PCL issue in his right knee during early training camp practices, Matt Barrows of The Athletic reports."
-     },
-     {
       "player": "Alfred Collins",
       "status": "Active",
-      "detail": ""
+      "detail": "The 49ers activated Collins (shoulder) from the active/PUP list Friday after passing a physical, Jennifer Lee Chan of NBC Sports Bay Area reports."
+     },
+     {
+      "player": "Trenton Irwin",
+      "status": "Active",
+      "detail": "The 49ers signed Irwin to a one-year contract Friday."
+     },
+     {
+      "player": "Josiah Deguara",
+      "status": "Active",
+      "detail": "Deguara signed a one-year contract with the 49ers on Friday."
      },
      {
       "player": "Ji'Ayir Brown",
       "status": "Active",
-      "detail": ""
+      "detail": "Brown (hamstring) is participating at the 49ers' training camp, Ines Diaz of the team's official site reports."
+     },
+     {
+      "player": "Ricky Pearsall",
+      "status": "Questionable",
+      "detail": "San Francisco assistant head coach Chris Foerster said Friday that the team is \"continuing to evaluate\" Pearsall (knee) after the wide receiver aggravated the PCL issue in his right knee during early training camp practices, Matt Barrows of The Athletic reports."
      },
      {
       "player": "Deebo Samuel",
@@ -3937,16 +3947,6 @@
       "player": "Christian McCaffrey",
       "status": "Active",
       "detail": "McCaffrey was named the Best Comeback Athlete at the 2026 ESPYS, Briana Jeannel of the 49ers' official site reports."
-     },
-     {
-      "player": "Brock Purdy",
-      "status": "Active",
-      "detail": "Purdy, who has been participating in this week's Tight End University, an event hosted by teammate George Kittle (Achilles), said that he plans to gather with other 49ers for throwing sessions over the next month prior to training camp, David Lombardi of the San Francisco Standard reports."
-     },
-     {
-      "player": "Sincere McCormick",
-      "status": "Active",
-      "detail": "McCormick signed a one-year deal with the 49ers on Wednesday."
      }
     ],
     "Seattle Seahawks": [
@@ -4207,7 +4207,7 @@
      {
       "player": "Jeffery Simmons",
       "status": "Active",
-      "detail": ""
+      "detail": "Simmons (elbow) is participating at the Titans' training camp, George Walker of the Kingsport Times News reports."
      },
      {
       "player": "Marcus Harris",
@@ -5927,6 +5927,13 @@
    "name": "MLB",
    "headlines": [
     {
+     "title": "Orioles sign reliever Yennier Cano to 2-year extension",
+     "desc": "The Baltimore Orioles signed right-handed reliever Yennier Cano to a two-year contract extension for the 2027 and 2028 seasons, with a club option for 2029.",
+     "published": "2026-08-01T00:55:17Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/mlb/story/_/id/49500952/orioles-sign-reliever-yennier-cano-2-year-extension"
+    },
+    {
      "title": "Astros shift starter Tatsuya Imai to bullpen after rough start",
      "desc": "Houston starter Tatsuya Imai will pitch out of the bullpen for Houston's weekend series against the Texas Rangers after struggling in his last start.",
      "published": "2026-07-31T23:04:29Z",
@@ -5960,13 +5967,6 @@
      "published": "2026-07-31T21:02:50Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/mlb/story/_/id/49499641/rangers-corey-seager-lower-back-activated-10-day-il"
-    },
-    {
-     "title": "2026 MLB trade deadline tracker: Rumors, news, analysis",
-     "desc": "Which contenders will make the biggest splash? Here's what we're hearing as 6 p.m. ET on Monday approaches.",
-     "published": "2026-07-31T19:08:32Z",
-     "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49410877/2026-mlb-trade-deadline-tracker-rumors-alerts-news-latest-updates-analysis"
     }
    ],
    "injuries": {
@@ -6467,6 +6467,16 @@
     ],
     "Detroit Tigers": [
      {
+      "player": "Wenceel Perez",
+      "status": "60-Day-IL",
+      "detail": "Perez (orbital) will embark on a rehab assignment with Single-A Lakeland on Friday, Evan Woodbery of MLive.com reports."
+     },
+     {
+      "player": "Will Vest",
+      "status": "60-Day-IL",
+      "detail": "Vest underwent elbow surgery Wednesday and will also undergo hip surgery, which will result in the 31-year-old reliever missing the rest of the 2026 season, Chris McCosky of The Detroit News reports."
+     },
+     {
       "player": "Matt Vierling",
       "status": "10-Day-IL",
       "detail": "The Tigers placed Vierling on the 10-day injured list Friday, retroactive to Thursday, due to a left adductor strain."
@@ -6497,11 +6507,6 @@
       "detail": "Smith is being evaluated after exiting a rehab appearance with Triple-A Toledo on Thursday with right shoulder/lat discomfort, Cody Stavenhagen of The Athletic reports."
      },
      {
-      "player": "Will Vest",
-      "status": "60-Day-IL",
-      "detail": "Detroit transferred Vest (elbow) from the 15-day injured list to the 60-day IL on Sunday."
-     },
-     {
       "player": "Bailey Horn",
       "status": "60-Day-IL",
       "detail": "Horn (elbow) will undergo season-ending Tommy John surgery, Chris McCosky of The Detroit News reports."
@@ -6510,11 +6515,6 @@
       "player": "Justin Verlander",
       "status": "60-Day-IL",
       "detail": "Verlander (hamstring/hip) announced Wednesday via social media that he will retire following the 2026 season."
-     },
-     {
-      "player": "Wenceel Perez",
-      "status": "60-Day-IL",
-      "detail": "Perez (orbital) played light catch on the field at Comerica Park on Tuesday, Chris McCosky of The Detroit News reports."
      },
      {
       "player": "Parker Meadows",
@@ -6563,7 +6563,17 @@
      {
       "player": "Maikel Garcia",
       "status": "10-Day-IL",
-      "detail": "Garcia felt renewed pain in his left hand while playing in a rehab game at Double-A Northwest Arkansas on Tuesday, Anne Rogers of MLB.com reports."
+      "detail": "Garcia (hand) is scheduled to see a hand specialist next week, Jaylon T. Thompson of The Kansas City Star reports."
+     },
+     {
+      "player": "Stephen Kolek",
+      "status": "60-Day-IL",
+      "detail": "Kolek will get a second opinion on his right forearm Tuesday, Jaylon T. Thompson of The Kansas City Star reports."
+     },
+     {
+      "player": "Bobby Witt Jr.",
+      "status": "10-Day-IL",
+      "detail": "Witt (back) is on track to return to the Royals for Tuesday's series opener against the Twins, Jaylon T. Thompson of The Kansas City Star reports."
      },
      {
       "player": "Vinnie Pasquantino",
@@ -6574,11 +6584,6 @@
       "player": "Nick Mears",
       "status": "60-Day-IL",
       "detail": "Mears (shoulder/lat) began throwing from 60 feet Monday, MLB.com reports."
-     },
-     {
-      "player": "Bobby Witt Jr.",
-      "status": "10-Day-IL",
-      "detail": "Witt (back) has begun ramping up his baseball activity, and how he responds over the next few days will determine whether he's activated from the injured list when first eligible Friday, per MLB.com."
      },
      {
       "player": "Beck Way",
@@ -6594,11 +6599,6 @@
       "player": "Kyle Isbel",
       "status": "10-Day-IL",
       "detail": "Isbel (foot) went 1-for-2 with an RBI triple and a run scored with Triple-A Omaha on Tuesday."
-     },
-     {
-      "player": "Stephen Kolek",
-      "status": "60-Day-IL",
-      "detail": "The Royals reinstated Kolek (personal) from the family medical leave list and placed on the 15-day injured list Sunday due to a right flexor strain."
      },
      {
       "player": "Carlos Estevez",
@@ -6674,6 +6674,11 @@
      }
     ],
     "Los Angeles Dodgers": [
+     {
+      "player": "Brock Stewart",
+      "status": "15-Day-IL",
+      "detail": "Stewart struck out two in a perfect inning to earn the save in Saturday's 4-3 win over the Mets."
+     },
      {
       "player": "Blake Snell",
       "status": "60-Day-IL",
@@ -7048,6 +7053,11 @@
     ],
     "San Francisco Giants": [
      {
+      "player": "Casey Schmitt",
+      "status": "10-Day-IL",
+      "detail": "Schmitt underwent a debridement of his lateral meniscus Friday, Alex Pavlovic of NBC Sports Bay Area reports."
+     },
+     {
       "player": "Jonah Cox",
       "status": "10-Day-IL",
       "detail": "Cox (oblique) went 0-for-3 in Triple-A Sacramento's 5-4 win over Tacoma on Wednesday."
@@ -7056,11 +7066,6 @@
       "player": "Matt Chapman",
       "status": "10-Day-IL",
       "detail": "Giants manager Tony Vitello said Wednesday that Chapman (abdomen) will be activated from the 10-day injured list at some point during this weekend's series versus the Padres, Alex Pavlovic of NBC Sports Bay Area reports."
-     },
-     {
-      "player": "Casey Schmitt",
-      "status": "10-Day-IL",
-      "detail": "Giants manager Tony Vitello said Wednesday that Schmitt will require arthroscopic surgery for the torn meniscus in his left knee and will \"more than likely\" miss the rest of the season, Tristi Rodriguez of NBC Sports Bay Area reports."
      },
      {
       "player": "Trevor McDonald",
@@ -7110,24 +7115,29 @@
     ],
     "Seattle Mariners": [
      {
-      "player": "J.P. Crawford",
-      "status": "10-Day-IL",
-      "detail": "Crawford is not in the lineup Thursday against the Dodgers."
+      "player": "Luke Raley",
+      "status": "Day-To-Day",
+      "detail": "Raley is not in the Mariners' starting lineup against the Twins on Friday due to elbow soreness, Ryan Divish of The Seattle Times reports."
+     },
+     {
+      "player": "Carlos Vargas",
+      "status": "60-Day-IL",
+      "detail": "Vargas (lat) is scheduled to throw a bullpen session Saturday and is nearing a rehab assignment, Daniel Kramer of MLB.com reports."
      },
      {
       "player": "Brendan Donovan",
       "status": "10-Day-IL",
-      "detail": "Donovan (groin) will shift his rehab assignment to Triple-A Tacoma on Friday, Shannon Drayer of SeattleSports.com reports."
+      "detail": "Mariners general manager Justin Hollander said Friday that Donovan (groin) has been cleared to rejoin the Mariners but is not expected to be back until Tuesday against the Tigers, Daniel Kramer of MLB.com reports."
+     },
+     {
+      "player": "J.P. Crawford",
+      "status": "10-Day-IL",
+      "detail": "The Mariners placed Crawford on the 10-day injured list Friday, retroactive to Thursday, due to left wrist inflammation."
      },
      {
       "player": "Cooper Criswell",
       "status": "60-Day-IL",
       "detail": "Seattle transferred Criswell (shoulder) to the 60-day injured list Friday."
-     },
-     {
-      "player": "Carlos Vargas",
-      "status": "60-Day-IL",
-      "detail": "Mariners general manager Justin Hollander said Tuesday that Vargas (lat) recently began a throwing program and could be ready to return from the 60-day injured list around the Aug. 3 trade deadline, Zac Hereth of 710 AM Seattle Sports reports."
      },
      {
       "player": "Will Wilson",
