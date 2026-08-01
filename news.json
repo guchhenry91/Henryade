@@ -1,17 +1,45 @@
 {
- "updated": "2026-08-01T16:04:24.419292+00:00",
- "updated_unix": 1785600264,
+ "updated": "2026-08-01T17:32:41.724753+00:00",
+ "updated_unix": 1785605561,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
     {
+     "title": "Nicol sees Arsenal's Guimaraes move as 'a great deal'",
+     "desc": "Nicol sees Arsenal's Guimaraes move as 'a great deal'",
+     "published": "2026-08-01T17:28:38Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49505774/nicol-sees-arsenal-guimaraes-move-great-deal"
+    },
+    {
+     "title": "Brentford sign Mamadou Sangaré from Lens for club-record fee",
+     "desc": "Brentford have signed Mali midfielder Mamadou Sangaré from Lens for an undisclosed club-record fee, reported to be around £38.5m ($52m).",
+     "published": "2026-08-01T17:12:34Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49505676/brentford-sign-mamadou-sangare-lens-club-record-fee"
+    },
+    {
      "title": "Transfer rumors, news: Bayern eye Man United's Sesko to replace Kane",
      "desc": "Bayer Munich are still looking for a long-term successor to Harry Kane, and have Manchester United striker Benjamin Sesko on their short list. Transfer Talk has the latest.",
-     "published": "2026-08-01T14:54:32Z",
+     "published": "2026-08-01T16:37:53Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49503204/transfer-rumors-news-bayern-munich-eye-manchester-united-benjamin-sesko-replace-harry-kane"
+    },
+    {
+     "title": "Summer transfer window: Grading big signings in men's soccer",
+     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
+     "published": "2026-08-01T16:34:22Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
+    },
+    {
+     "title": "Chelsea complete the signing of Danny Welbeck from Brighton",
+     "desc": "Chelsea have completed the signing of Danny Welbeck from Brighton, the club have announced.",
+     "published": "2026-08-01T16:57:59Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49478554/danny-welbeck-chelsea-brighton-premier-league-transfers"
     },
     {
      "title": "Xabi Alonso: Chelsea 'very happy' about surprise return of Mykhailo Mudryk",
@@ -19,34 +47,6 @@
      "published": "2026-08-01T14:21:13Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49504476/mykhailo-mudryk-chelsea-doping-ban-xabi-alonso"
-    },
-    {
-     "title": "Richarlison sometimes says he wants to leave Tottenham - Roberto De Zerbi",
-     "desc": "Tottenham manager Roberto De Zerbi has cast doubt on Richarlison's future at the club, saying sometimes the Brazil forward wants to leave.",
-     "published": "2026-08-01T14:07:21Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49504473/richarlison-somes-says-wants-leave-tottenham-roberto-de-zerbi"
-    },
-    {
-     "title": "Premier League preseason friendlies 2026-27: Fixtures, UK kick-off times and summer tour schedule",
-     "desc": "Premier League clubs have confirmed their preseason schedules ahead of the new campaign, with the 2026-27 season kicking off on Aug. 21.",
-     "published": "2026-08-01T14:50:52Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49154575/premier-league-preseason-friendlies-202627-fixtures-uk-kickoff-s-summer-tour-schedule-chelsea-liverpool-arsenal-man-united-man-city-spurs"
-    },
-    {
-     "title": "Premier League 2026 summer transfers: All confirmed ins, outs for every club",
-     "desc": "Here's every Premier League in and out before the 2026-27 season begins.",
-     "published": "2026-08-01T14:18:12Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/48955344/premier-league-2026-summer-transfers-all-confirmed-ins-outs-every-club"
-    },
-    {
-     "title": "Premier League, EFL summer transfer window 2026 dates: When is Deadline Day?",
-     "desc": "Everything that Premier League and EFL supporters need to know about the 2026 summer transfer window, and key dates around it.",
-     "published": "2026-08-01T06:22:09Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/48944912/premier-league-efl-summer-transfer-window-2026-dates-does-open-deadline-day"
     }
    ],
    "injuries": {},
@@ -56,18 +56,18 @@
    "name": "La Liga",
    "headlines": [
     {
+     "title": "Summer transfer window: Grading big signings in men's soccer",
+     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
+     "published": "2026-08-01T16:34:22Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
+    },
+    {
      "title": "Barcelona sign teenage winger Jesse Bisiwu from Club Brugge",
      "desc": "Barcelona's attacking revamp has continued with the signing of young Belgian winger Jesse Bisiwu from Club Brugge.",
      "published": "2026-07-31T18:31:11Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49495707/barcelona-transfers-jesse-bisiwu-la-liga-club-brugge"
-    },
-    {
-     "title": "Summer transfer window: Grading big signings in men's soccer",
-     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-08-01T12:14:50Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
     {
      "title": "Real Madrid sign forward Carlos Espí from Levante",
@@ -107,14 +107,14 @@
     {
      "title": "Transfer rumors, news: Bayern eye Man United's Sesko to replace Kane",
      "desc": "Bayer Munich are still looking for a long-term successor to Harry Kane, and have Manchester United striker Benjamin Sesko on their short list. Transfer Talk has the latest.",
-     "published": "2026-08-01T14:54:32Z",
+     "published": "2026-08-01T16:37:53Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49503204/transfer-rumors-news-bayern-munich-eye-manchester-united-benjamin-sesko-replace-harry-kane"
     },
     {
      "title": "Summer transfer window: Grading big signings in men's soccer",
      "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-08-01T12:14:50Z",
+     "published": "2026-08-01T16:34:22Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
@@ -154,18 +154,18 @@
    "name": "Serie A",
    "headlines": [
     {
+     "title": "Summer transfer window: Grading big signings in men's soccer",
+     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
+     "published": "2026-08-01T16:34:22Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
+    },
+    {
      "title": "John Stones 'thrilled' to be living dream of playing abroad following Inter Milan move",
      "desc": "John Stones has said he is thrilled to have joined Inter Milan and be fulfilling a lifelong dream of playing abroad after a decade of success with Manchester City.",
      "published": "2026-07-31T14:02:59Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49496330/john-stones-inter-milan-italy-man-city-transfers-serie-a"
-    },
-    {
-     "title": "Summer transfer window: Grading big signings in men's soccer",
-     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-08-01T12:14:50Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
     {
      "title": "John Stones joins Inter Milan on free transfer after Man City exit",
@@ -203,18 +203,18 @@
    "name": "Ligue 1",
    "headlines": [
     {
+     "title": "Summer transfer window: Grading big signings in men's soccer",
+     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
+     "published": "2026-08-01T16:34:22Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
+    },
+    {
      "title": "Man City want Ayyoub Bouaddi regardless of Rodri's future - sources",
      "desc": "Manchester City will push ahead with a deal with Ayyoub Bouaddi regardless of doubts about Rodri's future at the Etihad Stadium, sources have told ESPN.",
      "published": "2026-08-01T08:56:10Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49496505/man-city-ayyoub-bouaddi-transfer-news-rodri-real-madrid"
-    },
-    {
-     "title": "Summer transfer window: Grading big signings in men's soccer",
-     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-08-01T12:14:50Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
     {
      "title": "Transfer rumors, news: Man City eye Bouaddi as potential Rodri replacement",
@@ -350,50 +350,55 @@
    "name": "NFL",
    "headlines": [
     {
-     "title": "Bills safety Gardner-Johnson carted off with leg injury",
-     "desc": "Bills safety C.J. Gardner-Johnson was carted to the locker room after suffering a lower-body injury during Saturday's training camp practice.",
-     "published": "2026-08-01T16:02:45Z",
+     "title": "49ers WR Pearsall to have season-ending knee surgery",
+     "desc": "San Francisco 49ers wide receiver Ricky Pearsall is expected to undergo season-ending surgery on the nagging PCL injury that dates back to last season and will be out for the year, GM John Lynch told reporters Saturday.",
+     "published": "2026-08-01T17:29:53Z",
      "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49505167/bills-safety-gardner-johnson-carted-leg-injury"
+     "link": "https://www.espn.com/nfl/story/_/id/49505715/49ers-wr-pearsall-season-ending-knee-surgery"
     },
     {
-     "title": "Sources: 49ers VP Paraag Marathe exits to focus on soccer clubs",
-     "desc": "49ers executive vice president of football operations Paraag Marathe is leaving the team after 25 years to focus full time on Leeds United and Rangers FC as well as other sports efforts, league sources told ESPN.",
-     "published": "2026-08-01T15:44:34Z",
+     "title": "Falcons sign Matthew Bergeron to four-year, $96M extension",
+     "desc": "The Falcons on Saturday signed starting left guard Matthew Bergeron to a four-year extension that sources said is worth $96 million with $60 million guaranteed.",
+     "published": "2026-08-01T17:17:14Z",
      "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49505105/sources-49ers-vp-paraag-marathe-exits-focus-soccer-clubs"
+     "link": "https://www.espn.com/nfl/story/_/id/49505699/falcons-sign-matthew-bergeron-four-year-96m-extension"
     },
     {
-     "title": "How Chiefs' defense can help them bounce back this season",
-     "desc": "How Chiefs' defense can help them bounce back this season",
-     "published": "2026-08-01T14:53:46Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49504830/how-chiefs-defense-help-bounce-back-season"
-    },
-    {
-     "title": "Why Bijan Robinson hasn't signed a new deal with Falcons yet",
-     "desc": "Why Bijan Robinson hasn't signed a new deal with Falcons yet",
-     "published": "2026-08-01T14:52:59Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49504750/why-bijan-robinson-signed-new-deal-falcons-yet"
-    },
-    {
-     "title": "WR DeAndre Hopkins hired as Georgia Tech assistant WR coach",
-     "desc": "Five-time All-Pro wide receiver DeAndre Hopkins has joined Georgia Tech as assistant wide receivers coach but says he isn't retiring as a player yet.",
-     "published": "2026-08-01T14:53:48Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/college-football/story/_/id/49504555/wr-deandre-hopkins-hired-georgia-tech-assistant-wr-coach"
-    },
-    {
-     "title": "'Excited' Lions welcome LaPorta back after long road from surgery",
-     "desc": "LaPorta is expected to be a big part of the offense under new offensive coordinator Drew Petzing.",
-     "published": "2026-08-01T10:00:03Z",
+     "title": "2026 Philadelphia Eagles training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Eagles training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T17:18:00Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49498286/2026-nfl-training-camp-detroit-lions-sam-laporta-return-back-surgery-injury"
+     "link": "https://www.espn.com/nfl/story/_/id/49434399/philadelphia-eagles-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "2026 New York Jets training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Jets training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T17:11:12Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49419756/new-york-jets-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "2026 Washington Commanders training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Commanders training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T17:24:40Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49448046/washington-commanders-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "2026 Atlanta Falcons training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Falcons training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T17:18:49Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49448429/atlanta-falcons-training-camp-2026-intel-updates"
     }
    ],
    "injuries": {
     "Arizona Cardinals": [
+     {
+      "player": "PJ Mustipher",
+      "status": "Injured Reserve",
+      "detail": "ir"
+     },
      {
       "player": "Jaden Davis",
       "status": "Injured Reserve",
@@ -513,11 +518,6 @@
       "player": "Sean Murphy-Bunting",
       "status": "Active",
       "detail": "Murphy-Bunting (knee) has been participating during Cardinals OTAs and has been working as a nickel corner, Zach Gershman of the team's official site reports."
-     },
-     {
-      "player": "Isaiah Oliver",
-      "status": "Active",
-      "detail": "Arizona signed Oliver (knee) on Thursday, Darren Urban of the Cardinals' official site reports."
      }
     ],
     "Atlanta Falcons": [
@@ -3824,6 +3824,16 @@
     ],
     "San Francisco 49ers": [
      {
+      "player": "De'Zhaun Stribling",
+      "status": "Active",
+      "detail": "Stribling will have the opportunity to earn an expanded role in the 49ers' offense after Ricky Pearsall (knee) was placed on injured reserve Saturday."
+     },
+     {
+      "player": "Ricky Pearsall",
+      "status": "Injured Reserve",
+      "detail": "Pearsall was placed on injured reserve Saturday and will undergo season-ending PCL surgery on his right knee, Cam Inman of The San Jose Mercury News reports."
+     },
+     {
       "player": "Nick Bosa",
       "status": "Questionable",
       "detail": "Bosa (ACL) is doing individual work on the side at the 49ers' training camp, Nick Wagoner of ESPN reports."
@@ -3847,11 +3857,6 @@
       "player": "Ji'Ayir Brown",
       "status": "Active",
       "detail": "Brown (hamstring) is participating at the 49ers' training camp, Ines Diaz of the team's official site reports."
-     },
-     {
-      "player": "Ricky Pearsall",
-      "status": "Questionable",
-      "detail": "San Francisco assistant head coach Chris Foerster said Friday that the team is \"continuing to evaluate\" Pearsall (knee) after the wide receiver aggravated the PCL issue in his right knee during early training camp practices, Matt Barrows of The Athletic reports."
      },
      {
       "player": "Deebo Samuel",
@@ -3942,11 +3947,6 @@
       "player": "George Kittle",
       "status": "Out",
       "detail": "The 49ers placed Kittle (Achilles) on the active/PUP list Saturday, Matt Maiocco of NBC Sports Bay Area reports."
-     },
-     {
-      "player": "Christian McCaffrey",
-      "status": "Active",
-      "detail": "McCaffrey was named the Best Comeback Athlete at the 2026 ESPYS, Briana Jeannel of the 49ers' official site reports."
      }
     ],
     "Seattle Seahawks": [
@@ -5791,6 +5791,27 @@
    "name": "MLB",
    "headlines": [
     {
+     "title": "MLB trade deadline 2026: Ranking prospects who changed teams",
+     "desc": "You know the major leaguers on the move -- but what about the potential stars of tomorrow headed the other way in those deals?",
+     "published": "2026-08-01T17:31:49Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/49464501/mlb-trade-deadline-2026-ranking-prospects-changed-teams"
+    },
+    {
+     "title": "2026 MLB trade deadline grades: Report cards for every deal",
+     "desc": "Trade season has officially begun! Here's our running scorecard for every big move before Monday's deadline arrives.",
+     "published": "2026-08-01T16:50:29Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/49454655/2026-mlb-trade-deadline-grades-analysis-report-cards-every-deal"
+    },
+    {
+     "title": "2026 MLB trade deadline tracker: Rumors, news, analysis",
+     "desc": "Which contenders will make the biggest splash? Here's what we're hearing as 6 p.m. ET on Monday approaches.",
+     "published": "2026-08-01T16:57:48Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/49410877/2026-mlb-trade-deadline-tracker-rumors-alerts-news-latest-updates-analysis"
+    },
+    {
      "title": "Fantasy baseball lineup advice for Sunday: Red-hot Lambert tops streaming options",
      "desc": "Everything you need to know to set your fantasy baseball lineups for Sunday's MLB action.",
      "published": "2026-08-01T15:40:19Z",
@@ -5807,30 +5828,9 @@
     {
      "title": "MLB betting tips for Saturday: Back Jose Soriano to keep Brewers' bats in check",
      "desc": "All of the odds, recommended prop bets and trends in baseball for Saturday, August 1.",
-     "published": "2026-08-01T16:01:59Z",
+     "published": "2026-08-01T16:03:48Z",
      "type": "Story",
      "link": "https://www.espn.com/espn/betting/story/_/id/49497949/mlb-betting-tips-odds-lines-2026-saturday-august-1"
-    },
-    {
-     "title": "Fantasy baseball forecaster: Team hitting ratings",
-     "desc": "Stay ahead of the game and optimize your fantasy baseball hitters with our forecaster, which provides a rolling 10-day outlook of every team's hitting matchups as well as the potential for stolen bases.",
-     "published": "2026-08-01T13:40:16Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/baseball/story/_/id/31165089/fantasy-baseball-forecaster-team-hitting-stolen-base-ratings-platoon-matchups-daily-weekly-leagues"
-    },
-    {
-     "title": "Fantasy baseball forecaster: Pitcher projections for the next 10 days",
-     "desc": "Keep up to date on who is pitching -- and how well they're expected to do -- with our forecaster, which provides a rolling 10-day outlook of every team's probable starting pitchers with game score projections.",
-     "published": "2026-08-01T13:39:38Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/baseball/story/_/id/31165100/fantasy-baseball-forecaster-probable-starting-pitcher-projections-matchups-daily-weekly-leagues"
-    },
-    {
-     "title": "Fantasy Baseball Reliever Depth Chart",
-     "desc": "Our updated reliever depth chart displays the closer hierarchy for each team, as well as the fatigue factor in each MLB bullpen.",
-     "published": "2026-08-01T13:35:03Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/baseball/flb/story?page=REcloserorgchart"
     }
    ],
    "injuries": {
@@ -6034,7 +6034,7 @@
      {
       "player": "Ryan Mountcastle",
       "status": "60-Day-IL",
-      "detail": "The Orioles announced that Mountcastle (foot) suffered a \"significant\" oblique strain while warming up for his first rehab game and will now be out a couple of more months, Jake Rill of MLB.com reports."
+      "detail": "The Orioles announced that Mountcastle (foot) suffered a \"significant\" oblique strain while warming up for his first rehab game and will now be out a couple more months, Jake Rill of MLB.com reports."
      },
      {
       "player": "Blaze Alexander",
@@ -6200,7 +6200,7 @@
      {
       "player": "Drew Thorpe",
       "status": "60-Day-IL",
-      "detail": "Thorpe (elbow) will have his next rehab start with Triple-A Charlotte on Tuesday, Scott Merkin of MLB.com reports."
+      "detail": "Thorpe (elbow) will make his next rehab start with Triple-A Charlotte on Tuesday, Scott Merkin of MLB.com reports."
      },
      {
       "player": "Tyler Gilbert",
@@ -6551,7 +6551,7 @@
      {
       "player": "Blake Snell",
       "status": "60-Day-IL",
-      "detail": "Snell (elbow) said Friday that he'll make one more rehab outing at Triple-A Oklahoma City before returning from the injured list, Jack Harris of the California Post reports."
+      "detail": "Snell (elbow) said Friday that he'll make one more rehab start at Triple-A Oklahoma City before returning from the injured list, Jack Harris of the California Post reports."
      },
      {
       "player": "Tyler Glasnow",
@@ -6700,6 +6700,11 @@
     ],
     "Minnesota Twins": [
      {
+      "player": "Mike Paredes",
+      "status": "60-Day-IL",
+      "detail": "The Twins placed Paredes (oblique) on the 15-day injured list Sunday."
+     },
+     {
       "player": "Cole Sands",
       "status": "60-Day-IL",
       "detail": "Sands will undergo arthroscopic surgery Tuesday to remove loose bodies and bone spurs from his right elbow, Jack Azoulay-Haron of ElEmergente.com reports."
@@ -6713,11 +6718,6 @@
       "player": "David Festa",
       "status": "60-Day-IL",
       "detail": "Festa (shoulder) will undergo a season-ending double surgery Wednesday, Dan Hayes of The Athletic reports."
-     },
-     {
-      "player": "Mike Paredes",
-      "status": "15-Day-IL",
-      "detail": "The Twins placed Paredes (oblique) on the 15-day injured list Sunday."
      },
      {
       "player": "Mick Abel",
@@ -6934,7 +6934,7 @@
      {
       "player": "Casey Schmitt",
       "status": "10-Day-IL",
-      "detail": "Schmitt underwent a debridement of his lateral meniscus Friday, Alex Pavlovic of NBC Sports Bay Area reports."
+      "detail": "Schmitt (knee) underwent a debridement of his lateral meniscus Friday, Alex Pavlovic of NBC Sports Bay Area reports."
      },
      {
       "player": "Jonah Cox",
