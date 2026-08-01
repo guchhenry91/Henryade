@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-01T20:27:31.915201+00:00",
- "updated_unix": 1785616051,
+ "updated": "2026-08-01T21:27:46.673593+00:00",
+ "updated_unix": 1785619666,
  "source": "espn",
  "leagues": {
   "epl": {
@@ -30,7 +30,7 @@
     {
      "title": "Brentford sign Mamadou Sangaré from Lens for club-record fee",
      "desc": "Brentford have signed Mali midfielder Mamadou Sangaré from Lens for an undisclosed club-record fee, reported to be around £38.5m ($52m).",
-     "published": "2026-08-01T18:56:08Z",
+     "published": "2026-08-01T20:45:51Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49505676/brentford-sign-mamadou-sangare-lens-club-record-fee"
     },
@@ -350,46 +350,46 @@
    "name": "NFL",
    "headlines": [
     {
-     "title": "2026 Buffalo Bills training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Bills training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-01T20:19:33Z",
+     "title": "2026 San Francisco 49ers training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from 49ers training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T21:25:06Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49434544/buffalo-bills-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/49427696/san-francisco-49ers-training-camp-2026-intel-updates"
     },
     {
-     "title": "2026 Tennessee Titans training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Titans training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-01T20:13:50Z",
+     "title": "2026 Denver Broncos training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Broncos training camp, including intel on the QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T21:20:34Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49419824/tennessee-titans-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/49379469/denver-broncos-training-camp-2026-intel-updates"
     },
     {
-     "title": "Confident Will Levis OK competing for Titans' backup QB spot",
-     "desc": "Tennessee Titans quarterback Will Levis, entering his fourth season, still believes he's \"a dang good quarterback\" in the NFL, he told reporters Saturday, as he continues to battle for the team's backup position behind former No. 1 overall ",
-     "published": "2026-08-01T20:12:05Z",
+     "title": "2026 Pittsburgh Steelers training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Steelers training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T21:10:53Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49449169/pittsburgh-steelers-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "Deebo Samuel on reunion with 49ers: 'Just matter of time'",
+     "desc": "Deebo Samuel, who left the Niners last offseason after requesting a trade, said he feels right at home back in San Francisco.",
+     "published": "2026-08-01T20:59:06Z",
      "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49506954/confident-levis-ok-competing-titans-backup-qb-spot"
+     "link": "https://www.espn.com/nfl/story/_/id/49507290/deebo-samuel-reunion-49ers-just-matter"
     },
     {
-     "title": "2026 Los Angeles Chargers training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Chargers training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-01T19:57:30Z",
+     "title": "2026 Cleveland Browns training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Browns training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T20:53:06Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49424976/los-angeles-chargers-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/49449000/cleveland-browns-training-camp-2026-intel-updates"
     },
     {
-     "title": "Fantasy football Knockout league rankings: The 252 players to draft",
-     "desc": "Rankings for knockout leagues, where the lowest-scoring team is eliminated and the last team standing wins.",
-     "published": "2026-08-01T19:43:17Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/football/story/_/id/49309401/fantasy-football-knockout-rankings-top-200"
-    },
-    {
-     "title": "2026 New England Patriots training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Patriots training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-01T20:19:57Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49427703/new-england-patriots-training-camp-2026-intel-updates"
+     "title": "Ex-All Pro LB Devin White joins Lions on 1-year deal",
+     "desc": "The Detroit Lions are signing former All-Pro linebacker Devin White to a one-year deal, the team announced Saturday.",
+     "published": "2026-08-01T20:50:57Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/nfl/story/_/id/49507201/ex-all-pro-lb-devin-white-joins-lions-1-year-deal"
     }
    ],
    "injuries": {
@@ -1538,6 +1538,16 @@
     ],
     "Denver Broncos": [
      {
+      "player": "Blake Cotton",
+      "status": "Injured Reserve",
+      "detail": "Cotton (hamstring) reverted to the Broncos' injured reserve Saturday, Zac Stevens reports."
+     },
+     {
+      "player": "Joseph Manjack IV",
+      "status": "Questionable",
+      "detail": "Manjack (back) could return to practice as early as Monday, NFL reporter Jordan Schultz reports."
+     },
+     {
       "player": "Sam Webb",
       "status": "Active",
       "detail": "Webb signed with the Broncos on Thursday, Chris Tomasson of The Denver Gazette reports."
@@ -1651,28 +1661,23 @@
       "player": "Caleb Lohner",
       "status": "Questionable",
       "detail": "Lohner is expected to miss two weeks after undergoing a lower-body procedure, Mike Klis of 9News Denver reports."
-     },
-     {
-      "player": "Pat Surtain II",
-      "status": "Active",
-      "detail": "Denver agreed Tuesday to give Surtain a $5 million raise with an additional $5 million incentive for a Pro Bowl or All-Pro selection in 2026, Ian Rapoport of NFL Network reports."
-     },
-     {
-      "player": "Joseph Manjack IV",
-      "status": "Active",
-      "detail": "Manjack signed with the Broncos as an undrafted free agent Friday."
      }
     ],
     "Detroit Lions": [
      {
+      "player": "Jimmy Rolder",
+      "status": "Questionable",
+      "detail": "Rolder (leg) will miss some time but avoided severe injury, NFL reporter Jordan Schultz reports."
+     },
+     {
+      "player": "Devin White",
+      "status": "Active",
+      "detail": "The Lions signed White to a one-year contract Saturday, NFL reporter Jordan Schultz reports."
+     },
+     {
       "player": "Christian Mahogany",
       "status": "Active",
       "detail": "Mahogany (undisclosed) was removed from the Lions' active/non-football injury list Friday after passing his physical, Justin Rogers of DetroitFootball.net reports."
-     },
-     {
-      "player": "Jimmy Rolder",
-      "status": "Questionable",
-      "detail": "Rolder left the Lions' training camp practice early with a leg injury Friday, Kory Woods of MLive.com reports."
      },
      {
       "player": "Alim McNeill",
@@ -1783,11 +1788,6 @@
       "player": "Lucky Jackson",
       "status": "Active",
       "detail": "The Lions signed Jackson on Wednesday."
-     },
-     {
-      "player": "Tarik Black",
-      "status": "Active",
-      "detail": "The Lions signed Black on Wednesday."
      }
     ],
     "Green Bay Packers": [
@@ -2300,14 +2300,14 @@
     ],
     "Kansas City Chiefs": [
      {
+      "player": "Xavier Worthy",
+      "status": "Questionable",
+      "detail": "Worthy is believed to avoided a serious shoulder injury that he sustained during the final session of Saturday's training camp practice, Ian Rapoport of NFL Network reports."
+     },
+     {
       "player": "Cyrus Allen",
       "status": "Questionable",
       "detail": "Allen was diagnosed with a shin bruise on his left leg that he suffered during Saturday's training camp practice, Adam Schefter of ESPN reports."
-     },
-     {
-      "player": "Xavier Worthy",
-      "status": "Questionable",
-      "detail": "Worthy left Saturday's training camp practice due to a shoulder injury, Jesse Newell of The Athletic reports."
      },
      {
       "player": "Trey Smith",
@@ -2437,11 +2437,6 @@
       "detail": "McCoy (knee) is having his reps limited during the early portions of training camp, Ryan McFadden of ESPN.com reports."
      },
      {
-      "player": "Chris Collier",
-      "status": "Questionable",
-      "detail": "questionable"
-     },
-     {
       "player": "Matt Gay",
       "status": "Active",
       "detail": "Gay worked as the first-team kicker at Friday's training camp practice and made all of his attempts, Sam Warren of the Athletic reports."
@@ -2550,6 +2545,11 @@
       "player": "Benito Jones",
       "status": "Active",
       "detail": "The Raiders signed Jones (back) on Wednesday."
+     },
+     {
+      "player": "Justin Shorter",
+      "status": "Injured Reserve",
+      "detail": "Shorter (undisclosed) was placed on the reserve/injured list by the Raiders on Monday."
      }
     ],
     "Los Angeles Chargers": [
@@ -3063,8 +3063,8 @@
     "New England Patriots": [
      {
       "player": "Gabe Jacas",
-      "status": "Out",
-      "detail": "Jacas (knee) was a limited participant in Saturday's practice, Mike Reiss of ESPN.com reports."
+      "status": "Active",
+      "detail": "The Patriots activated Jacas (knee) off the active/non-football injury list Saturday, per the NFL's transaction log."
      },
      {
       "player": "Lan Larison",
@@ -3443,6 +3443,11 @@
     ],
     "New York Jets": [
      {
+      "player": "Gee Scott Jr.",
+      "status": "Injured Reserve",
+      "detail": "Scott (undisclosed) reverted to the Jets' injured reserve Saturday, per the NFL's transaction log."
+     },
+     {
       "player": "Jalen Walthall",
       "status": "Injured Reserve",
       "detail": "Walthall (undisclosed) reverted to the Jets' injured reserve Friday after clearing waivers, per the NFL's transaction report."
@@ -3561,11 +3566,6 @@
       "player": "Landon Young",
       "status": "Active",
       "detail": "Young (ankle) signed with the Jets on Sunday."
-     },
-     {
-      "player": "Chase Curtis",
-      "status": "Active",
-      "detail": "Curtis signed with the Jets as an undrafted free agent Friday."
      }
     ],
     "Philadelphia Eagles": [
@@ -3824,6 +3824,21 @@
     ],
     "San Francisco 49ers": [
      {
+      "player": "Deebo Samuel",
+      "status": "Active",
+      "detail": "Samuel was a full participant in Saturday's training camp practice, his first since signing with the 49ers on Thursday, Matt Barrows of The Athletic reports."
+     },
+     {
+      "player": "Tanner McLachlan",
+      "status": "Questionable",
+      "detail": "McLachlan (undisclosed) reverted to the 49ers' injured reserve Saturday, per the NFL's transaction log."
+     },
+     {
+      "player": "Mikail Kamara",
+      "status": "Questionable",
+      "detail": "Kamara (knee) was unable to finish Saturday's practice due to injury, Nick Wagoner of ESPN.com reports."
+     },
+     {
       "player": "Keion White",
       "status": "Questionable",
       "detail": "White (groin) left Saturday's practice early, Nick Wagoner of ESPN.com reports."
@@ -3837,11 +3852,6 @@
       "player": "Cameron Sample",
       "status": "Questionable",
       "detail": "Sample (knee) missed Saturday's practice session, David Lombardi of SFStandard.com reports."
-     },
-     {
-      "player": "Mikail Kamara",
-      "status": "Questionable",
-      "detail": "questionable"
      },
      {
       "player": "De'Zhaun Stribling",
@@ -3877,11 +3887,6 @@
       "player": "Ji'Ayir Brown",
       "status": "Active",
       "detail": "Brown (hamstring) is participating at the 49ers' training camp, Ines Diaz of the team's official site reports."
-     },
-     {
-      "player": "Deebo Samuel",
-      "status": "Active",
-      "detail": "Samuel and the 49ers agreed on a one-year, $7 million contract Thursday, Ian Rapoport of NFL Network reports."
      },
      {
       "player": "Andrew Farmer II",
@@ -3942,19 +3947,9 @@
       "player": "Kevin Givens",
       "status": "Active",
       "detail": "The 49ers signed Givens to a one-year deal Sunday."
-     },
-     {
-      "player": "Isaac Guerendo",
-      "status": "Out",
-      "detail": "The 49ers placed Guerendo (pectoral) on the active/PUP list Saturday, Matt Maiocco of NBC Sports Bay Area reports."
      }
     ],
     "Seattle Seahawks": [
-     {
-      "player": "Ja'Markis Weston",
-      "status": "Questionable",
-      "detail": "questionable"
-     },
      {
       "player": "Jadarian Price",
       "status": "Active",
@@ -4074,6 +4069,11 @@
       "player": "Robbie Ouzts",
       "status": "Active",
       "detail": "Ouzts (neck) was a full participant during Tuesday's OTAs, Cameron Van Til of Seattle Sports reports."
+     },
+     {
+      "player": "Irv Charles",
+      "status": "Active",
+      "detail": "The Jets traded Charles (knee) to the Seahawks on Wednesday in exchange for a 2028 conditional seventh-round pick, Rich Cimini of ESPN.com reports."
      }
     ],
     "Tampa Bay Buccaneers": [
@@ -4463,6 +4463,27 @@
    "name": "NBA",
    "headlines": [
     {
+     "title": "Holmgren: Thunder departures part of 'business of this game'",
+     "desc": "Oklahoma City's Chet Holmgren told reporters on Saturday afternoon that the departures of three contributors to the Thunder's 2025 championship team felt \"like losing a family member,\" but at the same time, \"that's how the business of this ",
+     "published": "2026-08-01T21:14:09Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/nba/story/_/id/49507452/thunder-departures-part-business-game"
+    },
+    {
+     "title": "Sources: Warriors bring back Gary Payton II on vet minimum",
+     "desc": "The Warriors are bringing back forward Gary Payton II on a one-year, $3.9 million veteran minimum deal, sources said.",
+     "published": "2026-08-01T20:45:29Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/nba/story/_/id/49507200/sources-warriors-bring-back-gary-payton-ii-vet-minimum"
+    },
+    {
+     "title": "Kevin Durant compares 76ers' star power to his Warriors teams",
+     "desc": "Kevin Durant compared the new-look 76ers to his Warriors teams in terms of offensive firepower after Philly added LeBron James in free agency.",
+     "published": "2026-08-01T21:07:37Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/nba/story/_/id/49507136/kevin-durant-compares-76ers-star-power-warriors-teams"
+    },
+    {
      "title": "'The Hoop Collective': Episodes of Brian Windhorst's NBA podcast",
      "desc": "Here are the top highlights from Brian Windhorst's \"The Hoop Collective\" podcast, from breaking news to the latest intel and reaction from around the NBA.",
      "published": "2026-07-31T19:29:25Z",
@@ -4482,27 +4503,6 @@
      "published": "2026-07-31T16:42:56Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/nba/story/_/id/49496738/terry-rozier-attorney-dismiss-text-deniro-laster"
-    },
-    {
-     "title": "Stacking which teams can keep the NBA's parity run going",
-     "desc": "The NBA has seen eight different champions in eight years. Which of the other 22 teams can make it 9-for-9, and which ones are a long way off?",
-     "published": "2026-07-31T21:53:24Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nba/story/_/id/49470460/stacking-which-teams-keep-nba-parity-run-going"
-    },
-    {
-     "title": "Egusi, Nigerians, and Ewing - Washington feels like home for Wizards rookie Felix Okpara",
-     "desc": "For 22-year-old center Felix Okpara, Washington is going to mean way more than the city where his NBA career begins. It is also home to one of the largest Nigerian and African communities in the United States.",
-     "published": "2026-07-31T06:11:51Z",
-     "type": "Story",
-     "link": "https://www.espn.com/espn/story/_/id/49486953/egusi-nigerians-ewing-washington-feels-home-wizards-rookie-felix-okpara"
-    },
-    {
-     "title": "Blazers, Portland officials meet to discuss Moda Center revamp, lease",
-     "desc": "Representatives from the Trail Blazers met with Portland city councilors to discuss a new lease and the commitment of public funds to renovate the aging Moda Center.",
-     "published": "2026-07-31T00:49:14Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/nba/story/_/id/49492637/blazers-brass-portland-officials-meet-discuss-moda-center-renovation-lease"
     }
    ],
    "injuries": {
@@ -5927,9 +5927,16 @@
    "name": "MLB",
    "headlines": [
     {
+     "title": "Pirates' Ryan O'Hearn (quad) to IL; expected out 6-8 weeks",
+     "desc": "The Pirates placed Ryan O'Hearn on the 10-day injured list Saturday because of a strained left quad that is expected to cause him to miss six to eight weeks.",
+     "published": "2026-08-01T21:12:08Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/mlb/story/_/id/49507255/pirates-ryan-ohearn-quad-il-expected-6-8-weeks"
+    },
+    {
      "title": "2026 MLB trade deadline tracker: Rumors, news, analysis",
      "desc": "Which contenders will make the biggest splash? Here's what we're hearing as 6 p.m. ET on Monday approaches.",
-     "published": "2026-08-01T20:25:04Z",
+     "published": "2026-08-01T20:29:36Z",
      "type": "Story",
      "link": "https://www.espn.com/mlb/story/_/id/49410877/2026-mlb-trade-deadline-tracker-rumors-alerts-news-latest-updates-analysis"
     },
@@ -5955,18 +5962,11 @@
      "link": "https://www.espn.com/mlb/story/_/id/49464501/mlb-trade-deadline-2026-ranking-prospects-changed-teams"
     },
     {
-     "title": "Pirates trading for Yankees reliever Camilo Doval, sources say",
-     "desc": "Seeking bullpen help in their quest to end an 11-year postseason drought, the Pirates have agreed to a trade for Yankees reliever Camilo Doval, sources told ESPN.",
-     "published": "2026-08-01T19:11:26Z",
+     "title": "Pirates acquire reliever Camilo Doval in trade with Yankees",
+     "desc": "Seeking bullpen help in their quest to end an 11-year postseason drought, the Pirates have acquired reliever Camilo Doval in a trade with the Yankees, the teams announced Saturday.",
+     "published": "2026-08-01T21:13:10Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/mlb/story/_/id/49504765/pirates-trading-yankees-reliever-camilo-doval-sources-say"
-    },
-    {
-     "title": "Aug. 1 update! Ranking top 2026 MLB trade deadline candidates",
-     "desc": "Skubal to the ...? New difference-makers available? Here are the big names your team could be targeting, with a few new additions near the top.",
-     "published": "2026-08-01T18:32:49Z",
-     "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49082474/ranking-mlb-trade-deadline-candidates-top-100-skubal-chapman-peralta-arraez"
     }
    ],
    "injuries": {
@@ -7339,11 +7339,6 @@
      }
     ],
     "Washington Nationals": [
-     {
-      "player": "Luis Garcia Jr.",
-      "status": "Day-To-Day",
-      "detail": "Garcia went 3-for-5 with a home run, a double, a triple and two RBI in Thursday's 5-4 loss to Atlanta."
-     },
      {
       "player": "Mitchell Parker",
       "status": "60-Day-IL",
