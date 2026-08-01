@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-01T11:20:27.776154+00:00",
- "updated_unix": 1785583227,
+ "updated": "2026-08-01T12:33:39.884047+00:00",
+ "updated_unix": 1785587619,
  "source": "espn",
  "leagues": {
   "epl": {
@@ -8,8 +8,8 @@
    "headlines": [
     {
      "title": "Transfer rumors, news: Bayern eye Man United's Sesko to replace Kane",
-     "desc": "Bayer Munich are still looking for a long-term successor to Harry Kane, and have Manchester United striker Benjamin Sesko on their shortlist. Transfer Talk has the latest.",
-     "published": "2026-08-01T08:46:07Z",
+     "desc": "Bayer Munich are still looking for a long-term successor to Harry Kane, and have Manchester United striker Benjamin Sesko on their short list. Transfer Talk has the latest.",
+     "published": "2026-08-01T12:09:06Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49503204/transfer-rumors-news-bayern-munich-eye-manchester-united-benjamin-sesko-replace-harry-kane"
     },
@@ -65,7 +65,7 @@
     {
      "title": "Summer transfer window: Grading big signings in men's soccer",
      "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-08-01T10:50:39Z",
+     "published": "2026-08-01T12:14:50Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
@@ -106,15 +106,15 @@
    "headlines": [
     {
      "title": "Transfer rumors, news: Bayern eye Man United's Sesko to replace Kane",
-     "desc": "Bayer Munich are still looking for a long-term successor to Harry Kane, and have Manchester United striker Benjamin Sesko on their shortlist. Transfer Talk has the latest.",
-     "published": "2026-08-01T08:46:07Z",
+     "desc": "Bayer Munich are still looking for a long-term successor to Harry Kane, and have Manchester United striker Benjamin Sesko on their short list. Transfer Talk has the latest.",
+     "published": "2026-08-01T12:09:06Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49503204/transfer-rumors-news-bayern-munich-eye-manchester-united-benjamin-sesko-replace-harry-kane"
     },
     {
      "title": "Summer transfer window: Grading big signings in men's soccer",
      "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-08-01T10:50:39Z",
+     "published": "2026-08-01T12:14:50Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
@@ -163,7 +163,7 @@
     {
      "title": "Summer transfer window: Grading big signings in men's soccer",
      "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-08-01T10:50:39Z",
+     "published": "2026-08-01T12:14:50Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
@@ -212,7 +212,7 @@
     {
      "title": "Summer transfer window: Grading big signings in men's soccer",
      "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-08-01T10:50:39Z",
+     "published": "2026-08-01T12:14:50Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
@@ -5927,6 +5927,13 @@
    "name": "MLB",
    "headlines": [
     {
+     "title": "August 1 update! Ranking top 2026 MLB trade deadline candidates",
+     "desc": "Skubal to the ...? New difference-makers available? Here are the big names your team could be targeting, with a few new additions near the top.",
+     "published": "2026-08-01T12:18:29Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/49082474/ranking-mlb-trade-deadline-candidates-top-100-skubal-chapman-peralta-arraez"
+    },
+    {
      "title": "Red Sox bring 3-game win streak into matchup with the Dodgers",
      "desc": "Boston Red Sox (58-51, third in the AL East) vs. Los Angeles Dodgers (69-41, first in the NL West)",
      "published": "2026-08-01T08:02:15Z",
@@ -5960,13 +5967,6 @@
      "published": "2026-08-01T08:02:01Z",
      "type": "Preview",
      "link": "http://www.espn.com/mlb/preview?gameId=401816352"
-    },
-    {
-     "title": "New York Mets host the Miami Marlins Saturday",
-     "desc": "Miami Marlins (56-55, third in the NL East) vs. New York Mets (47-64, fifth in the NL East)",
-     "published": "2026-08-01T08:01:57Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816349"
     }
    ],
    "injuries": {
@@ -6329,6 +6329,11 @@
     ],
     "Chicago White Sox": [
      {
+      "player": "Jordan Leasure",
+      "status": "60-Day-IL",
+      "detail": "Leasure (forearm) has resumed throwing bullpen sessions, MLB.com reports."
+     },
+     {
       "player": "Drew Thorpe",
       "status": "60-Day-IL",
       "detail": "Thorpe (elbow) will have his next rehab start with Triple-A Charlotte on Tuesday, Scott Merkin of MLB.com reports."
@@ -6357,11 +6362,6 @@
       "player": "Ky Bush",
       "status": "60-Day-IL",
       "detail": "Bush (elbow) has resumed participating in long toss, MLB.com reports."
-     },
-     {
-      "player": "Jordan Leasure",
-      "status": "60-Day-IL",
-      "detail": "Leasure (forearm) said Friday that he will be shut down from throwing for four weeks, James Fegan of SoxMachine.com reports."
      },
      {
       "player": "Mike Vasil",
@@ -6420,14 +6420,14 @@
     ],
     "Colorado Rockies": [
      {
+      "player": "Jose Quintana",
+      "status": "60-Day-IL",
+      "detail": "Quintana (elbow) is set to throw a bullpen session during the week of Aug. 3, MLB.com reports."
+     },
+     {
       "player": "Jeff Criswell",
       "status": "15-Day-IL",
       "detail": "The Rockies recalled Criswell from Triple-A Albuquerque on Saturday."
-     },
-     {
-      "player": "Jose Quintana",
-      "status": "60-Day-IL",
-      "detail": "Quintana (elbow) is scheduled to play catch Monday, Thomas Harding of MLB.com reports."
      },
      {
       "player": "Blas Castano",
