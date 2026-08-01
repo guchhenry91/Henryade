@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-01T21:27:46.673593+00:00",
- "updated_unix": 1785619666,
+ "updated": "2026-08-01T22:32:36.889440+00:00",
+ "updated_unix": 1785623556,
  "source": "espn",
  "leagues": {
   "epl": {
@@ -350,46 +350,46 @@
    "name": "NFL",
    "headlines": [
     {
+     "title": "2026 Carolina Panthers training camp: Latest intel, updates",
+     "desc": "Follow our updates from Panthers training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T22:29:57Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49377273/carolina-panthers-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "Injuries shadow Panthers' team scrimmage in front of fans",
+     "desc": "The Panthers scrimmaged in front of approximately 40,000 fans in their first appearance on their home turf since losing in the opening round of the playoffs.",
+     "published": "2026-08-01T22:12:39Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/nfl/story/_/id/49507879/injuries-shadow-panthers-team-scrimmage-front-fans"
+    },
+    {
+     "title": "Tracking 2026 NFL hold-ins: Robinson, Gibbs, Vea and Tuipulotu",
+     "desc": "Here is the latest on Falcons' Bijan Robinson, Lions' Jahmyr Gibbs, Bucs' Vita Vea and Chargers' Tuli Tuipulotu.",
+     "published": "2026-08-01T21:46:52Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49490010/2026-training-camp-holdin-tracking-updates-bijan-robinson-jahmyr-gibbs-vita-vea-tuli-tuipulotu"
+    },
+    {
+     "title": "2026 Dallas Cowboys training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Cowboys training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T21:56:50Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49376535/dallas-cowboys-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "2026 New York Giants training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Giants training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T21:39:43Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49434181/new-york-giants-training-camp-2026-intel-updates"
+    },
+    {
      "title": "2026 San Francisco 49ers training camp: Latest intel, updates",
      "desc": "Follow our daily updates from 49ers training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-01T21:25:06Z",
+     "published": "2026-08-01T21:41:26Z",
      "type": "Story",
      "link": "https://www.espn.com/nfl/story/_/id/49427696/san-francisco-49ers-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "2026 Denver Broncos training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Broncos training camp, including intel on the QBs, position battles and potential breakouts.",
-     "published": "2026-08-01T21:20:34Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49379469/denver-broncos-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "2026 Pittsburgh Steelers training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Steelers training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-01T21:10:53Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49449169/pittsburgh-steelers-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "Deebo Samuel on reunion with 49ers: 'Just matter of time'",
-     "desc": "Deebo Samuel, who left the Niners last offseason after requesting a trade, said he feels right at home back in San Francisco.",
-     "published": "2026-08-01T20:59:06Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49507290/deebo-samuel-reunion-49ers-just-matter"
-    },
-    {
-     "title": "2026 Cleveland Browns training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Browns training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-01T20:53:06Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49449000/cleveland-browns-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "Ex-All Pro LB Devin White joins Lions on 1-year deal",
-     "desc": "The Detroit Lions are signing former All-Pro linebacker Devin White to a one-year deal, the team announced Saturday.",
-     "published": "2026-08-01T20:50:57Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49507201/ex-all-pro-lb-devin-white-joins-lions-1-year-deal"
     }
    ],
    "injuries": {
@@ -2046,6 +2046,11 @@
     ],
     "Indianapolis Colts": [
      {
+      "player": "Sauce Gardner",
+      "status": "Questionable",
+      "detail": "Gardner suffered a lower calf strain during practice Saturday, Adam Schefter of ESPN reports."
+     },
+     {
       "player": "Roydell Williams",
       "status": "Active",
       "detail": "Indianapolis signed Williams on Friday."
@@ -2119,11 +2124,6 @@
       "player": "Daniel Scott",
       "status": "Active",
       "detail": "Scott participated in the Colts' minicamp practice Thursday."
-     },
-     {
-      "player": "Sauce Gardner",
-      "status": "Active",
-      "detail": ""
      },
      {
       "player": "Ashton Dulin",
@@ -4464,15 +4464,15 @@
    "headlines": [
     {
      "title": "Holmgren: Thunder departures part of 'business of this game'",
-     "desc": "Oklahoma City's Chet Holmgren told reporters on Saturday afternoon that the departures of three contributors to the Thunder's 2025 championship team felt \"like losing a family member,\" but at the same time, \"that's how the business of this ",
-     "published": "2026-08-01T21:14:09Z",
+     "desc": "Oklahoma City's Chet Holmgren told reporters Saturday afternoon that the departures of three contributors to the Thunder's 2025 championship team felt \"like losing a family member,\" but at the same time, \"that's how the business of this gam",
+     "published": "2026-08-01T22:14:57Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/nba/story/_/id/49507452/thunder-departures-part-business-game"
     },
     {
      "title": "Sources: Warriors bring back Gary Payton II on vet minimum",
      "desc": "The Warriors are bringing back forward Gary Payton II on a one-year, $3.9 million veteran minimum deal, sources said.",
-     "published": "2026-08-01T20:45:29Z",
+     "published": "2026-08-01T22:20:44Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/nba/story/_/id/49507200/sources-warriors-bring-back-gary-payton-ii-vet-minimum"
     },
@@ -5927,6 +5927,27 @@
    "name": "MLB",
    "headlines": [
     {
+     "title": "Blue Jays down the Cardinals 5-1 at home",
+     "desc": "Blue Jays down the Cardinals 5-1 at home",
+     "published": "2026-08-01T22:03:30Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49507864/blue-jays-cardinals-5-1-home"
+    },
+    {
+     "title": "Gausman gets first win since May 22, Springer drives in two as Blue Jays beat Cardinals 5-1",
+     "desc": "— Kevin Gausman pitched 5 2/3 innings for his first win since May 22, George Springer had two hits and drove in a pair, and the Toronto Blue Jays beat the St. Louis Cardinals 5-1 on Saturday.",
+     "published": "2026-08-01T21:58:29Z",
+     "type": "Recap",
+     "link": "http://www.espn.com/mlb/recap?gameId=401816352"
+    },
+    {
+     "title": "Carlos Correa eyes possible return for Astros this season",
+     "desc": "Carlos Correa's recovery from surgery to repair a torn ankle tendon is progressing quicker than expected, and Houston's star infielder isn't ruling out a return this season.",
+     "published": "2026-08-01T21:36:53Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/mlb/story/_/id/49507539/carlos-correa-eyes-possible-return-astros-season"
+    },
+    {
      "title": "Pirates' Ryan O'Hearn (quad) to IL; expected out 6-8 weeks",
      "desc": "The Pirates placed Ryan O'Hearn on the 10-day injured list Saturday because of a strained left quad that is expected to cause him to miss six to eight weeks.",
      "published": "2026-08-01T21:12:08Z",
@@ -5936,7 +5957,7 @@
     {
      "title": "2026 MLB trade deadline tracker: Rumors, news, analysis",
      "desc": "Which contenders will make the biggest splash? Here's what we're hearing as 6 p.m. ET on Monday approaches.",
-     "published": "2026-08-01T20:29:36Z",
+     "published": "2026-08-01T21:48:10Z",
      "type": "Story",
      "link": "https://www.espn.com/mlb/story/_/id/49410877/2026-mlb-trade-deadline-tracker-rumors-alerts-news-latest-updates-analysis"
     },
@@ -5946,27 +5967,6 @@
      "published": "2026-08-01T19:53:43Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/mlb/story/_/id/49506726/mariners-place-luke-raley-il-forearm-strain"
-    },
-    {
-     "title": "2026 MLB trade deadline grades: Report cards for every deal",
-     "desc": "Trade season has officially begun! Here's our running scorecard for every big move before Monday's deadline arrives.",
-     "published": "2026-08-01T19:24:21Z",
-     "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49454655/2026-mlb-trade-deadline-grades-analysis-report-cards-every-deal"
-    },
-    {
-     "title": "MLB trade deadline 2026: Ranking prospects who changed teams",
-     "desc": "You know the major leaguers on the move -- but what about the potential stars of tomorrow headed the other way in those deals?",
-     "published": "2026-08-01T19:10:20Z",
-     "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49464501/mlb-trade-deadline-2026-ranking-prospects-changed-teams"
-    },
-    {
-     "title": "Pirates acquire reliever Camilo Doval in trade with Yankees",
-     "desc": "Seeking bullpen help in their quest to end an 11-year postseason drought, the Pirates have acquired reliever Camilo Doval in a trade with the Yankees, the teams announced Saturday.",
-     "published": "2026-08-01T21:13:10Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/mlb/story/_/id/49504765/pirates-trading-yankees-reliever-camilo-doval-sources-say"
     }
    ],
    "injuries": {
@@ -6192,7 +6192,7 @@
      {
       "player": "Willson Contreras",
       "status": "Day-To-Day",
-      "detail": "Contreras went 2-for-3 with a solo home run and a walk Thursday in a 5-4 win over the Athletics."
+      "detail": "Contreras, who was hit in the head by a pitch and had to exit Friday's game, isn't in Boston's starting lineup versus the Dodgers on Saturday, Tim Healey of The Boston Globe reports."
      },
      {
       "player": "Curtis Mead",
@@ -6682,7 +6682,7 @@
      {
       "player": "Brock Stewart",
       "status": "15-Day-IL",
-      "detail": "Stewart struck out two in a perfect inning to earn the save in Saturday's 4-3 win over the Mets."
+      "detail": "MRI results on Stewart's right shoulder revealed tendinitis Saturday, Fabian Ardaya of The Athletic reports."
      },
      {
       "player": "Blake Snell",
@@ -6789,11 +6789,6 @@
       "detail": "Frelick was given a cortisone shot in his injured right shoulder Wednesday, Dominic Cotroneo of 620 WTMJ reports."
      },
      {
-      "player": "Brandon Lockridge",
-      "status": "60-Day-IL",
-      "detail": "Lockridge (knee) was sent to Triple-A Nashville on Thursday to begin a rehab assignment."
-     },
-     {
       "player": "Joel Kuhnel",
       "status": "15-Day-IL",
       "detail": "Kuhnel (shoulder) is slated to throw a bullpen session Tuesday, Jack Stern of BrewerFanatic.com reports."
@@ -6863,14 +6858,14 @@
     ],
     "New York Mets": [
      {
+      "player": "Clay Holmes",
+      "status": "60-Day-IL",
+      "detail": "Holmes (fibula) is tentatively scheduled to make a rehab start at High-A Brooklyn on Sunday, Chelsea Janes of SNY.tv reports."
+     },
+     {
       "player": "Cionel Perez",
       "status": "15-Day-IL",
       "detail": "The Mets placed Perez on the 15-day injured list Friday with a left forearm strain."
-     },
-     {
-      "player": "Clay Holmes",
-      "status": "60-Day-IL",
-      "detail": "Holmes (lower leg) tossed four scoreless innings in a rehab start for Single-A St. Lucie on Tuesday, giving up two hits and two walks while striking out three over 59 pitches (37 strikes)."
      },
      {
       "player": "Juan Soto",
@@ -7043,6 +7038,11 @@
     ],
     "San Francisco Giants": [
      {
+      "player": "Matt Chapman",
+      "status": "10-Day-IL",
+      "detail": "Chapman (abdomen) will not be activated during San Francisco's weekend series against the Padres, John Shea of the San Francisco Chronicle reports."
+     },
+     {
       "player": "Luis Arraez",
       "status": "Day-To-Day",
       "detail": "Arraez went 4-for-5 with two RBI, a run scored and a stolen base in Wednesday's 16-3 win over the Brewers."
@@ -7056,11 +7056,6 @@
       "player": "Jonah Cox",
       "status": "10-Day-IL",
       "detail": "Cox (oblique) went 0-for-3 in Triple-A Sacramento's 5-4 win over Tacoma on Wednesday."
-     },
-     {
-      "player": "Matt Chapman",
-      "status": "10-Day-IL",
-      "detail": "Giants manager Tony Vitello said Wednesday that Chapman (abdomen) will be activated from the 10-day injured list at some point during this weekend's series versus the Padres, Alex Pavlovic of NBC Sports Bay Area reports."
      },
      {
       "player": "Trevor McDonald",
