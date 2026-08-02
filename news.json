@@ -1,11 +1,18 @@
 {
- "updated": "2026-08-02T09:34:41.542903+00:00",
- "updated_unix": 1785663281,
+ "updated": "2026-08-02T11:19:46.650931+00:00",
+ "updated_unix": 1785669586,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
+    {
+     "title": "Liverpool's Alexander Isak, Florian Wirtz to play preseason clash vs Leeds",
+     "desc": "Liverpool trio Alexander Isak, Florian Wirtz and Ryan Gravenberch are set to feature in the club's final United States preseason tour match against Leeds United.",
+     "published": "2026-08-02T10:29:35Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49511509/liverpool-alexander-isak-florian-wirtz-play-preseason-clash-vs-leeds"
+    },
     {
      "title": "Premier League 2026-27 kits: Ranking every jersey released",
      "desc": "It's still a few weeks before the new Premier League season begins, but plenty of top clubs have already released some of their 2026-27 kits.",
@@ -40,13 +47,6 @@
      "published": "2026-08-02T07:21:15Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/48944912/premier-league-efl-summer-transfer-window-2026-dates-does-open-deadline-day"
-    },
-    {
-     "title": "Liverpool vs. Leeds: TV channel, how to watch in UK, kickoff time, live stream, team news",
-     "desc": "Liverpool and Leeds will continue their preparation for the Premier League season when they meet in Chicago.",
-     "published": "2026-08-02T07:19:29Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49495161/liverpool-vs-leeds-tv-channel-how-watch-uk-kickoff-live-stream-team-news"
     }
    ],
    "injuries": {},
@@ -350,6 +350,27 @@
    "name": "NFL",
    "headlines": [
     {
+     "title": "Jets' Glenn takes more humble approach heading into Year 2",
+     "desc": "New York's coach is heading into his second season with a different approach and set of expectations.",
+     "published": "2026-08-02T10:00:03Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49489372/new-york-jets-aaron-glenn-improvement-year-2"
+    },
+    {
+     "title": "Too many receivers? A look at the Patriots' crowded WR room",
+     "desc": "Which of the seven receivers are getting the most work in camp? And what New England could do about it.",
+     "published": "2026-08-02T10:00:03Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49508691/new-england-patriots-receivers-kayshon-boutte-pop-douglas-aj-brown-romeo-doubs"
+    },
+    {
+     "title": "What to expect from Seahawks on 'Hard Knocks' debut",
+     "desc": "From shadowboxing to Leonard Williams' hobbies to Devon Witherspoon's contract, here's what you might see.",
+     "published": "2026-08-02T10:00:12Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49499878/seattle-seahawks-hard-knocks-hbo-debut-tuesday-preview"
+    },
+    {
      "title": "2026 Los Angeles Rams training camp: Latest intel, updates",
      "desc": "Follow our daily updates from Rams training camp, including intel on QBs, position battles and potential breakouts.",
      "published": "2026-08-02T02:49:47Z",
@@ -369,27 +390,6 @@
      "published": "2026-08-02T00:02:52Z",
      "type": "Media",
      "link": "https://www.espn.com/video/clip/_/id/49508607/will-levis-confident-ability-coming-back-injury"
-    },
-    {
-     "title": "2026 Indianapolis Colts training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Colts training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-01T23:37:20Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49448214/indianapolis-colts-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "2026 NFL training camp: Latest news, intel for all 32 teams",
-     "desc": "Get all the news, intel and insights on NFL training camps from our team of reporters in the field.",
-     "published": "2026-08-01T23:39:24Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49368181/training-camp-2026-latest-news-intel-updates-buzz-all-32-teams"
-    },
-    {
-     "title": "2026 Minnesota Vikings training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Vikings training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-01T22:52:57Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49376202/minnesota-vikings-training-camp-2026-intel-updates"
     }
    ],
    "injuries": {
@@ -5796,6 +5796,13 @@
    "name": "MLB",
    "headlines": [
     {
+     "title": "Cronenworth's single gives Padres 6-5 win over Giants after Miller blows save",
+     "desc": "— Jake Cronenworth singled in Xander Bogaerts with two outs in the ninth inning and the San Diego Padres beat the San Francisco Giants 6-5 on Saturday night for their seventh win in eight games.",
+     "published": "2026-08-02T10:55:34Z",
+     "type": "Recap",
+     "link": "http://www.espn.com/mlb/recap?gameId=401816361"
+    },
+    {
      "title": "Marlins meet the Mets with 2-1 series lead",
      "desc": "Miami Marlins (57-55, third in the NL East) vs. New York Mets (47-65, fifth in the NL East)",
      "published": "2026-08-02T08:02:07Z",
@@ -5829,13 +5836,6 @@
      "published": "2026-08-02T08:01:53Z",
      "type": "Preview",
      "link": "http://www.espn.com/mlb/preview?gameId=401816375"
-    },
-    {
-     "title": "Nationals take road slide into matchup with the Braves",
-     "desc": "Washington Nationals (55-57, fourth in the NL East) vs. Atlanta Braves (66-45, first in the NL East)",
-     "published": "2026-08-02T08:01:50Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816368"
     }
    ],
    "injuries": {
