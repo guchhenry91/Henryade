@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-02T21:28:45.763842+00:00",
- "updated_unix": 1785706125,
+ "updated": "2026-08-02T22:31:17.529329+00:00",
+ "updated_unix": 1785709877,
  "source": "espn",
  "leagues": {
   "epl": {
@@ -366,7 +366,7 @@
     {
      "title": "Rams hold Garrett out as he deals with 'a little soreness'",
      "desc": "Los Angeles Rams defensive end Myles Garrett is dealing with \"a little soreness in his lower half,\" Sean McVay said on Sunday, keeping the pass rusher out of practice for the third consecutive day, but the coach added that \"there's no reaso",
-     "published": "2026-08-02T21:17:14Z",
+     "published": "2026-08-02T22:27:43Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/nfl/story/_/id/49515062/rams-hold-garrett-deals-little-soreness"
     },
@@ -387,13 +387,23 @@
     {
      "title": "Pass rusher Jadeveon Clowney reaches deal to reunite with Texans",
      "desc": "Jadeveon Clowney is returning to the Texans, the team that selected him No. 1 in the 2014 NFL draft.",
-     "published": "2026-08-02T21:27:52Z",
+     "published": "2026-08-02T21:47:09Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/nfl/story/_/id/49514656/sources-jadeveon-clowney-reaches-deal-reunite-texans"
     }
    ],
    "injuries": {
     "Arizona Cardinals": [
+     {
+      "player": "Walter Nolen III",
+      "status": "Active",
+      "detail": "Nolen is all set to continue practicing in a full capacity, Dani Sureck of the Cardinals' official site reports."
+     },
+     {
+      "player": "Joey Blount",
+      "status": "Questionable",
+      "detail": "Blount (undisclosed) did not participate in Sunday's practice, Dani Sureck of the Cardinals' official site reports."
+     },
      {
       "player": "PJ Mustipher",
       "status": "Injured Reserve",
@@ -408,11 +418,6 @@
       "player": "Jaden Davis",
       "status": "Injured Reserve",
       "detail": "The Cardinals placed Davis (undisclosed) on injured reserve Friday."
-     },
-     {
-      "player": "Joey Blount",
-      "status": "Active",
-      "detail": "Blount (neck/concussion) was an active participant in Tuesday's training camp practice, per Ross D. Franklin of the Associated Press."
      },
      {
       "player": "Mack Wilson Sr.",
@@ -473,11 +478,6 @@
       "player": "Josh Sweat",
       "status": "Out",
       "detail": "Sweat (knee), who was placed on the active/PUP list Thursday, isn't dealing with a serious injury, Darren Urban of the Cardinals' official site reports."
-     },
-     {
-      "player": "Walter Nolen III",
-      "status": "Active",
-      "detail": "Nolen is all set to participate in the Cardinals' training camp, Bo Brack of GoPHNX.com reports."
      },
      {
       "player": "Garrett Williams",
@@ -1538,11 +1538,6 @@
     ],
     "Denver Broncos": [
      {
-      "player": "Blake Cotton",
-      "status": "Injured Reserve",
-      "detail": "Cotton (hamstring) reverted to the Broncos' injured reserve Saturday, Zac Stevens reports."
-     },
-     {
       "player": "Joseph Manjack IV",
       "status": "Questionable",
       "detail": "Manjack (back) could return to practice as early as Monday, NFL reporter Jordan Schultz reports."
@@ -1661,6 +1656,11 @@
       "player": "Caleb Lohner",
       "status": "Questionable",
       "detail": "Lohner is expected to miss two weeks after undergoing a lower-body procedure, Mike Klis of 9News Denver reports."
+     },
+     {
+      "player": "Pat Surtain II",
+      "status": "Active",
+      "detail": "Denver agreed Tuesday to give Surtain a $5 million raise with an additional $5 million incentive for a Pro Bowl or All-Pro selection in 2026, Ian Rapoport of NFL Network reports."
      }
     ],
     "Detroit Lions": [
@@ -4463,9 +4463,16 @@
    "name": "NBA",
    "headlines": [
     {
+     "title": "Donovan Mitchell and Coco Jones wed in Greenwich ceremony",
+     "desc": "Mitchell and Jones shared their first dance to Musiq Soulchild's 2000 hit song \"Love,\" as seen in a video posted by agent Troy Payne on Instagram.",
+     "published": "2026-08-02T22:05:25Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nba/story/_/id/49514411/donovan-mitchell-cleveland-cavaliers-coco-jones-wedding"
+    },
+    {
      "title": "Sources: Mavs extend Naji Marshall on 3-year, $52.2M deal",
      "desc": "Mavericks forward Naji Marshall signed a three-year, $52.2 million extension that will take him through the 2029-30 season, sources told ESPN.",
-     "published": "2026-08-02T20:56:19Z",
+     "published": "2026-08-02T21:28:47Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/nba/story/_/id/49514965/sources-mavs-extend-naji-marshall-3-year-522m-deal"
     },
@@ -4496,13 +4503,6 @@
      "published": "2026-07-31T19:29:25Z",
      "type": "Story",
      "link": "https://www.espn.com/nba/story/_/id/47168192/the-hoop-collective-latest-episodes-brian-windhorst-nba-podcast-archive-best-quotes"
-    },
-    {
-     "title": "Sources: Wembanyama lands signature shoe line in Nike deal",
-     "desc": "Spurs star Victor Wembanyama signed a new, long-term deal with Nike that includes a signature sneaker, sources told ESPN's Shams Charania.",
-     "published": "2026-07-31T17:17:02Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/nba/story/_/id/49497562/sources-wembanyama-lands-signature-shoe-line-nike-deal"
     }
    ],
    "injuries": {
@@ -5796,46 +5796,46 @@
    "name": "MLB",
    "headlines": [
     {
-     "title": "Caballero homers, Cole pitches into 6th and gets bullpen help as Yankees edge Cubs 2-1",
-     "desc": "— José Caballero lined a two-run homer, Gerrit Cole pitched into the sixth inning and the New York Yankees hung on to top the Chicago Cubs 2-1 on Sunday.",
-     "published": "2026-08-02T21:27:31Z",
-     "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816369"
+     "title": "2026 MLB trade deadline grades: Report cards for every deal",
+     "desc": "Trade season has officially begun! Here's our running scorecard for every big move before Monday's deadline arrives.",
+     "published": "2026-08-02T22:28:48Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/49454655/2026-mlb-trade-deadline-grades-analysis-report-cards-every-deal"
     },
     {
-     "title": "Alvarez ties career high in hits, Peña homers and Astros use 4-run 7th inning to sweep Rangers 7-3",
-     "desc": "— Yordan Alvarez tied a career high with four hits, Jeremy Peña hit a home run, and the Houston Astros used a four-run seventh inning to pull away from the Texas Rangers 7-3 on Sunday and complete a series sweep.",
-     "published": "2026-08-02T21:25:29Z",
-     "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816370"
-    },
-    {
-     "title": "Texas Rangers vs. Houston Astros: Game Highlights",
-     "desc": "Texas Rangers vs. Houston Astros: Game Highlights",
-     "published": "2026-08-02T21:26:31Z",
+     "title": "Philadelphia Phillies vs. Baltimore Orioles: Game Highlights",
+     "desc": "Philadelphia Phillies vs. Baltimore Orioles: Game Highlights",
+     "published": "2026-08-02T22:13:59Z",
      "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49515363/game-highlights"
+     "link": "https://www.espn.com/video/clip/_/id/49515836/game-highlights"
     },
     {
-     "title": "Sources: Yankees acquire Luis Garcia Jr. in trade with Nationals",
-     "desc": "Luis Garcia Jr., who is hitting .283 with 23 homers, has been traded from the Nationals to the Yankees in exchange for four right-handed pitchers, sources told ESPN.",
-     "published": "2026-08-02T21:23:28Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/mlb/story/_/id/49515307/sources-yankees-acquire-luis-garcia-jr-trade-nationals"
-    },
-    {
-     "title": "Burns wins 12th straight decision, Stewart hits 24th HR, as Reds beat Pirates 10-2",
-     "desc": "— Chase Burns won his 12th straight decision and Sal Stewart hit his 24th home run as the Cincinnati Reds beat the Pittsburgh Pirates 10-2 on Sunday to take three of four in the series.",
-     "published": "2026-08-02T21:11:30Z",
+     "title": "Phillies rout Orioles 8-0 in a game called by rain after 5 1/2 innings",
+     "desc": "— Bryce Harper and Bryan De La Cruz both homered, and the Philadelphia Phillies beat the Baltimore Orioles 8-0 on Sunday in a game halted by rain after 5 1/2 innings.",
+     "published": "2026-08-02T22:08:31Z",
      "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816366"
+     "link": "http://www.espn.com/mlb/recap?gameId=401816365"
     },
     {
-     "title": "Chicago White Sox vs. Tampa Bay Rays: Game Highlights",
-     "desc": "Chicago White Sox vs. Tampa Bay Rays: Game Highlights",
-     "published": "2026-08-02T21:01:40Z",
+     "title": "Arizona Diamondbacks vs. Cleveland Guardians: Game Highlights",
+     "desc": "Arizona Diamondbacks vs. Cleveland Guardians: Game Highlights",
+     "published": "2026-08-02T22:11:59Z",
      "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49515063/game-highlights"
+     "link": "https://www.espn.com/video/clip/_/id/49515802/game-highlights"
+    },
+    {
+     "title": "Gavin Williams allows 1 hit, strikes out 10 to lead Guardians to 5-0 win over Diamondbacks",
+     "desc": "— Gavin Williams allowed one hit in 5 2/3 innings and struck out 10, Chase DeLauter drove in three runs and the Cleveland Guardians defeated the Arizona Diamondbacks 5-0 Sunday to avoid being swept in a weekend series.",
+     "published": "2026-08-02T22:02:39Z",
+     "type": "Recap",
+     "link": "http://www.espn.com/mlb/recap?gameId=401816362"
+    },
+    {
+     "title": "Fantasy baseball: Reactions to MLB trade deadline deals",
+     "desc": "Track the fantasy fallout from all the key deals as we head toward the MLB trade deadline on Monday.",
+     "published": "2026-08-02T22:01:59Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/baseball/story/_/id/49416655/fantasy-baseball-reaction-mlb-trade-deadline-deals-2026-monday-august-3"
     }
    ],
    "injuries": {
@@ -5975,14 +5975,14 @@
     ],
     "Atlanta Braves": [
      {
+      "player": "Reynaldo Lopez",
+      "status": "15-Day-IL",
+      "detail": "Lopez (knee) underwent an MRI on Sunday, which showed no structural damage, Mark Bowman of MLB.com reports."
+     },
+     {
       "player": "Spencer Strider",
       "status": "60-Day-IL",
       "detail": "Strider (elbow) appears unlikely to pitch again during the 2026 season, Mark Bowman of MLB.com reports."
-     },
-     {
-      "player": "Reynaldo Lopez",
-      "status": "15-Day-IL",
-      "detail": "Atlanta manager Walt Weiss said Saturday that Lopez (knee) will likely go on the 15-day injured list, Chad Bishop of The Atlanta Journal-Constitution reports."
      },
      {
       "player": "Spencer Schwellenbach",
@@ -6522,6 +6522,11 @@
     ],
     "Los Angeles Angels": [
      {
+      "player": "Sam Bachman",
+      "status": "Day-To-Day",
+      "detail": "Bachman is dealing with right arm fatigue, Jack Janes of TheSportingTribune.com reports."
+     },
+     {
       "player": "Yusei Kikuchi",
       "status": "60-Day-IL",
       "detail": "Kikuchi (shoulder) will make a minor-league rehab appearance with Single-A Rancho Cucamonga on Thursday, Rhett Bollinger of MLB.com reports."
@@ -6571,7 +6576,7 @@
      {
       "player": "Will Smith",
       "status": "60-Day-IL",
-      "detail": "Dodgers manager Dave Roberts said Saturday that Smith (neck) will need at least 3-to-4 weeks to ramp back up, including a rehab assignment, Katie Woo of The Athletic reports."
+      "detail": "Dodgers manager Dave Roberts said Saturday that Smith (neck) will need at least 3-to-4 weeks to ramp back up to full speed, including a rehab assignment, Katie Woo of The Athletic reports."
      },
      {
       "player": "Brock Stewart",
@@ -6927,6 +6932,21 @@
     ],
     "San Francisco Giants": [
      {
+      "player": "Harrison Bader",
+      "status": "10-Day-IL",
+      "detail": "Giants manager Tony Vitello said Thursday that Bader (foot) won't return from the 10-day injured list before the end of the season, Alex Pavlovic of NBC Sports Bay Area reports."
+     },
+     {
+      "player": "Joel Peguero",
+      "status": "60-Day-IL",
+      "detail": "Peguero (hamstring) threw a 15-pitch live bullpen session Friday at the Giants' facility in Arizona, MLB.com reports."
+     },
+     {
+      "player": "Matt Gage",
+      "status": "60-Day-IL",
+      "detail": "Gage will be re-evaluated in one month after an MRI revealed a moderate left flexor strain, Alex Pavlovic of NBC Sports Bay Area reports."
+     },
+     {
       "player": "Matt Chapman",
       "status": "10-Day-IL",
       "detail": "Chapman will undergo another MRI on Monday since his abdominal strain remains bothersome when running, Susan Slusser of the San Francisco Chronicle reports."
@@ -6952,24 +6972,9 @@
       "detail": "McDonald is scheduled to undergo UCL reconstruction surgery in early August, Alex Pavlovic of NBC Sports Bay Area reports."
      },
      {
-      "player": "Harrison Bader",
-      "status": "10-Day-IL",
-      "detail": "Bader had a scooter accident this past weekend and further injured his left foot, Justice delos Santos of The San Jose Mercury News reports."
-     },
-     {
       "player": "Victor Bericoto",
       "status": "10-Day-IL",
       "detail": "Giants manager Tony Vitello said Saturday that Bericoto (oblique) may be ready to return from the 10-day injured list \"within a couple of weeks, could be sooner,\" MLB.com reports."
-     },
-     {
-      "player": "Matt Gage",
-      "status": "15-Day-IL",
-      "detail": "Gage will be re-evaluated in one month after an MRI revealed a moderate left flexor strain, Alex Pavlovic of NBC Sports Bay Area reports."
-     },
-     {
-      "player": "Joel Peguero",
-      "status": "60-Day-IL",
-      "detail": "Peguero (hamstring) threw 30 pitches during a bullpen session Monday, Evan Webeck of the California Post reports."
      },
      {
       "player": "Rowan Wick",
@@ -7053,6 +7058,11 @@
     ],
     "Tampa Bay Rays": [
      {
+      "player": "Jake Fraley",
+      "status": "60-Day-IL",
+      "detail": "The Rays transferred Fraley (hernia) from the 10-day injured list to the 60-day IL on Sunday."
+     },
+     {
       "player": "Shane McClanahan",
       "status": "15-Day-IL",
       "detail": "McClanahan was pulled from Thursday's start versus the Rangers in the fourth inning with left mid-back tightness, Ryan Bass of Rays.tv reports."
@@ -7071,11 +7081,6 @@
       "player": "Gavin Lux",
       "status": "60-Day-IL",
       "detail": "Lux (shoulder) was pulled off his rehab assignment earlier this week, Marc Topkin of the Tampa Bay Times reports."
-     },
-     {
-      "player": "Jake Fraley",
-      "status": "10-Day-IL",
-      "detail": "Fraley (groin) was pulled off his rehab assignment Sunday at Triple-A Durham after feeling something in the area of his hernia surgery, Ryan Bass of Rays.tv reports."
      },
      {
       "player": "Steven Wilson",
@@ -7173,7 +7178,7 @@
     "Toronto Blue Jays": [
      {
       "player": "Lenyn Sosa",
-      "status": "10-Day-IL",
+      "status": "60-Day-IL",
       "detail": "Sosa (wrist) will resume taking live batting practice this week, Shi Davidi of Sportsnet.ca reports."
      },
      {
