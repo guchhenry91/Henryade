@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-02T14:38:11.550607+00:00",
- "updated_unix": 1785681491,
+ "updated": "2026-08-02T16:03:44.541645+00:00",
+ "updated_unix": 1785686624,
  "source": "espn",
  "leagues": {
   "epl": {
@@ -9,7 +9,7 @@
     {
      "title": "Transfer rumors, news: Man City eye Chelsea winger Pedro Neto",
      "desc": "Manchester City are preparing a surprise move for Chelsea winger Pedro Neto. Transfer Talk has the latest.",
-     "published": "2026-08-02T14:22:02Z",
+     "published": "2026-08-02T15:03:11Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49511046/transfer-rumors-news-man-city-eye-chelsea-winger-pedro-neto"
     },
@@ -350,6 +350,27 @@
    "name": "NFL",
    "headlines": [
     {
+     "title": "Tracking 2026 NFL hold-ins: Robinson, Gibbs, Vea and Tuipulotu",
+     "desc": "Here is the latest on Falcons' Bijan Robinson, Lions' Jahmyr Gibbs, Bucs' Vita Vea and Chargers' Tuli Tuipulotu.",
+     "published": "2026-08-02T15:43:14Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49490010/2026-training-camp-holdin-tracking-updates-bijan-robinson-jahmyr-gibbs-vita-vea-tuli-tuipulotu"
+    },
+    {
+     "title": "2026 Detroit Lions training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Lions training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-02T15:45:33Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49419620/detroit-lions-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "Three-time Pro Bowl guard Andrus Peat announces NFL retirement",
+     "desc": "Andrus Peat, a three-time Pro Bowl selection over 11 NFL seasons, has announced his retirement from the NFL.",
+     "published": "2026-08-02T15:00:06Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/nfl/story/_/id/49512520/three-pro-bowl-guard-andrus-peat-announces-nfl-retirement"
+    },
+    {
      "title": "Jets' Glenn takes more humble approach heading into Year 2",
      "desc": "New York's coach is heading into his second season with a different approach and set of expectations.",
      "published": "2026-08-02T10:00:03Z",
@@ -359,7 +380,7 @@
     {
      "title": "Too many receivers? A look at the Patriots' crowded WR room",
      "desc": "Which of the seven receivers are getting the most work in camp? And what New England could do about it.",
-     "published": "2026-08-02T10:00:03Z",
+     "published": "2026-08-02T14:39:51Z",
      "type": "Story",
      "link": "https://www.espn.com/nfl/story/_/id/49508691/new-england-patriots-receivers-kayshon-boutte-pop-douglas-aj-brown-romeo-doubs"
     },
@@ -369,27 +390,6 @@
      "published": "2026-08-02T10:00:12Z",
      "type": "Story",
      "link": "https://www.espn.com/nfl/story/_/id/49499878/seattle-seahawks-hard-knocks-hbo-debut-tuesday-preview"
-    },
-    {
-     "title": "2026 Los Angeles Rams training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Rams training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-02T02:49:47Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49434454/los-angeles-rams-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "2026 Seattle Seahawks training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Seahawks training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-02T02:59:11Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49427699/seattle-seahawks-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "Will Levis is confident in his ability coming back from injury",
-     "desc": "Will Levis is confident in his ability coming back from injury ",
-     "published": "2026-08-02T00:02:52Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49508607/will-levis-confident-ability-coming-back-injury"
     }
    ],
    "injuries": {
@@ -1665,6 +1665,16 @@
     ],
     "Detroit Lions": [
      {
+      "player": "Miles Kitselman",
+      "status": "Questionable",
+      "detail": "questionable"
+     },
+     {
+      "player": "Derrick Moore",
+      "status": "Questionable",
+      "detail": "questionable"
+     },
+     {
       "player": "Alim McNeill",
       "status": "Active",
       "detail": "McNeil's neck injury isn't considered to be serious, NFL reporter Jordan Schultz reports."
@@ -1778,19 +1788,14 @@
       "player": "Lawrence Keys III",
       "status": "Active",
       "detail": "Keys signed a contract with the Lions on Thursday."
-     },
-     {
-      "player": "Kendrick Law",
-      "status": "Injured Reserve",
-      "detail": "The Lions placed Law (knee) on the reserve/injured list Wednesday."
-     },
-     {
-      "player": "Lucky Jackson",
-      "status": "Active",
-      "detail": "The Lions signed Jackson on Wednesday."
      }
     ],
     "Green Bay Packers": [
+     {
+      "player": "Kamal Hadden",
+      "status": "Active",
+      "detail": ""
+     },
      {
       "player": "Edgerrin Cooper",
       "status": "Active",
@@ -1890,11 +1895,6 @@
       "player": "Thomas Yassmin",
       "status": "Active",
       "detail": "The Packers signed Yassmin to a one-year contract Tuesday."
-     },
-     {
-      "player": "Kamal Hadden",
-      "status": "Out",
-      "detail": "Hadden (lower leg) was put on the active/PUP list by the Packers on Monday, Matt Schneidman of The Athletic reports."
      },
      {
       "player": "Zach Tom",
@@ -2935,6 +2935,11 @@
     ],
     "Minnesota Vikings": [
      {
+      "player": "Kejon Owens",
+      "status": "Questionable",
+      "detail": "questionable"
+     },
+     {
       "player": "Caleb Banks",
       "status": "Active",
       "detail": "Banks (foot) is participating at the Vikings' training camp, Jason Harmon of Sports Illustrated reports."
@@ -2973,11 +2978,6 @@
       "player": "Jamal Adams",
       "status": "Active",
       "detail": "Adams signed with the Vikings on Monday, NFL reporter Jordan Schultz reports."
-     },
-     {
-      "player": "Kejon Owens",
-      "status": "Out",
-      "detail": "Owens was placed on the active/non-football illness list by the Vikings on Monday."
      },
      {
       "player": "Will Reichard",
@@ -3189,6 +3189,16 @@
     ],
     "New Orleans Saints": [
      {
+      "player": "Bryan Bresee",
+      "status": "Out",
+      "detail": "out"
+     },
+     {
+      "player": "Kool-Aid McKinstry",
+      "status": "Active",
+      "detail": ""
+     },
+     {
       "player": "Nathan Shepherd",
       "status": "Active",
       "detail": "Shepherd could be a candidate for an increased snap count in 2026 if Bryan Bresee (knee) cannot play, Doug Joubert of Sports Illustrated reports."
@@ -3214,19 +3224,9 @@
       "detail": "Olave took part in the first session of 11-on-11 team drills during Friday's training camp practice, Ross Jackson of LouisianaSports.net reports."
      },
      {
-      "player": "Kool-Aid McKinstry",
-      "status": "Questionable",
-      "detail": "McKinstry left Thursday's practice early after a minor ankle roll, Nick Underhill of NewOrleans.Football reports."
-     },
-     {
       "player": "Bub Means",
       "status": "Active",
       "detail": "Means is on the field participating in the Saints' training camp activities."
-     },
-     {
-      "player": "Bryan Bresee",
-      "status": "Questionable",
-      "detail": "Bresee (knee) is feared to have suffered a torn ACL during Wednesday's practice, Ian Rapoport of NFL Network reports."
      },
      {
       "player": "Mason Tipton",
@@ -5932,6 +5932,13 @@
    "name": "MLB",
    "headlines": [
     {
+     "title": "MLB trade deadline 2026: Latest intel from Olney, Passan",
+     "desc": "Will the Red Sox get their shortstop? Which top starters will be dealt following the Skubal blockbuster? Here's the latest.",
+     "published": "2026-08-02T16:00:17Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/49507316/mlb-trade-deadline-2025-intel-rumors-updates-buster-olney-jeff-passan-phillies-yankees-mets-red-sox-neto"
+    },
+    {
      "title": "Fantasy baseball: Reactions to MLB trade deadline deals",
      "desc": "Track the fantasy fallout from all the key deals as we head toward the MLB trade deadline on Monday.",
      "published": "2026-08-02T14:22:37Z",
@@ -5954,8 +5961,8 @@
     },
     {
      "title": "MLB trade deadline 2026: Breaking down Tarik Skubal blockbuster",
-     "desc": "L.A. sent shock waves through baseball with another ace edition. Here are our first impressions of the deal's leaguewide impact.",
-     "published": "2026-08-02T14:29:12Z",
+     "desc": "L.A. sent shock waves through baseball with another ace addition. Here are our first impressions of the deal's leaguewide impact.",
+     "published": "2026-08-02T14:45:11Z",
      "type": "Story",
      "link": "https://www.espn.com/mlb/story/_/id/49489687/mlb-2026-trade-deadline-tarik-skubal-los-angeles-dodgers-detroit-tigers-reaction"
     },
@@ -5965,13 +5972,6 @@
      "published": "2026-08-02T13:48:38Z",
      "type": "Story",
      "link": "https://www.espn.com/fantasy/baseball/story/_/id/48297021/espn-fantasy-baseball-buzz-injuries-promotions-demotions-trades-prospects-lineup-changes-mlb-news-analysis-2026"
-    },
-    {
-     "title": "Fantasy baseball forecaster: Team hitting ratings",
-     "desc": "Stay ahead of the game and optimize your fantasy baseball hitters with our forecaster, which provides a rolling 10-day outlook of every team's hitting matchups as well as the potential for stolen bases.",
-     "published": "2026-08-02T13:26:13Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/baseball/story/_/id/31165089/fantasy-baseball-forecaster-team-hitting-stolen-base-ratings-platoon-matchups-daily-weekly-leagues"
     }
    ],
    "injuries": {
@@ -6101,6 +6101,11 @@
     ],
     "Atlanta Braves": [
      {
+      "player": "Spencer Strider",
+      "status": "60-Day-IL",
+      "detail": "Strider (elbow) appears unlikely to pitch again during the 2026 season, Mark Bowman of MLB.com reports."
+     },
+     {
       "player": "Reynaldo Lopez",
       "status": "15-Day-IL",
       "detail": "Atlanta manager Walt Weiss said Saturday that Lopez (knee) will likely go on the 15-day injured list, Chad Bishop of The Atlanta Journal-Constitution reports."
@@ -6119,11 +6124,6 @@
       "player": "Ha-Seong Kim",
       "status": "10-Day-IL",
       "detail": "Kim (finger) has gone 7-for-31 (.226) with four doubles, three steals, three runs and three RBI over his last nine games for Triple-A Gwinnett."
-     },
-     {
-      "player": "Spencer Strider",
-      "status": "60-Day-IL",
-      "detail": "Strider (elbow) will have a follow-up appointment with Dr. Keith Meister next week and may also be scheduled for an MRI, Chad Bishop of the Atlanta Journal-Constitution reports."
      },
      {
       "player": "Robert Suarez",
@@ -6338,6 +6338,11 @@
      }
     ],
     "Chicago White Sox": [
+     {
+      "player": "Braden Montgomery",
+      "status": "Day-To-Day",
+      "detail": "The White Sox scratched Montgomery from the lineup for Sunday's game against the Rays."
+     },
      {
       "player": "Jordan Leasure",
       "status": "60-Day-IL",
@@ -6987,11 +6992,6 @@
       "player": "Oneil Cruz",
       "status": "60-Day-IL",
       "detail": "Pirates director of sports medicine Todd Tomczyk said Wednesday that Cruz (hand) has been cleared for all baseball activities, Alex Stumpf of MLB.com reports."
-     },
-     {
-      "player": "Spencer Horwitz",
-      "status": "10-Day-IL",
-      "detail": "Horwitz (hamstring) was diagnosed with a concussion Tuesday after being hit in the helmet with a pitch while on a rehab assignment at Single-A Bradenton, Aiden Stepansky of MLB.com reports."
      },
      {
       "player": "Chris Devenski",
