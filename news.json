@@ -1,24 +1,24 @@
 {
- "updated": "2026-08-02T12:35:45.144114+00:00",
- "updated_unix": 1785674145,
+ "updated": "2026-08-02T14:38:11.550607+00:00",
+ "updated_unix": 1785681491,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
     {
+     "title": "Transfer rumors, news: Man City eye Chelsea winger Pedro Neto",
+     "desc": "Manchester City are preparing a surprise move for Chelsea winger Pedro Neto. Transfer Talk has the latest.",
+     "published": "2026-08-02T14:22:02Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49511046/transfer-rumors-news-man-city-eye-chelsea-winger-pedro-neto"
+    },
+    {
      "title": "Barcelona's Hansi Flick as Marcus Rashford returns to Man United: 'I will miss him'",
      "desc": "Barcelona boss Hansi Flick has said he will \"miss\" Marcus Rashford after the Manchester United forward returned to his parent club following a successful loan in Spain.",
      "published": "2026-08-02T12:07:36Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49511821/barcelona-hansi-flick-marcus-rashford-returns-man-united-miss-him"
-    },
-    {
-     "title": "Transfer rumors, news: Salah set for Trabzonspor after Liverpool exit",
-     "desc": "Former Liverpool winger Mohamed Salah is set to move to Turkish club Trabzonspor. Transfer Talk has the latest.",
-     "published": "2026-08-02T11:40:19Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49511046/transfer-rumors-news-mohamed-salah-set-trabzonspor-liverpool-exit"
     },
     {
      "title": "Liverpool's Alexander Isak, Florian Wirtz to play preseason clash vs Leeds",
@@ -1666,7 +1666,7 @@
     "Detroit Lions": [
      {
       "player": "Alim McNeill",
-      "status": "Questionable",
+      "status": "Active",
       "detail": "McNeil's neck injury isn't considered to be serious, NFL reporter Jordan Schultz reports."
      },
      {
@@ -4078,6 +4078,11 @@
     ],
     "Tampa Bay Buccaneers": [
      {
+      "player": "Benjamin Morrison",
+      "status": "Active",
+      "detail": ""
+     },
+     {
       "player": "Haggai Ndubuisi",
       "status": "Out",
       "detail": "Ndubuisi (undisclosed) reverted to the Buccaneers' injured reserve Friday after clearing waivers, per the NFL's transaction log."
@@ -4106,11 +4111,6 @@
       "player": "Ifeatu Melifonwu",
       "status": "Active",
       "detail": "The Buccaneers signed Melifonwu to a one-year contract Wednesday, Adam Schefter of ESPN reports."
-     },
-     {
-      "player": "Benjamin Morrison",
-      "status": "Questionable",
-      "detail": "Morrison remains limited in practice at training camp due to a hamstring injury, Scott Smith of the Buccaneers' official site reports."
      },
      {
       "player": "Vita Vea",
@@ -5932,46 +5932,46 @@
    "name": "MLB",
    "headlines": [
     {
-     "title": "Aug. 2 update! Ranking top 2026 MLB trade deadline candidates",
-     "desc": "Which difference-makers are available? Here are the big names your team could be targeting, with a few new additions near the top.",
-     "published": "2026-08-02T12:15:33Z",
+     "title": "Fantasy baseball: Reactions to MLB trade deadline deals",
+     "desc": "Track the fantasy fallout from all the key deals as we head toward the MLB trade deadline on Monday.",
+     "published": "2026-08-02T14:22:37Z",
      "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49082474/ranking-mlb-trade-deadline-candidates-top-100-skubal-chapman-peralta-arraez"
+     "link": "https://www.espn.com/fantasy/baseball/story/_/id/49416655/fantasy-baseball-reaction-mlb-trade-deadline-deals-2026-monday-august-3"
     },
     {
-     "title": "Cronenworth's single gives Padres 6-5 win over Giants after Miller blows save",
-     "desc": "— Jake Cronenworth singled in Xander Bogaerts with two outs in the ninth inning and the San Diego Padres beat the San Francisco Giants 6-5 on Saturday night for their seventh win in eight games.",
-     "published": "2026-08-02T10:55:34Z",
-     "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816361"
+     "title": "Jeff Passan: 'The Dodgers have assembled the Avengers'",
+     "desc": "Jeff Passan: 'The Dodgers have assembled the Avengers'",
+     "published": "2026-08-02T14:21:56Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49512406/dodgers-assembled-avengers"
     },
     {
-     "title": "Marlins meet the Mets with 2-1 series lead",
-     "desc": "Miami Marlins (57-55, third in the NL East) vs. New York Mets (47-65, fifth in the NL East)",
-     "published": "2026-08-02T08:02:07Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816364"
+     "title": "MLB betting tips for Sunday: Astros looking for sweep vs. Rangers",
+     "desc": "All of the odds, recommended prop bets and trends in baseball for Sunday, August 2.",
+     "published": "2026-08-02T14:03:30Z",
+     "type": "Story",
+     "link": "https://www.espn.com/espn/betting/story/_/id/49498423/mlb-betting-tips-odds-lines-2026-sunday-august-2"
     },
     {
-     "title": "Rays take on the White Sox with series tied 1-1",
-     "desc": "Chicago White Sox (58-52, first in the AL Central) vs. Tampa Bay Rays (65-45, first in the AL East)",
-     "published": "2026-08-02T08:02:04Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816363"
+     "title": "MLB trade deadline 2026: Breaking down Tarik Skubal blockbuster",
+     "desc": "L.A. sent shock waves through baseball with another ace edition. Here are our first impressions of the deal's leaguewide impact.",
+     "published": "2026-08-02T14:29:12Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/49489687/mlb-2026-trade-deadline-tarik-skubal-los-angeles-dodgers-detroit-tigers-reaction"
     },
     {
-     "title": "Red Sox bring 4-game win streak into matchup with the Dodgers",
-     "desc": "Boston Red Sox (59-51, third in the AL East) vs. Los Angeles Dodgers (69-42, first in the NL West)",
-     "published": "2026-08-02T08:02:00Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816372"
+     "title": "Fantasy baseball: Bad news for Pirates, Skubal heads to Dodgers and more Sunday news",
+     "desc": "All of the important fantasy spin and actionable takeaways resulting from the latest baseball news.",
+     "published": "2026-08-02T13:48:38Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/baseball/story/_/id/48297021/espn-fantasy-baseball-buzz-injuries-promotions-demotions-trades-prospects-lineup-changes-mlb-news-analysis-2026"
     },
     {
-     "title": "Cubs and Yankees meet, winner takes 3-game series",
-     "desc": "New York Yankees (62-49, second in the AL East) vs. Chicago Cubs (63-48, second in the NL Central)",
-     "published": "2026-08-02T08:01:57Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816369"
+     "title": "Fantasy baseball forecaster: Team hitting ratings",
+     "desc": "Stay ahead of the game and optimize your fantasy baseball hitters with our forecaster, which provides a rolling 10-day outlook of every team's hitting matchups as well as the potential for stolen bases.",
+     "published": "2026-08-02T13:26:13Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/baseball/story/_/id/31165089/fantasy-baseball-forecaster-team-hitting-stolen-base-ratings-platoon-matchups-daily-weekly-leagues"
     }
    ],
    "injuries": {
@@ -5979,7 +5979,7 @@
      {
       "player": "Justin Martinez",
       "status": "60-Day-IL",
-      "detail": "Martinez (elbow) is expected to begin a rehab assignment at Single-A Visalia next week, Steve Gilbert of MLB.com reports."
+      "detail": "Martinez (elbow) will begin a rehab assignment at Single-A Visalia on Tuesday, MLB.com reports."
      },
      {
       "player": "Michael Soroka",
@@ -6102,7 +6102,7 @@
     "Atlanta Braves": [
      {
       "player": "Reynaldo Lopez",
-      "status": "Out",
+      "status": "15-Day-IL",
       "detail": "Atlanta manager Walt Weiss said Saturday that Lopez (knee) will likely go on the 15-day injured list, Chad Bishop of The Atlanta Journal-Constitution reports."
      },
      {
@@ -6202,7 +6202,7 @@
      {
       "player": "Willson Contreras",
       "status": "Day-To-Day",
-      "detail": "Red Sox interim manager Chad Tracy told reporters after Saturday's 3-2 win over the Dodgers that Contreras (head) is on track to return for Sunday's series finale, Tim Healey of The Boston Globe reports."
+      "detail": "Red Sox interim manager Chad Tracy said after Saturday's 3-2 win over the Dodgers that Contreras (head) is on track to return to the lineup for Sunday's series finale, Tim Healey of The Boston Globe reports."
      },
      {
       "player": "Curtis Mead",
@@ -6391,6 +6391,11 @@
     ],
     "Cincinnati Reds": [
      {
+      "player": "Brandon Williamson",
+      "status": "60-Day-IL",
+      "detail": "Williamson (shoulder) allowed one run on two walks while striking out three over two innings for Double-A Chattanooga on Saturday. The left-hander also hit a batter."
+     },
+     {
       "player": "Tony Santillan",
       "status": "15-Day-IL",
       "detail": "Santillan (oblique) was cleared Friday to begin an expedited recovery program, MLB.com reports."
@@ -6404,11 +6409,6 @@
       "player": "Blake Dunn",
       "status": "10-Day-IL",
       "detail": "Dunn will undergo surgery on his right elbow Monday, C. Trent Rosecrans of The Athletic reports."
-     },
-     {
-      "player": "Brandon Williamson",
-      "status": "60-Day-IL",
-      "detail": "Williamson (shoulder/finger) will begin a rehab assignment Saturday at Double-A Chattanooga, MLB.com reports."
      },
      {
       "player": "Spencer Steer",
@@ -6838,7 +6838,7 @@
      {
       "player": "Mike Paredes",
       "status": "60-Day-IL",
-      "detail": "The Twins placed Paredes (oblique) on the 15-day injured list Sunday."
+      "detail": "The Twins transferred Paredes (oblique) from the 15-day injured list to the 60-day IL on Saturday."
      },
      {
       "player": "Cole Sands",
