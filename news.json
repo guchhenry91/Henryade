@@ -1,11 +1,18 @@
 {
- "updated": "2026-08-02T19:17:04.306591+00:00",
- "updated_unix": 1785698224,
+ "updated": "2026-08-02T20:29:26.284457+00:00",
+ "updated_unix": 1785702566,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
+    {
+     "title": "Transfer rumors, news: Man City eye Chelsea winger Pedro Neto",
+     "desc": "Manchester City are preparing a surprise move for Chelsea winger Pedro Neto. Transfer Talk has the latest.",
+     "published": "2026-08-02T20:22:16Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49511046/transfer-rumors-news-man-city-eye-chelsea-winger-pedro-neto"
+    },
     {
      "title": "Wrexham end pre-season with defeat to Sunderland in Philadelphia",
      "desc": "Wrexham ended their pre-season campaign with a 1-0 defeat to Sunderland in Philadelphia.",
@@ -40,13 +47,6 @@
      "published": "2026-08-02T17:39:00Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49429944/argentina-valentin-barco-joins-chelsea-strasbourg"
-    },
-    {
-     "title": "Premier League 2026 summer transfers: All confirmed ins, outs for every club",
-     "desc": "Here's every Premier League in and out before the 2026-27 season begins.",
-     "published": "2026-08-02T17:26:37Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/48955344/premier-league-2026-summer-transfers-all-confirmed-ins-outs-every-club"
     }
    ],
    "injuries": {},
@@ -350,46 +350,46 @@
    "name": "NFL",
    "headlines": [
     {
+     "title": "Sources: Jadeveon Clowney reaches deal to reunite with Texans",
+     "desc": "Jadeveon Clowney is returning to the Texans, the team that selected him No. 1 overall in the 2014 NFL draft, sources told NFL Network's Ian Rapoport and Mike Garafolo on Sunday.",
+     "published": "2026-08-02T20:18:01Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/nfl/story/_/id/49514656/sources-jadeveon-clowney-reaches-deal-reunite-texans"
+    },
+    {
+     "title": "2026 Las Vegas Raiders training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Raiders training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-02T20:14:34Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49425032/las-vegas-raiders-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "Tracking 2026 NFL hold-ins: Robinson, Gibbs, Vea and Tuipulotu",
+     "desc": "Here is the latest on Falcons' Bijan Robinson, Lions' Jahmyr Gibbs, Bucs' Vita Vea and Chargers' Tuli Tuipulotu.",
+     "published": "2026-08-02T20:02:26Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49490010/2026-training-camp-holdin-tracking-updates-bijan-robinson-jahmyr-gibbs-vita-vea-tuli-tuipulotu"
+    },
+    {
+     "title": "2026 Tampa Bay Buccaneers training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Buccaneers training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-02T20:05:04Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49419613/tampa-bay-buccaneers-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "Packers RT changes last name to Bako-Bewele to honor heritage",
+     "desc": "Packers right tackle Zach Tom revealed Sunday he has changed his name to Zach Bako-Bewele.",
+     "published": "2026-08-02T20:25:41Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/nfl/story/_/id/49514420/packers-rt-changes-last-name-bako-bewele-honor-heritage"
+    },
+    {
      "title": "2026 NFL training camp: Latest news, intel for all 32 teams",
      "desc": "Get all the news, intel and insights on NFL training camps from our team of reporters in the field.",
      "published": "2026-08-02T19:06:04Z",
      "type": "Story",
      "link": "https://www.espn.com/nfl/story/_/id/49368181/training-camp-2026-latest-news-intel-updates-buzz-all-32-teams"
-    },
-    {
-     "title": "2026 New Orleans Saints training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Saints training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-02T19:01:45Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49424731/new-orleans-saints-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "Davon Godchaux: Bresee's injury a 'freak accident'",
-     "desc": "Davon Godchaux: Bresee's injury a 'freak accident'",
-     "published": "2026-08-02T18:42:54Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49513902/bresee-injury-freak-accident"
-    },
-    {
-     "title": "Anniversary of Korey Stringer's death completes reconciliation for family, Vikings",
-     "desc": "The Aug. 1 anniversary marked the positives that grew out of a tragic day, including the Korey Stringer Institute.",
-     "published": "2026-08-02T19:01:09Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49513333/anniversary-korey-stringer-death-completes-reconciliation-family-vikings"
-    },
-    {
-     "title": "2026 Jacksonville Jaguars training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Jaguars training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-02T16:51:04Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49427691/jacksonville-jaguars-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "Saints starting DT Bryan Bresee to have season-ending ACL surgery",
-     "desc": "Saints defensive tackle Bryan Bresee will undergo season-ending surgery to repair a torn ACL, coach Kellen Moore told reporters Sunday.",
-     "published": "2026-08-02T18:44:45Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49513248/saints-starting-dt-bryan-bresee-season-ending-acl-surgery"
     }
    ],
    "injuries": {
@@ -2681,6 +2681,11 @@
     ],
     "Los Angeles Rams": [
      {
+      "player": "Myles Garrett",
+      "status": "Questionable",
+      "detail": "Garret (lower body) didn't participate in the Rams' practice Sunday, Todd Sarah Barshop of ESPN."
+     },
+     {
       "player": "Alaric Jackson",
       "status": "Questionable",
       "detail": "Jackson missed practice Wednesday due to management of his blood clot issue, Stu Jackson and Zach Edwards of the Rams' official site report."
@@ -2754,11 +2759,6 @@
       "player": "Eddie Walls III",
       "status": "Injured Reserve",
       "detail": "The Rams placed Walls (undisclosed) on their injured reserve list Thursday, Cameron DaSilva of USA Today reports."
-     },
-     {
-      "player": "Myles Garrett",
-      "status": "Active",
-      "detail": "Garrett is restructuring his contract with the Rams, Ian Rapoport of NFL Network reports."
      },
      {
       "player": "Matthew Stafford",
@@ -5796,46 +5796,46 @@
    "name": "MLB",
    "headlines": [
     {
-     "title": "Fantasy baseball: Reactions to MLB trade deadline deals",
-     "desc": "Track the fantasy fallout from all the key deals as we head toward the MLB trade deadline on Monday.",
-     "published": "2026-08-02T19:08:02Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/baseball/story/_/id/49416655/fantasy-baseball-reaction-mlb-trade-deadline-deals-2026-monday-august-3"
+     "title": "Fermin's tiebreaking hit in 4-run 9th helps Cardinals beat Blue Jays 5-1, avoid series sweep",
+     "desc": "— José Fermin hit a tiebreaking single in the ninth inning and the St. Louis Cardinals defeated the Toronto Blue Jays 5-1 on Sunday, avoiding a three-game sweep.",
+     "published": "2026-08-02T20:22:30Z",
+     "type": "Recap",
+     "link": "http://www.espn.com/mlb/recap?gameId=401816367"
     },
     {
-     "title": "2026 MLB trade deadline grades: Report cards for every deal",
-     "desc": "Trade season has officially begun! Here's our running scorecard for every big move before Monday's deadline arrives.",
-     "published": "2026-08-02T19:12:29Z",
-     "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49454655/2026-mlb-trade-deadline-grades-analysis-report-cards-every-deal"
+     "title": "Washington Nationals vs. Atlanta Braves: Game Highlights",
+     "desc": "Washington Nationals vs. Atlanta Braves: Game Highlights",
+     "published": "2026-08-02T20:13:12Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49514663/game-highlights"
     },
     {
-     "title": "Fantasy Baseball Forecaster Week 18: Aug. 3-9",
-     "desc": "Set your lineups for the weeks ahead in fantasy baseball with our preview featuring pitcher rankings, hitter ratings and schedule observations.",
-     "published": "2026-08-02T18:14:18Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/baseball/story/_/id/49482023/fantasy-baseball-forecaster-espn-2026-mlb-starting-pitcher-hitter-ranks-week-18-august-3-9"
+     "title": "Yastrzemski and Olson hit home runs as Braves top slumping Nationals 4-2 to complete 4-game sweep",
+     "desc": "— Mike Yastrzemski homered and drove in two runs and the Atlanta Braves beat the slumping Washington Nationals 4-2 on Sunday to complete a rare four-game sweep.",
+     "published": "2026-08-02T20:04:32Z",
+     "type": "Recap",
+     "link": "http://www.espn.com/mlb/recap?gameId=401816368"
     },
     {
-     "title": "Sources: Rays acquire Freddy Peralta in trade with Mets",
-     "desc": "The Rays are acquiring Freddy Peralta in a trade with the Mets, sources told ESPN, in a move that gives Tampa Bay one of the AL's best rotations for the stretch run.",
-     "published": "2026-08-02T18:27:19Z",
+     "title": "Tigers in 'weird place' after trading ace Tarik Skubal",
+     "desc": "The Tigers said their goodbyes to ace Tarik Skubal and now must turn their focus to an uncertain final two months of the season as they try to make a playoff push without their best player.",
+     "published": "2026-08-02T20:17:27Z",
      "type": "HeadlineNews",
-     "link": "https://www.espn.com/mlb/story/_/id/49513687/sources-rays-acquire-freddy-peralta-trade-mets"
+     "link": "https://www.espn.com/mlb/story/_/id/49514337/tigers-weird-place-trading-ace-tarik-skubal"
     },
     {
-     "title": "2026 MLB trade deadline tracker: Rumors, news, analysis",
-     "desc": "Which contenders will make the biggest splash? Here's what we're hearing as 6 p.m. ET on Monday approaches.",
-     "published": "2026-08-02T17:59:03Z",
-     "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49410877/2026-mlb-trade-deadline-tracker-rumors-alerts-news-latest-updates-analysis"
+     "title": "Cubs trade struggling Jameson Taillon to Blue Jays",
+     "desc": "Veteran right-handed starter Jameson Taillon, who has a 5.92 ERA this season, was traded from the Cubs to the Blue Jays for future considerations.",
+     "published": "2026-08-02T19:32:41Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/mlb/story/_/id/49514336/cubs-trade-struggling-jameson-taillon-blue-jays"
     },
     {
-     "title": "MLB trade deadline 2026: Latest intel from Olney, Passan",
-     "desc": "Will the Red Sox get their shortstop? Which top starters will be dealt following the Skubal blockbuster? Here's the latest.",
-     "published": "2026-08-02T16:14:59Z",
+     "title": "MLB trade deadline 2026: Ranking prospects who changed teams",
+     "desc": "You know the major leaguers on the move -- but what about the potential stars of tomorrow headed the other way in those deals?",
+     "published": "2026-08-02T20:25:50Z",
      "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49507316/mlb-trade-deadline-2025-intel-rumors-updates-buster-olney-jeff-passan-phillies-yankees-mets-red-sox-neto"
+     "link": "https://www.espn.com/mlb/story/_/id/49464501/mlb-trade-deadline-2026-ranking-prospects-changed-teams"
     }
    ],
    "injuries": {
@@ -6073,11 +6073,6 @@
      }
     ],
     "Boston Red Sox": [
-     {
-      "player": "Willson Contreras",
-      "status": "Day-To-Day",
-      "detail": "Red Sox interim manager Chad Tracy said after Saturday's 3-2 win over the Dodgers that Contreras (head) is on track to return to the lineup for Sunday's series finale, Tim Healey of The Boston Globe reports."
-     },
      {
       "player": "Curtis Mead",
       "status": "10-Day-IL",
@@ -7228,6 +7223,11 @@
      }
     ],
     "Washington Nationals": [
+     {
+      "player": "Andres Chaparro",
+      "status": "Day-To-Day",
+      "detail": "Chaparro was removed from Sunday's game against Atlanta after being struck in the head by a pitch, Mark Zuckerman of NatsJournal.com reports."
+     },
      {
       "player": "Mitchell Parker",
       "status": "60-Day-IL",
