@@ -1,11 +1,39 @@
 {
- "updated": "2026-08-02T16:03:44.541645+00:00",
- "updated_unix": 1785686624,
+ "updated": "2026-08-02T17:33:56.146371+00:00",
+ "updated_unix": 1785692036,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
+    {
+     "title": "Premier League 2026 summer transfers: All confirmed ins, outs for every club",
+     "desc": "Here's every Premier League in and out before the 2026-27 season begins.",
+     "published": "2026-08-02T17:26:37Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/48955344/premier-league-2026-summer-transfers-all-confirmed-ins-outs-every-club"
+    },
+    {
+     "title": "Xabi Alonso: Real Madrid 'scar' has healed, Chelsea situation 'not as bad as it looked' last season",
+     "desc": "Xabi Alonso said the \"scar\" he suffered from his short tenure at Real Madrid has healed, allowing him to fully focus on taking Chelsea into the new Premier League season.",
+     "published": "2026-08-02T17:26:43Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49513341/xabi-alonso-real-madrid-scar-healed-chelsea-premier-league"
+    },
+    {
+     "title": "Argentina's Valentín Barco joins Chelsea from Strasbourg",
+     "desc": "Argentina international Valentín Barco has joined Chelsea from Strasbourg, the London club have announced.",
+     "published": "2026-08-02T17:23:22Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49429944/argentina-valentin-barco-joins-chelsea-strasbourg"
+    },
+    {
+     "title": "Kai Havertz on Arsenal's ambitions for new season: 'Want all the trophies'",
+     "desc": "Kai Havertz has underlined Arsenal's ambitions for the upcoming season by saying the club wants to win \"all the trophies\" on offer.",
+     "published": "2026-08-02T16:55:38Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49513294/kai-havertz-arsenal-ambitions-new-season-want-all-trophies"
+    },
     {
      "title": "Transfer rumors, news: Man City eye Chelsea winger Pedro Neto",
      "desc": "Manchester City are preparing a surprise move for Chelsea winger Pedro Neto. Transfer Talk has the latest.",
@@ -19,34 +47,6 @@
      "published": "2026-08-02T12:07:36Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49511821/barcelona-hansi-flick-marcus-rashford-returns-man-united-miss-him"
-    },
-    {
-     "title": "Liverpool's Alexander Isak, Florian Wirtz to play preseason clash vs Leeds",
-     "desc": "The Liverpool trio of Alexander Isak, Florian Wirtz and Ryan Gravenberch are set to feature in the club's final United States preseason tour match against Leeds United.",
-     "published": "2026-08-02T11:20:02Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49511509/liverpool-alexander-isak-florian-wirtz-play-preseason-clash-vs-leeds"
-    },
-    {
-     "title": "Premier League 2026-27 kits: Ranking every jersey released",
-     "desc": "It's still a few weeks before the new Premier League season begins, but plenty of top clubs have already released some of their 2026-27 kits.",
-     "published": "2026-08-02T08:17:18Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49163915/premier-league-202627-kits-ranking-every-jersey-released-arsenal-chelsea-liverpool-man-city-man-united-tottenham"
-    },
-    {
-     "title": "Premier League preseason friendlies 2026-27: Fixtures, UK kick-off times and summer tour schedule",
-     "desc": "Premier League clubs have confirmed their preseason schedules ahead of the new campaign, with the 2026-27 season kicking off on Aug. 21.",
-     "published": "2026-08-02T07:22:03Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49154575/premier-league-preseason-friendlies-202627-fixtures-uk-kickoff-s-summer-tour-schedule-chelsea-liverpool-arsenal-man-united-man-city-spurs"
-    },
-    {
-     "title": "Premier League 2026 summer transfers: All confirmed ins, outs for every club",
-     "desc": "Here's every Premier League in and out before the 2026-27 season begins.",
-     "published": "2026-08-02T07:20:35Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/48955344/premier-league-2026-summer-transfers-all-confirmed-ins-outs-every-club"
     }
    ],
    "injuries": {},
@@ -55,6 +55,13 @@
   "laliga": {
    "name": "La Liga",
    "headlines": [
+    {
+     "title": "Xabi Alonso: Real Madrid 'scar' has healed, Chelsea situation 'not as bad as it looked' last season",
+     "desc": "Xabi Alonso said the \"scar\" he suffered from his short tenure at Real Madrid has healed, allowing him to fully focus on taking Chelsea into the new Premier League season.",
+     "published": "2026-08-02T17:26:43Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49513341/xabi-alonso-real-madrid-scar-healed-chelsea-premier-league"
+    },
     {
      "title": "Barcelona's Hansi Flick as Marcus Rashford returns to Man United: 'I will miss him'",
      "desc": "Barcelona boss Hansi Flick has said he will \"miss\" Marcus Rashford after the Manchester United forward returned to his parent club following a successful loan in Spain.",
@@ -89,13 +96,6 @@
      "published": "2026-07-30T21:54:38Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49491762/real-madrid-transfer-carlos-espi-levante"
-    },
-    {
-     "title": "Fulham agree £34m fee with Real Madrid for Gonzalo García, deal for César Palacios also close - sources",
-     "desc": "Real Madrid have agreed a deal with Fulham for forward Gonzalo García to join the Premier League club, sources have told ESPN, and are close to another which will see midfielder César Palacios make the same move.",
-     "published": "2026-07-30T21:56:48Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49488247/fulham-agree-deal-gonzalo-garcia-real-madrid-34-million-cesar-palacios"
     }
    ],
    "injuries": {},
@@ -350,46 +350,46 @@
    "name": "NFL",
    "headlines": [
     {
+     "title": "2026 Jacksonville Jaguars training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Jaguars training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-02T16:51:04Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49427691/jacksonville-jaguars-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "Saints starting DT Bryan Bresee to have season-ending ACL surgery",
+     "desc": "Saints defensive tackle Bryan Bresee will undergo season-ending surgery to repair a torn ACL, coach Kellen Moore told reporters Sunday.",
+     "published": "2026-08-02T17:17:01Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/nfl/story/_/id/49513248/saints-starting-dt-bryan-bresee-season-ending-acl-surgery"
+    },
+    {
+     "title": "2026 Miami Dolphins training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Dolphins training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-02T16:36:34Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49410015/miami-dolphins-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "2026 NFL training camp: Latest news, intel for all 32 teams",
+     "desc": "Get all the news, intel and insights on NFL training camps from our team of reporters in the field.",
+     "published": "2026-08-02T16:10:09Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49368181/training-camp-2026-latest-news-intel-updates-buzz-all-32-teams"
+    },
+    {
+     "title": "Gardner-Johnson pays off $20,000 of Bills staffer's student loans",
+     "desc": "During a Twitch stream Thursday, the Bills' safety gave a huge gift to a graduate student working with the team's training staff.",
+     "published": "2026-08-02T16:05:51Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49509353/cj-gardner-johnson-buffalo-bills-student-loans-20000-twitch-stream"
+    },
+    {
      "title": "Tracking 2026 NFL hold-ins: Robinson, Gibbs, Vea and Tuipulotu",
      "desc": "Here is the latest on Falcons' Bijan Robinson, Lions' Jahmyr Gibbs, Bucs' Vita Vea and Chargers' Tuli Tuipulotu.",
      "published": "2026-08-02T15:43:14Z",
      "type": "Story",
      "link": "https://www.espn.com/nfl/story/_/id/49490010/2026-training-camp-holdin-tracking-updates-bijan-robinson-jahmyr-gibbs-vita-vea-tuli-tuipulotu"
-    },
-    {
-     "title": "2026 Detroit Lions training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Lions training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-02T15:45:33Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49419620/detroit-lions-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "Three-time Pro Bowl guard Andrus Peat announces NFL retirement",
-     "desc": "Andrus Peat, a three-time Pro Bowl selection over 11 NFL seasons, has announced his retirement from the NFL.",
-     "published": "2026-08-02T15:00:06Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49512520/three-pro-bowl-guard-andrus-peat-announces-nfl-retirement"
-    },
-    {
-     "title": "Jets' Glenn takes more humble approach heading into Year 2",
-     "desc": "New York's coach is heading into his second season with a different approach and set of expectations.",
-     "published": "2026-08-02T10:00:03Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49489372/new-york-jets-aaron-glenn-improvement-year-2"
-    },
-    {
-     "title": "Too many receivers? A look at the Patriots' crowded WR room",
-     "desc": "Which of the seven receivers are getting the most work in camp? And what New England could do about it.",
-     "published": "2026-08-02T14:39:51Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49508691/new-england-patriots-receivers-kayshon-boutte-pop-douglas-aj-brown-romeo-doubs"
-    },
-    {
-     "title": "What to expect from Seahawks on 'Hard Knocks' debut",
-     "desc": "From shadowboxing to Leonard Williams' hobbies to Devon Witherspoon's contract, here's what you might see.",
-     "published": "2026-08-02T10:00:12Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49499878/seattle-seahawks-hard-knocks-hbo-debut-tuesday-preview"
     }
    ],
    "injuries": {
@@ -1665,19 +1665,19 @@
     ],
     "Detroit Lions": [
      {
-      "player": "Miles Kitselman",
-      "status": "Questionable",
-      "detail": "questionable"
-     },
-     {
       "player": "Derrick Moore",
       "status": "Questionable",
-      "detail": "questionable"
+      "detail": "Moore left Sunday's training camp practice early to be evaluated for a groin injury, Dave Birkett of the Detroit Free Press reports."
+     },
+     {
+      "player": "Miles Kitselman",
+      "status": "Questionable",
+      "detail": "Kitselman left Sunday's training camp practice early due to a leg injury, Dave Birkett of the Detroit Free Press reports."
      },
      {
       "player": "Alim McNeill",
       "status": "Active",
-      "detail": "McNeil's neck injury isn't considered to be serious, NFL reporter Jordan Schultz reports."
+      "detail": "McNeill (neck) participated in Sunday's training camp practice, Ben Raven of MLive.com reports."
      },
      {
       "player": "Jimmy Rolder",
@@ -1792,6 +1792,11 @@
     ],
     "Green Bay Packers": [
      {
+      "player": "Jager Burton",
+      "status": "Active",
+      "detail": ""
+     },
+     {
       "player": "Kamal Hadden",
       "status": "Active",
       "detail": ""
@@ -1820,11 +1825,6 @@
       "player": "Donovan Jennings",
       "status": "Active",
       "detail": "Jennings (neck) is participating at the Packers' training camp, Bill Huber of Sports Illustrated reports."
-     },
-     {
-      "player": "Jager Burton",
-      "status": "Questionable",
-      "detail": "Burton is missing the Packers' training camp practice Thursday after pulling a muscle while doing drills, Tom Silverstein of the Milwaukee Journal Sentinel reports."
      },
      {
       "player": "Keisean Nixon",
@@ -2173,6 +2173,11 @@
     ],
     "Jacksonville Jaguars": [
      {
+      "player": "Chris Rodriguez Jr.",
+      "status": "Questionable",
+      "detail": "Rodriguez (foot) participated in team drills during Sunday's training camp practice, John Shipley of SI.com reports."
+     },
+     {
       "player": "Danny Striggow",
       "status": "Active",
       "detail": "Striggow enters training camp competing against Wesley Williams and Zach Durfee for rotational snaps at defensive end behind starters Josh Hines-Allen and Travon Walker, Paul Bretl of USA Today reports."
@@ -2196,11 +2201,6 @@
       "player": "Jack Kiser",
       "status": "Questionable",
       "detail": "Kiser (knee) was not present during Thursday's practice, Ryan O'Halloran of The Florida Times-Union reports."
-     },
-     {
-      "player": "Chris Rodriguez Jr.",
-      "status": "Questionable",
-      "detail": "Rodriguez (foot) has been cleared to practice, but the Jaguars intend to take a cautious approach with the running back's participation level early in training camp, John Shipley of SI.com reports."
      },
      {
       "player": "Bhayshul Tuten",
@@ -2935,11 +2935,6 @@
     ],
     "Minnesota Vikings": [
      {
-      "player": "Kejon Owens",
-      "status": "Questionable",
-      "detail": "questionable"
-     },
-     {
       "player": "Caleb Banks",
       "status": "Active",
       "detail": "Banks (foot) is participating at the Vikings' training camp, Jason Harmon of Sports Illustrated reports."
@@ -3058,6 +3053,11 @@
       "player": "Max Bredeson",
       "status": "Active",
       "detail": "The Vikings selected Bredeson in the fifth round of the 2026 NFL Draft, 159th overall."
+     },
+     {
+      "player": "Jakobe Thomas",
+      "status": "Active",
+      "detail": "The Vikings selected Thomas in the third round of the 2026 NFL Draft, 98th overall."
      }
     ],
     "New England Patriots": [
@@ -3191,12 +3191,12 @@
      {
       "player": "Bryan Bresee",
       "status": "Out",
-      "detail": "out"
+      "detail": "Saints head coach Kellen Moore said Sunday that Bresee will undergo season-ending surgery to repair a torn ACL, Katherine Terrell of ESPN.com reports."
      },
      {
       "player": "Kool-Aid McKinstry",
       "status": "Active",
-      "detail": ""
+      "detail": "McKinstry (ankle) returned to Sunday's training camp practice, Mike Triplett of NewOrleans.Football reports."
      },
      {
       "player": "Nathan Shepherd",
@@ -3951,6 +3951,16 @@
     ],
     "Seattle Seahawks": [
      {
+      "player": "Julian Neal",
+      "status": "Questionable",
+      "detail": "Neal has missed four consecutive training camp practices due to a leg injury, Gregg Bell of The News Tribune reports."
+     },
+     {
+      "player": "Brandon Pili",
+      "status": "Questionable",
+      "detail": "questionable"
+     },
+     {
       "player": "Jadarian Price",
       "status": "Active",
       "detail": "Price got the opening first-team backfield reps during Seattle's first full-team scrimmage Thursday, Gregg Bell of The News Tribune reports."
@@ -4064,23 +4074,13 @@
       "player": "Bryce Cabeldue",
       "status": "Active",
       "detail": "Cabeldue (knee) was spotted participating in Seattle's OTAs on Tuesday, Lindsey Wasson of Journal-News.com reports."
-     },
-     {
-      "player": "Robbie Ouzts",
-      "status": "Active",
-      "detail": "Ouzts (neck) was a full participant during Tuesday's OTAs, Cameron Van Til of Seattle Sports reports."
-     },
-     {
-      "player": "Irv Charles",
-      "status": "Active",
-      "detail": "The Jets traded Charles (knee) to the Seahawks on Wednesday in exchange for a 2028 conditional seventh-round pick, Rich Cimini of ESPN.com reports."
      }
     ],
     "Tampa Bay Buccaneers": [
      {
       "player": "Benjamin Morrison",
       "status": "Active",
-      "detail": ""
+      "detail": "Morrison (hamstring) was a full participant in Sunday's training camp practice, Greg Auman of Fox Sports reports."
      },
      {
       "player": "Haggai Ndubuisi",
@@ -5390,11 +5390,6 @@
       "player": "Nikita Zadorov",
       "status": "Out",
       "detail": "out"
-     },
-     {
-      "player": "Dans Locmelis",
-      "status": "Out",
-      "detail": "Locmelis will undergo season-ending shoulder surgery next week, Mark Divver of the New England Hockey Journal reports."
      }
     ],
     "Buffalo Sabres": [
@@ -5429,31 +5424,6 @@
       "player": "Yan Kuznetsov",
       "status": "Out",
       "detail": "Kuznetsov (upper body) will miss the rest of the 2025-26 regular season, according to Pat Steinberg of Sportsnet 960 The Fan on Tuesday."
-     },
-     {
-      "player": "Joel Hanley",
-      "status": "Out",
-      "detail": "out"
-     },
-     {
-      "player": "Samuel Honzek",
-      "status": "Injured Reserve",
-      "detail": "Honzek (upper body) will not return this season, per Pat Steinberg of Sportsnet 960 The Fan on Friday."
-     },
-     {
-      "player": "Jonathan Huberdeau",
-      "status": "Injured Reserve",
-      "detail": "Huberdeau (hip) was put on injured reserve Saturday, per the NHL media site."
-     },
-     {
-      "player": "Jake Bean",
-      "status": "Injured Reserve",
-      "detail": "Bean (undisclosed) will need to undergo surgery and is expected to be sidelined indefinitely, Pat Steinberg of Sportsnet 960 The Fan reports Thursday."
-     },
-     {
-      "player": "Henry Mews",
-      "status": "Out",
-      "detail": "out"
      }
     ],
     "Carolina Hurricanes": [
@@ -5473,21 +5443,6 @@
       "player": "Connor Bedard",
       "status": "Out",
       "detail": "Bedard (shoulder) signed a five-year, $75 million contract with Chicago on Saturday."
-     },
-     {
-      "player": "Matt Grzelcyk",
-      "status": "Out",
-      "detail": "Grzelcyk (upper body) will miss the remainder of the 2025-26 regular season, according to Ben Pope of the Chicago Sun-Times on Tuesday."
-     },
-     {
-      "player": "Artyom Levshunov",
-      "status": "Out",
-      "detail": "Levshunov (hand) will not play again in 2025-26, according to Ben Pope of the Chicago Sun-Times on Tuesday."
-     },
-     {
-      "player": "Ryan Ellis",
-      "status": "Injured Reserve",
-      "detail": "Ellis (back) and his contract have been traded to Chicago from San Jose, along with Jake Furlong and a 2028 fourth-round pick in exchange for Laurent Brossoit, Nolan Allan and a 2028 seventh-round pick Thursday."
      }
     ],
     "Colorado Avalanche": [
@@ -5548,11 +5503,6 @@
       "player": "Adam Henrique",
       "status": "Out",
       "detail": "out"
-     },
-     {
-      "player": "Mattias Janmark",
-      "status": "Injured Reserve",
-      "detail": "Janmark (undisclosed) underwent season-ending surgery on Friday, per Mark Spector of Sportsnet."
      }
     ],
     "Florida Panthers": [
@@ -5592,31 +5542,9 @@
       "detail": "out"
      },
      {
-      "player": "Jonah Gadjovich",
-      "status": "Injured Reserve",
-      "detail": "Gadjovich (upper body) is not expected to suit up again this season, per Jameson Olive of the Panthers' official site on Tuesday."
-     },
-     {
-      "player": "Niko Mikkola",
-      "status": "Injured Reserve",
-      "detail": "ir"
-     },
-     {
       "player": "Uvis Balinskis",
       "status": "Out",
       "detail": "Balinskis (lower body) has a fracture and is slated to miss 4-6 weeks, Jameson Olive of the Panthers' official site reports Monday."
-     },
-     {
-      "player": "Brad Marchand",
-      "status": "Injured Reserve",
-      "detail": "Marchand landed on injured reserve Tuesday, per the NHL media site."
-     }
-    ],
-    "Los Angeles Kings": [
-     {
-      "player": "Kevin Fiala",
-      "status": "Injured Reserve",
-      "detail": "Fiala (lower leg fracture) won't be available before training camp for the 2026-27 campaign, per John Hoven of SiriusXM NHL Network Radio."
      }
     ],
     "Minnesota Wild": [
@@ -5666,11 +5594,6 @@
       "player": "Luke Hughes",
       "status": "Out",
       "detail": "Hughes (undisclosed)  will undergo a procedure and will miss the remainder of the season, it was announced Thursday."
-     },
-     {
-      "player": "Stefan Noesen",
-      "status": "Injured Reserve",
-      "detail": "Noesen (knee) has been ruled out for the rest of the season, Kristy Flannery of The Hockey News reports Sunday."
      }
     ],
     "New York Islanders": [
@@ -5698,18 +5621,6 @@
       "player": "Alexander Romanov",
       "status": "Injured Reserve",
       "detail": "Romanov (shoulder) will miss the final two games of the regular season, according to Stefen Rosner of NHL.com on Sunday."
-     },
-     {
-      "player": "Pierre Engvall",
-      "status": "Injured Reserve",
-      "detail": "Engvall (ankle) will miss the remainder of the 2025-26 campaign, per Stefen Rosner of NHL.com."
-     }
-    ],
-    "New York Rangers": [
-     {
-      "player": "Matt Rempe",
-      "status": "Injured Reserve",
-      "detail": "Rempe (thumb) probably won't be ready to return before the end of the 2025-26 regular season, according to Vince Z. Mercogliano of The Athletic on Monday."
      }
     ],
     "Ottawa Senators": [
@@ -5739,23 +5650,6 @@
       "player": "Owen Tippett",
       "status": "Out",
       "detail": "Tippett (undisclosed) was contending with several injuries, including a sports hernia, during the 2026 postseason, Kevin Kurz of The Athletic reports Monday."
-     },
-     {
-      "player": "Ty Murchison",
-      "status": "Out",
-      "detail": "out"
-     }
-    ],
-    "Pittsburgh Penguins": [
-     {
-      "player": "Caleb Jones",
-      "status": "Injured Reserve",
-      "detail": "ir"
-     },
-     {
-      "player": "Filip Hallander",
-      "status": "Injured Reserve",
-      "detail": "Hallander (leg) was recalled from his conditioning stint with AHL Wilkes-Barre/Scranton on Friday, Seth Rorabaugh of Tribune-Review Sports reports."
      }
     ],
     "San Jose Sharks": [
@@ -5816,16 +5710,6 @@
       "player": "Dakota Joshua",
       "status": "Out",
       "detail": "Joshua (upper body) will not return to the lineup for the rest of the season, according to David Alter of The Hockey News on Saturday."
-     },
-     {
-      "player": "Auston Matthews",
-      "status": "Out",
-      "detail": "Matthews underwent successful MCL knee repair surgery Thursday."
-     },
-     {
-      "player": "Chris Tanev",
-      "status": "Injured Reserve",
-      "detail": "Tanev underwent core muscle surgery Wednesday and will miss the remainder of the 2025-26 campaign."
      }
     ],
     "Utah Mammoth": [
@@ -5845,21 +5729,6 @@
       "player": "Evander Kane",
       "status": "Out",
       "detail": "Kane (upper body) will most likely miss the Canucks' final two games of the 2025-26 season, Farhan Lalji of TSN reports."
-     },
-     {
-      "player": "Thatcher Demko",
-      "status": "Injured Reserve",
-      "detail": "Demko was placed on long-term injured reserve Tuesday."
-     },
-     {
-      "player": "Jonathan Lekkerimaki",
-      "status": "Out",
-      "detail": "Lekkerimaki underwent successful shoulder surgery Friday."
-     },
-     {
-      "player": "Filip Chytil",
-      "status": "Injured Reserve",
-      "detail": "ir"
      },
      {
       "player": "Derek Forbort",
@@ -5885,11 +5754,6 @@
      },
      {
       "player": "Charlie Lindgren",
-      "status": "Out",
-      "detail": "out"
-     },
-     {
-      "player": "Eriks Mateiko",
       "status": "Out",
       "detail": "out"
      }
@@ -5934,7 +5798,7 @@
     {
      "title": "MLB trade deadline 2026: Latest intel from Olney, Passan",
      "desc": "Will the Red Sox get their shortstop? Which top starters will be dealt following the Skubal blockbuster? Here's the latest.",
-     "published": "2026-08-02T16:00:17Z",
+     "published": "2026-08-02T16:14:59Z",
      "type": "Story",
      "link": "https://www.espn.com/mlb/story/_/id/49507316/mlb-trade-deadline-2025-intel-rumors-updates-buster-olney-jeff-passan-phillies-yankees-mets-red-sox-neto"
     },
@@ -6043,6 +5907,11 @@
      }
     ],
     "Athletics": [
+     {
+      "player": "Nick Kurtz",
+      "status": "Day-To-Day",
+      "detail": "Kurtz isn't in the Athletics' starting lineup Saturday versus Detroit."
+     },
      {
       "player": "J.T. Ginn",
       "status": "15-Day-IL",
@@ -6581,6 +6450,11 @@
     ],
     "Kansas City Royals": [
      {
+      "player": "Luinder Avila",
+      "status": "15-Day-IL",
+      "detail": "Avila (5-4) took the loss against Colorado on Saturday, allowing six runs on four hits and three walks while striking out two batters over 2.2 innings."
+     },
+     {
       "player": "Maikel Garcia",
       "status": "10-Day-IL",
       "detail": "Garcia (hand) is scheduled to see a hand specialist next week, Jaylon T. Thompson of The Kansas City Star reports."
@@ -7052,11 +6926,6 @@
      }
     ],
     "San Francisco Giants": [
-     {
-      "player": "Luis Arraez",
-      "status": "Day-To-Day",
-      "detail": "Arraez (cramps) will start at second base and bat leadoff Saturday against the Padres."
-     },
      {
       "player": "Jesus Rodriguez",
       "status": "10-Day-IL",
