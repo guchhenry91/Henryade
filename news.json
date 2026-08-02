@@ -1,52 +1,52 @@
 {
- "updated": "2026-08-02T17:33:56.146371+00:00",
- "updated_unix": 1785692036,
+ "updated": "2026-08-02T19:17:04.306591+00:00",
+ "updated_unix": 1785698224,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
     {
+     "title": "Wrexham end pre-season with defeat to Sunderland in Philadelphia",
+     "desc": "Wrexham ended their pre-season campaign with a 1-0 defeat to Sunderland in Philadelphia.",
+     "published": "2026-08-02T19:05:06Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49514055/wrexham-end-preseason-defeat-sunderland-philadelphia"
+    },
+    {
+     "title": "Lindop: Barcola to Liverpool is becoming a saga",
+     "desc": "Lindop: Barcola to Liverpool is becoming a saga",
+     "published": "2026-08-02T18:01:07Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49513683/barcola-liverpool-becoming-saga"
+    },
+    {
+     "title": "Is Vinicius Jr. using Arsenal to secure a new Real Madrid deal?",
+     "desc": "Is Vinicius Jr. using Arsenal to secure a new Real Madrid deal?",
+     "published": "2026-08-02T18:00:36Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49513679/is-vinicius-jr-using-arsenal-secure-new-real-madrid-deal"
+    },
+    {
+     "title": "Hutchison: Max Dowman must stay patient at Arsenal",
+     "desc": "Hutchison: Max Dowman must stay patient at Arsenal",
+     "published": "2026-08-02T18:00:02Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49513672/max-dowman-stay-patient-arsenal"
+    },
+    {
+     "title": "Argentina's Valentín Barco joins Chelsea from Strasbourg",
+     "desc": "Argentina international Valentín Barco has joined Chelsea from Strasbourg, the London club have announced.",
+     "published": "2026-08-02T17:39:00Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49429944/argentina-valentin-barco-joins-chelsea-strasbourg"
+    },
+    {
      "title": "Premier League 2026 summer transfers: All confirmed ins, outs for every club",
      "desc": "Here's every Premier League in and out before the 2026-27 season begins.",
      "published": "2026-08-02T17:26:37Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/48955344/premier-league-2026-summer-transfers-all-confirmed-ins-outs-every-club"
-    },
-    {
-     "title": "Xabi Alonso: Real Madrid 'scar' has healed, Chelsea situation 'not as bad as it looked' last season",
-     "desc": "Xabi Alonso said the \"scar\" he suffered from his short tenure at Real Madrid has healed, allowing him to fully focus on taking Chelsea into the new Premier League season.",
-     "published": "2026-08-02T17:26:43Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49513341/xabi-alonso-real-madrid-scar-healed-chelsea-premier-league"
-    },
-    {
-     "title": "Argentina's Valentín Barco joins Chelsea from Strasbourg",
-     "desc": "Argentina international Valentín Barco has joined Chelsea from Strasbourg, the London club have announced.",
-     "published": "2026-08-02T17:23:22Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49429944/argentina-valentin-barco-joins-chelsea-strasbourg"
-    },
-    {
-     "title": "Kai Havertz on Arsenal's ambitions for new season: 'Want all the trophies'",
-     "desc": "Kai Havertz has underlined Arsenal's ambitions for the upcoming season by saying the club wants to win \"all the trophies\" on offer.",
-     "published": "2026-08-02T16:55:38Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49513294/kai-havertz-arsenal-ambitions-new-season-want-all-trophies"
-    },
-    {
-     "title": "Transfer rumors, news: Man City eye Chelsea winger Pedro Neto",
-     "desc": "Manchester City are preparing a surprise move for Chelsea winger Pedro Neto. Transfer Talk has the latest.",
-     "published": "2026-08-02T15:03:11Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49511046/transfer-rumors-news-man-city-eye-chelsea-winger-pedro-neto"
-    },
-    {
-     "title": "Barcelona's Hansi Flick as Marcus Rashford returns to Man United: 'I will miss him'",
-     "desc": "Barcelona boss Hansi Flick has said he will \"miss\" Marcus Rashford after the Manchester United forward returned to his parent club following a successful loan in Spain.",
-     "published": "2026-08-02T12:07:36Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49511821/barcelona-hansi-flick-marcus-rashford-returns-man-united-miss-him"
     }
    ],
    "injuries": {},
@@ -55,6 +55,13 @@
   "laliga": {
    "name": "La Liga",
    "headlines": [
+    {
+     "title": "Is Vinicius Jr. using Arsenal to secure a new Real Madrid deal?",
+     "desc": "Is Vinicius Jr. using Arsenal to secure a new Real Madrid deal?",
+     "published": "2026-08-02T18:00:36Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49513679/is-vinicius-jr-using-arsenal-secure-new-real-madrid-deal"
+    },
     {
      "title": "Xabi Alonso: Real Madrid 'scar' has healed, Chelsea situation 'not as bad as it looked' last season",
      "desc": "Xabi Alonso said the \"scar\" he suffered from his short tenure at Real Madrid has healed, allowing him to fully focus on taking Chelsea into the new Premier League season.",
@@ -89,13 +96,6 @@
      "published": "2026-07-31T18:31:11Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49495707/barcelona-transfers-jesse-bisiwu-la-liga-club-brugge"
-    },
-    {
-     "title": "Real Madrid sign forward Carlos Espí from Levante",
-     "desc": "Real Madrid have signed forward Carlos Espí from Levante on a five-year contract, the club announced on Thursday.",
-     "published": "2026-07-30T21:54:38Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49491762/real-madrid-transfer-carlos-espi-levante"
     }
    ],
    "injuries": {},
@@ -350,6 +350,34 @@
    "name": "NFL",
    "headlines": [
     {
+     "title": "2026 NFL training camp: Latest news, intel for all 32 teams",
+     "desc": "Get all the news, intel and insights on NFL training camps from our team of reporters in the field.",
+     "published": "2026-08-02T19:06:04Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49368181/training-camp-2026-latest-news-intel-updates-buzz-all-32-teams"
+    },
+    {
+     "title": "2026 New Orleans Saints training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Saints training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-02T19:01:45Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49424731/new-orleans-saints-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "Davon Godchaux: Bresee's injury a 'freak accident'",
+     "desc": "Davon Godchaux: Bresee's injury a 'freak accident'",
+     "published": "2026-08-02T18:42:54Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49513902/bresee-injury-freak-accident"
+    },
+    {
+     "title": "Anniversary of Korey Stringer's death completes reconciliation for family, Vikings",
+     "desc": "The Aug. 1 anniversary marked the positives that grew out of a tragic day, including the Korey Stringer Institute.",
+     "published": "2026-08-02T19:01:09Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49513333/anniversary-korey-stringer-death-completes-reconciliation-family-vikings"
+    },
+    {
      "title": "2026 Jacksonville Jaguars training camp: Latest intel, updates",
      "desc": "Follow our daily updates from Jaguars training camp, including intel on QBs, position battles and potential breakouts.",
      "published": "2026-08-02T16:51:04Z",
@@ -359,37 +387,9 @@
     {
      "title": "Saints starting DT Bryan Bresee to have season-ending ACL surgery",
      "desc": "Saints defensive tackle Bryan Bresee will undergo season-ending surgery to repair a torn ACL, coach Kellen Moore told reporters Sunday.",
-     "published": "2026-08-02T17:17:01Z",
+     "published": "2026-08-02T18:44:45Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/nfl/story/_/id/49513248/saints-starting-dt-bryan-bresee-season-ending-acl-surgery"
-    },
-    {
-     "title": "2026 Miami Dolphins training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Dolphins training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-02T16:36:34Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49410015/miami-dolphins-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "2026 NFL training camp: Latest news, intel for all 32 teams",
-     "desc": "Get all the news, intel and insights on NFL training camps from our team of reporters in the field.",
-     "published": "2026-08-02T16:10:09Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49368181/training-camp-2026-latest-news-intel-updates-buzz-all-32-teams"
-    },
-    {
-     "title": "Gardner-Johnson pays off $20,000 of Bills staffer's student loans",
-     "desc": "During a Twitch stream Thursday, the Bills' safety gave a huge gift to a graduate student working with the team's training staff.",
-     "published": "2026-08-02T16:05:51Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49509353/cj-gardner-johnson-buffalo-bills-student-loans-20000-twitch-stream"
-    },
-    {
-     "title": "Tracking 2026 NFL hold-ins: Robinson, Gibbs, Vea and Tuipulotu",
-     "desc": "Here is the latest on Falcons' Bijan Robinson, Lions' Jahmyr Gibbs, Bucs' Vita Vea and Chargers' Tuli Tuipulotu.",
-     "published": "2026-08-02T15:43:14Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49490010/2026-training-camp-holdin-tracking-updates-bijan-robinson-jahmyr-gibbs-vita-vea-tuli-tuipulotu"
     }
    ],
    "injuries": {
@@ -1794,12 +1794,12 @@
      {
       "player": "Jager Burton",
       "status": "Active",
-      "detail": ""
+      "detail": "Burton (hamstring) participated in Sunday's training camp practice, Weston Hodkiewicz of the Packers' official site reports."
      },
      {
       "player": "Kamal Hadden",
       "status": "Active",
-      "detail": ""
+      "detail": "The Packers activated Hadden (lower leg) from the active/PUP list Sunday, Rob Demovsky of ESPN.com reports."
      },
      {
       "player": "Edgerrin Cooper",
@@ -1897,7 +1897,7 @@
       "detail": "The Packers signed Yassmin to a one-year contract Tuesday."
      },
      {
-      "player": "Zach Tom",
+      "player": "Zach Bako-Bewele",
       "status": "Active",
       "detail": "Tom (knee) was not among the players who landed on the PUP list to begin Packers training camp, Matt Schneidman of The Athletic reports."
      },
@@ -2293,9 +2293,9 @@
       "detail": "The Jaguars signed Pena as an undrafted free agent Sunday."
      },
      {
-      "player": "Ben Patterson",
+      "player": "Michael Wortham",
       "status": "Active",
-      "detail": "The Jaguars signed Patterson as an undrafted free agent Sunday."
+      "detail": "The Jaguars signed Wortham as an undrafted free agent Sunday."
      }
     ],
     "Kansas City Chiefs": [
@@ -3951,14 +3951,14 @@
     ],
     "Seattle Seahawks": [
      {
+      "player": "Brandon Pili",
+      "status": "Questionable",
+      "detail": "Pili missed a third consecutive training camp practice Sunday due to a lower-leg injury, Gregg Bell of The News Tribune reports."
+     },
+     {
       "player": "Julian Neal",
       "status": "Questionable",
       "detail": "Neal has missed four consecutive training camp practices due to a leg injury, Gregg Bell of The News Tribune reports."
-     },
-     {
-      "player": "Brandon Pili",
-      "status": "Questionable",
-      "detail": "questionable"
      },
      {
       "player": "Jadarian Price",
@@ -5796,46 +5796,46 @@
    "name": "MLB",
    "headlines": [
     {
+     "title": "Fantasy baseball: Reactions to MLB trade deadline deals",
+     "desc": "Track the fantasy fallout from all the key deals as we head toward the MLB trade deadline on Monday.",
+     "published": "2026-08-02T19:08:02Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/baseball/story/_/id/49416655/fantasy-baseball-reaction-mlb-trade-deadline-deals-2026-monday-august-3"
+    },
+    {
+     "title": "2026 MLB trade deadline grades: Report cards for every deal",
+     "desc": "Trade season has officially begun! Here's our running scorecard for every big move before Monday's deadline arrives.",
+     "published": "2026-08-02T19:12:29Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/49454655/2026-mlb-trade-deadline-grades-analysis-report-cards-every-deal"
+    },
+    {
+     "title": "Fantasy Baseball Forecaster Week 18: Aug. 3-9",
+     "desc": "Set your lineups for the weeks ahead in fantasy baseball with our preview featuring pitcher rankings, hitter ratings and schedule observations.",
+     "published": "2026-08-02T18:14:18Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/baseball/story/_/id/49482023/fantasy-baseball-forecaster-espn-2026-mlb-starting-pitcher-hitter-ranks-week-18-august-3-9"
+    },
+    {
+     "title": "Sources: Rays acquire Freddy Peralta in trade with Mets",
+     "desc": "The Rays are acquiring Freddy Peralta in a trade with the Mets, sources told ESPN, in a move that gives Tampa Bay one of the AL's best rotations for the stretch run.",
+     "published": "2026-08-02T18:27:19Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/mlb/story/_/id/49513687/sources-rays-acquire-freddy-peralta-trade-mets"
+    },
+    {
+     "title": "2026 MLB trade deadline tracker: Rumors, news, analysis",
+     "desc": "Which contenders will make the biggest splash? Here's what we're hearing as 6 p.m. ET on Monday approaches.",
+     "published": "2026-08-02T17:59:03Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/49410877/2026-mlb-trade-deadline-tracker-rumors-alerts-news-latest-updates-analysis"
+    },
+    {
      "title": "MLB trade deadline 2026: Latest intel from Olney, Passan",
      "desc": "Will the Red Sox get their shortstop? Which top starters will be dealt following the Skubal blockbuster? Here's the latest.",
      "published": "2026-08-02T16:14:59Z",
      "type": "Story",
      "link": "https://www.espn.com/mlb/story/_/id/49507316/mlb-trade-deadline-2025-intel-rumors-updates-buster-olney-jeff-passan-phillies-yankees-mets-red-sox-neto"
-    },
-    {
-     "title": "Fantasy baseball: Reactions to MLB trade deadline deals",
-     "desc": "Track the fantasy fallout from all the key deals as we head toward the MLB trade deadline on Monday.",
-     "published": "2026-08-02T14:22:37Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/baseball/story/_/id/49416655/fantasy-baseball-reaction-mlb-trade-deadline-deals-2026-monday-august-3"
-    },
-    {
-     "title": "Jeff Passan: 'The Dodgers have assembled the Avengers'",
-     "desc": "Jeff Passan: 'The Dodgers have assembled the Avengers'",
-     "published": "2026-08-02T14:21:56Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49512406/dodgers-assembled-avengers"
-    },
-    {
-     "title": "MLB betting tips for Sunday: Astros looking for sweep vs. Rangers",
-     "desc": "All of the odds, recommended prop bets and trends in baseball for Sunday, August 2.",
-     "published": "2026-08-02T14:03:30Z",
-     "type": "Story",
-     "link": "https://www.espn.com/espn/betting/story/_/id/49498423/mlb-betting-tips-odds-lines-2026-sunday-august-2"
-    },
-    {
-     "title": "MLB trade deadline 2026: Breaking down Tarik Skubal blockbuster",
-     "desc": "L.A. sent shock waves through baseball with another ace addition. Here are our first impressions of the deal's leaguewide impact.",
-     "published": "2026-08-02T14:45:11Z",
-     "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49489687/mlb-2026-trade-deadline-tarik-skubal-los-angeles-dodgers-detroit-tigers-reaction"
-    },
-    {
-     "title": "Fantasy baseball: Bad news for Pirates, Skubal heads to Dodgers and more Sunday news",
-     "desc": "All of the important fantasy spin and actionable takeaways resulting from the latest baseball news.",
-     "published": "2026-08-02T13:48:38Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/baseball/story/_/id/48297021/espn-fantasy-baseball-buzz-injuries-promotions-demotions-trades-prospects-lineup-changes-mlb-news-analysis-2026"
     }
    ],
    "injuries": {
@@ -5908,14 +5908,19 @@
     ],
     "Athletics": [
      {
-      "player": "Nick Kurtz",
-      "status": "Day-To-Day",
-      "detail": "Kurtz isn't in the Athletics' starting lineup Saturday versus Detroit."
-     },
-     {
       "player": "J.T. Ginn",
       "status": "15-Day-IL",
-      "detail": "Ginn (finger) is scheduled to throw a bullpen Saturday and could rejoin the Athletics' rotation next week if all goes well, Martin Gallegos of MLB.com reports."
+      "detail": "Ginn (finger) will be reinstated from the 15-day injured list to start Tuesday's game at Cincinnati, Martin Gallegos of MLB.com reports."
+     },
+     {
+      "player": "Jacob Wilson",
+      "status": "Day-To-Day",
+      "detail": "Manager Mark Kotsay said that Wilson, who is out of the lineup Sunday against the Tigers, is dealing with patellar tendonitis in his knee, Martin Gallegos of MLB.com reports."
+     },
+     {
+      "player": "Nick Kurtz",
+      "status": "Day-To-Day",
+      "detail": "Kurtz, who is out of the lineup Sunday against the Tigers, is scheduled to visit a hand specialist Monday in Los Angeles, after which the A's are expected to make a roster decision, Mark Feinsand of MLB.com reports."
      },
      {
       "player": "Zack Gelof",
@@ -6490,11 +6495,6 @@
       "detail": "Bubic (elbow/shoulder) began a throwing progression Friday with 30 throws from 45-to-60 feet, MLB.com reports."
      },
      {
-      "player": "Kyle Isbel",
-      "status": "10-Day-IL",
-      "detail": "Isbel (foot) went 1-for-2 with an RBI triple and a run scored with Triple-A Omaha on Tuesday."
-     },
-     {
       "player": "Carlos Estevez",
       "status": "60-Day-IL",
       "detail": "Estevez (shoulder) started a throwing program Friday, per MLB.com."
@@ -6625,6 +6625,11 @@
      }
     ],
     "Miami Marlins": [
+     {
+      "player": "Jakob Marsee",
+      "status": "Day-To-Day",
+      "detail": "The Marlins scratched Marsee from the lineup for Sunday's game against the Mets due to back spasms, Christina De Nicola of MLB.com reports."
+     },
      {
       "player": "Andrew Nardi",
       "status": "60-Day-IL",
