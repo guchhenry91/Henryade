@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-02T20:29:26.284457+00:00",
- "updated_unix": 1785702566,
+ "updated": "2026-08-02T21:28:45.763842+00:00",
+ "updated_unix": 1785706125,
  "source": "espn",
  "leagues": {
   "epl": {
@@ -350,46 +350,46 @@
    "name": "NFL",
    "headlines": [
     {
-     "title": "Sources: Jadeveon Clowney reaches deal to reunite with Texans",
-     "desc": "Jadeveon Clowney is returning to the Texans, the team that selected him No. 1 overall in the 2014 NFL draft, sources told NFL Network's Ian Rapoport and Mike Garafolo on Sunday.",
-     "published": "2026-08-02T20:18:01Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49514656/sources-jadeveon-clowney-reaches-deal-reunite-texans"
+     "title": "2026 Los Angeles Rams training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Rams training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-02T21:23:22Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49434454/los-angeles-rams-training-camp-2026-intel-updates"
     },
     {
      "title": "2026 Las Vegas Raiders training camp: Latest intel, updates",
      "desc": "Follow our daily updates from Raiders training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-02T20:14:34Z",
+     "published": "2026-08-02T21:10:16Z",
      "type": "Story",
      "link": "https://www.espn.com/nfl/story/_/id/49425032/las-vegas-raiders-training-camp-2026-intel-updates"
     },
     {
-     "title": "Tracking 2026 NFL hold-ins: Robinson, Gibbs, Vea and Tuipulotu",
-     "desc": "Here is the latest on Falcons' Bijan Robinson, Lions' Jahmyr Gibbs, Bucs' Vita Vea and Chargers' Tuli Tuipulotu.",
-     "published": "2026-08-02T20:02:26Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49490010/2026-training-camp-holdin-tracking-updates-bijan-robinson-jahmyr-gibbs-vita-vea-tuli-tuipulotu"
-    },
-    {
-     "title": "2026 Tampa Bay Buccaneers training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Buccaneers training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-02T20:05:04Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49419613/tampa-bay-buccaneers-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "Packers RT changes last name to Bako-Bewele to honor heritage",
-     "desc": "Packers right tackle Zach Tom revealed Sunday he has changed his name to Zach Bako-Bewele.",
-     "published": "2026-08-02T20:25:41Z",
+     "title": "Rams hold Garrett out as he deals with 'a little soreness'",
+     "desc": "Los Angeles Rams defensive end Myles Garrett is dealing with \"a little soreness in his lower half,\" Sean McVay said on Sunday, keeping the pass rusher out of practice for the third consecutive day, but the coach added that \"there's no reaso",
+     "published": "2026-08-02T21:17:14Z",
      "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49514420/packers-rt-changes-last-name-bako-bewele-honor-heritage"
+     "link": "https://www.espn.com/nfl/story/_/id/49515062/rams-hold-garrett-deals-little-soreness"
     },
     {
-     "title": "2026 NFL training camp: Latest news, intel for all 32 teams",
-     "desc": "Get all the news, intel and insights on NFL training camps from our team of reporters in the field.",
-     "published": "2026-08-02T19:06:04Z",
+     "title": "Saints place WR Ja'Lynn Polk, 24, on reserve/retired list",
+     "desc": "Saints wide receiver Ja'Lynn Polk has been placed on the reserve/retired list, the team announced Sunday.",
+     "published": "2026-08-02T21:17:03Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/nfl/story/_/id/49515016/saints-place-wr-jalynn-polk-24-reserve-retired-list"
+    },
+    {
+     "title": "2026 Green Bay Packers training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Packers training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-02T20:52:48Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49368181/training-camp-2026-latest-news-intel-updates-buzz-all-32-teams"
+     "link": "https://www.espn.com/nfl/story/_/id/49376941/green-bay-packers-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "Pass rusher Jadeveon Clowney reaches deal to reunite with Texans",
+     "desc": "Jadeveon Clowney is returning to the Texans, the team that selected him No. 1 in the 2014 NFL draft.",
+     "published": "2026-08-02T21:27:52Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/nfl/story/_/id/49514656/sources-jadeveon-clowney-reaches-deal-reunite-texans"
     }
    ],
    "injuries": {
@@ -679,11 +679,6 @@
       "detail": "The Ravens placed Bullock (undisclosed) on the active/non-football illness list Saturday, Jonas Shaffer of TheBaltimoreBanner.com reports."
      },
      {
-      "player": "Hakeem Adeniji",
-      "status": "Active",
-      "detail": "The Ravens signed Adeniji to a contract Saturday, Quentin Corpuel of the team's official site reports."
-     },
-     {
       "player": "John Jenkins",
       "status": "Out",
       "detail": "The Ravens placed Jenkins (undisclosed) on the active/PUP list Saturday, Clifton Brown of the team's official site reports."
@@ -772,6 +767,11 @@
       "player": "Skylar Thompson",
       "status": "Active",
       "detail": "Thompson (hamstring) is in line to sign with Baltimore, Ian Rapoport of NFL Network reports."
+     },
+     {
+      "player": "Elijah Tau-Tolliver",
+      "status": "Active",
+      "detail": "The Ravens signed Tau-Tolliver as an undrafted free agent Friday, Justin Robertson of the team's official site reports."
      }
     ],
     "Buffalo Bills": [
@@ -1491,11 +1491,6 @@
       "detail": "Pickens is set to play the 2026 season on the one-year, $27.3 million franchise tag after he and the Cowboys did not reach a long-term extension before Wednesday's deadline, Todd Archer of ESPN.com reports."
      },
      {
-      "player": "Charles Snowden",
-      "status": "Suspension",
-      "detail": "Snowden has been suspended the first three regular-season games of the 2026 season, Adam Schefter of ESPN reports."
-     },
-     {
       "player": "Jake Ferguson",
       "status": "Active",
       "detail": "Ferguson remains the Cowboys' unquestioned starting tight end ahead of training camp, Chris Amaya of ExpressNews.com reports."
@@ -1534,6 +1529,11 @@
       "player": "Alijah Clark",
       "status": "Active",
       "detail": ""
+     },
+     {
+      "player": "DeMarvion Overshown",
+      "status": "Active",
+      "detail": "Overshown has been practicing at middle and weakside linebacker during minicamp, Jon Machota of The Athletic reports."
      }
     ],
     "Denver Broncos": [
@@ -2683,7 +2683,7 @@
      {
       "player": "Myles Garrett",
       "status": "Questionable",
-      "detail": "Garret (lower body) didn't participate in the Rams' practice Sunday, Todd Sarah Barshop of ESPN."
+      "detail": "Garrett (lower body) didn't participate in the Rams' practice Sunday, Sarah Barshop of ESPN reports."
      },
      {
       "player": "Alaric Jackson",
@@ -3824,6 +3824,11 @@
     ],
     "San Francisco 49ers": [
      {
+      "player": "Khalil Herbert",
+      "status": "Active",
+      "detail": "The 49ers signed Herbert to a one-year deal Sunday."
+     },
+     {
       "player": "Deebo Samuel",
       "status": "Active",
       "detail": "Samuel was a full participant in Saturday's training camp practice, his first since signing with the 49ers on Thursday, Matt Barrows of The Athletic reports."
@@ -3832,11 +3837,6 @@
       "player": "Tanner McLachlan",
       "status": "Injured Reserve",
       "detail": "McLachlan (undisclosed) reverted to the 49ers' injured reserve Saturday, per the NFL's transaction log."
-     },
-     {
-      "player": "Mikail Kamara",
-      "status": "Questionable",
-      "detail": "Kamara (knee) was unable to finish Saturday's practice due to injury, Nick Wagoner of ESPN.com reports."
      },
      {
       "player": "Keion White",
@@ -4463,6 +4463,13 @@
    "name": "NBA",
    "headlines": [
     {
+     "title": "Sources: Mavs extend Naji Marshall on 3-year, $52.2M deal",
+     "desc": "Mavericks forward Naji Marshall signed a three-year, $52.2 million extension that will take him through the 2029-30 season, sources told ESPN.",
+     "published": "2026-08-02T20:56:19Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/nba/story/_/id/49514965/sources-mavs-extend-naji-marshall-3-year-522m-deal"
+    },
+    {
      "title": "Holmgren: Thunder departures part of 'business of this game'",
      "desc": "Oklahoma City's Chet Holmgren told reporters Saturday afternoon that the departures of three contributors to the Thunder's 2025 championship team felt \"like losing a family member,\" but at the same time, \"that's how the business of this gam",
      "published": "2026-08-02T04:38:03Z",
@@ -4496,13 +4503,6 @@
      "published": "2026-07-31T17:17:02Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/nba/story/_/id/49497562/sources-wembanyama-lands-signature-shoe-line-nike-deal"
-    },
-    {
-     "title": "Attorneys clash over text meaning in Rozier betting case",
-     "desc": "Terry Rozier's attorney argued in a court filing Friday that a text sent by a co-defendant shows the NBA veteran did not know about the alleged gambling scheme for which he has been indicted.",
-     "published": "2026-07-31T16:42:56Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/nba/story/_/id/49496738/terry-rozier-attorney-dismiss-text-deniro-laster"
     }
    ],
    "injuries": {
@@ -4685,6 +4685,11 @@
     ],
     "Dallas Mavericks": [
      {
+      "player": "Naji Marshall",
+      "status": "Day-To-Day",
+      "detail": "Marshall (hip) signed a three-year, $52.2 million extension with the Mavericks on Sunday, Shams Charania of ESPN reports."
+     },
+     {
       "player": "Kyrie Irving",
       "status": "Day-To-Day",
       "detail": "Irving (knee) should be fully healthy by the end of the offseason, per Christian Clark of The New York Times."
@@ -4703,11 +4708,6 @@
       "player": "Dereck Lively II",
       "status": "Day-To-Day",
       "detail": "Lively (foot) still hasn't progressed to running yet, per Christian Clark of The Athletic."
-     },
-     {
-      "player": "Naji Marshall",
-      "status": "Day-To-Day",
-      "detail": "Marshall (hip) has more competition for playing time after the Mavericks chose Morez Johnson with the No. 9 overall pick in the 2026 NBA Draft."
      },
      {
       "player": "Cooper Flagg",
@@ -5796,46 +5796,46 @@
    "name": "MLB",
    "headlines": [
     {
-     "title": "Fermin's tiebreaking hit in 4-run 9th helps Cardinals beat Blue Jays 5-1, avoid series sweep",
-     "desc": "— José Fermin hit a tiebreaking single in the ninth inning and the St. Louis Cardinals defeated the Toronto Blue Jays 5-1 on Sunday, avoiding a three-game sweep.",
-     "published": "2026-08-02T20:22:30Z",
+     "title": "Caballero homers, Cole pitches into 6th and gets bullpen help as Yankees edge Cubs 2-1",
+     "desc": "— José Caballero lined a two-run homer, Gerrit Cole pitched into the sixth inning and the New York Yankees hung on to top the Chicago Cubs 2-1 on Sunday.",
+     "published": "2026-08-02T21:27:31Z",
      "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816367"
+     "link": "http://www.espn.com/mlb/recap?gameId=401816369"
     },
     {
-     "title": "Washington Nationals vs. Atlanta Braves: Game Highlights",
-     "desc": "Washington Nationals vs. Atlanta Braves: Game Highlights",
-     "published": "2026-08-02T20:13:12Z",
+     "title": "Alvarez ties career high in hits, Peña homers and Astros use 4-run 7th inning to sweep Rangers 7-3",
+     "desc": "— Yordan Alvarez tied a career high with four hits, Jeremy Peña hit a home run, and the Houston Astros used a four-run seventh inning to pull away from the Texas Rangers 7-3 on Sunday and complete a series sweep.",
+     "published": "2026-08-02T21:25:29Z",
+     "type": "Recap",
+     "link": "http://www.espn.com/mlb/recap?gameId=401816370"
+    },
+    {
+     "title": "Texas Rangers vs. Houston Astros: Game Highlights",
+     "desc": "Texas Rangers vs. Houston Astros: Game Highlights",
+     "published": "2026-08-02T21:26:31Z",
      "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49514663/game-highlights"
+     "link": "https://www.espn.com/video/clip/_/id/49515363/game-highlights"
     },
     {
-     "title": "Yastrzemski and Olson hit home runs as Braves top slumping Nationals 4-2 to complete 4-game sweep",
-     "desc": "— Mike Yastrzemski homered and drove in two runs and the Atlanta Braves beat the slumping Washington Nationals 4-2 on Sunday to complete a rare four-game sweep.",
-     "published": "2026-08-02T20:04:32Z",
+     "title": "Sources: Yankees acquire Luis Garcia Jr. in trade with Nationals",
+     "desc": "Luis Garcia Jr., who is hitting .283 with 23 homers, has been traded from the Nationals to the Yankees in exchange for four right-handed pitchers, sources told ESPN.",
+     "published": "2026-08-02T21:23:28Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/mlb/story/_/id/49515307/sources-yankees-acquire-luis-garcia-jr-trade-nationals"
+    },
+    {
+     "title": "Burns wins 12th straight decision, Stewart hits 24th HR, as Reds beat Pirates 10-2",
+     "desc": "— Chase Burns won his 12th straight decision and Sal Stewart hit his 24th home run as the Cincinnati Reds beat the Pittsburgh Pirates 10-2 on Sunday to take three of four in the series.",
+     "published": "2026-08-02T21:11:30Z",
      "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816368"
+     "link": "http://www.espn.com/mlb/recap?gameId=401816366"
     },
     {
-     "title": "Tigers in 'weird place' after trading ace Tarik Skubal",
-     "desc": "The Tigers said their goodbyes to ace Tarik Skubal and now must turn their focus to an uncertain final two months of the season as they try to make a playoff push without their best player.",
-     "published": "2026-08-02T20:17:27Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/mlb/story/_/id/49514337/tigers-weird-place-trading-ace-tarik-skubal"
-    },
-    {
-     "title": "Cubs trade struggling Jameson Taillon to Blue Jays",
-     "desc": "Veteran right-handed starter Jameson Taillon, who has a 5.92 ERA this season, was traded from the Cubs to the Blue Jays for future considerations.",
-     "published": "2026-08-02T19:32:41Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/mlb/story/_/id/49514336/cubs-trade-struggling-jameson-taillon-blue-jays"
-    },
-    {
-     "title": "MLB trade deadline 2026: Ranking prospects who changed teams",
-     "desc": "You know the major leaguers on the move -- but what about the potential stars of tomorrow headed the other way in those deals?",
-     "published": "2026-08-02T20:25:50Z",
-     "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49464501/mlb-trade-deadline-2026-ranking-prospects-changed-teams"
+     "title": "Chicago White Sox vs. Tampa Bay Rays: Game Highlights",
+     "desc": "Chicago White Sox vs. Tampa Bay Rays: Game Highlights",
+     "published": "2026-08-02T21:01:40Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49515063/game-highlights"
     }
    ],
    "injuries": {
@@ -5908,6 +5908,11 @@
     ],
     "Athletics": [
      {
+      "player": "Zack Gelof",
+      "status": "10-Day-IL",
+      "detail": "Gelof (knee) will report to Triple-A Las Vegas on Tuesday to begin a rehab assignment, Martin Gallegos of MLB.com reports."
+     },
+     {
       "player": "J.T. Ginn",
       "status": "15-Day-IL",
       "detail": "Ginn (finger) will be reinstated from the 15-day injured list to start Tuesday's game at Cincinnati, Martin Gallegos of MLB.com reports."
@@ -5921,11 +5926,6 @@
       "player": "Nick Kurtz",
       "status": "Day-To-Day",
       "detail": "Kurtz, who is out of the lineup Sunday against the Tigers, is scheduled to visit a hand specialist Monday in Los Angeles, after which the A's are expected to make a roster decision, Mark Feinsand of MLB.com reports."
-     },
-     {
-      "player": "Zack Gelof",
-      "status": "10-Day-IL",
-      "detail": "Gelof (knee) is expected to begin a rehab assignment Tuesday with Triple-A Las Vegas, per MLB.com."
      },
      {
       "player": "Mark Leiter Jr.",
@@ -6265,6 +6265,11 @@
     ],
     "Cincinnati Reds": [
      {
+      "player": "Nick Lodolo",
+      "status": "15-Day-IL",
+      "detail": "Lodolo (finger) is scheduled to throw 60-to-65 pitches during a rehab start with Triple-A Louisville on Wednesday, Charlie Goldsmith of Fox 19 Now Cincinnati reports."
+     },
+     {
       "player": "Brandon Williamson",
       "status": "60-Day-IL",
       "detail": "Williamson (shoulder) allowed one run on two walks while striking out three over two innings for Double-A Chattanooga on Saturday. The left-hander also hit a batter."
@@ -6273,11 +6278,6 @@
       "player": "Tony Santillan",
       "status": "15-Day-IL",
       "detail": "Santillan (oblique) was cleared Friday to begin an expedited recovery program, MLB.com reports."
-     },
-     {
-      "player": "Nick Lodolo",
-      "status": "15-Day-IL",
-      "detail": "Lodolo (finger) threw 50 pitches over three simulated innings of live batting practice Friday, MLB.com reports."
      },
      {
       "player": "Blake Dunn",
@@ -6927,14 +6927,14 @@
     ],
     "San Francisco Giants": [
      {
+      "player": "Matt Chapman",
+      "status": "10-Day-IL",
+      "detail": "Chapman will undergo another MRI on Monday since his abdominal strain remains bothersome when running, Susan Slusser of the San Francisco Chronicle reports."
+     },
+     {
       "player": "Jesus Rodriguez",
       "status": "10-Day-IL",
       "detail": "The Giants placed Rodriguez on the 10-day injured list Saturday due to right elbow neuritis, John Shea of the San Francisco Chronicle reports."
-     },
-     {
-      "player": "Matt Chapman",
-      "status": "10-Day-IL",
-      "detail": "Chapman (abdomen) will not be activated during San Francisco's weekend series against the Padres, John Shea of the San Francisco Chronicle reports."
      },
      {
       "player": "Casey Schmitt",
@@ -7226,7 +7226,7 @@
      {
       "player": "Andres Chaparro",
       "status": "Day-To-Day",
-      "detail": "Chaparro was removed from Sunday's game against Atlanta after being struck in the head by a pitch, Mark Zuckerman of NatsJournal.com reports."
+      "detail": "Nationals manager Blake Butera said after Sunday's 4-2 loss to Atlanta that Chaparro (head) passed a concussion test, Mark Zuckerman of NatsJournal.com reports."
      },
      {
       "player": "Mitchell Parker",
