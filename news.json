@@ -1,11 +1,18 @@
 {
- "updated": "2026-08-01T22:32:36.889440+00:00",
- "updated_unix": 1785623556,
+ "updated": "2026-08-02T00:02:25.260950+00:00",
+ "updated_unix": 1785628945,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
+    {
+     "title": "Premier League preseason friendlies 2026-27: Fixtures, UK kick-off times and summer tour schedule",
+     "desc": "Premier League clubs have confirmed their preseason schedules ahead of the new campaign, with the 2026-27 season kicking off on Aug. 21.",
+     "published": "2026-08-01T22:50:31Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49154575/premier-league-preseason-friendlies-202627-fixtures-uk-kickoff-s-summer-tour-schedule-chelsea-liverpool-arsenal-man-united-man-city-spurs"
+    },
     {
      "title": "Bournemouth announce the signing of Antonio Silva from Benfica",
      "desc": "Bournemouth have announced the signing of António Silva from Benfica for a fee believed to be in the region of £25 million ($33.7 million.)",
@@ -40,13 +47,6 @@
      "published": "2026-08-01T16:34:22Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
-    },
-    {
-     "title": "Chelsea complete the signing of Danny Welbeck from Brighton",
-     "desc": "Chelsea have completed the signing of Danny Welbeck from Brighton, the club have announced.",
-     "published": "2026-08-01T18:52:48Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49478554/danny-welbeck-chelsea-brighton-premier-league-transfers"
     }
    ],
    "injuries": {},
@@ -350,6 +350,34 @@
    "name": "NFL",
    "headlines": [
     {
+     "title": "Will Levis is confident in his ability coming back from injury",
+     "desc": "Will Levis is confident in his ability coming back from injury ",
+     "published": "2026-08-01T23:59:10Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49508607/will-levis-confident-ability-coming-back-injury"
+    },
+    {
+     "title": "2026 Indianapolis Colts training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Colts training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T23:37:20Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49448214/indianapolis-colts-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "2026 NFL training camp: Latest news, intel for all 32 teams",
+     "desc": "Get all the news, intel and insights on NFL training camps from our team of reporters in the field.",
+     "published": "2026-08-01T23:39:24Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49368181/training-camp-2026-latest-news-intel-updates-buzz-all-32-teams"
+    },
+    {
+     "title": "2026 Minnesota Vikings training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Vikings training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-01T22:52:57Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49376202/minnesota-vikings-training-camp-2026-intel-updates"
+    },
+    {
      "title": "2026 Carolina Panthers training camp: Latest intel, updates",
      "desc": "Follow our updates from Panthers training camp, including intel on QBs, position battles and potential breakouts.",
      "published": "2026-08-01T22:29:57Z",
@@ -362,34 +390,6 @@
      "published": "2026-08-01T22:12:39Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/nfl/story/_/id/49507879/injuries-shadow-panthers-team-scrimmage-front-fans"
-    },
-    {
-     "title": "Tracking 2026 NFL hold-ins: Robinson, Gibbs, Vea and Tuipulotu",
-     "desc": "Here is the latest on Falcons' Bijan Robinson, Lions' Jahmyr Gibbs, Bucs' Vita Vea and Chargers' Tuli Tuipulotu.",
-     "published": "2026-08-01T21:46:52Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49490010/2026-training-camp-holdin-tracking-updates-bijan-robinson-jahmyr-gibbs-vita-vea-tuli-tuipulotu"
-    },
-    {
-     "title": "2026 Dallas Cowboys training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Cowboys training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-01T21:56:50Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49376535/dallas-cowboys-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "2026 New York Giants training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Giants training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-01T21:39:43Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49434181/new-york-giants-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "2026 San Francisco 49ers training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from 49ers training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-01T21:41:26Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49427696/san-francisco-49ers-training-camp-2026-intel-updates"
     }
    ],
    "injuries": {
@@ -1665,6 +1665,11 @@
     ],
     "Detroit Lions": [
      {
+      "player": "Alim McNeill",
+      "status": "Questionable",
+      "detail": "McNeil's neck injury isn't considered to be serious, NFL reporter Jordan Schultz reports."
+     },
+     {
       "player": "Jimmy Rolder",
       "status": "Questionable",
       "detail": "Rolder (leg) will miss some time but avoided severe injury, NFL reporter Jordan Schultz reports."
@@ -1678,11 +1683,6 @@
       "player": "Christian Mahogany",
       "status": "Active",
       "detail": "Mahogany (undisclosed) was removed from the Lions' active/non-football injury list Friday after passing his physical, Justin Rogers of DetroitFootball.net reports."
-     },
-     {
-      "player": "Alim McNeill",
-      "status": "Questionable",
-      "detail": "McNeill left the Lions' training camp practice early with a neck injury Friday, Kory Woods of MLive.com reports."
      },
      {
       "player": "Anthony Firkser",
@@ -3830,7 +3830,7 @@
      },
      {
       "player": "Tanner McLachlan",
-      "status": "Questionable",
+      "status": "Injured Reserve",
       "detail": "McLachlan (undisclosed) reverted to the 49ers' injured reserve Saturday, per the NFL's transaction log."
      },
      {
@@ -5830,6 +5830,11 @@
     ],
     "Utah Mammoth": [
      {
+      "player": "Caleb Desnoyers",
+      "status": "Day-To-Day",
+      "detail": "day-to-day"
+     },
+     {
       "player": "Barrett Hayton",
       "status": "Out",
       "detail": "Hayton (upper body) signed a one-year, $4.775 million contract with Utah on Wednesday."
@@ -5927,46 +5932,46 @@
    "name": "MLB",
    "headlines": [
     {
-     "title": "Blue Jays down the Cardinals 5-1 at home",
-     "desc": "Blue Jays down the Cardinals 5-1 at home",
-     "published": "2026-08-01T22:03:30Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49507864/blue-jays-cardinals-5-1-home"
+     "title": "Atlanta Braves give Perez start after scratching Lopez",
+     "desc": "With Reynaldo Lopez a late scratch due to left knee inflammation on Saturday night  against the Washington Nationals, the Atlanta Braves replaced him with by Martin Perez, who is 3-1 with a 3.79 ERA this season.",
+     "published": "2026-08-01T23:41:52Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/mlb/story/_/id/49508558/atlanta-braves-give-perez-start-scratching-lopez"
     },
     {
-     "title": "Gausman gets first win since May 22, Springer drives in two as Blue Jays beat Cardinals 5-1",
-     "desc": "— Kevin Gausman pitched 5 2/3 innings for his first win since May 22, George Springer had two hits and drove in a pair, and the Toronto Blue Jays beat the St. Louis Cardinals 5-1 on Saturday.",
-     "published": "2026-08-01T21:58:29Z",
+     "title": "Arozarena scores in 9th as Mariners snap losing streak with 4-3 win over Twins",
+     "desc": "— Randy Arozarena scored in the ninth inning on Cal Raleigh's groundout to first base, and the Seattle Mariners snapped a three-game losing streak with a 4-3 victory over the Minnesota Twins on Saturday.",
+     "published": "2026-08-01T23:37:30Z",
      "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816352"
+     "link": "http://www.espn.com/mlb/recap?gameId=401816360"
     },
     {
-     "title": "Carlos Correa eyes possible return for Astros this season",
-     "desc": "Carlos Correa's recovery from surgery to repair a torn ankle tendon is progressing quicker than expected, and Houston's star infielder isn't ruling out a return this season.",
-     "published": "2026-08-01T21:36:53Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/mlb/story/_/id/49507539/carlos-correa-eyes-possible-return-astros-season"
+     "title": "Minnesota Twins vs. Seattle Mariners: Game Highlights",
+     "desc": "Minnesota Twins vs. Seattle Mariners: Game Highlights",
+     "published": "2026-08-01T23:39:04Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49508452/game-highlights"
     },
     {
-     "title": "Pirates' Ryan O'Hearn (quad) to IL; expected out 6-8 weeks",
-     "desc": "The Pirates placed Ryan O'Hearn on the 10-day injured list Saturday because of a strained left quad that is expected to cause him to miss six to eight weeks.",
-     "published": "2026-08-01T21:12:08Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/mlb/story/_/id/49507255/pirates-ryan-ohearn-quad-il-expected-6-8-weeks"
+     "title": "Sanoja, Conine homer to help the Marlins beat the Mets 6-2",
+     "desc": "— Javier Sanoja and Griffin Conine homered to power the Miami Marlins to a 6-2 victory over the New York Mets on Saturday.",
+     "published": "2026-08-01T23:28:29Z",
+     "type": "Recap",
+     "link": "http://www.espn.com/mlb/recap?gameId=401816349"
     },
     {
-     "title": "2026 MLB trade deadline tracker: Rumors, news, analysis",
-     "desc": "Which contenders will make the biggest splash? Here's what we're hearing as 6 p.m. ET on Monday approaches.",
-     "published": "2026-08-01T21:48:10Z",
+     "title": "Miami Marlins vs. New York Mets: Game Highlights",
+     "desc": "Miami Marlins vs. New York Mets: Game Highlights",
+     "published": "2026-08-01T23:31:01Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49508403/game-highlights"
+    },
+    {
+     "title": "MLB trade deadline 2026: Ranking prospects who changed teams",
+     "desc": "You know the major leaguers on the move -- but what about the potential stars of tomorrow headed the other way in those deals?",
+     "published": "2026-08-01T23:48:14Z",
      "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49410877/2026-mlb-trade-deadline-tracker-rumors-alerts-news-latest-updates-analysis"
-    },
-    {
-     "title": "Mariners place OF Luke Raley on IL with forearm strain",
-     "desc": "The Seattle Mariners placed outfielder Luke Raley on the 10-day injured list on Saturday due to a left forearm strain.",
-     "published": "2026-08-01T19:53:43Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/mlb/story/_/id/49506726/mariners-place-luke-raley-il-forearm-strain"
+     "link": "https://www.espn.com/mlb/story/_/id/49464501/mlb-trade-deadline-2026-ranking-prospects-changed-teams"
     }
    ],
    "injuries": {
@@ -6095,6 +6100,11 @@
      }
     ],
     "Atlanta Braves": [
+     {
+      "player": "Reynaldo Lopez",
+      "status": "Day-To-Day",
+      "detail": "Lopez didn't factor into the decision Sunday against the Orioles, allowing five hits and a walk across 5.2 scoreless innings. He struck out six."
+     },
      {
       "player": "Spencer Schwellenbach",
       "status": "60-Day-IL",
@@ -6472,6 +6482,11 @@
     ],
     "Detroit Tigers": [
      {
+      "player": "Jackson Jobe",
+      "status": "60-Day-IL",
+      "detail": "Jobe (elbow) will make a rehab start with High-A West Michigan on Sunday, Cody Stavenhagen of The Athletic reports."
+     },
+     {
       "player": "Wenceel Perez",
       "status": "60-Day-IL",
       "detail": "Perez (orbital) will embark on a rehab assignment with Single-A Lakeland on Friday, Evan Woodbery of MLive.com reports."
@@ -6495,11 +6510,6 @@
       "player": "Kerry Carpenter",
       "status": "10-Day-IL",
       "detail": "Carpenter (foot) received a cortisone injection Tuesday, Evan Woodbery of MLive.com reports."
-     },
-     {
-      "player": "Jackson Jobe",
-      "status": "60-Day-IL",
-      "detail": "Jobe (elbow) struck out four and allowed one earned run on two hits and two walks across four innings in a rehab start Saturday with Double-A Erie."
      },
      {
       "player": "Brant Hurter",
@@ -6680,6 +6690,11 @@
     ],
     "Los Angeles Dodgers": [
      {
+      "player": "Will Smith",
+      "status": "60-Day-IL",
+      "detail": "Dodgers manager Dave Roberts said Saturday that Smith (neck) will need at least 3-to-4 weeks to ramp back up, including a rehab assignment, Katie Woo of The Athletic reports."
+     },
+     {
       "player": "Brock Stewart",
       "status": "15-Day-IL",
       "detail": "MRI results on Stewart's right shoulder revealed tendinitis Saturday, Fabian Ardaya of The Athletic reports."
@@ -6698,11 +6713,6 @@
       "player": "Blake Treinen",
       "status": "15-Day-IL",
       "detail": "Treinen (elbow) will face live hitters Wednesday, Jack Harris of the California Post reports."
-     },
-     {
-      "player": "Will Smith",
-      "status": "60-Day-IL",
-      "detail": "Smith (neck) is pain-free after resuming baseball activities, Fabian Ardaya of The Athletic reports."
      },
      {
       "player": "Bobby Miller",
@@ -6781,7 +6791,7 @@
      {
       "player": "Kyle Harrison",
       "status": "15-Day-IL",
-      "detail": "Harrison (forearm) pitched 5.2 scoreless innings, surrendering one hit and three walks while striking out five batters in Thursday night's rehab start with High-A Wisconsin."
+      "detail": "Harrison (forearm) is expected to make his next start for the Brewers during their upcoming home series against the Pirates, Todd Rosiak of the Milwaukee Journal Sentinel reports."
      },
      {
       "player": "Sal Frelick",
@@ -7041,11 +7051,6 @@
       "player": "Matt Chapman",
       "status": "10-Day-IL",
       "detail": "Chapman (abdomen) will not be activated during San Francisco's weekend series against the Padres, John Shea of the San Francisco Chronicle reports."
-     },
-     {
-      "player": "Luis Arraez",
-      "status": "Day-To-Day",
-      "detail": "Arraez went 4-for-5 with two RBI, a run scored and a stolen base in Wednesday's 16-3 win over the Brewers."
      },
      {
       "player": "Casey Schmitt",
