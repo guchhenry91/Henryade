@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-02T04:04:53.256236+00:00",
- "updated_unix": 1785643493,
+ "updated": "2026-08-02T07:07:49.697385+00:00",
+ "updated_unix": 1785654469,
  "source": "espn",
  "leagues": {
   "epl": {
@@ -4465,7 +4465,7 @@
     {
      "title": "Holmgren: Thunder departures part of 'business of this game'",
      "desc": "Oklahoma City's Chet Holmgren told reporters Saturday afternoon that the departures of three contributors to the Thunder's 2025 championship team felt \"like losing a family member,\" but at the same time, \"that's how the business of this gam",
-     "published": "2026-08-01T22:14:57Z",
+     "published": "2026-08-02T04:38:03Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/nba/story/_/id/49507452/thunder-departures-part-business-game"
     },
@@ -5390,6 +5390,11 @@
       "player": "Nikita Zadorov",
       "status": "Out",
       "detail": "out"
+     },
+     {
+      "player": "Dans Locmelis",
+      "status": "Out",
+      "detail": "Locmelis will undergo season-ending shoulder surgery next week, Mark Divver of the New England Hockey Journal reports."
      }
     ],
     "Buffalo Sabres": [
@@ -5424,6 +5429,31 @@
       "player": "Yan Kuznetsov",
       "status": "Out",
       "detail": "Kuznetsov (upper body) will miss the rest of the 2025-26 regular season, according to Pat Steinberg of Sportsnet 960 The Fan on Tuesday."
+     },
+     {
+      "player": "Joel Hanley",
+      "status": "Out",
+      "detail": "out"
+     },
+     {
+      "player": "Samuel Honzek",
+      "status": "Injured Reserve",
+      "detail": "Honzek (upper body) will not return this season, per Pat Steinberg of Sportsnet 960 The Fan on Friday."
+     },
+     {
+      "player": "Jonathan Huberdeau",
+      "status": "Injured Reserve",
+      "detail": "Huberdeau (hip) was put on injured reserve Saturday, per the NHL media site."
+     },
+     {
+      "player": "Jake Bean",
+      "status": "Injured Reserve",
+      "detail": "Bean (undisclosed) will need to undergo surgery and is expected to be sidelined indefinitely, Pat Steinberg of Sportsnet 960 The Fan reports Thursday."
+     },
+     {
+      "player": "Henry Mews",
+      "status": "Out",
+      "detail": "out"
      }
     ],
     "Carolina Hurricanes": [
@@ -5443,6 +5473,21 @@
       "player": "Connor Bedard",
       "status": "Out",
       "detail": "Bedard (shoulder) signed a five-year, $75 million contract with Chicago on Saturday."
+     },
+     {
+      "player": "Matt Grzelcyk",
+      "status": "Out",
+      "detail": "Grzelcyk (upper body) will miss the remainder of the 2025-26 regular season, according to Ben Pope of the Chicago Sun-Times on Tuesday."
+     },
+     {
+      "player": "Artyom Levshunov",
+      "status": "Out",
+      "detail": "Levshunov (hand) will not play again in 2025-26, according to Ben Pope of the Chicago Sun-Times on Tuesday."
+     },
+     {
+      "player": "Ryan Ellis",
+      "status": "Injured Reserve",
+      "detail": "Ellis (back) and his contract have been traded to Chicago from San Jose, along with Jake Furlong and a 2028 fourth-round pick in exchange for Laurent Brossoit, Nolan Allan and a 2028 seventh-round pick Thursday."
      }
     ],
     "Colorado Avalanche": [
@@ -5503,6 +5548,11 @@
       "player": "Adam Henrique",
       "status": "Out",
       "detail": "out"
+     },
+     {
+      "player": "Mattias Janmark",
+      "status": "Injured Reserve",
+      "detail": "Janmark (undisclosed) underwent season-ending surgery on Friday, per Mark Spector of Sportsnet."
      }
     ],
     "Florida Panthers": [
@@ -5542,9 +5592,31 @@
       "detail": "out"
      },
      {
+      "player": "Jonah Gadjovich",
+      "status": "Injured Reserve",
+      "detail": "Gadjovich (upper body) is not expected to suit up again this season, per Jameson Olive of the Panthers' official site on Tuesday."
+     },
+     {
+      "player": "Niko Mikkola",
+      "status": "Injured Reserve",
+      "detail": "ir"
+     },
+     {
       "player": "Uvis Balinskis",
       "status": "Out",
       "detail": "Balinskis (lower body) has a fracture and is slated to miss 4-6 weeks, Jameson Olive of the Panthers' official site reports Monday."
+     },
+     {
+      "player": "Brad Marchand",
+      "status": "Injured Reserve",
+      "detail": "Marchand landed on injured reserve Tuesday, per the NHL media site."
+     }
+    ],
+    "Los Angeles Kings": [
+     {
+      "player": "Kevin Fiala",
+      "status": "Injured Reserve",
+      "detail": "Fiala (lower leg fracture) won't be available before training camp for the 2026-27 campaign, per John Hoven of SiriusXM NHL Network Radio."
      }
     ],
     "Minnesota Wild": [
@@ -5594,6 +5666,11 @@
       "player": "Luke Hughes",
       "status": "Out",
       "detail": "Hughes (undisclosed)  will undergo a procedure and will miss the remainder of the season, it was announced Thursday."
+     },
+     {
+      "player": "Stefan Noesen",
+      "status": "Injured Reserve",
+      "detail": "Noesen (knee) has been ruled out for the rest of the season, Kristy Flannery of The Hockey News reports Sunday."
      }
     ],
     "New York Islanders": [
@@ -5621,6 +5698,18 @@
       "player": "Alexander Romanov",
       "status": "Injured Reserve",
       "detail": "Romanov (shoulder) will miss the final two games of the regular season, according to Stefen Rosner of NHL.com on Sunday."
+     },
+     {
+      "player": "Pierre Engvall",
+      "status": "Injured Reserve",
+      "detail": "Engvall (ankle) will miss the remainder of the 2025-26 campaign, per Stefen Rosner of NHL.com."
+     }
+    ],
+    "New York Rangers": [
+     {
+      "player": "Matt Rempe",
+      "status": "Injured Reserve",
+      "detail": "Rempe (thumb) probably won't be ready to return before the end of the 2025-26 regular season, according to Vince Z. Mercogliano of The Athletic on Monday."
      }
     ],
     "Ottawa Senators": [
@@ -5650,6 +5739,23 @@
       "player": "Owen Tippett",
       "status": "Out",
       "detail": "Tippett (undisclosed) was contending with several injuries, including a sports hernia, during the 2026 postseason, Kevin Kurz of The Athletic reports Monday."
+     },
+     {
+      "player": "Ty Murchison",
+      "status": "Out",
+      "detail": "out"
+     }
+    ],
+    "Pittsburgh Penguins": [
+     {
+      "player": "Caleb Jones",
+      "status": "Injured Reserve",
+      "detail": "ir"
+     },
+     {
+      "player": "Filip Hallander",
+      "status": "Injured Reserve",
+      "detail": "Hallander (leg) was recalled from his conditioning stint with AHL Wilkes-Barre/Scranton on Friday, Seth Rorabaugh of Tribune-Review Sports reports."
      }
     ],
     "San Jose Sharks": [
@@ -5710,6 +5816,16 @@
       "player": "Dakota Joshua",
       "status": "Out",
       "detail": "Joshua (upper body) will not return to the lineup for the rest of the season, according to David Alter of The Hockey News on Saturday."
+     },
+     {
+      "player": "Auston Matthews",
+      "status": "Out",
+      "detail": "Matthews underwent successful MCL knee repair surgery Thursday."
+     },
+     {
+      "player": "Chris Tanev",
+      "status": "Injured Reserve",
+      "detail": "Tanev underwent core muscle surgery Wednesday and will miss the remainder of the 2025-26 campaign."
      }
     ],
     "Utah Mammoth": [
@@ -5729,6 +5845,21 @@
       "player": "Evander Kane",
       "status": "Out",
       "detail": "Kane (upper body) will most likely miss the Canucks' final two games of the 2025-26 season, Farhan Lalji of TSN reports."
+     },
+     {
+      "player": "Thatcher Demko",
+      "status": "Injured Reserve",
+      "detail": "Demko was placed on long-term injured reserve Tuesday."
+     },
+     {
+      "player": "Jonathan Lekkerimaki",
+      "status": "Out",
+      "detail": "Lekkerimaki underwent successful shoulder surgery Friday."
+     },
+     {
+      "player": "Filip Chytil",
+      "status": "Injured Reserve",
+      "detail": "ir"
      },
      {
       "player": "Derek Forbort",
@@ -5754,6 +5885,11 @@
      },
      {
       "player": "Charlie Lindgren",
+      "status": "Out",
+      "detail": "out"
+     },
+     {
+      "player": "Eriks Mateiko",
       "status": "Out",
       "detail": "out"
      }
@@ -5796,46 +5932,46 @@
    "name": "MLB",
    "headlines": [
     {
-     "title": "Passan: Dodgers ponied up for Tarik Skubal",
-     "desc": "Passan: Dodgers ponied up for Tarik Skubal   ",
-     "published": "2026-08-02T04:03:23Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49510022/dodgers-ponied-tarik-skubal"
-    },
-    {
-     "title": "2026 MLB trade deadline tracker: Rumors, news, analysis",
-     "desc": "Which contenders will make the biggest splash? Here's what we're hearing as 6 p.m. ET on Monday approaches.",
-     "published": "2026-08-02T03:48:45Z",
-     "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49410877/2026-mlb-trade-deadline-tracker-rumors-alerts-news-latest-updates-analysis"
-    },
-    {
-     "title": "Sources: Dodgers finalize trade to acquire Tarik Skubal",
-     "desc": "The first-place Los Angeles Dodgers finalized a trade package to acquire two-time American League Cy Young Award winner Tarik Skubal, 29, from the Tigers, sources told ESPN's Jeff Passan Saturday, sending Zyhir Hope, River Ryan and Brady Sm",
-     "published": "2026-08-02T04:03:56Z",
+     "title": "Tarik Skubal fights tears in emotional farewell to Tigers",
+     "desc": "An emotional Tarik Skubal recounted his nine seasons with the Tigers on Saturday night and said it was something he'd \"never take for granted\" after it was reported that he was being traded to the Dodgers.",
+     "published": "2026-08-02T07:07:13Z",
      "type": "HeadlineNews",
-     "link": "https://www.espn.com/mlb/story/_/id/49509987/dodgers-finalizing-trade-acquire-tarik-skubal"
-    },
-    {
-     "title": "Arizona Diamondbacks vs. Cleveland Guardians: Game Highlights",
-     "desc": "Arizona Diamondbacks vs. Cleveland Guardians: Game Highlights",
-     "published": "2026-08-02T03:46:20Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49509986/game-highlights"
+     "link": "https://www.espn.com/mlb/story/_/id/49510907/tarik-skubal-fights-tears-emotional-farewell-tigers"
     },
     {
      "title": "2026 MLB trade deadline grades: Report cards for every deal",
      "desc": "Trade season has officially begun! Here's our running scorecard for every big move before Monday's deadline arrives.",
-     "published": "2026-08-02T04:01:50Z",
+     "published": "2026-08-02T06:16:57Z",
      "type": "Story",
      "link": "https://www.espn.com/mlb/story/_/id/49454655/2026-mlb-trade-deadline-grades-analysis-report-cards-every-deal"
     },
     {
-     "title": "Boston Red Sox vs. Los Angeles Dodgers: Game Highlights",
-     "desc": "Boston Red Sox vs. Los Angeles Dodgers: Game Highlights",
-     "published": "2026-08-02T03:29:49Z",
+     "title": "MLB trade grades: Tarik Skubal to the Dodgers?! Who won the deal?",
+     "desc": "Baseball's two-time defending champion adds a two-time Cy Young winner. L.A. gets an A -- but what about the Tigers?",
+     "published": "2026-08-02T06:17:05Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/49469642/mlb-trade-deadline-grades-2026-tarik-skubal-los-angeles-dodgers-detroit-tigers-blockbuster"
+    },
+    {
+     "title": "Max Clark hits his first career homer to lead the Tigers past the A's 8-6",
+     "desc": "— Max Clark homered on his second night in the big leagues and the Detroit Tigers beat the Athletics 8-6 on Saturday night before trading star pitcher Tarik Skubal to the Los Angeles...",
+     "published": "2026-08-02T05:19:28Z",
+     "type": "Recap",
+     "link": "http://www.espn.com/mlb/recap?gameId=401816358"
+    },
+    {
+     "title": "Detroit Tigers vs. Athletics: Game Highlights",
+     "desc": "Detroit Tigers vs. Athletics: Game Highlights",
+     "published": "2026-08-02T04:53:45Z",
      "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49509939/game-highlights"
+     "link": "https://www.espn.com/video/clip/_/id/49510294/game-highlights"
+    },
+    {
+     "title": "Brewers beat Angels 3-1 to move past Dodgers for MLB lead",
+     "desc": "— Brice Turang had a go-ahead RBI single in the eighth inning and the Milwaukee Brewers finished off a 3-1 victory over the Los Angeles Angels on Saturday night.",
+     "published": "2026-08-02T04:23:44Z",
+     "type": "Recap",
+     "link": "http://www.espn.com/mlb/recap?gameId=401816359"
     }
    ],
    "injuries": {
@@ -5966,8 +6102,8 @@
     "Atlanta Braves": [
      {
       "player": "Reynaldo Lopez",
-      "status": "Day-To-Day",
-      "detail": "Lopez didn't factor into the decision Sunday against the Orioles, allowing five hits and a walk across 5.2 scoreless innings. He struck out six."
+      "status": "Out",
+      "detail": "Atlanta manager Walt Weiss said Saturday that Lopez (knee) will likely go on the 15-day injured list, Chad Bishop of The Atlanta Journal-Constitution reports."
      },
      {
       "player": "Spencer Schwellenbach",
@@ -6066,7 +6202,7 @@
      {
       "player": "Willson Contreras",
       "status": "Day-To-Day",
-      "detail": "Contreras, who was hit in the head by a pitch and had to exit Friday's game, isn't in Boston's starting lineup versus the Dodgers on Saturday, Tim Healey of The Boston Globe reports."
+      "detail": "Red Sox interim manager Chad Tracy told reporters after Saturday's 3-2 win over the Dodgers that Contreras (head) is on track to return for Sunday's series finale, Tim Healey of The Boston Globe reports."
      },
      {
       "player": "Curtis Mead",
