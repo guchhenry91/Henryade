@@ -1,15 +1,29 @@
 {
- "updated": "2026-08-02T11:19:46.650931+00:00",
- "updated_unix": 1785669586,
+ "updated": "2026-08-02T12:35:45.144114+00:00",
+ "updated_unix": 1785674145,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
     {
+     "title": "Barcelona's Hansi Flick as Marcus Rashford returns to Man United: 'I will miss him'",
+     "desc": "Barcelona boss Hansi Flick has said he will \"miss\" Marcus Rashford after the Manchester United forward returned to his parent club following a successful loan in Spain.",
+     "published": "2026-08-02T12:07:36Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49511821/barcelona-hansi-flick-marcus-rashford-returns-man-united-miss-him"
+    },
+    {
+     "title": "Transfer rumors, news: Salah set for Trabzonspor after Liverpool exit",
+     "desc": "Former Liverpool winger Mohamed Salah is set to move to Turkish club Trabzonspor. Transfer Talk has the latest.",
+     "published": "2026-08-02T11:40:19Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49511046/transfer-rumors-news-mohamed-salah-set-trabzonspor-liverpool-exit"
+    },
+    {
      "title": "Liverpool's Alexander Isak, Florian Wirtz to play preseason clash vs Leeds",
-     "desc": "Liverpool trio Alexander Isak, Florian Wirtz and Ryan Gravenberch are set to feature in the club's final United States preseason tour match against Leeds United.",
-     "published": "2026-08-02T10:29:35Z",
+     "desc": "The Liverpool trio of Alexander Isak, Florian Wirtz and Ryan Gravenberch are set to feature in the club's final United States preseason tour match against Leeds United.",
+     "published": "2026-08-02T11:20:02Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49511509/liverpool-alexander-isak-florian-wirtz-play-preseason-clash-vs-leeds"
     },
@@ -19,13 +33,6 @@
      "published": "2026-08-02T08:17:18Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49163915/premier-league-202627-kits-ranking-every-jersey-released-arsenal-chelsea-liverpool-man-city-man-united-tottenham"
-    },
-    {
-     "title": "Transfer rumors, news: Salah set for Trabzonspor after Liverpool exit",
-     "desc": "Former Liverpool winger Mohamed Salah is set to move to Turkish club Trabzonspor. Transfer Talk has the latest.",
-     "published": "2026-08-02T08:10:21Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49511046/transfer-rumors-news-mohamed-salah-set-trabzonspor-liverpool-exit"
     },
     {
      "title": "Premier League preseason friendlies 2026-27: Fixtures, UK kick-off times and summer tour schedule",
@@ -40,13 +47,6 @@
      "published": "2026-08-02T07:20:35Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/48955344/premier-league-2026-summer-transfers-all-confirmed-ins-outs-every-club"
-    },
-    {
-     "title": "Premier League, EFL summer transfer window 2026 dates: When is Deadline Day?",
-     "desc": "Everything that Premier League and EFL supporters need to know about the 2026 summer transfer window, and key dates around it.",
-     "published": "2026-08-02T07:21:15Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/48944912/premier-league-efl-summer-transfer-window-2026-dates-does-open-deadline-day"
     }
    ],
    "injuries": {},
@@ -55,6 +55,13 @@
   "laliga": {
    "name": "La Liga",
    "headlines": [
+    {
+     "title": "Barcelona's Hansi Flick as Marcus Rashford returns to Man United: 'I will miss him'",
+     "desc": "Barcelona boss Hansi Flick has said he will \"miss\" Marcus Rashford after the Manchester United forward returned to his parent club following a successful loan in Spain.",
+     "published": "2026-08-02T12:07:36Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49511821/barcelona-hansi-flick-marcus-rashford-returns-man-united-miss-him"
+    },
     {
      "title": "Endrick scores as Real Madrid get draw in Mourinho's return",
      "desc": "Real Madrid drew 2-2 with Fiorentina in a preseason friendly on Saturday, in new coach José Mourinho's first game in charge.",
@@ -89,13 +96,6 @@
      "published": "2026-07-30T21:56:48Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49488247/fulham-agree-deal-gonzalo-garcia-real-madrid-34-million-cesar-palacios"
-    },
-    {
-     "title": "What can Barcelona achieve next season under Hansi Flick?",
-     "desc": "What can Barcelona achieve next season under Hansi Flick?",
-     "published": "2026-07-30T17:05:16Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49489652/what-barcelona-achieve-next-season-hansi-flick"
     }
    ],
    "injuries": {},
@@ -5390,6 +5390,11 @@
       "player": "Nikita Zadorov",
       "status": "Out",
       "detail": "out"
+     },
+     {
+      "player": "Dans Locmelis",
+      "status": "Out",
+      "detail": "Locmelis will undergo season-ending shoulder surgery next week, Mark Divver of the New England Hockey Journal reports."
      }
     ],
     "Buffalo Sabres": [
@@ -5424,6 +5429,31 @@
       "player": "Yan Kuznetsov",
       "status": "Out",
       "detail": "Kuznetsov (upper body) will miss the rest of the 2025-26 regular season, according to Pat Steinberg of Sportsnet 960 The Fan on Tuesday."
+     },
+     {
+      "player": "Joel Hanley",
+      "status": "Out",
+      "detail": "out"
+     },
+     {
+      "player": "Samuel Honzek",
+      "status": "Injured Reserve",
+      "detail": "Honzek (upper body) will not return this season, per Pat Steinberg of Sportsnet 960 The Fan on Friday."
+     },
+     {
+      "player": "Jonathan Huberdeau",
+      "status": "Injured Reserve",
+      "detail": "Huberdeau (hip) was put on injured reserve Saturday, per the NHL media site."
+     },
+     {
+      "player": "Jake Bean",
+      "status": "Injured Reserve",
+      "detail": "Bean (undisclosed) will need to undergo surgery and is expected to be sidelined indefinitely, Pat Steinberg of Sportsnet 960 The Fan reports Thursday."
+     },
+     {
+      "player": "Henry Mews",
+      "status": "Out",
+      "detail": "out"
      }
     ],
     "Carolina Hurricanes": [
@@ -5443,6 +5473,21 @@
       "player": "Connor Bedard",
       "status": "Out",
       "detail": "Bedard (shoulder) signed a five-year, $75 million contract with Chicago on Saturday."
+     },
+     {
+      "player": "Matt Grzelcyk",
+      "status": "Out",
+      "detail": "Grzelcyk (upper body) will miss the remainder of the 2025-26 regular season, according to Ben Pope of the Chicago Sun-Times on Tuesday."
+     },
+     {
+      "player": "Artyom Levshunov",
+      "status": "Out",
+      "detail": "Levshunov (hand) will not play again in 2025-26, according to Ben Pope of the Chicago Sun-Times on Tuesday."
+     },
+     {
+      "player": "Ryan Ellis",
+      "status": "Injured Reserve",
+      "detail": "Ellis (back) and his contract have been traded to Chicago from San Jose, along with Jake Furlong and a 2028 fourth-round pick in exchange for Laurent Brossoit, Nolan Allan and a 2028 seventh-round pick Thursday."
      }
     ],
     "Colorado Avalanche": [
@@ -5503,6 +5548,11 @@
       "player": "Adam Henrique",
       "status": "Out",
       "detail": "out"
+     },
+     {
+      "player": "Mattias Janmark",
+      "status": "Injured Reserve",
+      "detail": "Janmark (undisclosed) underwent season-ending surgery on Friday, per Mark Spector of Sportsnet."
      }
     ],
     "Florida Panthers": [
@@ -5542,9 +5592,31 @@
       "detail": "out"
      },
      {
+      "player": "Jonah Gadjovich",
+      "status": "Injured Reserve",
+      "detail": "Gadjovich (upper body) is not expected to suit up again this season, per Jameson Olive of the Panthers' official site on Tuesday."
+     },
+     {
+      "player": "Niko Mikkola",
+      "status": "Injured Reserve",
+      "detail": "ir"
+     },
+     {
       "player": "Uvis Balinskis",
       "status": "Out",
       "detail": "Balinskis (lower body) has a fracture and is slated to miss 4-6 weeks, Jameson Olive of the Panthers' official site reports Monday."
+     },
+     {
+      "player": "Brad Marchand",
+      "status": "Injured Reserve",
+      "detail": "Marchand landed on injured reserve Tuesday, per the NHL media site."
+     }
+    ],
+    "Los Angeles Kings": [
+     {
+      "player": "Kevin Fiala",
+      "status": "Injured Reserve",
+      "detail": "Fiala (lower leg fracture) won't be available before training camp for the 2026-27 campaign, per John Hoven of SiriusXM NHL Network Radio."
      }
     ],
     "Minnesota Wild": [
@@ -5594,6 +5666,11 @@
       "player": "Luke Hughes",
       "status": "Out",
       "detail": "Hughes (undisclosed)  will undergo a procedure and will miss the remainder of the season, it was announced Thursday."
+     },
+     {
+      "player": "Stefan Noesen",
+      "status": "Injured Reserve",
+      "detail": "Noesen (knee) has been ruled out for the rest of the season, Kristy Flannery of The Hockey News reports Sunday."
      }
     ],
     "New York Islanders": [
@@ -5621,6 +5698,18 @@
       "player": "Alexander Romanov",
       "status": "Injured Reserve",
       "detail": "Romanov (shoulder) will miss the final two games of the regular season, according to Stefen Rosner of NHL.com on Sunday."
+     },
+     {
+      "player": "Pierre Engvall",
+      "status": "Injured Reserve",
+      "detail": "Engvall (ankle) will miss the remainder of the 2025-26 campaign, per Stefen Rosner of NHL.com."
+     }
+    ],
+    "New York Rangers": [
+     {
+      "player": "Matt Rempe",
+      "status": "Injured Reserve",
+      "detail": "Rempe (thumb) probably won't be ready to return before the end of the 2025-26 regular season, according to Vince Z. Mercogliano of The Athletic on Monday."
      }
     ],
     "Ottawa Senators": [
@@ -5650,6 +5739,23 @@
       "player": "Owen Tippett",
       "status": "Out",
       "detail": "Tippett (undisclosed) was contending with several injuries, including a sports hernia, during the 2026 postseason, Kevin Kurz of The Athletic reports Monday."
+     },
+     {
+      "player": "Ty Murchison",
+      "status": "Out",
+      "detail": "out"
+     }
+    ],
+    "Pittsburgh Penguins": [
+     {
+      "player": "Caleb Jones",
+      "status": "Injured Reserve",
+      "detail": "ir"
+     },
+     {
+      "player": "Filip Hallander",
+      "status": "Injured Reserve",
+      "detail": "Hallander (leg) was recalled from his conditioning stint with AHL Wilkes-Barre/Scranton on Friday, Seth Rorabaugh of Tribune-Review Sports reports."
      }
     ],
     "San Jose Sharks": [
@@ -5710,6 +5816,16 @@
       "player": "Dakota Joshua",
       "status": "Out",
       "detail": "Joshua (upper body) will not return to the lineup for the rest of the season, according to David Alter of The Hockey News on Saturday."
+     },
+     {
+      "player": "Auston Matthews",
+      "status": "Out",
+      "detail": "Matthews underwent successful MCL knee repair surgery Thursday."
+     },
+     {
+      "player": "Chris Tanev",
+      "status": "Injured Reserve",
+      "detail": "Tanev underwent core muscle surgery Wednesday and will miss the remainder of the 2025-26 campaign."
      }
     ],
     "Utah Mammoth": [
@@ -5729,6 +5845,21 @@
       "player": "Evander Kane",
       "status": "Out",
       "detail": "Kane (upper body) will most likely miss the Canucks' final two games of the 2025-26 season, Farhan Lalji of TSN reports."
+     },
+     {
+      "player": "Thatcher Demko",
+      "status": "Injured Reserve",
+      "detail": "Demko was placed on long-term injured reserve Tuesday."
+     },
+     {
+      "player": "Jonathan Lekkerimaki",
+      "status": "Out",
+      "detail": "Lekkerimaki underwent successful shoulder surgery Friday."
+     },
+     {
+      "player": "Filip Chytil",
+      "status": "Injured Reserve",
+      "detail": "ir"
      },
      {
       "player": "Derek Forbort",
@@ -5754,6 +5885,11 @@
      },
      {
       "player": "Charlie Lindgren",
+      "status": "Out",
+      "detail": "out"
+     },
+     {
+      "player": "Eriks Mateiko",
       "status": "Out",
       "detail": "out"
      }
@@ -5796,6 +5932,13 @@
    "name": "MLB",
    "headlines": [
     {
+     "title": "Aug. 2 update! Ranking top 2026 MLB trade deadline candidates",
+     "desc": "Which difference-makers are available? Here are the big names your team could be targeting, with a few new additions near the top.",
+     "published": "2026-08-02T12:15:33Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/49082474/ranking-mlb-trade-deadline-candidates-top-100-skubal-chapman-peralta-arraez"
+    },
+    {
      "title": "Cronenworth's single gives Padres 6-5 win over Giants after Miller blows save",
      "desc": "— Jake Cronenworth singled in Xander Bogaerts with two outs in the ninth inning and the San Diego Padres beat the San Francisco Giants 6-5 on Saturday night for their seventh win in eight games.",
      "published": "2026-08-02T10:55:34Z",
@@ -5829,13 +5972,6 @@
      "published": "2026-08-02T08:01:57Z",
      "type": "Preview",
      "link": "http://www.espn.com/mlb/preview?gameId=401816369"
-    },
-    {
-     "title": "Mariners square off against the Twins in series rubber match",
-     "desc": "Minnesota Twins (56-56, second in the AL Central) vs. Seattle Mariners (54-58, third in the AL West)",
-     "published": "2026-08-02T08:01:53Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816375"
     }
    ],
    "injuries": {
