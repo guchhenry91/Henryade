@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-03T11:37:03.663865+00:00",
- "updated_unix": 1785757023,
+ "updated": "2026-08-03T14:49:03.146000+00:00",
+ "updated_unix": 1785768543,
  "source": "espn",
  "leagues": {
   "epl": {
@@ -9,9 +9,16 @@
     {
      "title": "Transfer rumors, news: Arteta tries to convince Vinícius Jr. to join Arsenal",
      "desc": "Mikel Arteta has tried to convince Real Madrid star Vinícius Júnior to join Arsenal. Transfer Talk has the latest.",
-     "published": "2026-08-03T11:30:13Z",
+     "published": "2026-08-03T12:02:18Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49518337/transfer-rumors-news-arsenal-boss-arteta-makes-push-vinicius-jr"
+    },
+    {
+     "title": "Premier League 2026-27 kits: Ranking every jersey released",
+     "desc": "It's still a few weeks before the new Premier League season begins, but plenty of top clubs have already released some of their 2026-27 kits.",
+     "published": "2026-08-03T12:02:13Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49163915/premier-league-202627-kits-ranking-every-jersey-released-arsenal-chelsea-liverpool-man-city-man-united-tottenham"
     },
     {
      "title": "Arsenal's new third kit is a blast from the (recent) past",
@@ -37,16 +44,9 @@
     {
      "title": "Premier League preseason friendlies 2026-27: Fixtures, UK kick-off times and summer tour schedule",
      "desc": "Premier League clubs have confirmed their preseason schedules ahead of the new campaign, with the 2026-27 season kicking off on Aug. 21.",
-     "published": "2026-08-03T06:18:15Z",
+     "published": "2026-08-03T12:43:50Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49154575/premier-league-preseason-friendlies-202627-fixtures-uk-kickoff-s-summer-tour-schedule-chelsea-liverpool-arsenal-man-united-man-city-spurs"
-    },
-    {
-     "title": "Premier League 2026 summer transfers: All confirmed ins, outs for every club",
-     "desc": "Here's every Premier League in and out before the 2026-27 season begins.",
-     "published": "2026-08-03T08:18:30Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/48955344/premier-league-2026-summer-transfers-all-confirmed-ins-outs-every-club"
     }
    ],
    "injuries": {},
@@ -56,9 +56,16 @@
    "name": "La Liga",
    "headlines": [
     {
+     "title": "Hansi Flick: Barcelona 'know they have to do something' in search for new striker",
+     "desc": "Hansi Flick says Barcelona know \"they have to do something\" in the transfer market as they continue to search for a replacement for Robert Lewandowski.",
+     "published": "2026-08-03T14:31:03Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49520314/barcelona-transfers-laliga-julian-alvarez-ferran-torres-eli-junior-kroupi"
+    },
+    {
      "title": "Transfer rumors, news: Arteta tries to convince Vinícius Jr. to join Arsenal",
      "desc": "Mikel Arteta has tried to convince Real Madrid star Vinícius Júnior to join Arsenal. Transfer Talk has the latest.",
-     "published": "2026-08-03T11:30:13Z",
+     "published": "2026-08-03T12:02:18Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49518337/transfer-rumors-news-arsenal-boss-arteta-makes-push-vinicius-jr"
     },
@@ -89,13 +96,6 @@
      "published": "2026-08-02T17:26:43Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49513341/xabi-alonso-real-madrid-scar-healed-chelsea-premier-league"
-    },
-    {
-     "title": "Barcelona's Hansi Flick as Marcus Rashford returns to Man United: 'I will miss him'",
-     "desc": "Barcelona boss Hansi Flick has said he will \"miss\" Marcus Rashford after the Manchester United forward returned to his parent club following a successful loan in Spain.",
-     "published": "2026-08-02T12:07:36Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49511821/barcelona-hansi-flick-marcus-rashford-returns-man-united-miss-him"
     }
    ],
    "injuries": {},
@@ -350,46 +350,46 @@
    "name": "NFL",
    "headlines": [
     {
+     "title": "2026 NFL free agency: Ranking best players still available",
+     "desc": "Where could Joey Bosa and Stefon Diggs land? Let's stack the top free agents who are still available and looking for new contracts.",
+     "published": "2026-08-03T13:50:17Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/48162895/2026-nfl-free-agency-ranking-best-remaining-available-unsigned-players"
+    },
+    {
+     "title": "What does 49ers' 'ominous' start mean for the season?",
+     "desc": "What does 49ers' 'ominous' start mean for the season?",
+     "published": "2026-08-03T13:49:57Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49519976/what-does-49ers-ominous-start-mean-season"
+    },
+    {
+     "title": "Will a 'more talented' Bears regress this season?",
+     "desc": "Will a 'more talented' Bears regress this season?",
+     "published": "2026-08-03T13:46:16Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49519975/will-more-talented-bears-regress-season"
+    },
+    {
+     "title": "Fantasy football draft rankings 2026: Wide receiver",
+     "desc": "Fantasy football draft rankings from Matt Bowen, Mike Clay, Tristan H. Cockcroft, Daniel Dopp, Eric Karabell, Liz Loza, Eric Moody and Field Yates.",
+     "published": "2026-08-03T13:13:22Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/football/story/_/page/FFPreseasonRank26WR/nfl-fantasy-football-draft-rankings-2026-wr-wide-receiver"
+    },
+    {
+     "title": "2026 fantasy football draft rankings: PPR leagues",
+     "desc": "Fantasy football rankings for the upcoming season, for PPR leagues, as well as IDP and dynasty setups.",
+     "published": "2026-08-03T13:13:45Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/football/story/_/page/FFPreseasonRank26main/fantasy-football-rankings-2026-draft-ppr"
+    },
+    {
      "title": "Joe Burrow, Bengals find camaraderie on unusual battlefield",
      "desc": "Center Ted Karras brought a chessboard into the locker room, and it has become a hit.",
      "published": "2026-08-03T10:28:18Z",
      "type": "Story",
      "link": "https://www.espn.com/nfl/story/_/id/49512851/joe-burrow-cincinnati-bengals-find-camaraderie-unusual-battlefield"
-    },
-    {
-     "title": "What's next for 49ers receivers Aiyuk, Deebo and Pearsall?",
-     "desc": "When will Aiyuk be released? And will he sign with Washington? What is Samuel's role after returning to S.F.?",
-     "published": "2026-08-03T10:38:48Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49516913/san-francisco-49ers-brandon-aiyuk-commanders-deebo-samuel-ricky-pearsall-fantasy"
-    },
-    {
-     "title": "2026 NFL training camp: Position battles on each depth chart",
-     "desc": "We picked the top position battles to keep an eye on as training camp and the preseason roll on.",
-     "published": "2026-08-03T10:00:11Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49513914/2026-nfl-training-camp-position-battles-afc-nfc"
-    },
-    {
-     "title": "Maxx Crosby's approaching Raiders training camp with intensity",
-     "desc": "We talked to players and coaches about Maxx Crosby's first few days at Raiders training camp.",
-     "published": "2026-08-03T10:00:11Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49500640/las-vegas-raiders-maxx-crosby-2026-training-camp"
-    },
-    {
-     "title": "2026 NFL training camp: Latest news, intel for all 32 teams",
-     "desc": "Get all the news, intel and insights on NFL training camps from our team of reporters in the field.",
-     "published": "2026-08-03T01:38:42Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49368181/training-camp-2026-latest-news-intel-updates-buzz-all-32-teams"
-    },
-    {
-     "title": "2026 Arizona Cardinals training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Cardinals training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-03T01:18:12Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49426382/arizona-cardinals-training-camp-2026-intel-updates"
     }
    ],
    "injuries": {
@@ -903,6 +903,16 @@
     ],
     "Carolina Panthers": [
      {
+      "player": "Mitchell Evans",
+      "status": "Active",
+      "detail": ""
+     },
+     {
+      "player": "Bobby Brown III",
+      "status": "Active",
+      "detail": ""
+     },
+     {
       "player": "Chamon Metayer",
       "status": "Active",
       "detail": "The Panthers signed Metayer to a contract Friday, Darin Gantt of the team's official site reports."
@@ -941,11 +951,6 @@
       "player": "Dan Chisena",
       "status": "Injured Reserve",
       "detail": "The Panthers placed Chisena (undisclosed) on injured reserve Wednesday, Darin Gantt of the team's official site reports."
-     },
-     {
-      "player": "Mitchell Evans",
-      "status": "Questionable",
-      "detail": "Evans has been diagnosed with a low ankle sprain and is considered day-to-day, Sheena Quick of Fox Sports Radio 1340 reports."
      },
      {
       "player": "Damien Lewis",
@@ -1008,11 +1013,6 @@
       "detail": "Ekwonu (knee) was placed on the active/PUP list Wednesday, Darin Gantt of the Panthers' official website reports."
      },
      {
-      "player": "Bobby Brown III",
-      "status": "Out",
-      "detail": "Brown (undisclosed) will begin training camp on Carolina's active/non-football injury list, Steve Reed of the Associated Press reports."
-     },
-     {
       "player": "Tershawn Wharton",
       "status": "Out",
       "detail": "Wharton (neck) will begin training camp on the Panthers' active/PUP list, Joe Person of The Athletic reports."
@@ -1032,7 +1032,7 @@
      {
       "player": "Kyle Monangai",
       "status": "Questionable",
-      "detail": "Monangai was absent from Friday's practice due to an undisclosed reason, Patrick Finley of the Chicago Sun-Times reports."
+      "detail": "Bears head coach Ben Johnson said Monday that Monangai is dealing with a soft-tissue injury, Brad Biggs of the Chicago Tribune reports."
      },
      {
       "player": "Rome Odunze",
@@ -1665,6 +1665,21 @@
     ],
     "Detroit Lions": [
      {
+      "player": "Sione Vaki",
+      "status": "Questionable",
+      "detail": "questionable"
+     },
+     {
+      "player": "Anthony Firkser",
+      "status": "Questionable",
+      "detail": "questionable"
+     },
+     {
+      "player": "Lawrence Keys III",
+      "status": "Questionable",
+      "detail": "questionable"
+     },
+     {
       "player": "Derrick Moore",
       "status": "Questionable",
       "detail": "Moore left Sunday's training camp practice early to be evaluated for a groin injury, Dave Birkett of the Detroit Free Press reports."
@@ -1693,11 +1708,6 @@
       "player": "Christian Mahogany",
       "status": "Active",
       "detail": "Mahogany (undisclosed) was removed from the Lions' active/non-football injury list Friday after passing his physical, Justin Rogers of DetroitFootball.net reports."
-     },
-     {
-      "player": "Anthony Firkser",
-      "status": "Active",
-      "detail": "Detroit signed Firkser on Friday."
      },
      {
       "player": "Brock Wright",
@@ -1778,16 +1788,6 @@
       "player": "Amon-Ra St. Brown",
       "status": "Active",
       "detail": "Tim Twentyman of the Lions' official site relayed following the team's recent minicamp that St. Brown \"looks a little stronger and more explosive heading into his sixth season.\""
-     },
-     {
-      "player": "Jackson Meeks",
-      "status": "Active",
-      "detail": "Meeks has converted from wide receiver to tight end during spring practices, John Maakaron of SI reports."
-     },
-     {
-      "player": "Lawrence Keys III",
-      "status": "Active",
-      "detail": "Keys signed a contract with the Lions on Thursday."
      }
     ],
     "Green Bay Packers": [
@@ -2935,6 +2935,11 @@
     ],
     "Minnesota Vikings": [
      {
+      "player": "Josh Oliver",
+      "status": "Active",
+      "detail": ""
+     },
+     {
       "player": "Caleb Banks",
       "status": "Active",
       "detail": "Banks (foot) is participating at the Vikings' training camp, Jason Harmon of Sports Illustrated reports."
@@ -3053,11 +3058,6 @@
       "player": "Max Bredeson",
       "status": "Active",
       "detail": "The Vikings selected Bredeson in the fifth round of the 2026 NFL Draft, 159th overall."
-     },
-     {
-      "player": "Jakobe Thomas",
-      "status": "Active",
-      "detail": "The Vikings selected Thomas in the third round of the 2026 NFL Draft, 98th overall."
      }
     ],
     "New England Patriots": [
@@ -3570,6 +3570,16 @@
     ],
     "Philadelphia Eagles": [
      {
+      "player": "Micah Morris",
+      "status": "Questionable",
+      "detail": "questionable"
+     },
+     {
+      "player": "Cameron Williams",
+      "status": "Active",
+      "detail": ""
+     },
+     {
       "player": "Jaeden Roberts",
       "status": "Questionable",
       "detail": "Roberts (leg) was carted off the field during Saturday's practice session, Jeff McLane of The Philadelphia Inquirer reports."
@@ -3583,11 +3593,6 @@
       "player": "Cole Wisniewski",
       "status": "Questionable",
       "detail": "Wisniewski (hamstring) did not participate in Saturday's practice session, Zach Berman of The Athletic reports."
-     },
-     {
-      "player": "Cameron Williams",
-      "status": "Questionable",
-      "detail": "Williams (knee) did not participate in Saturday's practice session, Zach Berman of The Athletic reports."
      },
      {
       "player": "Jihaad Campbell",
@@ -3688,11 +3693,6 @@
       "player": "Elijah Mitchell",
       "status": "Active",
       "detail": "The Eagles signed Mitchell on Tuesday."
-     },
-     {
-      "player": "Samori Toure",
-      "status": "Active",
-      "detail": "Toure signed with the Eagles on Monday."
      }
     ],
     "Pittsburgh Steelers": [
@@ -4332,6 +4332,11 @@
     ],
     "Washington Commanders": [
      {
+      "player": "Kain Medrano",
+      "status": "Active",
+      "detail": ""
+     },
+     {
       "player": "Nick Allegretti",
       "status": "Questionable",
       "detail": "Allegretti is expected to miss the next week of camp due to a calf strain, John Keim of ESPN.com reports."
@@ -4360,11 +4365,6 @@
       "player": "Tress Way",
       "status": "Out",
       "detail": "Washington placed Way (pectoral) on its active/non-football injury list Wednesday."
-     },
-     {
-      "player": "Kain Medrano",
-      "status": "Out",
-      "detail": "Washington placed Medrano (hamstring) on its active/physically unable to perform list Wednesday."
      },
      {
       "player": "River Cracraft",
@@ -4465,7 +4465,7 @@
     {
      "title": "NBA free agency 2026: Let's play fact vs. fiction after a wild month",
      "desc": "NBA front office insider Bobby Marks answers the biggest questions as the dust settles on 2026 free agency.",
-     "published": "2026-08-03T11:15:16Z",
+     "published": "2026-08-03T12:47:36Z",
      "type": "Story",
      "link": "https://www.espn.com/nba/story/_/id/49490878/nba-free-agency-2026-bobby-marks-wemby-lebron-deals-giannis-trade-10-offseason-trends"
     },
@@ -5796,46 +5796,46 @@
    "name": "MLB",
    "headlines": [
     {
-     "title": "MLB betting tips for Monday: Nola seeks to end slide against Nationals",
-     "desc": "All of the odds, recommended prop bets and trends in baseball for Monday, August 3.",
-     "published": "2026-08-03T11:10:48Z",
+     "title": "Fantasy Baseball Forecaster Week 18: Aug. 3-9",
+     "desc": "Set your lineups for the weeks ahead in fantasy baseball with our preview featuring pitcher rankings, hitter ratings and schedule observations.",
+     "published": "2026-08-03T14:47:01Z",
      "type": "Story",
-     "link": "https://www.espn.com/espn/betting/story/_/id/49519128/mlb-betting-tips-odds-lines-2026-monday-august-3"
+     "link": "https://www.espn.com/fantasy/baseball/story/_/id/49482023/fantasy-baseball-forecaster-espn-2026-mlb-starting-pitcher-hitter-ranks-week-18-august-3-9"
     },
     {
-     "title": "MLB trade deadline 2026: Players most likely to be dealt Monday",
-     "desc": "From a batting champ to a pair of Mets, here are the players to watch as the 6 p.m. ET deadline nears -- and their best fits.",
-     "published": "2026-08-03T11:27:01Z",
+     "title": "Fantasy baseball forecaster: Team hitting ratings",
+     "desc": "Stay ahead of the game and optimize your fantasy baseball hitters with our forecaster, which provides a rolling 10-day outlook of every team's hitting matchups as well as the potential for stolen bases.",
+     "published": "2026-08-03T14:43:49Z",
      "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49516130/mlb-trade-deadline-2026-players-most-likely-dealt-arraez-holmes-mize-weaver-ray-torres"
+     "link": "https://www.espn.com/fantasy/baseball/story/_/id/31165089/fantasy-baseball-forecaster-team-hitting-stolen-base-ratings-platoon-matchups-daily-weekly-leagues"
     },
     {
-     "title": "Rafaela homers for 3rd straight game as the Red Sox beat the Dodgers 8-4 for 3-game sweep",
-     "desc": "— Ceddanne Rafaela homered for the third straight game and the Boston Red Sox beat the Los Angeles Dodgers 8-4 on Sunday night to sweep the three-game series.",
-     "published": "2026-08-03T08:27:22Z",
-     "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816372"
+     "title": "Fantasy baseball forecaster: Pitcher projections for the next 10 days",
+     "desc": "Keep up to date on who is pitching -- and how well they're expected to do -- with our forecaster, which provides a rolling 10-day outlook of every team's probable starting pitchers with game score projections.",
+     "published": "2026-08-03T14:43:44Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/baseball/story/_/id/31165100/fantasy-baseball-forecaster-probable-starting-pitcher-projections-matchups-daily-weekly-leagues"
     },
     {
-     "title": "Merrill's 2-run homer helps Padres beat Giants 5-4",
-     "desc": "— Jackson Merrill homered and Jake Cronenworth and Luis Campusano each had RBI for the San Diego Padres in a 5-4 win over the San Francisco Giants on Sunday.",
-     "published": "2026-08-03T08:24:50Z",
-     "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816376"
+     "title": "Fantasy Baseball Reliever Depth Chart",
+     "desc": "Our updated reliever depth chart displays the closer hierarchy for each team, as well as the fatigue factor in each MLB bullpen.",
+     "published": "2026-08-03T14:37:28Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/baseball/flb/story?page=REcloserorgchart"
     },
     {
-     "title": "Rockies try to keep home win streak alive, host the Rays",
-     "desc": "Tampa Bay Rays (65-46, first in the AL East) vs. Colorado Rockies (45-67, fifth in the NL West)",
-     "published": "2026-08-03T08:01:51Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816383"
+     "title": "2026 MLB trade deadline grades: Report cards for every deal",
+     "desc": "Trade season has officially begun! Here's our running scorecard for every big move before Monday's deadline arrives.",
+     "published": "2026-08-03T14:36:44Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/49454655/2026-mlb-trade-deadline-grades-analysis-report-cards-every-deal"
     },
     {
-     "title": "Nationals play the Phillies looking to break road slide",
-     "desc": "Washington Nationals (55-58, fourth in the NL East) vs. Philadelphia Phillies (59-53, second in the NL East)",
-     "published": "2026-08-03T08:01:47Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816378"
+     "title": "Stephen A. fired up over how Dodgers run their organization",
+     "desc": "Stephen A. fired up over how Dodgers run their organization",
+     "published": "2026-08-03T14:39:06Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49520617/stephen-fired-how-dodgers-run-their-organization"
     }
    ],
    "injuries": {
