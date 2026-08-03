@@ -1,11 +1,18 @@
 {
- "updated": "2026-08-03T19:07:16.610349+00:00",
- "updated_unix": 1785784036,
+ "updated": "2026-08-03T20:44:36.990901+00:00",
+ "updated_unix": 1785789876,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
+    {
+     "title": "Transfer rumors, news: Atlético Madrid weigh move for Jack Grealish",
+     "desc": "Atlético Madrid are admirers of Manchester City winger Jack Grealish. Transfer Talk has the latest.",
+     "published": "2026-08-03T20:29:32Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49518337/transfer-rumors-news-arsenal-boss-arteta-makes-push-vinicius-jr"
+    },
     {
      "title": "Premier League 2026 summer transfers: All confirmed ins, outs for every club",
      "desc": "Here's every Premier League in and out before the 2026-27 season begins.",
@@ -19,13 +26,6 @@
      "published": "2026-08-03T15:15:46Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49487583/jordan-henderson-completes-chelsea-move-leaving-brentford"
-    },
-    {
-     "title": "Transfer rumors, news: Arteta tries to convince Vinícius Jr. to join Arsenal",
-     "desc": "Mikel Arteta has tried to convince Real Madrid star Vinícius Júnior to join Arsenal. Transfer Talk has the latest.",
-     "published": "2026-08-03T12:02:18Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49518337/transfer-rumors-news-arsenal-boss-arteta-makes-push-vinicius-jr"
     },
     {
      "title": "Premier League 2026-27 kits: Ranking every jersey released",
@@ -56,18 +56,18 @@
    "name": "La Liga",
    "headlines": [
     {
+     "title": "Transfer rumors, news: Atlético Madrid weigh move for Jack Grealish",
+     "desc": "Atlético Madrid are admirers of Manchester City winger Jack Grealish. Transfer Talk has the latest.",
+     "published": "2026-08-03T20:29:32Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49518337/transfer-rumors-news-arsenal-boss-arteta-makes-push-vinicius-jr"
+    },
+    {
      "title": "Hansi Flick: Barcelona 'know they have to do something' in search for new striker",
      "desc": "Hansi Flick says Barcelona know \"they have to do something\" in the transfer market as they continue to search for a replacement for Robert Lewandowski.",
      "published": "2026-08-03T15:50:35Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49520314/barcelona-transfers-laliga-julian-alvarez-ferran-torres-eli-junior-kroupi"
-    },
-    {
-     "title": "Transfer rumors, news: Arteta tries to convince Vinícius Jr. to join Arsenal",
-     "desc": "Mikel Arteta has tried to convince Real Madrid star Vinícius Júnior to join Arsenal. Transfer Talk has the latest.",
-     "published": "2026-08-03T12:02:18Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49518337/transfer-rumors-news-arsenal-boss-arteta-makes-push-vinicius-jr"
     },
     {
      "title": "Vinícius Júnior back in Real Madrid training amid Arsenal transfer links",
@@ -350,46 +350,46 @@
    "name": "NFL",
    "headlines": [
     {
-     "title": "Panthers VP says decision on Bryce Young deal 'collaborative'",
-     "desc": "The Panthers remain tight-lipped about the long-term contractual future of quarterback Bryce Young as he prepares to enter his fourth NFL season.",
-     "published": "2026-08-03T19:03:36Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49522616/panthers-vp-says-decision-bryce-young-deal-collaborative"
-    },
-    {
-     "title": "New Bears safety Coby Bryant out 8-10 weeks with injury",
-     "desc": "Bears new safety Coby Bryant will miss eight to 10 weeks with a leg injury.",
-     "published": "2026-08-03T18:55:08Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/nfl/story/_/id/49522578/new-bears-safety-coby-bryant-8-10-weeks-injury"
-    },
-    {
-     "title": "2026 Indianapolis Colts training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Colts training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-03T18:47:46Z",
+     "title": "2026 Pittsburgh Steelers training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Steelers training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-03T20:40:59Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49448214/indianapolis-colts-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/49449169/pittsburgh-steelers-training-camp-2026-intel-updates"
     },
     {
-     "title": "2026 Miami Dolphins training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Dolphins training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-03T18:43:31Z",
+     "title": "2026 New England Patriots training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Patriots training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-03T20:43:40Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49410015/miami-dolphins-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/49427703/new-england-patriots-training-camp-2026-intel-updates"
     },
     {
-     "title": "T.J. Watt, Cam Heyward 'embracing change' with McCarthy",
-     "desc": "T.J. Watt, Cam Heyward 'embracing change' with McCarthy",
-     "published": "2026-08-03T18:25:22Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49522326/tj-watt-cam-heyward-embracing-change-mccarthy"
-    },
-    {
-     "title": "2026 Carolina Panthers training camp: Latest intel, updates",
-     "desc": "Follow our updates from Panthers training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-03T18:18:36Z",
+     "title": "2026 Los Angeles Chargers training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Chargers training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-03T20:40:59Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49377273/carolina-panthers-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/49424976/los-angeles-chargers-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "2026 Denver Broncos training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Broncos training camp, including intel on the QBs, position battles and potential breakouts.",
+     "published": "2026-08-03T20:34:53Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49379469/denver-broncos-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "2026 Chicago Bears training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Bears training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-03T20:33:45Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49448378/chicago-bears-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "Tracking 2026 NFL hold-ins: Robinson, Gibbs, Vea and Tuipulotu",
+     "desc": "Here is the latest on Falcons' Bijan Robinson, Lions' Jahmyr Gibbs, Bucs' Vita Vea and Chargers' Tuli Tuipulotu.",
+     "published": "2026-08-03T20:28:05Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49490010/2026-training-camp-holdin-tracking-updates-bijan-robinson-jahmyr-gibbs-vita-vea-tuli-tuipulotu"
     }
    ],
    "injuries": {
@@ -1284,6 +1284,11 @@
     ],
     "Cleveland Browns": [
      {
+      "player": "KC Concepcion",
+      "status": "Questionable",
+      "detail": "Concepcion (shoulder) was shaken up while trying to make a catch during Monday's practice, Daniel Oyefusi of ESPN.com reports."
+     },
+     {
       "player": "Mason Graham",
       "status": "Active",
       "detail": "Graham (lower leg) is participating at the Browns' training camp, per Cleveland.com."
@@ -1369,11 +1374,6 @@
       "detail": "Gabriel, who \"had a very nice spring,\" per Mary Kay Cabot of The Cleveland Plain Dealer, approaches training camp competing for a depth role behind  Deshaun Watson and Shedeur Sanders."
      },
      {
-      "player": "KC Concepcion",
-      "status": "Active",
-      "detail": "Zac Jackson of The Athletic suggests that Concepcion will line up all over the formation in the Browns' re-tooled WR corps, as the team looks for \"the best ways to utilize his explosiveness.\""
-     },
-     {
       "player": "Denzel Boston",
       "status": "Active",
       "detail": "According to Zac Jackson of The Athletic, Boston \"might have been the most impressive offensive player in the (Browns') spring sessions.\""
@@ -1410,6 +1410,11 @@
      }
     ],
     "Dallas Cowboys": [
+     {
+      "player": "Princeton Fant",
+      "status": "Questionable",
+      "detail": "questionable"
+     },
      {
       "player": "Dak Prescott",
       "status": "Active",
@@ -1529,18 +1534,13 @@
       "player": "Alijah Clark",
       "status": "Active",
       "detail": ""
-     },
-     {
-      "player": "DeMarvion Overshown",
-      "status": "Active",
-      "detail": "Overshown has been practicing at middle and weakside linebacker during minicamp, Jon Machota of The Athletic reports."
      }
     ],
     "Denver Broncos": [
      {
       "player": "Joseph Manjack IV",
-      "status": "Questionable",
-      "detail": "Manjack (back) could return to practice as early as Monday, NFL reporter Jordan Schultz reports."
+      "status": "Active",
+      "detail": ""
      },
      {
       "player": "Sam Webb",
@@ -1794,7 +1794,7 @@
      {
       "player": "Carrington Valentine",
       "status": "Questionable",
-      "detail": "questionable"
+      "detail": "Valentine suffered a leg injury in practice Sunday, Matt Schneidman of The Athletic reports."
      },
      {
       "player": "Jager Burton",
@@ -3824,6 +3824,16 @@
     ],
     "San Francisco 49ers": [
      {
+      "player": "Christian Kirk",
+      "status": "Questionable",
+      "detail": "Kirk (calf) worked out on the side at Monday's practice, Matt Barrows of The Athletic reports."
+     },
+     {
+      "player": "Mike Evans",
+      "status": "Questionable",
+      "detail": "Evans, who didn't practice Monday, is tending to a minor quad strain, Ian Rapoport of NFL Network reports."
+     },
+     {
       "player": "De'Zhaun Stribling",
       "status": "Questionable",
       "detail": "Stribling (hamstring) remains day-to-day and won't practice Monday, Nick Wagoner of ESPN.com reports."
@@ -3832,11 +3842,6 @@
       "player": "Kaelon Black",
       "status": "Questionable",
       "detail": "Black is missing Monday's practice due to an adductor injury, Nick Wagoner of ESPN.com reports."
-     },
-     {
-      "player": "Mike Evans",
-      "status": "Questionable",
-      "detail": "Evans (quad) won't practice Monday, Nick Wagoner of ESPN.com reports."
      },
      {
       "player": "Khalil Herbert",
@@ -3937,11 +3942,6 @@
       "player": "Nate Hobbs",
       "status": "Active",
       "detail": "Hobbs (knee) is participating at the start of 49ers training camp, Vic Tafur of The Athletic reports."
-     },
-     {
-      "player": "Christian Kirk",
-      "status": "Questionable",
-      "detail": "Kirk sustained a calf injury during Sunday's practice and is not practicing Monday, Nick Wagoner of ESPN.com reports."
      },
      {
       "player": "Jake Tonges",
@@ -4463,16 +4463,23 @@
    "name": "NBA",
    "headlines": [
     {
+     "title": "2026 Fanatics Fest: Where to watch, date, time and more",
+     "desc": "Fanatics Fest, the world's premier event at the intersection of sports, entertainment and culture, took over New York City for four days in July.",
+     "published": "2026-08-03T19:26:38Z",
+     "type": "Story",
+     "link": "https://www.espn.com/espn/story/_/id/49522021/fanatics-fest-2026-where-watch-date-all-access"
+    },
+    {
      "title": "Wembanyama to host some Spurs teammates for workouts in France",
      "desc": "Victor Wembanyama will host \"eight to 10\" teammates in France this week for workouts as the San Antonio Spurs look to rebound from their loss to the New York Knicks in the NBA Finals.",
-     "published": "2026-08-03T18:02:32Z",
+     "published": "2026-08-03T19:58:25Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/nba/story/_/id/49521766/victor-wembanyama-host-some-spurs-teammates-workouts-france"
     },
     {
      "title": "Chris Bosh cautions Wemby on blood clots: 'Take your medicine'",
      "desc": "Retired Heat superstar Chris Bosh offered some advice and issued a warning to Spurs star Victor Wembanyama about his blood clot diagnosis and maintaining his health during his career.",
-     "published": "2026-08-03T17:05:11Z",
+     "published": "2026-08-03T19:57:41Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/nba/story/_/id/49521358/chris-bosh-cautions-wemby-blood-clots-take-your-medicine"
     },
@@ -4496,13 +4503,6 @@
      "published": "2026-08-02T22:05:25Z",
      "type": "Story",
      "link": "https://www.espn.com/nba/story/_/id/49514411/donovan-mitchell-cleveland-cavaliers-coco-jones-wedding"
-    },
-    {
-     "title": "Sources: Mavs extend Naji Marshall on 3-year, $52.2M deal",
-     "desc": "Mavericks forward Naji Marshall signed a three-year, $52.2 million extension that will take him through the 2029-30 season, sources told ESPN.",
-     "published": "2026-08-02T21:28:47Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/nba/story/_/id/49514965/sources-mavs-extend-naji-marshall-3-year-522m-deal"
     }
    ],
    "injuries": {
@@ -5796,46 +5796,46 @@
    "name": "MLB",
    "headlines": [
     {
-     "title": "2026 MLB trade deadline tracker: Rumors, news, analysis",
-     "desc": "Which contenders will make the biggest splash? What we're hearing as 6 p.m. ET approaches.",
-     "published": "2026-08-03T18:57:43Z",
-     "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49410877/2026-mlb-trade-deadline-tracker-rumors-alerts-news-latest-updates-analysis"
+     "title": "Is Daulton Varsho the left-handed bat the Astros need?",
+     "desc": "Is Daulton Varsho the left-handed bat the Astros need?",
+     "published": "2026-08-03T20:42:36Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49523541/is-daulton-varsho-left-handed-bat-astros-need"
     },
     {
-     "title": "Sources: Rays trade for Marlins catcher Liam Hicks",
-     "desc": "The Tampa Bay Rays are acquiring catcher Liam Hicks in a trade with the Miami Marlins, sources told ESPN's Jeff Passan.",
-     "published": "2026-08-03T18:58:57Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/mlb/story/_/id/49522680/sources-rays-trade-marlins-catcher-liam-hicks"
+     "title": "2026 MLB trade deadline grades: Report cards for every deal",
+     "desc": "Our running scorecard for every big move before Monday's deadline.",
+     "published": "2026-08-03T20:39:21Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/49454655/2026-mlb-trade-deadline-grades-analysis-report-cards-every-deal"
     },
     {
      "title": "Fantasy baseball: Reactions to MLB trade deadline deals",
      "desc": "Track the fantasy fallout from all the key deals as we head toward the MLB trade deadline on Monday.",
-     "published": "2026-08-03T18:48:58Z",
+     "published": "2026-08-03T20:28:18Z",
      "type": "Story",
      "link": "https://www.espn.com/fantasy/baseball/story/_/id/49416655/fantasy-baseball-reaction-mlb-trade-deadline-deals-2026-monday-august-3"
     },
     {
-     "title": "Sources: Orioles trade All-Star catcher Rutschman to Red Sox",
-     "desc": "The Boston Red Sox are acquiring three-time All-Star catcher Adley Rutschman in a trade with the Baltimore Orioles, sources told ESPN's Jeff Passan.",
-     "published": "2026-08-03T18:55:53Z",
+     "title": "Sources: Astros finalizing trade for Blue Jays' Daulton Varsho",
+     "desc": "The Astros, who have surged into first place in the AL West, are finalizing a deal to acquire center fielder Daulton Varsho from the Blue Jays, sources told ESPN.",
+     "published": "2026-08-03T20:38:32Z",
      "type": "HeadlineNews",
-     "link": "https://www.espn.com/mlb/story/_/id/49522617/sources-orioles-trade-all-star-catcher-rutschman-red-sox"
+     "link": "https://www.espn.com/mlb/story/_/id/49523400/sources-astros-finalizing-trade-blue-jays-daulton-varsho"
     },
     {
      "title": "MLB trade deadline 2026: Ranking prospects who changed teams",
      "desc": "You know the major leaguers on the move -- but what about the potential stars of tomorrow headed the other way in those deals?",
-     "published": "2026-08-03T18:39:52Z",
+     "published": "2026-08-03T20:19:51Z",
      "type": "Story",
      "link": "https://www.espn.com/mlb/story/_/id/49464501/mlb-trade-deadline-2026-ranking-prospects-changed-teams"
     },
     {
-     "title": "Sources: Padres acquire Robbie Ray in trade with Giants",
-     "desc": "The Padres, who desperately needed starting pitching help, have acquired left-hander Robbie Ray from the Giants, sources told ESPN.",
-     "published": "2026-08-03T18:57:26Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/mlb/story/_/id/49522198/sources-padres-finalizing-trade-giants-robbie-ray"
+     "title": "Fantasy Baseball Reliever Depth Chart",
+     "desc": "Our updated reliever depth chart displays the closer hierarchy for each team, as well as the fatigue factor in each MLB bullpen.",
+     "published": "2026-08-03T20:01:33Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/baseball/flb/story?page=REcloserorgchart"
     }
    ],
    "injuries": {
@@ -6022,11 +6022,6 @@
     ],
     "Baltimore Orioles": [
      {
-      "player": "Adley Rutschman",
-      "status": "10-Day-IL",
-      "detail": "The Red Sox and Orioles \"have a deal arranged\" for Rutschman (wrist), Buster Olney of ESPN reports."
-     },
-     {
       "player": "Chris Bassitt",
       "status": "60-Day-IL",
       "detail": "Bassitt (back) struck out four and allowed three runs (two earned) on four hits and one walk Sunday in a rehab start with Triple-A Norfolk. He also hit three batters."
@@ -6070,9 +6065,19 @@
       "player": "Jordan Westburg",
       "status": "60-Day-IL",
       "detail": "Westburg (elbow) underwent Tommy John surgery Wednesday, Andrew Golden of TheBanner.com reports."
+     },
+     {
+      "player": "Zach Eflin",
+      "status": "60-Day-IL",
+      "detail": "Eflin underwent Tommy John surgery on his right elbow Wednesday, Andy Kostka of TheBaltimoreBanner.com reports."
      }
     ],
     "Boston Red Sox": [
+     {
+      "player": "Adley Rutschman",
+      "status": "10-Day-IL",
+      "detail": "The Red Sox acquired Rutschman (wrist), Jake Rogers and cash from the Orioles on Monday in exchange for catcher Carlos Narvaez, right-handers Anthony Eyanson and Kyson Witherspoon, outfielder Enddy Azocar and a player to be named later, Jake Rill of MLB.com reports."
+     },
      {
       "player": "Curtis Mead",
       "status": "10-Day-IL",
@@ -6564,6 +6569,11 @@
     ],
     "Los Angeles Dodgers": [
      {
+      "player": "Kris Bubic",
+      "status": "60-Day-IL",
+      "detail": "The Dodgers acquired Bubic (shoulder/elbow) from the Royals on Monday in exchange for right-hander Carlos Duran, Jeff Passan of ESPN.com reports."
+     },
+     {
       "player": "Dalton Rushing",
       "status": "Day-To-Day",
       "detail": "Rushing was scratched from the lineup ahead of Sunday's game against the Red Sox due to minor arm irritation."
@@ -6672,6 +6682,11 @@
      }
     ],
     "Milwaukee Brewers": [
+     {
+      "player": "JoJo Romero",
+      "status": "15-Day-IL",
+      "detail": "The Brewers acquired Romero (abdomen) and Dustin May from the Cardinals on Monday, Ken Rosenthal of The Athletic reports."
+     },
      {
       "player": "Sal Frelick",
       "status": "10-Day-IL",
@@ -7040,11 +7055,6 @@
      }
     ],
     "St. Louis Cardinals": [
-     {
-      "player": "JoJo Romero",
-      "status": "15-Day-IL",
-      "detail": "Romero (abdomen) has resumed light baseball activities and is expected to rejoin the active roster by mid-August, Derrick Goold of the St. Louis Post-Dispatch reports."
-     },
      {
       "player": "Ramon Urias",
       "status": "60-Day-IL",
