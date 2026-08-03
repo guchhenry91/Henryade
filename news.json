@@ -1,11 +1,18 @@
 {
- "updated": "2026-08-03T22:11:35.875478+00:00",
- "updated_unix": 1785795095,
+ "updated": "2026-08-03T23:38:12.156745+00:00",
+ "updated_unix": 1785800292,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
+    {
+     "title": "Would Real Madrid miss Vinícius Jr. if he joined Arsenal?",
+     "desc": "Would Real Madrid miss Vinícius Jr. if he joined Arsenal?",
+     "published": "2026-08-03T23:03:03Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49524588/would-real-madrid-miss-vinicius-jr-joined-arsenal"
+    },
     {
      "title": "Bernardo Silva 'didn't think twice' about joining Real Madrid",
      "desc": "Bernardo Silva said he \"didn't think twice\" about joining Real Madrid after completing his first training session with the club on Monday.",
@@ -40,13 +47,6 @@
      "published": "2026-08-03T15:15:46Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49487583/jordan-henderson-completes-chelsea-move-leaving-brentford"
-    },
-    {
-     "title": "Premier League 2026-27 kits: Ranking every jersey released",
-     "desc": "It's still a few weeks before the new Premier League season begins, but plenty of top clubs have already released some of their 2026-27 kits.",
-     "published": "2026-08-03T12:02:13Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49163915/premier-league-202627-kits-ranking-every-jersey-released-arsenal-chelsea-liverpool-man-city-man-united-tottenham"
     }
    ],
    "injuries": {},
@@ -55,6 +55,27 @@
   "laliga": {
    "name": "La Liga",
    "headlines": [
+    {
+     "title": "Laurens: Diomandé transfer is a huge risk for Real Madrid",
+     "desc": "Laurens: Diomandé transfer is a huge risk for Real Madrid",
+     "published": "2026-08-03T22:59:46Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49524623/diomande-transfer-huge-risk-real-madrid"
+    },
+    {
+     "title": "Would Real Madrid miss Vinícius Jr. if he joined Arsenal?",
+     "desc": "Would Real Madrid miss Vinícius Jr. if he joined Arsenal?",
+     "published": "2026-08-03T23:03:03Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49524588/would-real-madrid-miss-vinicius-jr-joined-arsenal"
+    },
+    {
+     "title": "Real Madrid offer Vinícius Júnior new €22M a year deal - sources",
+     "desc": "Real Madrid have made an improved contract offer to Vinícius Júnior since the World Cup, sources have told ESPN, resuming talks which had been stalled for almost a year.",
+     "published": "2026-08-03T23:06:39Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49524266/real-madrid-offer-vinicius-junior-new-22ma-year-deal"
+    },
     {
      "title": "Bernardo Silva 'didn't think twice' about joining Real Madrid",
      "desc": "Bernardo Silva said he \"didn't think twice\" about joining Real Madrid after completing his first training session with the club on Monday.",
@@ -75,27 +96,6 @@
      "published": "2026-08-03T15:50:35Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49520314/barcelona-transfers-laliga-julian-alvarez-ferran-torres-eli-junior-kroupi"
-    },
-    {
-     "title": "Vinícius Júnior back in Real Madrid training amid Arsenal transfer links",
-     "desc": "Vinícius Júnior returned to Real Madrid training on Monday amid doubts over the star winger's future and links with a possible move to Arsenal.",
-     "published": "2026-08-03T11:08:45Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49519212/vinicius-junior-back-real-madrid-training-amid-arsenal-transfer-links"
-    },
-    {
-     "title": "Summer transfer window: Grading big signings in men's soccer",
-     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-08-03T07:25:36Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
-    },
-    {
-     "title": "Is Vinicius Jr. using Arsenal to secure a new Real Madrid deal?",
-     "desc": "Is Vinicius Jr. using Arsenal to secure a new Real Madrid deal?",
-     "published": "2026-08-02T18:00:36Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49513679/is-vinicius-jr-using-arsenal-secure-new-real-madrid-deal"
     }
    ],
    "injuries": {},
@@ -350,16 +350,30 @@
    "name": "NFL",
    "headlines": [
     {
+     "title": "2026 Tampa Bay Buccaneers training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Buccaneers training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-03T23:34:16Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49419613/tampa-bay-buccaneers-training-camp-2026-intel-updates"
+    },
+    {
+     "title": "2026 Minnesota Vikings training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Vikings training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-03T23:29:44Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nfl/story/_/id/49376202/minnesota-vikings-training-camp-2026-intel-updates"
+    },
+    {
      "title": "2026 Cleveland Browns training camp: Latest intel, updates",
      "desc": "Follow our daily updates from Browns training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-03T22:10:08Z",
+     "published": "2026-08-03T22:27:15Z",
      "type": "Story",
      "link": "https://www.espn.com/nfl/story/_/id/49449000/cleveland-browns-training-camp-2026-intel-updates"
     },
     {
      "title": "2026 New York Giants training camp: Latest intel, updates",
      "desc": "Follow our daily updates from Giants training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-03T21:54:11Z",
+     "published": "2026-08-03T23:34:20Z",
      "type": "Story",
      "link": "https://www.espn.com/nfl/story/_/id/49434181/new-york-giants-training-camp-2026-intel-updates"
     },
@@ -376,24 +390,15 @@
      "published": "2026-08-03T21:33:58Z",
      "type": "Story",
      "link": "https://www.espn.com/fantasy/football/story/_/id/47539664/2026-fantasy-football-rankings-flex-superflex-ppr-eric-karabell"
-    },
-    {
-     "title": "2026 New Orleans Saints training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Saints training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-03T22:07:39Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49424731/new-orleans-saints-training-camp-2026-intel-updates"
-    },
-    {
-     "title": "Houston Texans' Jalen Pitre becomes first Guardian Caps signature athlete",
-     "desc": "The Houston Texans safety is the first Guardian Caps signature athlete and wore the helmet in eight games last season.",
-     "published": "2026-08-03T21:15:26Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49523317/houston-texans-jalen-pitre-nfl-guardians-cap-signature-athlete"
     }
    ],
    "injuries": {
     "Arizona Cardinals": [
+     {
+      "player": "Trey Benson",
+      "status": "Active",
+      "detail": "Coach Mike LaFleur said Monday that Benson is dealing with discomfort in his left knee, Josh Weinfuss of ESPN.com reports."
+     },
      {
       "player": "Walter Nolen III",
       "status": "Active",
@@ -468,11 +473,6 @@
       "player": "Blake Gillikin",
       "status": "Active",
       "detail": ""
-     },
-     {
-      "player": "Trey Benson",
-      "status": "Active",
-      "detail": "Benson (knee) participated in practice Thursday, Jess Root of USA Today reports."
      },
      {
       "player": "Josh Sweat",
@@ -778,7 +778,7 @@
      {
       "player": "C.J. Gardner-Johnson",
       "status": "Active",
-      "detail": ""
+      "detail": "Gardner-Johnson (calf) suffered a lower calf strain Saturday, Chris Brown of the Bills Radio Network reports."
      },
      {
       "player": "Dalton Kincaid",
@@ -903,6 +903,16 @@
     ],
     "Carolina Panthers": [
      {
+      "player": "Mitchell Evans",
+      "status": "Active",
+      "detail": "Evans participated in the Panthers' training camp activities Monday, Alex Zietlow of The Charlotte Observer reports."
+     },
+     {
+      "player": "Bobby Brown III",
+      "status": "Active",
+      "detail": "The Panthers activated Brown (undisclosed) from the active/non-football injury list Monday, Darin Gantt of the team's official site reports."
+     },
+     {
       "player": "Tommy Tremble",
       "status": "Active",
       "detail": "Tremble (knee) returned to practice Monday, Joe Person of The Athletic reports."
@@ -911,16 +921,6 @@
       "player": "Kenny Pickett",
       "status": "Active",
       "detail": "Coach David Canales said that Pickett is slated to start Thursday's Hall of Fame Game against the Cardinals, Steve Reed of the Associated Press reports."
-     },
-     {
-      "player": "Mitchell Evans",
-      "status": "Active",
-      "detail": ""
-     },
-     {
-      "player": "Bobby Brown III",
-      "status": "Active",
-      "detail": ""
      },
      {
       "player": "Chamon Metayer",
@@ -1411,6 +1411,11 @@
     ],
     "Dallas Cowboys": [
      {
+      "player": "P.J. Locke",
+      "status": "Questionable",
+      "detail": "Locke (knee) is nearing a return to the practice field, Todd Archer of ESPN.com reports."
+     },
+     {
       "player": "Princeton Fant",
       "status": "Questionable",
       "detail": "questionable"
@@ -1429,11 +1434,6 @@
       "player": "Jalen Thompson",
       "status": "Questionable",
       "detail": "Thompson (hip) did not participate in Saturday's practice session, Joe Hoyt of The Dallas Morning News reports."
-     },
-     {
-      "player": "P.J. Locke",
-      "status": "Questionable",
-      "detail": "Locke suffered a hyperextended knee at training camp practice Wednesday, Calvin Watkins of The Dallas Morning News reports."
      },
      {
       "player": "Tyler Smith",
@@ -1540,7 +1540,12 @@
      {
       "player": "Joseph Manjack IV",
       "status": "Active",
-      "detail": ""
+      "detail": "Manjack (back) participated in practice Monday, Jon Heath of Broncos Wire reports."
+     },
+     {
+      "player": "Caleb Lohner",
+      "status": "Questionable",
+      "detail": "Lohner (lower body) does not yet have a return timeline, Luca Evans of The Denver Post reports."
      },
      {
       "player": "Sam Webb",
@@ -1653,11 +1658,6 @@
       "detail": "Butler agreed to a contract with the Broncos on Monday, Mike Garafolo of NFL Network reports."
      },
      {
-      "player": "Caleb Lohner",
-      "status": "Questionable",
-      "detail": "Lohner is expected to miss two weeks after undergoing a lower-body procedure, Mike Klis of 9News Denver reports."
-     },
-     {
       "player": "Pat Surtain II",
       "status": "Active",
       "detail": "Denver agreed Tuesday to give Surtain a $5 million raise with an additional $5 million incentive for a Pro Bowl or All-Pro selection in 2026, Ian Rapoport of NFL Network reports."
@@ -1665,34 +1665,34 @@
     ],
     "Detroit Lions": [
      {
+      "player": "Sione Vaki",
+      "status": "Questionable",
+      "detail": "Vaki (eye) exited Monday's practice early due to injury, Tim Twentyman of the Lions' official site reports."
+     },
+     {
+      "player": "Anthony Firkser",
+      "status": "Questionable",
+      "detail": "Firkser (leg) left Monday's practice session due to injury, Tim Twentyman of the Lions' official site reports."
+     },
+     {
+      "player": "Lawrence Keys III",
+      "status": "Questionable",
+      "detail": "Keys (leg) left Monday's practice session due to injury, Tim Twentyman of the Lions' official site reports."
+     },
+     {
+      "player": "Miles Kitselman",
+      "status": "Questionable",
+      "detail": "Kitselman (leg) is set to be \"out for a while\" due to injury, Richard Silva of The Detroit News reports."
+     },
+     {
       "player": "Jahmyr Gibbs",
       "status": "Questionable",
       "detail": "Gibbs (back) was present but not in uniform for Monday's practice, Nolan Bianchi of the Detroit News reports."
      },
      {
-      "player": "Sione Vaki",
-      "status": "Questionable",
-      "detail": "questionable"
-     },
-     {
-      "player": "Anthony Firkser",
-      "status": "Questionable",
-      "detail": "questionable"
-     },
-     {
-      "player": "Lawrence Keys III",
-      "status": "Questionable",
-      "detail": "questionable"
-     },
-     {
       "player": "Derrick Moore",
       "status": "Questionable",
       "detail": "Moore left Sunday's training camp practice early to be evaluated for a groin injury, Dave Birkett of the Detroit Free Press reports."
-     },
-     {
-      "player": "Miles Kitselman",
-      "status": "Questionable",
-      "detail": "Kitselman left Sunday's training camp practice early due to a leg injury, Dave Birkett of the Detroit Free Press reports."
      },
      {
       "player": "Alim McNeill",
@@ -2173,6 +2173,16 @@
     ],
     "Jacksonville Jaguars": [
      {
+      "player": "Parker Washington",
+      "status": "Active",
+      "detail": "Washington is off to a good start in training camp, according to John Shipley of SI.com."
+     },
+     {
+      "player": "Brian Thomas Jr.",
+      "status": "Active",
+      "detail": "Thomas has followed up his impressive spring with a good start to training camp, according to Michael DiRocco of ESPN."
+     },
+     {
       "player": "Chris Rodriguez Jr.",
       "status": "Questionable",
       "detail": "Rodriguez (foot) worked in team drills for a second consecutive day during Monday's padded practice, John Oehser and  John Shipley of the Jaguars' official site report."
@@ -2223,11 +2233,6 @@
       "detail": "The Jaguars placed Van Lanen (knee) on the active/PUP list Sunday."
      },
      {
-      "player": "Parker Washington",
-      "status": "Active",
-      "detail": "Washington is likely to remain the Jaguars' primary punt returner in 2026, John Shipley of SI.com reports."
-     },
-     {
       "player": "Trevor Lawrence",
       "status": "Active",
       "detail": "Lawrence has thrived in the early stages of his second offseason in head coach Liam Coen's system, John Shipley of SI.com reports."
@@ -2271,11 +2276,6 @@
       "player": "Trystan Colon",
       "status": "Active",
       "detail": "The Jaguars signed Colon (wrist) on Thursday."
-     },
-     {
-      "player": "Brian Thomas Jr.",
-      "status": "Active",
-      "detail": "Thomas has demonstrated increased chemistry with quarterback Trevor Lawrence during spring practices, Michael DiRocco of ESPN reports."
      },
      {
       "player": "Ameer Abdullah",
@@ -2427,6 +2427,11 @@
     ],
     "Las Vegas Raiders": [
      {
+      "player": "Michael Mayer",
+      "status": "Active",
+      "detail": "Mayer left practice early Monday with a nose injury, Ryan McFadden of ESPN reports."
+     },
+     {
       "player": "Zack Kuntz",
       "status": "Active",
       "detail": "The Raiders signed Kuntz on Friday."
@@ -2480,11 +2485,6 @@
       "player": "Brock Bowers",
       "status": "Active",
       "detail": "Bowers (knee) practiced \"at full speed\" during OTAs and minicamp, Ryan McFadden of ESPN reports."
-     },
-     {
-      "player": "Michael Mayer",
-      "status": "Active",
-      "detail": "Mayer is poised for a complementary role behind Brock Bowers in head coach Klint Kubiak's offense, which is expected to feature frequent two-tight end formations, Sam Warren of The Athletic reports."
      },
      {
       "player": "Jack Bech",
@@ -2937,7 +2937,7 @@
      {
       "player": "Josh Oliver",
       "status": "Active",
-      "detail": ""
+      "detail": "Oliver was participating in the Vikings' training camp activities Saturday."
      },
      {
       "player": "Caleb Banks",
@@ -3062,14 +3062,14 @@
     ],
     "New England Patriots": [
      {
+      "player": "Terrell Jennings",
+      "status": "Active",
+      "detail": "The Patriots activated Jennings (undisclosed) from the active/non-football injury list Monday, Mike Reiss of ESPN.com reports."
+     },
+     {
       "player": "A.J. Brown",
       "status": "Active",
       "detail": "Though Brown dislocated his thumb during Monday's practice, he continued to work through the session afterward, Mark Daniels of MassLive.com reports."
-     },
-     {
-      "player": "Terrell Jennings",
-      "status": "Active",
-      "detail": ""
      },
      {
       "player": "Jam Miller",
@@ -4332,6 +4332,11 @@
     ],
     "Washington Commanders": [
      {
+      "player": "Treylon Burks",
+      "status": "Questionable",
+      "detail": "Burks (foot) returned to Commanders practice Saturday, Zach Selby of the Commanders' official site reports."
+     },
+     {
       "player": "Kain Medrano",
       "status": "Active",
       "detail": ""
@@ -4350,11 +4355,6 @@
       "player": "Ben Sinnott",
       "status": "Active",
       "detail": "Sinnott has run a wider variety of routes in training camp compared to previous years, though that is also the case for Washington's other tight ends, John Keim of ESPN.com reports."
-     },
-     {
-      "player": "Treylon Burks",
-      "status": "Questionable",
-      "detail": "Burks missed Thursday's practice with foot soreness, Ben Standig of Big 100 Washington D.C. reports."
      },
      {
       "player": "Fred Davis II",
@@ -5932,46 +5932,46 @@
    "name": "MLB",
    "headlines": [
     {
-     "title": "Fantasy baseball forecaster: Team hitting ratings",
-     "desc": "Stay ahead of the game and optimize your fantasy baseball hitters with our forecaster, which provides a rolling 10-day outlook of every team's hitting matchups as well as the potential for stolen bases.",
-     "published": "2026-08-03T22:06:08Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/baseball/story/_/id/31165089/fantasy-baseball-forecaster-team-hitting-stolen-base-ratings-platoon-matchups-daily-weekly-leagues"
-    },
-    {
-     "title": "Fantasy baseball forecaster: Pitcher projections for the next 10 days",
-     "desc": "Keep up to date on who is pitching -- and how well they're expected to do -- with our forecaster, which provides a rolling 10-day outlook of every team's probable starting pitchers with game score projections.",
-     "published": "2026-08-03T22:06:03Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/baseball/story/_/id/31165100/fantasy-baseball-forecaster-probable-starting-pitcher-projections-matchups-daily-weekly-leagues"
-    },
-    {
      "title": "2026 MLB trade deadline grades: Report cards for every deal",
      "desc": "Our running scorecard for every big move before Monday's deadline.",
-     "published": "2026-08-03T22:07:09Z",
+     "published": "2026-08-03T23:32:26Z",
      "type": "Story",
      "link": "https://www.espn.com/mlb/story/_/id/49454655/2026-mlb-trade-deadline-grades-analysis-report-cards-every-deal"
     },
     {
-     "title": "2026 MLB trade deadline recap: Red Sox, Phillies, Dodgers go big",
-     "desc": "A deadline highlighted by All-Stars on the move has passed. Here's what you need to know about the deals that defined this trade season.",
-     "published": "2026-08-03T22:06:35Z",
+     "title": "Fantasy Baseball Reliever Depth Chart",
+     "desc": "Our updated reliever depth chart displays the closer hierarchy for each team, as well as the fatigue factor in each MLB bullpen.",
+     "published": "2026-08-03T23:10:59Z",
      "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49410877/2026-mlb-trade-deadline-tracker-rumors-alerts-news-latest-updates-analysis"
+     "link": "https://www.espn.com/fantasy/baseball/flb/story?page=REcloserorgchart"
     },
     {
-     "title": "MLB trade deadline 2026: Biggest winners and losers",
-     "desc": "The 2026 trade deadline has passed. Here's who hit it out the park -- and who swung and missed.",
-     "published": "2026-08-03T22:06:39Z",
-     "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49521556/mlb-trade-deadline-2026-reaction-biggest-winners-losers-dodgers-orioles-phillies-brewers"
+     "title": "Jesse Rogers: Cubs fortified rotation with additions of Gausman, Holmes",
+     "desc": "Jesse Rogers: Cubs fortified rotation with additions of Gausman, Holmes",
+     "published": "2026-08-03T23:36:49Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49524517/cubs-fortified-rotation-additions-gausman-holmes"
     },
     {
-     "title": "Fantasy baseball: Reactions to MLB trade deadline deals",
-     "desc": "Track the fantasy fallout from all the key deals as we head toward the MLB trade deadline on Monday.",
-     "published": "2026-08-03T21:54:52Z",
+     "title": "Why the Padres disregarded concerns and jumped on chance to add Casey Mize",
+     "desc": "Why the Padres disregarded concerns and jumped on chance to add Casey Mize",
+     "published": "2026-08-03T23:21:24Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49524475/why-padres-disregarded-concerns-jumped-chance-add-casey-mize"
+    },
+    {
+     "title": "What to make of the Guardians' deadline additions",
+     "desc": "What to make of the Guardians' deadline additions",
+     "published": "2026-08-03T22:25:24Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49524466/what-make-guardians-deadline-additions"
+    },
+    {
+     "title": "Fantasy baseball lineup advice for Tuesday: Henderson, Weathers lead pitching picks",
+     "desc": "Everything you need to know to set your fantasy baseball lineups for Tuesday's MLB action.",
+     "published": "2026-08-03T22:29:18Z",
      "type": "Story",
-     "link": "https://www.espn.com/fantasy/baseball/story/_/id/49416655/fantasy-baseball-reaction-mlb-trade-deadline-deals-2026-monday-august-3"
+     "link": "https://www.espn.com/fantasy/baseball/story/_/id/49522961/fantasy-baseball-pitcher-rankings-lineup-advice-tips-mlb-daily-notes-august-4-games"
     }
    ],
    "injuries": {
@@ -6129,11 +6129,6 @@
       "player": "Sean Murphy",
       "status": "60-Day-IL",
       "detail": "Murphy (finger) has five hits over his last two games for Triple-A Gwinnett."
-     },
-     {
-      "player": "Ha-Seong Kim",
-      "status": "10-Day-IL",
-      "detail": "Kim (finger) has gone 7-for-31 (.226) with four doubles, three steals, three runs and three RBI over his last nine games for Triple-A Gwinnett."
      },
      {
       "player": "Robert Suarez",
@@ -6700,14 +6695,14 @@
     ],
     "Los Angeles Dodgers": [
      {
+      "player": "Dalton Rushing",
+      "status": "10-Day-IL",
+      "detail": "The Dodgers placed Rushing on the 10-day injured list with a mild elbow strain, Fabian Ardaya of The Athletic reports."
+     },
+     {
       "player": "Kris Bubic",
       "status": "60-Day-IL",
       "detail": "The Dodgers acquired Bubic (shoulder/elbow) from the Royals on Monday in exchange for right-hander Carlos Duran, Jeff Passan of ESPN.com reports."
-     },
-     {
-      "player": "Dalton Rushing",
-      "status": "Day-To-Day",
-      "detail": "Rushing was scratched from the lineup ahead of Sunday's game against the Red Sox due to minor arm irritation."
      },
      {
       "player": "Ben Casparius",
@@ -6994,6 +6989,11 @@
     ],
     "Pittsburgh Pirates": [
      {
+      "player": "Mitch Keller",
+      "status": "60-Day-IL",
+      "detail": "Keller was placed on the 60-day injured list Monday with a right arm teres major muscle injury."
+     },
+     {
       "player": "Ryan O'Hearn",
       "status": "10-Day-IL",
       "detail": "The Pirates placed O'Hearn on the 10-day injured list Saturday with a left quad strain, Colin Beazley of the Pittsburgh Post-Gazette reports."
@@ -7020,6 +7020,11 @@
      }
     ],
     "San Diego Padres": [
+     {
+      "player": "Jason Adam",
+      "status": "60-Day-IL",
+      "detail": "Adam said Friday that an MRI on his right shoulder revealed no major structural damage, and he's hopeful to return from the 15-day injured list in early-to-mid August, MLB.com reports."
+     },
      {
       "player": "David Morgan",
       "status": "15-Day-IL",
@@ -7051,11 +7056,6 @@
       "detail": "Taylor said Wednesday that he exited Tuesday's game against the Diamondbacks with a right side injury, Jeff Sanders of The San Diego Union-Tribune reports."
      },
      {
-      "player": "Jason Adam",
-      "status": "15-Day-IL",
-      "detail": "Adam said Friday that an MRI on his right shoulder revealed no major structural damage, and he's hopeful to return from the 15-day injured list in early-to-mid August, MLB.com reports."
-     },
-     {
       "player": "Ramon Laureano",
       "status": "60-Day-IL",
       "detail": "Laureano underwent surgery Friday to repair his torn right labrum, Kevin Acee of The San Diego Union-Tribune reports."
@@ -7067,11 +7067,6 @@
      }
     ],
     "San Francisco Giants": [
-     {
-      "player": "Osleivis Basabe",
-      "status": "Day-To-Day",
-      "detail": "Basabe exited Sunday's 5-4 loss to the Padres in the ninth inning after being hit by a pitch on his left forearm, Alex Pavlovic of NBC Sports Bay Area reports."
-     },
      {
       "player": "Harrison Bader",
       "status": "10-Day-IL",
@@ -7360,14 +7355,14 @@
     ],
     "Washington Nationals": [
      {
+      "player": "Andres Chaparro",
+      "status": "Day-To-Day",
+      "detail": "Chaparro (head) is out of the lineup for Monday's game against the Phillies, Mark Zuckerman of NatsJournal.com reports."
+     },
+     {
       "player": "PJ Poulin",
       "status": "60-Day-IL",
       "detail": "The Nationals transferred Poulin (forearm) from the 15-day injured list to the 60-day IL on Sunday."
-     },
-     {
-      "player": "Andres Chaparro",
-      "status": "Day-To-Day",
-      "detail": "Nationals manager Blake Butera said after Sunday's 4-2 loss to Atlanta that Chaparro (head) passed a concussion test, Mark Zuckerman of NatsJournal.com reports."
      },
      {
       "player": "Mitchell Parker",
