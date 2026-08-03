@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-02T22:31:17.529329+00:00",
- "updated_unix": 1785709877,
+ "updated": "2026-08-03T00:02:04.969710+00:00",
+ "updated_unix": 1785715324,
  "source": "espn",
  "leagues": {
   "epl": {
@@ -2683,7 +2683,7 @@
      {
       "player": "Myles Garrett",
       "status": "Questionable",
-      "detail": "Garrett (lower body) didn't participate in the Rams' practice Sunday, Sarah Barshop of ESPN reports."
+      "detail": "Garrett (lower body) didn't participate in the Rams' practice Sunday, Sarah Barshop of ESPN.com reports."
      },
      {
       "player": "Alaric Jackson",
@@ -5796,46 +5796,46 @@
    "name": "MLB",
    "headlines": [
     {
-     "title": "2026 MLB trade deadline grades: Report cards for every deal",
-     "desc": "Trade season has officially begun! Here's our running scorecard for every big move before Monday's deadline arrives.",
-     "published": "2026-08-02T22:28:48Z",
+     "title": "MLB trade deadline 2026: Ranking prospects who changed teams",
+     "desc": "You know the major leaguers on the move -- but what about the potential stars of tomorrow headed the other way in those deals?",
+     "published": "2026-08-02T23:50:32Z",
      "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/49454655/2026-mlb-trade-deadline-grades-analysis-report-cards-every-deal"
+     "link": "https://www.espn.com/mlb/story/_/id/49464501/mlb-trade-deadline-2026-ranking-prospects-changed-teams"
     },
     {
-     "title": "Philadelphia Phillies vs. Baltimore Orioles: Game Highlights",
-     "desc": "Philadelphia Phillies vs. Baltimore Orioles: Game Highlights",
-     "published": "2026-08-02T22:13:59Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49515836/game-highlights"
-    },
-    {
-     "title": "Phillies rout Orioles 8-0 in a game called by rain after 5 1/2 innings",
-     "desc": "— Bryce Harper and Bryan De La Cruz both homered, and the Philadelphia Phillies beat the Baltimore Orioles 8-0 on Sunday in a game halted by rain after 5 1/2 innings.",
-     "published": "2026-08-02T22:08:31Z",
+     "title": "Emerson singles in 9th for Mariners' second straight walk-off victory over the Twins",
+     "desc": "— Colt Emerson singled to right in the ninth inning to score pinch-runner Stuard Fairchild from third for the Seattle Mariners' second straight walk-off victory over the Minnesota Twins, 7-6 on Sunday.",
+     "published": "2026-08-02T23:32:33Z",
      "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816365"
+     "link": "http://www.espn.com/mlb/recap?gameId=401816375"
     },
     {
-     "title": "Arizona Diamondbacks vs. Cleveland Guardians: Game Highlights",
-     "desc": "Arizona Diamondbacks vs. Cleveland Guardians: Game Highlights",
-     "published": "2026-08-02T22:11:59Z",
+     "title": "Detroit Tigers vs. Athletics: Game Highlights",
+     "desc": "Detroit Tigers vs. Athletics: Game Highlights",
+     "published": "2026-08-02T23:40:47Z",
      "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49515802/game-highlights"
+     "link": "https://www.espn.com/video/clip/_/id/49516133/game-highlights"
     },
     {
-     "title": "Gavin Williams allows 1 hit, strikes out 10 to lead Guardians to 5-0 win over Diamondbacks",
-     "desc": "— Gavin Williams allowed one hit in 5 2/3 innings and struck out 10, Chase DeLauter drove in three runs and the Cleveland Guardians defeated the Arizona Diamondbacks 5-0 Sunday to avoid being swept in a weekend series.",
-     "published": "2026-08-02T22:02:39Z",
+     "title": "The Tigers beat the A's 11-0 to complete their first season-series sweep vs. an AL team",
+     "desc": "— Keider Montero pitched six scoreless innings, Eduardo Valencia drove in four runs and the Detroit Tigers completed their first season-series sweep ever against an American League opponent with an 11-0 victory over the Athletics on Sunday.",
+     "published": "2026-08-02T23:24:30Z",
      "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816362"
+     "link": "http://www.espn.com/mlb/recap?gameId=401816373"
     },
     {
-     "title": "Fantasy baseball: Reactions to MLB trade deadline deals",
-     "desc": "Track the fantasy fallout from all the key deals as we head toward the MLB trade deadline on Monday.",
-     "published": "2026-08-02T22:01:59Z",
-     "type": "Story",
-     "link": "https://www.espn.com/fantasy/baseball/story/_/id/49416655/fantasy-baseball-reaction-mlb-trade-deadline-deals-2026-monday-august-3"
+     "title": "San Francisco Giants vs. San Diego Padres: Game Highlights",
+     "desc": "San Francisco Giants vs. San Diego Padres: Game Highlights",
+     "published": "2026-08-02T23:21:29Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49516088/game-highlights"
+    },
+    {
+     "title": "Milwaukee Brewers vs. Los Angeles Angels: Game Highlights",
+     "desc": "Milwaukee Brewers vs. Los Angeles Angels: Game Highlights",
+     "published": "2026-08-02T22:55:39Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49515995/game-highlights"
     }
    ],
    "injuries": {
@@ -5920,12 +5920,12 @@
      {
       "player": "Jacob Wilson",
       "status": "Day-To-Day",
-      "detail": "Manager Mark Kotsay said that Wilson, who is out of the lineup Sunday against the Tigers, is dealing with patellar tendonitis in his knee, Martin Gallegos of MLB.com reports."
+      "detail": "Manager Mark Kotsay said that Wilson, who is out of the lineup Sunday against the Tigers, is dealing with patellar tendinitis in his knee, Martin Gallegos of MLB.com reports."
      },
      {
       "player": "Nick Kurtz",
       "status": "Day-To-Day",
-      "detail": "Kurtz, who is out of the lineup Sunday against the Tigers, is scheduled to visit a hand specialist Monday in Los Angeles, after which the A's are expected to make a roster decision, Mark Feinsand of MLB.com reports."
+      "detail": "Kurtz, who is out of the lineup Sunday against the Tigers, is scheduled to visit a hand specialist Monday in Los Angeles, after which the Athletics are expected to decide whether he'll need to go on the injured list, Mark Feinsand of MLB.com reports."
      },
      {
       "player": "Mark Leiter Jr.",
@@ -6272,7 +6272,7 @@
      {
       "player": "Brandon Williamson",
       "status": "60-Day-IL",
-      "detail": "Williamson (shoulder) allowed one run on two walks while striking out three over two innings for Double-A Chattanooga on Saturday. The left-hander also hit a batter."
+      "detail": "Williamson (shoulder/finger) allowed one earned run on two walks and no walks while striking out three over two innings in a rehab start for Double-A Chattanooga on Saturday. The left-hander also hit a batter."
      },
      {
       "player": "Tony Santillan",
@@ -6569,6 +6569,16 @@
     ],
     "Los Angeles Dodgers": [
      {
+      "player": "Dalton Rushing",
+      "status": "Day-To-Day",
+      "detail": "Rushing (arm) was scratched from the Dodgers lineup Sunday night against the Red Sox, Fabian Ardaya of The Athletic reports."
+     },
+     {
+      "player": "Ben Casparius",
+      "status": "60-Day-IL",
+      "detail": "Casparius (shoulder) made the third appearance of his rehab assignment Friday with Triple-A Oklahoma City, allowing one earned run on no hits and four walks while recording just one out."
+     },
+     {
       "player": "Will Klein",
       "status": "15-Day-IL",
       "detail": "The Dodgers placed Klein on the 15-day injured list Saturday due to right elbow discomfort, Maddie Lee of the Los Angeles Times reports."
@@ -6612,11 +6622,6 @@
       "player": "Brusdar Graterol",
       "status": "60-Day-IL",
       "detail": "Graterol (shoulder) underwent surgery recently for a back injury he suffered while on a rehab assignment, Jack Harris of the California Post reports."
-     },
-     {
-      "player": "Ben Casparius",
-      "status": "60-Day-IL",
-      "detail": "Casparius (shoulder) was moved to the 60-day injured list Monday."
      },
      {
       "player": "Jake Cousins",
@@ -6932,6 +6937,11 @@
     ],
     "San Francisco Giants": [
      {
+      "player": "Osleivis Basabe",
+      "status": "Day-To-Day",
+      "detail": "Basabe exited Sunday's 5-4 loss to the Padres in the ninth inning after being hit by a pitch on his left forearm, Alex Pavlovic of NBC Sports Bay Area reports."
+     },
+     {
       "player": "Harrison Bader",
       "status": "10-Day-IL",
       "detail": "Giants manager Tony Vitello said Thursday that Bader (foot) won't return from the 10-day injured list before the end of the season, Alex Pavlovic of NBC Sports Bay Area reports."
@@ -7229,6 +7239,11 @@
     ],
     "Washington Nationals": [
      {
+      "player": "PJ Poulin",
+      "status": "60-Day-IL",
+      "detail": "Poulin (forearm) was transferred to the 60-day injured list Sunday."
+     },
+     {
       "player": "Andres Chaparro",
       "status": "Day-To-Day",
       "detail": "Nationals manager Blake Butera said after Sunday's 4-2 loss to Atlanta that Chaparro (head) passed a concussion test, Mark Zuckerman of NatsJournal.com reports."
@@ -7242,11 +7257,6 @@
       "player": "Brad Lord",
       "status": "15-Day-IL",
       "detail": "Lord (side) will throw a live batting practice session Wednesday, Mark Zuckerman of NatsJournal.com reports."
-     },
-     {
-      "player": "PJ Poulin",
-      "status": "15-Day-IL",
-      "detail": "Poulin will serve as the opening pitcher in Saturday's game against the Yankees, Mark Zuckerman of NatsJournal.com reports."
      },
      {
       "player": "Richard Lovelady",
