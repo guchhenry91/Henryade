@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-04T02:54:58.135010+00:00",
- "updated_unix": 1785812098,
+ "updated": "2026-08-04T05:53:09.939981+00:00",
+ "updated_unix": 1785822789,
  "source": "espn",
  "leagues": {
   "epl": {
@@ -1924,6 +1924,11 @@
       "detail": "The Texans re-signed Edwards on Sunday, Aaron Wilson of KPRC 2 Houston reports."
      },
      {
+      "player": "Sione Takitaki",
+      "status": "Active",
+      "detail": "Houston is set to sign Takitaki to a contract, Aaron Wilson of KPRC 2 Houston reports."
+     },
+     {
       "player": "Jake Hansen",
       "status": "Questionable",
       "detail": "Hansen (ankle) is considered week-to-week, Jonathan M. Alexander of the Houston Chronicle reports."
@@ -2037,11 +2042,6 @@
       "player": "Trent Brown",
       "status": "Active",
       "detail": "Brown (ankle) participated in Houston's minicamp practice Tuesday, Jonathan M. Alexander of the Houston Chronicle reports."
-     },
-     {
-      "player": "Justin Watson",
-      "status": "Active",
-      "detail": "Watson (concussion) participated during the Texans' minicamp session Tuesday, David J. Phillip of the Associated Press reports."
      }
     ],
     "Indianapolis Colts": [
@@ -2180,7 +2180,7 @@
      {
       "player": "Brian Thomas Jr.",
       "status": "Active",
-      "detail": "Thomas has followed up his impressive spring with a good start to training camp, according to Michael DiRocco of ESPN."
+      "detail": "Thomas has followed up his impressive spring with a good start to training camp, according to Michael DiRocco of ESPN.com."
      },
      {
       "player": "Chris Rodriguez Jr.",
@@ -2429,7 +2429,7 @@
      {
       "player": "Michael Mayer",
       "status": "Active",
-      "detail": "Mayer left practice early Monday with a nose injury, Ryan McFadden of ESPN reports."
+      "detail": "Mayer left practice early Monday with a nose injury, Ryan McFadden of ESPN.com reports."
      },
      {
       "player": "Zack Kuntz",
@@ -3824,6 +3824,11 @@
     ],
     "San Francisco 49ers": [
      {
+      "player": "Mikail Kamara",
+      "status": "Injured Reserve",
+      "detail": "Kamara (knee) reverted to the 49ers' injured reserve Monday, per the NFL's transaction log."
+     },
+     {
       "player": "Christian Kirk",
       "status": "Questionable",
       "detail": "Kirk (calf) worked out on the side at Monday's practice, Matt Barrows of The Athletic reports."
@@ -3942,11 +3947,6 @@
       "player": "Nate Hobbs",
       "status": "Active",
       "detail": "Hobbs (knee) is participating at the start of 49ers training camp, Vic Tafur of The Athletic reports."
-     },
-     {
-      "player": "Jake Tonges",
-      "status": "Active",
-      "detail": "Tonges (foot) is participating in practice to begin training camp, Brooke Evans of the 49ers' official site reports."
      }
     ],
     "Seattle Seahawks": [
@@ -4332,6 +4332,11 @@
     ],
     "Washington Commanders": [
      {
+      "player": "Tre Hawkins III",
+      "status": "Active",
+      "detail": "Hawkins (undisclosed) reverted to the Commanders' injured reserve Monday, per the NFL's transaction log."
+     },
+     {
       "player": "Kain Medrano",
       "status": "Active",
       "detail": "The Commanders activated Medrano (hamstring) off the active/PUP list Monday."
@@ -4450,11 +4455,6 @@
       "player": "Drew Stevens",
       "status": "Active",
       "detail": "Stevens signed with the Commanders as an undrafted free agent Thursday."
-     },
-     {
-      "player": "Chris Hilton Jr.",
-      "status": "Active",
-      "detail": "Hilton signed with the Commanders as an undrafted free agent Thursday."
      }
     ]
    }
@@ -4462,6 +4462,13 @@
   "nba": {
    "name": "NBA",
    "headlines": [
+    {
+     "title": "Sources: Knicks executive Rosas leaving team after four years",
+     "desc": "Knicks senior vice president of basketball operations Gersson Rosas is leaving the organization after four seasons, league sources confirmed to ESPN.",
+     "published": "2026-08-04T03:30:46Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/nba/story/_/id/49526057/sources-knicks-executive-rosas-leaving-team-four-years"
+    },
     {
      "title": "2026 Fanatics Fest: Where to watch, date, time and more",
      "desc": "Fanatics Fest, the world's premier event at the intersection of sports, entertainment and culture, took over New York City for four days in July.",
@@ -4496,13 +4503,6 @@
      "published": "2026-08-03T02:10:43Z",
      "type": "Story",
      "link": "https://www.espn.com/nba/story/_/id/48957095/2026-nba-free-agency-grades-offseason-signings-deals-contracts-extensions-depth-charts"
-    },
-    {
-     "title": "Donovan Mitchell and Coco Jones wed in Greenwich ceremony",
-     "desc": "Mitchell and Jones shared their first dance to Musiq Soulchild's 2000 hit song \"Love,\" as seen in a video posted by agent Troy Payne on Instagram.",
-     "published": "2026-08-02T22:05:25Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nba/story/_/id/49514411/donovan-mitchell-cleveland-cavaliers-coco-jones-wedding"
     }
    ],
    "injuries": {
@@ -5390,6 +5390,11 @@
       "player": "Nikita Zadorov",
       "status": "Out",
       "detail": "out"
+     },
+     {
+      "player": "Dans Locmelis",
+      "status": "Out",
+      "detail": "Locmelis will undergo season-ending shoulder surgery next week, Mark Divver of the New England Hockey Journal reports."
      }
     ],
     "Buffalo Sabres": [
@@ -5424,6 +5429,31 @@
       "player": "Yan Kuznetsov",
       "status": "Out",
       "detail": "Kuznetsov (upper body) will miss the rest of the 2025-26 regular season, according to Pat Steinberg of Sportsnet 960 The Fan on Tuesday."
+     },
+     {
+      "player": "Joel Hanley",
+      "status": "Out",
+      "detail": "out"
+     },
+     {
+      "player": "Samuel Honzek",
+      "status": "Injured Reserve",
+      "detail": "Honzek (upper body) will not return this season, per Pat Steinberg of Sportsnet 960 The Fan on Friday."
+     },
+     {
+      "player": "Jonathan Huberdeau",
+      "status": "Injured Reserve",
+      "detail": "Huberdeau (hip) was put on injured reserve Saturday, per the NHL media site."
+     },
+     {
+      "player": "Jake Bean",
+      "status": "Injured Reserve",
+      "detail": "Bean (undisclosed) will need to undergo surgery and is expected to be sidelined indefinitely, Pat Steinberg of Sportsnet 960 The Fan reports Thursday."
+     },
+     {
+      "player": "Henry Mews",
+      "status": "Out",
+      "detail": "out"
      }
     ],
     "Carolina Hurricanes": [
@@ -5443,6 +5473,21 @@
       "player": "Connor Bedard",
       "status": "Out",
       "detail": "Bedard (shoulder) signed a five-year, $75 million contract with Chicago on Saturday."
+     },
+     {
+      "player": "Matt Grzelcyk",
+      "status": "Out",
+      "detail": "Grzelcyk (upper body) will miss the remainder of the 2025-26 regular season, according to Ben Pope of the Chicago Sun-Times on Tuesday."
+     },
+     {
+      "player": "Artyom Levshunov",
+      "status": "Out",
+      "detail": "Levshunov (hand) will not play again in 2025-26, according to Ben Pope of the Chicago Sun-Times on Tuesday."
+     },
+     {
+      "player": "Ryan Ellis",
+      "status": "Injured Reserve",
+      "detail": "Ellis (back) and his contract have been traded to Chicago from San Jose, along with Jake Furlong and a 2028 fourth-round pick in exchange for Laurent Brossoit, Nolan Allan and a 2028 seventh-round pick Thursday."
      }
     ],
     "Colorado Avalanche": [
@@ -5503,6 +5548,11 @@
       "player": "Adam Henrique",
       "status": "Out",
       "detail": "out"
+     },
+     {
+      "player": "Mattias Janmark",
+      "status": "Injured Reserve",
+      "detail": "Janmark (undisclosed) underwent season-ending surgery on Friday, per Mark Spector of Sportsnet."
      }
     ],
     "Florida Panthers": [
@@ -5542,9 +5592,31 @@
       "detail": "out"
      },
      {
+      "player": "Jonah Gadjovich",
+      "status": "Injured Reserve",
+      "detail": "Gadjovich (upper body) is not expected to suit up again this season, per Jameson Olive of the Panthers' official site on Tuesday."
+     },
+     {
+      "player": "Niko Mikkola",
+      "status": "Injured Reserve",
+      "detail": "ir"
+     },
+     {
       "player": "Uvis Balinskis",
       "status": "Out",
       "detail": "Balinskis (lower body) has a fracture and is slated to miss 4-6 weeks, Jameson Olive of the Panthers' official site reports Monday."
+     },
+     {
+      "player": "Brad Marchand",
+      "status": "Injured Reserve",
+      "detail": "Marchand landed on injured reserve Tuesday, per the NHL media site."
+     }
+    ],
+    "Los Angeles Kings": [
+     {
+      "player": "Kevin Fiala",
+      "status": "Injured Reserve",
+      "detail": "Fiala (lower leg fracture) won't be available before training camp for the 2026-27 campaign, per John Hoven of SiriusXM NHL Network Radio."
      }
     ],
     "Minnesota Wild": [
@@ -5594,6 +5666,11 @@
       "player": "Luke Hughes",
       "status": "Out",
       "detail": "Hughes (undisclosed)  will undergo a procedure and will miss the remainder of the season, it was announced Thursday."
+     },
+     {
+      "player": "Stefan Noesen",
+      "status": "Injured Reserve",
+      "detail": "Noesen (knee) has been ruled out for the rest of the season, Kristy Flannery of The Hockey News reports Sunday."
      }
     ],
     "New York Islanders": [
@@ -5621,6 +5698,18 @@
       "player": "Alexander Romanov",
       "status": "Injured Reserve",
       "detail": "Romanov (shoulder) will miss the final two games of the regular season, according to Stefen Rosner of NHL.com on Sunday."
+     },
+     {
+      "player": "Pierre Engvall",
+      "status": "Injured Reserve",
+      "detail": "Engvall (ankle) will miss the remainder of the 2025-26 campaign, per Stefen Rosner of NHL.com."
+     }
+    ],
+    "New York Rangers": [
+     {
+      "player": "Matt Rempe",
+      "status": "Injured Reserve",
+      "detail": "Rempe (thumb) probably won't be ready to return before the end of the 2025-26 regular season, according to Vince Z. Mercogliano of The Athletic on Monday."
      }
     ],
     "Ottawa Senators": [
@@ -5650,6 +5739,23 @@
       "player": "Owen Tippett",
       "status": "Out",
       "detail": "Tippett (undisclosed) was contending with several injuries, including a sports hernia, during the 2026 postseason, Kevin Kurz of The Athletic reports Monday."
+     },
+     {
+      "player": "Ty Murchison",
+      "status": "Out",
+      "detail": "out"
+     }
+    ],
+    "Pittsburgh Penguins": [
+     {
+      "player": "Caleb Jones",
+      "status": "Injured Reserve",
+      "detail": "ir"
+     },
+     {
+      "player": "Filip Hallander",
+      "status": "Injured Reserve",
+      "detail": "Hallander (leg) was recalled from his conditioning stint with AHL Wilkes-Barre/Scranton on Friday, Seth Rorabaugh of Tribune-Review Sports reports."
      }
     ],
     "San Jose Sharks": [
@@ -5710,6 +5816,16 @@
       "player": "Dakota Joshua",
       "status": "Out",
       "detail": "Joshua (upper body) will not return to the lineup for the rest of the season, according to David Alter of The Hockey News on Saturday."
+     },
+     {
+      "player": "Auston Matthews",
+      "status": "Out",
+      "detail": "Matthews underwent successful MCL knee repair surgery Thursday."
+     },
+     {
+      "player": "Chris Tanev",
+      "status": "Injured Reserve",
+      "detail": "Tanev underwent core muscle surgery Wednesday and will miss the remainder of the 2025-26 campaign."
      }
     ],
     "Utah Mammoth": [
@@ -5729,6 +5845,21 @@
       "player": "Evander Kane",
       "status": "Out",
       "detail": "Kane (upper body) will most likely miss the Canucks' final two games of the 2025-26 season, Farhan Lalji of TSN reports."
+     },
+     {
+      "player": "Thatcher Demko",
+      "status": "Injured Reserve",
+      "detail": "Demko was placed on long-term injured reserve Tuesday."
+     },
+     {
+      "player": "Jonathan Lekkerimaki",
+      "status": "Out",
+      "detail": "Lekkerimaki underwent successful shoulder surgery Friday."
+     },
+     {
+      "player": "Filip Chytil",
+      "status": "Injured Reserve",
+      "detail": "ir"
      },
      {
       "player": "Derek Forbort",
@@ -5754,6 +5885,11 @@
      },
      {
       "player": "Charlie Lindgren",
+      "status": "Out",
+      "detail": "out"
+     },
+     {
+      "player": "Eriks Mateiko",
       "status": "Out",
       "detail": "out"
      }
@@ -5796,46 +5932,46 @@
    "name": "MLB",
    "headlines": [
     {
-     "title": "Kirk goes deep as the Blue Jays snap the Astros’ 6-game streak in a 3-1 win",
-     "desc": "— Alejandro Kirk homered, Jesús Sánchez and Ernie Clement each had an RBI and the Toronto Blue Jays beat Houston 3-1 on Monday night, snapping the Astros' six-game winning streak.",
-     "published": "2026-08-04T02:52:30Z",
-     "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816382"
+     "title": "2026 MLB ABS challenge system tracker: Team, player rankings",
+     "desc": "The ABS challenge system leaderboard ranks batters, catchers, teams and umpires throughout the MLB season.",
+     "published": "2026-08-04T05:13:22Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/48305211/2026-mlb-abs-challenge-system-tracker-team-player-rankings"
     },
     {
-     "title": "Los Angeles Dodgers vs. Chicago Cubs: Game Highlights",
-     "desc": "Los Angeles Dodgers vs. Chicago Cubs: Game Highlights",
-     "published": "2026-08-04T02:49:25Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49525966/game-highlights"
-    },
-    {
-     "title": "St. Louis Cardinals vs. New York Yankees: Game Highlights",
-     "desc": "St. Louis Cardinals vs. New York Yankees: Game Highlights",
-     "published": "2026-08-04T02:43:46Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49525951/game-highlights"
-    },
-    {
-     "title": "Horwitz drives in 3 runs, Pirates defeat Brewers for the 6th time in 7 games this season",
-     "desc": "— Spencer Horwitz hit a three-run double and the Pittsburgh Pirates extended their dominance over the Brewers this season, beating Milwaukee 4-3 on Monday night in the opener of a four-game series.",
-     "published": "2026-08-04T02:33:29Z",
-     "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816380"
-    },
-    {
-     "title": "Tigers president Scott Harris defends return in Skubal trade",
-     "desc": "Tigers president Scott Harris dismissed the idea that Detroit should've waited right up until the deadline to trade Tarik Skubal, saying \"that's not how markets for the top players work.\"",
-     "published": "2026-08-04T02:50:35Z",
+     "title": "Source: Yankees to call up top prospect George Lombard Jr.",
+     "desc": "The Yankees plan on calling up top prospect George Lombard Jr. on Tuesday after optioning shortstop Anthony Volpe to Triple-A, a source said.",
+     "published": "2026-08-04T05:01:46Z",
      "type": "HeadlineNews",
-     "link": "https://www.espn.com/nba/story/_/id/49525849/tigers-president-scott-harris-defends-return-skubal-trade"
+     "link": "https://www.espn.com/mlb/story/_/id/49526555/source-yankees-call-top-prospect-george-lombard-jr"
     },
     {
-     "title": "Derek Hill rallies Phillies with go-ahead grand slam in 7th in 6-3 win over Nationals",
-     "desc": "— Derek Hill hit a go-ahead grand slam in the seventh inning and Bryce Harper added a two-run shot to lift the Philadelphia Phillies to their third straight win, 6-3 over the Washington...",
-     "published": "2026-08-04T01:29:32Z",
+     "title": "Pfaadt, Tawa lead Diamondbacks past Padres 5-1 in NL wild-card position matchup",
+     "desc": "— Tim Tawa hit a three-run homer and Brandon Pfaadt carried a shutout into the seventh inning as the Arizona Diamondbacks beat the San Diego Padres 5-1 Monday night in the opener of a 10-game homestand against NL West rivals.",
+     "published": "2026-08-04T04:45:28Z",
      "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816378"
+     "link": "http://www.espn.com/mlb/recap?gameId=401815079"
+    },
+    {
+     "title": "San Diego Padres vs. Arizona Diamondbacks: Game Highlights",
+     "desc": "San Diego Padres vs. Arizona Diamondbacks: Game Highlights",
+     "published": "2026-08-04T04:20:17Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49526489/game-highlights"
+    },
+    {
+     "title": "Junior Caminero hits 2 homers, Jonathan Aranda gets 4 hits and Rays beat Rockies 13-9",
+     "desc": "— Junior Caminero hit two home runs, Jonathan Aranda had four hits and the Tampa Bay Rays beat the Colorado Rockies 13-9 on Monday night.",
+     "published": "2026-08-04T03:41:37Z",
+     "type": "Recap",
+     "link": "http://www.espn.com/mlb/recap?gameId=401816383"
+    },
+    {
+     "title": "Tampa Bay Rays vs. Colorado Rockies: Game Highlights",
+     "desc": "Tampa Bay Rays vs. Colorado Rockies: Game Highlights",
+     "published": "2026-08-04T03:24:47Z",
+     "type": "Media",
+     "link": "https://www.espn.com/video/clip/_/id/49526253/game-highlights"
     }
    ],
    "injuries": {
