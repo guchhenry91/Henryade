@@ -1,52 +1,52 @@
 {
- "updated": "2026-08-04T05:53:09.939981+00:00",
- "updated_unix": 1785822789,
+ "updated": "2026-08-04T08:45:14.797159+00:00",
+ "updated_unix": 1785833114,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
     {
-     "title": "Would Real Madrid miss Vinícius Jr. if he joined Arsenal?",
-     "desc": "Would Real Madrid miss Vinícius Jr. if he joined Arsenal?",
-     "published": "2026-08-03T23:03:03Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49524588/would-real-madrid-miss-vinicius-jr-joined-arsenal"
-    },
-    {
-     "title": "Bernardo Silva 'didn't think twice' about joining Real Madrid",
-     "desc": "Bernardo Silva said he \"didn't think twice\" about joining Real Madrid after completing his first training session with the club on Monday.",
-     "published": "2026-08-03T21:40:55Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49523768/bernardo-silva-think-twice-joining-real-madrid"
-    },
-    {
-     "title": "Fulham sign Gonzalo García from Real Madrid",
-     "desc": "Gonzalo García has joined Premier League side Fulham from Real Madrid, the club has confirmed.",
-     "published": "2026-08-03T21:12:18Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49523499/fulham-sign-gonzalo-garcia-real-madrid"
-    },
-    {
-     "title": "Transfer rumors, news: Atlético Madrid weigh move for Jack Grealish",
-     "desc": "Atlético Madrid are admirers of Manchester City winger Jack Grealish. Transfer Talk has the latest.",
-     "published": "2026-08-03T20:29:32Z",
+     "title": "Transfer rumors, news: Fenerbahce eye Man United's Rashford",
+     "desc": "Fenerbahce are ready to make an ambitious move to sign Manchester United forward Marcus Rashford. Transfer Talk has the latest.",
+     "published": "2026-08-04T07:40:36Z",
      "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49518337/transfer-rumors-news-arsenal-boss-arteta-makes-push-vinicius-jr"
+     "link": "https://www.espn.com/soccer/story/_/id/49526703/transfer-rumors-news-fenerbahce-eye-man-united-winger-marcus-rashford"
     },
     {
-     "title": "Premier League 2026 summer transfers: All confirmed ins, outs for every club",
-     "desc": "Here's every Premier League in and out before the 2026-27 season begins.",
-     "published": "2026-08-03T15:38:53Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/48955344/premier-league-2026-summer-transfers-all-confirmed-ins-outs-every-club"
+     "title": "Why \"winning the transfer window\" doesn't help Premier League clubs",
+     "desc": "Clubs spend millions of dollars in the summer transfer window, trying to scoop up all the biggest stars. But is it actually worth it?",
+     "published": "2026-08-04T07:16:03Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49524791/why-winning-transfer-window-help-premier-league-clubs"
     },
     {
-     "title": "Jordan Henderson completes move to Chelsea after leaving Brentford",
-     "desc": "Jordan Henderson has completed a move to Chelsea after leaving Brentford as a free agent via a mutual agreement.",
-     "published": "2026-08-03T15:15:46Z",
+     "title": "Liverpool's preseason: Injuries, squad depth a concern for Iraola & Co.",
+     "desc": "Liverpool's time in the U.S. showed that coach Iraola & Co. still have a lot of work to do ahead of the 2026-27 campaign. Here's what we learned from their U.S. preseason trip.",
+     "published": "2026-08-04T07:14:34Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49521178/liverpool-preseason-leeds-united-wrexham-sunderland-andoni-iraola-beth-lindop"
+    },
+    {
+     "title": "Premier League preseason friendlies 2026-27: Fixtures, UK kick-off times and summer tour schedule",
+     "desc": "Premier League clubs have confirmed their preseason schedules ahead of the new campaign, with the 2026-27 season kicking off on Aug. 21.",
+     "published": "2026-08-04T06:22:45Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49154575/premier-league-preseason-friendlies-202627-fixtures-uk-kickoff-s-summer-tour-schedule-chelsea-liverpool-arsenal-man-united-man-city-spurs"
+    },
+    {
+     "title": "Summer transfer window: Grading big signings in men's soccer",
+     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
+     "published": "2026-08-04T07:03:24Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
+    },
+    {
+     "title": "Premier League, EFL summer transfer window 2026 dates: When is Deadline Day?",
+     "desc": "Everything that Premier League and EFL supporters need to know about the 2026 summer transfer window, and key dates around it.",
+     "published": "2026-08-04T06:17:57Z",
      "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49487583/jordan-henderson-completes-chelsea-move-leaving-brentford"
+     "link": "https://www.espn.com/soccer/story/_/id/48944912/premier-league-efl-summer-transfer-window-2026-dates-does-open-deadline-day"
     }
    ],
    "injuries": {},
@@ -55,6 +55,20 @@
   "laliga": {
    "name": "La Liga",
    "headlines": [
+    {
+     "title": "Marc-Andre Ter Stegen joins Ajax on loan from Barcelona",
+     "desc": "Ajax have completed the signing of Barcelona goalkeeper Marc-André ter Stegen on a season-long loan, the two clubs have confirmed.",
+     "published": "2026-08-04T08:14:45Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49257799/marc-andre-ter-stegen-joins-ajax-loan-barcelona"
+    },
+    {
+     "title": "Summer transfer window: Grading big signings in men's soccer",
+     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
+     "published": "2026-08-04T07:03:24Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
+    },
     {
      "title": "Laurens: Diomandé transfer is a huge risk for Real Madrid",
      "desc": "Laurens: Diomandé transfer is a huge risk for Real Madrid",
@@ -82,20 +96,6 @@
      "published": "2026-08-03T21:40:55Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49523768/bernardo-silva-think-twice-joining-real-madrid"
-    },
-    {
-     "title": "Transfer rumors, news: Atlético Madrid weigh move for Jack Grealish",
-     "desc": "Atlético Madrid are admirers of Manchester City winger Jack Grealish. Transfer Talk has the latest.",
-     "published": "2026-08-03T20:29:32Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49518337/transfer-rumors-news-arsenal-boss-arteta-makes-push-vinicius-jr"
-    },
-    {
-     "title": "Hansi Flick: Barcelona 'know they have to do something' in search for new striker",
-     "desc": "Hansi Flick says Barcelona know \"they have to do something\" in the transfer market as they continue to search for a replacement for Robert Lewandowski.",
-     "published": "2026-08-03T15:50:35Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49520314/barcelona-transfers-laliga-julian-alvarez-ferran-torres-eli-junior-kroupi"
     }
    ],
    "injuries": {},
@@ -105,9 +105,16 @@
    "name": "Bundesliga",
    "headlines": [
     {
+     "title": "Veteran striker Edin Džeko, 40, signs new one-year deal at Schalke",
+     "desc": "Edin Džeko, at the age of 40, has signed a new contract with Schalke and will be playing in the Bundesliga next season.",
+     "published": "2026-08-04T07:43:52Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49526951/edin-dzeko-schalke-bundesliga"
+    },
+    {
      "title": "Summer transfer window: Grading big signings in men's soccer",
      "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-08-03T07:25:36Z",
+     "published": "2026-08-04T07:03:24Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
@@ -138,13 +145,6 @@
      "published": "2026-07-24T16:40:32Z",
      "type": "Media",
      "link": "https://www.espn.com/video/clip/_/id/49440733/klopp-best-man-germany-job"
-    },
-    {
-     "title": "South Africa teen Emile Witbooi gaining interest from Europe's top leagues - Roc Nation Sports",
-     "desc": "Cape Town City attacking midfielder/winger Emile Witbooi is generating interest from England, Spain, Germany, France, Belgium and the US, as well as other African clubs, Roc Nation Sports International (RNSI) told ESPN.",
-     "published": "2026-07-24T07:21:38Z",
-     "type": "Story",
-     "link": "https://www.espn.com/espn/story/_/id/49430310/south-africa-teen-emile-witbooi-gaining-interest-europe-top-leagues-roc-nation-sports"
     }
    ],
    "injuries": {},
@@ -156,7 +156,7 @@
     {
      "title": "Summer transfer window: Grading big signings in men's soccer",
      "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-08-03T07:25:36Z",
+     "published": "2026-08-04T07:03:24Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
@@ -205,7 +205,7 @@
     {
      "title": "Summer transfer window: Grading big signings in men's soccer",
      "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-08-03T07:25:36Z",
+     "published": "2026-08-04T07:03:24Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
@@ -2556,7 +2556,7 @@
      {
       "player": "Tuli Tuipulotu",
       "status": "Active",
-      "detail": "Tuipulotu did not participate in team drills Monday due to an ongoing contract discussion with the Chargers, Kris Rhim of ESPN.com reports."
+      "detail": "Tuipulotu did not participate in team drills Monday due his ongoing negotiations on an extension, Kris Rhim of ESPN.com reports."
      },
      {
       "player": "Rashawn Slater",
@@ -5390,11 +5390,6 @@
       "player": "Nikita Zadorov",
       "status": "Out",
       "detail": "out"
-     },
-     {
-      "player": "Dans Locmelis",
-      "status": "Out",
-      "detail": "Locmelis will undergo season-ending shoulder surgery next week, Mark Divver of the New England Hockey Journal reports."
      }
     ],
     "Buffalo Sabres": [
@@ -5429,31 +5424,6 @@
       "player": "Yan Kuznetsov",
       "status": "Out",
       "detail": "Kuznetsov (upper body) will miss the rest of the 2025-26 regular season, according to Pat Steinberg of Sportsnet 960 The Fan on Tuesday."
-     },
-     {
-      "player": "Joel Hanley",
-      "status": "Out",
-      "detail": "out"
-     },
-     {
-      "player": "Samuel Honzek",
-      "status": "Injured Reserve",
-      "detail": "Honzek (upper body) will not return this season, per Pat Steinberg of Sportsnet 960 The Fan on Friday."
-     },
-     {
-      "player": "Jonathan Huberdeau",
-      "status": "Injured Reserve",
-      "detail": "Huberdeau (hip) was put on injured reserve Saturday, per the NHL media site."
-     },
-     {
-      "player": "Jake Bean",
-      "status": "Injured Reserve",
-      "detail": "Bean (undisclosed) will need to undergo surgery and is expected to be sidelined indefinitely, Pat Steinberg of Sportsnet 960 The Fan reports Thursday."
-     },
-     {
-      "player": "Henry Mews",
-      "status": "Out",
-      "detail": "out"
      }
     ],
     "Carolina Hurricanes": [
@@ -5473,21 +5443,6 @@
       "player": "Connor Bedard",
       "status": "Out",
       "detail": "Bedard (shoulder) signed a five-year, $75 million contract with Chicago on Saturday."
-     },
-     {
-      "player": "Matt Grzelcyk",
-      "status": "Out",
-      "detail": "Grzelcyk (upper body) will miss the remainder of the 2025-26 regular season, according to Ben Pope of the Chicago Sun-Times on Tuesday."
-     },
-     {
-      "player": "Artyom Levshunov",
-      "status": "Out",
-      "detail": "Levshunov (hand) will not play again in 2025-26, according to Ben Pope of the Chicago Sun-Times on Tuesday."
-     },
-     {
-      "player": "Ryan Ellis",
-      "status": "Injured Reserve",
-      "detail": "Ellis (back) and his contract have been traded to Chicago from San Jose, along with Jake Furlong and a 2028 fourth-round pick in exchange for Laurent Brossoit, Nolan Allan and a 2028 seventh-round pick Thursday."
      }
     ],
     "Colorado Avalanche": [
@@ -5548,11 +5503,6 @@
       "player": "Adam Henrique",
       "status": "Out",
       "detail": "out"
-     },
-     {
-      "player": "Mattias Janmark",
-      "status": "Injured Reserve",
-      "detail": "Janmark (undisclosed) underwent season-ending surgery on Friday, per Mark Spector of Sportsnet."
      }
     ],
     "Florida Panthers": [
@@ -5592,31 +5542,9 @@
       "detail": "out"
      },
      {
-      "player": "Jonah Gadjovich",
-      "status": "Injured Reserve",
-      "detail": "Gadjovich (upper body) is not expected to suit up again this season, per Jameson Olive of the Panthers' official site on Tuesday."
-     },
-     {
-      "player": "Niko Mikkola",
-      "status": "Injured Reserve",
-      "detail": "ir"
-     },
-     {
       "player": "Uvis Balinskis",
       "status": "Out",
       "detail": "Balinskis (lower body) has a fracture and is slated to miss 4-6 weeks, Jameson Olive of the Panthers' official site reports Monday."
-     },
-     {
-      "player": "Brad Marchand",
-      "status": "Injured Reserve",
-      "detail": "Marchand landed on injured reserve Tuesday, per the NHL media site."
-     }
-    ],
-    "Los Angeles Kings": [
-     {
-      "player": "Kevin Fiala",
-      "status": "Injured Reserve",
-      "detail": "Fiala (lower leg fracture) won't be available before training camp for the 2026-27 campaign, per John Hoven of SiriusXM NHL Network Radio."
      }
     ],
     "Minnesota Wild": [
@@ -5666,11 +5594,6 @@
       "player": "Luke Hughes",
       "status": "Out",
       "detail": "Hughes (undisclosed)  will undergo a procedure and will miss the remainder of the season, it was announced Thursday."
-     },
-     {
-      "player": "Stefan Noesen",
-      "status": "Injured Reserve",
-      "detail": "Noesen (knee) has been ruled out for the rest of the season, Kristy Flannery of The Hockey News reports Sunday."
      }
     ],
     "New York Islanders": [
@@ -5698,18 +5621,6 @@
       "player": "Alexander Romanov",
       "status": "Injured Reserve",
       "detail": "Romanov (shoulder) will miss the final two games of the regular season, according to Stefen Rosner of NHL.com on Sunday."
-     },
-     {
-      "player": "Pierre Engvall",
-      "status": "Injured Reserve",
-      "detail": "Engvall (ankle) will miss the remainder of the 2025-26 campaign, per Stefen Rosner of NHL.com."
-     }
-    ],
-    "New York Rangers": [
-     {
-      "player": "Matt Rempe",
-      "status": "Injured Reserve",
-      "detail": "Rempe (thumb) probably won't be ready to return before the end of the 2025-26 regular season, according to Vince Z. Mercogliano of The Athletic on Monday."
      }
     ],
     "Ottawa Senators": [
@@ -5739,23 +5650,6 @@
       "player": "Owen Tippett",
       "status": "Out",
       "detail": "Tippett (undisclosed) was contending with several injuries, including a sports hernia, during the 2026 postseason, Kevin Kurz of The Athletic reports Monday."
-     },
-     {
-      "player": "Ty Murchison",
-      "status": "Out",
-      "detail": "out"
-     }
-    ],
-    "Pittsburgh Penguins": [
-     {
-      "player": "Caleb Jones",
-      "status": "Injured Reserve",
-      "detail": "ir"
-     },
-     {
-      "player": "Filip Hallander",
-      "status": "Injured Reserve",
-      "detail": "Hallander (leg) was recalled from his conditioning stint with AHL Wilkes-Barre/Scranton on Friday, Seth Rorabaugh of Tribune-Review Sports reports."
      }
     ],
     "San Jose Sharks": [
@@ -5816,16 +5710,6 @@
       "player": "Dakota Joshua",
       "status": "Out",
       "detail": "Joshua (upper body) will not return to the lineup for the rest of the season, according to David Alter of The Hockey News on Saturday."
-     },
-     {
-      "player": "Auston Matthews",
-      "status": "Out",
-      "detail": "Matthews underwent successful MCL knee repair surgery Thursday."
-     },
-     {
-      "player": "Chris Tanev",
-      "status": "Injured Reserve",
-      "detail": "Tanev underwent core muscle surgery Wednesday and will miss the remainder of the 2025-26 campaign."
      }
     ],
     "Utah Mammoth": [
@@ -5845,21 +5729,6 @@
       "player": "Evander Kane",
       "status": "Out",
       "detail": "Kane (upper body) will most likely miss the Canucks' final two games of the 2025-26 season, Farhan Lalji of TSN reports."
-     },
-     {
-      "player": "Thatcher Demko",
-      "status": "Injured Reserve",
-      "detail": "Demko was placed on long-term injured reserve Tuesday."
-     },
-     {
-      "player": "Jonathan Lekkerimaki",
-      "status": "Out",
-      "detail": "Lekkerimaki underwent successful shoulder surgery Friday."
-     },
-     {
-      "player": "Filip Chytil",
-      "status": "Injured Reserve",
-      "detail": "ir"
      },
      {
       "player": "Derek Forbort",
@@ -5885,11 +5754,6 @@
      },
      {
       "player": "Charlie Lindgren",
-      "status": "Out",
-      "detail": "out"
-     },
-     {
-      "player": "Eriks Mateiko",
       "status": "Out",
       "detail": "out"
      }
@@ -5932,46 +5796,46 @@
    "name": "MLB",
    "headlines": [
     {
-     "title": "2026 MLB ABS challenge system tracker: Team, player rankings",
-     "desc": "The ABS challenge system leaderboard ranks batters, catchers, teams and umpires throughout the MLB season.",
-     "published": "2026-08-04T05:13:22Z",
-     "type": "Story",
-     "link": "https://www.espn.com/mlb/story/_/id/48305211/2026-mlb-abs-challenge-system-tracker-team-player-rankings"
-    },
-    {
-     "title": "Source: Yankees to call up top prospect George Lombard Jr.",
-     "desc": "The Yankees plan on calling up top prospect George Lombard Jr. on Tuesday after optioning shortstop Anthony Volpe to Triple-A, a source said.",
-     "published": "2026-08-04T05:01:46Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/mlb/story/_/id/49526555/source-yankees-call-top-prospect-george-lombard-jr"
-    },
-    {
-     "title": "Pfaadt, Tawa lead Diamondbacks past Padres 5-1 in NL wild-card position matchup",
-     "desc": "— Tim Tawa hit a three-run homer and Brandon Pfaadt carried a shutout into the seventh inning as the Arizona Diamondbacks beat the San Diego Padres 5-1 Monday night in the opener of a 10-game homestand against NL West rivals.",
-     "published": "2026-08-04T04:45:28Z",
+     "title": "Alec Burleson hits 3 homers as Cardinals outslug Yankees 13-7 after losing 6-run lead",
+     "desc": "— Alec Burleson hit three two-run homers, including a drive into the second deck in right field that capped a seven-run eighth inning as the St. Louis Cardinals outslugged the New York Yankees for a 13-7 victory Monday night after blowing a",
+     "published": "2026-08-04T08:20:53Z",
      "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401815079"
+     "link": "http://www.espn.com/mlb/recap?gameId=401816377"
     },
     {
-     "title": "San Diego Padres vs. Arizona Diamondbacks: Game Highlights",
-     "desc": "San Diego Padres vs. Arizona Diamondbacks: Game Highlights",
-     "published": "2026-08-04T04:20:17Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49526489/game-highlights"
+     "title": "Marlins bring 3-game road win streak into matchup with the Braves",
+     "desc": "Miami Marlins (58-55, third in the NL East) vs. Atlanta Braves (67-45, first in the NL East)",
+     "published": "2026-08-04T08:01:50Z",
+     "type": "Preview",
+     "link": "http://www.espn.com/mlb/preview?gameId=401816387"
     },
     {
-     "title": "Junior Caminero hits 2 homers, Jonathan Aranda gets 4 hits and Rays beat Rockies 13-9",
-     "desc": "— Junior Caminero hit two home runs, Jonathan Aranda had four hits and the Tampa Bay Rays beat the Colorado Rockies 13-9 on Monday night.",
-     "published": "2026-08-04T03:41:37Z",
-     "type": "Recap",
-     "link": "http://www.espn.com/mlb/recap?gameId=401816383"
+     "title": "Royals aim to break losing streak in matchup with the Twins",
+     "desc": "Minnesota Twins (56-57, third in the AL Central) vs. Kansas City Royals (46-67, fifth in the AL Central)",
+     "published": "2026-08-04T08:01:46Z",
+     "type": "Preview",
+     "link": "http://www.espn.com/mlb/preview?gameId=401816392"
     },
     {
-     "title": "Tampa Bay Rays vs. Colorado Rockies: Game Highlights",
-     "desc": "Tampa Bay Rays vs. Colorado Rockies: Game Highlights",
-     "published": "2026-08-04T03:24:47Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49526253/game-highlights"
+     "title": "Reds host the Athletics to open 3-game series",
+     "desc": "Athletics (45-67, fourth in the AL West) vs. Cincinnati Reds (53-58, fifth in the NL Central)",
+     "published": "2026-08-04T08:01:42Z",
+     "type": "Preview",
+     "link": "http://www.espn.com/mlb/preview?gameId=401816385"
+    },
+    {
+     "title": "White Sox visit the Red Sox to open 3-game series",
+     "desc": "Chicago White Sox (59-52, first in the AL Central) vs. Boston Red Sox (60-51, third in the AL East)",
+     "published": "2026-08-04T08:01:39Z",
+     "type": "Preview",
+     "link": "http://www.espn.com/mlb/preview?gameId=401816386"
+    },
+    {
+     "title": "Guardians take on the Mets in first of 3-game series",
+     "desc": "New York Mets (47-66, fifth in the NL East) vs. Cleveland Guardians (57-56, second in the AL Central)",
+     "published": "2026-08-04T08:01:36Z",
+     "type": "Preview",
+     "link": "http://www.espn.com/mlb/preview?gameId=401816388"
     }
    ],
    "injuries": {
@@ -6352,11 +6216,6 @@
       "player": "Drew Thorpe",
       "status": "60-Day-IL",
       "detail": "Thorpe (elbow) will make his next rehab start with Triple-A Charlotte on Tuesday, Scott Merkin of MLB.com reports."
-     },
-     {
-      "player": "Tyler Gilbert",
-      "status": "15-Day-IL",
-      "detail": "Gilbert (shoulder) will begin a rehab assignment with Triple-A Charlotte on Thursday, Brooke Fletcher of Chicago Sports Network reports."
      },
      {
       "player": "Kyle Teel",
@@ -6930,29 +6789,29 @@
     ],
     "New York Yankees": [
      {
-      "player": "Clarke Schmidt",
-      "status": "60-Day-IL",
-      "detail": "Yankees manager Aaron Boone said Monday that Schmidt (elbow) is eyeing a return from the 60-day injured list in September, David Lennon of Newsday reports."
+      "player": "Cody Bellinger",
+      "status": "10-Day-IL",
+      "detail": "Bellinger (hamstring) has been doing some outdoor running while also hitting and throwing, per MLB.com."
      },
      {
       "player": "Carlos Rodon",
       "status": "15-Day-IL",
-      "detail": "Rodon (elbow) is scheduled to throw a live batting practice session at Yankee Stadium on Monday, Meredith Marakovits of YES Network reports."
-     },
-     {
-      "player": "Aaron Judge",
-      "status": "60-Day-IL",
-      "detail": "The Yankees haven't yet determined when Judge (ribs) will next be examined by team doctors, Brendan Kuty of The Athletic reports."
-     },
-     {
-      "player": "Cody Bellinger",
-      "status": "10-Day-IL",
-      "detail": "Yankees manager Aaron Boone said Monday that Bellinger is expected to be sidelined 4-to-6 weeks after being diagnosed with a Grade 2 left hamstring strain, Brendan Kuty of The Athletic reports."
+      "detail": "Rodon threw a live session Monday and could next embark upon a minor-league rehab assignment, Pete Caldera of The Bergen Record reports."
      },
      {
       "player": "Giancarlo Stanton",
       "status": "10-Day-IL",
-      "detail": "Yankees manager Aaron Boone told reporters Monday that Stanton has \"no timeline\" to start a minor-league rehab assignment, Bryan Hoch of MLB.com reports."
+      "detail": "Stanton (calf) took swings against Carlos Rodon (elbow) on Monday, MLB.com reports."
+     },
+     {
+      "player": "Aaron Judge",
+      "status": "60-Day-IL",
+      "detail": "Yankees general manager Brian Cashman said Monday that the team is \"still very optimistic\" that Judge (ribs) will return this season, Bryan Hoch of MLB.com reports."
+     },
+     {
+      "player": "Clarke Schmidt",
+      "status": "60-Day-IL",
+      "detail": "Yankees manager Aaron Boone said Monday that Schmidt (elbow) is eyeing a return from the 60-day injured list in September, David Lennon of Newsday reports."
      }
     ],
     "Philadelphia Phillies": [
@@ -7016,6 +6875,11 @@
     ],
     "San Diego Padres": [
      {
+      "player": "Samad Taylor",
+      "status": "10-Day-IL",
+      "detail": "Taylor (oblique) has been taking light swings and rehabbing at the Padres' spring complex in Arizona, MLB.com reports."
+     },
+     {
       "player": "Jason Adam",
       "status": "60-Day-IL",
       "detail": "The Padres transferred Adam (shoulder) to the 60-day injured list Monday."
@@ -7044,11 +6908,6 @@
       "player": "Miguel Andujar",
       "status": "10-Day-IL",
       "detail": "The Padres placed Andujar on the 10-day injured list Monday with a fractured right wrist."
-     },
-     {
-      "player": "Samad Taylor",
-      "status": "10-Day-IL",
-      "detail": "Taylor said Wednesday that he exited Tuesday's game against the Diamondbacks with a right side injury, Jeff Sanders of The San Diego Union-Tribune reports."
      },
      {
       "player": "Ramon Laureano",
