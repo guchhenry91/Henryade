@@ -1,24 +1,31 @@
 {
- "updated": "2026-08-04T08:45:14.797159+00:00",
- "updated_unix": 1785833114,
+ "updated": "2026-08-04T11:28:31.121595+00:00",
+ "updated_unix": 1785842911,
  "source": "espn",
  "leagues": {
   "epl": {
    "name": "Premier League",
    "headlines": [
     {
+     "title": "Why \"winning the transfer window\" doesn't help Premier League clubs",
+     "desc": "Clubs spend millions of dollars in the summer transfer window, trying to scoop up all the biggest stars. But is it actually worth it?",
+     "published": "2026-08-04T10:56:36Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/49524791/why-winning-transfer-window-help-premier-league-clubs"
+    },
+    {
+     "title": "Summer transfer window: Grading big signings in men's soccer",
+     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
+     "published": "2026-08-04T10:39:45Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
+    },
+    {
      "title": "Transfer rumors, news: Fenerbahce eye Man United's Rashford",
      "desc": "Fenerbahce are ready to make an ambitious move to sign Manchester United forward Marcus Rashford. Transfer Talk has the latest.",
      "published": "2026-08-04T07:40:36Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49526703/transfer-rumors-news-fenerbahce-eye-man-united-winger-marcus-rashford"
-    },
-    {
-     "title": "Why \"winning the transfer window\" doesn't help Premier League clubs",
-     "desc": "Clubs spend millions of dollars in the summer transfer window, trying to scoop up all the biggest stars. But is it actually worth it?",
-     "published": "2026-08-04T07:16:03Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49524791/why-winning-transfer-window-help-premier-league-clubs"
     },
     {
      "title": "Liverpool's preseason: Injuries, squad depth a concern for Iraola & Co.",
@@ -35,13 +42,6 @@
      "link": "https://www.espn.com/soccer/story/_/id/49154575/premier-league-preseason-friendlies-202627-fixtures-uk-kickoff-s-summer-tour-schedule-chelsea-liverpool-arsenal-man-united-man-city-spurs"
     },
     {
-     "title": "Summer transfer window: Grading big signings in men's soccer",
-     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-08-04T07:03:24Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
-    },
-    {
      "title": "Premier League, EFL summer transfer window 2026 dates: When is Deadline Day?",
      "desc": "Everything that Premier League and EFL supporters need to know about the 2026 summer transfer window, and key dates around it.",
      "published": "2026-08-04T06:17:57Z",
@@ -56,18 +56,25 @@
    "name": "La Liga",
    "headlines": [
     {
+     "title": "Leipzig managing director denies agency battle will derail Yan Diomande Real Madrid transfer",
+     "desc": "RB Leipzig managing director Marcel Schäfer has denied that the ongoing battle between Roc Nation and Max Gradel could derail the deal to take Yan Diomande to Real Madrid.",
+     "published": "2026-08-04T11:15:42Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49527630/leipzig-managing-director-denies-agency-battle-derail-yan-diomande-real-madrid-transfer"
+    },
+    {
+     "title": "Summer transfer window: Grading big signings in men's soccer",
+     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
+     "published": "2026-08-04T10:39:45Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
+    },
+    {
      "title": "Marc-Andre Ter Stegen joins Ajax on loan from Barcelona",
      "desc": "Ajax have completed the signing of Barcelona goalkeeper Marc-André ter Stegen on a season-long loan, the two clubs have confirmed.",
      "published": "2026-08-04T08:14:45Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49257799/marc-andre-ter-stegen-joins-ajax-loan-barcelona"
-    },
-    {
-     "title": "Summer transfer window: Grading big signings in men's soccer",
-     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-08-04T07:03:24Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
     {
      "title": "Laurens: Diomandé transfer is a huge risk for Real Madrid",
@@ -89,13 +96,6 @@
      "published": "2026-08-04T01:37:20Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49524266/real-madrid-offer-vinicius-junior-new-22m-year-deal"
-    },
-    {
-     "title": "Bernardo Silva 'didn't think twice' about joining Real Madrid",
-     "desc": "Bernardo Silva said he \"didn't think twice\" about joining Real Madrid after completing his first training session with the club on Monday.",
-     "published": "2026-08-03T21:40:55Z",
-     "type": "HeadlineNews",
-     "link": "https://www.espn.com/soccer/story/_/id/49523768/bernardo-silva-think-twice-joining-real-madrid"
     }
    ],
    "injuries": {},
@@ -105,18 +105,25 @@
    "name": "Bundesliga",
    "headlines": [
     {
+     "title": "Leipzig managing director denies agency battle will derail Yan Diomande Real Madrid transfer",
+     "desc": "RB Leipzig managing director Marcel Schäfer has denied that the ongoing battle between Roc Nation and Max Gradel could derail the deal to take Yan Diomande to Real Madrid.",
+     "published": "2026-08-04T11:15:42Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49527630/leipzig-managing-director-denies-agency-battle-derail-yan-diomande-real-madrid-transfer"
+    },
+    {
+     "title": "Summer transfer window: Grading big signings in men's soccer",
+     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
+     "published": "2026-08-04T10:39:45Z",
+     "type": "Story",
+     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
+    },
+    {
      "title": "Veteran striker Edin Džeko, 40, signs new one-year deal at Schalke",
      "desc": "Edin Džeko, at the age of 40, has signed a new contract with Schalke and will be playing in the Bundesliga next season.",
      "published": "2026-08-04T07:43:52Z",
      "type": "HeadlineNews",
      "link": "https://www.espn.com/soccer/story/_/id/49526951/edin-dzeko-schalke-bundesliga"
-    },
-    {
-     "title": "Summer transfer window: Grading big signings in men's soccer",
-     "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-08-04T07:03:24Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
     {
      "title": "Real Madrid set to sign Yan Diomande in €135M deal",
@@ -138,13 +145,6 @@
      "published": "2026-07-25T15:34:30Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49434125/mls-capitalize-world-cup-don-garber-commissioner"
-    },
-    {
-     "title": "Ogden: Klopp is the best man for the Germany job",
-     "desc": "Ogden: Klopp is the best man for the Germany job",
-     "published": "2026-07-24T16:40:32Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49440733/klopp-best-man-germany-job"
     }
    ],
    "injuries": {},
@@ -156,9 +156,16 @@
     {
      "title": "Summer transfer window: Grading big signings in men's soccer",
      "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-08-04T07:03:24Z",
+     "published": "2026-08-04T10:39:45Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
+    },
+    {
+     "title": "Randal Kolo Muani on Juventus return: 'I want to finish what I started'",
+     "desc": "Randal Kolo Muani said \"this story wasn't over\" after sealing his return to Juventus.",
+     "published": "2026-08-04T10:32:44Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/soccer/story/_/id/49527508/randal-kolo-muani-juventus-psg-spurs-transfer-window"
     },
     {
      "title": "John Stones 'thrilled' to be living dream of playing abroad following Inter Milan move",
@@ -187,13 +194,6 @@
      "published": "2026-07-22T07:08:58Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/49415757/10-transfer-storylines-missed-world-cup"
-    },
-    {
-     "title": "Pulisic unveils AC Milan 2026-27 away kit inspired by Champions League final clashes with Liverpool",
-     "desc": "AC Milan have rolled out their new away kit, which harks back the two Champions League finals the club played against Liverpool in 2005 and 2007.",
-     "published": "2026-07-21T10:38:47Z",
-     "type": "Story",
-     "link": "https://www.espn.com/soccer/story/_/id/49415973/christian-pulisic-ac-milan-2026-27-away-kit-champions-league-final-liverpool"
     }
    ],
    "injuries": {},
@@ -205,7 +205,7 @@
     {
      "title": "Summer transfer window: Grading big signings in men's soccer",
      "desc": "The 2026 summer transfer window is open. Here is how we rated the biggest deals.",
-     "published": "2026-08-04T07:03:24Z",
+     "published": "2026-08-04T10:39:45Z",
      "type": "Story",
      "link": "https://www.espn.com/soccer/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer"
     },
@@ -350,46 +350,46 @@
    "name": "NFL",
    "headlines": [
     {
-     "title": "2026 Arizona Cardinals training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Cardinals training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-04T01:45:43Z",
+     "title": "2026 Fantasy Football Draft Guide: Rankings, mock drafts and analysis",
+     "desc": "Your one-stop shop as you prep for draft season, including rankings, projections and analysis.",
+     "published": "2026-08-04T10:43:21Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49426382/arizona-cardinals-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/fantasy/football/story/_/page/FFDraftGuide26-48677635/2026-fantasy-football-rankings-mock-draft-cheat-sheets-sleepers"
     },
     {
-     "title": "How to address the QB position in knockout leagues",
-     "desc": "How to address the QB position in knockout leagues",
-     "published": "2026-08-03T23:54:32Z",
-     "type": "Media",
-     "link": "https://www.espn.com/video/clip/_/id/49524867/how-address-qb-position-knockout-leagues"
+     "title": "Fantasy football insurance RB rankings: Which backups are must-drafts?",
+     "desc": "Looking for insurance or just seeking upside at running back? Eric Moody lists those with the most potential.",
+     "published": "2026-08-04T10:42:03Z",
+     "type": "Story",
+     "link": "https://www.espn.com/fantasy/football/story/_/id/49517475/nfl-fantasy-football-rankings-running-back-handcuffs-insurance"
     },
     {
-     "title": "2026 Tampa Bay Buccaneers training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Buccaneers training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-03T23:34:16Z",
+     "title": "2026 Seattle Seahawks training camp: Latest intel, updates",
+     "desc": "Follow our daily updates from Seahawks training camp, including intel on QBs, position battles and potential breakouts.",
+     "published": "2026-08-04T10:31:57Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49419613/tampa-bay-buccaneers-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/49427699/seattle-seahawks-training-camp-2026-intel-updates"
     },
     {
-     "title": "2026 Minnesota Vikings training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Vikings training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-03T23:29:44Z",
+     "title": "2026 NFL training camp news, buzz, fantasy football updates",
+     "desc": "Here's what we heard on the road at training camp for the Bears, Bucs, Chargers, Chiefs, Colts, Commanders, Dolphins, Jaguars, Falcons, Packers, Rams and Vikings.",
+     "published": "2026-08-04T10:31:38Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49376202/minnesota-vikings-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/49490023/2026-nfl-training-camp-latest-updates-buzz-notes-news-fantasy-football"
     },
     {
-     "title": "2026 Cleveland Browns training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Browns training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-03T22:27:15Z",
+     "title": "What McCarthy-Murray QB battle means for Vikings' locker room",
+     "desc": "While J.J. McCarthy and Kyler Murray compete to start, their teammates are focused on helping both of them succeed.",
+     "published": "2026-08-04T10:00:02Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49449000/cleveland-browns-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/49520717/nfl-minnesota-vikings-jj-mccarthy-kyler-murray-quarterback-competition"
     },
     {
-     "title": "2026 New York Giants training camp: Latest intel, updates",
-     "desc": "Follow our daily updates from Giants training camp, including intel on QBs, position battles and potential breakouts.",
-     "published": "2026-08-03T23:34:20Z",
+     "title": "'Tempered': Inside Mike McCarthy's new vision for Steelers",
+     "desc": "Pittsburgh's new coach is blending sports science and the city's steel-making roots to forge a different camp culture.",
+     "published": "2026-08-04T10:00:05Z",
      "type": "Story",
-     "link": "https://www.espn.com/nfl/story/_/id/49434181/new-york-giants-training-camp-2026-intel-updates"
+     "link": "https://www.espn.com/nfl/story/_/id/49524584/tempered-pittsburgh-steelers-coach-mike-mccarthy-new-vision"
     }
    ],
    "injuries": {
@@ -4463,6 +4463,13 @@
    "name": "NBA",
    "headlines": [
     {
+     "title": "NBA free agency 2027 preview: Our way-too-early look at next summer",
+     "desc": "Golden State's franchise-altering 2027 offseason is just one of the storylines our resident GM is watching closely.",
+     "published": "2026-08-04T11:02:31Z",
+     "type": "Story",
+     "link": "https://www.espn.com/nba/story/_/id/49522331/nba-free-agency-2027-preview-bobby-marks-stars-teams-salary-cap-extension-decisions"
+    },
+    {
      "title": "Sources: Knicks executive Rosas leaving team after four years",
      "desc": "Knicks senior vice president of basketball operations Gersson Rosas is leaving the organization after four seasons, league sources confirmed to ESPN.",
      "published": "2026-08-04T03:30:46Z",
@@ -4496,13 +4503,6 @@
      "published": "2026-08-03T12:47:36Z",
      "type": "Story",
      "link": "https://www.espn.com/nba/story/_/id/49490878/nba-free-agency-2026-bobby-marks-wemby-lebron-deals-giannis-trade-10-offseason-trends"
-    },
-    {
-     "title": "2026 NBA free agency: Grades for offseason signings, extensions",
-     "desc": "We're grading the biggest free agent signings and extensions, including Draymond Green returning to the Warriors on a one-year deal.",
-     "published": "2026-08-03T02:10:43Z",
-     "type": "Story",
-     "link": "https://www.espn.com/nba/story/_/id/48957095/2026-nba-free-agency-grades-offseason-signings-deals-contracts-extensions-depth-charts"
     }
    ],
    "injuries": {
@@ -5390,6 +5390,11 @@
       "player": "Nikita Zadorov",
       "status": "Out",
       "detail": "out"
+     },
+     {
+      "player": "Dans Locmelis",
+      "status": "Out",
+      "detail": "Locmelis will undergo season-ending shoulder surgery next week, Mark Divver of the New England Hockey Journal reports."
      }
     ],
     "Buffalo Sabres": [
@@ -5424,6 +5429,31 @@
       "player": "Yan Kuznetsov",
       "status": "Out",
       "detail": "Kuznetsov (upper body) will miss the rest of the 2025-26 regular season, according to Pat Steinberg of Sportsnet 960 The Fan on Tuesday."
+     },
+     {
+      "player": "Joel Hanley",
+      "status": "Out",
+      "detail": "out"
+     },
+     {
+      "player": "Samuel Honzek",
+      "status": "Injured Reserve",
+      "detail": "Honzek (upper body) will not return this season, per Pat Steinberg of Sportsnet 960 The Fan on Friday."
+     },
+     {
+      "player": "Jonathan Huberdeau",
+      "status": "Injured Reserve",
+      "detail": "Huberdeau (hip) was put on injured reserve Saturday, per the NHL media site."
+     },
+     {
+      "player": "Jake Bean",
+      "status": "Injured Reserve",
+      "detail": "Bean (undisclosed) will need to undergo surgery and is expected to be sidelined indefinitely, Pat Steinberg of Sportsnet 960 The Fan reports Thursday."
+     },
+     {
+      "player": "Henry Mews",
+      "status": "Out",
+      "detail": "out"
      }
     ],
     "Carolina Hurricanes": [
@@ -5443,6 +5473,21 @@
       "player": "Connor Bedard",
       "status": "Out",
       "detail": "Bedard (shoulder) signed a five-year, $75 million contract with Chicago on Saturday."
+     },
+     {
+      "player": "Matt Grzelcyk",
+      "status": "Out",
+      "detail": "Grzelcyk (upper body) will miss the remainder of the 2025-26 regular season, according to Ben Pope of the Chicago Sun-Times on Tuesday."
+     },
+     {
+      "player": "Artyom Levshunov",
+      "status": "Out",
+      "detail": "Levshunov (hand) will not play again in 2025-26, according to Ben Pope of the Chicago Sun-Times on Tuesday."
+     },
+     {
+      "player": "Ryan Ellis",
+      "status": "Injured Reserve",
+      "detail": "Ellis (back) and his contract have been traded to Chicago from San Jose, along with Jake Furlong and a 2028 fourth-round pick in exchange for Laurent Brossoit, Nolan Allan and a 2028 seventh-round pick Thursday."
      }
     ],
     "Colorado Avalanche": [
@@ -5503,6 +5548,11 @@
       "player": "Adam Henrique",
       "status": "Out",
       "detail": "out"
+     },
+     {
+      "player": "Mattias Janmark",
+      "status": "Injured Reserve",
+      "detail": "Janmark (undisclosed) underwent season-ending surgery on Friday, per Mark Spector of Sportsnet."
      }
     ],
     "Florida Panthers": [
@@ -5542,9 +5592,31 @@
       "detail": "out"
      },
      {
+      "player": "Jonah Gadjovich",
+      "status": "Injured Reserve",
+      "detail": "Gadjovich (upper body) is not expected to suit up again this season, per Jameson Olive of the Panthers' official site on Tuesday."
+     },
+     {
+      "player": "Niko Mikkola",
+      "status": "Injured Reserve",
+      "detail": "ir"
+     },
+     {
       "player": "Uvis Balinskis",
       "status": "Out",
       "detail": "Balinskis (lower body) has a fracture and is slated to miss 4-6 weeks, Jameson Olive of the Panthers' official site reports Monday."
+     },
+     {
+      "player": "Brad Marchand",
+      "status": "Injured Reserve",
+      "detail": "Marchand landed on injured reserve Tuesday, per the NHL media site."
+     }
+    ],
+    "Los Angeles Kings": [
+     {
+      "player": "Kevin Fiala",
+      "status": "Injured Reserve",
+      "detail": "Fiala (lower leg fracture) won't be available before training camp for the 2026-27 campaign, per John Hoven of SiriusXM NHL Network Radio."
      }
     ],
     "Minnesota Wild": [
@@ -5594,6 +5666,11 @@
       "player": "Luke Hughes",
       "status": "Out",
       "detail": "Hughes (undisclosed)  will undergo a procedure and will miss the remainder of the season, it was announced Thursday."
+     },
+     {
+      "player": "Stefan Noesen",
+      "status": "Injured Reserve",
+      "detail": "Noesen (knee) has been ruled out for the rest of the season, Kristy Flannery of The Hockey News reports Sunday."
      }
     ],
     "New York Islanders": [
@@ -5621,6 +5698,18 @@
       "player": "Alexander Romanov",
       "status": "Injured Reserve",
       "detail": "Romanov (shoulder) will miss the final two games of the regular season, according to Stefen Rosner of NHL.com on Sunday."
+     },
+     {
+      "player": "Pierre Engvall",
+      "status": "Injured Reserve",
+      "detail": "Engvall (ankle) will miss the remainder of the 2025-26 campaign, per Stefen Rosner of NHL.com."
+     }
+    ],
+    "New York Rangers": [
+     {
+      "player": "Matt Rempe",
+      "status": "Injured Reserve",
+      "detail": "Rempe (thumb) probably won't be ready to return before the end of the 2025-26 regular season, according to Vince Z. Mercogliano of The Athletic on Monday."
      }
     ],
     "Ottawa Senators": [
@@ -5650,6 +5739,23 @@
       "player": "Owen Tippett",
       "status": "Out",
       "detail": "Tippett (undisclosed) was contending with several injuries, including a sports hernia, during the 2026 postseason, Kevin Kurz of The Athletic reports Monday."
+     },
+     {
+      "player": "Ty Murchison",
+      "status": "Out",
+      "detail": "out"
+     }
+    ],
+    "Pittsburgh Penguins": [
+     {
+      "player": "Caleb Jones",
+      "status": "Injured Reserve",
+      "detail": "ir"
+     },
+     {
+      "player": "Filip Hallander",
+      "status": "Injured Reserve",
+      "detail": "Hallander (leg) was recalled from his conditioning stint with AHL Wilkes-Barre/Scranton on Friday, Seth Rorabaugh of Tribune-Review Sports reports."
      }
     ],
     "San Jose Sharks": [
@@ -5710,6 +5816,16 @@
       "player": "Dakota Joshua",
       "status": "Out",
       "detail": "Joshua (upper body) will not return to the lineup for the rest of the season, according to David Alter of The Hockey News on Saturday."
+     },
+     {
+      "player": "Auston Matthews",
+      "status": "Out",
+      "detail": "Matthews underwent successful MCL knee repair surgery Thursday."
+     },
+     {
+      "player": "Chris Tanev",
+      "status": "Injured Reserve",
+      "detail": "Tanev underwent core muscle surgery Wednesday and will miss the remainder of the 2025-26 campaign."
      }
     ],
     "Utah Mammoth": [
@@ -5729,6 +5845,21 @@
       "player": "Evander Kane",
       "status": "Out",
       "detail": "Kane (upper body) will most likely miss the Canucks' final two games of the 2025-26 season, Farhan Lalji of TSN reports."
+     },
+     {
+      "player": "Thatcher Demko",
+      "status": "Injured Reserve",
+      "detail": "Demko was placed on long-term injured reserve Tuesday."
+     },
+     {
+      "player": "Jonathan Lekkerimaki",
+      "status": "Out",
+      "detail": "Lekkerimaki underwent successful shoulder surgery Friday."
+     },
+     {
+      "player": "Filip Chytil",
+      "status": "Injured Reserve",
+      "detail": "ir"
      },
      {
       "player": "Derek Forbort",
@@ -5754,6 +5885,11 @@
      },
      {
       "player": "Charlie Lindgren",
+      "status": "Out",
+      "detail": "out"
+     },
+     {
+      "player": "Eriks Mateiko",
       "status": "Out",
       "detail": "out"
      }
@@ -5796,6 +5932,27 @@
    "name": "MLB",
    "headlines": [
     {
+     "title": "MLB betting tips for Tuesday: Pick Phillies to pounce on post-deadline Nationals",
+     "desc": "All of the odds, recommended prop bets and trends in baseball for Tuesday, August 4.",
+     "published": "2026-08-04T11:18:09Z",
+     "type": "Story",
+     "link": "https://www.espn.com/espn/betting/story/_/id/49527613/mlb-betting-tips-odds-lines-2026-tuesday-august-4"
+    },
+    {
+     "title": "MLB trade deadline 2026: What to make of Red Sox, Cubs, more",
+     "desc": "Not sure to what to make of a wild conclusion to trade season? We've got it all covered.",
+     "published": "2026-08-04T10:41:39Z",
+     "type": "Story",
+     "link": "https://www.espn.com/mlb/story/_/id/49523565/2026-mlb-trade-deadline-real-not-dodgers-phillies-red-sox-mets-orioles"
+    },
+    {
+     "title": "Bookie says Ippei Mizuhara's gambling addiction clear quickly",
+     "desc": "The bookie for Ippei Mizuhara told ESPN that Shohei Ohtani's former interpreter showed signs of problem gambling within 30 days of betting with him.",
+     "published": "2026-08-04T10:45:30Z",
+     "type": "HeadlineNews",
+     "link": "https://www.espn.com/mlb/story/_/id/49520745/ippei-mizuhara-mathew-bowyer-gambling-addiction-shohei-ohtani-betrayal"
+    },
+    {
      "title": "Alec Burleson hits 3 homers as Cardinals outslug Yankees 13-7 after losing 6-run lead",
      "desc": "— Alec Burleson hit three two-run homers, including a drive into the second deck in right field that capped a seven-run eighth inning as the St. Louis Cardinals outslugged the New York Yankees for a 13-7 victory Monday night after blowing a",
      "published": "2026-08-04T08:20:53Z",
@@ -5815,27 +5972,6 @@
      "published": "2026-08-04T08:01:46Z",
      "type": "Preview",
      "link": "http://www.espn.com/mlb/preview?gameId=401816392"
-    },
-    {
-     "title": "Reds host the Athletics to open 3-game series",
-     "desc": "Athletics (45-67, fourth in the AL West) vs. Cincinnati Reds (53-58, fifth in the NL Central)",
-     "published": "2026-08-04T08:01:42Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816385"
-    },
-    {
-     "title": "White Sox visit the Red Sox to open 3-game series",
-     "desc": "Chicago White Sox (59-52, first in the AL Central) vs. Boston Red Sox (60-51, third in the AL East)",
-     "published": "2026-08-04T08:01:39Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816386"
-    },
-    {
-     "title": "Guardians take on the Mets in first of 3-game series",
-     "desc": "New York Mets (47-66, fifth in the NL East) vs. Cleveland Guardians (57-56, second in the AL Central)",
-     "published": "2026-08-04T08:01:36Z",
-     "type": "Preview",
-     "link": "http://www.espn.com/mlb/preview?gameId=401816388"
     }
    ],
    "injuries": {
