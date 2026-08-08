@@ -1,0 +1,32 @@
+name: Keep Warm (proxy)
+
+# Second, INDEPENDENT keep-warm for the nba-stats-proxy Render service, running from
+# a different repo than the primary one so GitHub throttling on one scheduler can't
+# take the proxy down. Offset 15 min from the proxy repo's schedule (0,30) so the two
+# interleave. Each run pings /health every 4 min for ~68 min, bridging cron delays.
+
+on:
+  schedule:
+    - cron: "15,45 * * * *"   # offset from proxy repo's 0,30 schedule
+  workflow_dispatch: {}
+
+concurrency:
+  group: keep-warm-proxy
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - name: Ping proxy /health in a loop for ~68 minutes
+        run: |
+          URL="https://nba-stats-proxy-9kur.onrender.com/health"
+          for i in $(seq 1 18); do
+            code=$(curl -s -o /dev/null -w "%{http_code}" -m 90 "$URL" || echo "000")
+            echo "$(date -u +%H:%M:%S) ping $i -> HTTP $code"
+            if [ "$i" -lt 18 ]; then sleep 240; fi
+          done
