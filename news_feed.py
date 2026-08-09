@@ -127,6 +127,14 @@ def af_enrich_league(client, state, lkey, league_obj, season, now):
     if not fixtures:
         return changed
 
+    # Publish today's fixtures so the News tab has real content from the working
+    # API (independent of ESPN, which blocks GitHub's servers).
+    fx_public = [{"home": fx["home"], "away": fx["away"], "ko": fx["ko"],
+                  "status": fx.get("status", "")} for fx in fixtures if fx.get("home")]
+    if fx_public and league_obj.get("fixtures") != fx_public:
+        league_obj["fixtures"] = fx_public
+        changed = True
+
     injuries = league_obj.setdefault("injuries", {})
     lineups = league_obj.setdefault("lineups", {})
     inj_seen = state.setdefault("af_inj_fixture", {})

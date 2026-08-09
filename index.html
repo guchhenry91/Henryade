@@ -4080,7 +4080,9 @@ function buildNewsTab() {
   }
   const ago = NEWS.updated_unix ? Math.round((Date.now()/1000 - NEWS.updated_unix)/60) : null;
   let html = `<div class="value-box"><h3>📰 NEWS FEED</h3>
-    <p style="color:#666;font-size:0.78em">Auto-collected from ESPN${ago!=null?` · updated ${ago} min ago`:''}. Team news, transfers, injuries, and game-day lineups. The model drops goal-scorer picks for injured or benched players.</p></div>`;
+    <p style="color:#666;font-size:0.78em">Soccer fixtures, injuries, and confirmed lineups from API-Football${ago!=null?` · updated ${ago} min ago`:''}. The model drops goal-scorer picks for injured or benched players.</p></div>`;
+
+  const koTime = iso => { try { return new Date(iso).toLocaleString('en-GB',{timeZone:TZ,weekday:'short',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}); } catch { return ''; } };
 
   // Order: soccer leagues first (in-season focus), then US sports
   const order = ['epl','laliga','bundesliga','seriea','ligue1','ucl','europa','nfl','nba','nhl','mlb'];
@@ -4090,10 +4092,21 @@ function buildNewsTab() {
     if (!lg) continue;
     const injTeams = Object.keys(lg.injuries||{});
     const lineups = Object.keys(lg.lineups||{});
-    const hasContent = (lg.headlines||[]).length || injTeams.length || lineups.length;
+    const fixtures = lg.fixtures||[];
+    const hasContent = (lg.headlines||[]).length || injTeams.length || lineups.length || fixtures.length;
     if (!hasContent) continue;
 
     html += `<div class="sport-section"><div class="sport-title">${lg.name}</div>`;
+
+    // Today's fixtures
+    if (fixtures.length) {
+      html += `<div style="margin:6px 0"><div style="color:#66aaff;font-size:0.8em;font-weight:600">📅 Today's Fixtures</div>`;
+      fixtures.forEach(f => {
+        const st = f.status && f.status !== 'NS' ? ` <span style="color:#888">[${f.status}]</span>` : '';
+        html += `<div style="font-size:0.74em;color:#aaa;margin:2px 0">${f.home} vs ${f.away} <span style="color:#666">· ${koTime(f.ko)}</span>${st}</div>`;
+      });
+      html += `</div>`;
+    }
 
     // Confirmed lineups (game day) — highest value, show first
     if (lineups.length) {
