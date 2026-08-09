@@ -11,6 +11,7 @@ Exit code is always 0 on partial failure — a single dead league must not break
 whole feed. Writes news.json only from whatever it successfully collected.
 """
 import json
+import os
 import sys
 import time
 from datetime import datetime, timezone
@@ -46,6 +47,177 @@ LINEUP_WINDOW_HOURS = 8
 MAX_LINEUP_EVENTS = 12
 
 ESPN_BASE = "https://site.api.espn.com/apis/site/v2/sports"
+
+# ── API-Football (optional, higher-quality soccer injuries + confirmed XIs) ─────
+# Enabled only when the API_FOOTBALL env var (a GitHub Actions secret) is present.
+# Free plan ~100 req/day, so spend is tied strictly to real fixtures near kickoff.
+try:
+    from api_football import Client as AFClient, QuotaExhausted, LEAGUE_IDS as AF_LEAGUE_IDS
+    _AF_AVAILABLE = True
+except Exception:
+    _AF_AVAILABLE = False
+
+STATE_PATH = "news_state.json"
+AF_FIXTURES_TTL = 6 * 3600      # refresh a league's fixture list at most every 6h
+AF_LINEUP_WINDOW_MIN = 55       # fetch confirmed XI only within this many min of KO
+AF_RUN_BUDGET = 30              # hard per-run request cap (free plan is ~100/day)
+
+
+def _af_season():
+    """API-Football season = the year the season starts (Aug onward = new season)."""
+    now = datetime.now(timezone.utc)
+    return now.year if now.month >= 8 else now.year - 1
+
+
+def load_state():
+    try:
+        with open(STATE_PATH, encoding="utf-8") as f:
+            return json.load(f)
+    except (FileNotFoundError, ValueError):
+        return {}
+
+
+def _prune_state(state, now_ts):
+    """Drop fixture-level markers older than 2 days so the state file stays small."""
+    cutoff = now_ts - 2 * 86400
+    for key in ("af_lineup_attempted", "af_inj_fixture"):
+        d = state.get(key) or {}
+        state[key] = {k: v for k, v in d.items()
+                      if isinstance(v, (int, float)) and v > cutoff
+                      or isinstance(v, str)}  # date-string markers pruned by date below
+    # date-string injury markers: keep only today's
+    today = datetime.now(timezone.utc).date().isoformat()
+    inj = state.get("af_inj_fixture") or {}
+    state["af_inj_fixture"] = {k: v for k, v in inj.items() if v == today}
+
+
+def af_fixtures_for_league(client, state, lkey, season, now):
+    """Today's fixtures for a league, cached in state for AF_FIXTURES_TTL."""
+    cache = (state.setdefault("af_fixtures", {})).get(lkey)
+    today = now.date().isoformat()
+    if cache and cache.get("date") == today and (now.timestamp() - cache.get("ts", 0)) < AF_FIXTURES_TTL:
+        return cache["items"], False
+    rows = client.get("fixtures", league=AF_LEAGUE_IDS[lkey], season=season,
+                      date=today, timezone="UTC")
+    items = []
+    for r in rows:
+        fx, teams = r.get("fixture", {}), r.get("teams", {})
+        items.append({
+            "id": fx.get("id"),
+            "home": (teams.get("home") or {}).get("name", ""),
+            "away": (teams.get("away") or {}).get("name", ""),
+            "ko": fx.get("date", ""),
+            "status": (fx.get("status") or {}).get("short", ""),
+        })
+    state["af_fixtures"][lkey] = {"date": today, "ts": now.timestamp(), "items": items}
+    return items, True
+
+
+def af_enrich_league(client, state, lkey, league_obj, season, now):
+    """
+    Populate a soccer league's injuries + confirmed lineups from API-Football,
+    spending quota only on today's fixtures (injuries once/day, XI near kickoff).
+    Mutates league_obj in place. Returns True if anything changed.
+    """
+    changed = False
+    try:
+        fixtures, _ = af_fixtures_for_league(client, state, lkey, season, now)
+    except QuotaExhausted:
+        return changed
+    if not fixtures:
+        return changed
+
+    injuries = league_obj.setdefault("injuries", {})
+    lineups = league_obj.setdefault("lineups", {})
+    inj_seen = state.setdefault("af_inj_fixture", {})
+    xi_done = state.setdefault("af_lineup_attempted", {})
+    today = now.date().isoformat()
+
+    for fx in fixtures:
+        fid = fx.get("id")
+        if not fid:
+            continue
+        try:
+            ko = datetime.fromisoformat(fx["ko"].replace("Z", "+00:00"))
+        except Exception:
+            continue
+        mins_to_ko = (ko - now).total_seconds() / 60
+
+        # Injuries: once per fixture per day, for games in the next ~48h.
+        if str(fid) not in inj_seen and -3 < mins_to_ko / 60 < 48:
+            try:
+                rows = client.get("injuries", fixture=fid)
+                for r in rows:
+                    team = (r.get("team") or {}).get("name", "")
+                    player = (r.get("player") or {}).get("name", "")
+                    reason = (r.get("player") or {}).get("reason") or r.get("reason") or ""
+                    if team and player:
+                        injuries.setdefault(team, [])
+                        if not any(p["player"] == player for p in injuries[team]):
+                            injuries[team].append({"player": player, "status": reason or "Out",
+                                                   "detail": reason})
+                            changed = True
+                inj_seen[str(fid)] = today
+                changed = True
+            except QuotaExhausted:
+                return changed
+            except Exception:
+                inj_seen[str(fid)] = today  # don't retry a failing endpoint all day
+
+        # Confirmed XI: only within the kickoff window, one attempt per fixture.
+        if 0 < mins_to_ko <= AF_LINEUP_WINDOW_MIN and str(fid) not in xi_done:
+            try:
+                rows = client.get("fixtures/lineups", fixture=fid)
+            except QuotaExhausted:
+                return changed
+            except Exception:
+                rows = []
+            xi_done[str(fid)] = now.timestamp()
+            changed = True
+            if len(rows) == 2:
+                sides = []
+                for row in rows:
+                    team = (row.get("team") or {}).get("name", "")
+                    xi = [(i.get("player") or {}).get("name", "") for i in row.get("startXI", [])]
+                    xi = [n for n in xi if n]
+                    sides.append({"team": team, "formation": row.get("formation"), "xi": xi})
+                if any(len(s["xi"]) >= 11 for s in sides):
+                    lineups[str(fid)] = {
+                        "name": f"{fx['home']} vs {fx['away']}",
+                        "kickoff": fx["ko"], "state": "pre", "confirmed": True,
+                        "sides": sides, "source": "API-Football",
+                    }
+    return changed
+
+
+def af_enrich_soccer(leagues, state):
+    """Run API-Football enrichment across all soccer leagues. Returns (used, changed)."""
+    if not (_AF_AVAILABLE and os.environ.get("API_FOOTBALL")):
+        return 0, False
+    now = datetime.now(timezone.utc)
+    season = _af_season()
+    try:
+        client = AFClient(limit=AF_RUN_BUDGET)
+    except Exception as e:
+        print(f"  api-football: disabled ({e})")
+        return 0, False
+    st = client.status()
+    print(f"  api-football: quota {st.get('current')}/{st.get('limit_day')} season={season}")
+    changed = False
+    for lkey in SOCCER_LEAGUES:
+        if lkey not in AF_LEAGUE_IDS or lkey not in leagues:
+            continue
+        try:
+            if af_enrich_league(client, state, lkey, leagues[lkey], season, now):
+                changed = True
+        except QuotaExhausted:
+            print("  api-football: per-run budget hit — stopping")
+            break
+        except Exception as e:
+            print(f"  api-football {lkey}: {e}")
+    _prune_state(state, now.timestamp())
+    print(f"  api-football: {client.used} requests used this run")
+    return client.used, changed
 
 
 def _get(url):
@@ -191,11 +363,26 @@ def main():
         print("news_feed: collected nothing — leaving existing news.json untouched")
         return 0
 
+    # Upgrade soccer injuries + confirmed lineups with API-Football (if key present).
+    # This overrides ESPN's soccer data, which is sparse/empty for injuries.
+    state = load_state()
+    try:
+        _, state_changed = af_enrich_soccer(leagues, state)
+    except Exception as e:
+        print(f"  api-football: enrichment failed ({e!r})")
+        state_changed = False
+    if state_changed:
+        try:
+            with open(STATE_PATH, "w", encoding="utf-8") as f:
+                json.dump(state, f, ensure_ascii=False, indent=1)
+        except Exception:
+            pass
+
     now = datetime.now(timezone.utc)
     payload = {
         "updated": now.isoformat(),
         "updated_unix": int(now.timestamp()),
-        "source": "espn",
+        "source": "espn+api-football",
         "leagues": leagues,
     }
 

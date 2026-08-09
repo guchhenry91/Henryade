@@ -21,6 +21,8 @@ jobs:
   update-news:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    # Grants access to the API_FOOTBALL environment secret.
+    environment: API-FOOTBALL
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,17 +36,20 @@ jobs:
         run: pip install requests
 
       - name: Collect news
+        env:
+          API_FOOTBALL: ${{ secrets.API_FOOTBALL }}
         run: python news_feed.py
 
       - name: Commit if changed
         run: |
           git config user.name  "henryade-newsbot"
           git config user.email "actions@github.com"
-          if git diff --quiet -- news.json; then
-            echo "No news changes — nothing to commit."
+          # Commit news.json and/or news_state.json whenever either changed.
+          if git diff --quiet -- news.json news_state.json; then
+            echo "No changes — nothing to commit."
             exit 0
           fi
-          git add news.json
+          git add news.json news_state.json
           git commit -m "chore(news): auto-update $(date -u +'%Y-%m-%d %H:%M UTC')"
           # Rebase on any concurrent pushes, then push (retry once).
           git pull --rebase --autostash origin main || true
