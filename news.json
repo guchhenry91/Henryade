@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-11T15:05:27.867109+00:00",
- "updated_unix": 1786460727,
+ "updated": "2026-08-11T17:29:36.719761+00:00",
+ "updated_unix": 1786469376,
  "source": "espn+api-football",
  "leagues": {
   "epl": {
@@ -37,7 +37,51 @@
    "name": "Champions League",
    "headlines": [],
    "injuries": {},
-   "lineups": {},
+   "lineups": {
+    "1598829": {
+     "name": "NEC Nijmegen vs Olympiakos Piraeus",
+     "kickoff": "2026-08-11T17:30:00+00:00",
+     "state": "pre",
+     "confirmed": true,
+     "sides": [
+      {
+       "team": "NEC Nijmegen",
+       "formation": "3-4-2-1",
+       "xi": [
+        "Gonzalo Crettaz",
+        "Tobias Storm",
+        "Philippe Sandler",
+        "Deveron Fonville",
+        "Sami Ouaissa",
+        "Darko Nejašmić",
+        "Dušan Tadić",
+        "Noe Lebreton",
+        "Tjaronn Chery",
+        "Clement Bischoff",
+        "Bryan Linssen"
+       ]
+      },
+      {
+       "team": "Olympiakos Piraeus",
+       "formation": "4-2-3-1",
+       "xi": [
+        "Balša Popović",
+        "Rodinei",
+        "Panagiotis Retsos",
+        "Lorenzo Pirola",
+        "Onyemaechi Bruno",
+        "Dani García",
+        "Santiago Hezze",
+        "Gelson Martins",
+        "Gustavo Sá",
+        "Jota Silva",
+        "Ayoub El Kaabi"
+       ]
+      }
+     ],
+     "source": "API-Football"
+    }
+   },
    "fixtures": [
     {
      "home": "Kairat Almaty",
