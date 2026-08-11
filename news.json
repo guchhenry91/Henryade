@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-11T18:29:03.413405+00:00",
- "updated_unix": 1786472943,
+ "updated": "2026-08-11T19:39:54.452012+00:00",
+ "updated_unix": 1786477194,
  "source": "espn+api-football",
  "leagues": {
   "epl": {
@@ -37,51 +37,7 @@
    "name": "Champions League",
    "headlines": [],
    "injuries": {},
-   "lineups": {
-    "1607174": {
-     "name": "Sturm Graz vs Fenerbahçe",
-     "kickoff": "2026-08-11T18:30:00+00:00",
-     "state": "pre",
-     "confirmed": true,
-     "sides": [
-      {
-       "team": "Sturm Graz",
-       "formation": "4-4-2",
-       "xi": [
-        "Daniil Khudyakov",
-        "Arjan Malić",
-        "Jeyland Mitchell",
-        "Petar Petrović",
-        "Emran Soglo",
-        "Simon Seidl",
-        "Jon Gorenc Stanković",
-        "Luca Weinhandl",
-        "Jacob Hödl",
-        "Axel Kayombo",
-        "Seedy Jatta"
-       ]
-      },
-      {
-       "team": "Fenerbahçe",
-       "formation": "4-2-3-1",
-       "xi": [
-        "Mert Günok",
-        "Nélson Semedo",
-        "Milan Škriniar",
-        "Nathan Aké",
-        "Archie Brown",
-        "Mattéo Guendouzi",
-        "N'Golo Kanté",
-        "Mason Greenwood",
-        "Marco Asensio",
-        "Kerem Aktürkoğlu",
-        "Talisca"
-       ]
-      }
-     ],
-     "source": "API-Football"
-    }
-   },
+   "lineups": {},
    "fixtures": [
     {
      "home": "Kairat Almaty",
