@@ -1,0 +1,11 @@
+# Vendored third-party code — not our work, and ~213MB / 6000+ files.
+# Indexing it would blow past graphify's 5000-node visualisation limit.
+resources/
+
+# Installed Claude Code skills and plugins (upstream code, not ours).
+.claude/
+
+# Regenerable/derived output.
+__pycache__/
+node_modules/
+Ouputs/

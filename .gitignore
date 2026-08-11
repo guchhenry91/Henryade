@@ -2,3 +2,6 @@ node_modules
 .gstack/
 .playwright-mcp/
 __pycache__/
+
+# graphify knowledge graph output (regenerable via `graphify update .`)
+graphify-out/
