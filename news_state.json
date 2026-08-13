@@ -2,121 +2,121 @@
  "af_fixtures": {
   "epl": {
    "date": "2026-08-13",
-   "ts": 1786629540.328706,
+   "ts": 1786651510.4639,
    "items": []
   },
   "laliga": {
    "date": "2026-08-13",
-   "ts": 1786629540.328706,
+   "ts": 1786651510.4639,
    "items": []
   },
   "bundesliga": {
    "date": "2026-08-13",
-   "ts": 1786629540.328706,
+   "ts": 1786651510.4639,
    "items": []
   },
   "seriea": {
    "date": "2026-08-13",
-   "ts": 1786629540.328706,
+   "ts": 1786651510.4639,
    "items": []
   },
   "ligue1": {
    "date": "2026-08-13",
-   "ts": 1786629540.328706,
+   "ts": 1786651510.4639,
    "items": []
   },
   "ucl": {
    "date": "2026-08-13",
-   "ts": 1786629540.328706,
+   "ts": 1786651510.4639,
    "items": []
   },
   "europa": {
    "date": "2026-08-13",
-   "ts": 1786629540.328706,
+   "ts": 1786651510.4639,
    "items": [
-    {
-     "id": 1607569,
-     "home": "Gornik Zabrze",
-     "away": "Ferencvarosi TC",
-     "ko": "2026-08-13T17:00:00+00:00",
-     "status": "NS"
-    },
-    {
-     "id": 1607567,
-     "home": "Beşiktaş",
-     "away": "Hradec Králové",
-     "ko": "2026-08-13T17:00:00+00:00",
-     "status": "NS"
-    },
-    {
-     "id": 1607183,
-     "home": "Universitatea Craiova",
-     "away": "KuPS",
-     "ko": "2026-08-13T17:00:00+00:00",
-     "status": "NS"
-    },
-    {
-     "id": 1607182,
-     "home": "Omonia Nicosia",
-     "away": "Lincoln Red Imps FC",
-     "ko": "2026-08-13T17:00:00+00:00",
-     "status": "NS"
-    },
-    {
-     "id": 1607571,
-     "home": "Pafos",
-     "away": "Red Bull Salzburg",
-     "ko": "2026-08-13T17:00:00+00:00",
-     "status": "NS"
-    },
-    {
-     "id": 1607184,
-     "home": "Vikingur Reykjavik",
-     "away": "FC Thun",
-     "ko": "2026-08-13T17:30:00+00:00",
-     "status": "NS"
-    },
-    {
-     "id": 1607181,
-     "home": "KI Klaksvik",
-     "away": "Lech Poznan",
-     "ko": "2026-08-13T17:30:00+00:00",
-     "status": "NS"
-    },
-    {
-     "id": 1607568,
-     "home": "CSKA Sofia",
-     "away": "Maccabi Tel Aviv",
-     "ko": "2026-08-13T18:00:00+00:00",
-     "status": "NS"
-    },
     {
      "id": 1598831,
      "home": "Rangers",
      "away": "Jagiellonia",
      "ko": "2026-08-13T18:30:00+00:00",
-     "status": "NS"
+     "status": "2H"
     },
     {
      "id": 1607566,
      "home": "Anderlecht",
      "away": "PAOK",
      "ko": "2026-08-13T18:30:00+00:00",
-     "status": "NS"
+     "status": "2H"
     },
     {
      "id": 1607570,
      "home": "Heart Of Midlothian",
      "away": "Benfica",
      "ko": "2026-08-13T18:45:00+00:00",
-     "status": "NS"
+     "status": "2H"
     },
     {
      "id": 1606353,
      "home": "Egnatia Rrogozhinë",
      "away": "Shamrock Rovers",
      "ko": "2026-08-13T19:00:00+00:00",
-     "status": "NS"
+     "status": "HT"
+    },
+    {
+     "id": 1607569,
+     "home": "Gornik Zabrze",
+     "away": "Ferencvarosi TC",
+     "ko": "2026-08-13T17:00:00+00:00",
+     "status": "FT"
+    },
+    {
+     "id": 1607567,
+     "home": "Beşiktaş",
+     "away": "Hradec Králové",
+     "ko": "2026-08-13T17:00:00+00:00",
+     "status": "FT"
+    },
+    {
+     "id": 1607183,
+     "home": "Universitatea Craiova",
+     "away": "KuPS",
+     "ko": "2026-08-13T17:00:00+00:00",
+     "status": "FT"
+    },
+    {
+     "id": 1607182,
+     "home": "Omonia Nicosia",
+     "away": "Lincoln Red Imps FC",
+     "ko": "2026-08-13T17:00:00+00:00",
+     "status": "FT"
+    },
+    {
+     "id": 1607571,
+     "home": "Pafos",
+     "away": "Red Bull Salzburg",
+     "ko": "2026-08-13T17:00:00+00:00",
+     "status": "FT"
+    },
+    {
+     "id": 1607184,
+     "home": "Vikingur Reykjavik",
+     "away": "FC Thun",
+     "ko": "2026-08-13T17:30:00+00:00",
+     "status": "FT"
+    },
+    {
+     "id": 1607568,
+     "home": "CSKA Sofia",
+     "away": "Maccabi Tel Aviv",
+     "ko": "2026-08-13T18:00:00+00:00",
+     "status": "FT"
+    },
+    {
+     "id": 1607181,
+     "home": "KI Klaksvik",
+     "away": "Lech Poznan",
+     "ko": "2026-08-13T19:45:00+00:00",
+     "status": "PST"
     }
    ]
   }

@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-13T00:08:41.117019+00:00",
- "updated_unix": 1786579721,
+ "updated": "2026-08-13T20:05:12.037579+00:00",
+ "updated_unix": 1786651512,
  "source": "espn+api-football",
  "leagues": {
   "epl": {
@@ -46,76 +46,76 @@
    "lineups": {},
    "fixtures": [
     {
-     "home": "Gornik Zabrze",
-     "away": "Ferencvarosi TC",
-     "ko": "2026-08-13T17:00:00+00:00",
-     "status": "NS"
-    },
-    {
-     "home": "Beşiktaş",
-     "away": "Hradec Králové",
-     "ko": "2026-08-13T17:00:00+00:00",
-     "status": "NS"
-    },
-    {
-     "home": "Universitatea Craiova",
-     "away": "KuPS",
-     "ko": "2026-08-13T17:00:00+00:00",
-     "status": "NS"
-    },
-    {
-     "home": "Omonia Nicosia",
-     "away": "Lincoln Red Imps FC",
-     "ko": "2026-08-13T17:00:00+00:00",
-     "status": "NS"
-    },
-    {
-     "home": "Pafos",
-     "away": "Red Bull Salzburg",
-     "ko": "2026-08-13T17:00:00+00:00",
-     "status": "NS"
-    },
-    {
-     "home": "Vikingur Reykjavik",
-     "away": "FC Thun",
-     "ko": "2026-08-13T17:30:00+00:00",
-     "status": "NS"
-    },
-    {
-     "home": "KI Klaksvik",
-     "away": "Lech Poznan",
-     "ko": "2026-08-13T17:30:00+00:00",
-     "status": "NS"
-    },
-    {
-     "home": "CSKA Sofia",
-     "away": "Maccabi Tel Aviv",
-     "ko": "2026-08-13T18:00:00+00:00",
-     "status": "NS"
-    },
-    {
      "home": "Rangers",
      "away": "Jagiellonia",
      "ko": "2026-08-13T18:30:00+00:00",
-     "status": "NS"
+     "status": "2H"
     },
     {
      "home": "Anderlecht",
      "away": "PAOK",
      "ko": "2026-08-13T18:30:00+00:00",
-     "status": "NS"
+     "status": "2H"
     },
     {
      "home": "Heart Of Midlothian",
      "away": "Benfica",
      "ko": "2026-08-13T18:45:00+00:00",
-     "status": "NS"
+     "status": "2H"
     },
     {
      "home": "Egnatia Rrogozhinë",
      "away": "Shamrock Rovers",
      "ko": "2026-08-13T19:00:00+00:00",
-     "status": "NS"
+     "status": "HT"
+    },
+    {
+     "home": "Gornik Zabrze",
+     "away": "Ferencvarosi TC",
+     "ko": "2026-08-13T17:00:00+00:00",
+     "status": "FT"
+    },
+    {
+     "home": "Beşiktaş",
+     "away": "Hradec Králové",
+     "ko": "2026-08-13T17:00:00+00:00",
+     "status": "FT"
+    },
+    {
+     "home": "Universitatea Craiova",
+     "away": "KuPS",
+     "ko": "2026-08-13T17:00:00+00:00",
+     "status": "FT"
+    },
+    {
+     "home": "Omonia Nicosia",
+     "away": "Lincoln Red Imps FC",
+     "ko": "2026-08-13T17:00:00+00:00",
+     "status": "FT"
+    },
+    {
+     "home": "Pafos",
+     "away": "Red Bull Salzburg",
+     "ko": "2026-08-13T17:00:00+00:00",
+     "status": "FT"
+    },
+    {
+     "home": "Vikingur Reykjavik",
+     "away": "FC Thun",
+     "ko": "2026-08-13T17:30:00+00:00",
+     "status": "FT"
+    },
+    {
+     "home": "CSKA Sofia",
+     "away": "Maccabi Tel Aviv",
+     "ko": "2026-08-13T18:00:00+00:00",
+     "status": "FT"
+    },
+    {
+     "home": "KI Klaksvik",
+     "away": "Lech Poznan",
+     "ko": "2026-08-13T19:45:00+00:00",
+     "status": "PST"
     }
    ]
   },
