@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-12T02:19:55.680923+00:00",
- "updated_unix": 1786501195,
+ "updated": "2026-08-13T00:08:41.117019+00:00",
+ "updated_unix": 1786579721,
  "source": "espn+api-football",
  "leagues": {
   "epl": {
@@ -43,7 +43,81 @@
    "name": "Europa League",
    "headlines": [],
    "injuries": {},
-   "lineups": {}
+   "lineups": {},
+   "fixtures": [
+    {
+     "home": "Gornik Zabrze",
+     "away": "Ferencvarosi TC",
+     "ko": "2026-08-13T17:00:00+00:00",
+     "status": "NS"
+    },
+    {
+     "home": "Beşiktaş",
+     "away": "Hradec Králové",
+     "ko": "2026-08-13T17:00:00+00:00",
+     "status": "NS"
+    },
+    {
+     "home": "Universitatea Craiova",
+     "away": "KuPS",
+     "ko": "2026-08-13T17:00:00+00:00",
+     "status": "NS"
+    },
+    {
+     "home": "Omonia Nicosia",
+     "away": "Lincoln Red Imps FC",
+     "ko": "2026-08-13T17:00:00+00:00",
+     "status": "NS"
+    },
+    {
+     "home": "Pafos",
+     "away": "Red Bull Salzburg",
+     "ko": "2026-08-13T17:00:00+00:00",
+     "status": "NS"
+    },
+    {
+     "home": "Vikingur Reykjavik",
+     "away": "FC Thun",
+     "ko": "2026-08-13T17:30:00+00:00",
+     "status": "NS"
+    },
+    {
+     "home": "KI Klaksvik",
+     "away": "Lech Poznan",
+     "ko": "2026-08-13T17:30:00+00:00",
+     "status": "NS"
+    },
+    {
+     "home": "CSKA Sofia",
+     "away": "Maccabi Tel Aviv",
+     "ko": "2026-08-13T18:00:00+00:00",
+     "status": "NS"
+    },
+    {
+     "home": "Rangers",
+     "away": "Jagiellonia",
+     "ko": "2026-08-13T18:30:00+00:00",
+     "status": "NS"
+    },
+    {
+     "home": "Anderlecht",
+     "away": "PAOK",
+     "ko": "2026-08-13T18:30:00+00:00",
+     "status": "NS"
+    },
+    {
+     "home": "Heart Of Midlothian",
+     "away": "Benfica",
+     "ko": "2026-08-13T18:45:00+00:00",
+     "status": "NS"
+    },
+    {
+     "home": "Egnatia Rrogozhinë",
+     "away": "Shamrock Rovers",
+     "ko": "2026-08-13T19:00:00+00:00",
+     "status": "NS"
+    }
+   ]
   },
   "nfl": {
    "name": "NFL",
