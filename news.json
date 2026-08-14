@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-14T08:19:44.761535+00:00",
- "updated_unix": 1786695584,
+ "updated": "2026-08-14T20:35:16.701600+00:00",
+ "updated_unix": 1786739716,
  "source": "espn+api-football",
  "leagues": {
   "epl": {
@@ -49,7 +49,7 @@
      "home": "KI Klaksvik",
      "away": "Lech Poznan",
      "ko": "2026-08-14T18:00:00+00:00",
-     "status": "NS"
+     "status": "FT"
     }
    ]
   },
