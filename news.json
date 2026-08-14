@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-14T00:08:46.178716+00:00",
- "updated_unix": 1786666126,
+ "updated": "2026-08-14T08:19:44.761535+00:00",
+ "updated_unix": 1786695584,
  "source": "espn+api-football",
  "leagues": {
   "epl": {
@@ -43,7 +43,15 @@
    "name": "Europa League",
    "headlines": [],
    "injuries": {},
-   "lineups": {}
+   "lineups": {},
+   "fixtures": [
+    {
+     "home": "KI Klaksvik",
+     "away": "Lech Poznan",
+     "ko": "2026-08-14T18:00:00+00:00",
+     "status": "NS"
+    }
+   ]
   },
   "nfl": {
    "name": "NFL",
