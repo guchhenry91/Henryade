@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-14T20:35:16.701600+00:00",
- "updated_unix": 1786739716,
+ "updated": "2026-08-15T01:27:16.190800+00:00",
+ "updated_unix": 1786757236,
  "source": "espn+api-football",
  "leagues": {
   "epl": {
@@ -12,8 +12,86 @@
   "laliga": {
    "name": "La Liga",
    "headlines": [],
-   "injuries": {},
-   "lineups": {}
+   "injuries": {
+    "Alaves": [
+     {
+      "player": "F. Garces",
+      "status": "Suspended",
+      "detail": "Suspended"
+     },
+     {
+      "player": "T. Mendes",
+      "status": "Knee Injury",
+      "detail": "Knee Injury"
+     },
+     {
+      "player": "N. Valentini",
+      "status": "Red Card",
+      "detail": "Red Card"
+     },
+     {
+      "player": "L. Boye",
+      "status": "Muscle Injury",
+      "detail": "Muscle Injury"
+     }
+    ],
+    "Getafe": [
+     {
+      "player": "Juanmi",
+      "status": "Injury",
+      "detail": "Injury"
+     },
+     {
+      "player": "C. Uche",
+      "status": "Knee Injury",
+      "detail": "Knee Injury"
+     }
+    ],
+    "Sevilla": [
+     {
+      "player": "A. Gonzalez",
+      "status": "Muscle Injury",
+      "detail": "Muscle Injury"
+     },
+     {
+      "player": "Marcao",
+      "status": "Foot Injury",
+      "detail": "Foot Injury"
+     }
+    ],
+    "Rayo Vallecano": [
+     {
+      "player": "Luiz Felipe",
+      "status": "Hamstring Injury",
+      "detail": "Hamstring Injury"
+     },
+     {
+      "player": "D. Mendez",
+      "status": "Knee Injury",
+      "detail": "Knee Injury"
+     },
+     {
+      "player": "M. Kumbulla",
+      "status": "Muscle Injury",
+      "detail": "Muscle Injury"
+     }
+    ]
+   },
+   "lineups": {},
+   "fixtures": [
+    {
+     "home": "Alaves",
+     "away": "Getafe",
+     "ko": "2026-08-15T17:30:00+00:00",
+     "status": "NS"
+    },
+    {
+     "home": "Sevilla",
+     "away": "Rayo Vallecano",
+     "ko": "2026-08-15T19:30:00+00:00",
+     "status": "NS"
+    }
+   ]
   },
   "bundesliga": {
    "name": "Bundesliga",
@@ -43,15 +121,7 @@
    "name": "Europa League",
    "headlines": [],
    "injuries": {},
-   "lineups": {},
-   "fixtures": [
-    {
-     "home": "KI Klaksvik",
-     "away": "Lech Poznan",
-     "ko": "2026-08-14T18:00:00+00:00",
-     "status": "FT"
-    }
-   ]
+   "lineups": {}
   },
   "nfl": {
    "name": "NFL",
