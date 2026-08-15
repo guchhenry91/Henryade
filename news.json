@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-15T01:27:16.190800+00:00",
- "updated_unix": 1786757236,
+ "updated": "2026-08-15T02:36:03.113215+00:00",
+ "updated_unix": 1786761363,
  "source": "espn+api-football",
  "leagues": {
   "epl": {
@@ -12,71 +12,7 @@
   "laliga": {
    "name": "La Liga",
    "headlines": [],
-   "injuries": {
-    "Alaves": [
-     {
-      "player": "F. Garces",
-      "status": "Suspended",
-      "detail": "Suspended"
-     },
-     {
-      "player": "T. Mendes",
-      "status": "Knee Injury",
-      "detail": "Knee Injury"
-     },
-     {
-      "player": "N. Valentini",
-      "status": "Red Card",
-      "detail": "Red Card"
-     },
-     {
-      "player": "L. Boye",
-      "status": "Muscle Injury",
-      "detail": "Muscle Injury"
-     }
-    ],
-    "Getafe": [
-     {
-      "player": "Juanmi",
-      "status": "Injury",
-      "detail": "Injury"
-     },
-     {
-      "player": "C. Uche",
-      "status": "Knee Injury",
-      "detail": "Knee Injury"
-     }
-    ],
-    "Sevilla": [
-     {
-      "player": "A. Gonzalez",
-      "status": "Muscle Injury",
-      "detail": "Muscle Injury"
-     },
-     {
-      "player": "Marcao",
-      "status": "Foot Injury",
-      "detail": "Foot Injury"
-     }
-    ],
-    "Rayo Vallecano": [
-     {
-      "player": "Luiz Felipe",
-      "status": "Hamstring Injury",
-      "detail": "Hamstring Injury"
-     },
-     {
-      "player": "D. Mendez",
-      "status": "Knee Injury",
-      "detail": "Knee Injury"
-     },
-     {
-      "player": "M. Kumbulla",
-      "status": "Muscle Injury",
-      "detail": "Muscle Injury"
-     }
-    ]
-   },
+   "injuries": {},
    "lineups": {},
    "fixtures": [
     {
