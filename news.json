@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-16T03:04:07.094582+00:00",
- "updated_unix": 1786849447,
+ "updated": "2026-08-16T21:24:18.496839+00:00",
+ "updated_unix": 1786915458,
  "source": "espn+api-football",
  "leagues": {
   "epl": {
@@ -19,13 +19,13 @@
      "home": "Racing Santander",
      "away": "Villarreal",
      "ko": "2026-08-16T15:00:00+00:00",
-     "status": "NS"
+     "status": "FT"
     },
     {
      "home": "Espanyol",
      "away": "Levante",
      "ko": "2026-08-16T17:00:00+00:00",
-     "status": "NS"
+     "status": "FT"
     }
    ]
   },
