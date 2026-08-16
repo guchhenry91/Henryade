@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-16T01:39:11.916796+00:00",
- "updated_unix": 1786844351,
+ "updated": "2026-08-16T03:04:07.094582+00:00",
+ "updated_unix": 1786849447,
  "source": "espn+api-football",
  "leagues": {
   "epl": {
@@ -12,39 +12,7 @@
   "laliga": {
    "name": "La Liga",
    "headlines": [],
-   "injuries": {
-    "Racing Santander": [
-     {
-      "player": "G. Guliashvili",
-      "status": "Leg Injury",
-      "detail": "Leg Injury"
-     }
-    ],
-    "Espanyol": [
-     {
-      "player": "K. Garcia",
-      "status": "Hamstring Injury",
-      "detail": "Hamstring Injury"
-     },
-     {
-      "player": "J. Puado",
-      "status": "Knee Injury",
-      "detail": "Knee Injury"
-     }
-    ],
-    "Levante": [
-     {
-      "player": "R. Brugue",
-      "status": "Red Card",
-      "detail": "Red Card"
-     },
-     {
-      "player": "A. Primo",
-      "status": "Shoulder Injury",
-      "detail": "Shoulder Injury"
-     }
-    ]
-   },
+   "injuries": {},
    "lineups": {},
    "fixtures": [
     {
