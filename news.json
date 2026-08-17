@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-17T03:04:09.436439+00:00",
- "updated_unix": 1786935849,
+ "updated": "2026-08-17T18:45:56.204804+00:00",
+ "updated_unix": 1786992356,
  "source": "espn+api-football",
  "leagues": {
   "epl": {
@@ -13,7 +13,51 @@
    "name": "La Liga",
    "headlines": [],
    "injuries": {},
-   "lineups": {},
+   "lineups": {
+    "1570337": {
+     "name": "Deportivo La Coruna vs Elche",
+     "kickoff": "2026-08-17T19:00:00+00:00",
+     "state": "pre",
+     "confirmed": true,
+     "sides": [
+      {
+       "team": "Deportivo La Coruna",
+       "formation": "4-4-2",
+       "xi": [
+        "Leo Román",
+        "Ximo Navarro",
+        "Lucas Noubi",
+        "Bright Ede",
+        "Giacomo Quagliata",
+        "Adrià Altimira",
+        "Mario Soriano",
+        "Lorenzo Amatucci",
+        "Jonathan Asp Jensen",
+        "Pierre-Emerick Aubameyang",
+        "Bil Nsongo"
+       ]
+      },
+      {
+       "team": "Elche",
+       "formation": "5-4-1",
+       "xi": [
+        "Matías Dituro",
+        "Buba Sangaré",
+        "David Affengruber",
+        "Federico Redondo",
+        "Víctor Chust",
+        "Germán Valera",
+        "Martim Neto",
+        "Gonzalo Villar",
+        "Marc Aguado",
+        "Ali Houary",
+        "Fernando Niño"
+       ]
+      }
+     ],
+     "source": "API-Football"
+    }
+   },
    "fixtures": [
     {
      "home": "Deportivo La Coruna",
