@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-17T19:31:48.677421+00:00",
- "updated_unix": 1786995108,
+ "updated": "2026-08-17T21:29:23.035453+00:00",
+ "updated_unix": 1787002163,
  "source": "espn+api-football",
  "leagues": {
   "epl": {
@@ -19,7 +19,7 @@
      "home": "Deportivo La Coruna",
      "away": "Elche",
      "ko": "2026-08-17T19:00:00+00:00",
-     "status": "NS"
+     "status": "FT"
     }
    ]
   },
