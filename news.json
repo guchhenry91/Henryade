@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-17T01:37:11.843507+00:00",
- "updated_unix": 1786930631,
+ "updated": "2026-08-17T03:04:09.436439+00:00",
+ "updated_unix": 1786935849,
  "source": "espn+api-football",
  "leagues": {
   "epl": {
@@ -12,42 +12,7 @@
   "laliga": {
    "name": "La Liga",
    "headlines": [],
-   "injuries": {
-    "Deportivo La Coruna": [
-     {
-      "player": "A. Altimira",
-      "status": "Knee Injury",
-      "detail": "Knee Injury"
-     },
-     {
-      "player": "N. Carrillo",
-      "status": "Injury",
-      "detail": "Injury"
-     },
-     {
-      "player": "J. Noriega",
-      "status": "Injury",
-      "detail": "Injury"
-     }
-    ],
-    "Elche": [
-     {
-      "player": "A. Osorio",
-      "status": "Muscle Injury",
-      "detail": "Muscle Injury"
-     },
-     {
-      "player": "G. Diangana",
-      "status": "Knee Injury",
-      "detail": "Knee Injury"
-     },
-     {
-      "player": "Y. Santiago",
-      "status": "Knee Injury",
-      "detail": "Knee Injury"
-     }
-    ]
-   },
+   "injuries": {},
    "lineups": {},
    "fixtures": [
     {
