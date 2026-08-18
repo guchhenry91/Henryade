@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-18T18:43:30.865384+00:00",
- "updated_unix": 1787078610,
+ "updated": "2026-08-18T19:30:49.687301+00:00",
+ "updated_unix": 1787081449,
  "source": "espn+api-football",
  "leagues": {
   "epl": {
@@ -37,137 +37,7 @@
    "name": "Champions League",
    "headlines": [],
    "injuries": {},
-   "lineups": {
-    "1622621": {
-     "name": "Fenerbahçe vs Lyon",
-     "kickoff": "2026-08-18T19:00:00+00:00",
-     "state": "pre",
-     "confirmed": true,
-     "sides": [
-      {
-       "team": "Fenerbahçe",
-       "formation": "4-2-3-1",
-       "xi": [
-        "Ederson",
-        "Nélson Semedo",
-        "Milan Škriniar",
-        "Nathan Aké",
-        "Archie Brown",
-        "N'Golo Kanté",
-        "Mattéo Guendouzi",
-        "Mason Greenwood",
-        "Talisca",
-        "Kerem Aktürkoğlu",
-        "Vedat Muriqi"
-       ]
-      },
-      {
-       "team": "Lyon",
-       "formation": "4-3-3",
-       "xi": [
-        "Dominik Greif",
-        "Ainsley Maitland-Niles",
-        "Ruben Kluivert",
-        "Moussa Niakhaté",
-        "Abner Vinícius",
-        "Corentin Tolisso",
-        "Tanner Tessmann",
-        "Tyler Morton",
-        "Ernest Nuamah",
-        "Loïs Openda",
-        "Malick Fofana"
-       ]
-      }
-     ],
-     "source": "API-Football"
-    },
-    "1622620": {
-     "name": "Dinamo Zagreb vs Viking",
-     "kickoff": "2026-08-18T19:00:00+00:00",
-     "state": "pre",
-     "confirmed": true,
-     "sides": [
-      {
-       "team": "Dinamo Zagreb",
-       "formation": "4-3-3",
-       "xi": [
-        "Ivan Nevistić",
-        "Moris Valinčić",
-        "Sergi Domínguez",
-        "Scott McKenna",
-        "Matteo Pérez Vinlöf",
-        "Luka Stojković",
-        "Josip Mišić",
-        "Miha Zajc",
-        "Mateo Lisica",
-        "Dion Drena Beljo",
-        "Mislav Oršić"
-       ]
-      },
-      {
-       "team": "Viking",
-       "formation": "4-3-3",
-       "xi": [
-        "Arild Østbø",
-        "Henrik Heggheim",
-        "Gianni Stensness",
-        "Henrik Sælebakke Falchener",
-        "Kristoffer Haugen",
-        "Kristoffer Askildsen",
-        "Joe Bell",
-        "Tobias Moi",
-        "Zlatko Tripić",
-        "Peter Christiansen",
-        "Edvin Austbø"
-       ]
-      }
-     ],
-     "source": "API-Football"
-    },
-    "1622622": {
-     "name": "Levski Sofia vs AEK Athens FC",
-     "kickoff": "2026-08-18T19:00:00+00:00",
-     "state": "pre",
-     "confirmed": true,
-     "sides": [
-      {
-       "team": "Levski Sofia",
-       "formation": "4-2-3-1",
-       "xi": [
-        "Svetoslav Vutsov",
-        "Aldair",
-        "Kristian Dimitrov",
-        "Nikola Serafimov",
-        "Maicon",
-        "Álex Centelles",
-        "El Mehdi Moubarik",
-        "Reinaldo",
-        "Serginho",
-        "Armstrong Oko-Flex",
-        "Everton Bala"
-       ]
-      },
-      {
-       "team": "AEK Athens FC",
-       "formation": "4-4-2",
-       "xi": [
-        "Thomas Strakosha",
-        "Lazaros Rota",
-        "Harold Moukoudi",
-        "Filipe Relvas",
-        "Stavros Pilios",
-        "Aboubakary Koita",
-        "Răzvan Marin",
-        "Kaan Kairinen",
-        "Lovro Majer",
-        "Luka Jović",
-        "Zini"
-       ]
-      }
-     ],
-     "source": "API-Football"
-    }
-   },
+   "lineups": {},
    "fixtures": [
     {
      "home": "Fenerbahçe",
