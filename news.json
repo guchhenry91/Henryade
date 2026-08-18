@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-18T19:30:49.687301+00:00",
- "updated_unix": 1787081449,
+ "updated": "2026-08-18T20:29:06.243160+00:00",
+ "updated_unix": 1787084946,
  "source": "espn+api-football",
  "leagues": {
   "epl": {
@@ -43,19 +43,19 @@
      "home": "Fenerbahçe",
      "away": "Lyon",
      "ko": "2026-08-18T19:00:00+00:00",
-     "status": "NS"
+     "status": "2H"
     },
     {
      "home": "Dinamo Zagreb",
      "away": "Viking",
      "ko": "2026-08-18T19:00:00+00:00",
-     "status": "NS"
+     "status": "2H"
     },
     {
      "home": "Levski Sofia",
      "away": "AEK Athens FC",
      "ko": "2026-08-18T19:00:00+00:00",
-     "status": "NS"
+     "status": "2H"
     }
    ]
   },
