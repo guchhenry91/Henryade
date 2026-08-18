@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-18T01:26:23.927468+00:00",
- "updated_unix": 1787016383,
+ "updated": "2026-08-18T02:39:23.960202+00:00",
+ "updated_unix": 1787020763,
  "source": "espn+api-football",
  "leagues": {
   "epl": {
@@ -36,116 +36,7 @@
   "ucl": {
    "name": "Champions League",
    "headlines": [],
-   "injuries": {
-    "Fenerbahçe": [
-     {
-      "player": "E. Demir",
-      "status": "Inactive",
-      "detail": "Inactive"
-     },
-     {
-      "player": "Diego Carlos",
-      "status": "Inactive",
-      "detail": "Inactive"
-     },
-     {
-      "player": "A. Diouf",
-      "status": "Lacking Match Fitness",
-      "detail": "Lacking Match Fitness"
-     },
-     {
-      "player": "O. Fayed",
-      "status": "Inactive",
-      "detail": "Inactive"
-     },
-     {
-      "player": "O. Mimovic",
-      "status": "Inactive",
-      "detail": "Inactive"
-     },
-     {
-      "player": "A. Musaba",
-      "status": "Injury",
-      "detail": "Injury"
-     },
-     {
-      "player": "J. Oosterwolde",
-      "status": "Achilles Tendon Injury",
-      "detail": "Achilles Tendon Injury"
-     },
-     {
-      "player": "Rodrigo Becao",
-      "status": "Inactive",
-      "detail": "Inactive"
-     },
-     {
-      "player": "C. Under",
-      "status": "Inactive",
-      "detail": "Inactive"
-     },
-     {
-      "player": "M. Yandas",
-      "status": "Inactive",
-      "detail": "Inactive"
-     },
-     {
-      "player": "A. Yesilyurt",
-      "status": "Inactive",
-      "detail": "Inactive"
-     },
-     {
-      "player": "M. Gunok",
-      "status": "Muscle Injury",
-      "detail": "Muscle Injury"
-     },
-     {
-      "player": "C. Soyuncu",
-      "status": "Injury",
-      "detail": "Injury"
-     }
-    ],
-    "Lyon": [
-     {
-      "player": "K. Merah",
-      "status": "Ankle Injury",
-      "detail": "Ankle Injury"
-     },
-     {
-      "player": "P. Sulc",
-      "status": "Knee Injury",
-      "detail": "Knee Injury"
-     }
-    ],
-    "Dinamo Zagreb": [
-     {
-      "player": "I. Filipovic",
-      "status": "Red Card",
-      "detail": "Red Card"
-     },
-     {
-      "player": "K. Theophile-Catherine",
-      "status": "Inactive",
-      "detail": "Inactive"
-     }
-    ],
-    "Viking": [
-     {
-      "player": "A. Baertelsen",
-      "status": "Foot Injury",
-      "detail": "Foot Injury"
-     },
-     {
-      "player": "V. Berisha",
-      "status": "Thigh Injury",
-      "detail": "Thigh Injury"
-     },
-     {
-      "player": "M. Roseth",
-      "status": "Knee Injury",
-      "detail": "Knee Injury"
-     }
-    ]
-   },
+   "injuries": {},
    "lineups": {},
    "fixtures": [
     {
