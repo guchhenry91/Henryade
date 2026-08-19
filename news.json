@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-19T01:32:17.990463+00:00",
- "updated_unix": 1787103137,
+ "updated": "2026-08-19T03:01:32.282678+00:00",
+ "updated_unix": 1787108492,
  "source": "espn+api-football",
  "leagues": {
   "epl": {
@@ -12,57 +12,7 @@
   "laliga": {
    "name": "La Liga",
    "headlines": [],
-   "injuries": {
-    "Atletico Madrid": [
-     {
-      "player": "J. Alvarez",
-      "status": "Lacking Match Fitness",
-      "detail": "Lacking Match Fitness"
-     },
-     {
-      "player": "A. Sorloth",
-      "status": "Muscle Injury",
-      "detail": "Muscle Injury"
-     },
-     {
-      "player": "C. Romero",
-      "status": "Injury",
-      "detail": "Injury"
-     }
-    ],
-    "Malaga": [
-     {
-      "player": "F. Calero",
-      "status": "Ribs Injury",
-      "detail": "Ribs Injury"
-     },
-     {
-      "player": "M. Diarra",
-      "status": "Calf Injury",
-      "detail": "Calf Injury"
-     },
-     {
-      "player": "Juanpe",
-      "status": "Muscle Injury",
-      "detail": "Muscle Injury"
-     },
-     {
-      "player": "D. Murillo",
-      "status": "Injury",
-      "detail": "Injury"
-     },
-     {
-      "player": "A. Nino",
-      "status": "Injury",
-      "detail": "Injury"
-     },
-     {
-      "player": "A. Ochoa",
-      "status": "Red Card",
-      "detail": "Red Card"
-     }
-    ]
-   },
+   "injuries": {},
    "lineups": {},
    "fixtures": [
     {
@@ -94,134 +44,7 @@
   "ucl": {
    "name": "Champions League",
    "headlines": [],
-   "injuries": {
-    "Celtic": [
-     {
-      "player": "Jota",
-      "status": "Knee Injury",
-      "detail": "Knee Injury"
-     },
-     {
-      "player": "A. Oxlade-Chamberlain",
-      "status": "Red Card",
-      "detail": "Red Card"
-     }
-    ],
-    "Lask Linz": [
-     {
-      "player": "R. Harakate",
-      "status": "Knee Injury",
-      "detail": "Knee Injury"
-     },
-     {
-      "player": "A. Smakaj",
-      "status": "Knee Injury",
-      "detail": "Knee Injury"
-     }
-    ],
-    "NEC Nijmegen": [
-     {
-      "player": "Y. Moslih",
-      "status": "Injury",
-      "detail": "Injury"
-     },
-     {
-      "player": "S. Ouaissa",
-      "status": "Muscle Injury",
-      "detail": "Muscle Injury"
-     },
-     {
-      "player": "P. Sandler",
-      "status": "Injury",
-      "detail": "Injury"
-     },
-     {
-      "player": "P. Schuurs",
-      "status": "Knee Injury",
-      "detail": "Knee Injury"
-     },
-     {
-      "player": "K. Ogawa",
-      "status": "Head Injury",
-      "detail": "Head Injury"
-     }
-    ],
-    "Bodo/Glimt": [
-     {
-      "player": "H. Evjen",
-      "status": "Knee Injury",
-      "detail": "Knee Injury"
-     },
-     {
-      "player": "A. Mikkelsen",
-      "status": "Groin Injury",
-      "detail": "Groin Injury"
-     },
-     {
-      "player": "I. Sjong",
-      "status": "Injury",
-      "detail": "Injury"
-     },
-     {
-      "player": "J. Gundersen",
-      "status": "Injury",
-      "detail": "Injury"
-     }
-    ],
-    "Hapoel Beer Sheva": [
-     {
-      "player": "E. Almog",
-      "status": "Inactive",
-      "detail": "Inactive"
-     },
-     {
-      "player": "D. Biton",
-      "status": "Heart Problems",
-      "detail": "Heart Problems"
-     },
-     {
-      "player": "Joao Victor",
-      "status": "Muscle Injury",
-      "detail": "Muscle Injury"
-     }
-    ],
-    "Sabah FA": [
-     {
-      "player": "K. Aliyev",
-      "status": "Tendon Injury",
-      "detail": "Tendon Injury"
-     }
-    ],
-    "Slovan Bratislava": [
-     {
-      "player": "A. Sporar",
-      "status": "Muscle Injury",
-      "detail": "Muscle Injury"
-     },
-     {
-      "player": "M. Kukharevych",
-      "status": "Injury",
-      "detail": "Injury"
-     },
-     {
-      "player": "N. Marcelli",
-      "status": "Injury",
-      "detail": "Injury"
-     }
-    ],
-    "Celje": [
-     {
-      "player": "L. Bejger",
-      "status": "Shin Injury",
-      "detail": "Shin Injury"
-     },
-     {
-      "player": "J. Pisek",
-      "status": "Knee Injury",
-      "detail": "Knee Injury"
-     }
-    ]
-   },
+   "injuries": {},
    "lineups": {},
    "fixtures": [
     {
