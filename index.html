@@ -225,8 +225,9 @@
 <div id="tab-bankroll" class="tab-content"><div class="loading" style="color:#555">Load sport tabs first — bankroll tracker needs picks</div></div>
 
 <script>
-let API_KEY = ''; // loaded from proxy /api/config at startup
-const BASE    = 'https://api.the-odds-api.com/v4';
+// The Odds API key never reaches the browser: calls go through the Cloudflare relay,
+// which adds the key itself (henrys-match-engine Worker, /api/odds/v4).
+const BASE    = 'https://henrys-match-engine.henrys-edge-engine.workers.dev/api/odds/v4';
 const CACHE_TTL    = 3 * 60 * 60 * 1000; // 3hrs — lines move fast, keep data fresh without hammering the API
 
 // ── All dates use US Eastern timezone (matches ESPN + US sportsbooks) ─────────
@@ -2380,7 +2381,7 @@ async function apiFetch(sport, markets, region='uk', force=false) {
   const cached = getCache(ck);
   if (!tokensSafe()) return cached || []; // tokens critically low — always serve cache regardless of force
   if (cached && !force) return cached;    // cache hit and not forced — serve cache
-  const url = `${BASE}/sports/${sport}/odds/?apiKey=${API_KEY}&regions=${region}&markets=${markets}&oddsFormat=decimal`;
+  const url = `${BASE}/sports/${sport}/odds/?regions=${region}&markets=${markets}&oddsFormat=decimal`;
   const res = await fetch(url);
   updateTokens(res);
   if (!res.ok) throw new Error(`API ${res.status}: ${sport}`);
@@ -2394,7 +2395,7 @@ async function fetchEvents(sport, force=false) {
   const cached = getCache(ck);
   if (!tokensSafe()) return cached || [];
   if (cached && !force) return cached;
-  const res = await fetch(`${BASE}/sports/${sport}/events?apiKey=${API_KEY}&dateFormat=iso`);
+  const res = await fetch(`${BASE}/sports/${sport}/events?dateFormat=iso`);
   updateTokens(res);
   if (!res.ok) throw new Error(`API ${res.status}: events`);
   const data = await res.json();
@@ -2428,7 +2429,7 @@ async function fetchEventProps(sport, eventId, markets, region, force=false) {
   if (emptyTs && !force && Date.now() - Number(emptyTs) < 15 * 60 * 1000) return { bookmakers: [] };
 
   return _queuedFetch(async () => {
-    const url = `${BASE}/sports/${sport}/events/${eventId}/odds?apiKey=${API_KEY}&regions=${region}&markets=${markets}&oddsFormat=decimal`;
+    const url = `${BASE}/sports/${sport}/events/${eventId}/odds?regions=${region}&markets=${markets}&oddsFormat=decimal`;
     const res = await fetch(url);
     updateTokens(res);
     if (!res.ok) throw new Error(`API ${res.status}`);
@@ -5379,11 +5380,6 @@ const _proxyWarm = new Promise(resolve => {
 });
 
 window.addEventListener('load', async () => {
-  // Fetch odds API key from proxy on startup
-  try {
-    const _cfg = await fetch(`${NBA_PROXY}/api/config`);
-    if (_cfg.ok) { const _j = await _cfg.json(); if (_j.oddsKey) API_KEY = _j.oddsKey; }
-  } catch(e) { console.warn('Config fetch failed:', e); }
   loadNews();  // pull auto-updated news.json (team news, injuries, lineups)
   refreshAll(false);
   autoGrade().then(n => {
