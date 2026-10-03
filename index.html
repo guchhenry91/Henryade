@@ -382,7 +382,7 @@ async function espnAthleteId(sport, league, playerName) {
 
 // ── NBA Stats Proxy (Render) — real-time via nba_api backend ────────────────
 // Calls our own proxy which uses nba_api to bypass NBA.com bot protection
-const NBA_PROXY = 'https://nba-stats-proxy-9kur.onrender.com';
+const NBA_PROXY = 'https://henrys-match-engine.henrys-edge-engine.workers.dev';  // stats proxy, on Cloudflare since 2026-10-04 (was Render)
 
 // ── Gamelog cache — 12-hour TTL, persisted in localStorage ──────────────────
 // Prevents re-fetching same player on every tab click (biggest speed win)
@@ -5381,7 +5381,7 @@ const _proxyWarm = new Promise(resolve => {
 window.addEventListener('load', async () => {
   // Fetch odds API key from proxy on startup
   try {
-    const _cfg = await fetch('https://nba-stats-proxy-9kur.onrender.com/api/config');
+    const _cfg = await fetch(`${NBA_PROXY}/api/config`);
     if (_cfg.ok) { const _j = await _cfg.json(); if (_j.oddsKey) API_KEY = _j.oddsKey; }
   } catch(e) { console.warn('Config fetch failed:', e); }
   loadNews();  // pull auto-updated news.json (team news, injuries, lineups)
